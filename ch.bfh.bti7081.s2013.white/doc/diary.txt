@@ -3,7 +3,7 @@
 2013-02-19 - Initial repository setup
 
 Autoren:
-Marc Sch√§rer
+Marc Sch‰rer
 Arthur van Ommen
 Patrick Kofmehl
 Fabian Affolter
