@@ -18,7 +18,3 @@ Critical success factors
 
 System components (high level architecture)
 
-
-
-
-hans
