@@ -15,7 +15,7 @@ Diary
 
 Authors
 -------
-- Marc Schaerer
+- Marc Schärer
 - Arthur van Ommen
 - Patrick Kofmehl
 - Fabian Affolter
