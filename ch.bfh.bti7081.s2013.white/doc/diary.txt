@@ -19,4 +19,4 @@ Authors
 - Arthur van Ommen
 - Patrick Kofmehl
 - Fabian Affolter
-- Alex
+- Alejandro Nuñez
