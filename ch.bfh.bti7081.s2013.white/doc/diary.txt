@@ -1,12 +1,22 @@
+Diary
+=====
+
+(all entries in backwards chronological order)
 
 
-2013-02-19 - Initial repository setup
+2013-02-26
+----------
+- New team member A. added
+- Draft for Task 1 added
 
-Autoren:
-Marc Schärer
-Arthur van Ommen
-Patrick Kofmehl
-Fabian Affolter
-Alex from spain
+2013-02-19
+----------
+- Initial repository setup
 
-Test PK
+Authors
+-------
+- Marc Schaerer
+- Arthur van Ommen
+- Patrick Kofmehl
+- Fabian Affolter
+- Alex
