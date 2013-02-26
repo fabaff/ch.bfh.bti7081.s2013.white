@@ -1,2 +1,19 @@
-Test
 
+
+Target users
+ - Health staff (Doctors, Health visitors, nurses)
+ - Administration personnal (receptionists, record staff)
+
+Key features
+ - Data protection (Data Protection Act, Mental Health Act)
+ - Reports provided for management
+ - Timeline of medical treatment and observation
+ - Administration for patients personal data management
+ - Administration for patients treatment data
+ - Administration for patients appointments
+
+Critical success factors
+ - Successfull Data protection
+ - 
+
+System components (high level architecture)
