@@ -32,12 +32,13 @@ c) validation
 d) evolution
 
 a)
-  Requirements engineering process.
-  output: specification document
+  Requirements engineering process: The requirements of the system are collected.
+  The product backlog is created based on the requirements.
+  output: product backlog
   stakeholders: customer, developers, management
   
 b)
-  The outline planning and architectual design comes first.
+  The outline planning and architectual design comes first (before the sprint cycles).
   The fine tuning design will be realized during a sprint cycle. 
   All components of the system must have running unit tests at the end of a sprint cycle.
   
