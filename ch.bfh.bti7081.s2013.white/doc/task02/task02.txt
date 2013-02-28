@@ -1,3 +1,55 @@
 Task 02
 =======
 
+1.
+- There are not yet detailed rquirements available -> detailed plans are not possible and usefull
+- It is a small developer team with 5 people -> focus on development and coding is better than a planning overkill
+- perhaps the team members don't have any experience with agile methods -> some plans could be usefull
+- the team members have a limited time budget -> flexibility and an efficient time management is important (agile)
+
+-> Overall, an agile SE process model is recommendable (with some plan-driven elements)
+
+2.
+We have the choice between Extreme Programming and Scrum (both are agile process models)
+
+Extreme Programming:
+- Small releases: short release cycles are usefull because we have a short time horizon in our project (start: Feb 2013, end: June 2013)
+- On-site customer: Not possible because the professor is our customer and he is not always available
+- Incremental planning: danger of time consuming architecture refactorings
+
+Scrum:
+- This process model gives more structures (Outline planning and architectual design first, followed by the sprint cycles).
+- A good architectual design is important and it will be done before of the sprint cycles (avoiding time consuming architecture refactorings)
+- The fixed sprint cycles are easy to integrate in our week plan (every week a new sprint cycle)
+
+-> Scrum is a good choice for our project
+
+3.
+Activities:
+a) specification
+b) design and development
+c) validation
+d) evolution
+
+a)
+  Requirements engineering process.
+  output: specification document
+  stakeholders: customer, developers, management
+  
+b)
+  The outline planning and architectual design comes first.
+  The fine tuning design will be realized during a sprint cycle. 
+  All components of the system must have running unit tests at the end of a sprint cycle.
+  
+  output: source codes with comments, running unit tests
+  stakeholders: customer, developers
+  
+c)
+  The implemented system is validated against the system requirements.
+  Integration test for the whole system when all sprint cycles have finished.
+  
+  Output: results from integration and acceptance tests, user manuals
+  stakeholders: customer, developers, users, management
+  
+d)
+  This activity comes after the project closure. 
