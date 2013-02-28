@@ -3,6 +3,9 @@ Diary
 
 (all entries in backwards chronological order)
 
+2013-02-28
+----------
+- Patrick added some proposals about task 1 and task 2
 
 2013-02-26
 ----------
