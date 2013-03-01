@@ -1,5 +1,6 @@
 Task 02
 =======
+(see also the file "questions.md")
 
 Plan-driven vs. agile process models
 ------------------------------------
@@ -36,7 +37,7 @@ Activities:
 - 3. Validation
 - 4. Evolution
 
-### 1.
+### 1. Specification
 - Requirements engineering process: The requirements of the system are collected.
 - The product backlog is created based on the requirements.
 - Decision about the used technologies.
@@ -44,7 +45,7 @@ Activities:
 - Output: product backlog
 - Stakeholders: customer, developers, management
   
-### 2.
+### 2. Design and development
 - The outline planning and architectural design comes first (before the sprint cycles).
 - The fine tuning design will be realized during a sprint cycle. 
 - All components of the system must have running unit tests at the end of a sprint cycle.
@@ -52,13 +53,13 @@ Activities:
 - Output: source codes with comments, running unit tests
 - Stakeholders: customer, developers
   
-### 3.
+### 3. Validation
 - The implemented system is validated against the system requirements.
 - Integration and acceptance test for the whole system when all sprint cycles have finished.
 
 - Output: results from integration and acceptance tests, final release of the system
 - Stakeholders: customer, developers, users, management
   
-### 4.
+### 4. Evolution
 - Adapt the system to changed requirements.
 - This activity comes after the project closure.

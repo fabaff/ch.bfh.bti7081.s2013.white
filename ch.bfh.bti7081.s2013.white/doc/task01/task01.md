@@ -1,5 +1,6 @@
 Task 01
 =======
+(see also the file "questions.md")
 
 Target users
 ------------
