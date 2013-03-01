@@ -8,7 +8,7 @@ General
 - Preferred client platform (HTML, HTML5, CSS, JavaScript)
 - Database infrastructure (MySQL, PostgreSQL, Microsoft SQL Server, Oracle
   Database, ...)
-- Interfaces to other hospital resscources (ERP, CRM, logistics)
+- Interfaces to other hospital resources (ERP, CRM, logistics)
 
 
 UI
