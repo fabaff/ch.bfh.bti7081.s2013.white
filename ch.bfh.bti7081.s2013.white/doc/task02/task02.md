@@ -25,7 +25,7 @@ We have the choice between Extreme Programming and Scrum (both are agile process
 ### Scrum:
 - This process model gives more structures (Outline planning and architectual design first, followed by the sprint cycles).
 - A good architectural design is important and it will be done before the sprint cycles (avoiding time consuming architecture refactoring).
-- The fixed sprint cycles are easy to integrate in our week plan (every week a new sprint cycle).
+- The fixed sprint cycles are easy to integrate in our week plan (short sprint cycles).
 
 Scrum is a good choice for our project.
 
