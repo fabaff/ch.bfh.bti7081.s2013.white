@@ -1,7 +1,9 @@
 Task 02
 =======
 
-1.
+Software Engineering process
+----------------------------
+
 - There are not yet detailed requirements available -> detailed plans are not possible and useful
 - It is a small developer team with 5 people -> focus on development and coding is better than a planning overkill
 - Perhaps the team members don't have any experience with agile methods -> some plans could be useful
@@ -9,27 +11,29 @@ Task 02
 
 -> Overall, an agile SE process model is recommendable (with some plan-driven elements)
 
-2.
+Software Engineering Process model
+----------------------------------
 We have the choice between Extreme Programming and Scrum (both are agile process models)
 
-Extreme Programming:
+### Extreme Programming:
 - Small releases: short release cycles are useful because we have a short time horizon in our project (start: Feb 2013, end: June 2013)
 - On-site customer: Not possible because the professor is our customer and he is not always available
 - Incremental planning: danger of time consuming architecture refactoring
 
-Scrum:
+### Scrum:
 - This process model gives more structures (Outline planning and architectural design first, followed by the sprint cycles).
 - A good architectural design is important and it will be done before of the sprint cycles (avoiding time consuming architecture refactoring)
 - The fixed sprint cycles are easy to integrate in our week plan (every week a new sprint cycle)
 
 -> Scrum is a good choice for our project
 
-3.
+Decision
+--------
 Activities:
-- a) Specification
-- b) Design and development
-- c) Validation
-- d) Evolution
+a) Specification
+b) Design and development
+c) Validation
+d) Evolution
 
 a)
   Requirements engineering process: The requirements of the system are collected.
