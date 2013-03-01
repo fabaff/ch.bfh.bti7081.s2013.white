@@ -14,7 +14,6 @@ Key features
 - Reports provided for management
 - Timeline of medical treatment and observation
 - Data protection (Data Protection Act, Mental Health Act) 
-Question: Which user groups have access to confidential medical data?
 
 Critical success factors
 ------------------------
