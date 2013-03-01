@@ -57,7 +57,7 @@ Activities:
 - The implemented system is validated against the system requirements.
 - Integration and acceptance test for the whole system when all sprint cycles have finished.
 
-- Output: results from integration and acceptance tests, final release of the system
+- Output: results from integration and acceptance tests, final release of the system with integrated help
 - Stakeholders: customer, developers, users, management
   
 ### 4. Evolution
