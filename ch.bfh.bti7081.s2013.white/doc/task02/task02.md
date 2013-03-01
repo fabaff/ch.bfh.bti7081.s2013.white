@@ -31,10 +31,10 @@ Scrum is a good choice for our project.
 Our process model
 -----------------
 Activities:
-1. Specification
-2. Design and development
-3. Validation
-4. Evolution
+- 1. Specification
+- 2. Design and development
+- 3. Validation
+- 4. Evolution
 
 ### 1.
 - Requirements engineering process: The requirements of the system are collected.
