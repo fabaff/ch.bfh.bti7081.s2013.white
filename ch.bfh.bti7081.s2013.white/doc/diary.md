@@ -5,6 +5,7 @@ Diary
 
 2013-03-01
 ----------
+- Presentation: Task 1 and Task 2
 - Moved open issues to questions.md
 
 2013-02-28
