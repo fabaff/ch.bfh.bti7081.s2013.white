@@ -24,7 +24,7 @@ Data protection
 ---------------
 - Are there minimum requirement for the encrytion? Strength?
 - Which user groups have access to confidential medical data?
-- Backup/Restore encryption and handling?
+- Backup/Restore encryption and handling, retention time?
 
 
 Reporting
