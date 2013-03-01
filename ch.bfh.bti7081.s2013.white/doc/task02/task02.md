@@ -50,7 +50,7 @@ Activities:
 - The fine tuning design will be realized during a sprint cycle. 
 - All components of the system must have running unit tests at the end of a sprint cycle.
 
-- Output: source codes with comments, running unit tests
+- Output: source codes with comments, running unit tests, UML-diagramms, ...
 - Stakeholders: customer, developers
   
 ### 3. Validation
