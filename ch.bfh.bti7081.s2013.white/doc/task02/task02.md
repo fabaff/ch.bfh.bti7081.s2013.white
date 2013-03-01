@@ -16,6 +16,7 @@ Extreme Programming:
 - Small releases: short release cycles are useful because we have a short time horizon in our project (start: Feb 2013, end: June 2013)
 - On-site customer: Not possible because the professor is our customer and he is not always available
 - Incremental planning: danger of time consuming architecture refactoring
+- Pair programming is difficult to realize because the team members don't have experience with it and sometimes they work at home
 
 Scrum:
 - This process model gives more structures (Outline planning and architectural design first, followed by the sprint cycles).
