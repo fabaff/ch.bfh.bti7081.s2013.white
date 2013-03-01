@@ -8,6 +8,7 @@ General
 - Preferred client platform (HTML, HTML5, CSS, JavaScript)
 - Database infrastructure (MySQL, PostgreSQL, Microsoft SQL Server, Oracle
   Database, ...)
+- Interfaces to other hospital resscources (ERP, CRM, logistics)
 
 
 UI
@@ -15,6 +16,8 @@ UI
 - Are the user interfacing with standard desktop hardware? Mouse/Keyboard?
   Mobile devices? Keyboard-only?
 - Barrier-free access?
+- Authentication methode? Password? Hardware token?
+- One user at a time per machine or multiple users (Nurses)?
 
 
 Data protection
