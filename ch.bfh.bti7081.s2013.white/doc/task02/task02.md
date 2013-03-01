@@ -23,7 +23,7 @@ We have the choice between Extreme Programming and Scrum (both are agile process
 - Pair programming: is difficult to realize because sometimes the team members work at home.
 
 ### Scrum:
-- This process model gives more structures (Outline planning and architectural design first, followed by the sprint cycles).
+- This process model gives more structures (Outline planning and architectual design first, followed by the sprint cycles).
 - A good architectural design is important and it will be done before the sprint cycles (avoiding time consuming architecture refactoring).
 - The fixed sprint cycles are easy to integrate in our week plan (every week a new sprint cycle).
 
@@ -50,7 +50,7 @@ Activities:
 - The fine tuning design will be realized during a sprint cycle. 
 - All components of the system must have running unit tests at the end of a sprint cycle.
 
-- Output: source codes with comments, running unit tests
+- Output: source codes with comments, running unit tests, UML-diagramms, ...
 - Stakeholders: customer, developers
   
 ### 3. Validation
