@@ -24,7 +24,7 @@ Diary
 Authors
 -------
 - Marc Schärer
-- Arthur van Ommen
+- Arthur van Ommen		vanoa1@bfh.ch
 - Patrick Kofmel        kofmp1@bfh.ch
 - Fabian Affolter       affof1@bfh.ch
 - Alejandro Nuñez
