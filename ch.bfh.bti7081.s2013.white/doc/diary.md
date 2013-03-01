@@ -3,6 +3,10 @@ Diary
 
 (all entries in backwards chronological order)
 
+2013-03-01
+----------
+- Moved open issues to questions.md
+
 2013-02-28
 ----------
 - Patrick added some proposals about task 1 and task 2
@@ -20,6 +24,6 @@ Authors
 -------
 - Marc Schärer
 - Arthur van Ommen
-- Patrick Kofmel		kofmp1@bfh.ch
-- Fabian Affolter
+- Patrick Kofmel        kofmp1@bfh.ch
+- Fabian Affolter       affof1@bfh.ch
 - Alejandro Nuñez
