@@ -6,6 +6,7 @@ Diary
 2013-03-01
 ----------
 - Moved open issues to questions.md
+- Summarized tasks (Task 01 and 02) for presenations 
 
 2013-02-28
 ----------
