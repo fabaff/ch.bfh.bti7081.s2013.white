@@ -26,10 +26,10 @@ Scrum:
 
 3.
 Activities:
-a) Specification
-b) Design and development
-c) Validation
-d) Evolution
+- a) Specification
+- b) Design and development
+- c) Validation
+- d) Evolution
 
 a)
   Requirements engineering process: The requirements of the system are collected.
