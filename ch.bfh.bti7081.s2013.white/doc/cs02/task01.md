@@ -14,11 +14,11 @@ System requirements
 -------------------
 The PIP is an embedded device with medical grade hardware and control softare.
 
-### Functinal
+### Functional
 - Information gathering/ analysis
 - Insulin administration/ management
 
-### Non-Functinal
+### Non-Functional
 - Unempfindlichkeit gegenüber äusseren Einflüssen (Temperatur, Erschütterungen)
 
 ### Domain
