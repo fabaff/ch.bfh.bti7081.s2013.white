@@ -1,8 +1,6 @@
-Questions / Open issues / Decisions
-===================================
+# Questions / Open issues / Decisions
 
-General
--------
+## General
 - Preferred server platform (Apache HTTP Server, Microsoft IIS, Oracle GlassFish 
   Server, Apache Tomcat, Microsoft ASP.NET, ...)
 - Preferred client platform (HTML, HTML5, CSS, JavaScript)
@@ -12,8 +10,7 @@ General
 - Can the patient become an user? Access to view appointments or prescriptions?
 
 
-UI
---
+## UI
 - Are the user interfacing with standard desktop hardware? Mouse/Keyboard?
   Mobile devices? Keyboard-only?
 - Barrier-free access?
@@ -21,14 +18,12 @@ UI
 - One user at a time per machine or multiple users (Nurses)?
 
 
-Data protection
----------------
+## Data protection
 - Are there minimum requirement for the encryption? Strength?
 - Which user groups have access to confidential medical data?
 - Backup/Restore encryption and handling, retention time?
 
 
-Reporting
----------
+## Reporting
 - What information provides a report? Legal requirements?
 - Which format? CI rules? Layout?
