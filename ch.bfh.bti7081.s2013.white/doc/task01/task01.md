@@ -1,23 +1,19 @@
-Task 01
-=======
+# Task 01
 (see also the file "questions.md")
 
-Target users
-------------
-- Health staff (Doctors, Health visitors, nurses)
+## Target users
+- Health staff (doctors, health visitors, nurses)
 - Administration personnal (receptionists, medical record stuff (backoffice))
 
-Key features
-------------
+## Key features
 - Administration for patients personal data management
 - Administration for patients treatment data
 - Administration for patients appointments
-- Reports provided for management
+- Management reports 
 - Timeline of medical treatment and observation
 - Data protection (Data Protection Act, Mental Health Act) 
 
-Critical success factors
-------------------------
+## Critical success factors
 - all team members have a limited time budget -> efficient planning and
   organization is essential for success
 - Detailed requirement analysis -> identify the key features of the
@@ -27,10 +23,8 @@ Critical success factors
 - Successful Data protection with personal authentication via encrypted
   connection
 
-Potential system components and high-level architecture
--------------------------------------------------------
+## Potential system components and high-level architecture
 - 3 (or 4 with dedicated web server) layer web application (MVC)
 - Web interface running in the browser
 - Webserver and Application server
 - Database server
-
