@@ -1,8 +1,6 @@
-Case Study 01 Task 01
-=====================
+# Case Study 01 Task 01
 
-User requirements
------------------
+## User requirements
 - The PIP shall keep blood sugar level at a safe range
 - An alert the patient in case of any critical situations (suguar level too low, sugar level too high, device malfunction)
 
@@ -10,8 +8,7 @@ User requirements
 - Stability and reliability
 - Security
 
-System requirements
--------------------
+## System requirements
 The PIP is an embedded device with medical grade hardware and control softare.
 
 ### Functional
