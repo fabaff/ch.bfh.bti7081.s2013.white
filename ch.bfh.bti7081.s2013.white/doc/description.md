@@ -1,6 +1,4 @@
-Introduction to the MHC-PMS
-===========================
-
+# Introduction to the MHC-PMS
 A regional health authority wishes to procure an patient management system
 (PMS) to manage the care of patients suffering from mental health problems. 
 The overall goals of the system are:
