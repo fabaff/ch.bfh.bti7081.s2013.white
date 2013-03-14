@@ -2,8 +2,12 @@
 
 (all entries in backwards chronological order)
 
+## 3013-03-14
+- Reorganize git repo -> Tasks per Case Study
+
 ## 2013-03-12
 - User group selected: Doctors
+- Start with Task 3 from Case Study 1
 
 ## 2013-03-01
 - Moved open issues to questions.md
