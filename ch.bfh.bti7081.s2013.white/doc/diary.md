@@ -3,6 +3,9 @@
 (all entries in backwards chronological order)
 
 ## 2013-03-14
+- Some corrections in cs01 task02 and cs02 task01
+
+## 2013-03-14
 - Reorganize git repo -> Tasks per Case Study
 
 ## 2013-03-12
@@ -14,7 +17,7 @@
 - Summarized tasks (Task 01 and 02) for presenations 
 
 ## 2013-02-28
-- Patrick added some proposals about task 1 and task 2
+- Patrick added some proposals about task01 and task02
 
 ## 2013-02-26
 - New team member Alejandro added
