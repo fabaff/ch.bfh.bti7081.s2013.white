@@ -3,10 +3,11 @@
 (all entries in backwards chronological order)
 
 ## 2013-03-14
+- Reorganize git repo -> Tasks per Case Study
 - Some corrections in cs01 task02 and cs02 task01
 
-## 2013-03-14
-- Reorganize git repo -> Tasks per Case Study
+## 2013-03-13
+- interview with a doctor (inner medicine) from the "Inselspital"
 
 ## 2013-03-12
 - User group selected: Doctors
