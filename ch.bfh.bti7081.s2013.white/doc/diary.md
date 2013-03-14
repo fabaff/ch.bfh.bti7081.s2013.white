@@ -2,7 +2,7 @@
 
 (all entries in backwards chronological order)
 
-## 3013-03-14
+## 2013-03-14
 - Reorganize git repo -> Tasks per Case Study
 
 ## 2013-03-12
