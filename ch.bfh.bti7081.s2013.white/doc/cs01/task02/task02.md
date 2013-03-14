@@ -1,7 +1,10 @@
-# Task 02
+Task 02
+=======
 (see also the file "questions.md")
 
-## Plan-driven vs. agile process models
+Plan-driven vs. agile process models
+------------------------------------
+
 - There are not yet detailed requirements available -> detailed plans are not possible and useful at the moment.
 - It is a small developer team with 5 people -> focus on development and coding is better than a planning overkill.
 - The team members have a limited time budget -> flexibility and an efficient time management is important (agile).
@@ -9,7 +12,8 @@
 
 Overall, an agile SE process model is recommendable (with some plan-driven elements).
 
-## Agile Development: Extreme Programming vs. Scrum
+Agile Development: Extreme Programming vs. Scrum
+------------------------------------------------
 We have the choice between Extreme Programming and Scrum (both are agile process models).
 
 ### Extreme Programming:
@@ -25,7 +29,8 @@ We have the choice between Extreme Programming and Scrum (both are agile process
 
 Scrum is a good choice for our project.
 
-## Our process model
+Our process model
+-----------------
 Activities:
 - 1. Specification
 - 2. Design and development
@@ -34,22 +39,25 @@ Activities:
 
 ### 1. Specification
 - Requirements engineering process: The requirements of the system are collected.
-- The product backlog is created based on the requirements.
-- Decision about the used technologies.
+- The product backlog is created based on the user requirements.
+- The sprint backlog is created based on the system requirements.
 
 - Output: product backlog
 - Stakeholders: customer, developers, management
   
 ### 2. Design and development
+- Decision about the used technologies.
 - The outline planning and architectural design comes first (before the sprint cycles).
+- New and changed requirements are respected and the product/system backlog is updated during the sprint cycles.
 - The fine tuning design will be realized during a sprint cycle. 
 - All components of the system must have running unit tests at the end of a sprint cycle.
 
-- Output: source codes with comments, running unit tests, UML-diagramms, ...
+- Output: source codes with comments, running unit tests, UML-diagramms, system documentation, ...
 - Stakeholders: customer, developers
   
 ### 3. Validation
-- The implemented system is validated against the system requirements.
+- All components of the system must have running unit tests at the end of a sprint cycle.
+- The implemented system is validated against the system requirements after each sprint cycle.
 - Integration and acceptance test for the whole system when all sprint cycles have finished.
 
 - Output: results from integration and acceptance tests, final release of the system with integrated help
