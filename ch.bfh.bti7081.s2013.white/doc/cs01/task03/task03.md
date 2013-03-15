@@ -19,10 +19,10 @@ Task 03
 ### 4. Design
 User requirements:
 - show personal data of each patient
-- show, add or update diagnosis of a patient
-- drug management: point in time, frequency, dose
-- orders to other clinical staff
-- process and event handling of a patient
+- diagnosis of a patient: show, add, update, delete
+- drug management (point in time, frequency, dose): show, add, update, delete
+- orders to other clinical staff: show, add, update, delete
+- process and event handling of a patient: show, add, update, delete
 
 ### 5. Prototype
 
