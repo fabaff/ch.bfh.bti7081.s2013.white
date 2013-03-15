@@ -3,7 +3,6 @@ Task 03
 (see also the file "questions.md")
 
 ### 1. Scoping (Defining the problem) (Fabian)
-- focus to one mental health hospital (e.g. Waldau, Münsingen)
 - the target users are the doctors in a mental health hospial
 - application can be used on tablets and notebooks (a smartphones-app is not convenient for doctors)
 - focus on treatment related stuff and not medical administration
