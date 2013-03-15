@@ -17,10 +17,10 @@ Task 03
 - the application shows only the relevant patients from a specific doctor
 
 ### 4. Design
-Key features of the application:
+User requirements:
 - show personal data of each patient
 - show, add or update diagnosis of a patient
-- drug management
+- drug management: point in time, frequency, dose
 - orders to other clinical staff
 - process and event handling of a patient
 
