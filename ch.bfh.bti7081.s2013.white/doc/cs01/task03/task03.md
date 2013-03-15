@@ -6,7 +6,7 @@ Task 03
 - focus to one mental health hospital (e.g. Waldau, Münsingen)
 - the target users are the doctors in a mental health hospial
 - application can be used on tablets and notebooks (a smartphones-app is not convenient for doctors)
-- focus on treatment related stuff and not administration
+- focus on treatment related stuff and not medical administration
 - constrain the feature scope of the application to a few key features because of the short time horizon
 
 ### 2. Research
