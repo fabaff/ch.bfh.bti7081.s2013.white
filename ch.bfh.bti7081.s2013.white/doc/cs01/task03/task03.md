@@ -64,6 +64,7 @@ Functional:
 - Drug management (point in time, frequency, dose): show, add, update, delete
 - Orders to other clinical staff: show, add, update, delete
 - Process and event handling of a patient: show, add, update, delete
+
 Non-functional:
 - psychotherapists tablet
 - Berechtungungen psych
@@ -77,6 +78,7 @@ Non-functional:
 #### System requirements (high level)
 Functional:
 - The application shows only the relevant patients from a specific doctor
+
 Non-functional:
 - Datenschutz
 - Tablet application, which can also be used on desktop computers.
