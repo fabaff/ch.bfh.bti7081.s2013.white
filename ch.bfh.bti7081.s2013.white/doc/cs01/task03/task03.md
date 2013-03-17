@@ -89,7 +89,7 @@ Non-functional:
 ### 4. Design 
 (presentation: Marc)
 
-#### Story board
+#### Storyboard
 (see also separate pictures)
 
 - TO INSERT
@@ -104,19 +104,13 @@ Non-functional:
 
 ### 5. Prototype 
 (presentation: Patrick)
-(see also separate pictures)
 
-
-
-- briefly document the what and how of your prototype
+- The prototype is signed on several sketchboards (see separate pictures).
+- It shows the functionality described in the user requirements and the storyboard.
 
 ### 6. Validate 
 (presentation: Fabian)
 
-test your prototype with teammates, friends & family, or your teacher
-- first define your evaluation questions
-- then how you will find the answer
-and document the results
-
+- TO INSERT
 - Full validation by users is not possible at the moment because of the short time horizon. 
  
