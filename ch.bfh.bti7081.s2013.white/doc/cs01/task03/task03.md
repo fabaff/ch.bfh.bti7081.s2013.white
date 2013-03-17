@@ -53,8 +53,19 @@ How are consultations in the psychiatry organized?
 ### 3. Synthesize 
 (presentation: Arthur)
 
-- Persona (psychiatrist and clinical psychologist): see separate pictures
-- Use case diagram: see separate pictures
+#### Persona
+(see also separate pictures)
+
+psychiatrist: 
+- TO INSERT
+
+clinical psychologist:
+- TO INSERT
+
+#### Use case diagram
+(see also separate pictures)
+
+- TO INSERT
 
 #### User requirements (high level):
 Functional:
@@ -81,7 +92,9 @@ Non-functional:
 #### Story board
 (see also separate pictures)
 
-#### Some (Non-functional) System requirements 
+- TO INSERT
+
+#### Some (non-functional) system requirements 
 (in addition to user requirements, extensive system requirements are not yet possible at this point of the project)
 
 - An encrypted authentication is needed to enter the application.
@@ -91,8 +104,9 @@ Non-functional:
 
 ### 5. Prototype 
 (presentation: Patrick)
+(see also separate pictures)
 
-- Prototype: see separate pictures
+
 
 - briefly document the what and how of your prototype
 
