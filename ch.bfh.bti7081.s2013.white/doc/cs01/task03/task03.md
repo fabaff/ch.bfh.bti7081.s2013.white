@@ -57,13 +57,16 @@ How are consultations in the psychiatry organized?
 - Use case diagram: see separate pictures
 
 
-#### User requirements:
+#### User requirements (high level):
+Functional:
 - Show personal data of each patient
 - Diagnosis of a patient: show, add, update, delete
 - Drug management (point in time, frequency, dose): show, add, update, delete
 - Orders to other clinical staff: show, add, update, delete
 - Process and event handling of a patient: show, add, update, delete
-- Central data management
+Non-functional:
+- psychotherapists tablet
+- Authentific psych
 
 
 ### 4. Design 
@@ -71,19 +74,28 @@ How are consultations in the psychiatry organized?
 
 - Story board: see separate pictures
 
-#### System requirements
-- Datenschutz
+#### System requirements (high level)
+Functional:
 - The application shows only the relevant patients from a specific doctor
-Tablet application, which can also be used on desktop computers.
+Non-functional:
+- Datenschutz
+- Tablet application, which can also be used on desktop computers.
+- Central data management
+- Berechtigung psych med
 
 
 ### 5. Prototype 
 (presentation: Patrick)
 
-
+- briefly document the what and how of your prototype
 
 ### 6. Validate 
 (presentation: Fabian)
+
+test your prototype with teammates, friends & family, or your teacher
+- first define your evaluation questions
+- then how you will find the answer
+and document the results
 
 - Full validation is not possible at the moment because of the short time horizon. 
  

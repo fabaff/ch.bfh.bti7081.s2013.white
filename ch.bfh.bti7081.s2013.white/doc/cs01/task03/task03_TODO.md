@@ -4,7 +4,7 @@ Task 03 TODOs
 - use cases
 - storyboard
 - prototype
-- Persona
+- Persona (psychiatrist and clinical psychologist)
 - user requirements
 - system requirements
 - update documentation
