@@ -39,31 +39,38 @@ Communication between doctors and other hospital staff?
 - Diffrent person groups (doctors, nurses, administration) use different versions of the KIS (specifically tailored for their purposes).
 
 #### Some specific questions about psychiatry:
-Differentiation of psychiatrist and psychologist?
+Differentiation of psychiatrist and clinical psychologist?
 - both are psychotherapists
-- A psychiatrist is a doctor and can prescribe drugs.
-- In generall, a psychologist can't prescribe drugs, because he has no medical education.
+- A psychiatrist is a doctor, who is specialized in psychiatry and can prescribe drugs.
+- A clinical psychologist is a psychologist, who has a special education in psychotherapy, but can't prescribe drugs (in general).
 
 How are consultations in the psychiatry organized?
-- In general a psychotherapist has a fixed room and the consultations are carried out in this room.
+- In general, a psychotherapist has a fixed room and the consultations are carried out in this room.
 
 ### 3. Synthesize 
 (presentation: Arthur)
 
-- The application shows only the relevant patients from a specific doctor
-- User requirements
+- Persona: see separate pictures
+- Use case diagram: see separate pictures
 
-### 4. Design 
-(presentation: Marc)
 
-User requirements:
+#### User requirements:
 - Show personal data of each patient
 - Diagnosis of a patient: show, add, update, delete
 - Drug management (point in time, frequency, dose): show, add, update, delete
 - Orders to other clinical staff: show, add, update, delete
 - Process and event handling of a patient: show, add, update, delete
-
 - Central data management
+
+### 4. Design 
+(presentation: Marc)
+
+- Story board: see separate pictures
+
+#### System requirements
+- Datenschutz
+- The application shows only the relevant patients from a specific doctor
+Tablet application, which can also be used on desktop computers.
 
 ### 5. Prototype 
 (presentation: Patrick)
@@ -72,5 +79,5 @@ User requirements:
 ### 6. Validate 
 (presentation: Fabian)
 
-- System requirements
+- Full validation is not possible at the moment because of the short time horizon. 
  
