@@ -1,11 +1,13 @@
 Task 03 TODOs
 -------------
 
-- define use cases
+- use cases
 - storyboard
 - prototype
 - Persona
+- user requirements
+- system requirements
 - update documentation
-- prepare presentation:
+- prepare presentation
 
 

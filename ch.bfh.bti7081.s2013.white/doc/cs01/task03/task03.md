@@ -14,6 +14,7 @@ Task 03
 
 ### 3. Synthesize (Arthur)
 - the application shows only the relevant patients from a specific doctor
+- user requirements
 
 ### 4. Design (Marc)
 User requirements:
@@ -27,4 +28,5 @@ User requirements:
 
 
 ### 6. Validate (Fabian)
+- system requirements
  

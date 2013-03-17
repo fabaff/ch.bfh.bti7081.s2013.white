@@ -1,6 +1,6 @@
 # Documentation
 
-The git repository contains grouped by Case study all relevante details.
+The "doc"-folder in the git repository is grouped by case studies and shows all relevant details.
 
 ```bash
 .

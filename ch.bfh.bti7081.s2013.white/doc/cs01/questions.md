@@ -7,7 +7,7 @@
 - Database infrastructure (MySQL, PostgreSQL, Microsoft SQL Server, Oracle
   Database, ...)
 - Interfaces to other hospital resources (ERP, CRM, logistics)
-- Can the patient become an user? Access to view appointments or prescriptions?
+- Can the patient become a user? Access to view appointments or prescriptions?
 
 
 ## UI
