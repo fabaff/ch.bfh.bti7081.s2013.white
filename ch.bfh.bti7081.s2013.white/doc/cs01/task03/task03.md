@@ -53,20 +53,6 @@ How are consultations in the psychiatry organized?
 ### 3. Synthesize 
 (presentation: Arthur)
 
-#### Persona
-(see also separate pictures)
-
-psychiatrist: 
-- TO INSERT
-
-clinical psychologist:
-- TO INSERT
-
-#### Use case diagram
-(see also separate pictures)
-
-- TO INSERT
-
 #### User requirements (high level):
 Functional:
 - Show and search a specific patient.
@@ -86,27 +72,44 @@ Non-functional:
 - Data protection act must be considered.
 - The language of the application is german.
 
-### 4. Design 
-(presentation: Marc)
+#### Persona
+(see also separate pictures)
 
-#### Storyboard
+psychiatrist: 
+- TO INSERT
+
+clinical psychologist:
+- TO INSERT
+
+#### Use cases diagram
 (see also separate pictures)
 
 - TO INSERT
 
+
+### 4. Design 
+(presentation: Marc)
+
 #### Some (non-functional) system requirements 
-(in addition to user requirements, extensive system requirements are not yet possible at this point of the project)
+(in addition to user requirements; extensive system requirements are not yet possible at this point of the project)
 
 - An encrypted authentication is needed to enter the application.
 - The data of all patients are stored in a central database.
 - The database contains data of all patients and institutions who are using the application.
 - A special tool is rquired to continuous update the database with changed patient and institution data (not in scope of this project). This will be done by the administration staff of an institution. 
 
+#### Storyboard
+(see also separate pictures)
+
+- TO INSERT
+
+
 ### 5. Prototype 
 (presentation: Patrick)
 
 - The prototype is signed on several sketchboards (see separate pictures).
 - It shows the functionality described in the user requirements and the storyboard.
+
 
 ### 6. Validate 
 (presentation: Fabian)
