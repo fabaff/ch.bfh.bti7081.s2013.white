@@ -19,19 +19,19 @@ Task 03
 - Short demo of the "Krankenhausinformationssystem" (CGM Phoenix) from the "Inselspital".
 
 Some discussed questions:
-- What is the most important information about a patient from the doctors perspective?
--- personal data (name, age, gender, ...)
+What is the most important information about a patient from the doctors perspective?
+- personal data (name, age, gender, ...)
 
 
-- How are the appointments of a doctor fixed?
+How are the appointments of a doctor fixed?
 
-- Communication between doctors and nurses?
+Communication between doctors and nurses?
 
 Specific questions to psychiatry:
-- Differentiation of psychiatrist and psychologist?
-both are psychotherapists
+Differentiation of psychiatrist and psychologist?
+- both are psychotherapists
 
-- How are consultations in the psychiatry organized?
+How are consultations in the psychiatry organized?
 
 
 ### 3. Synthesize 
