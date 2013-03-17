@@ -18,9 +18,12 @@ Task 03
 - Interview with a doctor (inner medicine) from the "Inselspital".
 - Short demo of the "Krankenhausinformationssystem" (CGM Phoenix) from the "Inselspital".
 
-#### Some discussed questions:
+#### Some general questions:
 What is the most important information about a patient from the doctors perspective?
 - personal data (name, age, gender, ...)
+- diagnosis
+- drugs
+- treatment process (Behandlungsverlauf)
 
 
 How are the appointments of a doctor fixed?
