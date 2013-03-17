@@ -7,10 +7,10 @@ Task 03
 (presentation: Fabian)
 
 - Developing a patient management system of patients suffering from mental health problems. 
-- The target users are psychotherapists (doctors or psychologists) in mental health hospials or local practices.
+- The target users are psychotherapists (doctors or psychologists) in mental health hospitals or local practices.
 - The application can be used on tablets and notebooks (a smartphones-app is not convenient for psychotherapists needs).
 - Focus on treatment related functionality and not general medical administration.
-- Short time horizon: Constrain the feature scope of the application to a few key features.
+- Short time horizon: Constrains the feature scope of the application to a few key features.
 - The success can be measured by a closely interaction with the target users (demo and validation for each functionality of the software).
 
 
@@ -63,7 +63,7 @@ Functional:
 - Show personal data of a specific patient (name, birthday, gender, ...).
 - Diagnosis of a patient (name, ICD-code, description, comment, date): show, add, change, delete a diagnosis
 - Medication management (point in time, frequency, dose): show, add, change, delete a drug
-- Orders to other staff from the same institution (acceptor (Empfänger), description, date, remitter (Auftraggeber)): show, add, change, delete an order
+- Orders to other staff (acceptor (Empfänger), description, date, remitter (Auftraggeber), institution): show, add, change, delete an order
 - Process and event handling of a patient (event, comment, date, responsible person, institution): show, add, change, delete an event
 
 Non-functional:
