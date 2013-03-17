@@ -66,7 +66,7 @@ Functional:
 - Process and event handling of a patient: show, add, update, delete
 Non-functional:
 - psychotherapists tablet
-- Authentific psych
+- Berechtungungen psych
 
 
 ### 4. Design 
