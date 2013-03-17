@@ -7,7 +7,7 @@ Task 03
 (presentation: Fabian)
 
 - Developing a patient management system of patients suffering from mental health problems. 
-- The target users are psychotherapists (doctors and psychologists) in clinics (mental health hospials and local medical practices).
+- The target users are psychotherapists (doctors or psychologists) in clinics (mental health hospials or local medical practices).
 - The application can be used on tablets and notebooks (a smartphones-app is not convenient for psychotherapists needs).
 - Focus on treatment related functionality and not general medical administration.
 - Short time horizon: Constrain the feature scope of the application to a few key features.
@@ -37,7 +37,7 @@ How are the appointments of a doctor fixed?
 - The appointment time often changes in short term.
 
 Communication between doctors and other hospital staff?
-- A doctor have the possibility to give orders (Aufträge) to the other hospital staff (doctors, nurses, administration) via the KIS.
+- A doctor have the possibility to give orders (Aufträge) to the other hospital staff (nurses, administration) via the KIS.
 - Diffrent person groups (doctors, nurses, administration) use different versions of the KIS (specifically tailored for their purposes).
 
 #### Some specific questions about psychiatry:
@@ -61,16 +61,17 @@ Functional:
 - Show and search a specific patient.
 - Show the dossier of a specific patient (personal data, diagnosis, drugs, orders to other staff, process (Verlauf)).
 - Show personal data of a specific patient (name, birthday, gender, ...).
-- Diagnosis of a patient (name, ICD-code, description, comment, date): show, add, update, delete a diagnosis
-- Medication management (point in time, frequency, dose): show, add, update, delete a drug
-- Orders to other clinical staff (acceptor, description, date, remitter (Auftraggeber)): show, add, update, delete an order
-- Process and event handling of a patient (event, comment, date): show, add, update, delete an event
+- Diagnosis of a patient (name, ICD-code, description, comment, date): show, add, change, delete a diagnosis
+- Medication management (point in time, frequency, dose): show, add, change, delete a drug
+- Orders to other staff from the same institution (acceptor (Empfänger), description, date, remitter (Auftraggeber)): show, add, change, delete an order
+- Process and event handling of a patient (event, comment, date, responsible person, institution): show, add, change, delete an event
 
 Non-functional:
 - The application can be used on tablet during a consultation (main use).
 - The application can be used on desktop when a psychotherapist is doing office work.
 - Only a psychiatrist can do manipulations in medication management, a clinical psychologist has a read only access to the medication management functionality.
-- The psychotherapist has full access to the data of patients, who are treated by him and read only access to the other patients.
+- The psychotherapist has full access (change, delete) to the data of patients, who are treated by him and read only access to the other patients.
+- A psychotherapist can only change self created diagnosis entries, drug entries, order entries, process entries.
 
 ### 4. Design 
 (presentation: Marc)
@@ -79,12 +80,15 @@ Non-functional:
 
 #### System requirements (high level)
 Functional:
+- automatische events erstellen med, diagnose
+- Login, sperre
 The psychotherapist has full access to the data of patients, who are treated by him (exception: read only access to general data like name, birthday, gender,...).
 - Read only access to the other patients. 
 - The application shows only the relevant patients from a specific doctor
 
 Non-functional:
 - The data of all patients are stored in a central database.
+- ständige aktualisierung der DB (Administrations-Tool wird benötigt)
 
 - Datenschutz
 - Tablet application, which can also be used on desktop computers.
