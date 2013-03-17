@@ -13,7 +13,7 @@ Task 03
 ### 2. Research (presentation: Patrick)
 - Interview with a doctor (inner medicine) from the "Inselspital".
 - Short demo of the "Krankenhausinformationssystem" (CGM Phoenix) from the "Inselspital".
-- 
+
 
 ### 3. Synthesize (presentation: Arthur)
 - The application shows only the relevant patients from a specific doctor
