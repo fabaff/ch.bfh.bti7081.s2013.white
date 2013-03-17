@@ -18,7 +18,7 @@ Task 03
 - Interview with a doctor (inner medicine) from the "Inselspital".
 - Short demo of the "Krankenhausinformationssystem" (CGM Phoenix) from the "Inselspital".
 
-Some discussed questions:
+#### Some discussed questions:
 What is the most important information about a patient from the doctors perspective?
 - personal data (name, age, gender, ...)
 
@@ -27,7 +27,7 @@ How are the appointments of a doctor fixed?
 
 Communication between doctors and nurses?
 
-Specific questions to psychiatry:
+#### Specific questions to psychiatry:
 Differentiation of psychiatrist and psychologist?
 - both are psychotherapists
 
