@@ -86,6 +86,7 @@ Non-functional:
 
 - An encrypted authentication is needed to enter the application.
 - The data of all patients are stored in a central database.
+- The database contains data of all patients and institutions who are using the application.
 - A special tool is rquired to continuous update the database with changed patient and institution data (not in scope of this project). This will be done by the administration staff of an institution. 
 
 ### 5. Prototype 
