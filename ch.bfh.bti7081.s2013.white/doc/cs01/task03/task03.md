@@ -7,7 +7,7 @@ Task 03
 (presentation: Fabian)
 
 - Developing a patient management system of patients suffering from mental health problems. 
-- The target users are psychotherapists (doctors or psychologists) in clinics (mental health hospials or local medical practices).
+- The target users are psychotherapists (doctors or psychologists) in mental health hospials or local practices.
 - The application can be used on tablets and notebooks (a smartphones-app is not convenient for psychotherapists needs).
 - Focus on treatment related functionality and not general medical administration.
 - Short time horizon: Constrain the feature scope of the application to a few key features.
