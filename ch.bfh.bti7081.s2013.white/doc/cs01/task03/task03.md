@@ -7,7 +7,7 @@ Task 03
 (presentation: Fabian)
 
 - Developing a patient management system of patients suffering from mental health problems. 
-- The target users are psychotherapists (doctors or psychologists) in mental health hospitals or local practices.
+- The target users are psychotherapists (doctors or psychologists) in mental health hospitals or local practices (named as "institution" in this text).
 - The application can be used on tablets and notebooks (a smartphones-app is not convenient for psychotherapists needs).
 - Focus on treatment related functionality and not general medical administration.
 - Short time horizon: Constrains the feature scope of the application to a few key features.
@@ -61,10 +61,10 @@ Functional:
 - Show and search a specific patient.
 - Show the dossier of a specific patient (personal data, diagnosis, drugs, orders to other staff, process (Verlauf)).
 - Show personal data of a specific patient (name, birthday, gender, ...).
-- Diagnosis of a patient (name, ICD-code, description, comment, date): show, add, change, delete a diagnosis
-- Medication management (point in time, frequency, dose): show, add, change, delete a drug
-- Orders to other staff (acceptor (Empfänger), description, date, remitter (Auftraggeber), institution): show, add, change, delete an order
-- Process and event handling of a patient (event, comment, date, responsible person, institution): show, add, change, delete an event
+- Diagnosis of a patient (name, ICD-code, description, comment, date, responsible person, institution): show, search, add, change, delete a diagnosis
+- Medication management (point in time, frequency, dose, responsible person, institution): show, search, add, change, delete a drug
+- Orders to other staff (acceptor (Empfänger), description, date, remitter (Auftraggeber), institution): show, search, add, change, delete an order
+- Process and event handling of a patient (event, comment, date, responsible person, institution): show, search, add, change, delete an event
 
 Non-functional:
 - The application can be used on tablet during a consultation (main use).
@@ -73,30 +73,20 @@ Non-functional:
 - The psychotherapist has full access (change, delete) to the data of patients, who are treated by him and read only access to the other patients.
 - A psychotherapist can only change self created diagnosis entries, drug entries, order entries, process entries.
 - Data protection act must be considered.
+- The language of the application is german.
 
 ### 4. Design 
 (presentation: Marc)
 
-- Story board: see separate pictures
+#### Story board
+(see also separate pictures)
 
-#### System requirements (high level)
-Functional:
-- automatische events erstellen med, diagnose
-- Login, sperre
-The psychotherapist has full access to the data of patients, who are treated by him (exception: read only access to general data like name, birthday, gender,...).
-- Read only access to the other patients. 
-- The application shows only the relevant patients from a specific doctor
+#### Some (Non-functional) System requirements 
+(in addition to user requirements, extensive system requirements are not yet possible at this point of the project)
 
-Non-functional:
 - The data of all patients are stored in a central database.
-- ständige aktualisierung der DB (Administrations-Tool wird benötigt)
-
-- Datenschutz
-- Tablet application, which can also be used on desktop computers.
-- Central data management
-- Berechtigung psych med
-- A smartphone version of the application is possible in a later stage of the project (limited functionality).
-
+- A special tool is rquired to continuous update the database with changed patient and institution data (not in scope of this project). This will be done by the administration staff of an institution. 
+- An encrypted authentication is needed to enter the application.
 
 ### 5. Prototype 
 (presentation: Patrick)
@@ -113,5 +103,5 @@ test your prototype with teammates, friends & family, or your teacher
 - then how you will find the answer
 and document the results
 
-- Full validation is not possible at the moment because of the short time horizon. 
+- Full validation by users is not possible at the moment because of the short time horizon. 
  
