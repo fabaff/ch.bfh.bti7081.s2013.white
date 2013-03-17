@@ -60,7 +60,7 @@ How are consultations in the psychiatry organized?
 Functional:
 - Show and search a specific patient.
 - Show the dossier of a specific patient (personal data, diagnosis, drugs, orders to other staff, process (Verlauf)).
-- Show personal data of a specific patient (i.e. name, birthday, gender, ...).
+- Show personal data of a specific patient (name, birthday, gender, ...).
 - Diagnosis of a patient (name, ICD-code, description, comment, date): show, add, update, delete a diagnosis
 - Medication management (point in time, frequency, dose): show, add, update, delete a drug
 - Orders to other clinical staff (acceptor, description, date, remitter (Auftraggeber)): show, add, update, delete an order
