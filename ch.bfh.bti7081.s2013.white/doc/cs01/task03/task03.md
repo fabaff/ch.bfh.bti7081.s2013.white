@@ -72,6 +72,7 @@ Non-functional:
 - Only a psychiatrist can do manipulations in medication management, a clinical psychologist has a read only access to the medication management functionality.
 - The psychotherapist has full access (change, delete) to the data of patients, who are treated by him and read only access to the other patients.
 - A psychotherapist can only change self created diagnosis entries, drug entries, order entries, process entries.
+- Data protection act must be considered.
 
 ### 4. Design 
 (presentation: Marc)
