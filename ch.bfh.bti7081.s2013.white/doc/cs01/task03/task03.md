@@ -84,9 +84,9 @@ Non-functional:
 #### Some (Non-functional) System requirements 
 (in addition to user requirements, extensive system requirements are not yet possible at this point of the project)
 
+- An encrypted authentication is needed to enter the application.
 - The data of all patients are stored in a central database.
 - A special tool is rquired to continuous update the database with changed patient and institution data (not in scope of this project). This will be done by the administration staff of an institution. 
-- An encrypted authentication is needed to enter the application.
 
 ### 5. Prototype 
 (presentation: Patrick)
