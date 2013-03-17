@@ -23,7 +23,7 @@ Task 03
 
 #### Some general questions:
 Which is the most important part of the KIS from the doctors perspective?
-- Patient treatment (diagnosis, medication management, process (Verlauf)).
+- Patient treatment (diagnosis, medication management, orders to other staff, process (Verlauf)).
 
 What is the most important information about a patient from the doctors perspective?
 - Personal data (name, age, gender, ...)
@@ -53,22 +53,24 @@ How are consultations in the psychiatry organized?
 ### 3. Synthesize 
 (presentation: Arthur)
 
-- Persona: see separate pictures
+- Persona (psychiatrist and clinical psychologist): see separate pictures
 - Use case diagram: see separate pictures
-
 
 #### User requirements (high level):
 Functional:
-- Show personal data of each patient
-- Diagnosis of a patient: show, add, update, delete
-- Drug management (point in time, frequency, dose): show, add, update, delete
-- Orders to other clinical staff: show, add, update, delete
-- Process and event handling of a patient: show, add, update, delete
+- Show and search a specific patient.
+- Show the dossier of a specific patient (personal data, diagnosis, drugs, orders to other staff, process (Verlauf)).
+- Show personal data of a specific patient (i.e. name, birthday, gender, ...).
+- Diagnosis of a patient (name, ICD-code, description, comment, date): show, add, update, delete a diagnosis
+- Medication management (point in time, frequency, dose): show, add, update, delete a drug
+- Orders to other clinical staff (acceptor, description, date, remitter (Auftraggeber)): show, add, update, delete an order
+- Process and event handling of a patient (event, comment, date): show, add, update, delete an event
 
 Non-functional:
-- psychotherapists tablet
-- Berechtungungen psych
-
+- The application can be used on tablet during a consultation (main use).
+- The application can be used on desktop when a psychotherapist is doing office work.
+- Only a psychiatrist can do manipulations in medication management, a clinical psychologist has a read only access to the medication management functionality.
+- The psychotherapist has full access to the data of patients, who are treated by him and read only access to the other patients.
 
 ### 4. Design 
 (presentation: Marc)
@@ -77,17 +79,24 @@ Non-functional:
 
 #### System requirements (high level)
 Functional:
+The psychotherapist has full access to the data of patients, who are treated by him (exception: read only access to general data like name, birthday, gender,...).
+- Read only access to the other patients. 
 - The application shows only the relevant patients from a specific doctor
 
 Non-functional:
+- The data of all patients are stored in a central database.
+
 - Datenschutz
 - Tablet application, which can also be used on desktop computers.
 - Central data management
 - Berechtigung psych med
+- A smartphone version of the application is possible in a later stage of the project (limited functionality).
 
 
 ### 5. Prototype 
 (presentation: Patrick)
+
+- Prototype: see separate pictures
 
 - briefly document the what and how of your prototype
 
