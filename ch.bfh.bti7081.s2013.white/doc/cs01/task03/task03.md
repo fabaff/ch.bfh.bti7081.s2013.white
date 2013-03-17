@@ -2,6 +2,7 @@ Task 03
 =======
 (see also the file "questions.md")
 
+
 ### 1. Scoping (Defining the problem) 
 (presentation: Fabian)
 
@@ -11,6 +12,7 @@ Task 03
 - Focus on treatment related functionality and not general medical administration.
 - Short time horizon: Constrain the feature scope of the application to a few key features.
 - The success can be measured by a closely interaction with the target users (demo and validation for each functionality of the software).
+
 
 ### 2. Research 
 (presentation: Patrick)
@@ -47,6 +49,7 @@ Differentiation of psychiatrist and clinical psychologist?
 How are consultations in the psychiatry organized?
 - In general, a psychotherapist has a fixed room and the consultations are carried out in this room.
 
+
 ### 3. Synthesize 
 (presentation: Arthur)
 
@@ -62,6 +65,7 @@ How are consultations in the psychiatry organized?
 - Process and event handling of a patient: show, add, update, delete
 - Central data management
 
+
 ### 4. Design 
 (presentation: Marc)
 
@@ -72,8 +76,10 @@ How are consultations in the psychiatry organized?
 - The application shows only the relevant patients from a specific doctor
 Tablet application, which can also be used on desktop computers.
 
+
 ### 5. Prototype 
 (presentation: Patrick)
+
 
 
 ### 6. Validate 
