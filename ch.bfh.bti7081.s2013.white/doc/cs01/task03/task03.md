@@ -16,26 +16,36 @@ Task 03
 (presentation: Patrick)
 
 - Interview with a doctor (inner medicine) from the "Inselspital".
-- Short demo of the "Krankenhausinformationssystem" (CGM Phoenix) from the "Inselspital".
+- Short demo of the "Krankenhausinformationssystem" (KIS) (CGM Phoenix) from the "Inselspital".
+- A KIS is a highly complex system with a huge amount of functionality related to a hospital.
 
 #### Some general questions:
-What is the most important information about a patient from the doctors perspective?
-- personal data (name, age, gender, ...)
-- diagnosis
-- drugs
-- treatment process (Behandlungsverlauf)
+Which is the most important part of the KIS from the doctors perspective?
+- Patient treatment (diagnosis, medication management, process (Verlauf)).
 
+What is the most important information about a patient from the doctors perspective?
+- Personal data (name, age, gender, ...)
+- Diagnosis
+- Drugs
+- Treatment process
 
 How are the appointments of a doctor fixed?
+- The appointments are fixed outside the KIS.
+- Every doctor manges his own peripheral appointment plan.
+- The appointment time often changes in short term.
 
-Communication between doctors and nurses?
+Communication between doctors and other hospital staff?
+- A doctor have the possibility to give orders (Aufträge) to the other hospital staff (doctors, nurses, administration) via the KIS.
+- Diffrent person groups (doctors, nurses, administration) use different versions of the KIS (specifically tailored for their purposes).
 
-#### Specific questions to psychiatry:
+#### Some specific questions about psychiatry:
 Differentiation of psychiatrist and psychologist?
 - both are psychotherapists
+- A psychiatrist is a doctor and can prescribe drugs.
+- In generall, a psychologist can't prescribe drugs, because he has no medical education.
 
 How are consultations in the psychiatry organized?
-
+- In general a psychotherapist has a fixed room and the consultations are carried out in this room.
 
 ### 3. Synthesize 
 (presentation: Arthur)
