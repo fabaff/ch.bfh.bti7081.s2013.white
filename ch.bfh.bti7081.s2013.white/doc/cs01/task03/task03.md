@@ -2,31 +2,34 @@ Task 03
 =======
 (see also the file "questions.md")
 
-### 1. Scoping (Defining the problem) (Fabian)
-- the target users are the doctors in a mental health hospial
-- application can be used on tablets and notebooks (a smartphones-app is not convenient for doctors)
-- focus on treatment related stuff and not medical administration
-- constrain the feature scope of the application to a few key features because of the short time horizon
+### 1. Scoping (Defining the problem) (presentation: Fabian)
+- Developing a patient management system of patients suffering from mental health problems. 
+- The target users are psychotherapists (doctors and psychologists) in clinics (mental health hospials and local medical practices).
+- The application can be used on tablets and notebooks (a smartphones-app is not convenient for psychotherapists needs).
+- Focus on treatment related functionality and not general medical administration.
+- Short time horizon: Constrain the feature scope of the application to a few key features.
+- The success can be measured by a closely interaction with the target users (demo and validation for each functionality of the software).
 
-### 2. Research (Patrick)
-- interview with a doctor (inner medicine) from the "Inselspital"
-- short demo of the "Krankenhausinformationssystem" (CGM Phoenix) from the "Inselspital"
+### 2. Research (presentation: Patrick)
+- Interview with a doctor (inner medicine) from the "Inselspital".
+- Short demo of the "Krankenhausinformationssystem" (CGM Phoenix) from the "Inselspital".
+- 
 
-### 3. Synthesize (Arthur)
-- the application shows only the relevant patients from a specific doctor
-- user requirements
+### 3. Synthesize (presentation: Arthur)
+- The application shows only the relevant patients from a specific doctor
+- User requirements
 
-### 4. Design (Marc)
+### 4. Design (presentation: Marc)
 User requirements:
-- show personal data of each patient
-- diagnosis of a patient: show, add, update, delete
-- drug management (point in time, frequency, dose): show, add, update, delete
-- orders to other clinical staff: show, add, update, delete
-- process and event handling of a patient: show, add, update, delete
+- Show personal data of each patient
+- Diagnosis of a patient: show, add, update, delete
+- Drug management (point in time, frequency, dose): show, add, update, delete
+- Orders to other clinical staff: show, add, update, delete
+- Process and event handling of a patient: show, add, update, delete
 
-### 5. Prototype (Patrick)
+### 5. Prototype (presentation: Patrick)
 
 
-### 6. Validate (Fabian)
-- system requirements
+### 6. Validate (presentation: Fabian)
+- System requirements
  
