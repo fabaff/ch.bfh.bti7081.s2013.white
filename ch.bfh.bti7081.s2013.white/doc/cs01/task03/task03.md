@@ -78,10 +78,21 @@ Non-functional:
 (see also separate pictures)
 
 Psychiatrist: 
-- TO INSERT
+- Name and Title: Dr. med. Max Müller
+- Age: 45
+- Married
+- 2 children
+Max Müller has received his doctorate from the university of berne. He successfully completed his post doc in New York.
+He's been working as a psychiatrist in a large psychiatrie near berne for over 7 years. A year ago he became the assistant medical doctor.
+He often visits conferences and is a fan of new technologies. His hobbies include reading, biking, hiking, and his family.
 
 Clinical psychologist:
-- TO INSERT
+- Name and Title: ??  Selina Schmid
+- Age: 30
+- Single
+Selina Schmid has just received her master of science degree in psychology at the university of berne.
+She has just begun working at the same large psychiatrie nerar berne.
+Her hobbies include pc gaming and hiking.
 
 #### Use cases
 (see also separate pictures)
