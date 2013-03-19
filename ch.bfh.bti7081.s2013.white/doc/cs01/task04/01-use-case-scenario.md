@@ -1,6 +1,6 @@
 # Use Case Scenario
 
-* **N0. and name**            : ** **
+* **No. and name**            : **1**
 * **Scenario**                :
 * **Description**             :
 * **Engaged party**           :
