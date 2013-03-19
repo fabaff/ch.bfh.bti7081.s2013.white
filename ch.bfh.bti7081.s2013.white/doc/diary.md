@@ -2,6 +2,9 @@
 
 (all entries in backwards chronological order)
 
+## 2013-03-19
+- started working on task04
+
 ## 2013-03-18
 - working on task03
 
