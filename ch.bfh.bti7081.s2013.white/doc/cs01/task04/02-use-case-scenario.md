@@ -26,6 +26,8 @@
 | Nr.  | Who     | What |
 |:----:|:--------|:-----|
 | 2.1  |Nurse  |Patient record must have been created before  |
+| 3.1  |Therapist  |Wrong user selected   |
+| 3.2  |Therapist  |Click on back to return to search list   |
 | 8.1  |Therapist  |Optional: Select different doctor or hospital  |
 | 8.2    |Therapist  |Optional: Insert comments  |
 | 4    |  |  |
