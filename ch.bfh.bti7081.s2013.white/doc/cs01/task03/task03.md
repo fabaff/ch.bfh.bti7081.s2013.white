@@ -95,7 +95,7 @@ Her hobbies include pc gaming and hiking.
 
 #### Use case scenarios
 
-##### Insert event for a patient
+##### Insert event for current case 
 Number: 1<br>
 Description: Inserting new event for a patient<br>
 Actors: Therapist<br>

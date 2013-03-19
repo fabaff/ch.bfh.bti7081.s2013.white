@@ -3,6 +3,7 @@
 (all entries in backwards chronological order)
 
 ## 2013-03-19
+- presentation task03
 - started working on task04
 
 ## 2013-03-18
