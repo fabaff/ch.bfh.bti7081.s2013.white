@@ -1,7 +1,7 @@
 Use Cases
 =========
 
-### List of all known Use cases
+**List of all known Use cases**
 
 - read patient data
 - change patient data
