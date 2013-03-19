@@ -98,8 +98,7 @@ Selina Schmid has just received her master of science degree in psychology at th
 She has just begun working at the same large psychiatrie near berne.
 Her hobbies include pc gaming and hiking.
 
-#### Use cases
-(see also separate pictures)
+#### Use case scenarios
 
 ##### Insert comment to exisiting case
 
@@ -124,6 +123,8 @@ Her hobbies include pc gaming and hiking.
 8. Save
 9. Log Out
 
+#### Use case Diagram
+- UseCases.jpg
 
 ### 4. Design 
 (presentation: Marc)
