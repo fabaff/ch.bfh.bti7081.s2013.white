@@ -7,7 +7,7 @@
 * **Trigger / Pre condition** :
 * **Results / Post condition**:
 
-## Flow
+## Sequence
 
 | Nr.  | Who | What |
 |:----:|:--------|:------------|
@@ -18,7 +18,7 @@
 | 5    |        |       |
 | 6    |     |      |
 
-## Exception, variations
+## Exceptions, variations
 
 | Nr.  | Who | What |
 |:----:|:--------|:------------|
