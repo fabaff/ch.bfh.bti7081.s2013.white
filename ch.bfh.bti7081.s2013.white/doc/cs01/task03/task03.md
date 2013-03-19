@@ -78,7 +78,7 @@ Non-functional:
 #### Persona
 (see also separate pictures)
 
-Psychiatrist: 
+##### Psychiatrist: 
 - Name and Title: Dr. med. Max Müller
 - Age: 45
 - Married
@@ -88,13 +88,14 @@ Max Müller has received his doctorate from the university of berne. He successf
 He's been working as a psychiatrist in a large psychiatrie near berne for over 7 years. A year ago he became the assistant medical doctor.
 He often visits conferences and is a fan of new technologies. His hobbies include reading, biking, hiking, and his family.
 
-Clinical psychologist:
+##### Psychologist:
 - Name and Title:  Selina Schmid
 - Age: 30
 - Single
+- no children
 
 Selina Schmid has just received her master of science degree in psychology at the university of berne.
-She has just begun working at the same large psychiatrie nerar berne.
+She has just begun working at the same large psychiatrie near berne.
 Her hobbies include pc gaming and hiking.
 
 #### Use cases
