@@ -12,6 +12,14 @@
 
 
 ## Glossary
+- **Therapist**: Psychotherapists employ a range of techniques based on experiential relationship building, dialogue, communication and behavior change that are designed to improve the mental health of a client or patient, or to improve group relationships (such as in a family).
+- **Psychologist**: A psychologist evaluates, diagnoses, treats, and studies behavior and mental processes. Some psychologists, such as clinical and counseling psychologists, provide mental health care, and some psychologists, such as social or organizational psychologists conduct research, usually in university or other academic settings. A psychologist has a graduate degree (usually a PhD or MA).
+- **Psychiatrist**: A psychiatrist is a physician who specializes in psychiatry. Psychiatrists are authorized to prescribe medicine, conduct physical examinations, order and interpret laboratory tests, and may order brain imaging studies such as computed tomography (CT/CAT Scan), magnetic resonance imaging (MRI), and positron emission tomography (PET) scanning. A psychiatrist has an MD.
+- **Diagnosis**: Medical diagnosis refers both to the process of attempting to determine or identify a possible disease or disorder (and diagnosis in this sense can also be termed (medical) diagnostic procedure), and to the opinion reached by this process (also being termed (medical) diagnostic opinion). From the point of view of statistics the diagnostic procedure involves classification tests. It is a major component of, for example, the procedure of a doctor's visit.
+- **Drugs**: A drug is a substance which may have medicinal, intoxicating, performance enhancing or other effects when taken or put into a human body or the body of another animal and is not considered a food or exclusively a food.
+- **History**: In this context, history means the complete list of past events all around the patient. For example, this includes treatment, drug prescriptions, orders given to nursing staff and so on.
+- **Patient**: A patient is any recipient of health care services. The patient is in need of treatment by a health care provider. In this case, this provider is a therapist.
+- **Order**: In this context, an order means an assignment from a therapist to nursing staff, administration staff or any other person, which is involved in the treatment and administrative process of the patient.
 
 ## User requirements definition 
 
