@@ -1,5 +1,4 @@
-Use Cases
-=========
+#Use Cases
 
 **List of all known Use cases**
 
