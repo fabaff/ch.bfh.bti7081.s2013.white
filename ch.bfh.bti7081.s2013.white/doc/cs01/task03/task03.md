@@ -98,8 +98,7 @@ Selina Schmid has just received her master of science degree in psychology at th
 She has just begun working at the same large psychiatrie near berne.
 Her hobbies include pc gaming and hiking.
 
-#### Use cases
-(see also separate pictures)
+#### Use case scenarios
 
 ##### Insert comment to exisiting case
 Number: 1<br>
@@ -134,6 +133,8 @@ Post Condition: A new and open case must be logged for the patient<br>
 8. Save
 9. Log Out
 
+#### Use case Diagram
+- UseCases.jpg
 
 ### 4. Design 
 (presentation: Marc)
@@ -144,19 +145,19 @@ Post Condition: A new and open case must be logged for the patient<br>
 - An encrypted authentication is needed to enter the application.
 - The data of all patients are stored in a central database.
 - The database contains data of all patients and institutions who are using the application.
-- A special tool is rquired to continuous update the database with changed patient and institution data (not in scope of this project). This will be done by the administration staff of an institution. 
+- A special tool is required to continuous update the database with changed patient and institution data (not in scope of this project). This will be done by the administration staff of an institution. 
 - Medical catalogs (diagnosis, treatment, drugs) are integrated into the database and can be used in the application.
 - Data protection act must be considered when the patient data will be stored in a central database.
 
 #### Storyboard
-(see also separate pictures)
 
 - Therapist and patient meat
 - Therapist informs himself about the patients history
 - The patient tells the therapist about his condition
-- The therapist informs himself by using the ICD10 (references) 
+- The therapist informs himself by using the ICD10 (references) (optionally)
 - Therapist creates a diagnosis
-- Therapist prescribes medicine
+- Therapist prescribes medicine (optionally) (only psychiatrist, not psychologist)
+- Therapist passes an order (optionally)
 - The patient leaves
 
 
