@@ -16,15 +16,17 @@
 | 3    |Therapist  |Select patient from list  |
 | 4    |Therapist  |Open medical record of patient  |
 | 5    |Therapist  |Click on add new record  |
-| 6    |Therapist  |  |
+| 6    |Therapist  |Add a name for the record  |
+| 7    |Therapist  |Insert a description  |
+| 8    |Therapist  |Save the new record to the medical record database  |
 
 ## Exceptions, variations
 
 | Nr.  | Who     | What |
 |:----:|:--------|:-----|
-| 1    |  |  |
-| 2    |  |  |
-| 3    |  |  |
+| 1.1  |Nurse  |Patient record must have been created before  |
+| 7.1  |Therapist  |Optional: Select different doctor or hospital  |
+| 7.2    |Therapist  |Optional: Insert comments  |
 | 4    |  |  |
 | 5    |  |  |
 | 6    |  |  |
