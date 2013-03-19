@@ -152,7 +152,13 @@ Post Condition: A new and open case must be logged for the patient<br>
 #### Storyboard
 (see also separate pictures)
 
-- TO INSERT
+- Therapist and patient meat
+- Therapist informs himself about the patients history
+- The patient tells the therapist about his condition
+- The therapist informs himself by using the ICD10 (references) 
+- Therapist creates a diagnosis
+- Therapist prescribes medicine
+- The patient leaves
 
 
 ### 5. Prototype 
