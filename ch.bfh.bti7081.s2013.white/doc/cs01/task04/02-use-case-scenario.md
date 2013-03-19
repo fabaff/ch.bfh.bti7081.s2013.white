@@ -1,11 +1,11 @@
 # Use Case Scenario
 
-* **No. and name**            : **2** New case
+* **No. and name**            : **2** New diagnosis
 * **Scenario**                : Create a new diagnosis for an existing user
-* **Description**             : An existing patient visits a doctor with a new problem, so he has to open a new case
+* **Description**             : An existing patient visits a doctor with a new problem, so he has to open a new case/diagnosis
 * **Engaged party**           : Therapist
 * **Trigger / Pre condition** : A patient comes with a new problem, patient must exist in database
-* **Results / Post condition**: The new case is logged in the patient medical record database
+* **Results / Post condition**: The new diagnosis is logged in the patient medical record database
 
 ## Sequence
 
@@ -29,7 +29,7 @@
 | 3.1  |Therapist  |Wrong user selected   |
 | 3.2  |Therapist  |Click on back to return to search list   |
 | 8.1  |Therapist  |Optional: Select different doctor or hospital  |
-| 8.2    |Therapist  |Optional: Insert comments  |
+| 8.2  |Therapist  |Optional: Insert comments  |
 | 4    |  |  |
 | 5    |  |  |
 | 6    |  |  |
