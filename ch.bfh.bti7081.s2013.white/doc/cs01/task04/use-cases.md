@@ -12,5 +12,5 @@
 - (8) change orders
 - (9) read medication
 - (10) change medication
-- (10) read ICD 10 (diagnosis database)
-- read DRUGS2000 (drugs database)
+- (11) read ICD 10 (diagnosis database)
+- (12) read DRUGS2000 (drugs database)

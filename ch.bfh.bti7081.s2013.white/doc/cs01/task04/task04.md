@@ -33,8 +33,7 @@
 
 ### Functional system requirements
 
-verschlüsselungsprotokoll 
-
+- verschlüsselungsprotokoll angeben
 - Show and search a specific patient (status, name, psychotherapist (current), institution).
 - Show the dossier of a specific patient (personal data, diagnosis, drugs, orders to other staff, process (Verlauf)).
 - Show personal data of a specific patient (name, birthday, gender, ...).
