@@ -1,7 +1,7 @@
 # Use Case Scenario
 
 * **No. and name**            : **2** New case
-* **Scenario**                : Create a new case for an existing user
+* **Scenario**                : Create a new diagnosis for an existing user
 * **Description**             : An existing patient visits a doctor with a new problem, so he has to open a new case
 * **Engaged party**           : Therapist
 * **Trigger / Pre condition** : A patient comes with a new problem, patient must exist in database
