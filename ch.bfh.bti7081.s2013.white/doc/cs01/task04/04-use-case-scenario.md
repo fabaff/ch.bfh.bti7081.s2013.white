@@ -12,13 +12,14 @@
 | Nr.  | Who     | What |
 |:----:|:--------|:-----|
 | 1    |Psychiatrist  |Login with personal username and password  |
-| 2    |Psychiatrist  |Search for the patient  |
-| 3    |Psychiatrist  |Select patient from list  |
+| 2    |Psychiatrist  |Search for the patient, by name, address or from list |
+| 3    |Psychiatrist  |Select patient from search list  |
 | 4    |Psychiatrist  |Open medical history of patient  |
 | 3    |Psychiatrist  |Select medication  |
 | 4    |Psychiatrist  |Search for affected perscription  |
 | 5    |Psychiatrist  |Deactivate perscription  |
 | 6    |Psychiatrist  |Create new perscription  |
+| 7    |Psychiatrist  |Search for drug in drug-database, by name or ingredients   |
 | 7    |Psychiatrist  |Select drug from drug-database  |
 | 8    |Psychiatrist  |Define dosage and frequency   |
 | 9    |Psychiatrist  |Save   |
