@@ -145,12 +145,11 @@ Post Condition: A new and open case must be logged for the patient<br>
 - An encrypted authentication is needed to enter the application.
 - The data of all patients are stored in a central database.
 - The database contains data of all patients and institutions who are using the application.
-- A special tool is rquired to continuous update the database with changed patient and institution data (not in scope of this project). This will be done by the administration staff of an institution. 
+- A special tool is required to continuous update the database with changed patient and institution data (not in scope of this project). This will be done by the administration staff of an institution. 
 - Medical catalogs (diagnosis, treatment, drugs) are integrated into the database and can be used in the application.
 - Data protection act must be considered when the patient data will be stored in a central database.
 
 #### Storyboard
-(see also separate pictures)
 
 - Therapist and patient meat
 - Therapist informs himself about the patients history
