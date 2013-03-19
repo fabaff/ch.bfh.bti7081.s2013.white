@@ -4,12 +4,6 @@ The "doc"-folder in the git repository is grouped by case studies and shows all 
 
 ```bash
 .
-# Documentation
-
-The "doc"-folder in the git repository is grouped by case studies and shows all relevant details.
-
-```bash
-.
 ├── cs01                -- Case study 1 (MHC-PMS)
 │   ├── description.md  -- Description of the Case study
 │   ├── questions.md    -- Questions / Open issues / Decisions
@@ -20,7 +14,5 @@ The "doc"-folder in the git repository is grouped by case studies and shows all 
 │   └── task01.md       -- Task 1
 ├── diary.md            -- Journal
 └── README.md           -- This file 
-
-```
 
 ```
