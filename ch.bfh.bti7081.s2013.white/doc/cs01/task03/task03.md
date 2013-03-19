@@ -102,6 +102,11 @@ Her hobbies include pc gaming and hiking.
 (see also separate pictures)
 
 ##### Insert comment to exisiting case
+Number: 1<br>
+Description: Inserting new comment to a existing case<br>
+Actors: Therapist<br>
+Pre Condition: A open case must be logged for the patient<br>
+Post Condition: New comment visible in open case<br>
 
 1. Log in with own user account and password
 2. Select patient
@@ -113,6 +118,11 @@ Her hobbies include pc gaming and hiking.
 8. Log Out
 
 ##### Open new case
+Number: 2<br>
+Description: Opening a new case for an existing patient<br>
+Actors: Therapist<br>
+Pre Condition: Patient must exist in database<br>
+Post Condition: A new and open case must be logged for the patient<br>
 
 1. Log in with personal user account and password
 2. Select patient
