@@ -4,7 +4,6 @@ Task 03
 
 
 ### 1. Scoping (Defining the problem) 
-(presentation: Fabian)
 
 - Developing a patient management system of patients suffering from mental health problems. 
 - The target users are psychotherapists (doctors or psychologists) in mental health hospitals or local practices (named as "institution" in this text).
@@ -13,9 +12,7 @@ Task 03
 - Short time horizon: Constrains the feature scope of the application to a few key features.
 - The success can be measured by a closely interaction with the target users (demo and validation for each functionality of the software).
 
-
 ### 2. Research 
-(presentation: Patrick)
 
 - Interview with a doctor (inner medicine) from the "Inselspital".
 - Short demo of the "Krankenhausinformationssystem" (KIS) (CGM Phoenix) from the "Inselspital".
@@ -51,7 +48,6 @@ How are consultations in the psychiatry organized?
 
 
 ### 3. Synthesize 
-(presentation: Arthur)
 
 #### User requirements
 Functional:
@@ -76,7 +72,6 @@ Non-functional:
 - The language of the application is german.
 
 #### Persona
-(see also separate pictures)
 
 ##### Psychiatrist: 
 - Name and Title: Dr. med. Max Müller
@@ -84,8 +79,8 @@ Non-functional:
 - Married
 - 2 children
 
-Max Müller has received his doctorate from the university of berne. He successfully completed his post doc in New York.
-He's been working as a psychiatrist in a large psychiatrie near berne for over 7 years. A year ago he became the assistant medical doctor.
+Max Müller has received his doctorate from the University of Berne. He successfully completed his post doc in New York.
+He's been working as a psychiatrist in a large psychiatrie near Berne for over 7 years. A year ago he became the assistant medical doctor.
 He often visits conferences and is a fan of new technologies. His hobbies include reading, biking, hiking, and his family.
 
 ##### Psychologist:
@@ -94,8 +89,8 @@ He often visits conferences and is a fan of new technologies. His hobbies includ
 - Single
 - no children
 
-Selina Schmid has just received her master of science degree in psychology at the university of berne.
-She has just begun working at the same large psychiatrie near berne.
+Selina Schmid has just received her master of science degree in psychology at the University of Berne.
+She has just begun working at the same large psychiatrie near Berne.
 Her hobbies include pc gaming and hiking.
 
 #### Use case scenarios
@@ -134,10 +129,9 @@ Post Condition: A new and open case must be logged for the patient<br>
 9. Log Out
 
 #### Use case Diagram
-- UseCases.jpg
+Please check [Use Cases](https://github.com/fabaff/ch.bfh.bti7081.s2013.white/blob/master/ch.bfh.bti7081.s2013.white/doc/cs01/task03/03-synthesize/use-cases.jpg).
 
-### 4. Design 
-(presentation: Marc)
+### 4. Design
 
 #### Some (non-functional) system requirements 
 (in addition to user requirements; extensive system requirements are not yet possible at this point of the project)
@@ -162,7 +156,6 @@ Post Condition: A new and open case must be logged for the patient<br>
 
 
 ### 5. Prototype 
-(presentation: Patrick)
 
 - The prototype is signed on several sketchboards (see separate pictures)
 - It shows the functionality described in the user requirements and the storyboard.
