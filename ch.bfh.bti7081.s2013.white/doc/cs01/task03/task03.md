@@ -123,8 +123,18 @@ Her hobbies include pc gaming and hiking.
 ### 5. Prototype 
 (presentation: Patrick)
 
-- The prototype is signed on several sketchboards (see separate pictures).
+- The prototype is signed on several sketchboards (see separate pictures)
 - It shows the functionality described in the user requirements and the storyboard.
+- Files:
+- Prototype_Home.jpg
+- Prototype_Patient.jpg
+- Prototype_Diagnose.jpg
+- Prototype_Diagnose_bearbeiten.jpg
+- Prototype_Medikamente.jpg
+- Prototype_Medikamente_bearbeiten.jpg
+- Prototype_Kataloge.jpg
+- Prototype_Verlauf.jpg
+- Prototype_Auftraege.jpg
 
 
 ### 6. Validate 
