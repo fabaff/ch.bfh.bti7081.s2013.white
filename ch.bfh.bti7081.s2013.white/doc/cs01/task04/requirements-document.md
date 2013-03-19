@@ -25,7 +25,6 @@ Major and minor releases of this document are tagged by [git][1].
 | 0.1     | Fabian Affolter | Release after first day. Content added         |
 
 ## Introduction 
-# Introduction to the MHC-PMS
 Your regional health authority wishes to introduce a patient management system
 (PMS) to manage the care of patients suffering from mental health problems. 
 The overall goals of the system will be:
@@ -81,6 +80,7 @@ in the system.
 - **History**: In this context, history means the complete list of past events all around the patient. For example, this includes treatment, drug prescriptions, orders given to nursing staff and so on.
 - **Patient**: A patient is any recipient of health care services. The patient is in need of treatment by a health care provider. In this case, this provider is a therapist.
 - **Order**: In this context, an order means an assignment from a therapist to nursing staff, administration staff or any other person, which is involved in the treatment and administrative process of the patient.
+- **PMS**: *p*atient *m*anagement *s*ystem
 
 ## User requirements definition 
 
