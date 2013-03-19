@@ -13,7 +13,6 @@ in the [git][1] repository. Or the command mentioned below:
 
 ```bash
 $ git log
-
 ``` 
 
 ### Document releases
