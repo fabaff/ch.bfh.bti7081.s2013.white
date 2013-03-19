@@ -24,7 +24,7 @@
 
 | Nr.  | Who     | What |
 |:----:|:--------|:-----|
-| 1.1  |Nurse  |Patient record must have been created before  |
+| 2.1  |Nurse  |Patient record must have been created before  |
 | 7.1  |Therapist  |Optional: Select different doctor or hospital  |
 | 7.2    |Therapist  |Optional: Insert comments  |
 | 4    |  |  |
