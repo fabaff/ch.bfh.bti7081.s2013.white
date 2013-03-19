@@ -1,15 +1,16 @@
 Task 03 TODOs
 -------------
 
-- Use cases
-- Persona (psychiatrist and clinical psychologist)
-- Storyboard
+- Use cases												OK
+- Persona (psychiatrist and clinical psychologist)		OK
+- Storyboard											OK
 - User requirements										OK
 - System requirements									OK
-- Prototype
+- Prototype												OK
 
-- Update documentation
-	- Use cases, Persona (psychiatrist, psychologist), Storyboard
+- Update documentation									OK
+	- Use cases, Persona (psychiatrist, psychologist),
+	  Storyboard
 	- Validation
 - Prepare presentation
 

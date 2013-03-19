@@ -64,6 +64,8 @@ Functional:
 - Process and event handling of a patient (event, comment, date, responsible person, institution): show, search, add, change, delete an event
 - Filter function: own patients, institution patients, all patients.
 - Sort patients, diagnosis, drugs, processes and orders by different attributes.
+- Diagnosis catalog (ICD-10): search and show a diagnosis.
+- Drugs catalog: search and show a drug.
 
 Non-functional:
 - The application can be used on tablet during a consultation (main use).
@@ -127,6 +129,7 @@ Her hobbies include pc gaming and hiking.
 
 ### 6. Validate 
 
-- TO INSERT
+- Functionality added to prototype during the validation: diagnosis catalog (ICD-10) and drugs catalog.
+- Finally the prototype covers the main functionality used by a psychotherapist in his daily work with patients.
 - Full validation by users is not possible at the moment because of the short time horizon. 
  
