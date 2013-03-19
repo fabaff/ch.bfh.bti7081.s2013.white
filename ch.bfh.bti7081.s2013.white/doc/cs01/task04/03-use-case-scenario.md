@@ -1,11 +1,11 @@
 # Use Case Scenario
 
-* **No. and name**            : **3** Edit record
+* **No. and name**            : **3** Edit diagnosis
 * **Scenario**                : Edit an existing diagnosis for a patient
 * **Description**             : There are new informations concering the medical situation of the patient which must be added to the diagnosis
 * **Engaged party**           : Therapist
 * **Trigger / Pre condition** : The patient must already have an existing record, the patient must exist in the database
-* **Results / Post condition**: The patient record now has the newest information
+* **Results / Post condition**: The patients record now has the newest information
 
 ## Sequence
 
