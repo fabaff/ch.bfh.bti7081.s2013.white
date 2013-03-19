@@ -159,16 +159,17 @@ Please check [Use Cases](https://github.com/fabaff/ch.bfh.bti7081.s2013.white/bl
 
 - The prototype is signed on several sketchboards (see separate pictures)
 - It shows the functionality described in the user requirements and the storyboard.
-- Files:
-- Prototype_Home.jpg
-- Prototype_Patient.jpg
-- Prototype_Diagnose.jpg
-- Prototype_Diagnose_bearbeiten.jpg
-- Prototype_Medikamente.jpg
-- Prototype_Medikamente_bearbeiten.jpg
-- Prototype_Kataloge.jpg
-- Prototype_Verlauf.jpg
-- Prototype_Auftraege.jpg
+
+***Files***:
+- [Home](https://github.com/fabaff/ch.bfh.bti7081.s2013.white/blob/master/ch.bfh.bti7081.s2013.white/doc/cs01/task03/05-prototype/02-second-idea/01_Prototype_Home.jpg)
+- [Patient](https://github.com/fabaff/ch.bfh.bti7081.s2013.white/blob/master/ch.bfh.bti7081.s2013.white/doc/cs01/task03/05-prototype/02-second-idea/02_Prototype_Patient.jpg)
+- [Diagnose](https://github.com/fabaff/ch.bfh.bti7081.s2013.white/blob/master/ch.bfh.bti7081.s2013.white/doc/cs01/task03/05-prototype/02-second-idea/03_Prototype_Diagnosen.jpg)
+- [Diagnose bearbeiten](https://github.com/fabaff/ch.bfh.bti7081.s2013.white/blob/master/ch.bfh.bti7081.s2013.white/doc/cs01/task03/05-prototype/02-second-idea/04_Prototype_Diagnosen_bearbeiten.jpg)
+- [Medikamente](https://github.com/fabaff/ch.bfh.bti7081.s2013.white/blob/master/ch.bfh.bti7081.s2013.white/doc/cs01/task03/05-prototype/02-second-idea/05_Prototype_Medikamente.jpg)
+- [Medikamente bearbeiten](https://github.com/fabaff/ch.bfh.bti7081.s2013.white/blob/master/ch.bfh.bti7081.s2013.white/doc/cs01/task03/05-prototype/02-second-idea/06_Prototype_Medikamente_bearbeiten.jpg)
+- [Kataloge](https://github.com/fabaff/ch.bfh.bti7081.s2013.white/blob/master/ch.bfh.bti7081.s2013.white/doc/cs01/task03/05-prototype/02-second-idea/07_Prototype_Kataloge.jpg)
+- [Verlauf](https://github.com/fabaff/ch.bfh.bti7081.s2013.white/blob/master/ch.bfh.bti7081.s2013.white/doc/cs01/task03/05-prototype/02-second-idea/08_Prototype_Verlauf.jpg)
+- [Auftraege](https://github.com/fabaff/ch.bfh.bti7081.s2013.white/blob/master/ch.bfh.bti7081.s2013.white/doc/cs01/task03/05-prototype/02-second-idea/09_Prototype_Auftraege.jpg)
 
 
 ### 6. Validate 
