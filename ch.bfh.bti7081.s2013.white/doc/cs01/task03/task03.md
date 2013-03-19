@@ -100,7 +100,28 @@ Her hobbies include pc gaming and hiking.
 #### Use cases
 (see also separate pictures)
 
-- TO INSERT
+##### Insert comment to exisiting case
+
+1. Log in with own user account and password
+2. Select patient
+3. Select history
+4. Select existing case
+5. Click on the  plus (+) sign
+6. Insert Text
+7. Save
+8. Log Out
+
+##### Open new case
+
+1. Log in with personal user account and password
+2. Select patient
+3. Click on the plus (+) sign
+4. Add name (Diagnose) for new case
+5. Insert description
+6. Optional: Insert comment
+7. Optional: Select different doctor or clinic
+8. Save
+9. Log Out
 
 
 ### 4. Design 
