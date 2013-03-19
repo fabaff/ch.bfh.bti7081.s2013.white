@@ -102,7 +102,7 @@ Her hobbies include pc gaming and hiking.
 (see also separate pictures)
 
 ##### Insert comment to exisiting case
-Number: 1
+Number: 1<br>
 Description: Inserting new comment to a existing case
 Actors: Therapist
 Pre Condition: A open case must be logged for the patient
