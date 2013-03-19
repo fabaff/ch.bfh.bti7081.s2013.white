@@ -2,9 +2,27 @@
 
 
 ## Preface 
+## Target audience
+This document was written to describe the requirements for the MHC-PMS (MHC patient management system) in details. It includes every aspect of the system and focuses on the technical side. The reader should have a basis understanding of the healthcare section and information technology. 
 
+## Document history
 
+For details about the evolution of this document please check the 
+[commit history](https://github.com/fabaff/ch.bfh.bti7081.s2013.white/commits/master/ch.bfh.bti7081.s2013.white/doc/cs01/task04/requirements-document.md)
+in the [git][1] repository. Or the command mentioned below:
 
+```bash
+$ git log
+``` 
+
+## Document releases
+
+Major and minor releases of this document are tagged by [git][1].
+
+| Release  | Who             | Summary of changes                             |
+|:--------:|:----------------|:-----------------------------------------------|
+| 0        | Fabian Affolter | Creation of the document (not tagged)          |
+| 0.1      | Fabian Affolter | Release after first day. Content added         |
 
 ## Introduction 
 
@@ -52,3 +70,6 @@ For testing purposes a dummy database is needed. This means that a patient under
 
 ## Index 
 
+
+
+[1]: http://git-scm.com/ "Git"
