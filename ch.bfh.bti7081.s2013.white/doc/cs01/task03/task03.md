@@ -101,6 +101,11 @@ Her hobbies include pc gaming and hiking.
 #### Use case scenarios
 
 ##### Insert comment to exisiting case
+Number: 1<br>
+Description: Inserting new comment to a existing case
+Actors: Therapist
+Pre Condition: A open case must be logged for the patient
+Post Condition: New comment visible in open case
 
 1. Log in with own user account and password
 2. Select patient
