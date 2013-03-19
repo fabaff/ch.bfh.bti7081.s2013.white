@@ -16,17 +16,19 @@
 | 3    |Psychiatrist  |Select patient from list  |
 | 4    |Psychiatrist  |Open medical history of patient  |
 | 3    |Psychiatrist  |Select medication  |
-| 4    |Psychiatrist  |Search for affected perscrption  |
-| 5    |Psychiatrist  |Deaktivate perscription  |
+| 4    |Psychiatrist  |Search for affected perscription  |
+| 5    |Psychiatrist  |Deactivate perscription  |
 | 6    |Psychiatrist  |Create new perscription  |
-| 7    |Psychiatrist  |Select medication form drug-database  |
-| 8    |Psychiatrist  |
+| 7    |Psychiatrist  |Select drug from drug-database  |
+| 8    |Psychiatrist  |Define dosage and frequency   |
+| 9    |Psychiatrist  |Save   |
+| 10   |Psychiatrist  |Log Out   |
 
 ## Exceptions, variations
 
 | Nr.  | Who     | What |
 |:----:|:--------|:-----|
-| 1    |  |  |
+| 5.1    |Psychiatrist  |Add reason for deaktivation  |
 | 2    |  |  |
 | 3    |  |  |
 | 4    |  |  |
