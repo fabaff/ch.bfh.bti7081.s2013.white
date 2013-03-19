@@ -87,7 +87,7 @@ He's been working as a psychiatrist in a large psychiatrie near berne for over 7
 He often visits conferences and is a fan of new technologies. His hobbies include reading, biking, hiking, and his family.
 
 Clinical psychologist:
-- Name and Title: ??  Selina Schmid
+- Name and Title:  Selina Schmid
 - Age: 30
 - Single
 Selina Schmid has just received her master of science degree in psychology at the university of berne.
@@ -126,7 +126,6 @@ Her hobbies include pc gaming and hiking.
 
 
 ### 6. Validate 
-(presentation: Fabian)
 
 - TO INSERT
 - Full validation by users is not possible at the moment because of the short time horizon. 
