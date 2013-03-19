@@ -155,7 +155,7 @@ Post Condition: A new and open case must be logged for the patient<br>
 - Therapist and patient meat
 - Therapist informs himself about the patients history
 - The patient tells the therapist about his condition
-- The therapist informs himself by using the ICD10 (references) 
+- The therapist informs himself by using the ICD10 (references) (optionally)
 - Therapist creates a diagnosis
 - Therapist prescribes medicine (optionally) (only psychiatrist, not psychologist)
 - Therapist passes an order (optionally)
