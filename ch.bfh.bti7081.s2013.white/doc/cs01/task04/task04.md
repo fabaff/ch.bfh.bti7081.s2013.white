@@ -6,7 +6,6 @@
 ## User Requirements
 
 
-
 ### Functional user requirements
 
 - Show and search a specific patient (status, name, psychotherapist (current), institution).
@@ -34,6 +33,17 @@
 
 ### Functional system requirements
 
+- Show and search a specific patient (status, name, psychotherapist (current), institution).
+- Show the dossier of a specific patient (personal data, diagnosis, drugs, orders to other staff, process (Verlauf)).
+- Show personal data of a specific patient (name, birthday, gender, ...).
+- Diagnosis of a patient (name, ICD-code, description, comment, date, responsible person, institution): show, search, add, change, delete a diagnosis
+- Medication management (point in time (morning, noon, evening, night), frequency, duration, dose, responsible person, institution): show, search, add, change, delete a drug
+- Orders to other staff (acceptor (Empfänger), description, date, remitter (Auftraggeber), status, institution): show, search, add, change, delete an order
+- Process and event handling of a patient (event, comment, date, responsible person, institution): show, search, add, change, delete an event
+- Filter function: own patients, institution patients, all patients.
+- Sort patients, diagnosis, drugs, processes and orders by different attributes.
+- Diagnosis catalog (ICD-10): search and show a diagnosis.
+- Drugs catalog: search and show a drug.
 
 ### Non-functional system requirements
 
