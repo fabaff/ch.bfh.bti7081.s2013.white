@@ -87,7 +87,10 @@ in the system.
 
 
 ## System architecture 
-
+The basic layout of the architecture will be a multi layer web application. With the help of separation of the core components of the system an accurate design will become reality. MVC (Model View Controller) archtecture of the web application will guarant a contemporary implementation of the patient management system.
+- Web interface running in the browser
+- Webserver and Application server
+For maximum performance the database will be hosted on a dedicated server. 
 
 ## System requirements specification 
 
