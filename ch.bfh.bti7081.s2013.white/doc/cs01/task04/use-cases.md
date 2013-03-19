@@ -14,3 +14,4 @@
 - (10) change medication
 - (11) read ICD 10 (diagnosis database)
 - (12) read DRUGS2000 (drugs database)
+- (13) help system
