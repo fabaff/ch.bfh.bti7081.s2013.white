@@ -89,7 +89,7 @@ He's been working as a psychiatrist in a large psychiatrie near berne for over 7
 He often visits conferences and is a fan of new technologies. His hobbies include reading, biking, hiking, and his family.
 
 ##### Psychologist:
-- Name and Title:  Selina Schmid
+- Name and Title:  M.Sc. Selina Schmid
 - Age: 30
 - Single
 - no children
