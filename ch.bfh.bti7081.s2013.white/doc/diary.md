@@ -2,6 +2,9 @@
 
 (all entries in backwards chronological order)
 
+## 2013-03-19
+- started working on task04
+
 ## 2013-03-18
 - working on task03
 
@@ -39,3 +42,6 @@
 - Patrick Kofmel        kofmp1@bfh.ch
 - Fabian Affolter       affof1@bfh.ch
 - Alejandro Nuñez
+
+## Links
+- [Software Engineering and Design](https://www.cpvrlab.ti.bfh.ch/klu1/BTI7081/soed/)
