@@ -157,7 +157,8 @@ Post Condition: A new and open case must be logged for the patient<br>
 - The patient tells the therapist about his condition
 - The therapist informs himself by using the ICD10 (references) 
 - Therapist creates a diagnosis
-- Therapist prescribes medicine
+- Therapist prescribes medicine (optionally) (only psychiatrist, not psychologist)
+- Therapist passes an order (optionally)
 - The patient leaves
 
 
