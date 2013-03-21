@@ -50,6 +50,8 @@ How are consultations in the psychiatry organized?
 ### 3. Synthesize 
 
 #### User requirements
+(date: 18.03.2013)
+
 Functional:
 - Show and search a specific patient (status, name, psychotherapist (current), institution).
 - Show the dossier of a specific patient (personal data, diagnosis, drugs, orders to other staff, process (Verlauf)).

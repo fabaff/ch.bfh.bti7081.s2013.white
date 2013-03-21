@@ -1,4 +1,5 @@
 # Questions / Open issues / Decisions
+(date: 01.03.2013)
 
 ## General
 - Preferred server platform (Apache HTTP Server, Microsoft IIS, Oracle GlassFish 
