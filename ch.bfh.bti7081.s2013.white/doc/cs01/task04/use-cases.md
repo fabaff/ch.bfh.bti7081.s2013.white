@@ -2,7 +2,7 @@
 
 **List of all known Use cases**
 
-User: psychotherapist
+User: psychotherapist (psychiatrist or psychologist)
 - (1) read patient data
 - (2) read diagnosis
 - (3) change diagnosis
