@@ -95,40 +95,41 @@ Selina Schmid has just received her master of science degree in psychology at th
 She has just begun working at the same large psychiatrie near Berne.
 Her hobbies include pc gaming and hiking.
 
-#### Use case scenarios
+#### Use case scenario
 
-##### Insert event for current case 
-Number: 1<br>
-Description: Inserting new event for a patient<br>
-Actors: Therapist<br>
-Pre Condition: A open case must be logged for the patient<br>
-Post Condition: New comment visible in open case<br>
+* **No. and name**            : **2** New diagnosis
+* **Scenario**                : Create a new diagnosis for an existing user
+* **Description**             : An existing patient visits a doctor with a new problem, so he has to open a new case/diagnosis
+* **Engaged party**           : Therapist
+* **Trigger / Pre condition** : A patient comes with a new problem, patient must exist in database
+* **Results / Post condition**: The new diagnosis is logged in the patient medical record database
 
-1. Log in with own user account and password
-2. Select patient
-3. Select history
-4. Select existing case
-5. Click on the  plus (+) sign
-6. Insert Text
-7. Save
-8. Log Out
+Sequence
 
-##### Open new case
-Number: 2<br>
-Description: Opening a new case for an existing patient<br>
-Actors: Therapist<br>
-Pre Condition: Patient must exist in database<br>
-Post Condition: A new and open case must be logged for the patient<br>
+| Nr.  | Who     | What |
+|:----:|:--------|:-----|
+| 1    |Therapist  |Login with personal username and password  |
+| 2    |Therapist  |Search for the patient  |
+| 3    |Therapist  |Select patient from list  |
+| 4    |Therapist  |Open medical history of patient  |
+| 5    |Therapist  |Click select an exisiting record  |
+| 6    |Therapist  |Click on add new information  |
+| 7    |Therapist  |Add a name for the record  |
+| 8    |Therapist  |Insert a description  |
+| 9    |Therapist  |Save the new record to the medical record database  |
 
-1. Log in with personal user account and password
-2. Select patient
-3. Click on the plus (+) sign
-4. Add name (Diagnose) for new case
-5. Insert description
-6. Optional: Insert comment
-7. Optional: Select different doctor or clinic
-8. Save
-9. Log Out
+Exceptions, variations
+
+| Nr.  | Who     | What |
+|:----:|:--------|:-----|
+| 2.1  |Nurse  |Patient record must have been created before  |
+| 3.1  |Therapist  |Wrong user selected   |
+| 3.2  |Therapist  |Click on back to return to search list   |
+| 8.1  |Therapist  |Optional: Select different doctor or hospital  |
+| 8.2  |Therapist  |Optional: Insert comments  |
+| 4    |  |  |
+| 5    |  |  |
+| 6    |  |  |
 
 #### Use case Diagram
 Please check [Use Cases](https://github.com/fabaff/ch.bfh.bti7081.s2013.white/blob/master/ch.bfh.bti7081.s2013.white/doc/cs01/task03/03-synthesize/use-cases.jpg).
@@ -136,7 +137,7 @@ Please check [Use Cases](https://github.com/fabaff/ch.bfh.bti7081.s2013.white/bl
 ### 4. Design
 
 #### Some (non-functional) system requirements 
-(in addition to user requirements; extensive system requirements are not yet possible at this point of the project)
+(in addition to user requirements; extensive system requirements are not yet possible at this point of the project; date: 18.03.2013)
 
 - An encrypted authentication is needed to enter the application.
 - The data of all patients are stored in a central database.
@@ -147,7 +148,7 @@ Please check [Use Cases](https://github.com/fabaff/ch.bfh.bti7081.s2013.white/bl
 
 #### Storyboard
 
-- Therapist and patient meat
+- Therapist and patient meet
 - Therapist informs himself about the patients history
 - The patient tells the therapist about his condition
 - The therapist informs himself by using the ICD10 (references) (optionally)
