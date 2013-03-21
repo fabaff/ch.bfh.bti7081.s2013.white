@@ -5,6 +5,9 @@
 ### Target audience
 This document was written to describe the requirements for the MHC-PMS (MHC patient management system) in details. It includes every aspect of the system and focuses on the technical side. The reader should have a basis understanding of the healthcare section and information technology. 
 
+### Authors
+The author of this document is Team white (Marc Schärer, Arthur van Ommen, Patrick Kofmel, Fabian Affolter, and Alejandro Nuñez). 
+
 ### Document history
 
 For details about the evolution of this document please check the 
@@ -17,12 +20,12 @@ $ git log
 
 ### Document releases
 
-Major and minor releases of this document are tagged by [git][1].
+Major and minor releases of this document are listed in the table below.
 
 | Release | Who             | Summary of changes                             |
 |:--------|:----------------|:-----------------------------------------------|
-| 0       | Fabian Affolter | Creation of the document (not tagged)          |
-| 0.1     | Fabian Affolter | Release after first day. Content added         |
+| 0       | Team            | Creation of the document                       |
+| 0.1     | Team            | Release after first day. Content added         |
 
 ## Introduction 
 Your regional health authority wishes to introduce a patient management system
@@ -72,6 +75,8 @@ in the system.
 
 
 ## Glossary
+This section define the technical terms used in the document. 
+
 - **Therapist**: Psychotherapists employ a range of techniques based on experiential relationship building, dialogue, communication and behavior change that are designed to improve the mental health of a client or patient, or to improve group relationships (such as in a family).
 - **Psychologist**: A psychologist evaluates, diagnoses, treats, and studies behavior and mental processes. Some psychologists, such as clinical and counseling psychologists, provide mental health care, and some psychologists, such as social or organizational psychologists conduct research, usually in university or other academic settings. A psychologist has a graduate degree (usually a PhD or MA).
 - **Psychiatrist**: A psychiatrist is a physician who specializes in psychiatry. Psychiatrists are authorized to prescribe medicine, conduct physical examinations, order and interpret laboratory tests, and may order brain imaging studies such as computed tomography (CT/CAT Scan), magnetic resonance imaging (MRI), and positron emission tomography (PET) scanning. A psychiatrist has an MD.
@@ -80,7 +85,7 @@ in the system.
 - **History**: In this context, history means the complete list of past events all around the patient. For example, this includes treatment, drug prescriptions, orders given to nursing staff and so on.
 - **Patient**: A patient is any recipient of health care services. The patient is in need of treatment by a health care provider. In this case, this provider is a therapist.
 - **Order**: In this context, an order means an assignment from a therapist to nursing staff, administration staff or any other person, which is involved in the treatment and administrative process of the patient.
-- **PMS**: *p*atient *m*anagement *s*ystem
+- **PMS**: **P**atient **M**anagement **S**ystem
 
 ## User requirements definition 
 
@@ -90,7 +95,7 @@ in the system.
 The basic layout of the architecture will be a multi layer web application. With the help of separation of the core components of the system an accurate design will become reality. MVC (Model View Controller) archtecture of the web application will guarant a contemporary implementation of the patient management system.
 For maximum performance the database will be hosted on a dedicated server. Every connection between the participient of the backend will be encrypted with industrial standards.
 
-The clients will only access the web server on a encrypted channel. No unencrypted communication between the client and the server will be established.
+The clients will only access the web server on a encrypted channels. No unencrypted communication between the client and the server will be established or allowed. 
 
 - TODO: picture about system architecture
 
@@ -102,10 +107,12 @@ The clients will only access the web server on a encrypted channel. No unencrypt
 
 
 
-## System evolution 
+## System evolution
+Based on the delivered information the initial hardware requirements will be set with a buffer. This reserve will make it possible to work with a larger user base and higher load on the systems. If the reserve runs out, extra hardware can be integrated easily. Due to the usage of state of the art virtualization technologies the whole life cycle of the MHC-PMS will be covered.
 
+The software part of the system architecture will take into account that customer requirements may change. The design will allow easy upscaling of the application. The main focus will lie on more users and more patients.
 
-
+Maintenance and bug fixing will be provided. Data protection issues will be fixed with a high priority. The client security is out of scope and is not part of this document.
 
 ## Testing 
 For testing purposes a dummy database is needed. This means that a patient underlying data source must be ready at the start of the implementing phase. The format is open (full implemented database, simplified database, flat text file, etc.) but a source close to the layout which will be used for the final product is preferred.
@@ -115,9 +122,5 @@ For testing purposes a dummy database is needed. This means that a patient under
 - [Use cases](https://github.com/fabaff/ch.bfh.bti7081.s2013.white/blob/master/ch.bfh.bti7081.s2013.white/doc/cs01/task04/use-cases.md)
 - []()
 - []()
-
-## Index 
-
-
 
 [1]: http://git-scm.com/ "Git"
