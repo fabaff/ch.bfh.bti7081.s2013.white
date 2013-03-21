@@ -2,16 +2,19 @@
 
 **List of all known Use cases**
 
+User: psychotherapist
 - (1) read patient data
-- (2) change patient data
-- (3) read diagnosis
-- (4) change diagnosis
-- (5) read history
-- (6) change history
-- (7) read orders
-- (8) change orders
-- (9) read medication
-- (10) change medication
-- (11) read ICD 10 (diagnosis database)
-- (12) read DRUGS2000 (drugs database)
-- (13) help system
+- (2) read diagnosis
+- (3) change diagnosis
+- (4) read medication
+- (5) change medication
+- (6) read ICD-10 catalog (diagnosis database)
+- (7) read drugs catalog (drugs database)
+- (8) read history
+- (9) change history
+- (10) read orders
+- (11) change orders
+- (12) help system
+
+User: administration staff (not relevant for this project)
+- change patient data

@@ -6,8 +6,6 @@
 
 ### Functional user requirements
 
-- Login to the application with username and password.
-
 - Show and search a specific patient (status, name, psychotherapist (current), institution).
 - Show the dossier of a specific patient (personal data, diagnosis, drugs, orders to other staff, process (Verlauf)).
 - Show personal data of a specific patient (name, birthday, gender, ...).
@@ -22,6 +20,7 @@
 
 ### Non-functional requirements
 
+- Login to the application with username and password.
 - The application can be used on tablet during a consultation (main use).
 - The application can be used on desktop when a psychotherapist is doing office work.
 - Only a psychiatrist can do manipulations in medication management, a clinical psychologist has a read only access to the medication management functionality.
