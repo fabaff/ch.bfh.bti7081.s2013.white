@@ -42,7 +42,7 @@ Activities:
 - The product backlog is created based on the user requirements.
 - The sprint backlog is created based on the system requirements.
 
-- Output: product backlog
+- Output: requirements document, product backlog
 - Stakeholders: customer, developers, management
   
 ### 2. Design and development
@@ -50,7 +50,6 @@ Activities:
 - The outline planning and architectural design comes first (before the sprint cycles).
 - New and changed requirements are respected and the product/system backlog is updated during the sprint cycles.
 - The fine tuning design will be realized during a sprint cycle. 
-- All components of the system must have running unit tests at the end of a sprint cycle.
 
 - Output: source codes with comments, running unit tests, UML-diagramms, system documentation, ...
 - Stakeholders: customer, developers
