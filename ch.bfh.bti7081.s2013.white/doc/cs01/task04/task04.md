@@ -56,5 +56,10 @@
 
 - TODO: interfaces to other systems
 
+### Domain requirements
+
+- Dosierung, Mengen, Einheiten der Medikamente
+- drugs catalog
+
 ## Summary
 
