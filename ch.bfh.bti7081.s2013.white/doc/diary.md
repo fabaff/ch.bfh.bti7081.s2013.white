@@ -3,6 +3,10 @@
 (all entries in backwards chronological order)
 
 ## 2013-03-19
+- some updates in task03
+- user and system requirements in task04
+
+## 2013-03-19
 - presentation task03
 - started working on task04
 

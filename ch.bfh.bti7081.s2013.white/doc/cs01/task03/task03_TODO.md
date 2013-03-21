@@ -9,8 +9,9 @@ Task 03 TODOs
 - Prototype												OK
 
 - Update documentation									OK
-	- Use cases, Persona (psychiatrist, psychologist),
-	  Storyboard
+	- Use cases,
+	- Persona (psychiatrist, psychologist)
+	- Storyboard
 	- Validation										OK
 - Prepare presentation
 
