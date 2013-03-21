@@ -62,17 +62,53 @@ This section define the technical terms used in the document.
 - **Order**: In this context, an order means an assignment from a therapist to nursing staff, administration staff or any other person, which is involved in the treatment and administrative process of the patient.
 - **PMS**: **P**atient **M**anagement **S**ystem
 
-## User requirements definition 
+## User requirements 
 
 
 
 ## System architecture 
 The basic layout of the architecture will be a multi layer web application. With the help of separation of the core components of the system an accurate design will become reality. MVC (Model View Controller) archtecture of the web application will guarant a contemporary implementation of the patient management system.
-For maximum performance the database will be hosted on a dedicated server. Every connection between the participient of the backend will be encrypted with industrial standards.
+
+```bash
+
+                      +---------------------+
+                      |                     |
+                      | Controller          |
+                      |                     |
+                      +---------------------+
+                              ^          +
+                              |          |
+                              |          |
+                              |          |
+                              |          v
+   +-------------------+      |        +--------------------+
+   |                   |      |        |                    |
+   | View              |<-----|-------+| Model              |
+   |                   |      |        |                    |
+   +-------------------+      |        +--------------------+       +
+                  +           |
+                  |           |
+                  |           |
+                  |           |
+                  v           +
+                +----------------+
+                |                |
+                | User           |
+                |                |
+                +----------------+
+```
+
+For maximum performance the database will be hosted on a dedicated server. Every connection between the participient of the backend will be encrypted with industrial standards. 
+
+```bash
+
+```
 
 The clients will only access the web server on a encrypted channels. No unencrypted communication between the client and the server will be established or allowed. 
 
-- TODO: picture about system architecture
+```bash
+
+```
 
 ## System requirements specification 
 
