@@ -1,12 +1,11 @@
 #Requirements document
 
-
 ## Preface 
 ### Target audience
 This document was written to describe the requirements for the MHC-PMS (MHC patient management system) in details. It includes every aspect of the system and focuses on the technical side. The reader should have a basis understanding of the healthcare section and information technology. 
 
 ### Authors
-The author of this document is Team white (Marc Schärer, Arthur van Ommen, Patrick Kofmel, Fabian Affolter, and Alejandro Nuñez). 
+The author of this document is Team White (Marc Schärer, Arthur van Ommen, Patrick Kofmel, Fabian Affolter, and Alejandro Nuñez). 
 
 ### Document history
 
@@ -26,53 +25,29 @@ Major and minor releases of this document are listed in the table below.
 |:--------|:----------------|:-----------------------------------------------|
 | 0       | Team            | Creation of the document                       |
 | 0.1     | Team            | Release after first day. Content added         |
+| 0.2     | Team            | Content added                                  |
 
 ## Introduction 
-Your regional health authority wishes to introduce a patient management system
-(PMS) to manage the care of patients suffering from mental health problems. 
-The overall goals of the system will be:
+Your regional health authority wishes to introduce a patient management system (PMS) to manage the care of patients suffering from mental health problems. The overall goals of the system will be:
 
 1. To provide medical staff with timely information to facilitate the 
    treatment of patients.
 2. To generate management information that allows health service managers
    to assess performance against local and government targets.
 
-Most mental health patients do not require dedicated hospital treatment but
-need to attend specialist clinics regularly where they can meet a doctor who
-has detailed knowledge of their problems. The health authority has a number of
-clinics that patients may attend. To make it easier for patients to attend,
-these clinics are not just run in hospitals. They may also be held in local
-medical practices or community centres. Patients need not always attend the
-same clinic and some clinics may support ‘drop in’ as well as pre-arranged
-appointments.
+Most mental health patients do not require dedicated hospital treatment but need to attend specialist clinics regularly where they can meet a doctor who has detailed knowledge of their problems. The health authority has a number of clinics that patients may attend. To make it easier for patients to attend, these clinics are not just run in hospitals. They may also be held in local medical practices or community centres. Patients need not always attend the same clinic and some clinics may support ‘drop in’ as well as pre-arranged appointments.
 
-The nature of mental health problems is such that patients are often
-disorganised so may miss appointments, deliberately or accidentally lose
-prescriptions and medication, forget instructions and make unreasonable
-demands on medical staff. In a minority of cases, they may be a danger to
-themselves or to other people. They may regularly change address and may be 
-omeless on a long-term or short-term basis. Where patients are dangerous,
-they may need to be ‘sectioned’ – confined to a secure hospital for treatment
-and observation.
+The nature of mental health problems is such that patients are often disorganised so may miss appointments, deliberately or accidentally lose prescriptions and medication, forget instructions and make unreasonable demands on medical staff. In a minority of cases, they may be a danger to themselves or to other people. They may regularly change address and may be omeless on a long-term or short-term basis. Where patients are dangerous, they may need to be ‘sectioned’ – confined to a secure hospital for treatment and observation.
 
-Users of the system include clinical staff (doctors, nurses, health visitors),
-receptionists who make appointments and medical records staff. Reports are
-generated for hospital management by medical records staff. Management have
-no direct access to the system.
+Users of the system include clinical staff (doctors, nurses, health visitors), receptionists who make appointments and medical records staff. Reports are generated for hospital management by medical records staff. Management have no direct access to the system.
 
-The system is affected by two pieces of legislation
+The system is affected by two pieces of legislation:
 
 1. Data Protection Act that governs the confidentiality of personal information
 2. Mental Health Act that governs the compulsory detention of patients deemed
    to be a danger to themselves or others.
 
-The system will NOT become a complete medical records system where all information about
-a patients medical treatment is maintained. It will solely intended to support
-mental health care so if a patient is suffering from some other unrelated
-condition (such as high blood pressure) this would not be formally recorded
-in the system.
-
-
+The system will NOT become a complete medical records system where all information about a patients medical treatment is maintained. It will solely intended to support mental health care so if a patient is suffering from some other unrelated  condition (such as high blood pressure) this would not be formally recorded in the system.
 
 ## Glossary
 This section define the technical terms used in the document. 
@@ -116,6 +91,8 @@ Maintenance and bug fixing will be provided. Data protection issues will be fixe
 
 ## Testing 
 For testing purposes a dummy database is needed. This means that a patient underlying data source must be ready at the start of the implementing phase. The format is open (full implemented database, simplified database, flat text file, etc.) but a source close to the layout which will be used for the final product is preferred.
+
+The efficiency testing of the hardware and the software is planned as a simulation. According to the delivered information from the customer the test load will be specified in detail at a later point in time. 
 
 ## Appendices 
 
