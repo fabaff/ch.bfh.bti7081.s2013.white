@@ -55,5 +55,7 @@
 - Medical catalogs (diagnosis, treatment, drugs) are integrated into the database and can be used in the application.
 - Data protection act must be considered when the patient data will be stored in a central database.
 
+- TODO: interfaces to other systems
+
 ## Summary
 
