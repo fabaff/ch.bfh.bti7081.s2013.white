@@ -97,7 +97,8 @@ The efficiency testing of the hardware and the software is planned as a simulati
 ## Appendices 
 
 - [Use cases](https://github.com/fabaff/ch.bfh.bti7081.s2013.white/blob/master/ch.bfh.bti7081.s2013.white/doc/cs01/task04/use-cases.md)
-- []()
-- []()
+- [Use case scenario 2](https://github.com/fabaff/ch.bfh.bti7081.s2013.white/blob/master/ch.bfh.bti7081.s2013.white/doc/cs01/task04/02-use-case-scenario.md)
+- [Use case scenario 3](https://github.com/fabaff/ch.bfh.bti7081.s2013.white/blob/master/ch.bfh.bti7081.s2013.white/doc/cs01/task04/03-use-case-scenario.md)
+- [Use case scenario 4](https://github.com/fabaff/ch.bfh.bti7081.s2013.white/blob/master/ch.bfh.bti7081.s2013.white/doc/cs01/task04/04-use-case-scenario.md)
 
 [1]: http://git-scm.com/ "Git"
