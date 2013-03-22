@@ -29,10 +29,10 @@
 
 | Nr.  | Who     | What |
 |:----:|:--------|:-----|
-| 5.1    |Psychiatrist  |Add reason for deaktivation  |
-| 2    |  |  |
-| 3    |  |  |
-| 4    |  |  |
-| 5    |  |  |
+| 1.1    |Psychiatrist  |Psychiatrist must have a user account and password |
+| 2.1    |Nurse  |Patient must be added to database before comming to psychiatrist  |
+| 2.2    |Psychiatrist  |Patient not found: Check name used to query database |
+| 4.1    |Psychiatrist  |Patient must have existing prescriptions  |
+| 9.1    |Psychiatrist  |Dosage is checked against drug database for validity. Error returns if not valid  |
 | 6    |  |  |
 
