@@ -5,24 +5,24 @@
 * **Description**             : A patient has major side effects with a prescribed medication. The psychiatrist wants to try a different dosage.
 * **Engaged party**           : Psychiatrist
 * **Trigger / Pre condition** : The patient must have an existing record and e previously perscribed medication
-* **Results / Post condition**: The new perscription is added to the patients medical record
+* **Results / Post condition**: The new prescription is added to the patients medical record
 
 ## Sequence
 
 | Nr.  | Who     | What |
 |:----:|:--------|:-----|
 | 1    |Psychiatrist  |Login with personal username and password  |
-| 2    |Psychiatrist  |Search for the patient, by name, address or from list (like contacts) |
+| 2    |Psychiatrist  |Search for the patient, by name, address or from list ->  |
 | 3    |Psychiatrist  |Select patient from search list  |
 | 4    |Psychiatrist  |Click on Medication button to open the medical history of patient  |
 | 3    |Psychiatrist  |Select medication  |
-| 4    |Psychiatrist  |Search for affected perscription  |
-| 5    |Psychiatrist  |Deactivate affected perscription by marking a checkbox  |
-| 6    |Psychiatrist  |Create new perscription  |
-| 7    |Psychiatrist  |Search for drug in drug-database, by name or ingredients   |
+| 4    |Psychiatrist  |Search for affected prescription  |
+| 5    |Psychiatrist  |Deactivate affected prescription by marking a checkbox  |
+| 6    |Psychiatrist  |Create new prescription  |
+| 7    |Psychiatrist  |Search for drug in drug-database, by name or ingredients -> channel to drug database is opened  |
 | 8    |Psychiatrist  |Select drug from drug-database  |
 | 9    |Psychiatrist  |Define dosage and frequency   |
-| 10   |Psychiatrist  |Save changes to database  |
+| 10   |Psychiatrist  |On save: changes are written to patient medical record database  |
 | 11   |Psychiatrist  |Log Out   |
 
 ## Exceptions, variations
