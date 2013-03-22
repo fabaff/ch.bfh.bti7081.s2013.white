@@ -1,6 +1,6 @@
 # Use Case Scenario
 
-* **No. and name**            : **3** Change diagnosis
+* **No. and name**            : **3** Change diagnosis [User Requirements](https://github.com/fabaff/ch.bfh.bti7081.s2013.white/blob/master/ch.bfh.bti7081.s2013.white/doc/cs01/task04/requirements-document.md#3-change-diagnosis)
 * **Scenario**                : Change an existing diagnosis for a patient
 * **Description**             : There are new informations concering the medical situation of the patient which must be added to the diagnosis
 * **Engaged party**           : Therapist
@@ -19,14 +19,6 @@
 | 6    |Therapist  |Add a name for the diagnosis                       |
 | 7    |Therapist  |Insert a description                               |
 | 8    |Therapist  |Save the new record to the medical record database |
-
-## Exceptions, variations
-
-| Nr.  | Who       | What                                              |
-|:----:|:----------|:--------------------------------------------------|
-| 1.1  |Nurse      |Patient record must have been created before       |
-| 7.1  |Therapist  |Optional: Select different doctor or hospital      |
-| 7.2  |Therapist  |Optional: Insert comments                          |
 
 ## Exceptions, variations
 
