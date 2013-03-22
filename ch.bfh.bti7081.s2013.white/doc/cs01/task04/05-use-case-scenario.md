@@ -35,7 +35,6 @@
 
 | Nr.  | Who     | What |
 |:----:|:--------|:-----|
-
 | 17.1    |MHC_PMS  |Dosage is checked against drug database for validity. Error returns if not valid  |
-| 6    |  |  |
+
 
