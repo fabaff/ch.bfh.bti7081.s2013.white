@@ -118,11 +118,11 @@ This section define the technical terms used in the document.
 #### 7. Read medication catalog
 - 7.1 Start the medication catalog from the medication screen.
 - 7.2 Show medication catalog in a table and details view.
-- 7.3 The details view shows: medication name, category, medication manufacturer, medication description.
-- 7.4 The table view shows: medication name, category, medication manufacturer.
+- 7.3 The details view shows: medication name, dope (Wirkstoff), category, medication manufacturer, medication description.
+- 7.4 The table view shows: medication name, dope (Wirkstoff), category, medication manufacturer.
 - 7.5 Filter medication catalog entries: Filter by category, medication manufacturer.
-- 7.6 Search in the medication catalog: medication name, category, medication manufacturer, medication description.
-- 7.7 Sort the medication catalog entries; medication name, category, medication manufacturer, medication description.
+- 7.6 Search in the medication catalog: medication name, dope (Wirkstoff), category, medication manufacturer, medication description.
+- 7.7 Sort the medication catalog entries; medication name, dope (Wirkstoff), category, medication manufacturer, medication description.
  
 #### 8. Read history
 - 8.1 Automatic event creation of all changed diagnosis, medications, orders.
@@ -243,11 +243,11 @@ The clients will only access the web server on a encrypted channels. No unencryp
 #### 7. Read medication catalog (medication database)
 - 7.1 Start the medication catalog from the medication screen.
 - 7.2 Show medication catalog in a table and details view.
-- 7.3 The details view shows: medication name, category, medication manufacturer, medication description.
-- 7.4 The table view shows: medication name, category, medication manufacturer.
+- 7.3 The details view shows: medication name, dope (Wirkstoff), category, medication manufacturer, medication description.
+- 7.4 The table view shows: medication name, dope (Wirkstoff), category, medication manufacturer.
 - 7.5 Filter medication catalog entries: Filter by category, medication manufacturer.
-- 7.6 Search in the medication catalog: medication name, category, medication manufacturer, medication description.
-- 7.7 Sort the medication catalog entries; medication name, category, medication manufacturer, medication description.
+- 7.6 Search in the medication catalog: medication name, dope (Wirkstoff), category, medication manufacturer, medication description.
+- 7.7 Sort the medication catalog entries; medication name, dope (Wirkstoff), category, medication manufacturer, medication description.
  
 #### 8. Read history
 - 8.1 Automatic event creation of all changed diagnosis, medications, orders.
