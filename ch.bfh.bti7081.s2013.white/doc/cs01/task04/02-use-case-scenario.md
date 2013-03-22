@@ -2,7 +2,7 @@
 
 * **No. and name**            : **2** New diagnosis
 * **Scenario**                : Create a new diagnosis for an existing user
-* **Description**             : An existing patient visits a doctor with a new problem, so he has to open a new case/diagnosis
+* **Description**             : An existing patient visits a doctor with a new problem, so he has to open a new diagnosis
 * **Engaged party**           : Therapist
 * **Trigger / Pre condition** : A patient comes with a new problem, patient must exist in database
 * **Results / Post condition**: The new diagnosis is logged in the patient medical record database
