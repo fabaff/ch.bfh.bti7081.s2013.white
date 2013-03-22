@@ -24,10 +24,10 @@
 
 | Nr.  | Who       | What                                              |
 |:----:|:----------|:--------------------------------------------------|
-| 1.1    |Psychiatrist  |Psychiatrist must have a user account and password |
+| 1.1    |Therapist  |Psychiatrist must have a user account and password |
 | 2.1    |Nurse  |Patient must be added to database before comming to psychiatrist  |
-| 2.2    |Psychiatrist  |Patient not found: Check name used to query database |
-| 4.1    |Psychiatrist  |Patient must have at least one existing diagnosis  |
+| 2.2    |Therapist  |Patient not found: Check name used to query database |
+| 4.1    |Therapist  |Patient must have at least one existing diagnosis  |
 | 7.1  |Therapist  |Optional: Select different doctor or hospital      |
 | 7.2  |Therapist  |Optional: Insert comments                          |
 
