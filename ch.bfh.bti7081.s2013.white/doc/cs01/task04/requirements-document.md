@@ -159,9 +159,8 @@ This section define the technical terms used in the document.
 - The application can be used on tablet during a consultation or a meeting (main use).
 - The application can be used on desktop when a theparist is doing office work.
 - The language of the application is german. It should be possible to integrate a french language version at a later point (clinics in the romandie). 
-- A theparist can only change data from own patients.
+- A therapist can only change data from own patients.
 - Only a psychiatrist can do change in medication, a  psychologist has a read only access to the medication management functionality.
-- No possibility to change an automatic created event.
 - Login to the application with encrypted username and password.
 - The data protection act must be considered.
 
@@ -227,6 +226,7 @@ The clients will only access the web server on a encrypted channels. No unencryp
 - 0.5 The selection of a diagnosis implies an automatic selction of the ICD code and diagnosis description.
 - 0.6 The selection of an ICD code implies an automatic selection of the diagnosis and diagnosis description.
 - 0.7 The selection of a medication implies an automatic selection of the category, medication manufacturer, and medication description.
+- 0.8 No possibility to change an automatic created event.
 
 #### 1. Read patient data 
 - 1.1 Show all patients in a table on the home screen: show status, name, psychotherapist (current), clinics (hospitals or local medical practices).
@@ -319,9 +319,8 @@ The clients will only access the web server on a encrypted channels. No unencryp
 - The application can be used on tablet during a consultation or a meeting (main use).
 - The application can be used on desktop when a theparist is doing office work.
 - The language of the application is german. It should be possible to integrate a french language version at a later point (clinics in the romandie). 
-- A theparist can only change data from own patients.
+- A therapist can only change data from own patients.
 - Only a psychiatrist can do change in medication, a  psychologist has a read only access to the medication management functionality.
-- No possibility to change an automatic created event.
 - An encrypted authentication is needed to enter the application (username and password).
 - The data of all patients are stored in a central database.
 - The data protection act must be considered: A https connection is used for all transactions between client and server.
