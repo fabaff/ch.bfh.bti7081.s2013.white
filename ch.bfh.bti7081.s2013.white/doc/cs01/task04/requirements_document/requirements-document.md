@@ -323,20 +323,21 @@ The efficiency testing of the hardware and the software is planned as a simulati
 
 There will be diffrent levels of testing:
 
-- Unit tests:
-All components of the system must be tested with Unit tests and all Units must run successfully before a new release.
+Unit tests:
+- All components of the system must be tested with Unit tests and all Units must run successfully before a new release.
 
-- System tests
-There must be also integration tests for testing the functionality of the whole application.
+System tests:
+- There must be also integration tests for testing the functionality of the whole application.
 
-- Acceptance tests
-It is important that the user (therapists) will be ready to accept the new application. A strong interaction with the users is required during the development of the applicarion.
+Acceptance tests:
+- It is important that the user (therapists) will be ready to accept the new application. A strong interaction with the users is required during the development of the applicarion.
 
-- Usability tests
-The interface of the application will be tested by an Usability test with future users of the system. This shall avoid and minimize interface design faults. This test will increase the level of accteptance, too.
+Usability tests:
+- The interface of the application will be tested by an Usability test with future users of the system. This shall avoid and minimize interface design faults. This test will increase the level of accteptance, too.
 
-- Security tests
-To test the security of the application, the network connections, and the system design in general in short periods security test will provide detailed information about the level of security. This is necessary to gain and prove the grade which is required according to the Data protection.
+Security tests:
+- To test the security of the application, the network connections, and the system design in general in short periods security test will provide detailed information about the level of security. This is necessary to gain and prove the grade which is required according to the Data protection.
+
 
 ## Appendices 
 
