@@ -172,11 +172,7 @@ The basic layout of the architecture will be a client-server web application wit
 - Application server
 - Database server
 
-With the help of separation of the core components of the system an accurate design will become reality. MVC (Model View Controller) archtecture of the web application will guarant a contemporary implementation of the patient management system.
-
-For maximum performance the database will be hosted on a dedicated server. Every connection between the participient of the backend will be encrypted with industrial standards. 
-
-The clients will only access the web server on a encrypted channels. No unencrypted communication between the client and the server will be established or allowed. 
+For maximum performance the database will be hosted on a dedicated server. Every connection between the participient of the backend will be encrypted with industrial standards. The clients will only access the web server on a encrypted channels. No unencrypted communication between the client and the server will be established or allowed. 
 
 
 ## System requirements specification 
@@ -283,24 +279,32 @@ The clients will only access the web server on a encrypted channels. No unencryp
 
 ### Non-functional system requirements
 
+#### Platform
 - The application can be used on tablet during a consultation or a meeting (main use).
 - The application can be used on desktop when a theparist is doing office work.
-- The language of the application is german. It should be possible to integrate a french language version at a later point (clinics in the romandie). 
+
+#### Data access restriction
 - A therapist can only change data from own patients.
 - Only a psychiatrist can do change in medication, a  psychologist has a read only access to the medication management functionality.
+
+#### Data protection and Law
 - An encrypted authentication is needed to enter the application (username and password).
-- The data of all patients are stored in a central database.
 - The data protection act must be considered: A https connection is used for all transactions between client and server.
+
+#### Architecture and interfaces
+- The data of all patients are stored in a central database. This makes it possible to access the needed data from all clinics.
 - Medical catalogs (diagnosis, treatment, medication) are integrated into the database and can be used in the application.
-- Restrict the number of displayed records to a maximum (improves performance).
 - A special tool is required to continuous update the database with changed patient and clinic data (not in scope of this project). This will be done by the administration staff of a clinic. 
 - There must be interfaces to PMS applications from other medical users (nurses, administration staff).
+
+#### Multi language
+- The language of the application is german. It should be possible to integrate a french language version at a later point (clinics in the romandie). 
 
 ### Domain requirements
 
 - More information about the used medication parameters is needed: duration, frequency, point in time (morning, noon, evening, night), dose and dose unit by point in time (-> new meeting with a doctor).
 - More information about the current used ICD-10 catalog is needed (-> new meeting with a doctor).
-- More information about the current used medication catalog is needed (-> new meeting with a doctor).
+- More information about the current used medication catalogs is needed (-> new meeting with a doctor).
 
 
 ## System evolution
