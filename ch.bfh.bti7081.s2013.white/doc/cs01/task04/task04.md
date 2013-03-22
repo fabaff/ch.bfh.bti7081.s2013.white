@@ -12,6 +12,7 @@
 - Filter the patient table: filter own patients, clinic patients, all patients.
 - Show the dossier of a specific patient: personal data, diagnosis, drugs, orders to other staff, history.
 - Show personal data of a specific patient: first name, last name, gender, birthday, civil status, mother language, communication language, nationality, religion, adress, home location, postal code, country, phone private, phone business, mobile phone number, e-mail.
+
 ### 2. read diagnosis 
 - Show diagnosis of a patient in a table and details view.
 - The details view shows: name of the patient (optional), name of the diagnosis, ICD-code, date of creation, description of diagnosis, comment of therapist, diagnosis creator (therapist), clinic (hospital or local medical practice). 
@@ -20,12 +21,14 @@
 - Filter the diagnosis of multiple patients: current patient, all own patients, all patients from the same clinic, all existing patients.
 - Search diagnosis: search by name of the patient, name of the diagnosis, ICD-code, date of creation, description of diagnosis, comment of therapist, diagnosis creator (therapist), clinic (hospital or local medical practice). 
 - Sort diagnosis: Sort by name of the patient, name of the diagnosis, ICD-code, date of creation, description of diagnosis, comment of therapist, diagnosis creator (therapist), clinic (hospital or local medical practice). 
+
 ### 3. change diagnosis
 - Add a new diagnosis for the current patient: select and save the name of the diagnosis, ICD-code, date of creation, description of diagnosis, comment of therapist, diagnosis creator (therapist), clinic (hospital or local medical practice). 
 - Change an existing diagnosis for the current own patient: change and save the name of the diagnosis, ICD-code, date of creation, description of diagnosis, comment of therapist, diagnosis creator (therapist), clinic (hospital or local medical practice). 
 - Delete an existing diagnosis for the current own patient.
+
 ### 4. read medication
-- 
+ 
 
 - Medication management (point in time (morning, noon, evening, night), frequency, duration, dose, responsible person, institution): show, search, add, change, delete a drug
 - Orders to other staff (acceptor (Empfänger), description, date, remitter (Auftraggeber), status, institution): show, search, add, change, delete an order
