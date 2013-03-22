@@ -336,7 +336,9 @@ Maintenance and bug fixing will be provided. Data protection issues will be fixe
 
 ## Testing 
 For testing purposes a dummy database is needed. This means that a patient underlying data source must be ready at the start of the implementing phase. The format is open (full implemented database, simplified database, flat text file, etc.) but a source close to the layout which will be used for the final product is preferred.
+
 The efficiency testing of the hardware and the software is planned as a simulation. According to the delivered information from the customer the test load will be specified in detail at a later point in time. 
+
 All components of the system must be tested with Unit tests. There must be also integration tests for the whole application.
 
 ## Appendices 
