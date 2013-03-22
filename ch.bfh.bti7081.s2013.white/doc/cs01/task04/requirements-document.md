@@ -164,7 +164,7 @@ This section define the technical terms used in the document.
 - The data protection act must be considered.
 
 
-## System architecture and System models 
+## System architecture and system models 
 
 The basic layout of the architecture will be a multi layer web application. With the help of separation of the core components of the system an accurate design will become reality. MVC (Model View Controller) archtecture of the web application will guarant a contemporary implementation of the patient management system.
 
