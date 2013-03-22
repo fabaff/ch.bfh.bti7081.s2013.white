@@ -336,6 +336,7 @@ The clients will only access the web server on a encrypted channels. No unencryp
 - More information about the current used ICD-10 catalog is needed.
 - More information about the current used medication catalog is needed.
 
+
 ## System evolution
 Based on the delivered information the initial hardware requirements will be set with a buffer. This reserve will make it possible to work with a larger user base and higher load on the systems. If the reserve runs out, extra hardware can be integrated easily. Due to the usage of state of the art virtualization technologies the whole life cycle of the MHC-PMS will be covered.
 
