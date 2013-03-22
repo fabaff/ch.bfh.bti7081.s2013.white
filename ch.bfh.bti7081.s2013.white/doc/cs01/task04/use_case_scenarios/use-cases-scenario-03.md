@@ -1,6 +1,6 @@
 # Use Case Scenario
 
-* **No. and name**            : **3** Change diagnosis [User Requirements](https://github.com/fabaff/ch.bfh.bti7081.s2013.white/blob/master/ch.bfh.bti7081.s2013.white/doc/cs01/task04/requirements-document.md#3-change-diagnosis)
+* **No. and name**            : **3** Change diagnosis [User Requirements](https://github.com/fabaff/ch.bfh.bti7081.s2013.white/blob/master/ch.bfh.bti7081.s2013.white/doc/cs01/task04/requirements_document/requirements-document.md#3-change-diagnosis)
 * **Scenario**                : Change an existing diagnosis for a patient
 * **Description**             : There are new informations concering the medical situation of the patient which must be added to the diagnosis
 * **Engaged party**           : Therapist / MHC_PMS

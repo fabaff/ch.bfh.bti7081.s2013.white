@@ -1,6 +1,6 @@
 # Use Case Scenario
 
-* **No. and name**            : **5** Change medication [User Requirements](https://github.com/fabaff/ch.bfh.bti7081.s2013.white/blob/master/ch.bfh.bti7081.s2013.white/doc/cs01/task04/requirements-document.md#5-change-medication)
+* **No. and name**            : **5** Change medication [User Requirements](https://github.com/fabaff/ch.bfh.bti7081.s2013.white/blob/master/ch.bfh.bti7081.s2013.white/doc/cs01/task04/requirements_document/requirements-document.md#5-change-medication)
 * **Scenario**                : The medication for a user has to be changed
 * **Description**             : A patient has major side effects with a prescribed medication. The psychiatrist wants to try a different dosage.
 * **Engaged party**           : Psychiatrist / MHC_PMS / DRUGS2000

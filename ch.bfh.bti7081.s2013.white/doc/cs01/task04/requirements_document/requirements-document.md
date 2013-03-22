@@ -1,4 +1,4 @@
-#Requirements document team white
+#Requirements document (team white)
 
 ## Preface 
 ### Target audience
@@ -166,7 +166,7 @@ This section define the technical terms used in the document.
 
 ## System architecture and system models 
 
-The basic layout of the architecture will be a client-server web application with multiple layers. Details are visible in [this picture](https://github.com/fabaff/ch.bfh.bti7081.s2013.white/blob/master/ch.bfh.bti7081.s2013.white/doc/cs01/task04/Server.jpg).
+The basic layout of the architecture will be a client-server web application with multiple layers. Details are visible in [this picture](https://github.com/fabaff/ch.bfh.bti7081.s2013.white/blob/master/ch.bfh.bti7081.s2013.white/doc/cs01/task04/system_architecture/Server.jpg).
 - Web interface running in the browser
 - Webserver
 - Application server
@@ -298,9 +298,9 @@ The clients will only access the web server on a encrypted channels. No unencryp
 
 ### Domain requirements
 
-- More information about the used medication parameters is needed: duration, frequency, point in time (morning, noon, evening, night), dose and dose unit by point in time.
-- More information about the current used ICD-10 catalog is needed.
-- More information about the current used medication catalog is needed.
+- More information about the used medication parameters is needed: duration, frequency, point in time (morning, noon, evening, night), dose and dose unit by point in time (-> new meeting with a doctor).
+- More information about the current used ICD-10 catalog is needed (-> new meeting with a doctor).
+- More information about the current used medication catalog is needed (-> new meeting with a doctor).
 
 
 ## System evolution
@@ -323,9 +323,9 @@ Security is important. To test the security of the application, the network conn
 
 ## Appendices 
 
-- [Use cases](https://github.com/fabaff/ch.bfh.bti7081.s2013.white/blob/master/ch.bfh.bti7081.s2013.white/doc/cs01/task04/use-cases.md)
-- [Use case scenario 2](https://github.com/fabaff/ch.bfh.bti7081.s2013.white/blob/master/ch.bfh.bti7081.s2013.white/doc/cs01/task04/02-use-case-scenario.md)
-- [Use case scenario 3](https://github.com/fabaff/ch.bfh.bti7081.s2013.white/blob/master/ch.bfh.bti7081.s2013.white/doc/cs01/task04/03-use-case-scenario.md)
-- [Use case scenario 5](https://github.com/fabaff/ch.bfh.bti7081.s2013.white/blob/master/ch.bfh.bti7081.s2013.white/doc/cs01/task04/05-use-case-scenario.md)
+- [Use cases](https://github.com/fabaff/ch.bfh.bti7081.s2013.white/blob/master/ch.bfh.bti7081.s2013.white/doc/cs01/task04/use_cases/use-cases.md)
+- [Use case scenario 2](https://github.com/fabaff/ch.bfh.bti7081.s2013.white/blob/master/ch.bfh.bti7081.s2013.white/doc/cs01/task04/use_case_scenarios/02-use-case-scenario.md)
+- [Use case scenario 3](https://github.com/fabaff/ch.bfh.bti7081.s2013.white/blob/master/ch.bfh.bti7081.s2013.white/doc/cs01/task04/use_case_scenarios/03-use-case-scenario.md)
+- [Use case scenario 5](https://github.com/fabaff/ch.bfh.bti7081.s2013.white/blob/master/ch.bfh.bti7081.s2013.white/doc/cs01/task04/use_case_scenarios/05-use-case-scenario.md)
 
 [1]: http://git-scm.com/ "Git"
