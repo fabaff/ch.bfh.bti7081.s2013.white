@@ -50,18 +50,20 @@ The system is affected by two pieces of legislation:
 The system will NOT become a complete medical records system where all information about a patients medical treatment is maintained. It will solely intended to support mental health care so if a patient is suffering from some other unrelated  condition (such as high blood pressure) this would not be formally recorded in the system.
 
 ## Glossary
-This section define the technical terms used in the document. 
+This section define the technical terms used in the document.
 
-- **Therapist**: Psychotherapists employ a range of techniques based on experiential relationship building, dialogue, communication and behavior change that are designed to improve the mental health of a client or patient, or to improve group relationships (such as in a family).
-- **Psychologist**: A psychologist evaluates, diagnoses, treats, and studies behavior and mental processes. Some psychologists, such as clinical and counseling psychologists, provide mental health care, and some psychologists, such as social or organizational psychologists conduct research, usually in university or other academic settings. A psychologist has a graduate degree (usually a PhD or MA).
-- **Psychiatrist**: A psychiatrist is a physician who specializes in psychiatry. Psychiatrists are authorized to prescribe medicine, conduct physical examinations, order and interpret laboratory tests, and may order brain imaging studies such as computed tomography (CT/CAT Scan), magnetic resonance imaging (MRI), and positron emission tomography (PET) scanning. A psychiatrist has an MD.
+- **Clinic**: A clinic is a health care facility that primarily provide ambulatory care for patients who are not hospitalized.
 - **Diagnosis**: Medical diagnosis refers both to the process of attempting to determine or identify a possible disease or disorder (and diagnosis in this sense can also be termed (medical) diagnostic procedure), and to the opinion reached by this process (also being termed (medical) diagnostic opinion). From the point of view of statistics the diagnostic procedure involves classification tests. It is a major component of, for example, the procedure of a doctor's visit.
 - **Drugs**: A drug is a substance which may have medicinal, intoxicating, performance enhancing or other effects when taken or put into a human body or the body of another animal and is not considered a food or exclusively a food.
+- **DSM**: The Diagnostic and Statistical Manual of Mental Disorders is a classification system by the American Psychiatric Association. It's a complement to the corresponding sections in the ICD. 
 - **History**: In this context, history means the complete list of past events all around the patient. For example, this includes treatment, drug prescriptions, orders given to nursing staff and so on.
-- **Patient**: A patient is any recipient of health care services. The patient is in need of treatment by a health care provider. In this case, this provider is a therapist.
+- **ICD**: The International Statistical Classification of Diseases and Related Health Problems is a medical classification list published by the World Health Organization (WHO). It contains codes for diseases, signs and symptoms, abnormal findings, complaints, social circumstances, and external causes of injury or diseases. The postifx number marks the revision, ICD-10 is the 10th revision.
 - **Order**: In this context, an order means an assignment from a therapist to nursing staff, administration staff or any other person, which is involved in the treatment and administrative process of the patient.
+- **Patient**: A patient is any recipient of health care services. The patient is in need of treatment by a health care provider. In this case, this provider is a therapist.
+- **Psychiatrist**: A psychiatrist is a physician who specializes in psychiatry. Psychiatrists are authorized to prescribe medicine, conduct physical examinations, order and interpret laboratory tests, and may order brain imaging studies such as computed tomography (CT/CAT Scan), magnetic resonance imaging (MRI), and positron emission tomography (PET) scanning. A psychiatrist has an MD.
+- **Psychologist**: A psychologist evaluates, diagnoses, treats, and studies behavior and mental processes. Some psychologists, such as clinical and counseling psychologists, provide mental health care, and some psychologists, such as social or organizational psychologists conduct research, usually in university or other academic settings. A psychologist has a graduate degree (usually a PhD or MA).
 - **PMS**: **P**atient **M**anagement **S**ystem
-
+- **Therapist**: Psychotherapists employ a range of techniques based on experiential relationship building, dialogue, communication and behavior change that are designed to improve the mental health of a client or patient, or to improve group relationships (such as in a family).
 
 ## User requirements 
 
@@ -77,16 +79,16 @@ This section define the technical terms used in the document.
 
 #### 2. Read diagnosis 
 - 2.1 Show diagnosis of patients in a table and details view.
-- 2.2 The details view shows: name of the patient (optional), name of the diagnosis, ICD-code, date of creation, description of diagnosis, comment of therapist, diagnosis creator (therapist), clinic (hospital or local medical practice). 
-- 2.3 The table view shows: name of the patient (optional), name of the diagnosis, ICD-code, date of creation, diagnosis creator (therapist), clinic (hospital or local medical practice). 
+- 2.2 The details view shows: name of the patient (optional), name of the diagnosis, ICD code (ev. DSM code), date of creation, description of diagnosis, comment of therapist, diagnosis creator (therapist), clinic (hospital or local medical practice). 
+- 2.3 The table view shows: name of the patient (optional), name of the diagnosis, ICD code (ev. DSM code), date of creation, diagnosis creator (therapist), clinic (hospital or local medical practice). 
 - 2.4 Filter the diagnosis of one patient: self created diagnosis, diagnosis created by therapists from the same clinic, diagnosis created by all existing therapists.
 - 2.5 Filter the diagnosis of multiple patients: current patient, all own patients, all patients from the same clinic, all existing patients.
-- 2.6 Search diagnosis of patients: search by name of the patient, name of the diagnosis, ICD-code, date of creation, description of diagnosis, comment of therapist, diagnosis creator (therapist), clinic (hospital or local medical practice). 
-- 2.7 Sort diagnosis of patients: sort by name of the patient, name of the diagnosis, ICD-code, date of creation, description of diagnosis, comment of therapist, diagnosis creator (therapist), clinic (hospital or local medical practice). 
+- 2.6 Search diagnosis of patients: search by name of the patient, name of the diagnosis, ICD code (ev. DSM code), date of creation, description of diagnosis, comment of therapist, diagnosis creator (therapist), clinic (hospital or local medical practice). 
+- 2.7 Sort diagnosis of patients: sort by name of the patient, name of the diagnosis, ICD code (ev. DSM code), date of creation, description of diagnosis, comment of therapist, diagnosis creator (therapist), clinic (hospital or local medical practice). 
 
 #### 3. Change diagnosis
-- 3.1 Add a new diagnosis for the current patient: select and save the name of the diagnosis, ICD-code, date of creation, description of diagnosis, comment of therapist, diagnosis creator (therapist), clinic (hospital or local medical practice). 
-- 3.2 Change an existing diagnosis for the current own patient: change and save the name of the diagnosis, ICD-code, date of creation, description of diagnosis, comment of therapist, diagnosis creator (therapist), clinic (hospital or local medical practice). 
+- 3.1 Add a new diagnosis for the current patient: select and save the name of the diagnosis, ICD code (ev. DSM code), date of creation, description of diagnosis, comment of therapist, diagnosis creator (therapist), clinic (hospital or local medical practice). 
+- 3.2 Change an existing diagnosis for the current own patient: change and save the name of the diagnosis, ICD code (ev. DSM code), date of creation, description of diagnosis, comment of therapist, diagnosis creator (therapist), clinic (hospital or local medical practice). 
 - 3.3 Delete an existing diagnosis for the current own patient.
 
 #### 4. Read medication
@@ -163,7 +165,6 @@ This section define the technical terms used in the document.
 - Login to the application with encrypted username and password.
 - The data protection act must be considered.
 
-
 ## System architecture and system models 
 
 The basic layout of the architecture will be a client-server web application with multiple layers. With the help of separation of the core components of the system an accurate design will become reality. MVC (Model View Controller) archtecture of the web application will guarant a contemporary implementation of the patient management system.
@@ -175,9 +176,9 @@ The basic layout of the architecture will be a client-server web application wit
                               ^          +
                               |          |
                               |          v
-   +-------------------+      |        +--------------------+
-   | View              |<-----|-------+| Model              |
-   +-------------------+      |        +--------------------+
+   +-------------------+      |        +---------------+
+   | View              |<-----|-------+| Model         |
+   +-------------------+      |        +---------------+
                   +           |
                   |           |
                   v           +
@@ -219,12 +220,12 @@ The clients will only access the web server on a encrypted channels. No unencryp
 ### Functional system requirements
 
 #### 0. General
-- 0.1 Possibility of restricting the serach space: own patients, clinic patients, all patients.
-- 0.2 Show possible search results while typing (cp. google).
+- 0.1 Possibility of restricting the search space: own patients, clinic patients, all patients.
+- 0.2 Show possible search results while typing (cp. Google).
 - 0.3 A navigation list can be used as a sidebar in all details screens (On the left or right side of the screen).
 - 0.4 The navigation list can be expanded as a sidbar. This opens the home screen.
-- 0.5 The selection of a diagnosis implies an automatic selction of the ICD-Code and diagnosis description.
-- 0.6 The selection of an ICD-Code implies an automatic selection of the diagnosis and diagnosis description.
+- 0.5 The selection of a diagnosis implies an automatic selction of the ICD code and diagnosis description.
+- 0.6 The selection of an ICD code implies an automatic selection of the diagnosis and diagnosis description.
 - 0.7 The selection of a medication implies an automatic selection of the category, medication manufacturer, and medication description.
 
 #### 1. Read patient data 
@@ -238,16 +239,16 @@ The clients will only access the web server on a encrypted channels. No unencryp
 
 #### 2. Read diagnosis 
 - 2.1 Show diagnosis of patients in a table and details view.
-- 2.2 The details view shows: name of the patient (optional), name of the diagnosis, ICD-code, date of creation, description of diagnosis, comment of therapist, diagnosis creator (therapist), clinic (hospital or local medical practice). 
-- 2.3 The table view shows: name of the patient (optional), name of the diagnosis, ICD-code, date of creation, diagnosis creator (therapist), clinic (hospital or local medical practice). 
+- 2.2 The details view shows: name of the patient (optional), name of the diagnosis, ICD code, date of creation, description of diagnosis, comment of therapist, diagnosis creator (therapist), clinic (hospital or local medical practice). 
+- 2.3 The table view shows: name of the patient (optional), name of the diagnosis, ICD code, date of creation, diagnosis creator (therapist), clinic (hospital or local medical practice). 
 - 2.4 Filter the diagnosis of one patient (1. dimension): self created diagnosis, diagnosis created by therapists from the same clinic, diagnosis created by all existing therapists.
 - 2.5 Filter the diagnosis of multiple patients (2. dimension): current patient, all own patients, all patients from the same clinic, all existing patients.
-- 2.6 Search diagnosis of patients: search by name of the patient, name of the diagnosis, ICD-code, date of creation, description of diagnosis, comment of therapist, diagnosis creator (therapist), clinic (hospital or local medical practice). 
-- 2.7 Sort diagnosis of patients: sort by name of the patient, name of the diagnosis, ICD-code, date of creation, description of diagnosis, comment of therapist, diagnosis creator (therapist), clinic (hospital or local medical practice). 
+- 2.6 Search diagnosis of patients: search by name of the patient, name of the diagnosis, ICD code, date of creation, description of diagnosis, comment of therapist, diagnosis creator (therapist), clinic (hospital or local medical practice). 
+- 2.7 Sort diagnosis of patients: sort by name of the patient, name of the diagnosis, ICD code, date of creation, description of diagnosis, comment of therapist, diagnosis creator (therapist), clinic (hospital or local medical practice). 
 
 #### 3. Change diagnosis
-- 3.1 Add a new diagnosis for the current patient: select and save the name of the diagnosis, ICD-code, date of creation, description of diagnosis, comment of therapist, diagnosis creator (therapist), clinic (hospital or local medical practice). 
-- 3.2 Change an existing diagnosis for the current own patient: change and save the name of the diagnosis, ICD-code, date of creation, description of diagnosis, comment of therapist, diagnosis creator (therapist), clinic (hospital or local medical practice). 
+- 3.1 Add a new diagnosis for the current patient: select and save the name of the diagnosis, ICD code, date of creation, description of diagnosis, comment of therapist, diagnosis creator (therapist), clinic (hospital or local medical practice). 
+- 3.2 Change an existing diagnosis for the current own patient: change and save the name of the diagnosis, ICD code, date of creation, description of diagnosis, comment of therapist, diagnosis creator (therapist), clinic (hospital or local medical practice). 
 - 3.3 Delete an existing diagnosis for the current own patient.
 
 #### 4. Read medication
@@ -334,8 +335,6 @@ The clients will only access the web server on a encrypted channels. No unencryp
 - More information about the used medication parameters is needed: duration, frequency, point in time (morning, noon, evening, night), dose and dose unit by point in time.
 - More information about the current used ICD-10 catalog is needed.
 - More information about the current used medication catalog is needed.
-
-
 
 ## System evolution
 Based on the delivered information the initial hardware requirements will be set with a buffer. This reserve will make it possible to work with a larger user base and higher load on the systems. If the reserve runs out, extra hardware can be integrated easily. Due to the usage of state of the art virtualization technologies the whole life cycle of the MHC-PMS will be covered.
