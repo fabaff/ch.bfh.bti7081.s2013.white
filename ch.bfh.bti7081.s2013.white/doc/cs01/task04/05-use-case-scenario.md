@@ -14,31 +14,28 @@
 | 1    |Psychiatrist  |Login with personal username and password  |
 | 2    |Psychiatrist  |Search for the patient, by name, address or from list  |
 | 3    |MHC_PMS       |patients are loaded from database and displayed on screen
-| 3    |Psychiatrist  |Select patient from search list  |
-| 4    |MHC_PMS       |Opens detailed view of patient including medical and drug records  |
-| 4    |Psychiatrist  |Click on Medication button to open the detailed drugs view of patient  |
-|      |MHC_PMS       |Detailed list of medications an prescriptions is displayed  |
-| 3    |Psychiatrist  |Select medication by clicking on it |
-|      |MHC_PMS       |List of current prescriptions and drugs ist listed  |
-| 4    |Psychiatrist  |Search for affected prescription by keywords or from list  |
-| 5    |Psychiatrist  |Deactivate affected prescription by marking a checkbox  |
-| 6    |Psychiatrist  |Create new prescription by clicking on add button |
-|      |MHC_PMS       |A new form is displayed  |
-| 7    |Psychiatrist  |Search for drug in drug-database, by keywords or from filtered and sorted list -> channel to drug database is opened  |
-| 8    |Psychiatrist  |Select drug from drug-database by clicking on it  |
-|      |MHC_PMS       |New prescription form is displayed  |
-| 9    |Psychiatrist  |Define dosage and frequency either with dropdown or by entering the numbers  |
-| 10   |MHC_PMS  |On save: changes are written to patient medical record database  |
-| 11   |Psychiatrist  |Log Out   |
+| 4    |Psychiatrist  |Select patient from search list  |
+| 5    |MHC_PMS       |Opens detailed view of patient including medical and drug records  |
+| 6    |Psychiatrist  |Click on Medication button to open the detailed drugs view of patient  |
+| 7    |MHC_PMS       |Detailed list of medications an prescriptions is displayed  |
+| 8    |Psychiatrist  |Select medication by clicking on it |
+| 9    |MHC_PMS       |List of current prescriptions and drugs ist listed  |
+| 10    |Psychiatrist  |Search for affected prescription by keywords or from list  |
+| 11   |Psychiatrist  |Deactivate affected prescription by marking a checkbox  |
+| 12   |Psychiatrist  |Create new prescription by clicking on add button |
+| 13   |MHC_PMS       |A new form is displayed  |
+| 14   |Psychiatrist  |Search for drug in drug-database, by keywords or from filtered and sorted list -> channel to drug database is opened  |
+| 15   |Psychiatrist  |Select drug from drug-database by clicking on it  |
+| 16   |MHC_PMS       |New prescription form is displayed  |
+| 17   |Psychiatrist  |Define dosage and frequency either with dropdown or by entering the numbers  |
+| 18   |MHC_PMS  |On save: changes are written to patient medical record database  |
+| 19   |Psychiatrist  |Log Out   |
 
 ## Exceptions, variations
 
 | Nr.  | Who     | What |
 |:----:|:--------|:-----|
-| 1.1    |Psychiatrist  |Psychiatrist must have a user account and password |
-| 2.1    |Nurse  |Patient must be added to database before comming to psychiatrist  |
-| 2.2    |Psychiatrist  |Patient not found: Check name used to query database |
-| 4.1    |Psychiatrist  |Patient must have existing prescriptions  |
-| 9.1    |MHC_PMS  |Dosage is checked against drug database for validity. Error returns if not valid  |
+
+| 17.1    |MHC_PMS  |Dosage is checked against drug database for validity. Error returns if not valid  |
 | 6    |  |  |
 
