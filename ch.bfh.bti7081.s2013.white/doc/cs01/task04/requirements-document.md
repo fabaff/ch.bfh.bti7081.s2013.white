@@ -339,7 +339,7 @@ For testing purposes a dummy database is needed. This means that a patient under
 
 The efficiency testing of the hardware and the software is planned as a simulation. According to the delivered information from the customer the test load will be specified in detail at a later point in time. 
 
-All components of the system must be tested with Unit tests. There must be also integration tests for the whole application.
+All components of the system must be tested with Unit tests. All new Components of the application must have successfully running Unit test at the End of the implementation. There must be also integration tests for the whole application.
 
 ## Appendices 
 
