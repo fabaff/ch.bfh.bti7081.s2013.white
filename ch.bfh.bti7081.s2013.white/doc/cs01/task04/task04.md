@@ -203,30 +203,24 @@
 
 ### Non-functional system requirements
 
-- login logout, short timeout
-- restrict the number of displayed records to a maximum. 
-- verschlüsselungsprotokoll angeben
-- An encrypted authentication is needed to enter the application.
-- The data of all patients are stored in a central database.
-- The database contains data of all patients and institutions who are using the application.
-- A special tool is required to continuous update the database with changed patient and institution data (not in scope of this project). This will be done by the administration staff of an institution. 
-- Medical catalogs (diagnosis, treatment, drugs) are integrated into the database and can be used in the application.
-- Data protection act must be considered when the patient data will be stored in a central database.
-- TODO: interfaces to other systems
-
 - The application can be used on tablet during a consultation or a meeting (main use).
 - The application can be used on desktop when a theparist is doing office work.
 - The language of the application is german. It should be possible to integrate a french language version at a later point (clinics in the romandie). 
 - A theparist can only change data from own patients.
 - Only a psychiatrist can do change in medication, a  psychologist has a read only access to the medication management functionality.
 - No possibility to change an automatic created event.
-- Login to the application with encrypted username and password.
-- The data protection act must be considered.
+- An encrypted authentication is needed to enter the application (username and password).
+- The data of all patients are stored in a central database.
+- The data protection act must be considered: A https connection is used for all transactions between client and server.
+- Medical catalogs (diagnosis, treatment, medication) are integrated into the database and can be used in the application.
+- Restrict the number of displayed records to a maximum (improves performance).
+- A special tool is required to continuous update the database with changed patient and clinic data (not in scope of this project). This will be done by the administration staff of a clinic. 
+- There must be interfaces to PMS applications from other medical users (nurses, administration staff).
 
 ### Domain requirements
 
-- Dosierung, Mengen, Einheiten der Medikamente
-- drugs catalog
-- ICD-10
+- More information about the used medication parameters is needed: duration, frequency, point in time (morning, noon, evening, night), dose and dose unit by point in time.
+- More information about the current used ICD-10 catalog is needed.
+- More information about the current used medication catalog is needed.
 
 

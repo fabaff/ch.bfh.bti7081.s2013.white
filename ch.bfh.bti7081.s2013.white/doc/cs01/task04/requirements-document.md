@@ -62,11 +62,109 @@ This section define the technical terms used in the document.
 - **Order**: In this context, an order means an assignment from a therapist to nursing staff, administration staff or any other person, which is involved in the treatment and administrative process of the patient.
 - **PMS**: **P**atient **M**anagement **S**ystem
 
+
 ## User requirements 
 
+### Functional user requirements
+
+#### 1. Read patient data 
+- 1.1 Show all patients in a table on the home screen: show status, name, psychotherapist (current), clinics (hospitals or local medical practices).
+- 1.2 Search a specific patient: search by status, name, psychotherapist (current), clinics (hospitals or local medical practices).
+- 1.3 Sort the patient table: sort by status, name, psychotherapist (current), clinics (hospitals or local medical practices).
+- 1.4 Filter the patient table: filter own patients, clinic patients, all patients.
+- 1.5 Open the dossier of a specific patient from the start screen: personal data, diagnosis, drugs, orders to other staff, history.
+- 1.6 Show personal data of a specific patient: first name, last name, gender, birthday, civil status, mother language, communication language, nationality, religion, adress, home location, postal code, country, phone private, phone business, mobile phone number, e-mail.
+
+#### 2. Read diagnosis 
+- 2.1 Show diagnosis of patients in a table and details view.
+- 2.2 The details view shows: name of the patient (optional), name of the diagnosis, ICD-code, date of creation, description of diagnosis, comment of therapist, diagnosis creator (therapist), clinic (hospital or local medical practice). 
+- 2.3 The table view shows: name of the patient (optional), name of the diagnosis, ICD-code, date of creation, diagnosis creator (therapist), clinic (hospital or local medical practice). 
+- 2.4 Filter the diagnosis of one patient: self created diagnosis, diagnosis created by therapists from the same clinic, diagnosis created by all existing therapists.
+- 2.5 Filter the diagnosis of multiple patients: current patient, all own patients, all patients from the same clinic, all existing patients.
+- 2.6 Search diagnosis of patients: search by name of the patient, name of the diagnosis, ICD-code, date of creation, description of diagnosis, comment of therapist, diagnosis creator (therapist), clinic (hospital or local medical practice). 
+- 2.7 Sort diagnosis of patients: sort by name of the patient, name of the diagnosis, ICD-code, date of creation, description of diagnosis, comment of therapist, diagnosis creator (therapist), clinic (hospital or local medical practice). 
+
+#### 3. Change diagnosis
+- 3.1 Add a new diagnosis for the current patient: select and save the name of the diagnosis, ICD-code, date of creation, description of diagnosis, comment of therapist, diagnosis creator (therapist), clinic (hospital or local medical practice). 
+- 3.2 Change an existing diagnosis for the current own patient: change and save the name of the diagnosis, ICD-code, date of creation, description of diagnosis, comment of therapist, diagnosis creator (therapist), clinic (hospital or local medical practice). 
+- 3.3 Delete an existing diagnosis for the current own patient.
+
+#### 4. Read medication
+- 4.1 Show medication of patients in a table and details view.
+- 4.2 The details view shows: name of the patient (optional), clinic, medication name, prescribing person (doctor), medication description, medication manufacturer, prescribing details, doctors comments.
+- 4.3 The table view shows: name of the patient (optional), medication name, prescribing person (doctor), prescribing details.
+- 4.4 The prescribing details includes: duration, frequency, point in time (morning, noon, evening, night), dose and dose unit by point in time.
+- 4.5 Filter the medication of one patient: self created medication, medication created by doctors from the same clinic, medication created by all existing doctors.
+- 4.6 Filter the medication of multiple patients: current patient, all own patients, all patients from the same clinic, all existing patients.
+- 4.7 Search medication of patients: name of the patient (optional), clinic, medication name, prescribing person (doctor), medication description, medication manufacturer, prescribing details, doctors comments.
+- 4.8 Sort medication of patients: Sort by name of the patient (optional), clinic, medication name, prescribing person (doctor), medication description, medication manufacturer, prescribing details, doctors comments.
+
+#### 5. Change medication
+- 5.1 Add a new medication for the current patient: select and save medication name, medication description, medication manufacturer, prescribing person (doctor), clinic, prescribing details.
+- 5.2 Change an existing medication for the current own patient: medication name, medication description, medication manufacturer, prescribing person (doctor), clinic, prescribing details. 
+- 5.3 Delete an existing medication for the current own patient.
+
+#### 6. Read ICD-10 catalog
+- 6.1 Start the ICD-10 diagnosis catalog from the diagnosis screen.
+- 6.2 Show ICD-10 catalog in a table and details view.
+- 6.3 The details view shows: diagnosis name, ICD-10 code, diagnosis description.
+- 6.4 The table view shows: diagnosis name, ICD-10 code, diagnosis description.
+- 6.5 Filter the ICD-10 catalog entries: Filter by ICD-10 code group.
+- 6.6 Search in the ICD-10 catalog: search by diagnosis name, ICD-10 code, diagnosis description.
+- 6.7 Sort the ICD-10 catalog entries; sort by diagnosis name, ICD-10 code, diagnosis description.
+
+#### 7. Read medication catalog
+- 7.1 Start the medication catalog from the medication screen.
+- 7.2 Show medication catalog in a table and details view.
+- 7.3 The details view shows: medication name, category, medication manufacturer, medication description.
+- 7.4 The table view shows: medication name, category, medication manufacturer.
+- 7.5 Filter medication catalog entries: Filter by category, medication manufacturer.
+- 7.6 Search in the medication catalog: medication name, category, medication manufacturer, medication description.
+- 7.7 Sort the medication catalog entries; medication name, category, medication manufacturer, medication description.
+ 
+#### 8. Read history
+- 8.1 Automatic event creation of all changed diagnosis, medications, orders.
+- 8.2 Show history of patients in a table and details view (all changed diagnosis, medications, orders, and self created events).
+- 8.3 The details view shows: name of the patient (optional), event type, responsable therapist, comment of responsable therapist, date of event, clinic.
+- 8.4 The table view shows: name of the patient (optional), event type, responsable therapist, date of event, clinic.
+- 8.5 Filter the history of one patient: own events, events created by therapists from the same clinic, events created by all existing therapists.
+- 8.6 Filter the history of multiple patients: current patient, all own patients, all patients from the same clinic, all existing patients.
+- 8.7 Search history entries: search by name of the patient (optional), event type, responsable therapist, comment of responsable therapist, date of event, clinic.
+- 8.8 Sort history entries: sort by name of the patient (optional), event type, responsable therapist, comment of responsable therapist, date of event, clinic.
+ 
+#### 9. Change history
+- 9.1 Add a new event for the current patient: event type, responsable therapist, comment of responsable therapist, date of event, clinic.
+- 9.2 Change an existing (self created) event for the current own patient: event type, responsable therapist, comment of responsable therapist, date of event, clinic.
+- 9.3 Delete an existing (self created) event for the current own patient.
+
+#### 10. Read Orders
+- 10.1 Show orders to other medical staff in a table view: acceptor of order, responsabe therapist, description, date, status, clinic.
+- 10.2 Search orders: serach by acceptor of order, responsabe therapist, description, date, status, clinic.
+- 10.3 Sort orders: order by acceptor of order, responsabe therapist, description, date, status, clinic.
+
+#### 11. Change Orders
+- 11.1 Add new order for the current own patient: acceptor of order, responsabe therapist, description, date, status, clinic.
+- 11.2 Change an existing order for the current own patient: acceptor of order, responsabe therapist, description, date, status, clinic.
+- 11.3 Delete an existing order for the current own patient.
+ 
+#### 12. Help system
+- 12.1 Start the help system from every screen of the application.
+- 12.2 Show the diffrent help topics: Navigation tree and description of selected topic.
+- 12.3 Search with keywords in the help system.
+
+### Non-functional user requirements
+
+- The application can be used on tablet during a consultation or a meeting (main use).
+- The application can be used on desktop when a theparist is doing office work.
+- The language of the application is german. It should be possible to integrate a french language version at a later point (clinics in the romandie). 
+- A theparist can only change data from own patients.
+- Only a psychiatrist can do change in medication, a  psychologist has a read only access to the medication management functionality.
+- No possibility to change an automatic created event.
+- Login to the application with encrypted username and password.
+- The data protection act must be considered.
 
 
-## System architecture 
+## System architecture and System models 
 The basic layout of the architecture will be a multi layer web application. With the help of separation of the core components of the system an accurate design will become reality. MVC (Model View Controller) archtecture of the web application will guarant a contemporary implementation of the patient management system.
 
 ```bash
@@ -114,11 +212,127 @@ The clients will only access the web server on a encrypted channels. No unencryp
      +----------------------------------------------------------+
 ```
 
+
 ## System requirements specification 
 
+### Functional system requirements
 
+#### 0. General
+- 0.1 Possibility of restricting the serach space: own patients, clinic patients, all patients.
+- 0.2 Show possible search results while typing (cp. google).
+- 0.3 A navigation list can be used as a sidebar in all details screens (On the left or right side of the screen).
+- 0.4 The navigation list can be expanded as a sidbar. This opens the home screen.
+- 0.5 The selection of a diagnosis implies an automatic selction of the ICD-Code and diagnosis description.
+- 0.6 The selection of an ICD-Code implies an automatic selection of the diagnosis and diagnosis description.
+- 0.7 The selection of a medication implies an automatic selection of the category, medication manufacturer, and medication description.
 
-## System models 
+#### 1. Read patient data 
+- 1.1 Show all patients in a table on the home screen: show status, name, psychotherapist (current), clinics (hospitals or local medical practices).
+ - Valid values for attribute "status": "Eigene", "Aktiv", "Abgeschlossen", "Wieder aktiv"
+- 1.2 Search a specific patient: search by status, name, psychotherapist (current), clinics (hospitals or local medical practices).
+- 1.3 Sort the patient table: sort by status, name, psychotherapist (current), clinics (hospitals or local medical practices).
+- 1.4 Filter the patient table: filter own patients, clinic patients, all patients.
+- 1.5 Open the dossier of a specific patient from the start screen: personal data, diagnosis, drugs, orders to other staff, history.
+- 1.6 Show personal data of a specific patient: first name, last name, gender, birthday, civil status, mother language, communication language, nationality, religion, adress, home location, postal code, country, phone private, phone business, mobile phone number, e-mail.
+
+#### 2. Read diagnosis 
+- 2.1 Show diagnosis of patients in a table and details view.
+- 2.2 The details view shows: name of the patient (optional), name of the diagnosis, ICD-code, date of creation, description of diagnosis, comment of therapist, diagnosis creator (therapist), clinic (hospital or local medical practice). 
+- 2.3 The table view shows: name of the patient (optional), name of the diagnosis, ICD-code, date of creation, diagnosis creator (therapist), clinic (hospital or local medical practice). 
+- 2.4 Filter the diagnosis of one patient (1. dimension): self created diagnosis, diagnosis created by therapists from the same clinic, diagnosis created by all existing therapists.
+- 2.5 Filter the diagnosis of multiple patients (2. dimension): current patient, all own patients, all patients from the same clinic, all existing patients.
+- 2.6 Search diagnosis of patients: search by name of the patient, name of the diagnosis, ICD-code, date of creation, description of diagnosis, comment of therapist, diagnosis creator (therapist), clinic (hospital or local medical practice). 
+- 2.7 Sort diagnosis of patients: sort by name of the patient, name of the diagnosis, ICD-code, date of creation, description of diagnosis, comment of therapist, diagnosis creator (therapist), clinic (hospital or local medical practice). 
+
+#### 3. Change diagnosis
+- 3.1 Add a new diagnosis for the current patient: select and save the name of the diagnosis, ICD-code, date of creation, description of diagnosis, comment of therapist, diagnosis creator (therapist), clinic (hospital or local medical practice). 
+- 3.2 Change an existing diagnosis for the current own patient: change and save the name of the diagnosis, ICD-code, date of creation, description of diagnosis, comment of therapist, diagnosis creator (therapist), clinic (hospital or local medical practice). 
+- 3.3 Delete an existing diagnosis for the current own patient.
+
+#### 4. Read medication
+- 4.1 Show medication of patients in a table and details view.
+- 4.2 The details view shows: name of the patient (optional), clinic, medication name, prescribing person (doctor), medication description, medication manufacturer, prescribing details, doctors comments.
+- 4.3 The table view shows: name of the patient (optional), medication name, prescribing person (doctor), prescribing details.
+- 4.4 The prescribing details includes: duration, frequency, point in time (morning, noon, evening, night), dose and dose unit by point in time.
+- 4.5 Filter the medication of one patient  (1. dimension): self created medication, medication created by doctors from the same clinic, medication created by all existing doctors.
+- 4.6 Filter the medication of multiple patients (2. dimension): current patient, all own patients, all patients from the same clinic, all existing patients.
+- 4.7 Search medication of patients: name of the patient (optional), clinic, medication name, prescribing person (doctor), medication description, medication manufacturer, prescribing details, doctors comments.
+- 4.8 Sort medication of patients: Sort by name of the patient (optional), clinic, medication name, prescribing person (doctor), medication description, medication manufacturer, prescribing details, doctors comments.
+
+#### 5. Change medication
+- 5.1 Add a new medication for the current patient: select and save medication name, medication description, medication manufacturer, prescribing person (doctor), clinic, prescribing details.
+- 5.2 Change an existing medication for the current own patient: medication name, medication description, medication manufacturer, prescribing person (doctor), clinic, prescribing details. 
+- 5.3 Delete an existing medication for the current own patient.
+
+#### 6. Read ICD-10 catalog (diagnosis database)
+- 6.1 Start the ICD-10 diagnosis catalog from the diagnosis screen.
+- 6.2 Show ICD-10 catalog in a table and details view.
+- 6.3 The details view shows: diagnosis name, ICD-10 code, diagnosis description.
+- 6.4 The table view shows: diagnosis name, ICD-10 code, diagnosis description.
+- 6.5 Filter the ICD-10 catalog entries: Filter by ICD-10 code group.
+- 6.6 Search in the ICD-10 catalog: search by diagnosis name, ICD-10 code, diagnosis description.
+- 6.7 Sort the ICD-10 catalog entries; sort by diagnosis name, ICD-10 code, diagnosis description.
+
+#### 7. Read medication catalog (medication database)
+- 7.1 Start the medication catalog from the medication screen.
+- 7.2 Show medication catalog in a table and details view.
+- 7.3 The details view shows: medication name, category, medication manufacturer, medication description.
+- 7.4 The table view shows: medication name, category, medication manufacturer.
+- 7.5 Filter medication catalog entries: Filter by category, medication manufacturer.
+- 7.6 Search in the medication catalog: medication name, category, medication manufacturer, medication description.
+- 7.7 Sort the medication catalog entries; medication name, category, medication manufacturer, medication description.
+ 
+#### 8. Read history
+- 8.1 Automatic event creation of all changed diagnosis, medications, orders.
+- 8.2 Show history of patients in a table and details view (all changed diagnosis, medications, orders, and self created events).
+- 8.3 The details view shows: name of the patient (optional), event type, responsable therapist, comment of responsable therapist, date of event, clinic.
+- 8.4 The table view shows: name of the patient (optional), event type, responsable therapist, date of event, clinic.
+- 8.5 Filter the history of one patient  (1. dimension): own events, events created by therapists from the same clinic, events created by all existing therapists.
+- 8.6 Filter the history of multiple patients (2. dimension): current patient, all own patients, all patients from the same clinic, all existing patients.
+- 8.7 Search history entries: search by name of the patient (optional), event type, responsable therapist, comment of responsable therapist, date of event, clinic.
+- 8.8 Sort history entries: sort by name of the patient (optional), event type, responsable therapist, comment of responsable therapist, date of event, clinic.
+ 
+#### 9. Change history
+- 9.1 Add a new event for the current patient: event type, responsable therapist, comment of responsable therapist, date of event, clinic.
+- 9.2 Change an existing (self created) event for the current own patient: event type, responsable therapist, comment of responsable therapist, date of event, clinic.
+- 9.3 Delete an existing (self created) event for the current own patient.
+
+#### 10. Read Orders
+- 10.1 Show orders to other medical staff in a table view: acceptor of order, responsabe therapist, description, date, status, clinic.
+- 10.2 Search orders: serach by acceptor of order, responsabe therapist, description, date, status, clinic.
+- 10.3 Sort orders: order by acceptor of order, responsabe therapist, description, date, status, clinic.
+
+#### 11. Change Orders
+- 11.1 Add new order for the current own patient: acceptor of order, responsabe therapist, description, date, status, clinic.
+- 11.2 Change an existing order for the current own patient: acceptor of order, responsabe therapist, description, date, status, clinic.
+- 11.3 Delete an existing order for the current own patient.
+ 
+#### 12. Help system
+- 12.1 Start the help system from every screen of the application.
+- 12.2 Show the diffrent help topics: Navigation tree and description of selected topic.
+- 12.3 Search with keywords in the help system.
+
+### Non-functional system requirements
+
+- The application can be used on tablet during a consultation or a meeting (main use).
+- The application can be used on desktop when a theparist is doing office work.
+- The language of the application is german. It should be possible to integrate a french language version at a later point (clinics in the romandie). 
+- A theparist can only change data from own patients.
+- Only a psychiatrist can do change in medication, a  psychologist has a read only access to the medication management functionality.
+- No possibility to change an automatic created event.
+- An encrypted authentication is needed to enter the application (username and password).
+- The data of all patients are stored in a central database.
+- The data protection act must be considered: A https connection is used for all transactions between client and server.
+- Medical catalogs (diagnosis, treatment, medication) are integrated into the database and can be used in the application.
+- Restrict the number of displayed records to a maximum (improves performance).
+- A special tool is required to continuous update the database with changed patient and clinic data (not in scope of this project). This will be done by the administration staff of a clinic. 
+- There must be interfaces to PMS applications from other medical users (nurses, administration staff).
+
+### Domain requirements
+
+- More information about the used medication parameters is needed: duration, frequency, point in time (morning, noon, evening, night), dose and dose unit by point in time.
+- More information about the current used ICD-10 catalog is needed.
+- More information about the current used medication catalog is needed.
 
 
 
