@@ -1,24 +1,24 @@
 # Use Case Scenario
 
-* **No. and name**            : **3** Edit diagnosis
-* **Scenario**                : Edit an existing diagnosis for a patient
+* **No. and name**            : **3** Change diagnosis
+* **Scenario**                : Change an existing diagnosis for a patient
 * **Description**             : There are new informations concering the medical situation of the patient which must be added to the diagnosis
 * **Engaged party**           : Therapist
 * **Trigger / Pre condition** : The patient must already have an existing record, the patient must exist in the database
-* **Results / Post condition**: The patients record now has the newest information
+* **Results / Post condition**: The patients record database now has the newest information
 
 ## Sequence
 
 | Nr.  | Who     | What |
 |:----:|:--------|:-----|
 | 1    |Therapist  |Login with personal username and password  |
-| 2    |Therapist  |Search for the patient  |
-| 3    |Therapist  |Select patient from list  |
-| 4    |Therapist  |Open medical histroy of patient  |
-| 5    |Therapist  |Click on add new diagnosis  |
-| 6    |Therapist  |Add a name for the diagnosis  |
-| 7    |Therapist  |Insert a description  |
-| 8    |Therapist  |Save the new record to the medical record database  |
+| 2    |Therapist  |Search for the patient -> query database |
+| 3    |Therapist  |Select patient from list -> opens information about the patient  |
+| 4    |Therapist  |Open medical histroy of patient -> opens table view of diagnoses |
+| 5    |Therapist  |Filter and/or search diagnosis
+| 6    |Therapist  |Select the desired diagnosis  |
+| 7    |Therapist  |Change/add the description for the diagnosis  |
+| 8    |Therapist  |On save: the new record to the medical record database -> Changed diagnosis, date, time and actor are written to the patient medical record database  |
 
 ## Exceptions, variations
 
@@ -26,7 +26,7 @@
 |:----:|:--------|:-----|
 | 1.1  |Nurse  |Patient record must have been created before  |
 | 7.1  |Therapist  |Optional: Select different doctor or hospital  |
-| 7.2    |Therapist  |Optional: Insert comments  |
+| 7.2  |Therapist  |Optional: Insert comments  |
 | 4    |  |  |
 | 5    |  |  |
 | 6    |  |  |
