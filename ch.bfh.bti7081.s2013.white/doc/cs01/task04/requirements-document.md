@@ -172,32 +172,6 @@ The basic layout of the architecture will be a client-server web application wit
 - Application server
 - Database server
 
-- TODO diagramm architecture
-
-```bash
-    +-----------------------------------------------------------+
-    |  Frontend            Backend                              |
-    |  +---------+         +----------+           +----------+  |
-    |  |         |<-------+|          |+--------->|          |  |
-    |  | Web     |+------->| Data     |<---------+| Extra    |  |
-    |  +---------+         +----------+           +----------+  |
-    +-----------------------------------------------------------+
-           +  ^       + ^      + ^         + ^        + ^
-           |  |       | |      | |         | |        | |
-           v  +       v +      v +         v +        v +
-     +---------------------------------------------------------+
-     |   ev. Loadbalancing layer                               |
-     +---------------------------------------------------------+
-              ^ +     ^ +             ^ +         ^ +
-              | |     | |             | |         | |
-              | |     | |             | |         | |
-              + v     + v             + v         + v
-     +----------------------------------------------------------+
-     |       Users                                              |
-     +----------------------------------------------------------+
-```
-
-
 With the help of separation of the core components of the system an accurate design will become reality. MVC (Model View Controller) archtecture of the web application will guarant a contemporary implementation of the patient management system.
 
 For maximum performance the database will be hosted on a dedicated server. Every connection between the participient of the backend will be encrypted with industrial standards. 
