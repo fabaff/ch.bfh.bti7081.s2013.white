@@ -52,7 +52,7 @@ The system will NOT become a complete medical records system where all informati
 ## Glossary
 This section define the technical terms used in the document.
 
-- **Clinic**: A clinic is a health care facility that primarily provide ambulatory care for patients who are not hospitalized.
+- **Clinic**: A clinic is a health care facility that provide ambulatory or hospitalized care for patients.
 - **Diagnosis**: Medical diagnosis refers both to the process of attempting to determine or identify a possible disease or disorder (and diagnosis in this sense can also be termed (medical) diagnostic procedure), and to the opinion reached by this process (also being termed (medical) diagnostic opinion). From the point of view of statistics the diagnostic procedure involves classification tests. It is a major component of, for example, the procedure of a doctor's visit.
 - **Drugs**: A drug is a substance which may have medicinal, intoxicating, performance enhancing or other effects when taken or put into a human body or the body of another animal and is not considered a food or exclusively a food.
 - **DSM**: The Diagnostic and Statistical Manual of Mental Disorders is a classification system by the American Psychiatric Association. It's a complement to the corresponding sections in the ICD. 
