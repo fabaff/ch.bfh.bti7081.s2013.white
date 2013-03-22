@@ -325,7 +325,7 @@ Security is important. To test the security of the application, the network conn
 
 - [Use cases](https://github.com/fabaff/ch.bfh.bti7081.s2013.white/blob/master/ch.bfh.bti7081.s2013.white/doc/cs01/task04/use_cases/use-cases.md)
 - [Use case scenario 2](https://github.com/fabaff/ch.bfh.bti7081.s2013.white/blob/master/ch.bfh.bti7081.s2013.white/doc/cs01/task04/use_case_scenarios/old_02-use-case-scenario.md)
-- [Use case scenario 3](https://github.com/fabaff/ch.bfh.bti7081.s2013.white/blob/master/ch.bfh.bti7081.s2013.white/doc/cs01/task04/use_case_scenarios/03-use-case-scenario.md)
-- [Use case scenario 5](https://github.com/fabaff/ch.bfh.bti7081.s2013.white/blob/master/ch.bfh.bti7081.s2013.white/doc/cs01/task04/use_case_scenarios/05-use-case-scenario.md)
+- [Use case scenario 3](https://github.com/fabaff/ch.bfh.bti7081.s2013.white/blob/master/ch.bfh.bti7081.s2013.white/doc/cs01/task04/use_case_scenarios/use-cases-scenario-03.md)
+- [Use case scenario 5](https://github.com/fabaff/ch.bfh.bti7081.s2013.white/blob/master/ch.bfh.bti7081.s2013.white/doc/cs01/task04/use_case_scenarios/use-cases-scenario-05.md)
 
 [1]: http://git-scm.com/ "Git"
