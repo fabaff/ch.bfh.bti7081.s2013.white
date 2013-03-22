@@ -312,7 +312,8 @@ Based on the delivered information the initial hardware requirements will be set
 
 The software part of the system architecture will take into account that customer requirements may change. The design will allow easy upscaling of the application. The main focus will lie on more users and more patients.
 
-Maintenance and bug fixing will be provided. Data protection issues will be fixed with a high priority. The client security is out of scope and is not part of this document.
+Maintenance and bug fixing will be provided. Data protection issues will be fixed with a high priority.
+
 
 ## Testing 
 For testing purposes a dummy database is needed. This means that a patient underlying data source must be ready at the start of the implementing phase. The format is open (full implemented database, simplified database, flat text file, etc.) but a source close to the layout which will be used for the final product is preferred.
