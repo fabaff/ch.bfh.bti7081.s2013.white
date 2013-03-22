@@ -24,17 +24,19 @@
 | 11   |Psychiatrist  |Deactivate affected prescription by marking a checkbox  |
 | 12   |Psychiatrist  |Create new prescription by clicking on add button |
 | 13   |MHC_PMS       |A new form is displayed  |
-| 14   |Psychiatrist  |Search for drug in drug-database, by keywords or from filtered and sorted list -> channel to drug database is opened  |
-| 15   |Psychiatrist  |Select drug from drug-database by clicking on it  |
-| 16   |MHC_PMS       |New prescription form is displayed  |
-| 17   |Psychiatrist  |Define dosage and frequency either with dropdown or by entering the numbers  |
-| 18   |MHC_PMS  |On save: changes are written to patient medical record database  |
-| 19   |Psychiatrist  |Log Out   |
+| 14   |Psychiatrist  |Search for drug in drug-database, by keywords or from filtered and sorted list  |
+| 15   |DRUGS2000     |Query on drug-database, List of drugs is returend  |
+| 16   |Psychiatrist  |Select drug from drug-database by clicking on it  |
+| 17   |MHC_PMS       |New prescription form is displayed  |
+| 18   |Psychiatrist  |Define dosage and frequency either with dropdown or by entering the numbers  |
+| 19   |MHC_PMS  |On save: changes are written to patient medical record database  |
+| 20   |Psychiatrist  |Log Out   |
 
 ## Exceptions, variations
 
 | Nr.  | Who     | What |
 |:----:|:--------|:-----|
-| 17.1    |MHC_PMS  |Dosage is checked against drug database for validity. Error returns if not valid  |
+| 4.1   |MHC_PMS  |If patient is marked as violent, a warning is displayed on screen  |
+| 18.1    |MHC_PMS  |Dosage is checked against drug database for validity. Error returns if not valid  |
 
 
