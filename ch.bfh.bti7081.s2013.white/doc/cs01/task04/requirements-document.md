@@ -261,7 +261,8 @@ The clients will only access the web server on a encrypted channels. No unencryp
  
 #### 9. Change history
 - 9.1 Add a new event for the current patient: event type, responsable therapist, comment of responsable therapist, date of event, clinic.
- - Event type: change dangerousness of the patient, new diagnosis, change diagnosis, new medication, change medication, new order, change order, custom event
+ - Event type: change dangerousness of the patient, new diagnosis, change diagnosis, new medication, change medication, new order, change order, custom event.
+ - change dangerousness of the patient: the field change dangerousness in the patient screen is adapted, comment about dangerousness is adapted.
 - 9.2 Change an existing (self created) event for the current own patient: event type, responsable therapist, comment of responsable therapist, date of event, clinic.
 - 9.3 Delete an existing (self created) event for the current own patient.
 
