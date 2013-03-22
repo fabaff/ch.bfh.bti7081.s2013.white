@@ -316,15 +316,27 @@ Maintenance and bug fixing will be provided. Data protection issues will be fixe
 
 
 ## Testing 
+
 For testing purposes a dummy database is needed. This means that a patient underlying data source must be ready at the start of the implementing phase. The format is open (full implemented database, simplified database, flat text file, etc.) but a source close to the layout which will be used for the final product is preferred.
 
 The efficiency testing of the hardware and the software is planned as a simulation. According to the delivered information from the customer the test load will be specified in detail at a later point in time. 
 
-All components of the system must be tested with Unit tests. All new Components of the application must have successfully running Unit test at the End of the implementation. There must be also integration tests for the whole application.
+There will be diffrent levels of testing:
 
+- Unit tests:
+All components of the system must be tested with Unit tests and all Units must run successfully before a new release.
+
+- System tests
+There must be also integration tests for testing the functionality of the whole application.
+
+- Acceptance tests
+It is important that the user (therapists) will be ready to accept the new application. A strong interaction with the users is required during the development of the applicarion.
+
+- Usability tests
 The interface of the application will be tested by an Usability test with future users of the system. This shall avoid and minimize interface design faults. This test will increase the level of accteptance, too.
 
-Security is important. To test the security of the application, the network connections, and the system design in general in short periods security test will provide detailed information about the level of security. This is necessary to gain and prove the grade which is required according to the Data protection.
+- Security tests
+To test the security of the application, the network connections, and the system design in general in short periods security test will provide detailed information about the level of security. This is necessary to gain and prove the grade which is required according to the Data protection.
 
 ## Appendices 
 
