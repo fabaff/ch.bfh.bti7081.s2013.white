@@ -75,7 +75,7 @@ This section define the technical terms used in the document.
 - 1.3 Sort the patient table: sort by status, name, psychotherapist (current), clinics (hospitals or local medical practices).
 - 1.4 Filter the patient table: filter own patients, clinic patients, all patients.
 - 1.5 Open the dossier of a specific patient from the start screen: personal data, diagnosis, drugs, orders to other staff, history.
-- 1.6 Show personal data of a specific patient: first name, last name, gender, birthday, civil status, mother language, communication language, nationality, religion, adress, home location, postal code, country, phone private, phone business, mobile phone number, e-mail.
+- 1.6 Show personal data of a specific patient: first name, last name, dangerousness of the patient, comment about dangerousness, gender, birthday, civil status, mother language, communication language, nationality, religion, adress, home location, postal code, country, phone private, phone business, mobile phone number, e-mail.
 
 #### 2. Read diagnosis 
 - 2.1 Show diagnosis of patients in a table and details view.
@@ -226,8 +226,8 @@ The clients will only access the web server on a encrypted channels. No unencryp
 - 1.3 Sort the patient table: sort by status, name, psychotherapist (current), clinics (hospitals or local medical practices).
 - 1.4 Filter the patient table: filter own patients, clinic patients, all patients.
 - 1.5 Open the dossier of a specific patient from the start screen: personal data, diagnosis, drugs, orders to other staff, history.
-- 1.6 Show personal data of a specific patient: first name, last name, gender, birthday, civil status, mother language, communication language, nationality, religion, adress, home location, postal code, country, phone private, phone business, mobile phone number, e-mail.
-
+- 1.6 Show personal data of a specific patient: first name, last name, dangerousness of the patient, comment about dangerousness, gender, birthday, civil status, mother language, communication language, nationality, religion, adress, home location, postal code, country, phone private, phone business, mobile phone number, e-mail.
+ 
 #### 2. Read diagnosis 
 - 2.1 Show diagnosis of patients in a table and details view.
 - 2.2 The details view shows: name of the patient (optional), name of the diagnosis, ICD code, date of creation, description of diagnosis, comment of therapist, diagnosis creator (therapist), clinic (hospital or local medical practice). 
