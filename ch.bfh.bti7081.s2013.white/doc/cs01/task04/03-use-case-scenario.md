@@ -13,7 +13,7 @@
 |:----:|:----------|:--------------------------------------------------|
 | 1    |Therapist  |Login with personal username and password          |
 | 2    |Therapist  |Search for the patient -> query database |
-| 3    |Therapist  |Select patient from list -> opens information about the patient  |
+| 3    |Therapist  |Select patient from search list -> opens information about the patient  |
 | 4    |Therapist  |Open medical histroy of patient -> opens table view of diagnoses |
 | 5    |Therapist  |Filter and/or search diagnosis
 | 6    |Therapist  |Select the desired diagnosis  |
@@ -24,7 +24,10 @@
 
 | Nr.  | Who       | What                                              |
 |:----:|:----------|:--------------------------------------------------|
-| 1.1  |Nurse      |Patient record must have been created before       |
+| 1.1    |Psychiatrist  |Psychiatrist must have a user account and password |
+| 2.1    |Nurse  |Patient must be added to database before comming to psychiatrist  |
+| 2.2    |Psychiatrist  |Patient not found: Check name used to query database |
+| 4.1    |Psychiatrist  |Patient must have at least one existing diagnosis  |
 | 7.1  |Therapist  |Optional: Select different doctor or hospital      |
 | 7.2  |Therapist  |Optional: Insert comments                          |
 
