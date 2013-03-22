@@ -12,16 +12,16 @@
 | Nr.  | Who     | What |
 |:----:|:--------|:-----|
 | 1    |Psychiatrist  |Login with personal username and password  |
-| 2    |Psychiatrist  |Search for the patient, by name, address or from list ->  |
-| 3    |Psychiatrist  |Select patient from search list  |
-| 4    |Psychiatrist  |Click on Medication button to open the medical history of patient  |
-| 3    |Psychiatrist  |Select medication  |
-| 4    |Psychiatrist  |Search for affected prescription  |
+| 2    |Psychiatrist  |Search for the patient, by name, address or from list -> patients are loaded from database  |
+| 3    |Psychiatrist  |Select patient from search list -> opens detailed view of patient including medical and drug records  |
+| 4    |Psychiatrist  |Click on Medication button to open the detailed drugs view of patient  |
+| 3    |Psychiatrist  |Select medication by clicking on it |
+| 4    |Psychiatrist  |Search for affected prescription by keywords or from list  |
 | 5    |Psychiatrist  |Deactivate affected prescription by marking a checkbox  |
-| 6    |Psychiatrist  |Create new prescription  |
-| 7    |Psychiatrist  |Search for drug in drug-database, by name or ingredients -> channel to drug database is opened  |
-| 8    |Psychiatrist  |Select drug from drug-database  |
-| 9    |Psychiatrist  |Define dosage and frequency   |
+| 6    |Psychiatrist  |Create new prescription by clicking on add button |
+| 7    |Psychiatrist  |Search for drug in drug-database, by keywords or from filtered and sorted list -> channel to drug database is opened  |
+| 8    |Psychiatrist  |Select drug from drug-database by clicking on it  |
+| 9    |Psychiatrist  |Define dosage and frequency either with dropdown or by entering the numbers  |
 | 10   |Psychiatrist  |On save: changes are written to patient medical record database  |
 | 11   |Psychiatrist  |Log Out   |
 
