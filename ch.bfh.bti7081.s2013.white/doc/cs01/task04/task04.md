@@ -60,7 +60,7 @@
 - Search in the medication catalog: medication name, category, medication manufacturer, medication description.
 - Sort the medication catalog entries; medication name, category, medication manufacturer, medication description.
  
- #### 8. Read history
+#### 8. Read history
 - Automatic event creation of all changed diagnosis, medications, orders.
 - Show history of patients in a table and details view (all changed diagnosis, medications, orders, and self created events).
 - The details view shows: name of the patient (optional), event type, responsable therapist, comment of responsable therapist, date of event, clinic.
@@ -70,23 +70,23 @@
 - Search history entries: search by name of the patient (optional), event type, responsable therapist, comment of responsable therapist, date of event, clinic.
 - Sort history entries: sort by name of the patient (optional), event type, responsable therapist, comment of responsable therapist, date of event, clinic.
  
-  #### 9. Change history
+#### 9. Change history
 - Add a new event for the current patient: event type, responsable therapist, comment of responsable therapist, date of event, clinic.
 - Change an existing (self created) event for the current own patient: event type, responsable therapist, comment of responsable therapist, date of event, clinic.
 - Delete an existing (self created) event for the current own patient.
 - No possibility to change an automatic created event.
 
-  #### 10. Read Orders
+#### 10. Read Orders
 - Show orders to other medical staff in a table view: acceptor of order, responsabe therapist, description, date, status, clinic.
 - Search orders: serach by acceptor of order, responsabe therapist, description, date, status, clinic.
 - Sort orders: order by acceptor of order, responsabe therapist, description, date, status, clinic.
 
- #### 11. Change Orders
+#### 11. Change Orders
  - Add new order for the current own patient: acceptor of order, responsabe therapist, description, date, status, clinic.
  - Change an existing order for the current own patient: acceptor of order, responsabe therapist, description, date, status, clinic.
  - Delete an existing order for the current own patient.
  
- #### 11. Help system
+#### 11. Help system
 - Start the help system from every screen of the application.
 - Show the diffrent help topics: Navigation tree and description of selected topic.
 - Search with keywords in the help system.
@@ -101,6 +101,7 @@
 - The psychotherapist has full access (change, delete) to the data of patients, who are treated by him and read only access to the other patients.
 - A psychotherapist can only change self created diagnosis entries, drug entries, order entries, process entries.
 - The language of the application is german.
+
 
 ## System Requirements
 
