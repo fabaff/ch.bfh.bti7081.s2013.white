@@ -166,29 +166,13 @@ This section define the technical terms used in the document.
 
 ## System architecture and system models 
 
-The basic layout of the architecture will be a client-server web application with multiple layers. With the help of separation of the core components of the system an accurate design will become reality. MVC (Model View Controller) archtecture of the web application will guarant a contemporary implementation of the patient management system.
+The basic layout of the architecture will be a client-server web application with multiple layers. 
+- Web interface running in the browser
+- Webserver
+- Application server
+- Database server
 
-```bash
-                      +---------------------+
-                      | Controller          |
-                      +---------------------+
-                              ^          +
-                              |          |
-                              |          v
-   +-------------------+      |        +---------------+
-   | View              |<-----|-------+| Model         |
-   +-------------------+      |        +---------------+
-                  +           |
-                  |           |
-                  v           +
-                +----------------+
-                | User           |
-                +----------------+
-```
-
-For maximum performance the database will be hosted on a dedicated server. Every connection between the participient of the backend will be encrypted with industrial standards. 
-
-The clients will only access the web server on a encrypted channels. No unencrypted communication between the client and the server will be established or allowed. 
+- TODO diagramm architecture
 
 ```bash
     +-----------------------------------------------------------+
@@ -212,6 +196,13 @@ The clients will only access the web server on a encrypted channels. No unencryp
      |       Users                                              |
      +----------------------------------------------------------+
 ```
+
+
+With the help of separation of the core components of the system an accurate design will become reality. MVC (Model View Controller) archtecture of the web application will guarant a contemporary implementation of the patient management system.
+
+For maximum performance the database will be hosted on a dedicated server. Every connection between the participient of the backend will be encrypted with industrial standards. 
+
+The clients will only access the web server on a encrypted channels. No unencrypted communication between the client and the server will be established or allowed. 
 
 
 ## System requirements specification 
