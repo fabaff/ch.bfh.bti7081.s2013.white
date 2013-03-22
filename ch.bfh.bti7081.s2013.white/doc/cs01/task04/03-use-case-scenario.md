@@ -12,19 +12,22 @@
 | Nr.  | Who       | What                                              |
 |:----:|:----------|:--------------------------------------------------|
 | 1    |Therapist  |Login with personal username and password          |
-| 2    |Therapist  |Search for the patient                             |
-| 3    |Therapist  |Select patient from list                           |
-| 4    |Therapist  |Open medical histroy of patient                    |
-| 5    |Therapist  |Click on add new diagnosis                         |
-| 6    |Therapist  |Add a name for the diagnosis                       |
-| 7    |Therapist  |Insert a description                               |
-| 8    |Therapist  |Save the new record to the medical record database |
+| 2    |Therapist  |Search for the patient -> query database |
+| 3    |Therapist  |Select patient from search list -> opens information about the patient  |
+| 4    |Therapist  |Open medical histroy of patient -> opens table view of diagnoses |
+| 5    |Therapist  |Filter and/or search diagnosis
+| 6    |Therapist  |Select the desired diagnosis  |
+| 7    |Therapist  |Change/add the description for the diagnosis  |
+| 8    |Therapist  |On save: the new record to the medical record database -> Changed diagnosis, date, time and actor are written to the patient medical record database  | 
 
 ## Exceptions, variations
 
 | Nr.  | Who       | What                                              |
 |:----:|:----------|:--------------------------------------------------|
-| 1.1  |Nurse      |Patient record must have been created before       |
+| 1.1    |Therapist  |Psychiatrist must have a user account and password |
+| 2.1    |Nurse  |Patient must be added to database before comming to psychiatrist  |
+| 2.2    |Therapist  |Patient not found: Check name used to query database |
+| 4.1    |Therapist  |Patient must have at least one existing diagnosis  |
 | 7.1  |Therapist  |Optional: Select different doctor or hospital      |
 | 7.2  |Therapist  |Optional: Insert comments                          |
 
