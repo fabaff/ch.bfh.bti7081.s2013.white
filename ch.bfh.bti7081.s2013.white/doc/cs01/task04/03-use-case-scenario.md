@@ -13,7 +13,7 @@
 |:----:|:----------|:--------------------------------------------------|
 | 1    |Therapist  |Login with personal username and password          |
 | 2    |Therapist  |Search for the patient  |
-| 3    |MHC_PMS    |Query on database, return list of patients
+| 3    |MHC_PMS    |Query on database, return list of patients  |
 | 4    |Therapist  |Select patient from search list  |
 | 5    |MHC_PMS    |Detailed view of patient with medical and history overview is displayed  |
 | 6    |Therapist  |Open medical histroy of patient |
@@ -32,6 +32,7 @@
 | 4.1    |Nurse  |Patient must be added to database before comming to psychiatrist  |
 | 4.2    |Therapist  |Patient not found: Check name used to query database |
 | 4.1    |Therapist  |Patient must have at least one existing diagnosis  |
+| 5.1    |MHC_PMS    |If Patient is marked as violent, warning is displayed on screen  |
 | 11.1  |Therapist  |Optional: Select different doctor or hospital      |
 | 11.2  |Therapist  |Optional: Insert comments                          |
 
