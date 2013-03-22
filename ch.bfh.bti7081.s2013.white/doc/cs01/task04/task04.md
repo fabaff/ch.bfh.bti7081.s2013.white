@@ -119,6 +119,7 @@ Read ICD-10 catalog (diagnosis database)
 #### 1. Read patient data 
 1.1 Show all patients in a table on the home screen: show status, name, psychotherapist (current), clinics (hospitals or local medical practices).
 - dd
+
 1.2 Search a specific patient: search by status, name, psychotherapist (current), clinics (hospitals or local medical practices).
 1.3 Sort the patient table: sort by status, name, psychotherapist (current), clinics (hospitals or local medical practices).
 1.4 Filter the patient table: filter own patients, clinic patients, all patients.
