@@ -5,7 +5,7 @@
 
 ### Functional user requirements
 
-### 1. read patient data 
+#### 1. Read patient data 
 - Show all patients in a table: show status, name, psychotherapist (current), clinics (hospitals or local medical practices).
 - Search a specific patient: search by status, name, psychotherapist (current), clinics (hospitals or local medical practices).
 - Sort the patient table: sort by status, name, psychotherapist (current), clinics (hospitals or local medical practices).
@@ -13,7 +13,7 @@
 - Show the dossier of a specific patient: personal data, diagnosis, drugs, orders to other staff, history.
 - Show personal data of a specific patient: first name, last name, gender, birthday, civil status, mother language, communication language, nationality, religion, adress, home location, postal code, country, phone private, phone business, mobile phone number, e-mail.
 
-### 2. read diagnosis 
+#### 2. Read diagnosis 
 - Show diagnosis of a patient in a table and details view.
 - The details view shows: name of the patient (optional), name of the diagnosis, ICD-code, date of creation, description of diagnosis, comment of therapist, diagnosis creator (therapist), clinic (hospital or local medical practice). 
 - The table view shows: name of the patient (optional), name of the diagnosis, ICD-code, date of creation, diagnosis creator (therapist), clinic (hospital or local medical practice). 
@@ -22,12 +22,12 @@
 - Search diagnosis: search by name of the patient, name of the diagnosis, ICD-code, date of creation, description of diagnosis, comment of therapist, diagnosis creator (therapist), clinic (hospital or local medical practice). 
 - Sort diagnosis: Sort by name of the patient, name of the diagnosis, ICD-code, date of creation, description of diagnosis, comment of therapist, diagnosis creator (therapist), clinic (hospital or local medical practice). 
 
-### 3. change diagnosis
+#### 3. Change diagnosis
 - Add a new diagnosis for the current patient: select and save the name of the diagnosis, ICD-code, date of creation, description of diagnosis, comment of therapist, diagnosis creator (therapist), clinic (hospital or local medical practice). 
 - Change an existing diagnosis for the current own patient: change and save the name of the diagnosis, ICD-code, date of creation, description of diagnosis, comment of therapist, diagnosis creator (therapist), clinic (hospital or local medical practice). 
 - Delete an existing diagnosis for the current own patient.
 
-### 4. read medication
+#### 4. Read medication
  
 
 - Medication management (point in time (morning, noon, evening, night), frequency, duration, dose, responsible person, institution): show, search, add, change, delete a drug
