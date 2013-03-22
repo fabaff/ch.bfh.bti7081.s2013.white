@@ -315,6 +315,10 @@ The efficiency testing of the hardware and the software is planned as a simulati
 
 All components of the system must be tested with Unit tests. All new Components of the application must have successfully running Unit test at the End of the implementation. There must be also integration tests for the whole application.
 
+The interface of the application will be tested by an Usability test with future users of the system. This shall avoid and minimize interface design faults. This test will increase the level of accteptance, too.
+
+Security is important. To test the security of the application, the network connections, and the system design in general in short periods security test will provide detailed information about the level of security. This is necessary to gain and prove the grade which is required according to the Data protection.
+
 ## Appendices 
 
 - [Use cases](https://github.com/fabaff/ch.bfh.bti7081.s2013.white/blob/master/ch.bfh.bti7081.s2013.white/doc/cs01/task04/use-cases.md)
