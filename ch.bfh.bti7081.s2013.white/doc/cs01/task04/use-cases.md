@@ -9,7 +9,7 @@ User: psychotherapist (psychiatrist or psychologist)
 - (4) read medication
 - (5) change medication
 - (6) read ICD-10 catalog (diagnosis database)
-- (7) read drugs catalog (drugs database)
+- (7) read medication catalog (drugs database)
 - (8) read history
 - (9) change history
 - (10) read orders
