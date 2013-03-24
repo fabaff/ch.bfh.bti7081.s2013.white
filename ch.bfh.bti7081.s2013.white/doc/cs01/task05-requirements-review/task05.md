@@ -1,11 +1,7 @@
 #Task 05 - Requirements Review
 
-- Based on the review categories given in script 03.07 on slide 2, conduct a
-requirements review of the requirements document from Task 4:
- - Team White reviews the document from Team Red
-
-- Document your results in a short review report table, including recommendations 
-how the requirements document could be improved.
+- Based on the review categories a requirements review of the requirements document from Team Red  needs to be done.
+- Document the results in a short review report table, including recommendations how the requirements document could be improved.
 
 ##Requirements checking
 * **Comprehensibility**: Is the requirement properly understood?
@@ -28,8 +24,10 @@ other requirements?
 git clone git://github.com/reubd1/ch.bfh.bti7081.s2013.red.git
 ```
 
-File: [CS1_Task4_TeamRED.pdf](https://github.com/reubd1/ch.bfh.bti7081.s2013.red/blob/master/ch.bfh.bti7081.s2013.red/doc/cs1_tasks/task04_requirements/CS1_Task4_TeamRED.pdf)
+File to reiew: [CS1_Task4_TeamRED.pdf](https://github.com/reubd1/ch.bfh.bti7081.s2013.red/blob/master/ch.bfh.bti7081.s2013.red/doc/cs1_tasks/task04_requirements/CS1_Task4_TeamRED.pdf)
 
+
+**Checksum**
 ```bash
 [fab@laptop011 task04_requirements]$ sha256sum CS1_Task4_TeamRED.pdf 
 db5b9993413bc2be8dc5e1b4a54de77a81213d2e5c1738f7c43611020033aa5c  CS1_Task4_TeamRED.pdf
