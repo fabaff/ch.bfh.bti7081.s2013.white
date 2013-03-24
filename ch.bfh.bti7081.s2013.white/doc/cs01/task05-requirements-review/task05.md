@@ -7,7 +7,7 @@ requirements review of the requirements document from Task 4:
 - Document your results in a short review report table, including recommendations 
 how the requirements document could be improved.
 
-##Requirements checking:
+##Requirements checking
 * **Comprehensibility**: Is the requirement properly understood?
 * **Validity**: Will the system provide the functions which best support the
 customer’s needs?
@@ -24,16 +24,16 @@ other requirements?
 
 [Group Red Git repository](https://github.com/reubd1/ch.bfh.bti7081.s2013.red)
 
-´´´bash
+```bash
 git clone git://github.com/reubd1/ch.bfh.bti7081.s2013.red.git
-´´´
+```
 
 File: [CS1_Task4_TeamRED.pdf](https://github.com/reubd1/ch.bfh.bti7081.s2013.red/blob/master/ch.bfh.bti7081.s2013.red/doc/cs1_tasks/task04_requirements/CS1_Task4_TeamRED.pdf)
 
-´´´bash
+```bash
 [fab@laptop011 task04_requirements]$ sha256sum CS1_Task4_TeamRED.pdf 
 db5b9993413bc2be8dc5e1b4a54de77a81213d2e5c1738f7c43611020033aa5c  CS1_Task4_TeamRED.pdf
 
 [fab@laptop011 task05-requirements-review]$ sha256sum CS1_Task4_TeamRED.pdf 
 db5b9993413bc2be8dc5e1b4a54de77a81213d2e5c1738f7c43611020033aa5c  CS1_Task4_TeamRED.pdf
-´´´
+```
