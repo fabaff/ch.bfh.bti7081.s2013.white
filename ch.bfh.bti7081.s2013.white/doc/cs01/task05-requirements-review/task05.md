@@ -24,7 +24,7 @@ other requirements?
 git clone git://github.com/reubd1/ch.bfh.bti7081.s2013.red.git
 ```
 
-File to reiew: [CS1_Task4_TeamRED.pdf](https://github.com/reubd1/ch.bfh.bti7081.s2013.red/blob/master/ch.bfh.bti7081.s2013.red/doc/cs1_tasks/task04_requirements/CS1_Task4_TeamRED.pdf)
+File to review: [CS1_Task4_TeamRED.pdf](https://github.com/reubd1/ch.bfh.bti7081.s2013.red/blob/master/ch.bfh.bti7081.s2013.red/doc/cs1_tasks/task04_requirements/CS1_Task4_TeamRED.pdf)
 
 
 **Checksum**
