@@ -2,6 +2,12 @@
 
 (all entries in backwards chronological order)
 
+## 2013-04-01
+- Progress on task05 
+
+## 2013-03-22
+- Starting with task05 (Review Req. of Team Red)
+
 ## 2013-03-20
 - Working on task04
 - Presentation of task04
