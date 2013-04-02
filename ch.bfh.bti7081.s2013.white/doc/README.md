@@ -11,7 +11,8 @@ The "doc"-folder in the git repository is grouped by case studies and shows all 
 │   ├── task02          -- Task 2 - Process
 │   ├── task03          -- Task 3 - Design thinking
 │   ├── task04          -- Task 4 - Requirement document
-│   └── task05          -- Task 5 - Requirements review
+│   ├── task05          -- Task 5 - Requirements review
+│   └── task06          -- Task 6 - External perspective
 ├── cs02                -- Case study 2 (PIP)
 │   └── task01.md       -- Task 1
 ├── diary.md            -- Journal
