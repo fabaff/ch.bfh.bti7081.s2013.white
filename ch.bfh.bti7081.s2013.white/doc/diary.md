@@ -4,6 +4,7 @@
 
 ## 2013-04-02
 - Start with task06 
+- Update requirements document
 
 ## 2013-04-01
 - Progress on task05 
