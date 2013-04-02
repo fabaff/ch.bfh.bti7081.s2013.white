@@ -70,26 +70,30 @@ This section define the technical terms used in the document.
 ### Functional user requirements
 
 #### 1. Read patient data 
-- 1.1 Show all patients in a table on the home screen: show status, name, psychotherapist (current), clinics (hospitals or local medical practices).
-- 1.2 Search a specific patient: search by status, name, psychotherapist (current), clinics (hospitals or local medical practices).
-- 1.3 Sort the patient table: sort by status, name, psychotherapist (current), clinics (hospitals or local medical practices).
-- 1.4 Filter the patient table: filter own patients, clinic patients, all patients.
-- 1.5 Open the dossier of a specific patient from the start screen: personal data, diagnosis, drugs, orders to other staff, history.
-- 1.6 Show personal data of a specific patient: first name, last name, dangerousness of the patient, comment about dangerousness, gender, birthday, civil status, mother language, communication language, nationality, religion, adress, home location, postal code, country, phone private, phone business, mobile phone number, e-mail.
+- 1.1 Show all patients in a table on the home screen (current case): show first name, last name, birthdate, gender, kind of treatment (Behandlungsart), psychotherapist (current), clinics (hospitals or local medical practices).
+- 1.2 Search a specific patient: search by first name, last name, birthdate, gender.
+- 1.3 Sort the patient table: sort by all column names.
+- 1.4 Filter the patient table: filter own patients, department patients, clinic patients (Klinik/ Praxis), all patients.
+- 1.5 Open the dossier of a specific patient from the start screen: personal data, diagnosis, drugs, history (Verlauf), orders to other staff.
+- 1.6 Show personal data of a specific patient: 
+ - Zuweiser: "Selbst", "Psychiater"/ "Psychologe", "Hausarzt"
+ - mother language, communication language, civil status, nationality, religion, adress, home location, postal code, country, phone private, phone business, mobile phone number, e-mail.
+ - next of kin (Angehöriger): kind ("Bekannter", "Ehemann", "Ehefrau"), first name, last name, adress, phone.
+ - family doctor (Hausarzt): first name, last name, adress, fax, ... 
 
 #### 2. Read diagnosis 
-- 2.1 Show diagnosis of patients in a table and details view.
-- 2.2 The details view shows: name of the patient (optional), name of the diagnosis, ICD code (ev. DSM code), date of creation, description of diagnosis, comment of therapist, diagnosis creator (therapist), clinic (hospital or local medical practice). 
-- 2.3 The table view shows: name of the patient (optional), name of the diagnosis, ICD code (ev. DSM code), date of creation, diagnosis creator (therapist), clinic (hospital or local medical practice). 
-- 2.4 Filter the diagnosis of one patient: self created diagnosis, diagnosis created by therapists from the same clinic, diagnosis created by all existing therapists.
-- 2.5 Filter the diagnosis of multiple patients: current patient, all own patients, all patients from the same clinic, all existing patients.
-- 2.6 Search diagnosis of patients: search by name of the patient, name of the diagnosis, ICD code (ev. DSM code), date of creation, description of diagnosis, comment of therapist, diagnosis creator (therapist), clinic (hospital or local medical practice). 
-- 2.7 Sort diagnosis of patients: sort by name of the patient, name of the diagnosis, ICD code (ev. DSM code), date of creation, description of diagnosis, comment of therapist, diagnosis creator (therapist), clinic (hospital or local medical practice). 
+- 2.1 Show all diagnosis of a patient (current case) in a table view:
+ - diagnosis name, ICD code (ev. DSM code), date of creation, diagnosis creator (therapist), clinic (hospital or local medical practice). 
+- 2.2 Show the selected diagnosis of a patient (current case) in a details view.
+ - name of the diagnosis, ICD code (ev. DSM code), comment of therapist (large field), date of creation, diagnosis creator (therapist), clinic (hospital or local medical practice). 
+- 2.3 Filter the diagnosis of one patient: self created diagnosis, diagnosis created by therapists from the same clinic, diagnosis created by all existing therapists.
+- 2.4 Filter the diagnosis of multiple patients: current patient, all own patients, all patients from the same clinic, all existing patients.
+- 2.5 Search diagnosis of patients: search by first name, last name, birthdate, gender of the patient, name of the diagnosis, ICD code (ev. DSM code).
+- 2.6 Sort diagnosis of patients: sort by all column names.
 
 #### 3. Change diagnosis
-- 3.1 Add a new diagnosis for the current patient: select and save the name of the diagnosis, ICD code (ev. DSM code), date of creation, description of diagnosis, comment of therapist, diagnosis creator (therapist), clinic (hospital or local medical practice). 
-- 3.2 Change an existing diagnosis for the current own patient: change and save the name of the diagnosis, ICD code (ev. DSM code), date of creation, description of diagnosis, comment of therapist, diagnosis creator (therapist), clinic (hospital or local medical practice). 
-- 3.3 Delete an existing diagnosis for the current own patient.
+- 3.1 Add a new diagnosis for the current patient: select and save the name of the diagnosis, ICD code (ev. DSM code), date of creation, comment of therapist, diagnosis creator (therapist), clinic (hospital or local medical practice). 
+
 
 #### 4. Read medication
 - 4.1 Show medication of patients in a table and details view.
@@ -180,70 +184,76 @@ For maximum performance the database will be hosted on a dedicated server. Every
 ### Functional system requirements
 
 #### 0. General
-- 0.1 Possibility of restricting the search space: own patients, clinic patients, all patients.
-- 0.2 Show possible search results while typing (cp. Google).
-- 0.3 A navigation list can be used as a sidebar in all details screens (On the left or right side of the screen).
-- 0.4 The navigation list can be expanded as a sidbar. This opens the home screen.
-- 0.5 The selection of a diagnosis implies an automatic selction of the ICD code and diagnosis description.
-- 0.6 The selection of an ICD code implies an automatic selection of the diagnosis and diagnosis description.
-- 0.7 The selection of a medication implies an automatic selection of the category, medication manufacturer, and medication description.
-- 0.8 No possibility to change an automatic created event.
+- 0.1 Show basic patient information on all screens: first name, last name, gender, birthday, dangerousness of the patient (Selbstgefährdung, Fremdgefährdung), Reanimationsstatus 
+- 0.2 Switch to an ancient case of the current patient if necessary (read only access) with the filter.
+ - case status values: "Offen", "Abgeschlossen"
+- 0.3 Show possible search results while typing (cp. Google).
+- 0.4 The search and filter results show additional information: case status, first name, last name, gender, birthday
+- 0.5 The navigation list can be used as a sidebar in all details screens (On the left side of the screen). It can be expanded. This opens the home screen.
+- 0.6 The selection of a medication implies an automatic selection of the "Wirkstoff".
 
 #### 1. Read patient data 
-- 1.1 Show all patients in a table on the home screen: show status, name, psychotherapist (current), clinics (hospitals or local medical practices).
- - Valid values for attribute "status": "Eigene", "Aktiv", "Abgeschlossen", "Wieder aktiv"
-- 1.2 Search a specific patient: search by status, name, psychotherapist (current), clinics (hospitals or local medical practices).
-- 1.3 Sort the patient table: sort by status, name, psychotherapist (current), clinics (hospitals or local medical practices).
-- 1.4 Filter the patient table: filter own patients, clinic patients, all patients.
-- 1.5 Open the dossier of a specific patient from the start screen: personal data, diagnosis, drugs, orders to other staff, history.
-- 1.6 Show personal data of a specific patient: first name, last name, dangerousness of the patient, comment about dangerousness, gender, birthday, civil status, mother language, communication language, nationality, religion, adress, home location, postal code, country, phone private, phone business, mobile phone number, e-mail.
- 
+- 1.1 Show all patients in a table on the home screen (current case): show status (only in search mode), first name, last name, birthdate, gender, kind of treatment (Behandlungsart), psychotherapist (current), clinics (hospitals or local medical practices).
+ - Kind of treatment values: "ambulant", "teilstationär", "stationär" 
+- 1.2 Search a specific patient: search by status ("Offen", "Abgeschlossen", "Alle"), first name, last name, birthdate, gender.
+- 1.3 Sort the patient table: sort by all column names.
+- 1.4 Filter the patient table: case status, own patients, department patients, clinic patients (Klinik/ Praxis), all patients.
+- 1.5 Open the dossier of a specific patient from the start screen: personal data, diagnosis, drugs, history (Verlauf), orders to other staff.
+- 1.6 Show personal data of a specific patient: 
+ - case status: "Datum Falleröffnung", Datum Fallabschluss" (if available)
+ - Zuweiser: "Selbst", "Psychiater"/ "Psychologe", "Hausarzt"
+ - mother language, communication language, civil status, nationality, religion, adress, home location, postal code, country, phone private, phone business, mobile phone number, e-mail.
+ - next of kin (Angehöriger): kind ("Bekannter", "Ehemann", "Ehefrau"), first name, last name, adress, phone.
+ - family doctor (Hausarzt): first name, last name, adress, fax, ... 
+
 #### 2. Read diagnosis 
-- 2.1 Show diagnosis of patients in a table and details view.
-- 2.2 The details view shows: name of the patient (optional), name of the diagnosis, ICD code, date of creation, description of diagnosis, comment of therapist, diagnosis creator (therapist), clinic (hospital or local medical practice). 
-- 2.3 The table view shows: name of the patient (optional), name of the diagnosis, ICD code, date of creation, diagnosis creator (therapist), clinic (hospital or local medical practice). 
-- 2.4 Filter the diagnosis of one patient (1. dimension): self created diagnosis, diagnosis created by therapists from the same clinic, diagnosis created by all existing therapists.
-- 2.5 Filter the diagnosis of multiple patients (2. dimension): current patient, all own patients, all patients from the same clinic, all existing patients.
-- 2.6 Search diagnosis of patients: search by name of the patient, name of the diagnosis, ICD code, date of creation, description of diagnosis, comment of therapist, diagnosis creator (therapist), clinic (hospital or local medical practice). 
-- 2.7 Sort diagnosis of patients: sort by name of the patient, name of the diagnosis, ICD code, date of creation, description of diagnosis, comment of therapist, diagnosis creator (therapist), clinic (hospital or local medical practice). 
+- 2.1 Show all diagnosis of a patient (current case) in a table view:
+ - diagnosis name, ICD code (ev. DSM code), date of creation, diagnosis creator (therapist), clinic (hospital or local medical practice). 
+- 2.2 Show the selected diagnosis of a patient in a details view.
+ - name of the diagnosis, ICD code (ev. DSM code), comment of therapist (large field), date of creation, diagnosis creator (therapist), clinic (hospital or local medical practice). 
+- 2.3 Filter the diagnosis of one patient: status, self created diagnosis, diagnosis created by therapists from the same clinic, diagnosis created by all existing therapists.
+- 2.4 Filter the diagnosis of multiple patients: status, current patient, all own patients, all patients from the same clinic, all existing patients.
+- 2.5 Search diagnosis of patients: search by case status, first name, last name, birthdate, gender of the patient, name of the diagnosis, ICD code (ev. DSM code).
+- 2.6 Sort diagnosis of patients: sort by all column names.
 
 #### 3. Change diagnosis
-- 3.1 Add a new diagnosis for the current patient: select and save the name of the diagnosis, ICD code, date of creation, description of diagnosis, comment of therapist, diagnosis creator (therapist), clinic (hospital or local medical practice). 
-- 3.2 Change an existing diagnosis for the current own patient: change and save the name of the diagnosis, ICD code, date of creation, description of diagnosis, comment of therapist, diagnosis creator (therapist), clinic (hospital or local medical practice). 
-- 3.3 Delete an existing diagnosis for the current own patient.
+(do this in the same diagnosis screen)
+- 3.1 Add a new diagnosis for the current patient: 
+ - 3.1.1 select and save the name of the diagnosis (free text), ICD code (ev. DSM code) (drop down menu), comment of therapist (free text in large field)
+ - 3.1.2 automatic completion: date of creation, diagnosis creator (therapist), clinic (hospital or local medical practice). 
 
 #### 4. Read medication
-- 4.1 Show medication of patients in a table and details view.
-- 4.2 The details view shows: name of the patient (optional), clinic, medication name, prescribing person (doctor), medication description, medication manufacturer, prescribing details, doctors comments.
-- 4.3 The table view shows: name of the patient (optional), medication name, prescribing person (doctor), prescribing details.
-- 4.4 The prescribing details includes: duration, frequency, point in time (morning, noon, evening, night), dose and dose unit by point in time.
-- 4.5 Filter the medication of one patient  (1. dimension): self created medication, medication created by doctors from the same clinic, medication created by all existing doctors.
-- 4.6 Filter the medication of multiple patients (2. dimension): current patient, all own patients, all patients from the same clinic, all existing patients.
-- 4.7 Search medication of patients: name of the patient (optional), clinic, medication name, prescribing person (doctor), medication description, medication manufacturer, prescribing details, doctors comments.
-- 4.8 Sort medication of patients: Sort by name of the patient (optional), clinic, medication name, prescribing person (doctor), medication description, medication manufacturer, prescribing details, doctors comments.
+- 4.1 Show medication of patients in a table view:
+ - 4.1.1 medication name ("Markenname"), "Wirkstoffe", "Verabreichungsform"
+ - 4.1.2 timeline with all dates and a selectable date. Attributes: "verabreicht", "pausiert", "offen"
+ - 4.1.3 point in time (Einnahmezeitpunkt am selektierten Tag), dose, unit 
+- 4.2 Filter the medication of one patient: case status, self created medication, medication created by doctors from the same clinic, medication created by all existing doctors.
+- 4.3 Filter the medication of multiple patients: case status, current patient, all own patients, all patients from the same clinic, all existing patients.
+- 4.4 Search medication of patients: search by case status, first name, last name, gender, birthday, medication name ("Markenname"), "Wirkstoffe"
+- 4.5 Sort medication of patients: sort by all column names.
 
 #### 5. Change medication
-- 5.1 Add a new medication for the current patient: select and save medication name, medication description, medication manufacturer, prescribing person (doctor), clinic, prescribing details.
-- 5.2 Change an existing medication for the current own patient: medication name, medication description, medication manufacturer, prescribing person (doctor), clinic, prescribing details. 
-- 5.3 Delete an existing medication for the current own patient.
+- 5.1 Add a new medication for the current patient: 
+ - 5.1.1 medication name ("Markenname"), "Wirkstoffe", "Verabreichungsform", start date, end date (empty = "bis auf weiteres"), frequency (Häufigkeit), "Ausführungszeit", dose, unit
+  - attributes of "Verabreichungsform": "per OS" (Mund), "I.V." (intravenös), "S.C." (subcutan = unter die Haut gespritzt), "I.M." (intramuskulär = in Muskel gespritzt), "topisch" (Oberflächlich, Salbe)
+  - units: "Tropfen", "ml", "mg", "Applikation" (z.B. Salbe) 
+  - frequency: "täglich", "jeden zweiten Tag",..., "Anzahl Tage", "jede Woche", "MO", "DI", "MI",...
+  - "Ausführungszeit": "genaue Uhrzeit", "Morgen", "Mittag", "Abend", "Nacht"
+ - 5.1.2 automatic completion: date of prescribing, prescribing person (doctor), clinic (hospital or local medical practice).  
+- 5.2 Change an existing medication for the current own patient:
 
 #### 6. Read ICD-10 catalog (diagnosis database)
 - 6.1 Start the ICD-10 diagnosis catalog from the diagnosis screen.
-- 6.2 Show ICD-10 catalog in a table and details view.
-- 6.3 The details view shows: diagnosis name, ICD-10 code, diagnosis description.
-- 6.4 The table view shows: diagnosis name, ICD-10 code, diagnosis description.
-- 6.5 Filter the ICD-10 catalog entries: Filter by ICD-10 code group.
-- 6.6 Search in the ICD-10 catalog: search by diagnosis name, ICD-10 code, diagnosis description.
-- 6.7 Sort the ICD-10 catalog entries; sort by diagnosis name, ICD-10 code, diagnosis description.
+- 6.2 Show the ICD-10 catalog in a table view: diagnosis name, ICD-10 code, diagnosis description.
+- 6.3 Search in the ICD-10 catalog: search by diagnosis name, ICD-10 code.
+- 6.4 Sort the ICD-10 catalog entries: sort by all column names.
 
 #### 7. Read medication catalog (medication database)
 - 7.1 Start the medication catalog from the medication screen.
-- 7.2 Show medication catalog in a table and details view.
-- 7.3 The details view shows: medication name, dope (Wirkstoff), category, medication manufacturer, medication description.
-- 7.4 The table view shows: medication name, dope (Wirkstoff), category, medication manufacturer.
-- 7.5 Filter medication catalog entries: Filter by category, medication manufacturer.
-- 7.6 Search in the medication catalog: medication name, dope (Wirkstoff), category, medication manufacturer, medication description.
-- 7.7 Sort the medication catalog entries; medication name, dope (Wirkstoff), category, medication manufacturer, medication description.
+- 7.2 Show medication catalog in a table view: medication name, "Wirkstoffe", medication description.
+- 7.5 Filter medication catalog entries: Filter by "Wirkstoffe".
+- 7.6 Search in the medication catalog: medication name, "Wirkstoffe".
+- 7.7 Sort the medication catalog entries: sort by all column names.
  
 #### 8. Read history
 - 8.1 Automatic event creation of all changed diagnosis, medications, orders.
@@ -281,7 +291,7 @@ For maximum performance the database will be hosted on a dedicated server. Every
 
 #### Platform
 - The application can be used on tablet during a consultation or a meeting (main use).
-- The application can be used on desktop when a theparist is doing office work.
+- The application can be used on desktop when a therapist is doing office work.
 
 #### Data access restriction
 - A therapist can only change data from own patients.
