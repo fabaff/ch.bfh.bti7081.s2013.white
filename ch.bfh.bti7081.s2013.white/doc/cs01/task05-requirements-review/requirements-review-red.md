@@ -33,12 +33,12 @@ Section *#4 Medikamente verwalten* of the *System Requirements* and section *#4 
 The section *System Requirements* mentions in several functions a central database as the origin of the data. But the *Use Case diagram* shows a local storage in between the patient and the "Cloud". This leads to the conclusion that the application will work without data connections. 
  
 ## Realism
-The section *System Requirements* mentions in several functions a central database as the origin of the data. 
+The section *System Architecture* allows the assumption that the application will create a specific hardware demand (e.g. only new hardware releases of smartphone or tablet system will be fully supported). This could lead to unsatisfied consumers.
 
-As outlined in the *System architecture* section GPS is used to determine the phyiscal location of the patient. There are some doubt that this work proberly because in urban areas and buildings the clear view to the sky is missing which ends in inaccuracy of the patient's position. In the use case scenario *#5 Erinnerung darstellen* this is covered in section 1.3.1. Another issue is that switched on GPS recievers in search mode drains batteries fast because the power consumption of the device is high. 
+As outlined in the *System architecture* section, GPS is used to determine the phyiscal location of the patient. There are some doubt that this work proberly because in urban areas and buildings the clear view to the sky is missing which ends in inaccuracy of the patient's position. In the use case scenario *#5 Erinnerung darstellen* this is covered in section 1.3.1. Another issue is that switched on GPS recievers in search mode drains batteries fast because the power consumption of the device is high. 
 
 ## Verifiability
-
+Due to the lack of the customers requirement details verfication of the requirements is not possible at this point in time. 
 
 ## Traceability
 Due to the lack of the customers requirement details tracing of the requirements is not possible at this point in time. 
