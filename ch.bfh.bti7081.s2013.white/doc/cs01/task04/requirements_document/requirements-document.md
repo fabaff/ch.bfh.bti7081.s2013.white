@@ -122,7 +122,6 @@ This section define the technical terms used in the document.
  
 #### 9. Change history
 - 9.1 Add a new entry for the current patient.
-- 9.2 Change an existing (self created) entry for the current own patient.
 
 #### 10. Read Orders
 - 10.1 Show orders to other medical staff in a table view.
@@ -131,7 +130,7 @@ This section define the technical terms used in the document.
 
 #### 11. Change Orders
 - 11.1 Add new order for the current own patient.
-- 11.2 Change an existing order for the current own patient.
+- 11.2 Change the status of an existing order for the current own patient.
  
 #### 12. Help system
 - 12.1 Start the help system from every screen of the application.
@@ -245,7 +244,6 @@ For maximum performance the database will be hosted on a dedicated server. Every
 #### 9. Change history
 - 9.1 Add a new entry for the current patient: comment of therapist
  - automatic completion: date, responsable therapist, clinic.
-- 9.2 Change an existing (self created) entry for the current own patient: comment of therapist.
 
 #### 10. Read Orders
 - 10.1 Show orders to other medical staff in a table view: acceptor of order, responsabe therapist, description, date, status, clinic, department of clinic.
@@ -256,7 +254,7 @@ For maximum performance the database will be hosted on a dedicated server. Every
 
 #### 11. Change Orders
 - 11.1 Add new order for the current own patient: acceptor of order, responsabe therapist, description, date, status, clinic.
-- 11.2 Change an existing order for the current own patient: description, status.
+- 11.2 Change an existing order for the current own patient: status.
  
 #### 12. Help system
 - 12.1 Start the help system from every screen of the application.
