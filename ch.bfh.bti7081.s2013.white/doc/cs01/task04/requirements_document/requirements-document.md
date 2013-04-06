@@ -257,7 +257,7 @@ For maximum performance the database will be hosted on a dedicated server. Every
 - 11.2 Change an existing order for the current own patient: status.
  
 #### 12. Help system
-- 12.1 Start the help system from every screen of the application.
+- 12.1 Start the help system from every screen in the application.
 - 12.2 Show the diffrent help topics: Navigation tree and description of selected topic.
 - 12.3 Search with keywords in the help system.
 
