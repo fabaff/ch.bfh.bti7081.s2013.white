@@ -139,10 +139,17 @@ This section define the technical terms used in the document.
 - 12.2 Show the diffrent help topics: Navigation tree and description of selected topic.
 - 12.3 Search with keywords in the help system.
 
-#### 13. Create new patient and case 
+#### 13. Fallinformationen anzeigen und bearbeiten
+- 13.1 Fallinformationen anzeigen
+- 13.2 Fallinformationen bearbeiten
+
+#### 14. Neuen Patienten erfassen und Fall eröffnen
 (falls Therapeut Nachtdienst macht und Eröffnung nicht durch die Administration durchgeführt werden kann)
-- 0.1 Neuen Patienten hinzufügen 
-- 0.2 Neuen Fall für einen Patienten eröffnen
+
+#### 15. Neuen Fall eröffnen oder Fall abschliessen
+(falls Therapeut Nachtdienst macht und Eröffnung nicht durch die Administration durchgeführt werden kann)
+- 15.1 Neuen Fall eröffnen 
+- 15.2 Fall abschliessen
 
 
 ### Non-functional user requirements
@@ -170,19 +177,14 @@ For maximum performance the database will be hosted on a dedicated server. Every
 
 ### Functional system requirements
 
-#### G. General
-- G.1 Show basic patient information on all screens: first name, last name, gender, birthday, dangerousness of the patient (Selbstgefährdung, Fremdgefährdung), Reanimationsstatus 
-- G.2 Switch to an ancient case of the current patient if necessary (read only access) with the filter.
+#### 0. General
+- 0.1 Show basic patient information on all screens: first name, last name, gender, birthday, dangerousness of the patient (Selbstgefährdung, Fremdgefährdung), Reanimationsstatus 
+- 0.2 Switch to an ancient case of the current patient if necessary (read only access) with the filter.
  - case status values: "Offen", "Abgeschlossen"
-- G.3 Show possible search results while typing (cp. Google).
-- G.4 The search and filter results show additional information: case status
-- G.5 The navigation list can be used as a sidebar in all details screens (On the left side of the screen). It can be expanded. This opens the home screen.
-- G.6 The selection of a medication implies an automatic selection of the "Wirkstoff".
-
-#### 0. Create new patient and case 
-(falls Therapeut Nachtdienst macht und Eröffnung nicht durch die Administration durchgeführt werden kann)
-- 0.1 Neuen Patienten hinzufügen 
-- 0.2 Neuen Fall für einen Patienten eröffnen
+- 0.3 Show possible search results while typing (cp. Google).
+- 0.4 The search and filter results show additional information: case status
+- 0.5 The navigation list can be used as a sidebar in all details screens (On the left side of the screen). It can be expanded. This opens the home screen.
+- 0.6 The selection of a medication implies an automatic selection of the "Wirkstoff".
 
 #### 1. Read patient data 
 - 1.1 Show all patients in a table on the home screen (current case): show status (only in search mode), first name, last name, birthdate, gender, kind of treatment (Behandlungsart), psychotherapist (current), clinics (hospitals or local medical practices).
@@ -275,6 +277,18 @@ For maximum performance the database will be hosted on a dedicated server. Every
 - 12.1 Start the help system from every screen in the application.
 - 12.2 Show the diffrent help topics: Navigation tree and description of selected topic.
 - 12.3 Search with keywords in the help system.
+
+#### 13. Fallinformationen anzeigen und bearbeiten
+- 13.1 Fallinformationen anzeigen
+- 13.2 Fallinformationen bearbeiten
+
+#### 14. Neuen Patienten erfassen und Fall eröffnen
+(falls Therapeut Nachtdienst macht und Eröffnung nicht durch die Administration durchgeführt werden kann)
+
+#### 15. Neuen Fall eröffnen oder Fall abschliessen
+(falls Therapeut Nachtdienst macht und Eröffnung nicht durch die Administration durchgeführt werden kann)
+- 15.1 Neuen Fall eröffnen 
+- 15.2 Fall abschliessen
 
 ### Non-functional system requirements
 
