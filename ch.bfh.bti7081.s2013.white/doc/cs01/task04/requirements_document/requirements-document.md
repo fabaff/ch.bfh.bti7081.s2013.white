@@ -69,6 +69,11 @@ This section define the technical terms used in the document.
 
 ### Functional user requirements
 
+#### 0. Create new patient and case 
+(falls Therapeut Nachtdienst macht und Eröffnung nicht durch die Administration durchgeführt werden kann)
+- 0.1 Neuen Patienten hinzufügen 
+- 0.2 Neuen Fall für einen Patienten eröffnen
+
 #### 1. Read patient data 
 - 1.1 Show all patients in a table on the home screen (current case).
 - 1.2 Search a specific patient.
@@ -88,6 +93,8 @@ This section define the technical terms used in the document.
 #### 3. Change diagnosis
 (do this in the same diagnosis screen)
 - 3.1 Add a new diagnosis for the current patient. 
+- 3.2 Diagnose bearbeiten
+- 3.3 Diagnose löschen
 
 #### 4. Read medication
 - 4.1 Show medication of patients in a table view.
@@ -162,14 +169,19 @@ For maximum performance the database will be hosted on a dedicated server. Every
 
 ### Functional system requirements
 
-#### 0. General
-- 0.1 Show basic patient information on all screens: first name, last name, gender, birthday, dangerousness of the patient (Selbstgefährdung, Fremdgefährdung), Reanimationsstatus 
-- 0.2 Switch to an ancient case of the current patient if necessary (read only access) with the filter.
+#### G. General
+- G.1 Show basic patient information on all screens: first name, last name, gender, birthday, dangerousness of the patient (Selbstgefährdung, Fremdgefährdung), Reanimationsstatus 
+- G.2 Switch to an ancient case of the current patient if necessary (read only access) with the filter.
  - case status values: "Offen", "Abgeschlossen"
-- 0.3 Show possible search results while typing (cp. Google).
-- 0.4 The search and filter results show additional information: case status, first name, last name, gender, birthday
-- 0.5 The navigation list can be used as a sidebar in all details screens (On the left side of the screen). It can be expanded. This opens the home screen.
-- 0.6 The selection of a medication implies an automatic selection of the "Wirkstoff".
+- G.3 Show possible search results while typing (cp. Google).
+- G.4 The search and filter results show additional information: case status
+- G.5 The navigation list can be used as a sidebar in all details screens (On the left side of the screen). It can be expanded. This opens the home screen.
+- G.6 The selection of a medication implies an automatic selection of the "Wirkstoff".
+
+#### 0. Create new patient and case 
+(falls Therapeut Nachtdienst macht und Eröffnung nicht durch die Administration durchgeführt werden kann)
+- 0.1 Neuen Patienten hinzufügen 
+- 0.2 Neuen Fall für einen Patienten eröffnen
 
 #### 1. Read patient data 
 - 1.1 Show all patients in a table on the home screen (current case): show status (only in search mode), first name, last name, birthdate, gender, kind of treatment (Behandlungsart), psychotherapist (current), clinics (hospitals or local medical practices).
@@ -200,6 +212,8 @@ For maximum performance the database will be hosted on a dedicated server. Every
 - 3.1 Add a new diagnosis for the current patient: 
  - 3.1.1 select and save the name of the diagnosis (free text), ICD code (ev. DSM code) (drop down menu), comment of therapist (free text in large field)
  - 3.1.2 automatic completion: date of creation, diagnosis creator (therapist), clinic (hospital or local medical practice). 
+- 3.2 Diagnose bearbeiten
+- 3.3 Diagnose löschen
 
 #### 4. Read medication
 - 4.1 Show medication of patients in a table view:

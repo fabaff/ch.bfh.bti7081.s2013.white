@@ -3,6 +3,7 @@
 **List of all known Use cases**
 
 User: psychotherapist (psychiatrist or psychologist)
+- (0) create new patient and case
 - (1) read patient data
 - (2) read diagnosis
 - (3) change diagnosis
@@ -17,4 +18,4 @@ User: psychotherapist (psychiatrist or psychologist)
 - (12) help system
 
 User: administration staff (not relevant for this project)
-- change patient data
+- create and change new patient and case
