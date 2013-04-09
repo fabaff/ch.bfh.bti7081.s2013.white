@@ -3,7 +3,7 @@
 **List of all known Use cases**
 
 User: psychotherapist (psychiatrist or psychologist)
-- (0) create new patient and case
+
 - (1) read patient data
 - (2) read diagnosis
 - (3) change diagnosis
@@ -16,6 +16,10 @@ User: psychotherapist (psychiatrist or psychologist)
 - (10) read orders
 - (11) change orders
 - (12) help system
+- (13) Fallinformationen anzeigen
+- (14) Fallinformationen bearbeiten
+- (15) Neuen Patienten erfassen
+- (16) Neuen Fall eröffnen oder Fall abschliessen
 
 User: administration staff (not relevant for this project)
 - create and change new patient and case

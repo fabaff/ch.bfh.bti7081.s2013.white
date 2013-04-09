@@ -69,11 +69,6 @@ This section define the technical terms used in the document.
 
 ### Functional user requirements
 
-#### 0. Create new patient and case 
-(falls Therapeut Nachtdienst macht und Eröffnung nicht durch die Administration durchgeführt werden kann)
-- 0.1 Neuen Patienten hinzufügen 
-- 0.2 Neuen Fall für einen Patienten eröffnen
-
 #### 1. Read patient data 
 - 1.1 Show all patients in a table on the home screen (current case).
 - 1.2 Search a specific patient.
@@ -143,6 +138,12 @@ This section define the technical terms used in the document.
 - 12.1 Start the help system from every screen of the application.
 - 12.2 Show the diffrent help topics: Navigation tree and description of selected topic.
 - 12.3 Search with keywords in the help system.
+
+#### 13. Create new patient and case 
+(falls Therapeut Nachtdienst macht und Eröffnung nicht durch die Administration durchgeführt werden kann)
+- 0.1 Neuen Patienten hinzufügen 
+- 0.2 Neuen Fall für einen Patienten eröffnen
+
 
 ### Non-functional user requirements
 
