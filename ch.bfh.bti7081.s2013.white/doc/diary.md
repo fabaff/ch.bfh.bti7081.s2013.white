@@ -3,6 +3,10 @@
 (all entries in backwards chronological order)
 
 ## 2013-04-02
+- Bearbeitung der Übungen zur Modellierung
+- Update vom Requierement Dokument
+
+## 2013-04-02
 - Start with task06 
 - Update requirements document
 

@@ -70,7 +70,7 @@ This section define the technical terms used in the document.
 ### Functional user requirements
 
 #### 1. Read patient data 
-- 1.1 Show all patients in a table on the home screen (current case).
+- 1.1 Show all patients in a table on the home screen (from current case).
 - 1.2 Search a specific patient.
 - 1.3 Sort the patient table.
 - 1.4 Filter the patient table.
@@ -79,60 +79,58 @@ This section define the technical terms used in the document.
 
 #### 2. Read diagnosis 
 - 2.1 Show all diagnosis of a patient (current case) in a table view. 
-- 2.2 Show the selected diagnosis of a patient in a details view.
-- 2.3 Filter the diagnosis of one patient.
-- 2.4 Filter the diagnosis of multiple patients.
-- 2.5 Search diagnosis of patients.
-- 2.6 Sort diagnosis of patients.
+- 2.2 Show all diagnosis of a patient (current case) in a details view.
+- 2.3 Filter the diagnosis of a patient.
+- 2.4 Sort diagnosis of a patient.
 
 #### 3. Change diagnosis
-(do this in the same diagnosis screen)
 - 3.1 Add a new diagnosis for the current patient. 
 - 3.2 Diagnose bearbeiten
 - 3.3 Diagnose löschen
 
 #### 4. Read medication
-- 4.1 Show medication of patients in a table view.
-- 4.2 Filter the medication of one patient.
-- 4.3 Filter the medication of multiple patients.
-- 4.4 Search medication of patients.
-- 4.5 Sort medication of patients.
+- 4.1 Show medication of a patient in a table view.
+- 4.2 Filter the medication of a patient.
+- 4.3 Sort medication of a patient.
 
 #### 5. Change medication
 - 5.1 Add a new medication for the current patient.  
-- 5.2 Change an existing medication for the current own patient.
+- 5.2 Change an existing medication for the current patient.
+- 5.3 Medikation löschen (nur möglich, wenn verordnete Medikation noch in der Zukunft liegt).
 
-#### 6. Read ICD-10 catalog (diagnosis database)
+#### 6. Read ICD-10 catalog
 - 6.1 Start the ICD-10 diagnosis catalog from the diagnosis screen.
 - 6.2 Show the ICD-10 catalog in a table view.
 - 6.3 Search in the ICD-10 catalog.
 - 6.4 Sort the ICD-10 catalog entries.
 
-#### 7. Read medication catalog (medication database)
+#### 7. Read medication catalog
 - 7.1 Start the medication catalog from the medication screen.
 - 7.2 Show medication catalog in a table view.
-- 7.3 Filter medication catalog entries.
-- 7.4 Search in the medication catalog.
-- 7.5 Sort the medication catalog entries.
+- 7.3 Search in the medication catalog.
+- 7.4 Sort the medication catalog entries.
  
-#### 8. Read history
-- 8.2 Show history of patients in a table view.
-- 8.5 Filter the history of one patient.
-- 8.6 Filter the history of multiple patients.
-- 8.7 Search history entries.
-- 8.8 Sort history entries.
+#### 8. Verlauf lesen
+- 8.1 Show Verlauf of a patient in a table view.
+- 8.2 Show Verlauf of a patient in a details view.
+- 8.3 Filter the Verlauf of a patient.
+- 8.4 Search Verlauf entries.
+- 8.5 Sort Verlauf entries.
  
-#### 9. Change history
+#### 9. Verlauf bearbeiten
 - 9.1 Add a new entry for the current patient.
+- 9.2 Change an entry for the current patient.
+- 9.3 Delete an entry for the current patient.
 
 #### 10. Read Orders
 - 10.1 Show orders to other medical staff in a table view.
-- 10.2 Search orders.
+- 10.2 Filter orders.
 - 10.3 Sort orders.
 
 #### 11. Change Orders
-- 11.1 Add new order for the current own patient.
-- 11.2 Change the status of an existing order for the current own patient.
+- 11.1 Add a new order for the current patient.
+- 11.2 Change order for the current patient (Nur möglich, solange Auftrag noch nicht durch den Empfänger angenommen (bestätigt) wurde).
+- 11.3 Auftrag für aktuellen Patienten löschen (Nur möglich, solange Auftrag noch nicht durch den Empfänger angenommen (bestätigt) wurde).
  
 #### 12. Help system
 - 12.1 Start the help system from every screen of the application.
@@ -145,6 +143,8 @@ This section define the technical terms used in the document.
 
 #### 14. Neuen Patienten erfassen und Fall eröffnen
 (falls Therapeut Nachtdienst macht und Eröffnung nicht durch die Administration durchgeführt werden kann)
+- 14.1 Neuen Patienten erfassen
+- 14.2 Fall eröffnen
 
 #### 15. Neuen Fall eröffnen oder Fall abschliessen
 (falls Therapeut Nachtdienst macht und Eröffnung nicht durch die Administration durchgeführt werden kann)
@@ -159,6 +159,7 @@ This section define the technical terms used in the document.
 - The language of the application is german. It should be possible to integrate a french language version at a later point (clinics in the romandie). 
 - A therapist can only change data from own patients and the current case.
 - Only a psychiatrist can do change in medication, a  psychologist has a read only access to the medication management functionality.
+- Ein Psychologe darf keine medizinischen Verordnungen/ Aufträge durchführen.
 - Login to the application with encrypted username and password.
 - The data protection act must be considered.
 
@@ -201,6 +202,11 @@ For maximum performance the database will be hosted on a dedicated server. Every
  - family doctor (Hausarzt): first name, last name, adress, fax, ... 
 
 #### 2. Read diagnosis 
+- 2.1 Show all diagnosis of a patient (current case) in a table view. 
+- 2.2 Show all diagnosis of a patient (current case) in a details view.
+- 2.3 Filter the diagnosis of a patient.
+- 2.4 Sort diagnosis of a patient.
+
 - 2.1 Show all diagnosis of a patient (current case) in a table view:
  - diagnosis name, ICD code (ev. DSM code), date of creation, diagnosis creator (therapist), clinic (hospital or local medical practice). 
 - 2.2 Show the selected diagnosis of a patient in a details view.
@@ -211,7 +217,10 @@ For maximum performance the database will be hosted on a dedicated server. Every
 - 2.6 Sort diagnosis of patients: sort by all column names.
 
 #### 3. Change diagnosis
-(do this in the same diagnosis screen)
+- 3.1 Add a new diagnosis for the current patient. 
+- 3.2 Diagnose bearbeiten
+- 3.3 Diagnose löschen
+
 - 3.1 Add a new diagnosis for the current patient: 
  - 3.1.1 select and save the name of the diagnosis (free text), ICD code (ev. DSM code) (drop down menu), comment of therapist (free text in large field)
  - 3.1.2 automatic completion: date of creation, diagnosis creator (therapist), clinic (hospital or local medical practice). 
@@ -219,6 +228,10 @@ For maximum performance the database will be hosted on a dedicated server. Every
 - 3.3 Diagnose löschen
 
 #### 4. Read medication
+- 4.1 Show medication of a patient in a table view.
+- 4.2 Filter the medication of a patient.
+- 4.3 Sort medication of a patient.
+
 - 4.1 Show medication of patients in a table view:
  - 4.1.1 medication name ("Markenname"), "Wirkstoffe", "Verabreichungsform"
  - 4.1.2 timeline with all dates and a selectable date. Attributes: "verabreicht", "pausiert", "offen"
@@ -229,6 +242,10 @@ For maximum performance the database will be hosted on a dedicated server. Every
 - 4.5 Sort medication of patients: sort by all column names.
 
 #### 5. Change medication
+- 5.1 Add a new medication for the current patient.  
+- 5.2 Change an existing medication for the current patient.
+- 5.3 Medikation löschen (nur möglich, wenn verordnete Medikation noch in der Zukunft liegt).
+
 - 5.1 Add a new medication for the current patient: 
  - 5.1.1 medication name ("Markenname"), "Wirkstoffe", "Verabreichungsform", start date, end date (empty = "bis auf weiteres"), frequency (Häufigkeit), "Ausführungszeit", dose, unit
   - attributes of "Verabreichungsform": "per OS" (Mund), "I.V." (intravenös), "S.C." (subcutan = unter die Haut gespritzt), "I.M." (intramuskulär = in Muskel gespritzt), "topisch" (Oberflächlich, Salbe)
@@ -238,31 +255,55 @@ For maximum performance the database will be hosted on a dedicated server. Every
  - 5.1.2 automatic completion: date of prescribing, prescribing person (doctor), clinic (hospital or local medical practice).  
 - 5.2 Change an existing medication for the current own patient.
 
-#### 6. Read ICD-10 catalog (diagnosis database)
+#### 6. Read ICD-10 catalog
+- 6.1 Start the ICD-10 diagnosis catalog from the diagnosis screen.
+- 6.2 Show the ICD-10 catalog in a table view.
+- 6.3 Search in the ICD-10 catalog.
+- 6.4 Sort the ICD-10 catalog entries.
+
 - 6.1 Start the ICD-10 diagnosis catalog from the diagnosis screen.
 - 6.2 Show the ICD-10 catalog in a table view: diagnosis name, ICD-10 code, diagnosis description.
 - 6.3 Search in the ICD-10 catalog: search by diagnosis name, ICD-10 code.
 - 6.4 Sort the ICD-10 catalog entries: sort by all column names.
 
-#### 7. Read medication catalog (medication database)
+#### 7. Read medication catalog
+- 7.1 Start the medication catalog from the medication screen.
+- 7.2 Show medication catalog in a table view.
+- 7.3 Search in the medication catalog.
+- 7.4 Sort the medication catalog entries.
+
 - 7.1 Start the medication catalog from the medication screen.
 - 7.2 Show medication catalog in a table view: medication name, "Wirkstoffe", medication description.
 - 7.3 Filter medication catalog entries: Filter by "Wirkstoffe".
 - 7.4 Search in the medication catalog: medication name, "Wirkstoffe".
 - 7.5 Sort the medication catalog entries: sort by all column names.
  
-#### 8. Read history
+#### 8. Verlauf lesen
+- 8.1 Show Verlauf of a patient in a table view.
+- 8.2 Show Verlauf of a patient in a details view.
+- 8.3 Filter the Verlauf of a patient.
+- 8.4 Search Verlauf entries.
+- 8.5 Sort Verlauf entries.
+
 - 8.2 Show history of patients in a table view: comment of therapist, date, responsable therapist, clinic.
 - 8.5 Filter the history of one patient: case status, own entry, entries created by therapists from the same clinic, entries created by all existing therapists.
 - 8.6 Filter the history of multiple patients: case status, current patient, all own patients, all patients from the same clinic, all existing patients.
 - 8.7 Search history entries: search by case status, first name, last name, gender, birthday, date.
 - 8.8 Sort history entries: sort by all column names.
  
-#### 9. Change history
+#### 9. Verlauf bearbeiten
+- 9.1 Add a new entry for the current patient.
+- 9.2 Change an entry for the current patient.
+- 9.3 Delete an entry for the current patient.
+
 - 9.1 Add a new entry for the current patient: comment of therapist
  - automatic completion: date, responsable therapist, clinic.
 
 #### 10. Read Orders
+- 10.1 Show orders to other medical staff in a table view.
+- 10.2 Filter orders.
+- 10.3 Sort orders.
+
 - 10.1 Show orders to other medical staff in a table view: acceptor of order, responsabe therapist, description, date, status, clinic, department of clinic.
  - acceptor of order: "Pflege", "Psychiater", "Psychologe", "Physiotherapeut", "Ergotherapeut", "Sozialarbeiter".
  - status: "verordnet", "begonnen", "beendet", "abgebrochen"
@@ -270,6 +311,10 @@ For maximum performance the database will be hosted on a dedicated server. Every
 - 10.3 Sort orders: sort by all column names.
 
 #### 11. Change Orders
+- 11.1 Add a new order for the current patient.
+- 11.2 Change order for the current patient (Nur möglich, solange Auftrag noch nicht durch den Empfänger angenommen (bestätigt) wurde).
+- 11.3 Auftrag für aktuellen Patienten löschen (Nur möglich, solange Auftrag noch nicht durch den Empfänger angenommen (bestätigt) wurde).
+
 - 11.1 Add new order for the current own patient: acceptor of order, responsabe therapist, description, date, status, clinic.
 - 11.2 Change an existing order for the current own patient: status.
  
@@ -284,6 +329,8 @@ For maximum performance the database will be hosted on a dedicated server. Every
 
 #### 14. Neuen Patienten erfassen und Fall eröffnen
 (falls Therapeut Nachtdienst macht und Eröffnung nicht durch die Administration durchgeführt werden kann)
+- 14.1 Neuen Patienten erfassen
+- 14.2 Fall eröffnen
 
 #### 15. Neuen Fall eröffnen oder Fall abschliessen
 (falls Therapeut Nachtdienst macht und Eröffnung nicht durch die Administration durchgeführt werden kann)
@@ -293,12 +340,13 @@ For maximum performance the database will be hosted on a dedicated server. Every
 ### Non-functional system requirements
 
 #### Platform
-- The application can be used on tablet during a consultation or a meeting (main use).
+- The application can be used on tablet during a consultation or a meeting.
 - The application can be used on desktop when a therapist is doing office work.
 
 #### Data access restriction
 - A therapist can only change data from own patients and the current case.
 - Only a psychiatrist can do change in medication, a  psychologist has a read only access to the medication management functionality.
+- Ein Psychologe darf keine medizinischen Verordnungen/ Aufträge durchführen.
 
 #### Data protection and Law
 - An encrypted authentication is needed to enter the application (username and password).
@@ -306,7 +354,7 @@ For maximum performance the database will be hosted on a dedicated server. Every
 
 #### Architecture and interfaces
 - The data of all patients are stored in a central database. This makes it possible to access the needed data from all clinics.
-- Medical catalogs (diagnosis, treatment, medication) are integrated into the database and can be used in the application.
+- Medical catalogs (diagnosis, medication) are integrated into the database and can be used in the application.
 - A special tool is required to continuous update the database with changed patient and clinic data (not in scope of this project). This will be done by the administration staff of a clinic. 
 - There must be interfaces to PMS applications from other medical users (nurses, administration staff).
 
