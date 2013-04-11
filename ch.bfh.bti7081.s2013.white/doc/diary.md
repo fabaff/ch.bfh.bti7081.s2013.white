@@ -3,9 +3,13 @@
 (all entries in backwards chronological order)
 
 
-## 2013-04-02
+## 2013-04-09
 - Bearbeitung der Übungen zu Klassen- und Sequenzdiagrammen
-- Update Requierement Dokument
+- Update Requirement Dokument
+
+## 2013-04-05
+- Alejandro is no longer a member of Team White. He left the course
+- Now the standard language for all documents is German
 
 ## 2013-04-02
 - Start with task06 
@@ -65,7 +69,6 @@
 - Arthur van Ommen		vanoa1@bfh.ch
 - Patrick Kofmel        kofmp1@bfh.ch
 - Fabian Affolter       affof1@bfh.ch
-- Alejandro Nuñez
 
 ## Links
 - [Software Engineering and Design](https://www.cpvrlab.ti.bfh.ch/klu1/BTI7081/soed/)
