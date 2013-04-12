@@ -1,6 +1,6 @@
 # Documentation
 
-The "doc"-folder in the git repository is grouped by case studies and shows all relevant details.
+The ***doc***-folder in the git repository is grouped by case studies and shows all relevant details.
 
 ```bash
 .
@@ -12,7 +12,8 @@ The "doc"-folder in the git repository is grouped by case studies and shows all 
 │   ├── task03          -- Task 3 - Design thinking
 │   ├── task04          -- Task 4 - Requirement document
 │   ├── task05          -- Task 5 - Requirements review
-│   └── task06          -- Task 6 - External perspective
+│   ├── task06          -- Task 6 - External perspective
+│   └── task07          -- Task 7 - Domain Model & Sequence Diagram
 ├── cs02                -- Case study 2 (PIP)
 │   └── task01.md       -- Task 1
 ├── diary.md            -- Journal
