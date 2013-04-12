@@ -2,6 +2,9 @@
 
 (all entries in backwards chronological order)
 
+## 2013-04-12
+- Template for CRC cards for task 07 added
+- Start of processing task 07
 
 ## 2013-04-09
 - Bearbeitung der Übungen zu Klassen- und Sequenzdiagrammen
