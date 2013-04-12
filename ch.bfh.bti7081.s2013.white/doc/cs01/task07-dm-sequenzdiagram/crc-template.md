@@ -1,11 +1,9 @@
-# CRC-Karte
+# CRC-Karte Template
 
-* **Arbeitsname**            : **1**
-* **Mögliche Namen**                :
-* **Effektiver Name**             :
-* **Ziel**           :
-* **Trigger / Pre condition** :
-* **Results / Post condition**:
+* **Arbeitsname**     : **1**
+* **Mögliche Namen**  :
+* **Effektiver Name** :
+* **Ziel**            :
 
 ## Sequence
 
