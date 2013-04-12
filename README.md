@@ -1,4 +1,4 @@
-# Group White
+# Software Engineering and Design - Group White
 
 This is the repository of group **white**.
 
