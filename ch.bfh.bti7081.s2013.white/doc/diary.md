@@ -2,6 +2,9 @@
 
 (all entries in backwards chronological order)
 
+## 2013-04-19
+- Finishing task07 (incl. presentation and crc cards)
+
 ## 2013-04-12
 - Template for CRC cards for task 07 added
 - Start of processing task 07
