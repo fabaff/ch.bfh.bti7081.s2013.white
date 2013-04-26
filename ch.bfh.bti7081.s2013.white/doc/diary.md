@@ -3,7 +3,7 @@
 (all entries in backwards chronological order)
 
 ## 2013-04-23
-- Add Viso-Diagrams to task08
+- Add visio diagrams to task08
 
 ## 2013-04-23
 - Working on task08 
