@@ -14,7 +14,10 @@ The ***doc***-folder in the git repository is grouped by case studies and shows 
 │   ├── task05          -- Task 5 - Requirements review
 │   ├── task06          -- Task 6 - External perspective
 │   ├── task07          -- Task 7 - Domain Model & Sequence Diagram
-│   └── task08          -- Task 8 - Architecture Design
+│   ├── task08          -- Task 8 - Architecture Design
+│   ├── task09          -- Task 9 - Software Architecture
+│   ├── task10          -- Task 10 - Scrum Backlog Planning
+│   └── task11          -- Task 11 - Scrum Sprints
 ├── cs02                -- Case study 2 (PIP)
 │   └── task01.md       -- Task 1
 ├── diary.md            -- Journal
