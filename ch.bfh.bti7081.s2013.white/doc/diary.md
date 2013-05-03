@@ -4,6 +4,7 @@
 
 ## 2013-05-03
 - Strategy pattern for 17.05.2013 (15 min)
+- Meeting 2013-05-06 at 17.00 (Wankdorffeldstrasse 102)
 
 ## 2013-04-30
 - Setup needed tools
