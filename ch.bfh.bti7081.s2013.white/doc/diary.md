@@ -2,6 +2,9 @@
 
 (all entries in backwards chronological order)
 
+## 2013-05-03
+- Strategy pattern for 17.05.2013 (15 min)
+
 ## 2013-04-30
 - Setup needed tools
 
