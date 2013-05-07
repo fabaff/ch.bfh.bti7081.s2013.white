@@ -7,3 +7,5 @@ For your mobile application, redesign your Architecture taking into account
 - and architectural design patterns in general
 
 Submission of Results: 07.05.2013
+
+-> vgl. Datei MHC_PMS_Backlog_Team_white.xlsx
