@@ -2,6 +2,11 @@
 
 (all entries in backwards chronological order)
 
+## 2013-05-06
+- Scrum meeting: product planning
+- task09: System architecture updated
+- task10: Product and sprint backolg added
+
 ## 2013-05-03
 - Strategy pattern for 17.05.2013 (15 min)
 
