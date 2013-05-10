@@ -2,6 +2,9 @@
 
 (all entries in backwards chronological order)
 
+## 2013-05-10
+- add maven-project to gitHub
+
 ## 2013-05-06
 - Scrum meeting: product planning
 - task09: System architecture updated
