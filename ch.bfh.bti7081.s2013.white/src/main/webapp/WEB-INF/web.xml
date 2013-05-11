@@ -12,12 +12,12 @@
         <init-param>
             <description>Vaadin UI to display</description>
             <param-name>UI</param-name>
-            <param-value>ch.bfh.bti7081.s2013.white.ui.MhcPmsMainUI</param-value>
+            <param-value>ch.bfh.ti.soed.white.mhc_pms.ui.MhcPmsMainUI</param-value>
         </init-param>
                 <init-param>
             <description>Application widgetset</description>
             <param-name>widgetset</param-name>
-            <param-value>ch.bfh.bti7081.s2013.white.AppWidgetSet</param-value>
+            <param-value>ch.bfh.ti.soed.white.mhc_pms.AppWidgetSet</param-value>
         </init-param>
     </servlet>
     <servlet-mapping>
