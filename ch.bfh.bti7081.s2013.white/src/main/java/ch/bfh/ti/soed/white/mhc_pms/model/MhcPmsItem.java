@@ -1,8 +1,8 @@
 package ch.bfh.ti.soed.white.mhc_pms.model;
 
-public class PmsItem {
+public class MhcPmsItem {
 
-	public PmsItem() {
+	public MhcPmsItem() {
 		// TODO Auto-generated constructor stub
 	}
 

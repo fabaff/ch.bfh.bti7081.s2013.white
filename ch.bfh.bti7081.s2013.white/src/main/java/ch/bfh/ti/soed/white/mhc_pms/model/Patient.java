@@ -12,7 +12,7 @@ import javax.validation.constraints.Size;
  *
  */
 @Entity
-public class Patient extends PmsItem implements Serializable {
+public class Patient extends MhcPmsItem implements Serializable {
 
 	private static int counter = 1;
 	
