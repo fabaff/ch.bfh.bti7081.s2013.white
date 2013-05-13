@@ -13,6 +13,8 @@ public class MhcPmsMainUI extends UI {
 	@Override
 	protected void init(VaadinRequest request) {
 		this.setContent(new Label("MHC PMS"));
+		
+		
 	}
 
 }
