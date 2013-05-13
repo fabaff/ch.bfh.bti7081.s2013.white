@@ -21,8 +21,10 @@ public class MhcPmsMainUI extends UI {
 	protected void init(VaadinRequest request) {
 		VerticalSplitPanel verticalPanel = new VerticalSplitPanel();
 		HorizontalSplitPanel horizontalPanel = new HorizontalSplitPanel();
-		MenuBarComponent menuBar= new MenuBarComponent();
-		MenuBarComponentListener menuBarListener = new MenuBarComponentListener();		
+		
+		MenuBarComponentListener menuBarComponentListener = new MenuBarComponentListener();
+		MenuBarComponent menuBar = new MenuBarComponent(menuBarComponentListener);
+		
 		HomeTitleBar homeTitleBar = new HomeTitleBar();
 		PatientTableComponent patientTable = new PatientTableComponent();
 		PatientInfoComponent patInfo = new PatientInfoComponent();
@@ -31,7 +33,7 @@ public class MhcPmsMainUI extends UI {
 		DiagnosisComponent diagnosisComp = new DiagnosisComponent();
 		MedicationComponent medComp = new MedicationComponent();
 		
-		menuBar.addListener(menuBarListener);
+		menuBarComponentListener.addButton(MenuBarComponentListener.MenuBarButtonEnum.HOME, homeTitleBar, patientTable);
 		
 		horizontalPanel.setFirstComponent(menuBar);
 		horizontalPanel.setSecondComponent(patientTable);
