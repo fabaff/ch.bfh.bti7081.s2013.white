@@ -4,22 +4,31 @@ import java.io.Serializable;
 import java.lang.String;
 import java.util.Date;
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 /**
  * Entity implementation class for Entity: Patient
  *
  */
 @Entity
-public class Patient implements Serializable {
+public class Patient extends PmsItem implements Serializable {
 
+	private static int counter = 1;
+	
 	@Id
-	//@GeneratedValue(strategy = GenerationType.SEQUENCE)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private int id;
 	
+	@NotNull
+	@Size(min = 2, max = 24)
 	private String firstName;
-		
+	
+	@NotNull
+	@Size(min = 2, max = 24)
 	private String lastName;
 	
+	@NotNull
 	@Temporal(value = TemporalType.DATE)
 	private Date dateOfBirth;
 	
@@ -27,10 +36,10 @@ public class Patient implements Serializable {
 
 	public Patient() {
 		super();
-		this.firstName = "Patrick";
-		this.lastName = "Kofmel";
-		this.dateOfBirth = new Date(1000);
-		this.id = 1;
+		this.firstName = "";
+		this.lastName = "";
+		this.dateOfBirth = new Date();
+		this.id = counter++;
 	}   
 	
 	public int getId() {
@@ -65,5 +74,5 @@ public class Patient implements Serializable {
 	public void setDateOfBirth(Date dateOfBirth) {
 		this.dateOfBirth = dateOfBirth;
 	}
-   
+
 }

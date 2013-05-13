@@ -10,7 +10,7 @@ import com.vaadin.addon.jpacontainer.JPAContainer;
 import com.vaadin.addon.jpacontainer.JPAContainerFactory;
 import com.vaadin.addon.jpacontainer.provider.CachingMutableLocalEntityProvider;
 
-public class PmsDataContainer<E> extends JPAContainer<E> implements Set<E> {
+public class PmsDataContainer<E extends PmsItem> extends JPAContainer<E> implements Set<E> {
 
 	private static final long serialVersionUID = 5430581999993870449L;
 
