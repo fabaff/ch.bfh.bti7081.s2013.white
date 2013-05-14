@@ -1,5 +1,6 @@
 package ch.bfh.ti.soed.white.mhc_pms.security;
 
+
 public class MhcPmsUser {
 
 	public void incrementPatient() {
@@ -9,7 +10,6 @@ public class MhcPmsUser {
 
 	public void decrementPatient() {
 		// TODO Auto-generated method stub
-		
 	}
 
 }

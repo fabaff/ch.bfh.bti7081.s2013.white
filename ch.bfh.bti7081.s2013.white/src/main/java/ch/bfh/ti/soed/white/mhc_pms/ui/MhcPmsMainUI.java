@@ -1,6 +1,7 @@
 package ch.bfh.ti.soed.white.mhc_pms.ui;
 
 
+
 import ch.bfh.ti.soed.white.mhc_pms.ui.MenuBarComponent.ButtonEnum;
 
 import com.vaadin.server.VaadinRequest;
@@ -8,6 +9,7 @@ import com.vaadin.ui.Component;
 import com.vaadin.ui.HorizontalSplitPanel;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.VerticalSplitPanel;
+
 
 /**
  * The Application's "main" class
@@ -22,6 +24,7 @@ public class MhcPmsMainUI extends UI implements ImhcPmsUI {
 	@Override
 	protected void init(VaadinRequest request) {
 		MenuBarComponent menuBar = new MenuBarComponent(this);
+		
 		HomeTitleBarComponent homeTitleBar = new HomeTitleBarComponent();
 		TitleBarComponent titleBar = new TitleBarComponent();
 		PatientTableComponent patientTable = new PatientTableComponent();
