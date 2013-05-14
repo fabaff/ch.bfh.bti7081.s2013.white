@@ -51,4 +51,9 @@ public class CaseInfoComponent extends CustomComponent {
 		return mainLayout;
 	}
 
+	public void updateComponentDataSource() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

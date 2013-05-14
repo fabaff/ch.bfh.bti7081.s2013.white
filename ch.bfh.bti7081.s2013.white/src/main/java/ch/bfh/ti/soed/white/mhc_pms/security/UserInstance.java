@@ -1,6 +1,6 @@
 package ch.bfh.ti.soed.white.mhc_pms.security;
 
-public class UserFactory {
+public class UserInstance {
 
 	public static MhcPmsUser getUser() {
 		return new Psychiatrist();
