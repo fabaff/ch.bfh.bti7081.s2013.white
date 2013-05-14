@@ -4,6 +4,7 @@
 
 ## 2013-05-14
 - daily scrum meeting
+- Progress on tasks for 17.05.2013
 
 ## 2013-05-10
 - add maven-project to gitHub
