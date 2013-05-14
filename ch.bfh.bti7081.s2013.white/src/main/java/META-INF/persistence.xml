@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.0" xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+		xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+	
+	<persistence-unit name="ch.bfh.bti7081.s2013.white" transaction-type="RESOURCE_LOCAL">
+		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+		<class>ch.bfh.ti.soed.white.mhc_pms.model.Patient</class>
+		
+		<properties>
+			<property name="eclipselink.jdbc.platform" value="org.eclipse.persistence.platform.database.SQLServerPlatform" />
+			<property name="javax.persistence.jdbc.url" value="jdbc:sqlserver://localhost:55978;databaseName=mhcPms"/>
+			<property name="javax.persistence.jdbc.user" value="pkuser"/>
+			<property name="javax.persistence.jdbc.password" value="soed2013"/>
+			<property name="javax.persistence.jdbc.driver" value="com.microsoft.sqlserver.jdbc.SQLServerDriver"/>
+			<property name="eclipselink.ddl-generation" value="drop-and-create-tables"/>
+<!-- 			<property name="eclipselink.ddl-generation" value="create-tables" /> -->
+			<property name="eclipselink.ddl-generation.output-mode"	value="database" />
+		</properties>	
+	</persistence-unit>
+</persistence>

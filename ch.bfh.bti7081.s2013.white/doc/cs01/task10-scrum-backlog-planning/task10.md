@@ -16,3 +16,5 @@ Based on your CS1 project results so far, conduct a
 - for both, use the template from the course web site
 
 Submission/discussion of results: 07.05.2013
+
+-> vgl. Datei MHC_PMS_Backlog_Team_white.xlsx
