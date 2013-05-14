@@ -10,13 +10,13 @@ import com.vaadin.addon.jpacontainer.JPAContainer;
 import com.vaadin.addon.jpacontainer.JPAContainerFactory;
 import com.vaadin.addon.jpacontainer.provider.CachingMutableLocalEntityProvider;
 
-public class MhcPmsDataContainer<E extends MhcPmsItem> extends JPAContainer<E> implements Set<E> {
+public class MhcPmsContainer<E extends MhcPmsItem> extends JPAContainer<E> implements Set<E> {
 
 	private static final long serialVersionUID = 5430581999993870449L;
 
 	private Set<E> dataContainer;
 	
-	public MhcPmsDataContainer(Class<E> entityClass) {
+	public MhcPmsContainer(Class<E> entityClass) {
 		super(entityClass);
 
 		this.dataContainer = new HashSet<E>();
