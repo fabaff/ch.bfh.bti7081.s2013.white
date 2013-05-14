@@ -1,5 +1,8 @@
 package ch.bfh.ti.soed.white.mhc_pms.security;
 
-public class Psychiatrist extends MhcPmsUser {
+class Psychiatrist extends MedicalStaff {
 
+	protected Psychiatrist() {
+		super(Psychiatrist.class);
+	}
 }

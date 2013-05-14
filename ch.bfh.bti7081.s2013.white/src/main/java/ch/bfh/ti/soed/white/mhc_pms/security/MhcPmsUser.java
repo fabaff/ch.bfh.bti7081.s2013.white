@@ -1,21 +1,35 @@
 package ch.bfh.ti.soed.white.mhc_pms.security;
 
-import ch.bfh.ti.soed.white.mhc_pms.model.Patient;
+import ch.bfh.ti.soed.white.mhc_pms.model.MhcPmsItem;
 
+/**
+ * 
+ * @author Patrick Kofmel
+ *
+ */
+public abstract class MhcPmsUser {
 
-public class MhcPmsUser {
-
-	public void incrementCurrentPatient() {
+	private UIPermission uiPermission;
+	
+	protected <E extends MhcPmsUser> MhcPmsUser(Class<E> clazz) {
+		this.uiPermission = UIPermissionFactory.getUIState(clazz);
+	}
+	
+	public <E extends MhcPmsItem> void  incrementCurrentItem(Class<E> clazz) {
 		// TODO Auto-generated method stub
 		
 	}
 
-	public void decrementCurrentPatient() {
+	public <E extends MhcPmsItem> void decrementCurrentItem(Class<E> clazz) {
 		// TODO Auto-generated method stub
 	}
 
-	public void setCurrentItem(Class<Patient> class1, Object value) {
+	public <E extends MhcPmsItem> void setCurrentItem(Class<E> clazz, Object value) {
 		// TODO Auto-generated method stub
+	}
+
+	public UIPermission getUIPermission() {
+		return this.uiPermission;
 	}
 
 }
