@@ -3,7 +3,6 @@ package ch.bfh.ti.soed.white.mhc_pms.data;
 import java.util.HashMap;
 import java.util.Map;
 
-
 public final class MhcPmsDataAccess {
 
 	private static MhcPmsDataAccess instance;
@@ -16,11 +15,12 @@ public final class MhcPmsDataAccess {
 	}
 
 	private Map<String, MhcPmsContainer<? extends MhcPmsItem>> containerMap;
-	
+
 	private MhcPmsDataAccess() {
 		this.containerMap = new HashMap<String, MhcPmsContainer<? extends MhcPmsItem>>();
-		MhcPmsContainer<Patient> patients = new MhcPmsContainer<Patient>(Patient.class, this);
-		
+		MhcPmsContainer<Patient> patients = new MhcPmsContainer<Patient>(
+				Patient.class);
+
 		this.containerMap.put(Patient.class.getName(), patients);
 		// TODO restliche Container-Klassen ergänzen
 	}
@@ -30,5 +30,9 @@ public final class MhcPmsDataAccess {
 		return this.containerMap.get(clazz.getName());
 	}
 
+	public <E extends MhcPmsItem> void setCurrentContainer(Class<E> clazz,
+			MhcPmsContainer<E> mhcPmsContainer) {
+		this.containerMap.put(clazz.getName(), mhcPmsContainer);
+	}
 
 }

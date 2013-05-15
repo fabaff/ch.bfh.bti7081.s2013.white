@@ -14,10 +14,8 @@ import javax.validation.constraints.Size;
 @Entity
 public class Patient extends MhcPmsItem implements Serializable {
 
-	private static final long serialVersionUID = 1L;
-	
-	private static int counter = 1;
-	
+	private static final long serialVersionUID = -5457255038025906437L;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private int id;
@@ -49,13 +47,12 @@ public class Patient extends MhcPmsItem implements Serializable {
 		this.firstName = "";
 		this.lastName = "";
 		this.dateOfBirth = new Date();
-		this.gender = "w";
+		this.gender = "";
 		this.status = "";
 		this.kindOfTreatment = "";
-		
-		this.id = counter++;
 	}   
 	
+	// TODO Test für getID und getItemId
 	public int getId() {
 		return id;
 	}
@@ -110,6 +107,14 @@ public class Patient extends MhcPmsItem implements Serializable {
 
 	public void setKindOfTreatment(String kindOfTreatment) {
 		this.kindOfTreatment = kindOfTreatment;
+	}
+
+	@Override
+	protected void setCurrentContainer() {
+		//TODO update weitergeben an caseContainer
+		//TODO aktiver Fall auswählen
+		//this.caseContainersetCurrentItem(caseid);
+		//MhcPmsDataAccess.getInstance().setCurrentContainer(Patient.class, this.caseContainer);
 	}
 
 }

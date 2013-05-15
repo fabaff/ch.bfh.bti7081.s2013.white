@@ -19,14 +19,11 @@ public class MhcPmsContainer<E extends MhcPmsItem> extends JPAContainer<E>
 
 	private Set<E> dataContainer;
 
-	private E currentItem;
+	private EntityItem<E> currentItem;
 	
-	private MhcPmsDataAccess dataAccess;
-
-	public MhcPmsContainer(Class<E> entityClass, MhcPmsDataAccess dataAccess) {
+	public MhcPmsContainer(Class<E> entityClass) {
 		super(entityClass);
 
-		this.dataAccess = dataAccess;
 		this.dataContainer = new HashSet<E>();
 
 		// TODO persistence unit nicht als String angeben
@@ -39,8 +36,7 @@ public class MhcPmsContainer<E extends MhcPmsItem> extends JPAContainer<E>
 
 		Collection<?> collection = this.getItemIds();
 		if (!collection.isEmpty()) {
-			this.currentItem = this.getItem(collection.iterator().next())
-					.getEntity();
+			this.currentItem = this.getItem(collection.iterator().next());
 		}
 	}
 
@@ -106,8 +102,13 @@ public class MhcPmsContainer<E extends MhcPmsItem> extends JPAContainer<E>
 
 	public boolean incrementCurrentItem() {
 		if (this.size() != 0) {
-			// TODO id in Oberklasse
-			return this.setCurrentItem((((Patient) this.currentItem).getId() + 1) % this.size());
+			Object id = this.currentItem.getItemId();
+			if (this.isLastId(id)) {
+				id = this.firstItemId();
+			} else {
+				id = this.nextItemId(id);
+			}
+			return this.setCurrentItem(id);
 		} else {
 			return false;
 		}
@@ -115,26 +116,31 @@ public class MhcPmsContainer<E extends MhcPmsItem> extends JPAContainer<E>
 
 	public boolean decrementCurrentItem() {
 		if (this.size() != 0) {
-			// TODO id in Oberklasse
-			int idDecrement = ((Patient) this.currentItem).getId() - 1;
-			return this.setCurrentItem(idDecrement > 0 ? idDecrement : this.size() - 1);
+			Object id = this.currentItem.getItemId();
+			if (this.isFirstId(id)) {
+				id = this.lastItemId();
+			} else {
+				id = this.prevItemId(id);
+			}
+			return this.setCurrentItem(id);
 		} else {
 			return false;
 		}
 	}
 
-	public boolean setCurrentItem(Object value) {
-		EntityItem<E> entityItem = this.getItem(value);
+	public boolean setCurrentItem(Object id) {
+		
+		EntityItem<E> entityItem = this.getItem(id);
 		if (entityItem != null) {
-			this.currentItem = entityItem.getEntity();
-			
+			this.currentItem = entityItem;
+			this.currentItem.getEntity().setCurrentContainer();
 			return true;
 		} else {
 			return false;
 		}
 	}
 
-	public E getCurrentItem() {
+	public EntityItem<E> getCurrentItem() {
 		return this.currentItem;
 	}
 }
