@@ -4,6 +4,7 @@
 
 ## 2013-05-14
 - daily scrum meeting
+- Progress on tasks for 17.05.2013
 
 ## 2013-05-10
 - add maven-project to gitHub
@@ -15,6 +16,7 @@
 
 ## 2013-05-03
 - Strategy pattern for 17.05.2013 (15 min)
+- Meeting 2013-05-06 at 17.00 (Wankdorffeldstrasse 102)
 
 ## 2013-04-30
 - Setup needed tools
