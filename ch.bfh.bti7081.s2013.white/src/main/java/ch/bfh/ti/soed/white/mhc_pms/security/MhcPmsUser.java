@@ -14,7 +14,8 @@ public abstract class MhcPmsUser {
 	protected MhcPmsDataAccess dataAccess;
 	
 	protected <E extends MhcPmsUser> MhcPmsUser(Class<E> clazz) {
-		this.uiPermission = UIPermissionFactory.getUIState(clazz);
+		UIPermissionFactory<E> uiPermissionFactory = new UIPermissionFactory<>();
+		this.uiPermission = uiPermissionFactory.createUIState(clazz);
 		this.dataAccess = MhcPmsDataAccess.getInstance();
 	}
 	

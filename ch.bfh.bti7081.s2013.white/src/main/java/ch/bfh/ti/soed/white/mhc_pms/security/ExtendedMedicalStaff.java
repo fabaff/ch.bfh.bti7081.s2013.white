@@ -8,6 +8,10 @@ class ExtendedMedicalStaff extends MedicalStaff {
 	protected <E extends ExtendedMedicalStaff> ExtendedMedicalStaff(Class<E> clazz) {
 		super(clazz);
 	}
+	
+	protected ExtendedMedicalStaff() {
+		this(ExtendedMedicalStaff.class);
+	}
 
 	public <E extends MhcPmsItem> void  incrementCurrentItem(Class<E> clazz) {
 		this.dataAccess.getCurrentMhcPmsContainer(clazz).incrementCurrentItem();

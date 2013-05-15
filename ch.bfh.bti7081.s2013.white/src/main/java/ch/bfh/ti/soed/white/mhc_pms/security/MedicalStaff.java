@@ -7,4 +7,7 @@ class MedicalStaff extends MhcPmsUser {
 		super(clazz);
 	}
 
+	protected MedicalStaff() {
+		this(MedicalStaff.class);
+	}
 }

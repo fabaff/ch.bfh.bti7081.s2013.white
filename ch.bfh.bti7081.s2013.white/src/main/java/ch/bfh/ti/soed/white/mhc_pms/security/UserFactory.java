@@ -4,7 +4,7 @@ class UserFactory {
 
 	static MhcPmsUser createUser() {
 		// TODO erstelltes objekt ist abhängig vom authentifizierten User
-		return new Psychiatrist();
+		return new Therapist();
 	}
 
 	private UserFactory() {}

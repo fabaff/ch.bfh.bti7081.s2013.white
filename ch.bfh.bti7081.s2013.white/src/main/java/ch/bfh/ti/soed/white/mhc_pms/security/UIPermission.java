@@ -2,19 +2,20 @@ package ch.bfh.ti.soed.white.mhc_pms.security;
 
 public abstract class UIPermission {
 
+	protected boolean isNewPatientAllowed = false;
+	protected boolean isNewCaseAllowed = false;
+	protected boolean isCloseCaseAllowed = false;
+	
 	public boolean isNewPatientAllowed() {
-		// TODO Auto-generated method stub
-		return false;
+		return this.isNewPatientAllowed;
 	}
 
 	public boolean isNewCaseAllowed() {
-		// TODO Auto-generated method stub
-		return false;
+		return this.isNewCaseAllowed;
 	}
 
 	public boolean isCloseCaseAllowed() {
-		// TODO Auto-generated method stub
-		return false;
+		return this.isCloseCaseAllowed;
 	}
 
 }
