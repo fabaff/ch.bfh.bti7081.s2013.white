@@ -1,5 +1,6 @@
 package ch.bfh.ti.soed.white.mhc_pms.security;
 
+import ch.bfh.ti.soed.white.mhc_pms.data.MhcPmsDataAccess;
 import ch.bfh.ti.soed.white.mhc_pms.data.MhcPmsItem;
 
 /**
@@ -19,11 +20,17 @@ public abstract class MhcPmsUser {
 		this.dataAccess = MhcPmsDataAccess.getInstance();
 	}
 	
-	public <E extends MhcPmsItem> void  incrementCurrentItem(Class<E> clazz) {}
+	public <E extends MhcPmsItem> boolean incrementCurrentItem(Class<E> clazz) {
+		return false;
+	}
 
-	public <E extends MhcPmsItem> void decrementCurrentItem(Class<E> clazz) {}
+	public <E extends MhcPmsItem> boolean decrementCurrentItem(Class<E> clazz) {
+		return false;
+	}
 
-	public <E extends MhcPmsItem> void setCurrentItem(Class<E> clazz, Object value) {}
+	public <E extends MhcPmsItem> boolean setCurrentItem(Class<E> clazz, Object value) {
+		return false;
+	}
 
 	public final UIPermission getUIPermission() {
 		return this.uiPermission;

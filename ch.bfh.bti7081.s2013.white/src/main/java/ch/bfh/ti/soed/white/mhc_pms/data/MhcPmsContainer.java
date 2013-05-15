@@ -94,17 +94,18 @@ public class MhcPmsContainer<E extends MhcPmsItem> extends JPAContainer<E> imple
 		this.dataContainer.clear();
 	}
 	
-	public void incrementCurrentItem() {
+	public boolean incrementCurrentItem() {
 		// TODO implement
+		return false;
 	}
 
-	public void decrementCurrentItem() {
+	public boolean decrementCurrentItem() {
 		// TODO Auto-generated method stub
-		
+		return false;
 	}
 
-	public void setCurrentItem(Object value) {
+	public boolean setCurrentItem(Object value) {
 		// TODO Auto-generated method stub
-		
+		return false;
 	}
 }

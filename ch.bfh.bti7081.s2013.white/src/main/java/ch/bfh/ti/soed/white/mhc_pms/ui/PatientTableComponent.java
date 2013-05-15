@@ -1,7 +1,7 @@
 package ch.bfh.ti.soed.white.mhc_pms.ui;
 
+import ch.bfh.ti.soed.white.mhc_pms.data.MhcPmsDataAccess;
 import ch.bfh.ti.soed.white.mhc_pms.data.Patient;
-import ch.bfh.ti.soed.white.mhc_pms.security.MhcPmsDataAccess;
 import ch.bfh.ti.soed.white.mhc_pms.security.UIPermission;
 import ch.bfh.ti.soed.white.mhc_pms.security.UserSingleton;
 
