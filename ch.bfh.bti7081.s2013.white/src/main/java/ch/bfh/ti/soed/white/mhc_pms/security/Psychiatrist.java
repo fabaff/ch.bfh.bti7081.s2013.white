@@ -1,8 +1,14 @@
 package ch.bfh.ti.soed.white.mhc_pms.security;
 
-class Psychiatrist extends MedicalStaff {
+
+class Psychiatrist extends Therapist {
 
 	protected Psychiatrist() {
-		super(Psychiatrist.class);
+		this(Psychiatrist.class);
 	}
+	
+	protected <E extends Psychiatrist> Psychiatrist(Class<E> clazz) {
+		super(clazz);
+	}
+	
 }

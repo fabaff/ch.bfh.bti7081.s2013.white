@@ -4,7 +4,7 @@
 	
 	<persistence-unit name="ch.bfh.bti7081.s2013.white" transaction-type="RESOURCE_LOCAL">
 		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
-		<class>ch.bfh.ti.soed.white.mhc_pms.model.Patient</class>
+		<class>ch.bfh.ti.soed.white.mhc_pms.data.Patient</class>
 		
 		<properties>
 			<property name="eclipselink.jdbc.platform" value="org.eclipse.persistence.platform.database.SQLServerPlatform" />

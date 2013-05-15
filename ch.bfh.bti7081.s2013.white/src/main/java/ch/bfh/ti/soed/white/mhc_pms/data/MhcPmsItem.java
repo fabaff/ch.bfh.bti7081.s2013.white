@@ -1,6 +1,6 @@
-package ch.bfh.ti.soed.white.mhc_pms.model;
+package ch.bfh.ti.soed.white.mhc_pms.data;
 
-public class MhcPmsItem {
+public abstract class MhcPmsItem {
 
 	public MhcPmsItem() {
 		// TODO Auto-generated constructor stub

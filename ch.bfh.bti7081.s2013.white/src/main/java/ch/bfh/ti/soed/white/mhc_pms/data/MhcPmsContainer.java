@@ -1,4 +1,4 @@
-package ch.bfh.ti.soed.white.mhc_pms.model;
+package ch.bfh.ti.soed.white.mhc_pms.data;
 
 import java.util.Collection;
 import java.util.HashSet;
@@ -15,6 +15,8 @@ public class MhcPmsContainer<E extends MhcPmsItem> extends JPAContainer<E> imple
 	private static final long serialVersionUID = 5430581999993870449L;
 
 	private Set<E> dataContainer;
+	
+	private E currentItem;
 	
 	public MhcPmsContainer(Class<E> entityClass) {
 		super(entityClass);
@@ -90,5 +92,19 @@ public class MhcPmsContainer<E extends MhcPmsItem> extends JPAContainer<E> imple
 	@Override
 	public void clear() {
 		this.dataContainer.clear();
+	}
+	
+	public void incrementCurrentItem() {
+		// TODO implement
+	}
+
+	public void decrementCurrentItem() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void setCurrentItem(Object value) {
+		// TODO Auto-generated method stub
+		
 	}
 }

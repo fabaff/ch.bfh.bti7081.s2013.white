@@ -1,4 +1,4 @@
-package ch.bfh.ti.soed.white.mhc_pms.model;
+package ch.bfh.ti.soed.white.mhc_pms.data;
 
 import java.io.Serializable;
 import java.lang.String;

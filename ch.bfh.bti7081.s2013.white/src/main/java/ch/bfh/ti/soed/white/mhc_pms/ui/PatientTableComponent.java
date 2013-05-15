@@ -1,7 +1,7 @@
 package ch.bfh.ti.soed.white.mhc_pms.ui;
 
-import ch.bfh.ti.soed.white.mhc_pms.model.MhcPmsDataAccess;
-import ch.bfh.ti.soed.white.mhc_pms.model.Patient;
+import ch.bfh.ti.soed.white.mhc_pms.data.Patient;
+import ch.bfh.ti.soed.white.mhc_pms.security.MhcPmsDataAccess;
 import ch.bfh.ti.soed.white.mhc_pms.security.UIPermission;
 import ch.bfh.ti.soed.white.mhc_pms.security.UserSingleton;
 
@@ -44,7 +44,7 @@ public class PatientTableComponent extends CustomComponent {
 		setCompositionRoot(mainLayout);
 
 		this.mainComponent = mainComponent;
-		this.tblPatients.setContainerDataSource(MhcPmsDataAccess.getCurrentContainer(Patient.class));
+		this.tblPatients.setContainerDataSource(MhcPmsDataAccess.getInstance().getCurrentContainer(Patient.class));
 		
 		UIPermission permission = UserSingleton.getUser().getUIPermission();
 		this.btnNewPatient.setEnabled(permission.isNewPatientAllowed());
