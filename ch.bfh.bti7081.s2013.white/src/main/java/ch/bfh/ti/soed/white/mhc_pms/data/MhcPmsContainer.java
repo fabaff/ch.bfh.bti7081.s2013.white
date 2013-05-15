@@ -5,32 +5,43 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
 
+import com.vaadin.addon.jpacontainer.EntityItem;
 import com.vaadin.addon.jpacontainer.EntityProvider;
 import com.vaadin.addon.jpacontainer.JPAContainer;
 import com.vaadin.addon.jpacontainer.JPAContainerFactory;
+import com.vaadin.addon.jpacontainer.provider.CachingBatchableLocalEntityProvider;
 import com.vaadin.addon.jpacontainer.provider.CachingMutableLocalEntityProvider;
 
-public class MhcPmsContainer<E extends MhcPmsItem> extends JPAContainer<E> implements Set<E> {
+public class MhcPmsContainer<E extends MhcPmsItem> extends JPAContainer<E>
+		implements Set<E> {
 
 	private static final long serialVersionUID = 5430581999993870449L;
 
 	private Set<E> dataContainer;
-	
+
 	private E currentItem;
 	
-	public MhcPmsContainer(Class<E> entityClass) {
+	private MhcPmsDataAccess dataAccess;
+
+	public MhcPmsContainer(Class<E> entityClass, MhcPmsDataAccess dataAccess) {
 		super(entityClass);
 
+		this.dataAccess = dataAccess;
 		this.dataContainer = new HashSet<E>();
-		// TODO set currentRecordId in Constructor
+
 		// TODO persistence unit nicht als String angeben
-		EntityProvider<E> entityProvider = new CachingMutableLocalEntityProvider<E>(
+		EntityProvider<E> entityProvider = new CachingBatchableLocalEntityProvider<E>(
 				entityClass,
 				JPAContainerFactory
 						.createEntityManagerForPersistenceUnit("ch.bfh.bti7081.s2013.white"));
-		
 		this.setEntityProvider(entityProvider);
 		this.setAutoCommit(true);
+
+		Collection<?> collection = this.getItemIds();
+		if (!collection.isEmpty()) {
+			this.currentItem = this.getItem(collection.iterator().next())
+					.getEntity();
+		}
 	}
 
 	@Override
@@ -55,7 +66,6 @@ public class MhcPmsContainer<E extends MhcPmsItem> extends JPAContainer<E> imple
 
 	@Override
 	public <T> T[] toArray(T[] a) {
-		// TODO korrekten Pyp P spezifizieren
 		return this.dataContainer.toArray(a);
 	}
 
@@ -93,19 +103,38 @@ public class MhcPmsContainer<E extends MhcPmsItem> extends JPAContainer<E> imple
 	public void clear() {
 		this.dataContainer.clear();
 	}
-	
+
 	public boolean incrementCurrentItem() {
-		// TODO implement
-		return false;
+		if (this.size() != 0) {
+			// TODO id in Oberklasse
+			return this.setCurrentItem((((Patient) this.currentItem).getId() + 1) % this.size());
+		} else {
+			return false;
+		}
 	}
 
 	public boolean decrementCurrentItem() {
-		// TODO Auto-generated method stub
-		return false;
+		if (this.size() != 0) {
+			// TODO id in Oberklasse
+			int idDecrement = ((Patient) this.currentItem).getId() - 1;
+			return this.setCurrentItem(idDecrement > 0 ? idDecrement : this.size() - 1);
+		} else {
+			return false;
+		}
 	}
 
 	public boolean setCurrentItem(Object value) {
-		// TODO Auto-generated method stub
-		return false;
+		EntityItem<E> entityItem = this.getItem(value);
+		if (entityItem != null) {
+			this.currentItem = entityItem.getEntity();
+			
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	public E getCurrentItem() {
+		return this.currentItem;
 	}
 }

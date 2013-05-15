@@ -5,7 +5,7 @@ import com.vaadin.ui.AbsoluteLayout;
 import com.vaadin.ui.CustomComponent;
 import com.vaadin.ui.Label;
 
-public class PatientProgressComponent extends CustomComponent {
+class PatientProgressComponent extends CustomComponent {
 
 	/*- VaadinEditorProperties={"grid":"RegularGrid,20","showGrid":true,"snapToGrid":true,"snapToObject":true,"movingGuides":false,"snappingDistance":10} */
 
@@ -51,7 +51,7 @@ public class PatientProgressComponent extends CustomComponent {
 		return mainLayout;
 	}
 
-	public void updateComponentDataSource() {
+	protected void updateComponentDataSource() {
 		// TODO Auto-generated method stub
 		
 	}

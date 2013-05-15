@@ -19,14 +19,16 @@ public final class MhcPmsDataAccess {
 	
 	private MhcPmsDataAccess() {
 		this.containerMap = new HashMap<String, MhcPmsContainer<? extends MhcPmsItem>>();
-		MhcPmsContainer<Patient> patients = new MhcPmsContainer<>(Patient.class);
+		MhcPmsContainer<Patient> patients = new MhcPmsContainer<Patient>(Patient.class, this);
 		
 		this.containerMap.put(Patient.class.getName(), patients);
+		// TODO restliche Container-Klassen ergänzen
 	}
 
 	public <E extends MhcPmsItem> MhcPmsContainer<? extends MhcPmsItem> getCurrentContainer(
 			Class<E> clazz) {
-		return this.containerMap.get(clazz);
+		return this.containerMap.get(clazz.getName());
 	}
+
 
 }

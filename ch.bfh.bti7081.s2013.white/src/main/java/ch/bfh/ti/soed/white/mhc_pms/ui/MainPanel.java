@@ -6,13 +6,14 @@ import com.vaadin.ui.Component;
 import com.vaadin.ui.HorizontalSplitPanel;
 import com.vaadin.ui.VerticalSplitPanel;
 
-public class MainPanel extends VerticalSplitPanel implements ImhcPmsComponent {
+class MainPanel extends VerticalSplitPanel implements ImhcPmsComponent {
 	
 	private static final long serialVersionUID = 6726671929546867989L;
 
 	private HorizontalSplitPanel horizontalPanel = new HorizontalSplitPanel();
 	
 	private TitleBarComponent titleBar = new TitleBarComponent();
+	private PatientTableComponent patientTable;
 	private PatientInfoComponent patInfo = new PatientInfoComponent();
 	private CaseInfoComponent caseInfo = new CaseInfoComponent();
 	private PatientProgressComponent progressComp = new PatientProgressComponent();
@@ -22,16 +23,16 @@ public class MainPanel extends VerticalSplitPanel implements ImhcPmsComponent {
 	public MainPanel() {
 		MenuBarComponent menuBar = new MenuBarComponent(this);
 		HomeTitleBarComponent homeTitleBar = new HomeTitleBarComponent();
-		PatientTableComponent patientTable = new PatientTableComponent(this);
+		this.patientTable = new PatientTableComponent(this);
 		
-		menuBar.addTab(ButtonEnum.HOME, homeTitleBar, patientTable);
+		menuBar.addTab(ButtonEnum.HOME, homeTitleBar, this.patientTable);
 		menuBar.addTab(ButtonEnum.PATIENT_INFO, this.titleBar, this.patInfo);
 		menuBar.addTab(ButtonEnum.CASE_INFO, this.titleBar, this.caseInfo);
 		menuBar.addTab(ButtonEnum.PATIENT_PROGRESS, this.titleBar, this.progressComp);
 		menuBar.addTab(ButtonEnum.DIAGNOSIS, this.titleBar, this.diagnosisComp);
 		menuBar.addTab(ButtonEnum.MEDICATION, this.titleBar, this.medComp);
 		
-		this.setActiveComponents(homeTitleBar, patientTable);
+		this.setActiveComponents(homeTitleBar, this.patientTable);
 		this.horizontalPanel.setFirstComponent(menuBar);
 		this.setSecondComponent(this.horizontalPanel);
 		this.setSplitPosition(20.0f, Unit.PERCENTAGE);
@@ -47,6 +48,7 @@ public class MainPanel extends VerticalSplitPanel implements ImhcPmsComponent {
 	@Override
 	public void updateComponentDataSource() {
 		this.titleBar.updateComponentDataSource();
+		this.patientTable.updateComponentDataSource();
 		this.patInfo.updateComponentDataSource();
 		this.caseInfo.updateComponentDataSource();
 		this.progressComp.updateComponentDataSource();

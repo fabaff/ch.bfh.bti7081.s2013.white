@@ -14,6 +14,8 @@ import javax.validation.constraints.Size;
 @Entity
 public class Patient extends MhcPmsItem implements Serializable {
 
+	private static final long serialVersionUID = 1L;
+	
 	private static int counter = 1;
 	
 	@Id
@@ -32,13 +34,25 @@ public class Patient extends MhcPmsItem implements Serializable {
 	@Temporal(value = TemporalType.DATE)
 	private Date dateOfBirth;
 	
-	private static final long serialVersionUID = 1L;
+	@NotNull
+	private String gender;
+	
+	@NotNull
+	private String status;
+	
+	@NotNull
+	private String kindOfTreatment;
+	
 
 	public Patient() {
 		super();
 		this.firstName = "";
 		this.lastName = "";
 		this.dateOfBirth = new Date();
+		this.gender = "w";
+		this.status = "";
+		this.kindOfTreatment = "";
+		
 		this.id = counter++;
 	}   
 	
@@ -58,7 +72,6 @@ public class Patient extends MhcPmsItem implements Serializable {
 		this.firstName = firstName;
 	}  
 	
-	   
 	public String getLastName() {
 		return this.lastName;
 	}
@@ -73,6 +86,30 @@ public class Patient extends MhcPmsItem implements Serializable {
 
 	public void setDateOfBirth(Date dateOfBirth) {
 		this.dateOfBirth = dateOfBirth;
+	}
+
+	public String getGender() {
+		return this.gender;
+	}
+
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
+
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+	public String getKindOfTreatment() {
+		return kindOfTreatment;
+	}
+
+	public void setKindOfTreatment(String kindOfTreatment) {
+		this.kindOfTreatment = kindOfTreatment;
 	}
 
 }
