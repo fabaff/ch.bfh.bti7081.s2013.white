@@ -34,14 +34,14 @@ public class Patient extends MhcPmsItem implements Serializable {
 	@NotNull
 	private String gender = "";
 
+	@OneToMany(mappedBy = "patient")
+	private Set<PCase> caseSet;
+	
 	@NotNull
 	private String status = "";
 
 	@NotNull
 	private String kindOfTreatment = "";
-	
-	@OneToMany(mappedBy = "patient")
-	private Set<PCase> caseSet;
 	
 	@Transient
 	private MhcPmsContainer<PCase> caseContainer;
@@ -92,6 +92,15 @@ public class Patient extends MhcPmsItem implements Serializable {
 		this.gender = gender;
 	}
 
+	@Override
+	protected void setCurrentContainer() {
+		 if (this.caseContainer != null) {
+			MhcPmsDataAccess.getInstance().setCurrentContainer(PCase.class,
+					this.caseContainer);
+			this.caseContainer.setFirstItemAsCurrent();
+		}
+	}
+
 	public String getStatus() {
 		return status;
 	}
@@ -107,14 +116,4 @@ public class Patient extends MhcPmsItem implements Serializable {
 	public void setKindOfTreatment(String kindOfTreatment) {
 		this.kindOfTreatment = kindOfTreatment;
 	}
-
-	@Override
-	protected void setCurrentContainer() {
-		 if (this.caseContainer != null) {
-			MhcPmsDataAccess.getInstance().setCurrentContainer(PCase.class,
-					this.caseContainer);
-			this.caseContainer.setFirstItemAsCurrent();
-		}
-	}
-
 }
