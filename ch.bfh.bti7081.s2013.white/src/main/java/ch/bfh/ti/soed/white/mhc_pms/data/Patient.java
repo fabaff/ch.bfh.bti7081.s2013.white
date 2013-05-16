@@ -3,80 +3,79 @@ package ch.bfh.ti.soed.white.mhc_pms.data;
 import java.io.Serializable;
 import java.lang.String;
 import java.util.Date;
+import java.util.Set;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 /**
  * Entity implementation class for Entity: Patient
- *
+ * 
  */
 @Entity
+@Table(name = "Patient")
 public class Patient extends MhcPmsItem implements Serializable {
 
 	private static final long serialVersionUID = -5457255038025906437L;
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE)
-	private int id;
-	
 	@NotNull
 	@Size(min = 2, max = 24)
-	private String firstName;
-	
+	private String firstName = "";
+
 	@NotNull
 	@Size(min = 2, max = 24)
-	private String lastName;
-	
+	private String lastName = "";
+
 	@NotNull
 	@Temporal(value = TemporalType.DATE)
-	private Date dateOfBirth;
-	
+	private Date dateOfBirth = new Date();
+
 	@NotNull
-	private String gender;
-	
+	private String gender = "";
+
 	@NotNull
-	private String status;
-	
+	private String status = "";
+
 	@NotNull
-	private String kindOfTreatment;
+	private String kindOfTreatment = "";
 	
+	@OneToMany(mappedBy = "patient")
+	private Set<PCase> caseSet;
+	
+	@Transient
+	private MhcPmsContainer<PCase> caseContainer;
 
 	public Patient() {
-		super();
-		this.firstName = "";
-		this.lastName = "";
-		this.dateOfBirth = new Date();
-		this.gender = "";
-		this.status = "";
-		this.kindOfTreatment = "";
-	}   
+//		this.firstName = "";
+//		this.lastName = "";
+//		this.dateOfBirth = new Date();
+//		this.gender = "";
+//		this.status = "";
+//		this.kindOfTreatment = "";
+		// TODO restliche Felder
+	}
+
+	public Patient(MhcPmsContainer<PCase> caseContainer) {
+		this.caseSet = this.caseContainer = caseContainer;
+	}
 	
-	// TODO Test für getID und getItemId
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
-
 	public String getFirstName() {
 		return this.firstName;
 	}
 
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
-	}  
-	
+	}
+
 	public String getLastName() {
 		return this.lastName;
 	}
 
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
-	}   
-	
+	}
+
 	public Date getDateOfBirth() {
 		return this.dateOfBirth;
 	}
@@ -111,10 +110,11 @@ public class Patient extends MhcPmsItem implements Serializable {
 
 	@Override
 	protected void setCurrentContainer() {
-		//TODO update weitergeben an caseContainer
-		//TODO aktiver Fall auswählen
-		//this.caseContainersetCurrentItem(caseid);
-		//MhcPmsDataAccess.getInstance().setCurrentContainer(Patient.class, this.caseContainer);
+		 if (this.caseContainer != null) {
+			MhcPmsDataAccess.getInstance().setCurrentContainer(PCase.class,
+					this.caseContainer);
+			this.caseContainer.setFirstItemAsCurrent();
+		}
 	}
 
 }

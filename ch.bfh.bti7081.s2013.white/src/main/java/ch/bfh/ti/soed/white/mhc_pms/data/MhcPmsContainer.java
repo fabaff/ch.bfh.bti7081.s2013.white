@@ -10,7 +10,6 @@ import com.vaadin.addon.jpacontainer.EntityProvider;
 import com.vaadin.addon.jpacontainer.JPAContainer;
 import com.vaadin.addon.jpacontainer.JPAContainerFactory;
 import com.vaadin.addon.jpacontainer.provider.CachingBatchableLocalEntityProvider;
-import com.vaadin.addon.jpacontainer.provider.CachingMutableLocalEntityProvider;
 
 public class MhcPmsContainer<E extends MhcPmsItem> extends JPAContainer<E>
 		implements Set<E> {
@@ -34,9 +33,12 @@ public class MhcPmsContainer<E extends MhcPmsItem> extends JPAContainer<E>
 		this.setEntityProvider(entityProvider);
 		this.setAutoCommit(true);
 
-		Collection<?> collection = this.getItemIds();
-		if (!collection.isEmpty()) {
-			this.currentItem = this.getItem(collection.iterator().next());
+		this.setFirstItemAsCurrent();
+	}
+
+	protected void setFirstItemAsCurrent() {
+		if (this.size() != 0) {
+			this.currentItem = this.getItem(this.firstItemId());
 		}
 	}
 

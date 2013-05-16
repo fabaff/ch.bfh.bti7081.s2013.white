@@ -48,7 +48,9 @@ class MainPanel extends VerticalSplitPanel implements ImhcPmsComponent {
 	@Override
 	public void updateComponentDataSource() {
 		this.titleBar.updateComponentDataSource();
-		this.patientTable.updateComponentDataSource();
+		if (this.patientTable != null) {
+			this.patientTable.updateComponentDataSource();
+		}
 		this.patInfo.updateComponentDataSource();
 		this.caseInfo.updateComponentDataSource();
 		this.progressComp.updateComponentDataSource();
