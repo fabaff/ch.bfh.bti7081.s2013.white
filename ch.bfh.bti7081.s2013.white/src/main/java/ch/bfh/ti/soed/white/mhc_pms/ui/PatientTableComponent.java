@@ -59,10 +59,6 @@ class PatientTableComponent extends CustomComponent {
 		this.tblPatients.setColumnHeader("status", "Status");
 		this.tblPatients.setColumnHeader("kindOfTreatment", "Behandlungsart");
 
-		UIPermission permission = UserSingleton.getUser().getUIPermission();
-		this.btnNewPatient.setEnabled(permission.isNewPatientAllowed());
-		this.btnNewCase.setEnabled(permission.isNewCaseAllowed());
-
 		this.tblPatients
 				.addValueChangeListener(new Property.ValueChangeListener() {
 					private static final long serialVersionUID = 2883881874240424835L;
@@ -79,6 +75,10 @@ class PatientTableComponent extends CustomComponent {
 		this.tblPatients.setSelectable(true);
 		this.tblPatients.setImmediate(true);
 
+		UIPermission permission = UserSingleton.getUser().getUIPermission();
+		this.btnNewPatient.setEnabled(permission.isNewPatientAllowed());
+		this.btnNewCase.setEnabled(permission.isNewCaseAllowed());
+		
 		this.updateComponentDataSource();
 	}
 
