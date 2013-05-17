@@ -27,11 +27,11 @@ class MainPanel extends VerticalSplitPanel implements ImhcPmsComponent {
 	public MainPanel() {
 		this.menuBar = new MenuBarComponent(this);
 		this.homeTitleBar = new HomeTitleBarComponent();
-		this.patientTable = new PatientTableComponent(this);
 		this.patInfo = new PatientInfoComponent(this);
 		this.caseInfo = new CaseInfoComponent(this);
 		this.newPatientComponent = new NewPatientComponent(this);
 		this.editCaseInfoComponent = new EditCaseInfoComponent(this);
+		this.patientTable = new PatientTableComponent(this);
 		
 		menuBar.addTab(ButtonEnum.HOME, homeTitleBar, this.patientTable);
 		menuBar.addTab(ButtonEnum.PATIENT_INFO, this.titleBar, this.patInfo);

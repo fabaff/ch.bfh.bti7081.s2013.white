@@ -15,6 +15,7 @@ import com.vaadin.ui.Component;
 import com.vaadin.ui.CustomComponent;
 import com.vaadin.ui.PopupDateField;
 import com.vaadin.ui.TextField;
+import com.vaadin.ui.Window;
 
 public class NewPatientComponent extends CustomComponent {
 
@@ -63,7 +64,7 @@ public class NewPatientComponent extends CustomComponent {
 		setCompositionRoot(mainLayout);
 
 		this.mainComponent = mainComponent;
-
+		
 		// TODO saubere Implementierung
 //		this.newPatientItem = new BeanItem<Patient>(new Patient());
 //		fieldGroup = new FieldGroup(this.newPatientItem);
@@ -85,7 +86,7 @@ public class NewPatientComponent extends CustomComponent {
 			public void buttonClick(ClickEvent event) {
 				// TODO Cast vermeiden
 				MhcPmsContainer<? extends MhcPmsItem> cont = MhcPmsDataAccess.getInstance().getCurrentContainer(Patient.class);
-				if (cont != null && cont.getCurrentItem() instanceof Patient) {
+				if (cont != null) {
 					MhcPmsContainer<Patient> container = (MhcPmsContainer<Patient>) cont;
 					
 					newPatient.setFirstName(txtFirstName.getValue());
@@ -99,10 +100,8 @@ public class NewPatientComponent extends CustomComponent {
 					container.addEntity(newPatient);
 					container.commit();
 					
-					//container.addEntity(newPatientItem.getBean());
 					NewPatientComponent.this.mainComponent
 							.updateComponentDataSource();
-//					newPatientItem = new BeanItem<Patient>(new Patient());
 					newPatient = new Patient();
 				}
 				NewPatientComponent.this.restoreUI();

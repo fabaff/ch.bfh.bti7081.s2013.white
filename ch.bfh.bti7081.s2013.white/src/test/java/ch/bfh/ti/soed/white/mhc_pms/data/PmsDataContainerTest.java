@@ -5,6 +5,7 @@ package ch.bfh.ti.soed.white.mhc_pms.data;
 
 import static org.junit.Assert.*;
 
+import java.text.DateFormat;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -95,26 +96,55 @@ public class PmsDataContainerTest {
 	 */
 	@Test
 	public void testAddItemObject() {
+//		MhcPmsContainer<Patient> cont = (MhcPmsContainer<Patient>) patContainer;
+		MhcPmsContainer<Patient> cont = (MhcPmsContainer<Patient>) MhcPmsDataAccess.getInstance().getCurrentContainer(Patient.class);
 //		Patient pat = new Patient();
-		MhcPmsContainer<Patient> cont = (MhcPmsContainer<Patient>) patContainer;
+//		TextField txtFirstName = new TextField();
+//		txtFirstName.setValue("öljjkl");
+//		TextField txtLastName = new TextField();
+//		txtLastName.setValue("öökljöklj");
+//		TextField txtCivilStatus = new TextField();
+//		txtCivilStatus.setValue("öaaaaöö");
+//		
+//		System.out.println(txtFirstName.getValue());
+//		System.out.println(txtLastName.getValue());
+//		System.out.println(txtCivilStatus.getValue());
+//		
+//		pat.setCivilStatus(txtCivilStatus.getValue());
+//		pat.setFirstName(txtFirstName.getValue());
+//		pat.setLastName(txtLastName.getValue());
+//		cont.addEntity(pat);
+//		System.out.println(cont.isAutoCommit());
+		cont.addEntity(new Patient());
+		
+//		DateFormat.getDateInstance(DateFormat.MEDIUM).format(null);
+		
+//		BeanItem<Patient> newPatientItem = new BeanItem<Patient>(pat);
+//		FieldGroup fieldGroup = new FieldGroup(newPatientItem);
+//		fieldGroup.bind(txtFirstName, "firstName");
+//		fieldGroup.bind(txtLastName, "lastName");
+//		fieldGroup.bind(txtCivilStatus, "civilStatus");
+//		
+//		fieldGroup.setItemDataSource(newPatientItem);
+//		
+//		try {
+//			fieldGroup.commit();
+//		} catch (CommitException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+		
+		
+//		Patient pat = new Patient();
+		
 //		pat.setFirstName("Hans");
 //		pat.setLastName("Muster");
 //		pat.setGender("mänlich");
 //		pat.setKindOfTreatment("ambulant");
 		//cont.addEntity(pat);
 		
-		Patient pat = new Patient();
-//		BeanItem<Patient> newPatientItem = new BeanItem<Patient>(pat);
-//		FieldGroup fieldGroup = new FieldGroup(newPatientItem);
-		TextField txtFirstName = new TextField();
-		txtFirstName.setValue("Peter");
-		TextField txtLastName = new TextField();
-		txtLastName.setValue("Müller");
-		TextField txtCivilStatus = new TextField();
-		txtCivilStatus.setValue("ledig");
-//		fieldGroup.bind(txtFirstName, "firstName");
-//		fieldGroup.bind(txtLastName, "lastName");
-//		fieldGroup.bind(txtCivilStatus, "civilStatus");
+		
+
 //		try {
 //			fieldGroup.commit();
 //		} catch (CommitException e) {
@@ -128,17 +158,11 @@ public class PmsDataContainerTest {
 //		System.out.println("size: " + coll.size());
 //		System.out.println(coll.iterator().next());
 //		System.out.println("Value: " + newPatientItem.getItemProperty("civilStatus").getValue());
-		System.out.println(txtFirstName.getValue());
-		System.out.println(txtLastName.getValue());
-		System.out.println(txtCivilStatus.getValue());
+		
 //		assertEquals("Peter", pat.getFirstName());
 //		assertEquals("Müller", pat.getLastName());
 //		assertEquals("ledig", pat.getCivilStatus());
 		
-		pat.setCivilStatus(txtCivilStatus.getValue());
-		pat.setFirstName(txtFirstName.getValue());
-		pat.setLastName(txtLastName.getValue());
-		cont.addEntity(pat);
 		
 		
 		

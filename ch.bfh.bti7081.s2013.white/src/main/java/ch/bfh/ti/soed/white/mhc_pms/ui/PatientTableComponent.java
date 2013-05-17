@@ -116,7 +116,7 @@ class PatientTableComponent extends CustomComponent {
 		if (item != null && item.getEntity() instanceof Patient) {
 			Patient pat = (Patient) item.getEntity();
 			// TODO Nullpointer Exception beheben
-			//this.tblPatients.select(pat.getId());
+			this.tblPatients.select(pat.getId());
 		}
 	}
 

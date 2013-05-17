@@ -4,7 +4,6 @@ import java.text.DateFormat;
 
 import ch.bfh.ti.soed.white.mhc_pms.data.MhcPmsDataAccess;
 import ch.bfh.ti.soed.white.mhc_pms.data.MhcPmsItem;
-import ch.bfh.ti.soed.white.mhc_pms.data.PCase;
 import ch.bfh.ti.soed.white.mhc_pms.data.Patient;
 
 import com.vaadin.addon.jpacontainer.EntityItem;
@@ -74,8 +73,8 @@ class TitleBarComponent extends CustomComponent {
 			Patient pat = (Patient) itemP.getEntity();
 			this.lblFirstName.setValue(pat.getFirstName());
 			this.lblLastName.setValue(pat.getLastName());
-			this.lblDateOfBirth.setValue(DateFormat.getDateInstance(
-					DateFormat.MEDIUM).format(pat.getDateOfBirth()));
+			this.lblDateOfBirth.setValue(pat.getDateOfBirth() != null ? DateFormat.getDateInstance(
+					DateFormat.MEDIUM).format(pat.getDateOfBirth()) : null);
 			this.lblGender.setValue(pat.getGender());
 			this.lblStatus.setValue(pat.getStatus());
 			this.lblKindOfTreatment.setValue(pat.getKindOfTreatment());
