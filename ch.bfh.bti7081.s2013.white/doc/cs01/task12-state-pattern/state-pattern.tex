@@ -230,7 +230,116 @@ Door is locked:
 Neben der Implementierung als Klassen, was vorheriges Beispiel zeigt, lässt sich das State-Pattern auch als Enumeration umsetzen.
 %
 \subsection*{Unsere Implementation}
-%
+Wir benutzen das State-Pattern für die Darstellung einer angepassten Oberfläche um den unterschiedlichen Anforderungen und benötigten Berechtigungen der Benutzer gerecht zu werden.
 
+%
+\begin{lstlisting}[caption={UIPermission}]
+package ch.bfh.ti.soed.white.mhc_pms.security;
+public class UIPermission {
+	protected boolean isNewPatientAllowed = false;
+	protected boolean isNewCaseAllowed = false;
+	protected boolean isEditCaseDataAllowed = false;
+	protected boolean isNewPatientProgressEntryAllowed = false;
+	protected boolean isEditPatientProgressEntryAllowed = false;
+	protected boolean isDeletePatientProgressEntryAllowed = false;
+	protected boolean isNewDiagnosisAllowed = false;
+	protected boolean isEditDiagnosisAllowed = false;
+	protected boolean isDeleteDiagnosisAllowed = false;
+	protected boolean isNewMedicationAllowed = false;
+	protected boolean isEditMedicationAllowed = false;
+	protected boolean isDeleteMedicationAllowed = false;
+	
+	public boolean isNewPatientAllowed() {
+		return this.isNewPatientAllowed;
+	}
+
+     [...]
+}
+\end{lstlisting}
+%
+Exemplarisch wird nachfolgend die Berechtigung für ein Therapist gezeigt. Die Klasse für die Berechtigungen des Therapist erweitert die Basis-Berechtigungen.
+%
+\begin{lstlisting}[caption={Erweiterte Berechtigungen MedicalStaff}]
+class ExtendedMedicalStaffPermission extends UIPermission {
+	protected ExtendedMedicalStaffPermission() {
+		this.isNewPatientAllowed = true;
+		this.isNewCaseAllowed = true;
+	}
+}
+\end{lstlisting}
+%
+\begin{lstlisting}[caption={Erweiterte Berechtigungen Therapist}]
+class TherapistPermission extends ExtendedMedicalStaffPermission {
+	protected TherapistPermission() {
+		this.isEditCaseDataAllowed = true;
+		this.isNewPatientProgressEntryAllowed = true;
+		this.isEditPatientProgressEntryAllowed = true;
+		this.isDeletePatientProgressEntryAllowed = true;
+		this.isNewDiagnosisAllowed = true;
+		this.isEditDiagnosisAllowed = true;
+		this.isDeleteDiagnosisAllowed = true;
+	}
+}
+\end{lstlisting}
+%
+Verwendet werden die Daten in der UI-Klassen, welche die Berechtigungen prüft. Gezeigt wird nur der relevante Abschnitt.
+%
+\begin{lstlisting}[caption={UI-Klasse}]
+  [...]
+		UIPermission permission = UserSingleton.getUser().getUIPermission();
+		this.btnNewPatient.setEnabled(permission.isNewPatientAllowed());
+		this.btnNewCase.setEnabled(permission.isNewCaseAllowed());
+  [...]
+\end{lstlisting}
+%
+Das Benutzer-Objekt erzeugt das State-Objekt.
+%
+\begin{lstlisting}[caption={Benutzer-Klasse}]
+public abstract class MhcPmsUser {
+
+	private UIPermission uiPermission;	
+	protected MhcPmsDataAccess dataAccess;
+	
+	protected <E extends MhcPmsUser> MhcPmsUser(Class<E> clazz) {
+		this.uiPermission = UIPermissionFactory.createUIState(clazz);
+		this.dataAccess = MhcPmsDataAccess.getInstance();
+	}
+	
+	public <E extends MhcPmsItem> boolean incrementCurrentItem(Class<E> clazz) {
+		return false;
+	}
+
+	public <E extends MhcPmsItem> boolean decrementCurrentItem(Class<E> clazz) {
+		return false;
+	}
+
+	public <E extends MhcPmsItem> boolean setCurrentItem(Class<E> clazz, Object value) {
+		return false;
+	}
+
+	public final UIPermission getUIPermission() {
+		return this.uiPermission;
+	}
+}
+\end{lstlisting}
+%
+Die UIPermissionFacotry-Klasse erzeugt daraufhin das Permission-Objekt.
+%
+\begin{lstlisting}[caption={UIPermissionFacotry-Klasse}]
+class UIPermissionFactory {
+	private static Map<String, UIPermission> permissionsMap;
+	static {
+		permissionsMap = new HashMap<String, UIPermission>();
+		permissionsMap.put(Psychiatrist.class.getName(), new PsychiatristPermission());
+		permissionsMap.put(Therapist.class.getName(), new TherapistPermission());
+		permissionsMap.put(ExtendedMedicalStaff.class.getName(), new ExtendedMedicalStaffPermission());
+		permissionsMap.put(MedicalStaff.class.getName(), new UIPermission());
+	}
+
+	static <E extends MhcPmsUser> UIPermission createUIState(Class<E> clazz) {
+		return permissionsMap.get(clazz.getName());
+	}
+}
+\end{lstlisting}
 %
 \end{document}
