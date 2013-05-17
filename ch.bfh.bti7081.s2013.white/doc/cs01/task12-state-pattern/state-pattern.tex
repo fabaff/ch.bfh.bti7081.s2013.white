@@ -80,10 +80,14 @@ Für eine Türe zeigt nachfolgende Inplementation eine Anwendung des Zustandsmus
   \end{center}
 \end{figure}
 %
+Das Interface listet die möglichen Aktionen gemäss der obrigen Aufzählung auf.
+%
 \begin{lstlisting}[caption={Interface}]
 // State of the door
 public interface DoorState {
-	public String action();
+	public String close();
+	public String lock();
+	public String open();
 }
 \end{lstlisting}
 %
@@ -92,9 +96,18 @@ Analog Abbildung \ref{fig:door-state} gibt es drei Zustände und darausfolgende 
 \begin{lstlisting}[caption={Zustand: Türe geöffnet}]
 //Concrete State: DoorOpen
 public class DoorOpen implements DoorState {
+	public String close() {
+		return "Can close the door.";
+	}
+
 	@Override
-	public String action() {
-		return "Close the door";
+	public String lock() {
+		return "Can not lock the door.";
+	}
+
+	@Override
+	public String open() {
+		return "Door is already open.";
 	}
 }
 \end{lstlisting}
@@ -103,8 +116,18 @@ public class DoorOpen implements DoorState {
 //Concrete State: DoorClosed
 public class DoorClosed implements DoorState {
 	@Override
-	public String action() {
-		return "Lock the door";
+	public String lock() {
+		return "Lock the door.";
+	}
+
+	@Override
+	public String close() {
+		return "Door is already closed.";
+	}
+
+	@Override
+	public String open() {
+		return "Open the door.";
 	}
 }
 \end{lstlisting}
@@ -113,8 +136,18 @@ public class DoorClosed implements DoorState {
 //Concrete State: DoorLocked
 public class DoorLocked implements DoorState {
 	@Override
-	public String action() {
-		return "Open the door";
+	public String open() {
+		return "Can open the door. ";
+	}
+
+	@Override
+	public String close() {
+		return "Door is closed.";
+	}
+
+	@Override
+	public String lock() {
+		return "Door is alreay locked.";
 	}
 }
 \end{lstlisting}
@@ -135,8 +168,18 @@ public class Door implements DoorState {
 	}
 	
 	@Override
-	public String action() {
-		return doorState.action();
+	public String close() {
+		return doorState.close();
+	}
+
+	@Override
+	public String lock() {
+		return doorState.lock();
+	}
+
+	@Override
+	public String open() {
+		return doorState.open();
 	}
 }
 \end{lstlisting}
@@ -147,23 +190,41 @@ Die State-Klasse demonstriert die Verwendung.
 public class State {
 	public static void main(String[] args) {
 		Door door = new Door(new DoorOpen());
-		System.out.println("Door is open: " + door.action());
+		System.out.println("Door is open:");
+		System.out.println("- " + door.open());
+		System.out.println("- " + door.close());
+		System.out.println("- " + door.lock());
 		
 		door.setDoorState(new DoorClosed());
-		System.out.println("Door is closed: " + door.action());
+		System.out.println("Door is closed:");
+		System.out.println("- " + door.open());
+		System.out.println("- " + door.close());
+		System.out.println("- " + door.lock());
 
 		door.setDoorState(new DoorLocked());
-		System.out.println("Door is locked: " + door.action());
+		System.out.println("Door is locked:");
+		System.out.println("- " + door.open());
+		System.out.println("- " + door.close());
+		System.out.println("- " + door.lock());
 	}
 }
 \end{lstlisting}
 %
-Jenach Zustand wird eine andere Aktion ausgeführt.
+Jenach Zustand wird eine andere Aktion ausgeführt. Die Ausgabe zeigt dies.
 %
-\begin{lstlisting}[caption={Context}]
-Door is open: Close the door
-Door is closed: Lock the door
-Door is locked: Open the door
+\begin{lstlisting}[caption={Output}]
+Door is open:
+- Door is already open.
+- Can close the door.
+- Can not lock the door.
+Door is closed:
+- Open the door.
+- Door is already closed.
+- Lock the door.
+Door is locked:
+- Can open the door. 
+- Door is closed.
+- Door is alreay locked.
 \end{lstlisting}
 %
 \subsection*{Unsere Implementation}
