@@ -224,4 +224,16 @@ class MenuBarComponent extends CustomComponent {
 		return mainLayout;
 	}
 
+	public void enableMenuBar(boolean value) {
+		this.btnBack.setEnabled(value);
+		this.btnForward.setEnabled(value);
+		this.btnHome.setEnabled(value);
+		this.btnPatientInfo.setEnabled(value);
+		this.btnCaseInfo.setEnabled(value);
+		this.btnPatientProgress.setEnabled(value);
+		this.btnDiagnosis.setEnabled(value);
+		this.btnMedication.setEnabled(value);
+		this.btnLogout.setEnabled(value);
+	}
+
 }

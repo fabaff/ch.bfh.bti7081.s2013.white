@@ -69,7 +69,7 @@ class TitleBarComponent extends CustomComponent {
 	protected void updateComponentDataSource() {
 		// TODO Item Interface implementieren
 		
-		 EntityItem<? extends MhcPmsItem> itemP = MhcPmsDataAccess.getInstance().getCurrentContainer(Patient.class).getCurrentItem();
+		EntityItem<? extends MhcPmsItem> itemP = MhcPmsDataAccess.getInstance().getCurrentContainer(Patient.class).getCurrentItem();
 		if (itemP != null) {
 			Patient pat = (Patient) itemP.getEntity();
 			this.lblFirstName.setValue(pat.getFirstName());

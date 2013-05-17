@@ -12,6 +12,8 @@ import com.vaadin.data.Property;
 import com.vaadin.data.Property.ValueChangeEvent;
 import com.vaadin.ui.AbsoluteLayout;
 import com.vaadin.ui.Button;
+import com.vaadin.ui.Button.ClickEvent;
+import com.vaadin.ui.Component;
 import com.vaadin.ui.CustomComponent;
 import com.vaadin.ui.Table;
 
@@ -45,6 +47,7 @@ class PatientTableComponent extends CustomComponent {
 		setCompositionRoot(mainLayout);
 
 		this.mainComponent = mainComponent;
+		
 		this.tblPatients.setContainerDataSource(MhcPmsDataAccess.getInstance()
 				.getCurrentContainer(Patient.class));
 		// this.tblPatients.setSizeFull();
@@ -79,6 +82,30 @@ class PatientTableComponent extends CustomComponent {
 		this.btnNewPatient.setEnabled(permission.isNewPatientAllowed());
 		this.btnNewCase.setEnabled(permission.isNewCaseAllowed());
 		
+		this.btnNewPatient.addClickListener(new Button.ClickListener() {
+			private static final long serialVersionUID = 1L;
+
+			@Override
+			public void buttonClick(ClickEvent event) {
+				Component title =  PatientTableComponent.this.mainComponent.getTitleBarComponent();
+				Component detail = PatientTableComponent.this.mainComponent.getNewPatientComponent();
+				PatientTableComponent.this.mainComponent.setActiveComponents(title, detail);
+				PatientTableComponent.this.mainComponent.enableMenuBar(false);
+			}
+		});
+		
+		this.btnNewCase.addClickListener(new Button.ClickListener() {
+			private static final long serialVersionUID = 8636612818445844248L;
+
+			@Override
+			public void buttonClick(ClickEvent event) {
+				Component title =  PatientTableComponent.this.mainComponent.getTitleBarComponent();
+				Component detail = PatientTableComponent.this.mainComponent.getEditCaseInfoComponent();
+				PatientTableComponent.this.mainComponent.setActiveComponents(title, detail);
+				PatientTableComponent.this.mainComponent.enableMenuBar(false);
+			}
+		});
+		
 		this.updateComponentDataSource();
 	}
 
@@ -86,8 +113,10 @@ class PatientTableComponent extends CustomComponent {
 		// TODO Item über Interface auswählen
 		EntityItem<? extends MhcPmsItem> item = MhcPmsDataAccess.getInstance()
 				.getCurrentContainer(Patient.class).getCurrentItem();
-		if (item != null) {
-			this.tblPatients.select(((Patient) item.getEntity()).getId());
+		if (item != null && item.getEntity() instanceof Patient) {
+			Patient pat = (Patient) item.getEntity();
+			// TODO Nullpointer Exception beheben
+			//this.tblPatients.select(pat.getId());
 		}
 	}
 
@@ -98,11 +127,11 @@ class PatientTableComponent extends CustomComponent {
 		mainLayout.setImmediate(false);
 		mainLayout.setWidth("100%");
 		mainLayout.setHeight("100%");
-
+		
 		// top-level component properties
 		setWidth("100.0%");
 		setHeight("100.0%");
-
+		
 		// tblPatients
 		tblPatients = new Table();
 		tblPatients.setCaption("Übersicht Patienten");
@@ -110,7 +139,7 @@ class PatientTableComponent extends CustomComponent {
 		tblPatients.setWidth("980px");
 		tblPatients.setHeight("500px");
 		mainLayout.addComponent(tblPatients, "top:80.0px;left:20.0px;");
-
+		
 		// btnNewPatient
 		btnNewPatient = new Button();
 		btnNewPatient.setCaption("Neuer Patient");
@@ -118,7 +147,7 @@ class PatientTableComponent extends CustomComponent {
 		btnNewPatient.setWidth("-1px");
 		btnNewPatient.setHeight("-1px");
 		mainLayout.addComponent(btnNewPatient, "top:20.0px;left:20.0px;");
-
+		
 		// btnNewCase
 		btnNewCase = new Button();
 		btnNewCase.setCaption("Neuer Fall");
@@ -126,7 +155,7 @@ class PatientTableComponent extends CustomComponent {
 		btnNewCase.setWidth("-1px");
 		btnNewCase.setHeight("-1px");
 		mainLayout.addComponent(btnNewCase, "top:20.0px;left:160.0px;");
-
+		
 		return mainLayout;
 	}
 

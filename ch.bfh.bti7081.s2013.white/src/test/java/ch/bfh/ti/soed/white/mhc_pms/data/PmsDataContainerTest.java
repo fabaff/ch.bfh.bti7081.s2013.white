@@ -15,6 +15,11 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import com.vaadin.data.fieldgroup.FieldGroup;
+import com.vaadin.data.fieldgroup.FieldGroup.CommitException;
+import com.vaadin.data.util.BeanItem;
+import com.vaadin.ui.TextField;
+
 import ch.bfh.ti.soed.white.mhc_pms.data.MhcPmsDataAccess;
 import ch.bfh.ti.soed.white.mhc_pms.data.Patient;
 
@@ -90,6 +95,53 @@ public class PmsDataContainerTest {
 	 */
 	@Test
 	public void testAddItemObject() {
+//		Patient pat = new Patient();
+		MhcPmsContainer<Patient> cont = (MhcPmsContainer<Patient>) patContainer;
+//		pat.setFirstName("Hans");
+//		pat.setLastName("Muster");
+//		pat.setGender("mänlich");
+//		pat.setKindOfTreatment("ambulant");
+		//cont.addEntity(pat);
+		
+		Patient pat = new Patient();
+//		BeanItem<Patient> newPatientItem = new BeanItem<Patient>(pat);
+//		FieldGroup fieldGroup = new FieldGroup(newPatientItem);
+		TextField txtFirstName = new TextField();
+		txtFirstName.setValue("Peter");
+		TextField txtLastName = new TextField();
+		txtLastName.setValue("Müller");
+		TextField txtCivilStatus = new TextField();
+		txtCivilStatus.setValue("ledig");
+//		fieldGroup.bind(txtFirstName, "firstName");
+//		fieldGroup.bind(txtLastName, "lastName");
+//		fieldGroup.bind(txtCivilStatus, "civilStatus");
+//		try {
+//			fieldGroup.commit();
+//		} catch (CommitException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+		
+//		System.out.println("Test");
+//		System.out.println(fieldGroup.isBuffered());
+//		Collection<?> coll = newPatientItem.getItemPropertyIds();
+//		System.out.println("size: " + coll.size());
+//		System.out.println(coll.iterator().next());
+//		System.out.println("Value: " + newPatientItem.getItemProperty("civilStatus").getValue());
+		System.out.println(txtFirstName.getValue());
+		System.out.println(txtLastName.getValue());
+		System.out.println(txtCivilStatus.getValue());
+//		assertEquals("Peter", pat.getFirstName());
+//		assertEquals("Müller", pat.getLastName());
+//		assertEquals("ledig", pat.getCivilStatus());
+		
+		pat.setCivilStatus(txtCivilStatus.getValue());
+		pat.setFirstName(txtFirstName.getValue());
+		pat.setLastName(txtLastName.getValue());
+		cont.addEntity(pat);
+		
+		
+		
 //		System.out.println(((Patient) MhcPmsDataAccess.getInstance().getCurrentContainer(Patient.class).getCurrentItem().getEntity()).getId());
 		
 //		Map<String, MhcPmsContainer<? extends MhcPmsItem>> containerMap =  new HashMap<String, MhcPmsContainer<? extends MhcPmsItem>>();

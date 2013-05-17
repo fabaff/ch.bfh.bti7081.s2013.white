@@ -13,17 +13,25 @@ class MainPanel extends VerticalSplitPanel implements ImhcPmsComponent {
 	private HorizontalSplitPanel horizontalPanel = new HorizontalSplitPanel();
 	
 	private TitleBarComponent titleBar = new TitleBarComponent();
-	private PatientTableComponent patientTable;
-	private PatientInfoComponent patInfo = new PatientInfoComponent();
-	private CaseInfoComponent caseInfo = new CaseInfoComponent();
 	private PatientProgressComponent progressComp = new PatientProgressComponent();
 	private DiagnosisComponent diagnosisComp = new DiagnosisComponent();
 	private MedicationComponent medComp = new MedicationComponent();
+	private PatientTableComponent patientTable;
+	private PatientInfoComponent patInfo;
+	private CaseInfoComponent caseInfo;
+	private HomeTitleBarComponent homeTitleBar;
+	private MenuBarComponent menuBar;
+	private NewPatientComponent newPatientComponent;
+	private EditCaseInfoComponent editCaseInfoComponent;
 	
 	public MainPanel() {
-		MenuBarComponent menuBar = new MenuBarComponent(this);
-		HomeTitleBarComponent homeTitleBar = new HomeTitleBarComponent();
+		this.menuBar = new MenuBarComponent(this);
+		this.homeTitleBar = new HomeTitleBarComponent();
 		this.patientTable = new PatientTableComponent(this);
+		this.patInfo = new PatientInfoComponent(this);
+		this.caseInfo = new CaseInfoComponent(this);
+		this.newPatientComponent = new NewPatientComponent(this);
+		this.editCaseInfoComponent = new EditCaseInfoComponent(this);
 		
 		menuBar.addTab(ButtonEnum.HOME, homeTitleBar, this.patientTable);
 		menuBar.addTab(ButtonEnum.PATIENT_INFO, this.titleBar, this.patInfo);
@@ -32,7 +40,7 @@ class MainPanel extends VerticalSplitPanel implements ImhcPmsComponent {
 		menuBar.addTab(ButtonEnum.DIAGNOSIS, this.titleBar, this.diagnosisComp);
 		menuBar.addTab(ButtonEnum.MEDICATION, this.titleBar, this.medComp);
 		
-		this.setActiveComponents(homeTitleBar, this.patientTable);
+		this.setActiveComponents(this.homeTitleBar, this.patientTable);
 		this.horizontalPanel.setFirstComponent(menuBar);
 		this.setSecondComponent(this.horizontalPanel);
 		this.setSplitPosition(20.0f, Unit.PERCENTAGE);
@@ -56,6 +64,41 @@ class MainPanel extends VerticalSplitPanel implements ImhcPmsComponent {
 		this.progressComp.updateComponentDataSource();
 		this.diagnosisComp.updateComponentDataSource();
 		this.medComp.updateComponentDataSource();
+	}
+
+	@Override
+	public Component getHomeTitleBarComponent() {
+		return this.homeTitleBar;
+	}
+
+	@Override
+	public Component getNewPatientComponent() {
+		return this.newPatientComponent;
+	}
+	
+	@Override
+	public Component getEditCaseInfoComponent() {
+		return this.editCaseInfoComponent;
+	}
+
+	@Override
+	public void enableMenuBar(boolean value) {
+		this.menuBar.enableMenuBar(value);
+	}
+
+	@Override
+	public Component getPatientInfoComponent() {
+		return this.patInfo;
+	}
+
+	@Override
+	public Component getCaseInfoComponent() {
+		return this.caseInfo;
+	}
+
+	@Override
+	public Component getTitleBarComponent() {
+		return this.titleBar;
 	}
 
 }

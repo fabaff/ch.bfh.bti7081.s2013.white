@@ -43,16 +43,16 @@ public class Patient extends MhcPmsItem implements Serializable {
 	@NotNull
 	private String kindOfTreatment = "";
 	
+	private String motherLanguage = "";
+	
+	private String civilStatus = "";
+	
+	private String nationality = "";
+	
 	@Transient
 	private MhcPmsContainer<PCase> caseContainer;
 
 	public Patient() {
-//		this.firstName = "";
-//		this.lastName = "";
-//		this.dateOfBirth = new Date();
-//		this.gender = "";
-//		this.status = "";
-//		this.kindOfTreatment = "";
 		// TODO restliche Felder
 	}
 
@@ -116,4 +116,48 @@ public class Patient extends MhcPmsItem implements Serializable {
 	public void setKindOfTreatment(String kindOfTreatment) {
 		this.kindOfTreatment = kindOfTreatment;
 	}
+
+	/**
+	 * @return the motherLanguage
+	 */
+	public String getMotherLanguage() {
+		return motherLanguage;
+	}
+
+	/**
+	 * @param motherLanguage the motherLanguage to set
+	 */
+	public void setMotherLanguage(String motherLanguage) {
+		this.motherLanguage = motherLanguage;
+	}
+
+	/**
+	 * @return the civilStatus
+	 */
+	public String getCivilStatus() {
+		return civilStatus;
+	}
+
+	/**
+	 * @param civilStatus the civilStatus to set
+	 */
+	public void setCivilStatus(String civilStatus) {
+		this.civilStatus = civilStatus;
+	}
+
+	/**
+	 * @return the nationality
+	 */
+	public String getNationality() {
+		return nationality;
+	}
+
+	/**
+	 * @param nationality the nationality to set
+	 */
+	public void setNationality(String nationality) {
+		this.nationality = nationality;
+	}
+	
+	
 }
