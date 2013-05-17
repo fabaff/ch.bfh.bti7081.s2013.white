@@ -210,7 +210,7 @@ public class State {
 }
 \end{lstlisting}
 %
-Jenach Zustand wird eine andere Aktion ausgeführt. Die Ausgabe zeigt dies.
+Je nach Zustand der Türe lassen sich natürlich nicht alle Aktion ausgeführt. Die nachfolgende Ausgabe zeigt dies.
 %
 \begin{lstlisting}[caption={Output}]
 Door is open:
@@ -226,6 +226,8 @@ Door is locked:
 - Door is closed.
 - Door is alreay locked.
 \end{lstlisting}
+%
+Neben der Implementierung als Klassen, was vorheriges Beispiel zeigt, lässt sich das State-Pattern auch als Enumeration umsetzen.
 %
 \subsection*{Unsere Implementation}
 %
