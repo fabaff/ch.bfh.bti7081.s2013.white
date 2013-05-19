@@ -35,14 +35,14 @@ public class UIPermissionFactoryTest {
 //		assertFalse(therapistPermission.isNewMedicationAllowed);
 //		// TODO vollständiger Test
 //		
-//		MhcPmsUser user = new Therapist();
+//		MhcPmsUserDeprecated user = new Therapist();
 //		therapistPermission = user.getUIPermission();
 //		assertNotNull(therapistPermission);
 //		assertTrue(therapistPermission.isNewDiagnosisAllowed);
 //		assertFalse(therapistPermission.isNewMedicationAllowed);
 		
 //		System.out.println(UIPermissionFactory.permissionsMap.size());
-//		MhcPmsUser user = UserSingleton.getUser();
+//		MhcPmsUserDeprecated user = UserSingleton.getUser();
 //		assertNotNull(user);
 //		UIPermission therapistPermission = user.getUIPermission();
 //		assertNotNull(therapistPermission);

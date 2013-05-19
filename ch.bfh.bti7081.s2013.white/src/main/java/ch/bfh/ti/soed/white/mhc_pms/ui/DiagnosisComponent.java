@@ -32,10 +32,10 @@ class DiagnosisComponent extends CustomComponent {
 		buildMainLayout();
 		setCompositionRoot(mainLayout);
 
-		UIPermission permission = UserSingleton.getUser().getUIPermission();
-		this.btnNewDiagnosis.setEnabled(permission.isNewDiagnosisAllowed());
-		this.btnEditDiagnosis.setEnabled(permission.isEditDiagnosisAllowed());
-		this.btnDeleteDiagnosis.setEnabled(permission.isDeleteDiagnosisAllowed());
+//		UIPermission permission = UserSingleton.getUser().getUIPermission();
+//		this.btnNewDiagnosis.setEnabled(permission.isNewDiagnosisAllowed());
+//		this.btnEditDiagnosis.setEnabled(permission.isEditDiagnosisAllowed());
+//		this.btnDeleteDiagnosis.setEnabled(permission.isDeleteDiagnosisAllowed());
 	}
 
 	protected void updateComponentDataSource() {

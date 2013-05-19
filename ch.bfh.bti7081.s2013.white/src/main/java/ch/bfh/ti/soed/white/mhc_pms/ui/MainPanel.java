@@ -2,9 +2,12 @@ package ch.bfh.ti.soed.white.mhc_pms.ui;
 
 import ch.bfh.ti.soed.white.mhc_pms.ui.MenuBarComponent.ButtonEnum;
 
+import com.vaadin.navigator.Navigator;
 import com.vaadin.ui.Component;
 import com.vaadin.ui.HorizontalSplitPanel;
+import com.vaadin.ui.Panel;
 import com.vaadin.ui.VerticalSplitPanel;
+import com.vaadin.ui.Window;
 
 class MainPanel extends VerticalSplitPanel implements ImhcPmsComponent {
 	
@@ -25,13 +28,13 @@ class MainPanel extends VerticalSplitPanel implements ImhcPmsComponent {
 	private EditCaseInfoComponent editCaseInfoComponent;
 	
 	public MainPanel() {
-		this.menuBar = new MenuBarComponent(this);
+		//this.menuBar = new MenuBarComponent();
 		this.homeTitleBar = new HomeTitleBarComponent();
-		this.patInfo = new PatientInfoComponent(this);
+		this.patInfo = new PatientInfoComponent();
 		this.caseInfo = new CaseInfoComponent(this);
 		this.newPatientComponent = new NewPatientComponent(this);
 		this.editCaseInfoComponent = new EditCaseInfoComponent(this);
-		this.patientTable = new PatientTableComponent(this);
+		this.patientTable = new PatientTableComponent();
 		
 		menuBar.addTab(ButtonEnum.HOME, homeTitleBar, this.patientTable);
 		menuBar.addTab(ButtonEnum.PATIENT_INFO, this.titleBar, this.patInfo);

@@ -33,10 +33,10 @@ class PatientProgressComponent extends CustomComponent {
 		setCompositionRoot(mainLayout);
 
 		
-		UIPermission permission = UserSingleton.getUser().getUIPermission();
-		this.btnNewPatientProgressEntry.setEnabled(permission.isNewPatientProgressEntryAllowed());
-		this.btnEditPatientProgressEntry.setEnabled(permission.isEditPatientProgressEntryAllowed());
-		this.btnDeletePatientProgressEntry.setEnabled(permission.isDeletePatientProgressEntryAllowed());
+//		UIPermission permission = UserSingleton.getUser().getUIPermission();
+//		this.btnNewPatientProgressEntry.setEnabled(permission.isNewPatientProgressEntryAllowed());
+//		this.btnEditPatientProgressEntry.setEnabled(permission.isEditPatientProgressEntryAllowed());
+//		this.btnDeletePatientProgressEntry.setEnabled(permission.isDeletePatientProgressEntryAllowed());
 	}
 
 	protected void updateComponentDataSource() {

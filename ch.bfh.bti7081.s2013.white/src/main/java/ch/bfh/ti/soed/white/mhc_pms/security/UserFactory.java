@@ -2,10 +2,10 @@ package ch.bfh.ti.soed.white.mhc_pms.security;
 
 class UserFactory {
 
-	static MhcPmsUser createUser() {
-		// TODO erstelltes objekt ist abhängig vom authentifizierten User
-		return new Therapist();
-	}
-
-	private UserFactory() {}
+//	static MhcPmsUserDeprecated createUser() {
+//		// TODO erstelltes objekt ist abhängig vom authentifizierten PmsUser
+//		return new Therapist();
+//	}
+//
+//	private UserFactory() {}
 }

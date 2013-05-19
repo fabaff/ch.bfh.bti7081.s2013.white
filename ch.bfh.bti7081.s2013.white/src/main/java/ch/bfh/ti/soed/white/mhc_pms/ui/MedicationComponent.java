@@ -32,10 +32,10 @@ class MedicationComponent extends CustomComponent {
 		buildMainLayout();
 		setCompositionRoot(mainLayout);
 
-		UIPermission permission = UserSingleton.getUser().getUIPermission();
-		this.btnNewMedication.setEnabled(permission.isNewMedicationAllowed());
-		this.btnEditMedication.setEnabled(permission.isEditMedicationAllowed());
-		this.btnDeleteMedication.setEnabled(permission.isDeleteMedicationAllowed());
+//		UIPermission permission = UserSingleton.getUser().getUIPermission();
+//		this.btnNewMedication.setEnabled(permission.isNewMedicationAllowed());
+//		this.btnEditMedication.setEnabled(permission.isEditMedicationAllowed());
+//		this.btnDeleteMedication.setEnabled(permission.isDeleteMedicationAllowed());
 	}
 
 	protected void updateComponentDataSource() {
