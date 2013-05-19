@@ -7,6 +7,12 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import ch.bfh.ti.soed.white.mhc_pms.data.enums.Gender;
+import ch.bfh.ti.soed.white.mhc_pms.data.enums.KindOfTreatment;
+import ch.bfh.ti.soed.white.mhc_pms.data.enums.OrderOfPatient;
+import ch.bfh.ti.soed.white.mhc_pms.data.enums.ReanimationStatus;
+import ch.bfh.ti.soed.white.mhc_pms.data.enums.Status;
+
 /**
  * Entity implementation class for Entity: PCase
  * 
@@ -36,7 +42,8 @@ public class PCase implements Serializable {
 	private Date dateOfBirth = new Date();
 
 	@NotNull
-	private String gender = "";
+	@Enumerated(EnumType.STRING)
+	private Gender gender = Gender.weiblich;
 
 	private String motherLanguage = "";
 
@@ -89,10 +96,12 @@ public class PCase implements Serializable {
 	// case fields
 	
 	@NotNull
-	private String status = "";
+	@Enumerated(EnumType.STRING)
+	private Status status = Status.offen;
 
 	@NotNull
-	private String kindOfTreatment = "";
+	@Enumerated(EnumType.STRING)
+	private KindOfTreatment kindOfTreatment = KindOfTreatment.stationär;
 	
 	@NotNull
 	@Temporal(value = TemporalType.DATE)
@@ -101,7 +110,8 @@ public class PCase implements Serializable {
 	@Temporal(value = TemporalType.DATE)
 	private Date dateCaseClosed;
 
-	private String reanimationStatus = "";
+	@Enumerated(EnumType.STRING)
+	private ReanimationStatus reanimationStatus = ReanimationStatus.Ja;
 
 	private String assignment = "";
 
@@ -117,7 +127,8 @@ public class PCase implements Serializable {
 
 	private String sanction = "";
 
-	private String orderOfPatient = "";
+	@Enumerated(EnumType.STRING)
+	private OrderOfPatient orderOfPatient = OrderOfPatient.Nein;
 
 	// therapist fields
 	
@@ -192,14 +203,14 @@ public class PCase implements Serializable {
 	/**
 	 * @return the gender
 	 */
-	public String getGender() {
+	public Gender getGender() {
 		return gender;
 	}
 
 	/**
 	 * @param gender the gender to set
 	 */
-	public void setGender(String gender) {
+	public void setGender(Gender gender) {
 		this.gender = gender;
 	}
 
@@ -542,28 +553,28 @@ public class PCase implements Serializable {
 	/**
 	 * @return the status
 	 */
-	public String getStatus() {
+	public Status getStatus() {
 		return status;
 	}
 
 	/**
 	 * @param status the status to set
 	 */
-	public void setStatus(String status) {
+	public void setStatus(Status status) {
 		this.status = status;
 	}
 
 	/**
 	 * @return the kindOfTreatment
 	 */
-	public String getKindOfTreatment() {
+	public KindOfTreatment getKindOfTreatment() {
 		return kindOfTreatment;
 	}
 
 	/**
 	 * @param kindOfTreatment the kindOfTreatment to set
 	 */
-	public void setKindOfTreatment(String kindOfTreatment) {
+	public void setKindOfTreatment(KindOfTreatment kindOfTreatment) {
 		this.kindOfTreatment = kindOfTreatment;
 	}
 
@@ -598,14 +609,14 @@ public class PCase implements Serializable {
 	/**
 	 * @return the reanimationStatus
 	 */
-	public String getReanimationStatus() {
+	public ReanimationStatus getReanimationStatus() {
 		return reanimationStatus;
 	}
 
 	/**
 	 * @param reanimationStatus the reanimationStatus to set
 	 */
-	public void setReanimationStatus(String reanimationStatus) {
+	public void setReanimationStatus(ReanimationStatus reanimationStatus) {
 		this.reanimationStatus = reanimationStatus;
 	}
 
@@ -710,14 +721,14 @@ public class PCase implements Serializable {
 	/**
 	 * @return the orderOfPatient
 	 */
-	public String getOrderOfPatient() {
+	public OrderOfPatient getOrderOfPatient() {
 		return orderOfPatient;
 	}
 
 	/**
 	 * @param orderOfPatient the orderOfPatient to set
 	 */
-	public void setOrderOfPatient(String orderOfPatient) {
+	public void setOrderOfPatient(OrderOfPatient orderOfPatient) {
 		this.orderOfPatient = orderOfPatient;
 	}
 

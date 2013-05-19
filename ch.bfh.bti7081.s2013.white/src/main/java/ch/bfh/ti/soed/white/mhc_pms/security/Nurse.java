@@ -1,6 +1,6 @@
 package ch.bfh.ti.soed.white.mhc_pms.security;
 
-public class UIPermission {
+public class Nurse implements IuiPermission {
 
 	protected boolean isNewPatientAllowed = false;
 	protected boolean isNewCaseAllowed = false;

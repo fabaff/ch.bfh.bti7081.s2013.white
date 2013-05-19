@@ -8,6 +8,8 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import ch.bfh.ti.soed.white.mhc_pms.data.enums.UserGroup;
+
 /**
  * Entity implementation class for Entity: PmsUser
  *
@@ -16,10 +18,6 @@ import javax.validation.constraints.Size;
 @Table(name = "PmsUser")
 public class PmsUser implements Serializable {
 	
-	public static enum UserGroup {
-		MEDICAL_STAFF, ADMIN_STAFF, NURSE, PSYCHOLOGIST, PSYCHIATRIST
-	}
-
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -54,7 +52,7 @@ public class PmsUser implements Serializable {
 	
 	public PmsUser() {
 		// TODO Permission
-//		this.uiPermission = UIPermissionFactory.createUIState(clazz);
+//		this.uiPermission = UIPermissionSingleton.createUIState(clazz);
 //		this.dataAccess = PmsDataAccess.getInstance();
 	}
 

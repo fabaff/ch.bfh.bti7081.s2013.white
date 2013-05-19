@@ -8,7 +8,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-public class UIPermissionFactoryTest {
+public class UIPermissionTest {
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
@@ -28,8 +28,8 @@ public class UIPermissionFactoryTest {
 
 	@Test
 	public final void testCreateUIState() {
-//		UIPermissionFactory.registerNewPermission(Therapist.class, new TherapistPermission());
-//		UIPermission therapistPermission = UIPermissionFactory.createUIState(Therapist.class);
+//		UIPermissionSingleton.registerNewPermission(Therapist.class, new TherapistPermission());
+//		Nurse therapistPermission = UIPermissionSingleton.createUIState(Therapist.class);
 //		assertNotNull(therapistPermission);
 //		assertTrue(therapistPermission.isNewDiagnosisAllowed);
 //		assertFalse(therapistPermission.isNewMedicationAllowed);
@@ -41,10 +41,10 @@ public class UIPermissionFactoryTest {
 //		assertTrue(therapistPermission.isNewDiagnosisAllowed);
 //		assertFalse(therapistPermission.isNewMedicationAllowed);
 		
-//		System.out.println(UIPermissionFactory.permissionsMap.size());
+//		System.out.println(UIPermissionSingleton.permissionsMap.size());
 //		MhcPmsUserDeprecated user = UserSingleton.getUser();
 //		assertNotNull(user);
-//		UIPermission therapistPermission = user.getUIPermission();
+//		Nurse therapistPermission = user.getUIPermission();
 //		assertNotNull(therapistPermission);
 //		assertTrue(therapistPermission.isNewDiagnosisAllowed);
 //		assertFalse(therapistPermission.isNewMedicationAllowed);

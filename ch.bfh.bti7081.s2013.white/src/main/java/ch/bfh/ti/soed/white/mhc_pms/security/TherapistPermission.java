@@ -1,6 +1,6 @@
 package ch.bfh.ti.soed.white.mhc_pms.security;
 
-class TherapistPermission extends ExtendedMedicalStaffPermission {
+class TherapistPermission extends AdminStaffPermission {
 
 	protected TherapistPermission() {
 		this.isEditCaseDataAllowed = true;
