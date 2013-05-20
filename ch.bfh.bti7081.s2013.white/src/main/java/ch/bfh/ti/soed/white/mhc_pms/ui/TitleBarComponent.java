@@ -2,6 +2,8 @@ package ch.bfh.ti.soed.white.mhc_pms.ui;
 
 import java.text.DateFormat;
 
+import ch.bfh.ti.soed.white.mhc_pms.controller.PmsComponent;
+import ch.bfh.ti.soed.white.mhc_pms.controller.PmsComponentListener;
 import ch.bfh.ti.soed.white.mhc_pms.data.PCase;
 import ch.bfh.ti.soed.white.mhc_pms.data.PmsDataAccess;
 

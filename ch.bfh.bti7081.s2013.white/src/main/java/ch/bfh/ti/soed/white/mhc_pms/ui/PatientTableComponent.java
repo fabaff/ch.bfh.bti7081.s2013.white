@@ -1,5 +1,6 @@
 package ch.bfh.ti.soed.white.mhc_pms.ui;
 
+import ch.bfh.ti.soed.white.mhc_pms.controller.PmsComponent;
 import ch.bfh.ti.soed.white.mhc_pms.data.PmsDataAccess;
 import ch.bfh.ti.soed.white.mhc_pms.security.UIPermission;
 import ch.bfh.ti.soed.white.mhc_pms.security.UIPermissionInstance;
@@ -80,13 +81,7 @@ class PatientTableComponent extends PmsComponent {
 			private static final long serialVersionUID = 1L;
 			@Override
 			public void buttonClick(ClickEvent event) {
-				// Component title =
-				// PatientTableComponent.this.mainComponent.getTitleBarComponent();
-				// Component detail =
-				// PatientTableComponent.this.mainComponent.getNewPatientComponent();
-				// PatientTableComponent.this.mainComponent.setActiveComponents(title,
-				// detail);
-				// PatientTableComponent.this.mainComponent.enableMenuBar(false);
+				PatientTableComponent.this.fireNewPatientComponentChangeEvent();
 			}
 		});
 
