@@ -28,8 +28,8 @@ public class UIPermissionTest {
 
 	@Test
 	public final void testCreateUIState() {
-//		UIPermissionSingleton.registerNewPermission(Therapist.class, new TherapistPermission());
-//		NursePermission therapistPermission = UIPermissionSingleton.createUIState(Therapist.class);
+//		UIPermissionInstance.registerNewPermission(Therapist.class, new TherapistPermission());
+//		NursePermission therapistPermission = UIPermissionInstance.createUIState(Therapist.class);
 //		assertNotNull(therapistPermission);
 //		assertTrue(therapistPermission.isNewDiagnosisAllowed);
 //		assertFalse(therapistPermission.isNewMedicationAllowed);
@@ -41,7 +41,7 @@ public class UIPermissionTest {
 //		assertTrue(therapistPermission.isNewDiagnosisAllowed);
 //		assertFalse(therapistPermission.isNewMedicationAllowed);
 		
-//		System.out.println(UIPermissionSingleton.permissionsMap.size());
+//		System.out.println(UIPermissionInstance.permissionsMap.size());
 //		MhcPmsUserDeprecated user = UserSingleton.getUser();
 //		assertNotNull(user);
 //		NursePermission therapistPermission = user.getUIPermission();

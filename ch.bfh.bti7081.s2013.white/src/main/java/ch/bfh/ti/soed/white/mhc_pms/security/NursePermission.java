@@ -1,6 +1,6 @@
 package ch.bfh.ti.soed.white.mhc_pms.security;
 
-public class NursePermission implements IuiPermission {
+class NursePermission implements UIPermission {
 
 	protected boolean isNewPatientAllowed = false;
 	protected boolean isNewCaseAllowed = false;
@@ -15,6 +15,12 @@ public class NursePermission implements IuiPermission {
 	protected boolean isEditMedicationAllowed = false;
 	protected boolean isDeleteMedicationAllowed = false;
 	
+	private String userName;
+	
+	protected NursePermission(String userName) {
+		this.userName = userName;
+	}
+
 	public boolean isNewPatientAllowed() {
 		return this.isNewPatientAllowed;
 	}
@@ -85,6 +91,11 @@ public class NursePermission implements IuiPermission {
 	 */
 	public boolean isDeleteMedicationAllowed() {
 		return isDeleteMedicationAllowed;
+	}
+
+	@Override
+	public String getUserName() {
+		return this.userName;
 	}
 
 }

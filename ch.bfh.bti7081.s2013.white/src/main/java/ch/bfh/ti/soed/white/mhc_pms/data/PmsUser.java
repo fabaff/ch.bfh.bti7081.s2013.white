@@ -52,7 +52,7 @@ public class PmsUser implements Serializable {
 	
 	public PmsUser() {
 		// TODO Permission
-//		this.uiPermission = UIPermissionSingleton.createUIState(clazz);
+//		this.uiPermission = UIPermissionInstance.createUIState(clazz);
 //		this.dataAccess = PmsDataAccess.getInstance();
 	}
 

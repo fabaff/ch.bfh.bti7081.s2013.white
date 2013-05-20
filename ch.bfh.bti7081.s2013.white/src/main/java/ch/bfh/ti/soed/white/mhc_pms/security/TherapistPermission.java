@@ -2,7 +2,8 @@ package ch.bfh.ti.soed.white.mhc_pms.security;
 
 class TherapistPermission extends AdminStaffPermission {
 
-	protected TherapistPermission() {
+	protected TherapistPermission(String userName) {
+		super(userName);
 		this.isEditCaseDataAllowed = true;
 		this.isNewPatientProgressEntryAllowed = true;
 		this.isEditPatientProgressEntryAllowed = true;

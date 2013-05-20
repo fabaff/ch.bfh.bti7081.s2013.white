@@ -10,7 +10,7 @@ import com.vaadin.ui.CustomComponent;
 import com.vaadin.ui.PopupDateField;
 import com.vaadin.ui.TextField;
 
-public class NewPatientComponent extends CustomComponent {
+public class NewPatientComponent extends PmsComponent {
 
 	/*- VaadinEditorProperties={"grid":"RegularGrid,20","showGrid":true,"snapToGrid":true,"snapToObject":true,"movingGuides":false,"snappingDistance":10} */
 

@@ -8,7 +8,7 @@ import com.vaadin.ui.Button;
 import com.vaadin.ui.CustomComponent;
 import com.vaadin.ui.Table;
 
-class DiagnosisComponent extends CustomComponent implements View {
+class DiagnosisComponent extends PmsComponent implements PmsComponentListener {
 
 	/*- VaadinEditorProperties={"grid":"RegularGrid,20","showGrid":true,"snapToGrid":true,"snapToObject":true,"movingGuides":false,"snappingDistance":10} */
 
@@ -41,12 +41,6 @@ class DiagnosisComponent extends CustomComponent implements View {
 	}
 
 	protected void updateComponentDataSource() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void enter(ViewChangeEvent event) {
 		// TODO Auto-generated method stub
 		
 	}
@@ -96,6 +90,12 @@ class DiagnosisComponent extends CustomComponent implements View {
 		mainLayout.addComponent(tblDiagnosis, "top:100.0px;left:20.0px;");
 		
 		return mainLayout;
+	}
+
+	@Override
+	public void pCaseItemChange(Object itemId) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

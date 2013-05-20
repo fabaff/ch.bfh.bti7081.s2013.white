@@ -7,7 +7,7 @@ import com.vaadin.ui.AbsoluteLayout;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.CustomComponent;
 
-class PatientProgressComponent extends CustomComponent implements View {
+class PatientProgressComponent extends PmsComponent implements PmsComponentListener {
 
 	/*- VaadinEditorProperties={"grid":"RegularGrid,20","showGrid":true,"snapToGrid":true,"snapToObject":true,"movingGuides":false,"snappingDistance":10} */
 
@@ -39,12 +39,6 @@ class PatientProgressComponent extends CustomComponent implements View {
 	}
 
 	protected void updateComponentDataSource() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void enter(ViewChangeEvent event) {
 		// TODO Auto-generated method stub
 		
 	}
@@ -89,6 +83,12 @@ class PatientProgressComponent extends CustomComponent implements View {
 				"top:20.0px;left:300.0px;");
 		
 		return mainLayout;
+	}
+
+	@Override
+	public void pCaseItemChange(Object itemId) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

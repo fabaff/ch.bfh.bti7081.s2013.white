@@ -13,42 +13,50 @@ class MainPanel extends HorizontalSplitPanel {
 	
 	private static final float HORIZONTAL_SPLIT_POS = 10.0f;
 
+	private VerticalSplitPanel verticalPanel = new VerticalSplitPanel();
+	private TitleBarComponent titleBar = new TitleBarComponent();
+	private PatientTableComponent patientTable = new PatientTableComponent();
+	private PatientInfoComponent patInfo = new PatientInfoComponent();
+	private CaseInfoComponent caseInfo = new CaseInfoComponent();
+	private PatientProgressComponent progressComp = new PatientProgressComponent();
+	private DiagnosisComponent diagnosisComp = new DiagnosisComponent();
+	private MedicationComponent medComp = new MedicationComponent();
+	private MenuBarComponent menuBar;
+	
 	public MainPanel(PmsUI pmsUI) {
 		Panel detailPanel = new Panel();
 		Navigator navigator = new Navigator(pmsUI, detailPanel);
-		VerticalSplitPanel verticalPanel = new VerticalSplitPanel();
-		TitleBarComponent titleBar = new TitleBarComponent();
-		PatientTableComponent patientTable = new PatientTableComponent();
-		MenuBarComponent menuBar = new MenuBarComponent(navigator);
-		PatientInfoComponent patInfo = new PatientInfoComponent();
-		CaseInfoComponent caseInfo = new CaseInfoComponent();
-		PatientProgressComponent progressComp = new PatientProgressComponent();
-		DiagnosisComponent diagnosisComp = new DiagnosisComponent();
-		MedicationComponent medComp = new MedicationComponent();
+		this.menuBar = new MenuBarComponent(navigator);
 		
 		detailPanel.setSizeFull();
-		this.setFirstComponent(menuBar);
-		this.setSecondComponent(verticalPanel);
+		this.setFirstComponent(this.menuBar);
+		this.setSecondComponent(this.verticalPanel);
 		this.setSplitPosition(HORIZONTAL_SPLIT_POS, Unit.PERCENTAGE);
-		verticalPanel.setFirstComponent(titleBar);
-		verticalPanel.setSecondComponent(detailPanel);		
-		verticalPanel.setSplitPosition(VERTICAL_SPLIT_POS, Unit.PERCENTAGE);
+		this.verticalPanel.setFirstComponent(this.titleBar);
+		this.verticalPanel.setSecondComponent(detailPanel);		
+		this.verticalPanel.setSplitPosition(VERTICAL_SPLIT_POS, Unit.PERCENTAGE);
 		
 		navigator.addView(MenuBarComponent.ButtonEnum.HOME.toString(),
-				patientTable);
+				this.patientTable);
 		navigator.addView(MenuBarComponent.ButtonEnum.PATIENT_INFO.toString(),
-				patInfo);
+				this.patInfo);
 		navigator.addView(MenuBarComponent.ButtonEnum.CASE_INFO.toString(),
-				caseInfo);
+				this.caseInfo);
 		navigator.addView(MenuBarComponent.ButtonEnum.PATIENT_PROGRESS.toString(),
-				progressComp);
+				this.progressComp);
 		navigator.addView(MenuBarComponent.ButtonEnum.DIAGNOSIS.toString(),
-				diagnosisComp);
+				this.diagnosisComp);
 		navigator.addView(MenuBarComponent.ButtonEnum.MEDICATION.toString(),
-				medComp);
-		
+				this.medComp);
 		navigator.navigateTo(MenuBarComponent.ButtonEnum.HOME.toString());
 
+		this.patientTable.addPmsComponentListener(this.titleBar);
+		this.patientTable.addPmsComponentListener(this.patInfo);
+		this.patientTable.addPmsComponentListener(this.caseInfo);
+		this.patientTable.addPmsComponentListener(this.progressComp);
+		this.patientTable.addPmsComponentListener(this.diagnosisComp);
+		this.patientTable.addPmsComponentListener(this.medComp);
+		
 //		TODO				
 //		 setComponentAlignment(button, Alignment.MIDDLE_CENTER);
 //		 Notification.show("Welcome to the Animal Farm");
