@@ -43,7 +43,7 @@ public class PCase implements Serializable {
 
 	@NotNull
 	@Enumerated(EnumType.STRING)
-	private Gender gender = Gender.weiblich;
+	private Gender gender = Gender.Weiblich;
 
 	private String motherLanguage = "";
 
@@ -78,6 +78,10 @@ public class PCase implements Serializable {
 	private String nextOfKinLastName = "";
 
 	private String nextOfKinAddress = "";
+	
+	private String nextOfKinPostalCode = "";
+	
+	private String nextOfKinHomeLocation = "";
 
 	private String nextOfKinPhone = "";
 
@@ -97,11 +101,11 @@ public class PCase implements Serializable {
 	
 	@NotNull
 	@Enumerated(EnumType.STRING)
-	private Status status = Status.offen;
+	private Status status = Status.Aktiv;
 
 	@NotNull
 	@Enumerated(EnumType.STRING)
-	private KindOfTreatment kindOfTreatment = KindOfTreatment.stationär;
+	private KindOfTreatment kindOfTreatment = KindOfTreatment.Stationär;
 	
 	@NotNull
 	@Temporal(value = TemporalType.DATE)
@@ -730,6 +734,34 @@ public class PCase implements Serializable {
 	 */
 	public void setOrderOfPatient(OrderOfPatient orderOfPatient) {
 		this.orderOfPatient = orderOfPatient;
+	}
+
+	/**
+	 * @return the nextOfKinPostalCode
+	 */
+	public String getNextOfKinPostalCode() {
+		return nextOfKinPostalCode;
+	}
+
+	/**
+	 * @param nextOfKinPostalCode the nextOfKinPostalCode to set
+	 */
+	public void setNextOfKinPostalCode(String nextOfKinPostalCode) {
+		this.nextOfKinPostalCode = nextOfKinPostalCode;
+	}
+
+	/**
+	 * @return the nextOfKinHomeLocation
+	 */
+	public String getNextOfKinHomeLocation() {
+		return nextOfKinHomeLocation;
+	}
+
+	/**
+	 * @param nextOfKinHomeLocation the nextOfKinHomeLocation to set
+	 */
+	public void setNextOfKinHomeLocation(String nextOfKinHomeLocation) {
+		this.nextOfKinHomeLocation = nextOfKinHomeLocation;
 	}
 
 	

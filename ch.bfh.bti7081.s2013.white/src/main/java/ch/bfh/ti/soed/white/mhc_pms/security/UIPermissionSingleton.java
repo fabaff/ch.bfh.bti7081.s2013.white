@@ -5,17 +5,17 @@ import java.util.Map;
 
 class UIPermissionSingleton {
 
-//	private static Map<String, Nurse> permissionsMap;
+//	private static Map<String, NursePermission> permissionsMap;
 //
 //	static {
-//		permissionsMap = new HashMap<String, Nurse>();
+//		permissionsMap = new HashMap<String, NursePermission>();
 //		permissionsMap.put(Psychiatrist.class.getName(), new PsychiatristPermission());
 //		permissionsMap.put(Therapist.class.getName(), new TherapistPermission());
 //		permissionsMap.put(ExtendedMedicalStaff.class.getName(), new AdminStaffPermission());
-//		permissionsMap.put(MedicalStaff.class.getName(), new Nurse());
+//		permissionsMap.put(MedicalStaff.class.getName(), new NursePermission());
 //	}
 //
-//	static <E extends MhcPmsUserDeprecated> Nurse createUIState(Class<E> clazz) {
+//	static <E extends MhcPmsUserDeprecated> NursePermission createUIState(Class<E> clazz) {
 //		return permissionsMap.get(clazz.getName());
 //	}
 
