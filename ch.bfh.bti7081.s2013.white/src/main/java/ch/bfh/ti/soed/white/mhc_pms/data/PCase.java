@@ -11,7 +11,7 @@ import ch.bfh.ti.soed.white.mhc_pms.data.enums.Gender;
 import ch.bfh.ti.soed.white.mhc_pms.data.enums.KindOfTreatment;
 import ch.bfh.ti.soed.white.mhc_pms.data.enums.OrderOfPatient;
 import ch.bfh.ti.soed.white.mhc_pms.data.enums.ReanimationStatus;
-import ch.bfh.ti.soed.white.mhc_pms.data.enums.Status;
+import ch.bfh.ti.soed.white.mhc_pms.data.enums.CaseStatus;
 
 /**
  * Entity implementation class for Entity: PCase
@@ -79,10 +79,10 @@ public class PCase implements Serializable {
 
 	private String nextOfKinAddress = "";
 	
+	private String nextOfKinHomeLocation = "";
+	
 	private String nextOfKinPostalCode = "";
 	
-	private String nextOfKinHomeLocation = "";
-
 	private String nextOfKinPhone = "";
 
 	private String familyDoctorFirstName = "";
@@ -101,7 +101,7 @@ public class PCase implements Serializable {
 	
 	@NotNull
 	@Enumerated(EnumType.STRING)
-	private Status status = Status.Aktiv;
+	private CaseStatus status = CaseStatus.Aktiv;
 
 	@NotNull
 	@Enumerated(EnumType.STRING)
@@ -557,14 +557,14 @@ public class PCase implements Serializable {
 	/**
 	 * @return the status
 	 */
-	public Status getStatus() {
+	public CaseStatus getStatus() {
 		return status;
 	}
 
 	/**
 	 * @param status the status to set
 	 */
-	public void setStatus(Status status) {
+	public void setStatus(CaseStatus status) {
 		this.status = status;
 	}
 

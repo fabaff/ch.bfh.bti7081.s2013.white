@@ -56,6 +56,10 @@ public class PmsUser implements Serializable {
 //		this.dataAccess = PmsDataAccess.getInstance();
 	}
 
+	public PmsUser(String userName) {
+		this();
+	}
+
 	/**
 	 * @return the uid
 	 */

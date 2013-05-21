@@ -1,6 +1,7 @@
 package ch.bfh.ti.soed.white.mhc_pms.ui;
 
 import ch.bfh.ti.soed.white.mhc_pms.controller.ComponentChangeListener;
+import ch.bfh.ti.soed.white.mhc_pms.controller.EditEvent;
 
 import com.vaadin.navigator.Navigator;
 import com.vaadin.ui.HorizontalSplitPanel;
@@ -57,15 +58,46 @@ class MainPanel extends HorizontalSplitPanel implements ComponentChangeListener 
 				this.medComp);
 		this.navigator.navigateTo(MenuBarComponent.ButtonEnum.HOME.toString());
 
+		this.menuBar.addPmsComponentListener(this.titleBar);
+		this.menuBar.addPmsComponentListener(this.patientTable);
+		this.menuBar.addPmsComponentListener(this.patInfo);
+		this.menuBar.addPmsComponentListener(this.caseInfo);
+		this.menuBar.addPmsComponentListener(this.progressComp);
+		this.menuBar.addPmsComponentListener(this.diagnosisComp);
+		this.menuBar.addPmsComponentListener(this.medComp);
+		
 		this.patientTable.addPmsComponentListener(this.titleBar);
 		this.patientTable.addPmsComponentListener(this.patInfo);
 		this.patientTable.addPmsComponentListener(this.caseInfo);
 		this.patientTable.addPmsComponentListener(this.progressComp);
 		this.patientTable.addPmsComponentListener(this.diagnosisComp);
 		this.patientTable.addPmsComponentListener(this.medComp);
-		this.patientTable.addNewPatientComponentChangeListener(this);
+		this.patientTable.addComponentChangeListener(this);
+		this.patientTable.addUIActivationListener(this.menuBar);
+		this.patientTable.addUIActivationListener(this.titleBar);
 		
+		this.patInfo.addUIActivationListener(this.menuBar);
+		this.patInfo.addUIActivationListener(this.titleBar);
+		this.patInfo.addComponentChangeListener(this);
 		
+		this.newPatientComp.addPmsComponentListener(this.titleBar);
+		this.newPatientComp.addPmsComponentListener(this.patientTable);
+		this.newPatientComp.addPmsComponentListener(this.patInfo);
+		this.newPatientComp.addPmsComponentListener(this.caseInfo);
+		this.newPatientComp.addPmsComponentListener(this.progressComp);
+		this.newPatientComp.addPmsComponentListener(this.diagnosisComp);
+		this.newPatientComp.addPmsComponentListener(this.medComp);
+		this.newPatientComp.addUIActivationListener(this.menuBar);
+		this.newPatientComp.addUIActivationListener(this.titleBar);
+		this.newPatientComp.addComponentChangeListener(this);
+		
+		this.editCaseInfoComp.addUIActivationListener(this.menuBar);
+		this.editCaseInfoComp.addUIActivationListener(this.titleBar);
+		this.editCaseInfoComp.addComponentChangeListener(this);
+		
+		this.caseInfo.addUIActivationListener(this.menuBar);
+		this.caseInfo.addUIActivationListener(this.titleBar);
+		this.caseInfo.addComponentChangeListener(this);
 		
 //		TODO restliche Component Listner
 //		 setComponentAlignment(button, Alignment.MIDDLE_CENTER);
@@ -73,10 +105,29 @@ class MainPanel extends HorizontalSplitPanel implements ComponentChangeListener 
 	}
 
 	@Override
-	public void newPatientComponentChangeListener() {
-		this.navigator.addView(MenuBarComponent.ButtonEnum.PATIENT_INFO.toString(),
-				this.newPatientComp);
-		this.navigator.navigateTo(MenuBarComponent.ButtonEnum.PATIENT_INFO.toString());
+	public void componentChange(EditEvent event) {
+		switch (event) {
+		case PATIENT:
+			this.navigator.addView(MenuBarComponent.ButtonEnum.PATIENT_INFO.toString(),
+					this.newPatientComp);
+			this.navigator.navigateTo(MenuBarComponent.ButtonEnum.PATIENT_INFO.toString());
+			break;
+		case PCASE:
+			this.navigator.addView(MenuBarComponent.ButtonEnum.CASE_INFO.toString(),
+					this.editCaseInfoComp);
+			this.navigator.navigateTo(MenuBarComponent.ButtonEnum.CASE_INFO.toString());
+			break;
+		case PATIENT_BACK:
+			this.navigator.addView(MenuBarComponent.ButtonEnum.PATIENT_INFO.toString(),
+					this.patInfo);
+			this.navigator.navigateTo(MenuBarComponent.ButtonEnum.PATIENT_INFO.toString());
+			break;
+		case PCASE_BACK:
+			this.navigator.addView(MenuBarComponent.ButtonEnum.CASE_INFO.toString(),
+					this.caseInfo);
+			this.navigator.navigateTo(MenuBarComponent.ButtonEnum.CASE_INFO.toString());
+			break;
+		}
 	}
 
 }
