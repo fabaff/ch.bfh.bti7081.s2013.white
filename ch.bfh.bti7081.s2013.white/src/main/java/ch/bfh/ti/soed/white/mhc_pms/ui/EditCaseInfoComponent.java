@@ -72,7 +72,6 @@ public class EditCaseInfoComponent extends PmsComponentController {
 		this.dataAccess.getPCaseContainer().refresh();
 		this.fieldGroup = new FieldGroup();
 
-		
 		this.cmbKindOfTreatment.addItem(KindOfTreatment.Stationär);
 		this.cmbKindOfTreatment.addItem(KindOfTreatment.Teilstationär);
 		this.cmbKindOfTreatment.addItem(KindOfTreatment.Ambulant);
@@ -95,6 +94,15 @@ public class EditCaseInfoComponent extends PmsComponentController {
 		if (item != null) {
 			this.fieldGroup.setItemDataSource(item);
 			this.fieldGroup.bind(this.cmbReanimationStatus, "reanimationStatus");
+			this.fieldGroup.bind(this.cmbKindOfTreatment, "kindOfTreatment");
+			this.fieldGroup.bind(this.cmbOrderOfPatient, "orderOfPatient");
+			this.fieldGroup.bind(this.txtAssignment, "assignment");
+			this.fieldGroup.bind(this.txtDegreeOfDanger, "degreeOfDanger");
+			this.fieldGroup.bind(this.txtGoOutStatus, "goOutStatus");
+			this.fieldGroup.bind(this.txtJudicialStatus, "judicialStatus");
+			this.fieldGroup.bind(this.txtSanction, "sanction");
+			this.fieldGroup.bind(this.txtSuicidalTendency, "suicidalTendency");
+			this.fieldGroup.bind(this.txtVacation, "vacation");
 			
 		}
 	}
@@ -113,9 +121,12 @@ public class EditCaseInfoComponent extends PmsComponentController {
 				}
 
 				// TODO bessere Trennung Model und View
-				if (!EditCaseInfoComponent.this.dataAccess.isNewCaseActivated()) {
-					EditCaseInfoComponent.this.dataAccess.getPCaseContainer().removeItem(EditCaseInfoComponent.this.dataAccess.getCurrentPCaseId());
-				}
+//				if (!EditCaseInfoComponent.this.dataAccess.isNewCaseActivated()) {
+//					EditCaseInfoComponent.this.dataAccess.getPCaseContainer().removeItem(EditCaseInfoComponent.this.dataAccess.getCurrentPCaseId());
+//				}
+				
+				// TODO openDAte init
+				// TODO Fall abschliessen bei neuem FAll
 				
 				Object id = EditCaseInfoComponent.this.dataAccess.getPCaseContainer().addEntity(
 						EditCaseInfoComponent.this.newPatientItem.getBean());
@@ -160,7 +171,7 @@ public class EditCaseInfoComponent extends PmsComponentController {
 		btnSave = new Button();
 		btnSave.setCaption("Speichern");
 		btnSave.setImmediate(true);
-		btnSave.setWidth("100px");
+		btnSave.setWidth("80px");
 		btnSave.setHeight("-1px");
 		mainLayout.addComponent(btnSave, "top:220.0px;left:20.0px;");
 		
@@ -170,7 +181,7 @@ public class EditCaseInfoComponent extends PmsComponentController {
 		btnCancel.setImmediate(true);
 		btnCancel.setWidth("-1px");
 		btnCancel.setHeight("-1px");
-		mainLayout.addComponent(btnCancel, "top:220.0px;left:140.0px;");
+		mainLayout.addComponent(btnCancel, "top:220.0px;left:120.0px;");
 		
 		// cmbReanimationStatus
 		cmbReanimationStatus = new ComboBox();
