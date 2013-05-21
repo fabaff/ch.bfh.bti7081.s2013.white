@@ -72,6 +72,7 @@ public class EditCaseInfoComponent extends PmsComponentController {
 		this.dataAccess.getPCaseContainer().refresh();
 		this.fieldGroup = new FieldGroup();
 
+		
 		this.cmbKindOfTreatment.addItem(KindOfTreatment.Stationär);
 		this.cmbKindOfTreatment.addItem(KindOfTreatment.Teilstationär);
 		this.cmbKindOfTreatment.addItem(KindOfTreatment.Ambulant);
@@ -159,7 +160,7 @@ public class EditCaseInfoComponent extends PmsComponentController {
 		btnSave = new Button();
 		btnSave.setCaption("Speichern");
 		btnSave.setImmediate(true);
-		btnSave.setWidth("80px");
+		btnSave.setWidth("100px");
 		btnSave.setHeight("-1px");
 		mainLayout.addComponent(btnSave, "top:220.0px;left:20.0px;");
 		
@@ -169,7 +170,7 @@ public class EditCaseInfoComponent extends PmsComponentController {
 		btnCancel.setImmediate(true);
 		btnCancel.setWidth("-1px");
 		btnCancel.setHeight("-1px");
-		mainLayout.addComponent(btnCancel, "top:220.0px;left:120.0px;");
+		mainLayout.addComponent(btnCancel, "top:220.0px;left:140.0px;");
 		
 		// cmbReanimationStatus
 		cmbReanimationStatus = new ComboBox();
