@@ -91,6 +91,15 @@ class MainPanel extends HorizontalSplitPanel implements ComponentChangeListener 
 		this.newPatientComp.addUIActivationListener(this.titleBar);
 		this.newPatientComp.addComponentChangeListener(this);
 		
+		this.editCaseInfoComp.addPmsComponentListener(this.titleBar);
+		this.editCaseInfoComp.addPmsComponentListener(this.patientTable);
+		this.editCaseInfoComp.addPmsComponentListener(this.patInfo);
+		this.editCaseInfoComp.addPmsComponentListener(this.caseInfo);
+		this.editCaseInfoComp.addPmsComponentListener(this.progressComp);
+		this.editCaseInfoComp.addPmsComponentListener(this.diagnosisComp);
+		this.editCaseInfoComp.addPmsComponentListener(this.medComp);
+		this.editCaseInfoComp.addUIActivationListener(this.menuBar);
+		this.editCaseInfoComp.addUIActivationListener(this.titleBar);
 		this.editCaseInfoComp.addUIActivationListener(this.menuBar);
 		this.editCaseInfoComp.addUIActivationListener(this.titleBar);
 		this.editCaseInfoComp.addComponentChangeListener(this);

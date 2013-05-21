@@ -68,6 +68,7 @@ class CaseInfoComponent extends PmsComponentController implements PmsComponentLi
 		
 		UIPermission permission = UIPermissionInstance.getPermission();
 		this.btnNewCase.setEnabled(permission.isNewCaseAllowed());
+		// TODO Nur aktiv, wenn schon Pat existiert
 		this.btnEditCaseData.setEnabled(permission.isEditCaseDataAllowed());
 
 		this.addListeners();

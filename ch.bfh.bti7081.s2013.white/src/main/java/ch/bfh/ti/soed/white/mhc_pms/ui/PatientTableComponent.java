@@ -32,7 +32,7 @@ class PatientTableComponent extends PmsComponentController implements PmsCompone
 	private static final String[] VISIBLE_COLUMNS = { "firstName", "lastName",
 			"dateOfBirth", "gender", "status", "kindOfTreatment" };
 	private static final String[] VISIBLE_COLUMN_NAMES = { "Vorname",
-			"Nachname", "Geburtsdatum", "Geschlecht", "CaseStatus",
+			"Nachname", "Geburtsdatum", "Geschlecht", "Status",
 			"Behandlungsart" };
 
 	private PmsDataAccess dataAccess;
@@ -66,6 +66,7 @@ class PatientTableComponent extends PmsComponentController implements PmsCompone
 
 		UIPermission permission = UIPermissionInstance.getPermission();
 		this.btnNewPatient.setEnabled(permission.isNewPatientAllowed());
+		// TODO Nur aktiv, wenn schon Pat existiert
 		this.btnNewCase.setEnabled(permission.isNewCaseAllowed());
 		
 		this.addListeners();
