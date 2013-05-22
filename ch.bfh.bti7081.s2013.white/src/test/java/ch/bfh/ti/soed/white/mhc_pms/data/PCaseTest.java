@@ -71,6 +71,27 @@ public class PCaseTest {
 //		PmsUser user = users.getItem(users.firstItemId()).getEntity();
 //		PCase pCase = new PCase(user);
 //		pCases.addEntity(pCase);
+		
+//		UIPermissionInstance.registerNewPermission(Therapist.class, new TherapistPermission());
+//		NursePermission therapistPermission = UIPermissionInstance.createUIState(Therapist.class);
+//		assertNotNull(therapistPermission);
+//		assertTrue(therapistPermission.isNewDiagnosisAllowed);
+//		assertFalse(therapistPermission.isNewMedicationAllowed);
+//		// TODO vollständiger Test
+//		
+//		MhcPmsUserDeprecated user = new Therapist();
+//		therapistPermission = user.getUIPermission();
+//		assertNotNull(therapistPermission);
+//		assertTrue(therapistPermission.isNewDiagnosisAllowed);
+//		assertFalse(therapistPermission.isNewMedicationAllowed);
+		
+//		System.out.println(UIPermissionInstance.permissionsMap.size());
+//		MhcPmsUserDeprecated user = UserSingleton.getUser();
+//		assertNotNull(user);
+//		NursePermission therapistPermission = user.getUIPermission();
+//		assertNotNull(therapistPermission);
+//		assertTrue(therapistPermission.isNewDiagnosisAllowed);
+//		assertFalse(therapistPermission.isNewMedicationAllowed);
 	}
 
 }

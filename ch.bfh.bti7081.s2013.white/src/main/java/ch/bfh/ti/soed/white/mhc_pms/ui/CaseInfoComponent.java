@@ -6,8 +6,8 @@ import ch.bfh.ti.soed.white.mhc_pms.controller.PmsComponentListener;
 import ch.bfh.ti.soed.white.mhc_pms.data.PCase;
 import ch.bfh.ti.soed.white.mhc_pms.data.PmsContainers;
 import ch.bfh.ti.soed.white.mhc_pms.data.PmsDataAccess;
-import ch.bfh.ti.soed.white.mhc_pms.security.Permission;
-import ch.bfh.ti.soed.white.mhc_pms.security.Permission.Element;
+import ch.bfh.ti.soed.white.mhc_pms.security.PmsPermission;
+import ch.bfh.ti.soed.white.mhc_pms.security.PmsPermission.Element;
 import ch.bfh.ti.soed.white.mhc_pms.util.ValueConverter;
 
 import com.vaadin.addon.jpacontainer.EntityItem;
@@ -77,7 +77,7 @@ class CaseInfoComponent extends PmsComponentController implements PmsComponentLi
 		this.dataAccess = PmsDataAccess.getInstance();
 		this.dataAccess.getPCaseContainer().refresh();
 		
-		Permission permission = new Permission(this.pmsContainers.getCurrentUser().getUserGroup());
+		PmsPermission permission = new PmsPermission(this.pmsContainers.getCurrentUser().getUserGroup());
 		this.btnNewCase.setEnabled(permission.hasPermission(Element.NEW_CASE));
 		// TODO Nur aktiv, wenn schon Pat existiert
 		this.btnEditCaseData.setEnabled(permission.hasPermission(Element.EDIT_CASE));

@@ -5,7 +5,7 @@ import java.util.Set;
 
 import ch.bfh.ti.soed.white.mhc_pms.data.enums.UserGroup;
 
-public class Permission {
+public class PmsPermission {
 	
 	private static class PermissionKey {
 		
@@ -95,7 +95,7 @@ public class Permission {
 	
 	private UserGroup userGroup;
 	
-	public Permission(UserGroup userGroup) {
+	public PmsPermission(UserGroup userGroup) {
 		this.userGroup = userGroup;
 	}
 	

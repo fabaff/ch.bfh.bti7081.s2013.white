@@ -54,7 +54,7 @@ public class PmsUser implements Serializable {
 	private Set<PCase> pCases = new HashSet<>();
 	
 	public PmsUser() {
-		// TODO Permission
+		// TODO PmsPermission
 //		this.uiPermission = UIPermissionInstance.createUIState(clazz);
 //		this.dataAccess = PmsDataAccess.getInstance();
 	}
