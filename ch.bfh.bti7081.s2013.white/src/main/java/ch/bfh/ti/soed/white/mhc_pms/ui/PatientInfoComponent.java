@@ -140,7 +140,7 @@ class PatientInfoComponent extends PmsComponentController implements PmsComponen
 			this.lblCountry.setValue(item.getCountry());
 			this.lblPhonePrivate.setValue(item.getPhonePrivate());
 			this.lblPhoneBusiness.setValue(item.getPhoneBusiness());
-			this.lblMobilePhone.setValue(item.getMobilePhone());
+			this.lblMobilePhone.setValue(item.getPhoneMobile());
 			this.lblEmail.setValue(item.geteMail());
 			
 			this.lblNextOfKin.setValue(item.getNextOfKin());

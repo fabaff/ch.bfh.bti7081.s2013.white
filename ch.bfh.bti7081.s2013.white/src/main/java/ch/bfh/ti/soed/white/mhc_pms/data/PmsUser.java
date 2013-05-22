@@ -53,15 +53,7 @@ public class PmsUser implements Serializable {
 	@OneToMany(mappedBy = "therapist")
 	private Set<PCase> pCases = new HashSet<>();
 	
-	public PmsUser() {
-		// TODO PmsPermission
-//		this.uiPermission = UIPermissionInstance.createUIState(clazz);
-//		this.dataAccess = PmsDataAccess.getInstance();
-	}
-
-	public PmsUser(String userName) {
-
-	}
+	public PmsUser() {}
 
 	/**
 	 * @return the uid

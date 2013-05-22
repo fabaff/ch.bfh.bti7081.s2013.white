@@ -65,7 +65,7 @@ public class PCase implements Serializable {
 	private String country = "";
 	private String phonePrivate = "";
 	private String phoneBusiness = "";
-	private String mobilePhone = "";
+	private String phoneMobile = "";
 	private String eMail = "";
 	
 	// Additional address
@@ -327,46 +327,45 @@ public class PCase implements Serializable {
 	}
 
 	/**
-	 * @return The patient's private phone number.
+	 * @return The patient's private phoneMobile number.
 	 */
 	public String getPhonePrivate() {
 		return phonePrivate;
 	}
 
 	/**
-	 * @param phonePrivate The patient's private phone number to set.
+	 * @param phonePrivate The patient's private phoneMobile number to set.
 	 */
 	public void setPhonePrivate(String phonePrivate) {
 		this.phonePrivate = phonePrivate;
 	}
 
 	/**
-	 * @return The patient's business phone number.
+	 * @return The patient's business phoneMobile number.
 	 */
 	public String getPhoneBusiness() {
 		return phoneBusiness;
 	}
 
 	/**
-	 * @param phoneBusiness The patient's business phone number to set.
+	 * @param phoneBusiness The patient's business phoneMobile number to set.
 	 */
 	public void setPhoneBusiness(String phoneBusiness) {
 		this.phoneBusiness = phoneBusiness;
 	}
 
-	// FIXME This should be PhoneMobile instead of mobilePhone to match other phone numbers.
 	/**
-	 * @return The patient's mobile phone number.
+	 * @return The patient's mobile phoneMobile number.
 	 */
-	public String getMobilePhone() {
-		return mobilePhone;
+	public String getPhoneMobile() {
+		return phoneMobile;
 	}
 
 	/**
-	 * @param mobilePhone The patien's mobile phone number to set.
+	 * @param mobilePhone The patien's mobile phoneMobile number to set.
 	 */
-	public void setMobilePhone(String mobilePhone) {
-		this.mobilePhone = mobilePhone;
+	public void setPhoneMobile(String phoneMobile) {
+		this.phoneMobile = phoneMobile;
 	}
 
 	/**
