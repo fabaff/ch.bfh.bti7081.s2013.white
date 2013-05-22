@@ -3,9 +3,10 @@
 ## Eclipse
 
 ### Java
-The used version is JRE 1.7
 
+The used version is **JRE 1.7**.
 
+Check if you are used this version: *Project* -> *Properties* -> *Java Build Path* -> *Libraries* set JRE System Library to **JavaSE-1.7 (jre7)**
 
 ### Data Source Explorer 
 
@@ -30,14 +31,14 @@ This section covers special dependencies which are not tracked by maven.
 The project uses the `Microsoft JDBC Driver 4.0 for SQL Server` as connector.
 
 ```bash
-		<dependency>
-			<groupId>org.eclipse.persistence</groupId>
-			<artifactId>eclipselink</artifactId>
-			<version>2.5.0</version>
-		</dependency>
+<dependency>
+	<groupId>org.eclipse.persistence</groupId>
+	<artifactId>eclipselink</artifactId>
+	<version>2.5.0</version>
+</dependency>
 ```
 
-Make sure that maven is setup correctly and able to run.
+Make sure that maven is setup correctly and able to run from a given directory.
 
 ```bash
 mvn install:install-file -Dfile=c:\path\to\sqljdbc4.jar -DgroupId=com.microsoft.sqlserver -DartifactId=sqljdbc4 -Dversion=3.0 -Dpackaging=jar
