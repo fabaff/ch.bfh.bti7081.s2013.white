@@ -4,9 +4,10 @@ import ch.bfh.ti.soed.white.mhc_pms.controller.NavigationEvent;
 import ch.bfh.ti.soed.white.mhc_pms.controller.PmsComponentController;
 import ch.bfh.ti.soed.white.mhc_pms.controller.PmsComponentListener;
 import ch.bfh.ti.soed.white.mhc_pms.data.PCase;
+import ch.bfh.ti.soed.white.mhc_pms.data.PmsContainers;
 import ch.bfh.ti.soed.white.mhc_pms.data.PmsDataAccess;
-import ch.bfh.ti.soed.white.mhc_pms.security.UIPermission;
-import ch.bfh.ti.soed.white.mhc_pms.security.UIPermissionInstance;
+import ch.bfh.ti.soed.white.mhc_pms.security.Permission;
+import ch.bfh.ti.soed.white.mhc_pms.security.Permission.Element;
 import ch.bfh.ti.soed.white.mhc_pms.util.ValueConverter;
 
 import com.vaadin.addon.jpacontainer.EntityItem;
@@ -57,6 +58,8 @@ class CaseInfoComponent extends PmsComponentController implements PmsComponentLi
 	private Button btnEditCaseData;
 	private static final long serialVersionUID = -1488922640521851182L;
 
+	private PmsContainers pmsContainers;
+	
 	private PmsDataAccess dataAccess;
 
 	/**
@@ -70,13 +73,14 @@ class CaseInfoComponent extends PmsComponentController implements PmsComponentLi
 		buildMainLayout();
 		setCompositionRoot(mainLayout);
 		// TODO init empty Labels
+		this.pmsContainers = PmsDataAccess.getContainers();
 		this.dataAccess = PmsDataAccess.getInstance();
 		this.dataAccess.getPCaseContainer().refresh();
 		
-		UIPermission permission = UIPermissionInstance.getPermission();
-		this.btnNewCase.setEnabled(permission.isNewCaseAllowed());
+		Permission permission = new Permission(this.pmsContainers.getCurrentUser().getUserGroup());
+		this.btnNewCase.setEnabled(permission.hasPermission(Element.NEW_CASE));
 		// TODO Nur aktiv, wenn schon Pat existiert
-		this.btnEditCaseData.setEnabled(permission.isEditCaseDataAllowed());
+		this.btnEditCaseData.setEnabled(permission.hasPermission(Element.EDIT_CASE));
 
 		this.addListeners();
 		this.pCaseItemChange(this.dataAccess.getCurrentPCaseId());

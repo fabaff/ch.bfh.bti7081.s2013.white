@@ -35,7 +35,7 @@ public class PmsUser implements Serializable {
 	
 	@NotNull
 	@Enumerated(EnumType.STRING)
-	private UserGroup userGroup = UserGroup.MEDICAL_STAFF;
+	private UserGroup userGroup = UserGroup.PSYCHOLOGIST;
 	
 	@NotNull
 	@Size(min = 2, max = 64)
@@ -60,7 +60,7 @@ public class PmsUser implements Serializable {
 	}
 
 	public PmsUser(String userName) {
-		this();
+
 	}
 
 	/**

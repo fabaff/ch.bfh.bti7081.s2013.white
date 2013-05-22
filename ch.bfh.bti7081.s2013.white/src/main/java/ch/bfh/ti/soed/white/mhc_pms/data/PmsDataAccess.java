@@ -1,7 +1,5 @@
 package ch.bfh.ti.soed.white.mhc_pms.data;
 
-import ch.bfh.ti.soed.white.mhc_pms.security.UIPermissionInstance;
-
 import com.vaadin.addon.jpacontainer.JPAContainer;
 import com.vaadin.addon.jpacontainer.JPAContainerFactory;
 import com.vaadin.addon.jpacontainer.provider.CachingBatchableLocalEntityProvider;
@@ -46,7 +44,7 @@ public class PmsDataAccess {
 
 		this.currentPCaseId = this.pCaseContainer.firstItemId();
 		// TODO Get current user from DB
-		this.currentUser = new PmsUser(UIPermissionInstance.getPermission().getUserName());
+		this.currentUser = null;
 	}
 
 	public JPAContainer<PCase> getPCaseContainer() {
@@ -100,6 +98,11 @@ public class PmsDataAccess {
 
 	public PmsUser getUser() {
 		return this.currentUser;
+	}
+
+	public static PmsContainers getContainers() {
+		// TODO Auto-generated method stub
+		return new PmsContainers();
 	}
 
 
