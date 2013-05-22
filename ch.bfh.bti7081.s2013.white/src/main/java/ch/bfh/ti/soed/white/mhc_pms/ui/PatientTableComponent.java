@@ -110,6 +110,7 @@ class PatientTableComponent extends PmsComponentController implements PmsCompone
 			public void buttonClick(ClickEvent event) {
 				PatientTableComponent.this.fireUIActivationEvent(false);
 				PatientTableComponent.this.fireComponentChangeEvent(EditEvent.PCASE);
+				PatientTableComponent.this.dataAccess.setNewCaseActivated(true);
 			}
 		});
 	}

@@ -8,5 +8,5 @@ package ch.bfh.ti.soed.white.mhc_pms.data.enums;
  * Status of cases
  */
 public enum CaseStatus {
-	Aktiv, Abgeschlossen
+	aktiv, abgeschlossen
 }

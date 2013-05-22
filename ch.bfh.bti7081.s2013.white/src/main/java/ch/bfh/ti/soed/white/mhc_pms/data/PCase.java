@@ -88,7 +88,7 @@ public class PCase implements Serializable {
 	
 	@NotNull
 	@Enumerated(EnumType.STRING)
-	private CaseStatus status = CaseStatus.Aktiv;
+	private CaseStatus status = CaseStatus.aktiv;
 
 	@NotNull
 	@Enumerated(EnumType.STRING)
