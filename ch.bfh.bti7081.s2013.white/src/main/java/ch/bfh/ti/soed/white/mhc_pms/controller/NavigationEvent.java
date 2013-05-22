@@ -7,6 +7,6 @@ package ch.bfh.ti.soed.white.mhc_pms.controller;
  * 
  * 
  */
-public enum EditEvent {
+public enum NavigationEvent {
 	PATIENT, PCASE, PATIENT_BACK, PCASE_BACK
 }

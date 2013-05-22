@@ -1,6 +1,6 @@
 package ch.bfh.ti.soed.white.mhc_pms.ui;
 
-import ch.bfh.ti.soed.white.mhc_pms.controller.EditEvent;
+import ch.bfh.ti.soed.white.mhc_pms.controller.NavigationEvent;
 import ch.bfh.ti.soed.white.mhc_pms.controller.PmsComponentController;
 import ch.bfh.ti.soed.white.mhc_pms.controller.PmsComponentListener;
 import ch.bfh.ti.soed.white.mhc_pms.data.PCase;
@@ -69,7 +69,7 @@ class CaseInfoComponent extends PmsComponentController implements PmsComponentLi
 	public CaseInfoComponent() {
 		buildMainLayout();
 		setCompositionRoot(mainLayout);
-
+		// TODO init empty Labels
 		this.dataAccess = PmsDataAccess.getInstance();
 		this.dataAccess.getPCaseContainer().refresh();
 		
@@ -88,8 +88,8 @@ class CaseInfoComponent extends PmsComponentController implements PmsComponentLi
 			@Override
 			public void buttonClick(ClickEvent event) {
 				CaseInfoComponent.this.fireUIActivationEvent(false);
-				CaseInfoComponent.this.fireComponentChangeEvent(EditEvent.PCASE);
-				CaseInfoComponent.this.dataAccess.setNewCaseActivated(true);
+				CaseInfoComponent.this.fireComponentChangeEvent(NavigationEvent.PCASE);
+				CaseInfoComponent.this.fireNewCaseEvent(true);
 			}
 		});
 
@@ -98,8 +98,7 @@ class CaseInfoComponent extends PmsComponentController implements PmsComponentLi
 			@Override
 			public void buttonClick(ClickEvent event) {
 				CaseInfoComponent.this.fireUIActivationEvent(false);
-				CaseInfoComponent.this.fireComponentChangeEvent(EditEvent.PCASE);
-				CaseInfoComponent.this.dataAccess.setNewCaseActivated(false);
+				CaseInfoComponent.this.fireComponentChangeEvent(NavigationEvent.PCASE);
 			}
 		});
 	}
@@ -200,7 +199,7 @@ class CaseInfoComponent extends PmsComponentController implements PmsComponentLi
 		
 		// lblJudicialStatus
 		lblJudicialStatus = new Label();
-		lblJudicialStatus.setCaption("Juristischer CaseStatus: ");
+		lblJudicialStatus.setCaption("Juristischer Status: ");
 		lblJudicialStatus.setImmediate(false);
 		lblJudicialStatus.setWidth("-1px");
 		lblJudicialStatus.setHeight("18px");

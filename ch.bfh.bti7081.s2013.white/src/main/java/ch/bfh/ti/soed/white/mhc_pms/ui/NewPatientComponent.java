@@ -1,6 +1,8 @@
 package ch.bfh.ti.soed.white.mhc_pms.ui;
 
-import ch.bfh.ti.soed.white.mhc_pms.controller.EditEvent;
+import java.util.Date;
+
+import ch.bfh.ti.soed.white.mhc_pms.controller.NavigationEvent;
 import ch.bfh.ti.soed.white.mhc_pms.controller.PmsComponentController;
 import ch.bfh.ti.soed.white.mhc_pms.data.PCase;
 import ch.bfh.ti.soed.white.mhc_pms.data.PmsDataAccess;
@@ -118,7 +120,7 @@ public class NewPatientComponent extends PmsComponentController {
 		this.dataAccess.getPCaseContainer().refresh();
 		this.fieldGroup = new BeanFieldGroup<PCase>(PCase.class);
 		
-		// TODO bearbeitung sperren
+		// TODO activation order
 		this.cmbGender.addItem(Gender.weiblich);
 		this.cmbGender.addItem(Gender.männlich);
 		this.cmbGender.setValue(Gender.weiblich);
@@ -130,6 +132,7 @@ public class NewPatientComponent extends PmsComponentController {
 	private void bindFields() {
 		// TODO propertyId dynamisch auslesen
 		// TODO Eingabevalidierung
+		// TODO dateOfBirth: lock edit
 		this.newPatientItem = new BeanItem<PCase>(new PCase(this.dataAccess.getUser()));
 		this.fieldGroup.setItemDataSource(this.newPatientItem);
 		this.fieldGroup.bind(this.txtFirstName, "firstName");
@@ -175,15 +178,17 @@ public class NewPatientComponent extends PmsComponentController {
 			public void buttonClick(ClickEvent event) {
 				try {
 					NewPatientComponent.this.fieldGroup.commit();
+					PCase pCaseItem = NewPatientComponent.this.newPatientItem.getBean();
+					pCaseItem.setDateCaseOpened(new Date());
 					
 					// TODO bessere Trennung Model und View
-					Object id = NewPatientComponent.this.dataAccess.getPCaseContainer().addEntity(NewPatientComponent.this.newPatientItem.getBean());
+					Object id = NewPatientComponent.this.dataAccess.getPCaseContainer().addEntity(pCaseItem);
 					NewPatientComponent.this.dataAccess.getPCaseContainer().commit();
 					NewPatientComponent.this.dataAccess.getPCaseContainer().refresh();
 					
 					NewPatientComponent.this.bindFields();
 					NewPatientComponent.this.fireUIActivationEvent(true);
-					NewPatientComponent.this.fireComponentChangeEvent(EditEvent.PATIENT_BACK);
+					NewPatientComponent.this.fireComponentChangeEvent(NavigationEvent.PATIENT_BACK);
 					NewPatientComponent.this.firePCaseItemChangeEvent(id);
 				} catch (CommitException e) {
 					// TODO Exception Handling
@@ -197,7 +202,7 @@ public class NewPatientComponent extends PmsComponentController {
 			public void buttonClick(ClickEvent event) {
 				NewPatientComponent.this.fieldGroup.discard();
 				NewPatientComponent.this.fireUIActivationEvent(true);
-				NewPatientComponent.this.fireComponentChangeEvent(EditEvent.PATIENT_BACK);
+				NewPatientComponent.this.fireComponentChangeEvent(NavigationEvent.PATIENT_BACK);
 			}
 		});
 		

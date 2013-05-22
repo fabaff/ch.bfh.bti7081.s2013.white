@@ -64,7 +64,7 @@ class TitleBarComponent extends PmsComponentController implements PmsComponentLi
 	public TitleBarComponent() {
 		buildMainLayout();
 		setCompositionRoot(mainLayout);
-
+		// TODO init empty Labels
 		this.dataAccess = PmsDataAccess.getInstance();
 
 		// TODO Theme verwenden
@@ -208,7 +208,7 @@ class TitleBarComponent extends PmsComponentController implements PmsComponentLi
 		
 		// lblStatus
 		lblStatus = new Label();
-		lblStatus.setCaption("CaseStatus:");
+		lblStatus.setCaption("Status:");
 		lblStatus.setImmediate(false);
 		lblStatus.setWidth("-1px");
 		lblStatus.setHeight("-1px");

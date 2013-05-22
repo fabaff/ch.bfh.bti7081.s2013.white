@@ -33,11 +33,7 @@ public class PmsDataAccess {
 	
 	private PmsUser currentUser;
 	
-	private boolean isNewCaseActivated;
-
 	private PmsDataAccess() {
-		this.isNewCaseActivated = true;
-		
 		// this.pCaseContainer = JPAContainerFactory.make(PCase.class,
 		// PERSISTENCE_UNIT);
 		this.pCaseContainer = new JPAContainer<>(PCase.class);
@@ -106,15 +102,5 @@ public class PmsDataAccess {
 		return this.currentUser;
 	}
 
-	public void setNewCaseActivated(boolean value) {
-		this.isNewCaseActivated = value;
-	}
-
-	/**
-	 * @return the isNewCaseActivated
-	 */
-	public boolean isNewCaseActivated() {
-		return this.isNewCaseActivated;
-	}
 
 }

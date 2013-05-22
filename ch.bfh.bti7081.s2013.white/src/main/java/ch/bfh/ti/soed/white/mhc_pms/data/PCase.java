@@ -67,6 +67,7 @@ public class PCase implements Serializable {
 	private String phoneBusiness = "";
 	private String mobilePhone = "";
 	private String eMail = "";
+	
 	// Additional address
 	private String nextOfKin = "";
 	private String nextOfKinFirstName = "";

@@ -25,10 +25,13 @@ public abstract class PmsComponentController extends CustomComponent implements 
 	
 	private List<UIActivationListener> uiActivationListeners;
 	
+	private List<NewCaseListener> newCaseListeners;
+	
 	protected PmsComponentController() {
 		this.pmsComponentListeners = new ArrayList<>();
 		this.componentChangeListeners = new ArrayList<>();
 		this.uiActivationListeners = new ArrayList<>();
+		this.newCaseListeners = new ArrayList<>();
 	}
 	
 	public void addPmsComponentListener(PmsComponentListener listener) {
@@ -43,9 +46,12 @@ public abstract class PmsComponentController extends CustomComponent implements 
 		this.uiActivationListeners.add(listener);
 	}
 	
+	public void addNewCaseListener(NewCaseListener listener) {
+		this.newCaseListeners.add(listener);
+	}
+	
 	@Override
 	public void enter(ViewChangeEvent event) {}
-	
 	
 	protected void firePCaseItemChangeEvent(Object itemId) {
 		for (PmsComponentListener listener : this.pmsComponentListeners) {
@@ -53,7 +59,7 @@ public abstract class PmsComponentController extends CustomComponent implements 
 		}
 	}
 	
-	protected void fireComponentChangeEvent(EditEvent event) {
+	protected void fireComponentChangeEvent(NavigationEvent event) {
 		for (ComponentChangeListener listener : this.componentChangeListeners) {
 			listener.componentChange(event);
 		}
@@ -62,6 +68,12 @@ public abstract class PmsComponentController extends CustomComponent implements 
 	protected void fireUIActivationEvent(boolean value) {
 		for (UIActivationListener listener : this.uiActivationListeners) {
 			listener.enableUIComponents(value);
+		}
+	}
+	
+	protected void fireNewCaseEvent(boolean value) {
+		for (NewCaseListener listener : this.newCaseListeners) {
+			listener.setNewCase(value);
 		}
 	}
 	
