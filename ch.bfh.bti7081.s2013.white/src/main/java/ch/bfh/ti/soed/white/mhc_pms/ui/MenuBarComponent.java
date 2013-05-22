@@ -63,7 +63,9 @@ class MenuBarComponent extends PmsComponentController implements UIActivationLis
 
 		this.dataAccess = PmsDataAccess.getInstance();
 		
-		// TODO Theme verwenden
+		// TODO Add theme support
+		// https://vaadin.com/book/-/page/themes.html
+		// https://vaadin.com/wiki/-/wiki/Main/Vaadin+Theme+Tips+and+Tricks
 		this.lblTitle.setContentMode(ContentMode.HTML);
 		this.lblTitle.setValue("<h2><b>MHC PMS</b></h2>");
 		this.lblDate.setContentMode(ContentMode.HTML);
