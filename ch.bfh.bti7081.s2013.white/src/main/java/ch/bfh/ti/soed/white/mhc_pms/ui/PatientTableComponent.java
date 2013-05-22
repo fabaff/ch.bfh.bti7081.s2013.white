@@ -66,7 +66,7 @@ class PatientTableComponent extends PmsComponentController implements PmsCompone
 
 		UIPermission permission = UIPermissionInstance.getPermission();
 		this.btnNewPatient.setEnabled(permission.isNewPatientAllowed());
-		// TODO Nur aktiv, wenn schon Pat existiert
+		// TODO Activate only if patient exist
 		this.btnNewCase.setEnabled(permission.isNewCaseAllowed());
 		
 		this.addListeners();
