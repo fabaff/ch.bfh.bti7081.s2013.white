@@ -10,12 +10,12 @@ import com.vaadin.ui.VerticalSplitPanel;
 
 class MainPanel extends HorizontalSplitPanel implements ComponentChangeListener {
 	
+	// Static vars for positioning
 	private static final long serialVersionUID = 6726671929546867989L;
-	
 	private static final float  VERTICAL_SPLIT_POS = 20.0f;
-	
 	private static final float HORIZONTAL_SPLIT_POS = 10.0f;
 
+	// Layout elements section
 	private VerticalSplitPanel verticalPanel = new VerticalSplitPanel();
 	private TitleBarComponent titleBar = new TitleBarComponent();
 	private PatientTableComponent patientTable = new PatientTableComponent();
@@ -39,10 +39,11 @@ class MainPanel extends HorizontalSplitPanel implements ComponentChangeListener 
 		detailPanel.setSizeFull();
 		this.setFirstComponent(this.menuBar);
 		this.setSecondComponent(this.verticalPanel);
+		// Unit of the values is % (percent)
 		this.setSplitPosition(HORIZONTAL_SPLIT_POS, Unit.PERCENTAGE);
-		this.verticalPanel.setFirstComponent(this.titleBar);
-		this.verticalPanel.setSecondComponent(detailPanel);		
 		this.verticalPanel.setSplitPosition(VERTICAL_SPLIT_POS, Unit.PERCENTAGE);
+		this.verticalPanel.setFirstComponent(this.titleBar);
+		this.verticalPanel.setSecondComponent(detailPanel);
 		
 		this.navigator.addView(MenuBarComponent.ButtonEnum.HOME.toString(),
 				this.patientTable);
@@ -57,7 +58,8 @@ class MainPanel extends HorizontalSplitPanel implements ComponentChangeListener 
 		this.navigator.addView(MenuBarComponent.ButtonEnum.MEDICATION.toString(),
 				this.medComp);
 		this.navigator.navigateTo(MenuBarComponent.ButtonEnum.HOME.toString());
-
+		
+		// Component listener
 		this.menuBar.addPmsComponentListener(this.titleBar);
 		this.menuBar.addPmsComponentListener(this.patientTable);
 		this.menuBar.addPmsComponentListener(this.patInfo);
@@ -66,6 +68,7 @@ class MainPanel extends HorizontalSplitPanel implements ComponentChangeListener 
 		this.menuBar.addPmsComponentListener(this.diagnosisComp);
 		this.menuBar.addPmsComponentListener(this.medComp);
 		
+		// Patient table section
 		this.patientTable.addPmsComponentListener(this.titleBar);
 		this.patientTable.addPmsComponentListener(this.patInfo);
 		this.patientTable.addPmsComponentListener(this.caseInfo);
@@ -76,10 +79,12 @@ class MainPanel extends HorizontalSplitPanel implements ComponentChangeListener 
 		this.patientTable.addUIActivationListener(this.menuBar);
 		this.patientTable.addUIActivationListener(this.titleBar);
 		
+		// Patient info section
 		this.patInfo.addUIActivationListener(this.menuBar);
 		this.patInfo.addUIActivationListener(this.titleBar);
 		this.patInfo.addComponentChangeListener(this);
 		
+		// New Patient section
 		this.newPatientComp.addPmsComponentListener(this.titleBar);
 		this.newPatientComp.addPmsComponentListener(this.patientTable);
 		this.newPatientComp.addPmsComponentListener(this.patInfo);
@@ -91,6 +96,7 @@ class MainPanel extends HorizontalSplitPanel implements ComponentChangeListener 
 		this.newPatientComp.addUIActivationListener(this.titleBar);
 		this.newPatientComp.addComponentChangeListener(this);
 		
+		// Edit Case section
 		this.editCaseInfoComp.addPmsComponentListener(this.titleBar);
 		this.editCaseInfoComp.addPmsComponentListener(this.patientTable);
 		this.editCaseInfoComp.addPmsComponentListener(this.patInfo);
@@ -104,11 +110,12 @@ class MainPanel extends HorizontalSplitPanel implements ComponentChangeListener 
 		this.editCaseInfoComp.addUIActivationListener(this.titleBar);
 		this.editCaseInfoComp.addComponentChangeListener(this);
 		
+		// Case info section
 		this.caseInfo.addUIActivationListener(this.menuBar);
 		this.caseInfo.addUIActivationListener(this.titleBar);
 		this.caseInfo.addComponentChangeListener(this);
 		
-//		TODO restliche Component Listner
+//		TODO Add missing Component Listener
 //		 setComponentAlignment(button, Alignment.MIDDLE_CENTER);
 //		 Notification.show("Welcome to the Animal Farm");
 	}
@@ -138,5 +145,4 @@ class MainPanel extends HorizontalSplitPanel implements ComponentChangeListener 
 			break;
 		}
 	}
-
 }
