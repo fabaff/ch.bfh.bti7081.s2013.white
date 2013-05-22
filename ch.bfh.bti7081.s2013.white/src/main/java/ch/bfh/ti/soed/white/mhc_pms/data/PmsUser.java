@@ -11,7 +11,7 @@ import javax.validation.constraints.Size;
 import ch.bfh.ti.soed.white.mhc_pms.data.enums.UserGroup;
 
 /**
- * @author		Gruppe White, I2p, BFH Bern, https://github.com/fabaff/ch.bfh.bti7081.s2013.white
+ * @author		Gruppe White, I2p, BFH Bern, <a href="https://github.com/fabaff/ch.bfh.bti7081.s2013.white">Contact</a>
  * @version		0.0.2 
  * @since		0.0.1
  * 
