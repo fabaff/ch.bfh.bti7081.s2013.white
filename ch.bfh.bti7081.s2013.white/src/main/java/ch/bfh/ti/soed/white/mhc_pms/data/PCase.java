@@ -47,12 +47,13 @@ public class PCase implements Serializable {
 	@Enumerated(EnumType.STRING)
 	private Gender gender = Gender.Weiblich;
 
-	// TODO Use predefined list of languages to support the user 
+	// TODO Use predefined list of languages to support the user
 	private String motherLanguage = "";
 
-	// TODO Use predefined list of languages to support the user 
+	// TODO Use predefined list of languages to support the user
 	private String communcationLanguage = "";
 
+	// TODO Enum is available.
 	private String civilStatus = "";
 
 	// TODO Use Country Codes from external sources instead of typing
@@ -157,7 +158,7 @@ public class PCase implements Serializable {
 	}
 
 	/**
-	 * @return The Patient Case ID
+	 * @return The Patient Case ID.
 	 */
 	public int getPcid() {
 		return pcid;
