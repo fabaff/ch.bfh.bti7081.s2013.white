@@ -45,7 +45,7 @@ public class PCase implements Serializable {
 
 	@NotNull
 	@Enumerated(EnumType.STRING)
-	private Gender gender = Gender.Weiblich;
+	private Gender gender = Gender.weiblich;
 
 	// TODO Use predefined list of languages to support the user
 	private String motherLanguage = "";
@@ -92,7 +92,7 @@ public class PCase implements Serializable {
 
 	@NotNull
 	@Enumerated(EnumType.STRING)
-	private KindOfTreatment kindOfTreatment = KindOfTreatment.Stationär;
+	private KindOfTreatment kindOfTreatment = KindOfTreatment.stationär;
 	
 	@NotNull
 	@Temporal(value = TemporalType.DATE)
@@ -102,7 +102,7 @@ public class PCase implements Serializable {
 	private Date dateCaseClosed;
 
 	@Enumerated(EnumType.STRING)
-	private ReanimationStatus reanimationStatus = ReanimationStatus.Ja;
+	private ReanimationStatus reanimationStatus = ReanimationStatus.ja;
 
 	private String assignment = "";
 	private String suicidalTendency = "";
@@ -113,7 +113,7 @@ public class PCase implements Serializable {
 	private String sanction = "";
 
 	@Enumerated(EnumType.STRING)
-	private OrderOfPatient orderOfPatient = OrderOfPatient.Nein;
+	private OrderOfPatient orderOfPatient = OrderOfPatient.nein;
 
 	// Therapist fields
 	

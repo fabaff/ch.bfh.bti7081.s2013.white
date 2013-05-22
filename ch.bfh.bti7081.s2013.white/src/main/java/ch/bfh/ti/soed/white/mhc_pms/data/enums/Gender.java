@@ -8,5 +8,5 @@ package ch.bfh.ti.soed.white.mhc_pms.data.enums;
  * Gender of the patient
  */
 public enum Gender {
-	Weiblich, Männlich
+	weiblich, männlich
 }

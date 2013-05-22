@@ -119,9 +119,9 @@ public class NewPatientComponent extends PmsComponentController {
 		this.fieldGroup = new BeanFieldGroup<PCase>(PCase.class);
 		
 		// TODO bearbeitung sperren
-		this.cmbGender.addItem(Gender.Weiblich);
-		this.cmbGender.addItem(Gender.Männlich);
-		this.cmbGender.setValue(Gender.Weiblich);
+		this.cmbGender.addItem(Gender.weiblich);
+		this.cmbGender.addItem(Gender.männlich);
+		this.cmbGender.setValue(Gender.weiblich);
 		
 		this.bindFields();
 		this.addListeners();

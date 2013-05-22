@@ -75,47 +75,28 @@ public class EditCaseInfoComponent extends PmsComponentController {
 
 		this.initComboBoxes();
 		this.bindFields();
-		this.addListeners();
+		this.addBtnSaveListener();
+		this.addBtnCancelListener();
 
 	}
 
-	private void initComboBoxes() {
-		this.cmbKindOfTreatment.addItem(KindOfTreatment.Stationär);
-		this.cmbKindOfTreatment.addItem(KindOfTreatment.Teilstationär);
-		this.cmbKindOfTreatment.addItem(KindOfTreatment.Ambulant);
-		this.cmbKindOfTreatment.setValue(KindOfTreatment.Stationär);
-		this.cmbOrderOfPatient.addItem(OrderOfPatient.Nein);
-		this.cmbOrderOfPatient.addItem(OrderOfPatient.Ja);
-		this.cmbOrderOfPatient.setValue(OrderOfPatient.Nein);
-		this.cmbReanimationStatus.addItem(ReanimationStatus.Ja);
-		this.cmbReanimationStatus.addItem(ReanimationStatus.Eingeschränkt);
-		this.cmbReanimationStatus.addItem(ReanimationStatus.Nein);
-		this.cmbReanimationStatus.setValue(ReanimationStatus.Ja);
+	private void addBtnCancelListener() {
+		this.btnCancel.addClickListener(new Button.ClickListener() {
+			private static final long serialVersionUID = 1L;
+
+			@Override
+			public void buttonClick(ClickEvent event) {
+				EditCaseInfoComponent.this.fieldGroup.discard();
+				EditCaseInfoComponent.this.fireUIActivationEvent(true);
+				EditCaseInfoComponent.this
+						.fireComponentChangeEvent(EditEvent.PCASE_BACK);
+				EditCaseInfoComponent.this.dataAccess
+						.setNewCaseActivated(false);
+			}
+		});
 	}
 
-	private void bindFields() {
-		// TODO Test, wenn Container leer
-		EntityItem<PCase> entityItem = this.dataAccess.getPCaseContainer()
-				.getItem(this.dataAccess.getCurrentPCaseId());
-
-		if (entityItem != null) {
-			this.newCaseItem = new BeanItem<PCase>(entityItem.getEntity());
-			this.fieldGroup.setItemDataSource(this.newCaseItem);
-			this.fieldGroup
-					.bind(this.cmbReanimationStatus, "reanimationStatus");
-			this.fieldGroup.bind(this.cmbKindOfTreatment, "kindOfTreatment");
-			this.fieldGroup.bind(this.cmbOrderOfPatient, "orderOfPatient");
-			this.fieldGroup.bind(this.txtAssignment, "assignment");
-			this.fieldGroup.bind(this.txtDegreeOfDanger, "degreeOfDanger");
-			this.fieldGroup.bind(this.txtGoOutStatus, "goOutStatus");
-			this.fieldGroup.bind(this.txtJudicialStatus, "judicialStatus");
-			this.fieldGroup.bind(this.txtSanction, "sanction");
-			this.fieldGroup.bind(this.txtSuicidalTendency, "suicidalTendency");
-			this.fieldGroup.bind(this.txtVacation, "vacation");
-		}
-	}
-
-	private void addListeners() {
+	private void addBtnSaveListener() {
 		this.btnSave.addClickListener(new Button.ClickListener() {
 			private static final long serialVersionUID = 1L;
 
@@ -155,23 +136,43 @@ public class EditCaseInfoComponent extends PmsComponentController {
 					// TODO Exception Handling
 					e.printStackTrace();
 				}
-
 			}
 		});
+	}
 
-		this.btnCancel.addClickListener(new Button.ClickListener() {
-			private static final long serialVersionUID = 1L;
+	private void initComboBoxes() {
+		this.cmbKindOfTreatment.addItem(KindOfTreatment.stationär);
+		this.cmbKindOfTreatment.addItem(KindOfTreatment.teilstationär);
+		this.cmbKindOfTreatment.addItem(KindOfTreatment.ambulant);
+		this.cmbKindOfTreatment.setValue(KindOfTreatment.stationär);
+		this.cmbOrderOfPatient.addItem(OrderOfPatient.nein);
+		this.cmbOrderOfPatient.addItem(OrderOfPatient.ja);
+		this.cmbOrderOfPatient.setValue(OrderOfPatient.nein);
+		this.cmbReanimationStatus.addItem(ReanimationStatus.ja);
+		this.cmbReanimationStatus.addItem(ReanimationStatus.eingeschränkt);
+		this.cmbReanimationStatus.addItem(ReanimationStatus.nein);
+		this.cmbReanimationStatus.setValue(ReanimationStatus.ja);
+	}
 
-			@Override
-			public void buttonClick(ClickEvent event) {
-				EditCaseInfoComponent.this.fieldGroup.discard();
-				EditCaseInfoComponent.this.fireUIActivationEvent(true);
-				EditCaseInfoComponent.this
-						.fireComponentChangeEvent(EditEvent.PCASE_BACK);
-				EditCaseInfoComponent.this.dataAccess
-						.setNewCaseActivated(false);
-			}
-		});
+	private void bindFields() {
+		EntityItem<PCase> entityItem = this.dataAccess.getPCaseContainer()
+				.getItem(this.dataAccess.getCurrentPCaseId());
+
+		if (entityItem != null) {
+			this.newCaseItem = new BeanItem<PCase>(entityItem.getEntity());
+			this.fieldGroup.setItemDataSource(this.newCaseItem);
+			this.fieldGroup
+					.bind(this.cmbReanimationStatus, "reanimationStatus");
+			this.fieldGroup.bind(this.cmbKindOfTreatment, "kindOfTreatment");
+			this.fieldGroup.bind(this.cmbOrderOfPatient, "orderOfPatient");
+			this.fieldGroup.bind(this.txtAssignment, "assignment");
+			this.fieldGroup.bind(this.txtDegreeOfDanger, "degreeOfDanger");
+			this.fieldGroup.bind(this.txtGoOutStatus, "goOutStatus");
+			this.fieldGroup.bind(this.txtJudicialStatus, "judicialStatus");
+			this.fieldGroup.bind(this.txtSanction, "sanction");
+			this.fieldGroup.bind(this.txtSuicidalTendency, "suicidalTendency");
+			this.fieldGroup.bind(this.txtVacation, "vacation");
+		}
 	}
 
 	/*

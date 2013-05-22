@@ -8,5 +8,5 @@ package ch.bfh.ti.soed.white.mhc_pms.data.enums;
  * Kind of threatment
  */
 public enum KindOfTreatment {
-	Ambulant, Teilstationär, Stationär
+	ambulant, teilstationär, stationär
 }

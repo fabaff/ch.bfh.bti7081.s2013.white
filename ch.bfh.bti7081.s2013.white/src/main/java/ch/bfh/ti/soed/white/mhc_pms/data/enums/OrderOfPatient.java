@@ -8,5 +8,5 @@ package ch.bfh.ti.soed.white.mhc_pms.data.enums;
  * Order of patient
  */
 public enum OrderOfPatient {
-	Ja, Nein
+	ja, nein
 }

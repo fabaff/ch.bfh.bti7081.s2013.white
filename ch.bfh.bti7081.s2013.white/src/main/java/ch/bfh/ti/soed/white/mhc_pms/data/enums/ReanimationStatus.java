@@ -8,5 +8,5 @@ package ch.bfh.ti.soed.white.mhc_pms.data.enums;
  * Status of reanimation
  */
 public enum ReanimationStatus {
-	Ja, Eingeschränkt, Nein
+	ja, eingeschränkt, nein
 }
