@@ -60,3 +60,6 @@ Default installation of a Microsoft SQL Server 2012 (2008 should work too). Plea
 
 Check if `SQL Server and Windows Authentication mode` is set for your SQL Server. 
 
+## Documentation
+
+The documentation is placed in the **javadoc** folder. Please make sure that you exclude this folder in your `.gitignore`.
