@@ -16,6 +16,13 @@ import com.vaadin.ui.Button;
 import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.ui.Label;
 
+/**
+ * @author		Gruppe White, I2p, BFH Bern, https://github.com/fabaff/ch.bfh.bti7081.s2013.white
+ * @version		0.0.2 
+ * @since		0.0.1
+ * 
+ * 
+ */
 class CaseInfoComponent extends PmsComponentController implements PmsComponentListener {
 
 	/*- VaadinEditorProperties={"grid":"RegularGrid,20","showGrid":true,"snapToGrid":true,"snapToObject":true,"movingGuides":false,"snappingDistance":10} */

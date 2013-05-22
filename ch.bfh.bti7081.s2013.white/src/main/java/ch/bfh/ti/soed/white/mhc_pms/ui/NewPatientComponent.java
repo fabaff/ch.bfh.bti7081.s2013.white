@@ -18,6 +18,13 @@ import com.vaadin.ui.ComboBox;
 import com.vaadin.ui.PopupDateField;
 import com.vaadin.ui.TextField;
 
+/**
+ * @author		Gruppe White, I2p, BFH Bern, https://github.com/fabaff/ch.bfh.bti7081.s2013.white
+ * @version		0.0.2 
+ * @since		0.0.1
+ * 
+ * 
+ */
 public class NewPatientComponent extends PmsComponentController {
 
 	/*- VaadinEditorProperties={"grid":"RegularGrid,20","showGrid":true,"snapToGrid":true,"snapToObject":true,"movingGuides":false,"snappingDistance":10} */

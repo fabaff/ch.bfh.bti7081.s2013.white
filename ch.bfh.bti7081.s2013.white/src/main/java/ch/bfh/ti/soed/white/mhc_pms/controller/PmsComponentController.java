@@ -8,6 +8,13 @@ import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
 import com.vaadin.ui.CustomComponent;
 
+/**
+ * @author		Gruppe White, I2p, BFH Bern, https://github.com/fabaff/ch.bfh.bti7081.s2013.white
+ * @version		0.0.2 
+ * @since		0.0.1
+ * 
+ * 
+ */
 public abstract class PmsComponentController extends CustomComponent implements View {
 
 	private static final long serialVersionUID = -4631009926765712866L;

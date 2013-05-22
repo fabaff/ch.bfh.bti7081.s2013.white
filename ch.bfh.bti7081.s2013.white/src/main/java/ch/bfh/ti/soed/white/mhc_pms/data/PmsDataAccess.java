@@ -6,6 +6,14 @@ import com.vaadin.addon.jpacontainer.JPAContainer;
 import com.vaadin.addon.jpacontainer.JPAContainerFactory;
 import com.vaadin.addon.jpacontainer.provider.CachingBatchableLocalEntityProvider;
 
+/**
+ * @author		Gruppe White, I2p, BFH Bern, https://github.com/fabaff/ch.bfh.bti7081.s2013.white
+ * @version		0.0.2 
+ * @since		0.0.1
+ * 
+ * 
+ */
+
 public class PmsDataAccess {
 
 	private static final String PERSISTENCE_UNIT = "ch.bfh.bti7081.s2013.white";
@@ -41,7 +49,7 @@ public class PmsDataAccess {
 		this.pCaseContainer.setAutoCommit(true);
 
 		this.currentPCaseId = this.pCaseContainer.firstItemId();
-		// TODO aktueller User aus DB holen
+		// TODO Get current user from DB
 		this.currentUser = new PmsUser(UIPermissionInstance.getPermission().getUserName());
 	}
 

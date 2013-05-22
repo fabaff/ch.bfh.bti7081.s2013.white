@@ -14,8 +14,11 @@ import ch.bfh.ti.soed.white.mhc_pms.data.enums.ReanimationStatus;
 import ch.bfh.ti.soed.white.mhc_pms.data.enums.CaseStatus;
 
 /**
- * Entity implementation class for Entity: PCase
+ * @author		Gruppe White, I2p, BFH Bern, https://github.com/fabaff/ch.bfh.bti7081.s2013.white
+ * @version		0.0.2 
+ * @since		0.0.1
  * 
+ * Entity implementation class for Entity: PCase
  */
 @Entity
 @Table(name = "PCase")
@@ -27,7 +30,7 @@ public class PCase implements Serializable {
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private int pcid = 0;
 
-	// patient fields
+	// Patient data fields
 	
 	@NotNull
 	@Size(min = 2, max = 64)
@@ -97,7 +100,7 @@ public class PCase implements Serializable {
 
 	private String familyDoctorFax = "";
 
-	// case fields
+	// Case fields
 	
 	@NotNull
 	@Enumerated(EnumType.STRING)
@@ -134,13 +137,13 @@ public class PCase implements Serializable {
 	@Enumerated(EnumType.STRING)
 	private OrderOfPatient orderOfPatient = OrderOfPatient.Nein;
 
-	// therapist fields
+	// Therapist fields
 	
 	@ManyToOne
 	private PmsUser therapist;
 	
 	public PCase() {
-		// TODO one to many beziehungen
+		// TODO one to many relationship
 	}
 	
 	public PCase(PmsUser therapist) {
@@ -763,6 +766,4 @@ public class PCase implements Serializable {
 	public void setNextOfKinHomeLocation(String nextOfKinHomeLocation) {
 		this.nextOfKinHomeLocation = nextOfKinHomeLocation;
 	}
-
-	
 }

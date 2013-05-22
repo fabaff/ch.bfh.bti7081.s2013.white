@@ -8,6 +8,13 @@ import com.vaadin.ui.HorizontalSplitPanel;
 import com.vaadin.ui.Panel;
 import com.vaadin.ui.VerticalSplitPanel;
 
+/**
+ * @author		Gruppe White, I2p, BFH Bern, https://github.com/fabaff/ch.bfh.bti7081.s2013.white
+ * @version		0.0.2 
+ * @since		0.0.1
+ * 
+ * 
+ */
 class MainPanel extends HorizontalSplitPanel implements ComponentChangeListener {
 	
 	// Static vars for positioning
