@@ -8,6 +8,7 @@
 		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
 		<class>ch.bfh.ti.soed.white.mhc_pms.data.PmsUser</class>
 		<class>ch.bfh.ti.soed.white.mhc_pms.data.PCase</class>
+		<class>ch.bfh.ti.soed.white.mhc_pms.data.Diagnosis</class>
 
 		<properties>
 			<property name="eclipselink.jdbc.platform"

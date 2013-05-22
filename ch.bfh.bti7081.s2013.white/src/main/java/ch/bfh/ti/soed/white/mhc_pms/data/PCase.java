@@ -2,6 +2,8 @@ package ch.bfh.ti.soed.white.mhc_pms.data;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -116,17 +118,20 @@ public class PCase implements Serializable {
 	@Enumerated(EnumType.STRING)
 	private OrderOfPatient orderOfPatient = OrderOfPatient.nein;
 
-	// Therapist fields
+	// Therapist field
 	
+	@NotNull
 	@ManyToOne
 	private PmsUser therapist;
 	
+	@OneToMany(mappedBy = "pCase")
+	private Set<Diagnosis> diagnosisRelation = new HashSet<>();
+	
 	public PCase() {
-		// TODO one to many relationship
+		// TODO one to many relationships: medication, patient process
 	}
 	
 	public PCase(PmsUser therapist) {
-		this();
 		this.therapist = therapist;
 	}
 
