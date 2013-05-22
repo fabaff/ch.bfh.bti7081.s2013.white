@@ -31,7 +31,6 @@ public class PCase implements Serializable {
 	private int pcid = 0;
 
 	// Patient data fields
-	
 	@NotNull
 	@Size(min = 2, max = 64)
 	private String firstName = "";
@@ -48,12 +47,16 @@ public class PCase implements Serializable {
 	@Enumerated(EnumType.STRING)
 	private Gender gender = Gender.Weiblich;
 
+	// TODO Use predefined list of languages to support the user 
 	private String motherLanguage = "";
 
+	// TODO Use predefined list of languages to support the user 
 	private String communcationLanguage = "";
 
 	private String civilStatus = "";
 
+	// TODO Use Country Codes from external sources instead of typing
+	// https://github.com/TakahikoKawasaki/nv-i18n
 	private String nationality = "";
 
 	private String religion = "";
@@ -64,6 +67,8 @@ public class PCase implements Serializable {
 
 	private String postalCode = "";
 
+	// TODO Use Country Codes from external sources instead of typing
+	// https://github.com/TakahikoKawasaki/nv-i18n
 	private String country = "";
 
 	private String phonePrivate = "";
@@ -122,7 +127,7 @@ public class PCase implements Serializable {
 
 	private String assignment = "";
 
-	private String 	suicidalTendency = "";
+	private String suicidalTendency = "";
 
 	private String degreeOfDanger = "";
 
@@ -152,252 +157,253 @@ public class PCase implements Serializable {
 	}
 
 	/**
-	 * @return the pcid
+	 * @return The Patient Case ID
 	 */
 	public int getPcid() {
 		return pcid;
 	}
 
 	/**
-	 * @param pcid the pcid to set
+	 * @param pcid The Patient Case ID to set.
 	 */
 	public void setPcid(int pcid) {
 		this.pcid = pcid;
 	}
 
 	/**
-	 * @return the firstName
+	 * @return The first name of the patient.
 	 */
 	public String getFirstName() {
 		return firstName;
 	}
 
 	/**
-	 * @param firstName the firstName to set
+	 * @param firstName The first name to set.
 	 */
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
 	}
 
 	/**
-	 * @return the lastName
+	 * @return The last name of the patient.
 	 */
 	public String getLastName() {
 		return lastName;
 	}
 
 	/**
-	 * @param lastName the lastName to set
+	 * @param lastName The last name to set
 	 */
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
 
 	/**
-	 * @return the dateOfBirth
+	 * @return The patient's date of birth.
 	 */
 	public Date getDateOfBirth() {
 		return dateOfBirth;
 	}
 
 	/**
-	 * @param dateOfBirth the dateOfBirth to set
+	 * @param dateOfBirth The date of birth to set.
 	 */
 	public void setDateOfBirth(Date dateOfBirth) {
 		this.dateOfBirth = dateOfBirth;
 	}
 
 	/**
-	 * @return the gender
+	 * @return The gender of the patient.
 	 */
 	public Gender getGender() {
 		return gender;
 	}
 
 	/**
-	 * @param gender the gender to set
+	 * @param gender The gender of the patient to set.
 	 */
 	public void setGender(Gender gender) {
 		this.gender = gender;
 	}
 
 	/**
-	 * @return the motherLanguage
+	 * @return The patient's mother tongue.
 	 */
 	public String getMotherLanguage() {
 		return motherLanguage;
 	}
 
 	/**
-	 * @param motherLanguage the motherLanguage to set
+	 * @param motherLanguage The patient's mother tongue to set.
 	 */
 	public void setMotherLanguage(String motherLanguage) {
 		this.motherLanguage = motherLanguage;
 	}
 
 	/**
-	 * @return the communcationLanguage
+	 * @return The patient's communcation language.
 	 */
 	public String getCommuncationLanguage() {
 		return communcationLanguage;
 	}
 
 	/**
-	 * @param communcationLanguage the communcationLanguage to set
+	 * @param communcationLanguage The patients's communcation language to set.
 	 */
 	public void setCommuncationLanguage(String communcationLanguage) {
 		this.communcationLanguage = communcationLanguage;
 	}
 
 	/**
-	 * @return the civilStatus
+	 * @return The civil status of the patient.
 	 */
 	public String getCivilStatus() {
 		return civilStatus;
 	}
 
 	/**
-	 * @param civilStatus the civilStatus to set
+	 * @param civilStatus The patient's civil status to set.
 	 */
 	public void setCivilStatus(String civilStatus) {
 		this.civilStatus = civilStatus;
 	}
 
 	/**
-	 * @return the nationality
+	 * @return The patient's nationality.
 	 */
 	public String getNationality() {
 		return nationality;
 	}
 
 	/**
-	 * @param nationality the nationality to set
+	 * @param nationality The patient's nationality to set.
 	 */
 	public void setNationality(String nationality) {
 		this.nationality = nationality;
 	}
 
 	/**
-	 * @return the religion
+	 * @return The religion of the patient.
 	 */
 	public String getReligion() {
 		return religion;
 	}
 
 	/**
-	 * @param religion the religion to set
+	 * @param religion The patient's religion to set.
 	 */
 	public void setReligion(String religion) {
 		this.religion = religion;
 	}
 
 	/**
-	 * @return the address
+	 * @return The home address of the patient.
 	 */
 	public String getAddress() {
 		return address;
 	}
 
 	/**
-	 * @param address the address to set
+	 * @param address The patient's home address to set.
 	 */
 	public void setAddress(String address) {
 		this.address = address;
 	}
 
 	/**
-	 * @return the homeLocation
+	 * @return The home location (city) of the patient.
 	 */
 	public String getHomeLocation() {
 		return homeLocation;
 	}
 
 	/**
-	 * @param homeLocation the homeLocation to set
+	 * @param homeLocation The patient's home location (city) to set.
 	 */
 	public void setHomeLocation(String homeLocation) {
 		this.homeLocation = homeLocation;
 	}
 
 	/**
-	 * @return the postalCode
+	 * @return The patient's postal code.
 	 */
 	public String getPostalCode() {
 		return postalCode;
 	}
 
 	/**
-	 * @param postalCode the postalCode to set
+	 * @param postalCode The patient's postal code to set.
 	 */
 	public void setPostalCode(String postalCode) {
 		this.postalCode = postalCode;
 	}
 
 	/**
-	 * @return the country
+	 * @return The patient's home country
 	 */
 	public String getCountry() {
 		return country;
 	}
 
 	/**
-	 * @param country the country to set
+	 * @param country The patient's home country to set.
 	 */
 	public void setCountry(String country) {
 		this.country = country;
 	}
 
 	/**
-	 * @return the phonePrivate
+	 * @return The patient's private phone number.
 	 */
 	public String getPhonePrivate() {
 		return phonePrivate;
 	}
 
 	/**
-	 * @param phonePrivate the phonePrivate to set
+	 * @param phonePrivate The patient's private phone number to set.
 	 */
 	public void setPhonePrivate(String phonePrivate) {
 		this.phonePrivate = phonePrivate;
 	}
 
 	/**
-	 * @return the phoneBusiness
+	 * @return The patient's business phone number.
 	 */
 	public String getPhoneBusiness() {
 		return phoneBusiness;
 	}
 
 	/**
-	 * @param phoneBusiness the phoneBusiness to set
+	 * @param phoneBusiness The patient's business phone number to set.
 	 */
 	public void setPhoneBusiness(String phoneBusiness) {
 		this.phoneBusiness = phoneBusiness;
 	}
 
+	// FIXME This should be PhoneMobile instead of mobilePhone to match other phone numbers.
 	/**
-	 * @return the mobilePhone
+	 * @return The patient's mobile phone number.
 	 */
 	public String getMobilePhone() {
 		return mobilePhone;
 	}
 
 	/**
-	 * @param mobilePhone the mobilePhone to set
+	 * @param mobilePhone The patien's mobile phone number to set.
 	 */
 	public void setMobilePhone(String mobilePhone) {
 		this.mobilePhone = mobilePhone;
 	}
 
 	/**
-	 * @return the eMail
+	 * @return The patient's email address.
 	 */
 	public String geteMail() {
 		return eMail;
 	}
 
 	/**
-	 * @param eMail the eMail to set
+	 * @param eMail The patient's email address to set.
 	 */
 	public void seteMail(String eMail) {
 		this.eMail = eMail;
@@ -544,140 +550,140 @@ public class PCase implements Serializable {
 	}
 
 	/**
-	 * @return the familyDoctorFax
+	 * @return The fax number of the family doctor.
 	 */
 	public String getFamilyDoctorFax() {
 		return familyDoctorFax;
 	}
 
 	/**
-	 * @param familyDoctorFax the familyDoctorFax to set
+	 * @param familyDoctorFax The fax number of the family doctor to set.
 	 */
 	public void setFamilyDoctorFax(String familyDoctorFax) {
 		this.familyDoctorFax = familyDoctorFax;
 	}
 
 	/**
-	 * @return the status
+	 * @return The current case status.
 	 */
 	public CaseStatus getStatus() {
 		return status;
 	}
 
 	/**
-	 * @param status the status to set
+	 * @param status The case status to set.
 	 */
 	public void setStatus(CaseStatus status) {
 		this.status = status;
 	}
 
 	/**
-	 * @return the kindOfTreatment
+	 * @return The kind of treatment.
 	 */
 	public KindOfTreatment getKindOfTreatment() {
 		return kindOfTreatment;
 	}
 
 	/**
-	 * @param kindOfTreatment the kindOfTreatment to set
+	 * @param kindOfTreatment Set the patient's kind of treatment.
 	 */
 	public void setKindOfTreatment(KindOfTreatment kindOfTreatment) {
 		this.kindOfTreatment = kindOfTreatment;
 	}
 
 	/**
-	 * @return the dateCaseOpened
+	 * @return The date which the case was opened.
 	 */
 	public Date getDateCaseOpened() {
 		return dateCaseOpened;
 	}
 
 	/**
-	 * @param dateCaseOpened the dateCaseOpened to set
+	 * @param dateCaseOpened Set the date which the case was opened.
 	 */
 	public void setDateCaseOpened(Date dateCaseOpened) {
 		this.dateCaseOpened = dateCaseOpened;
 	}
 
 	/**
-	 * @return the dateCaseClosed
+	 * @return The date which the case was closed.
 	 */
 	public Date getDateCaseClosed() {
 		return dateCaseClosed;
 	}
 
 	/**
-	 * @param dateCaseClosed the dateCaseClosed to set
+	 * @param dateCaseClosed Set the date which the case was closed.
 	 */
 	public void setDateCaseClosed(Date dateCaseClosed) {
 		this.dateCaseClosed = dateCaseClosed;
 	}
 
 	/**
-	 * @return the reanimationStatus
+	 * @return The patient's reanimation status.
 	 */
 	public ReanimationStatus getReanimationStatus() {
 		return reanimationStatus;
 	}
 
 	/**
-	 * @param reanimationStatus the reanimationStatus to set
+	 * @param reanimationStatus The patient's reanimation status to set.
 	 */
 	public void setReanimationStatus(ReanimationStatus reanimationStatus) {
 		this.reanimationStatus = reanimationStatus;
 	}
 
 	/**
-	 * @return the assignment
+	 * @return The current assignment.
 	 */
 	public String getAssignment() {
 		return assignment;
 	}
 
 	/**
-	 * @param assignment the assignment to set
+	 * @param assignment The current assignment to set.
 	 */
 	public void setAssignment(String assignment) {
 		this.assignment = assignment;
 	}
 
 	/**
-	 * @return the suicidalTendency
+	 * @return The patient's suicidal tendency.
 	 */
 	public String getSuicidalTendency() {
 		return suicidalTendency;
 	}
 
 	/**
-	 * @param suicidalTendency the suicidalTendency to set
+	 * @param suicidalTendency Set the patient's suicidal tendency.
 	 */
 	public void setSuicidalTendency(String suicidalTendency) {
 		this.suicidalTendency = suicidalTendency;
 	}
 
 	/**
-	 * @return the degreeOfDanger
+	 * @return The patient's degree of danger.
 	 */
 	public String getDegreeOfDanger() {
 		return degreeOfDanger;
 	}
 
 	/**
-	 * @param degreeOfDanger the degreeOfDanger to set
+	 * @param degreeOfDanger The patient's degree of danger to set.
 	 */
 	public void setDegreeOfDanger(String degreeOfDanger) {
 		this.degreeOfDanger = degreeOfDanger;
 	}
 
 	/**
-	 * @return the goOutStatus
+	 * @return The go-out-status of the patient.
 	 */
 	public String getGoOutStatus() {
 		return goOutStatus;
 	}
 
 	/**
-	 * @param goOutStatus the goOutStatus to set
+	 * @param goOutStatus Set the go-out-status of the patient.
 	 */
 	public void setGoOutStatus(String goOutStatus) {
 		this.goOutStatus = goOutStatus;
