@@ -13,7 +13,7 @@ import com.vaadin.ui.VerticalSplitPanel;
  * @version		0.0.2 
  * @since		0.0.1
  * 
- * 
+ * The main panel of the GUI.
  */
 class MainPanel extends HorizontalSplitPanel implements ComponentChangeListener {
 	
