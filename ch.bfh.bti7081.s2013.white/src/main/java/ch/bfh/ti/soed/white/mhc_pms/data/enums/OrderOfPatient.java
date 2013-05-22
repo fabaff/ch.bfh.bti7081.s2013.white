@@ -5,7 +5,7 @@ package ch.bfh.ti.soed.white.mhc_pms.data.enums;
  * @version		0.0.2 
  * @since		0.0.1
  * 
- * 
+ * Order of patient
  */
 public enum OrderOfPatient {
 	Ja, Nein
