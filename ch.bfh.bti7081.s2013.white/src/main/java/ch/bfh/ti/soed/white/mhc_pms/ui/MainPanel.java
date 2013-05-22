@@ -15,6 +15,17 @@ class MainPanel extends HorizontalSplitPanel implements ComponentChangeListener 
 	private static final float  VERTICAL_SPLIT_POS = 20.0f;
 	private static final float HORIZONTAL_SPLIT_POS = 10.0f;
 
+	/* Screen layout of the GUI
+	 * 	 +------------------------------+
+	 *	 |                          10% |
+	 *	 +----+-------------------------+
+	 *	 |    |                         |
+	 *	 |    |                         |
+	 *	 |    |                         |
+	 *	 | 20%|                         |
+	 *	 +----+-------------------------+
+	*/
+	
 	// Layout elements section
 	private VerticalSplitPanel verticalPanel = new VerticalSplitPanel();
 	private TitleBarComponent titleBar = new TitleBarComponent();
