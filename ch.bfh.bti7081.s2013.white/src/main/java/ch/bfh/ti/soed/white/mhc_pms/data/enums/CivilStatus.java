@@ -8,5 +8,5 @@ package ch.bfh.ti.soed.white.mhc_pms.data.enums;
  * Civil status of the patient
  */
 public enum CivilStatus {
-	ledig, verheiratet, verwitwet
+	ledig, verheiratet, verwitwet, geschieden
 }

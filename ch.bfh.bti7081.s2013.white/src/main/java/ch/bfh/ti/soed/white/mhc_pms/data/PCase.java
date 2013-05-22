@@ -89,7 +89,7 @@ public class PCase implements Serializable {
 	
 	@NotNull
 	@Enumerated(EnumType.STRING)
-	private CaseStatus status = CaseStatus.aktiv;
+	private CaseStatus caseStatus = CaseStatus.aktiv;
 
 	@NotNull
 	@Enumerated(EnumType.STRING)
@@ -539,15 +539,15 @@ public class PCase implements Serializable {
 	/**
 	 * @return The current case status.
 	 */
-	public CaseStatus getStatus() {
-		return status;
+	public CaseStatus getCaseStatus() {
+		return caseStatus;
 	}
 
 	/**
 	 * @param status The case status to set.
 	 */
-	public void setStatus(CaseStatus status) {
-		this.status = status;
+	public void setCaseStatus(CaseStatus caseStatus) {
+		this.caseStatus = caseStatus;
 	}
 
 	/**

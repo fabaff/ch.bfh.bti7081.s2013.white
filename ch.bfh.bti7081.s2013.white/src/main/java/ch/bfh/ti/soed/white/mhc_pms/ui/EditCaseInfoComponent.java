@@ -114,7 +114,7 @@ public class EditCaseInfoComponent extends PmsComponentController implements New
 						PCase pCaseItem = EditCaseInfoComponent.this.newCaseItem.getBean();
 						
 						if (EditCaseInfoComponent.this.isNewCase) {
-							pCaseItem.setStatus(CaseStatus.abgeschlossen);
+							pCaseItem.setCaseStatus(CaseStatus.abgeschlossen);
 							pCaseItem.setDateCaseClosed(new Date());
 							
 							EditCaseInfoComponent.this.dataAccess.getPCaseContainer().addEntity(pCaseItem);
@@ -126,7 +126,7 @@ public class EditCaseInfoComponent extends PmsComponentController implements New
 							pCaseItem = EditCaseInfoComponent.this.newCaseItem.getBean();
 							pCaseItem.setDateCaseOpened(new Date());
 							pCaseItem.setDateCaseClosed(null);
-							pCaseItem.setStatus(CaseStatus.aktiv);
+							pCaseItem.setCaseStatus(CaseStatus.aktiv);
 							pCaseItem.setPcid(0);
 						} 
 

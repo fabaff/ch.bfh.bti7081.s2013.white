@@ -137,7 +137,7 @@ class TitleBarComponent extends PmsComponentController implements PmsComponentLi
 			this.lblGender.setValue(ValueConverter.convertString(item
 					.getGender()));
 			this.lblStatus.setValue(ValueConverter.convertString(item
-					.getStatus()));
+					.getCaseStatus()));
 			this.lblKindOfTreatment.setValue(ValueConverter.convertString(item
 					.getKindOfTreatment()));
 		}
