@@ -150,7 +150,7 @@ public class NewPatientComponent extends PmsComponentController {
 		this.fieldGroup.bind(this.txtCountry, "country");
 		this.fieldGroup.bind(this.txtPhonePrivate, "phonePrivate");
 		this.fieldGroup.bind(this.txtPhoneBusiness, "phoneBusiness");
-		this.fieldGroup.bind(this.txtMobilePhone, "mobilePhone");
+		this.fieldGroup.bind(this.txtMobilePhone, "phoneMobile");
 		this.fieldGroup.bind(this.txtEmail, "eMail");
 		
 		this.fieldGroup.bind(this.txtNextOfKin, "nextOfKin");

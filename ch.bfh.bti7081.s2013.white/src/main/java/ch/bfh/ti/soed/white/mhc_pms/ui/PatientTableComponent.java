@@ -38,7 +38,7 @@ class PatientTableComponent extends PmsComponentController implements PmsCompone
 	private static final long serialVersionUID = 3262703309337559597L;
 
 	private static final String[] VISIBLE_COLUMNS = { "pcid", "firstName", "lastName",
-			"dateOfBirth", "gender", "status", "kindOfTreatment" };
+			"dateOfBirth", "gender", "caseStatus", "kindOfTreatment" };
 	private static final String[] VISIBLE_COLUMN_NAMES = { "Fallnummer", "Vorname",
 			"Nachname", "Geburtsdatum", "Geschlecht", "Status",
 			"Behandlungsart" };
