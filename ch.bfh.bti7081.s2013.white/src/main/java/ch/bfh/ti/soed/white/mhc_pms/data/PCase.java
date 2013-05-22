@@ -49,61 +49,39 @@ public class PCase implements Serializable {
 
 	// TODO Use predefined list of languages to support the user
 	private String motherLanguage = "";
-
 	// TODO Use predefined list of languages to support the user
 	private String communcationLanguage = "";
-
 	// TODO Enum is available.
 	private String civilStatus = "";
-
 	// TODO Use Country Codes from external sources instead of typing
 	// https://github.com/TakahikoKawasaki/nv-i18n
 	private String nationality = "";
-
 	private String religion = "";
-
 	private String address = "";
-
 	private String homeLocation = "";
-
 	private String postalCode = "";
-
 	// TODO Use Country Codes from external sources instead of typing
 	// https://github.com/TakahikoKawasaki/nv-i18n
 	private String country = "";
-
 	private String phonePrivate = "";
-
 	private String phoneBusiness = "";
-
 	private String mobilePhone = "";
-
 	private String eMail = "";
-
+	// Additional address
 	private String nextOfKin = "";
-
 	private String nextOfKinFirstName = "";
-
 	private String nextOfKinLastName = "";
-
 	private String nextOfKinAddress = "";
-	
 	private String nextOfKinHomeLocation = "";
-	
 	private String nextOfKinPostalCode = "";
-	
 	private String nextOfKinPhone = "";
 
+	// Family Doctor details
 	private String familyDoctorFirstName = "";
-
 	private String familyDoctorLastName = "";
-
 	private String familyDoctorAddress = "";
-
 	private String familyDoctorLocation = "";
-
 	private String familyDoctorPostalCode = "";
-
 	private String familyDoctorFax = "";
 
 	// Case fields
@@ -127,17 +105,11 @@ public class PCase implements Serializable {
 	private ReanimationStatus reanimationStatus = ReanimationStatus.Ja;
 
 	private String assignment = "";
-
 	private String suicidalTendency = "";
-
 	private String degreeOfDanger = "";
-
 	private String goOutStatus = "";
-
 	private String vacation = "";
-
 	private String judicialStatus = "";
-
 	private String sanction = "";
 
 	@Enumerated(EnumType.STRING)
