@@ -124,6 +124,8 @@ public class PCase implements Serializable {
 	@ManyToOne
 	private PmsUser therapist;
 	
+	// one to many relationships
+	
 	@OneToMany(mappedBy = "pCase")
 	private Set<Diagnosis> diagnosisRelation = new HashSet<>();
 	
