@@ -36,6 +36,7 @@ public class PmsUser implements Serializable {
 	@NotNull
 	@Enumerated(EnumType.STRING)
 	private UserGroup userGroup = UserGroup.PSYCHOLOGIST;
+	// TODO read user group from db (authentication)
 	
 	@NotNull
 	@Size(min = 2, max = 64)

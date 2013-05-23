@@ -121,6 +121,12 @@ public class EditCaseInfoComponent extends PmsComponentController implements New
 		this.addBtnCancelListener();
 	}
 
+	private void setComboBoxDefaultValues() {
+		this.cmbKindOfTreatment.setValue(KindOfTreatment.stationär);
+		this.cmbOrderOfPatient.setValue(OrderOfPatient.nein);
+		this.cmbReanimationStatus.setValue(ReanimationStatus.ja);
+	}
+
 	private void addBtnCancelListener() {
 		this.btnCancel.addClickListener(new Button.ClickListener() {
 			private static final long serialVersionUID = 1L;
@@ -141,16 +147,13 @@ public class EditCaseInfoComponent extends PmsComponentController implements New
 		this.cmbKindOfTreatment.addItem(KindOfTreatment.stationär);
 		this.cmbKindOfTreatment.addItem(KindOfTreatment.teilstationär);
 		this.cmbKindOfTreatment.addItem(KindOfTreatment.ambulant);
-		this.cmbKindOfTreatment.setValue(KindOfTreatment.stationär);
 		
 		this.cmbOrderOfPatient.addItem(OrderOfPatient.nein);
 		this.cmbOrderOfPatient.addItem(OrderOfPatient.ja);
-		this.cmbOrderOfPatient.setValue(OrderOfPatient.nein);
 		
 		this.cmbReanimationStatus.addItem(ReanimationStatus.ja);
 		this.cmbReanimationStatus.addItem(ReanimationStatus.eingeschränkt);
 		this.cmbReanimationStatus.addItem(ReanimationStatus.nein);
-		this.cmbReanimationStatus.setValue(ReanimationStatus.ja);
 	}
 
 	private void bindFields() {
@@ -185,6 +188,10 @@ public class EditCaseInfoComponent extends PmsComponentController implements New
 	@Override
 	public void enter(ViewChangeEvent event) {
 		this.bindFields();
+		
+		if (this.isNewCase) {
+			this.setComboBoxDefaultValues();
+		}
 	}
 
 	@Override

@@ -40,6 +40,9 @@ public class Diagnosis implements Serializable {
 	private String clinicName;
 	
 	@NotNull
+	private boolean isDeleted = false;
+	
+	@NotNull
 	@ManyToOne
 	private PCase pCase;
 	
@@ -112,6 +115,20 @@ public class Diagnosis implements Serializable {
 
 	public void setClinicName(String clinicName) {
 		this.clinicName = clinicName;
+	}
+
+	/**
+	 * @return the isDeleted
+	 */
+	public boolean isDeleted() {
+		return isDeleted;
+	}
+
+	/**
+	 * @param isDeleted the isDeleted to set
+	 */
+	public void setDeleted(boolean isDeleted) {
+		this.isDeleted = isDeleted;
 	}
    
 }

@@ -43,11 +43,11 @@ public class PCase implements Serializable {
 
 	@NotNull
 	@Temporal(value = TemporalType.DATE)
-	private Date dateOfBirth = new Date();
+	private Date dateOfBirth;
 
 	@NotNull
 	@Enumerated(EnumType.STRING)
-	private Gender gender = Gender.weiblich;
+	private Gender gender;
 
 	// TODO Use predefined list of languages to support the user
 	private String motherLanguage = "";
@@ -91,21 +91,21 @@ public class PCase implements Serializable {
 	
 	@NotNull
 	@Enumerated(EnumType.STRING)
-	private CaseStatus caseStatus = CaseStatus.aktiv;
+	private CaseStatus caseStatus;
 
 	@NotNull
 	@Enumerated(EnumType.STRING)
-	private KindOfTreatment kindOfTreatment = KindOfTreatment.stationär;
+	private KindOfTreatment kindOfTreatment;
 	
 	@NotNull
 	@Temporal(value = TemporalType.DATE)
-	private Date dateCaseOpened = new Date();
+	private Date dateCaseOpened;
 	
 	@Temporal(value = TemporalType.DATE)
 	private Date dateCaseClosed;
 
 	@Enumerated(EnumType.STRING)
-	private ReanimationStatus reanimationStatus = ReanimationStatus.ja;
+	private ReanimationStatus reanimationStatus;
 
 	private String assignment = "";
 	private String suicidalTendency = "";
@@ -116,7 +116,7 @@ public class PCase implements Serializable {
 	private String sanction = "";
 
 	@Enumerated(EnumType.STRING)
-	private OrderOfPatient orderOfPatient = OrderOfPatient.nein;
+	private OrderOfPatient orderOfPatient;
 
 	// Therapist field
 	
@@ -130,7 +130,6 @@ public class PCase implements Serializable {
 	private Set<Diagnosis> diagnosisRelation = new HashSet<>();
 	
 	public PCase() {
-		this.openCase();
 		// TODO one to many relationships: medication, patient process
 	}
 	
