@@ -46,9 +46,24 @@ public class Diagnosis implements Serializable {
 	public Diagnosis() {}   
 	
 	public Diagnosis(PCase pCase) {
+		this();
 		this.pCase = pCase;
 	}   
 	
+	/**
+	 * @return the pCase
+	 */
+	public PCase getpCase() {
+		return pCase;
+	}
+
+	/**
+	 * @param pCase the pCase to set
+	 */
+	public void setpCase(PCase pCase) {
+		this.pCase = pCase;
+	}
+
 	public String getDiagnosisName() {
 		return this.diagnosisName;
 	}

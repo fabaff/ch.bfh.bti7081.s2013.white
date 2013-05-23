@@ -4,7 +4,7 @@ import ch.bfh.ti.soed.white.mhc_pms.controller.NavigationEvent;
 import ch.bfh.ti.soed.white.mhc_pms.controller.PmsComponentController;
 import ch.bfh.ti.soed.white.mhc_pms.controller.PmsComponentListener;
 import ch.bfh.ti.soed.white.mhc_pms.data.PCase;
-import ch.bfh.ti.soed.white.mhc_pms.data.PmsContainers;
+import ch.bfh.ti.soed.white.mhc_pms.data.ContainerCollection;
 import ch.bfh.ti.soed.white.mhc_pms.data.PmsDataAccess;
 import ch.bfh.ti.soed.white.mhc_pms.security.PmsPermission;
 import ch.bfh.ti.soed.white.mhc_pms.security.PmsPermission.Element;
@@ -85,9 +85,8 @@ class PatientInfoComponent extends PmsComponentController implements PmsComponen
 	private Button btnNewPatient;
 	private static final long serialVersionUID = -6090834279643277087L;
 	
-	private PmsDataAccess dataAccess;
 	
-	private PmsContainers pmsContainers;
+	private ContainerCollection pmsContainers;
 	
 	/**
 	 * The constructor should first build the main layout, set the
@@ -100,16 +99,14 @@ class PatientInfoComponent extends PmsComponentController implements PmsComponen
 		buildMainLayout();
 		setCompositionRoot(mainLayout);
 		
-		// TODO init empty Labels
 		this.pmsContainers = PmsDataAccess.getContainers();
-		this.dataAccess = PmsDataAccess.getInstance();
-		this.dataAccess.getPCaseContainer().refresh();
+		this.pmsContainers.getPCaseContainer().refresh();
 		
 		PmsPermission permission = new PmsPermission(this.pmsContainers.getCurrentUser().getUserGroup());
 		this.btnNewPatient.setEnabled(permission.hasPermission(Element.NEW_PATIENT));
 		
 		this.addListeners();
-		this.pCaseItemChange(this.dataAccess.getCurrentPCaseId());
+		this.pCaseItemChange(this.pmsContainers.getPCaseContainer().getCurrentPCaseId());
 		
 	}
 
@@ -126,38 +123,50 @@ class PatientInfoComponent extends PmsComponentController implements PmsComponen
 
 	@Override
 	public void pCaseItemChange(Object itemId) {
-		EntityItem<PCase> entityItem = this.dataAccess.getPCaseContainer().getItem(itemId);
+		EntityItem<PCase> entityItem = this.pmsContainers.getPCaseContainer().getItem(itemId);
+		PCase item = new PCase();
+		
 		if (entityItem != null) {
-			PCase item = entityItem.getEntity();
-			this.lblMotherLanguage.setValue(item.getMotherLanguage());
-			this.lblCommuncationLanguage.setValue(item.getCommuncationLanguage());
-			this.lblCivilStatus.setValue(item.getCivilStatus());
-			this.lblNationality.setValue(item.getNationality());
-			this.lblReligion.setValue(item.getReligion());
-			this.lblAddress.setValue(item.getAddress());
-			this.lblPostalCode.setValue(item.getPostalCode());
-			this.lblHomeLocation.setValue(item.getHomeLocation());
-			this.lblCountry.setValue(item.getCountry());
-			this.lblPhonePrivate.setValue(item.getPhonePrivate());
-			this.lblPhoneBusiness.setValue(item.getPhoneBusiness());
-			this.lblMobilePhone.setValue(item.getPhoneMobile());
-			this.lblEmail.setValue(item.geteMail());
-			
-			this.lblNextOfKin.setValue(item.getNextOfKin());
-			this.lblNextOfKinFirstName.setValue(item.getNextOfKinFirstName());
-			this.lblNextOfKinLastName.setValue(item.getNextOfKinLastName());
-			this.lblNextOfKinAddress.setValue(item.getNextOfKinAddress());
-			this.lblNextOfKinPostalCode.setValue(item.getNextOfKinPostalCode());
-			this.lblNextOfKinHomeLocation.setValue(item.getNextOfKinHomeLocation());
-			this.lblNextOfKinPhone.setValue(item.getNextOfKinPhone());
-			
-			this.lblFamilyDoctorFirstName.setValue(item.getFamilyDoctorFirstName());
-			this.lblFamilyDoctorLastName.setValue(item.getFamilyDoctorLastName());
-			this.lblFamilyDoctorAddress.setValue(item.getFamilyDoctorAddress());
-			this.lblFamilyDoctorPostalCode.setValue(item.getFamilyDoctorPostalCode());
-			this.lblFamilyDoctorLocation.setValue(item.getFamilyDoctorLocation());
-			this.lblFamilyDoctorFax.setValue(item.getFamilyDoctorFax());
-		}
+			item = entityItem.getEntity();
+		} 
+			this.setBasicPatientInfoValues(item);
+			this.setNextOfKinValues(item);
+			this.setFamilyDoctorValues(item);
+	}
+
+	private void setFamilyDoctorValues(PCase item) {
+		this.lblFamilyDoctorFirstName.setValue(item.getFamilyDoctorFirstName());
+		this.lblFamilyDoctorLastName.setValue(item.getFamilyDoctorLastName());
+		this.lblFamilyDoctorAddress.setValue(item.getFamilyDoctorAddress());
+		this.lblFamilyDoctorPostalCode.setValue(item.getFamilyDoctorPostalCode());
+		this.lblFamilyDoctorLocation.setValue(item.getFamilyDoctorLocation());
+		this.lblFamilyDoctorFax.setValue(item.getFamilyDoctorFax());
+	}
+
+	private void setNextOfKinValues(PCase item) {
+		this.lblNextOfKin.setValue(item.getNextOfKin());
+		this.lblNextOfKinFirstName.setValue(item.getNextOfKinFirstName());
+		this.lblNextOfKinLastName.setValue(item.getNextOfKinLastName());
+		this.lblNextOfKinAddress.setValue(item.getNextOfKinAddress());
+		this.lblNextOfKinPostalCode.setValue(item.getNextOfKinPostalCode());
+		this.lblNextOfKinHomeLocation.setValue(item.getNextOfKinHomeLocation());
+		this.lblNextOfKinPhone.setValue(item.getNextOfKinPhone());
+	}
+
+	private void setBasicPatientInfoValues(PCase item) {
+		this.lblMotherLanguage.setValue(item.getMotherLanguage());
+		this.lblCommuncationLanguage.setValue(item.getCommuncationLanguage());
+		this.lblCivilStatus.setValue(item.getCivilStatus());
+		this.lblNationality.setValue(item.getNationality());
+		this.lblReligion.setValue(item.getReligion());
+		this.lblAddress.setValue(item.getAddress());
+		this.lblPostalCode.setValue(item.getPostalCode());
+		this.lblHomeLocation.setValue(item.getHomeLocation());
+		this.lblCountry.setValue(item.getCountry());
+		this.lblPhonePrivate.setValue(item.getPhonePrivate());
+		this.lblPhoneBusiness.setValue(item.getPhoneBusiness());
+		this.lblMobilePhone.setValue(item.getPhoneMobile());
+		this.lblEmail.setValue(item.geteMail());
 	}
 
 	@AutoGenerated

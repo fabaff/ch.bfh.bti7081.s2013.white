@@ -4,7 +4,7 @@ import ch.bfh.ti.soed.white.mhc_pms.controller.NavigationEvent;
 import ch.bfh.ti.soed.white.mhc_pms.controller.PmsComponentController;
 import ch.bfh.ti.soed.white.mhc_pms.controller.PmsComponentListener;
 import ch.bfh.ti.soed.white.mhc_pms.data.PCase;
-import ch.bfh.ti.soed.white.mhc_pms.data.PmsContainers;
+import ch.bfh.ti.soed.white.mhc_pms.data.ContainerCollection;
 import ch.bfh.ti.soed.white.mhc_pms.data.PmsDataAccess;
 import ch.bfh.ti.soed.white.mhc_pms.security.PmsPermission;
 import ch.bfh.ti.soed.white.mhc_pms.security.PmsPermission.Element;
@@ -58,10 +58,8 @@ class CaseInfoComponent extends PmsComponentController implements PmsComponentLi
 	private Button btnEditCaseData;
 	private static final long serialVersionUID = -1488922640521851182L;
 
-	private PmsContainers pmsContainers;
+	private ContainerCollection pmsContainers;
 	
-	private PmsDataAccess dataAccess;
-
 	/**
 	 * The constructor should first build the main layout, set the composition
 	 * root and then do any custom initialization.
@@ -72,23 +70,36 @@ class CaseInfoComponent extends PmsComponentController implements PmsComponentLi
 	public CaseInfoComponent() {
 		buildMainLayout();
 		setCompositionRoot(mainLayout);
-		// TODO init empty Labels
+		
 		this.pmsContainers = PmsDataAccess.getContainers();
-		this.dataAccess = PmsDataAccess.getInstance();
-		this.dataAccess.getPCaseContainer().refresh();
+		this.pmsContainers.getPCaseContainer().refresh();
+		Object itemId = this.pmsContainers.getPCaseContainer().getCurrentPCaseId();
 		
 		PmsPermission permission = new PmsPermission(this.pmsContainers.getCurrentUser().getUserGroup());
 		this.btnNewCase.setEnabled(permission.hasPermission(Element.NEW_CASE));
-		// TODO Nur aktiv, wenn schon Pat existiert
-		this.btnEditCaseData.setEnabled(permission.hasPermission(Element.EDIT_CASE));
+		this.btnEditCaseData.setEnabled(permission.hasPermission(Element.EDIT_CASE) && itemId != null);
 
-		this.addListeners();
-		this.pCaseItemChange(this.dataAccess.getCurrentPCaseId());
+		this.addNewCaseListener();
+		this.addEditCaseListener();
+		this.pCaseItemChange(itemId);
 	}
 
-	private void addListeners() {
+	private void addEditCaseListener() {
+		this.btnEditCaseData.addClickListener(new Button.ClickListener() {
+			private static final long serialVersionUID = 8636612818445844248L;
+			
+			@Override
+			public void buttonClick(ClickEvent event) {
+				CaseInfoComponent.this.fireUIActivationEvent(false);
+				CaseInfoComponent.this.fireComponentChangeEvent(NavigationEvent.PCASE);
+			}
+		});
+	}
+
+	private void addNewCaseListener() {
 		this.btnNewCase.addClickListener(new Button.ClickListener() {
 			private static final long serialVersionUID = 8636612818445844248L;
+			
 			@Override
 			public void buttonClick(ClickEvent event) {
 				CaseInfoComponent.this.fireUIActivationEvent(false);
@@ -96,34 +107,28 @@ class CaseInfoComponent extends PmsComponentController implements PmsComponentLi
 				CaseInfoComponent.this.fireNewCaseEvent(true);
 			}
 		});
-
-		this.btnEditCaseData.addClickListener(new Button.ClickListener() {
-			private static final long serialVersionUID = 8636612818445844248L;
-			@Override
-			public void buttonClick(ClickEvent event) {
-				CaseInfoComponent.this.fireUIActivationEvent(false);
-				CaseInfoComponent.this.fireComponentChangeEvent(NavigationEvent.PCASE);
-			}
-		});
 	}
 
 	@Override
 	public void pCaseItemChange(Object itemId) {
-		EntityItem<PCase> entityItem = this.dataAccess.getPCaseContainer().getItem(itemId);
+		EntityItem<PCase> entityItem = this.pmsContainers.getPCaseContainer().getItem(itemId);
+		PCase item = new PCase();
+		
 		if (entityItem != null) {
-			PCase item = entityItem.getEntity();
-			this.lblAssignment.setValue(item.getAssignment());
-			this.lblDateCaseClosed.setValue(ValueConverter.convertDate(item.getDateCaseClosed()));
-			this.lblDateCaseOpended.setValue(ValueConverter.convertDate(item.getDateCaseOpened()));
-			this.lblDegreeOfDanger.setValue(item.getDegreeOfDanger());
-			this.lblGoOutStatus.setValue(item.getGoOutStatus());
-			this.lblJudicialStatus.setValue(item.getJudicialStatus());
-			this.lblOrderOfPatient.setValue(ValueConverter.convertString(item.getOrderOfPatient()));
-			this.lblReanimationStatus.setValue(ValueConverter.convertString(item.getReanimationStatus()));
-			this.lblSanction.setValue(item.getSanction());
-			this.lblSuicidalTendency.setValue(item.getSuicidalTendency());
-			this.lblVacation.setValue(item.getVacation());
-		}
+			item = entityItem.getEntity();
+		} 
+		
+		this.lblAssignment.setValue(item.getAssignment());
+		this.lblDateCaseClosed.setValue(ValueConverter.convertDate(item.getDateCaseClosed()));
+		this.lblDateCaseOpended.setValue(ValueConverter.convertDate(item.getDateCaseOpened()));
+		this.lblDegreeOfDanger.setValue(item.getDegreeOfDanger());
+		this.lblGoOutStatus.setValue(item.getGoOutStatus());
+		this.lblJudicialStatus.setValue(item.getJudicialStatus());
+		this.lblOrderOfPatient.setValue(ValueConverter.convertString(item.getOrderOfPatient()));
+		this.lblReanimationStatus.setValue(ValueConverter.convertString(item.getReanimationStatus()));
+		this.lblSanction.setValue(item.getSanction());
+		this.lblSuicidalTendency.setValue(item.getSuicidalTendency());
+		this.lblVacation.setValue(item.getVacation());
 	}
 	
 	@AutoGenerated

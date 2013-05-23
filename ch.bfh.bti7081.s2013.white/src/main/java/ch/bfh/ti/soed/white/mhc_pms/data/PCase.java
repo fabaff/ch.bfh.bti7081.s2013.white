@@ -130,11 +130,53 @@ public class PCase implements Serializable {
 	private Set<Diagnosis> diagnosisRelation = new HashSet<>();
 	
 	public PCase() {
+		this.openCase();
 		// TODO one to many relationships: medication, patient process
 	}
 	
 	public PCase(PmsUser therapist) {
+		this();
 		this.therapist = therapist;
+	}
+
+	public void closeCase() {
+		this.setCaseStatus(CaseStatus.abgeschlossen);
+		this.setDateCaseClosed(new Date());
+	}
+	
+	public void openCase() {
+		this.setDateCaseOpened(new Date());
+		this.setDateCaseClosed(null);
+		this.setCaseStatus(CaseStatus.aktiv);
+		this.setPcid(0);
+	}
+	
+	/**
+	 * @return the therapist
+	 */
+	public PmsUser getTherapist() {
+		return therapist;
+	}
+
+	/**
+	 * @param therapist the therapist to set
+	 */
+	public void setTherapist(PmsUser therapist) {
+		this.therapist = therapist;
+	}
+
+	/**
+	 * @return the diagnosisRelation
+	 */
+	public Set<Diagnosis> getDiagnosisRelation() {
+		return diagnosisRelation;
+	}
+
+	/**
+	 * @param diagnosisRelation the diagnosisRelation to set
+	 */
+	public void setDiagnosisRelation(Set<Diagnosis> diagnosisRelation) {
+		this.diagnosisRelation = diagnosisRelation;
 	}
 
 	/**
@@ -752,4 +794,5 @@ public class PCase implements Serializable {
 	public void setNextOfKinHomeLocation(String nextOfKinHomeLocation) {
 		this.nextOfKinHomeLocation = nextOfKinHomeLocation;
 	}
+
 }

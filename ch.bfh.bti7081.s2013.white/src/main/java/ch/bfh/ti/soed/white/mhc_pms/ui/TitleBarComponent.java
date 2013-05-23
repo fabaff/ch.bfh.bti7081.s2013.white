@@ -3,6 +3,7 @@ package ch.bfh.ti.soed.white.mhc_pms.ui;
 import ch.bfh.ti.soed.white.mhc_pms.controller.PmsComponentController;
 import ch.bfh.ti.soed.white.mhc_pms.controller.PmsComponentListener;
 import ch.bfh.ti.soed.white.mhc_pms.controller.UIActivationListener;
+import ch.bfh.ti.soed.white.mhc_pms.data.ContainerCollection;
 import ch.bfh.ti.soed.white.mhc_pms.data.PCase;
 import ch.bfh.ti.soed.white.mhc_pms.data.PmsDataAccess;
 import ch.bfh.ti.soed.white.mhc_pms.util.ValueConverter;
@@ -52,7 +53,7 @@ class TitleBarComponent extends PmsComponentController implements PmsComponentLi
 	private Label lblFirstName;
 	private static final long serialVersionUID = 1148948780923578333L;
 
-	private PmsDataAccess dataAccess;
+	private ContainerCollection pmsContainers;
 
 	/**
 	 * The constructor should first build the main layout, set the composition
@@ -64,8 +65,8 @@ class TitleBarComponent extends PmsComponentController implements PmsComponentLi
 	public TitleBarComponent() {
 		buildMainLayout();
 		setCompositionRoot(mainLayout);
-		// TODO init empty Labels
-		this.dataAccess = PmsDataAccess.getInstance();
+		
+		this.pmsContainers = PmsDataAccess.getContainers();
 
 		// TODO Theme verwenden
 		this.lblPatientTitle.setContentMode(ContentMode.HTML);
@@ -83,21 +84,25 @@ class TitleBarComponent extends PmsComponentController implements PmsComponentLi
 		// this.lblKindOfTreatment.setContentMode(ContentMode.HTML);
 		// this.lblKindOfTreatment.setCaption("<b>Behandlungsart: </b>");
 
-		this.addButtonListeners();
-		this.pCaseItemChange(this.dataAccess.getCurrentPCaseId());
+		this.addFilterButtonClickListeners();
+		this.addSearchButtonClickListeners();
+		this.addLogoutButtonClickListeners();
+		this.pCaseItemChange(this.pmsContainers.getPCaseContainer().getCurrentPCaseId());
 	}
 
-	private void addButtonListeners() {
-		this.btnFilter.addClickListener(new Button.ClickListener() {
-			private static final long serialVersionUID = -4555286792720366254L;
+	private void addLogoutButtonClickListeners() {
+		this.btnLogout.addClickListener(new Button.ClickListener() {
+			private static final long serialVersionUID = -7445511110217678724L;
 
 			@Override
 			public void buttonClick(ClickEvent event) {
-				// TODO Implement filter
-				TitleBarComponent.this.getUI().addWindow(new Window("Filter"));
+				// TODO Implement Logout
+				TitleBarComponent.this.getUI().addWindow(new Window("Logout"));
 			}
 		});
+	}
 
+	private void addSearchButtonClickListeners() {
 		this.btnSearch.addClickListener(new Button.ClickListener() {
 			private static final long serialVersionUID = -4194378010453446670L;
 
@@ -113,34 +118,39 @@ class TitleBarComponent extends PmsComponentController implements PmsComponentLi
 				TitleBarComponent.this.getUI().addWindow(new Window("Suchen"));
 			}
 		});
+	}
 
-		this.btnLogout.addClickListener(new Button.ClickListener() {
-			private static final long serialVersionUID = -7445511110217678724L;
+	private void addFilterButtonClickListeners() {
+		this.btnFilter.addClickListener(new Button.ClickListener() {
+			private static final long serialVersionUID = -4555286792720366254L;
 
 			@Override
 			public void buttonClick(ClickEvent event) {
-				// TODO Implement Logout
-				TitleBarComponent.this.getUI().addWindow(new Window("Logout"));
+				// TODO Implement filter
+				TitleBarComponent.this.getUI().addWindow(new Window("Filter"));
 			}
 		});
 	}
 
 	@Override
 	public void pCaseItemChange(Object itemId) {
-		EntityItem<PCase> entityItem = this.dataAccess.getPCaseContainer().getItem(itemId);
+		EntityItem<PCase> entityItem = this.pmsContainers.getPCaseContainer().getItem(itemId);
+		PCase item = new PCase();
+		
 		if (entityItem != null) {
-			PCase item = entityItem.getEntity();
-			this.lblFirstName.setValue(item.getFirstName());
-			this.lblLastName.setValue(item.getLastName());
-			this.lblDateOfBirth.setValue(ValueConverter.convertDate(item
-					.getDateOfBirth()));
-			this.lblGender.setValue(ValueConverter.convertString(item
-					.getGender()));
-			this.lblStatus.setValue(ValueConverter.convertString(item
-					.getCaseStatus()));
-			this.lblKindOfTreatment.setValue(ValueConverter.convertString(item
-					.getKindOfTreatment()));
+			item = entityItem.getEntity();
 		}
+		
+		this.lblFirstName.setValue(item.getFirstName());
+		this.lblLastName.setValue(item.getLastName());
+		this.lblDateOfBirth.setValue(ValueConverter.convertDate(item
+				.getDateOfBirth()));
+		this.lblGender.setValue(ValueConverter.convertString(item
+				.getGender()));
+		this.lblStatus.setValue(ValueConverter.convertString(item
+				.getCaseStatus()));
+		this.lblKindOfTreatment.setValue(ValueConverter.convertString(item
+				.getKindOfTreatment()));
 	}
 
 	@Override

@@ -2,8 +2,10 @@ package ch.bfh.ti.soed.white.mhc_pms.ui;
 
 import ch.bfh.ti.soed.white.mhc_pms.controller.ComponentChangeListener;
 import ch.bfh.ti.soed.white.mhc_pms.controller.NavigationEvent;
+import ch.bfh.ti.soed.white.mhc_pms.ui.MenuBarComponent.ButtonEnum;
 
 import com.vaadin.navigator.Navigator;
+import com.vaadin.navigator.View;
 import com.vaadin.ui.HorizontalSplitPanel;
 import com.vaadin.ui.Panel;
 import com.vaadin.ui.VerticalSplitPanel;
@@ -54,6 +56,7 @@ class MainPanel extends HorizontalSplitPanel implements ComponentChangeListener 
 		detailPanel.setSizeFull();
 		this.setFirstComponent(this.menuBar);
 		this.setSecondComponent(this.verticalPanel);
+		
 		// Unit of the values is % (percent)
 		this.setSplitPosition(HORIZONTAL_SPLIT_POS, Unit.PERCENTAGE);
 		this.verticalPanel
@@ -61,6 +64,89 @@ class MainPanel extends HorizontalSplitPanel implements ComponentChangeListener 
 		this.verticalPanel.setFirstComponent(this.titleBar);
 		this.verticalPanel.setSecondComponent(detailPanel);
 
+		this.addNavigatorViews();
+		this.addMenuBarListeners();
+		this.addPatientTableListeners();
+		this.addPatientInfoListeners();
+		this.addNewPatientListeners();
+		this.addCaseInfoListeners();
+		this.addEditCaseListeners();
+
+		// TODO Add missing Component Listener
+		// setComponentAlignment(button, Alignment.MIDDLE_CENTER);
+		// Notification.show("Welcome to the Animal Farm");
+	}
+
+	private void addEditCaseListeners() {
+		// Edit Case section
+		this.editCaseInfoComp.addPmsComponentListener(this.titleBar);
+		this.editCaseInfoComp.addPmsComponentListener(this.patientTable);
+		this.editCaseInfoComp.addPmsComponentListener(this.patInfo);
+		this.editCaseInfoComp.addPmsComponentListener(this.caseInfo);
+		this.editCaseInfoComp.addPmsComponentListener(this.progressComp);
+		this.editCaseInfoComp.addPmsComponentListener(this.diagnosisComp);
+		this.editCaseInfoComp.addPmsComponentListener(this.medComp);
+		this.editCaseInfoComp.addUIActivationListener(this.menuBar);
+		this.editCaseInfoComp.addUIActivationListener(this.titleBar);
+		this.editCaseInfoComp.addUIActivationListener(this.menuBar);
+		this.editCaseInfoComp.addUIActivationListener(this.titleBar);
+		this.editCaseInfoComp.addComponentChangeListener(this);
+	}
+
+	private void addCaseInfoListeners() {
+		// Case info section
+		this.caseInfo.addUIActivationListener(this.menuBar);
+		this.caseInfo.addUIActivationListener(this.titleBar);
+		this.caseInfo.addComponentChangeListener(this);
+		this.caseInfo.addNewCaseListener(this.editCaseInfoComp);
+	}
+
+	private void addNewPatientListeners() {
+		// New Patient section
+		this.newPatientComp.addPmsComponentListener(this.titleBar);
+		this.newPatientComp.addPmsComponentListener(this.patientTable);
+		this.newPatientComp.addPmsComponentListener(this.patInfo);
+		this.newPatientComp.addPmsComponentListener(this.caseInfo);
+		this.newPatientComp.addPmsComponentListener(this.progressComp);
+		this.newPatientComp.addPmsComponentListener(this.diagnosisComp);
+		this.newPatientComp.addPmsComponentListener(this.medComp);
+		this.newPatientComp.addUIActivationListener(this.menuBar);
+		this.newPatientComp.addUIActivationListener(this.titleBar);
+		this.newPatientComp.addComponentChangeListener(this);
+	}
+
+	private void addPatientInfoListeners() {
+		// Patient info section
+		this.patInfo.addUIActivationListener(this.menuBar);
+		this.patInfo.addUIActivationListener(this.titleBar);
+		this.patInfo.addComponentChangeListener(this);
+	}
+
+	private void addPatientTableListeners() {
+		// Patient table section
+		this.patientTable.addPmsComponentListener(this.titleBar);
+		this.patientTable.addPmsComponentListener(this.patInfo);
+		this.patientTable.addPmsComponentListener(this.caseInfo);
+		this.patientTable.addPmsComponentListener(this.progressComp);
+		this.patientTable.addPmsComponentListener(this.diagnosisComp);
+		this.patientTable.addPmsComponentListener(this.medComp);
+		this.patientTable.addUIActivationListener(this.menuBar);
+		this.patientTable.addUIActivationListener(this.titleBar);
+		this.patientTable.addComponentChangeListener(this);
+		this.patientTable.addNewCaseListener(this.editCaseInfoComp);
+	}
+
+	private void addMenuBarListeners() {
+		this.menuBar.addPmsComponentListener(this.titleBar);
+		this.menuBar.addPmsComponentListener(this.patientTable);
+		this.menuBar.addPmsComponentListener(this.patInfo);
+		this.menuBar.addPmsComponentListener(this.caseInfo);
+		this.menuBar.addPmsComponentListener(this.progressComp);
+		this.menuBar.addPmsComponentListener(this.diagnosisComp);
+		this.menuBar.addPmsComponentListener(this.medComp);
+	}
+
+	private void addNavigatorViews() {
 		this.navigator.addView(MenuBarComponent.ButtonEnum.HOME.toString(),
 				this.patientTable);
 		this.navigator.addView(
@@ -79,101 +165,28 @@ class MainPanel extends HorizontalSplitPanel implements ComponentChangeListener 
 				.addView(MenuBarComponent.ButtonEnum.MEDICATION.toString(),
 						this.medComp);
 		this.navigator.navigateTo(MenuBarComponent.ButtonEnum.HOME.toString());
-
-		// Component listener
-		this.menuBar.addPmsComponentListener(this.titleBar);
-		this.menuBar.addPmsComponentListener(this.patientTable);
-		this.menuBar.addPmsComponentListener(this.patInfo);
-		this.menuBar.addPmsComponentListener(this.caseInfo);
-		this.menuBar.addPmsComponentListener(this.progressComp);
-		this.menuBar.addPmsComponentListener(this.diagnosisComp);
-		this.menuBar.addPmsComponentListener(this.medComp);
-
-		// Patient table section
-		this.patientTable.addPmsComponentListener(this.titleBar);
-		this.patientTable.addPmsComponentListener(this.patInfo);
-		this.patientTable.addPmsComponentListener(this.caseInfo);
-		this.patientTable.addPmsComponentListener(this.progressComp);
-		this.patientTable.addPmsComponentListener(this.diagnosisComp);
-		this.patientTable.addPmsComponentListener(this.medComp);
-		this.patientTable.addUIActivationListener(this.menuBar);
-		this.patientTable.addUIActivationListener(this.titleBar);
-		this.patientTable.addComponentChangeListener(this);
-		this.patientTable.addNewCaseListener(this.editCaseInfoComp);
-
-		// Patient info section
-		this.patInfo.addUIActivationListener(this.menuBar);
-		this.patInfo.addUIActivationListener(this.titleBar);
-		this.patInfo.addComponentChangeListener(this);
-
-		// New Patient section
-		this.newPatientComp.addPmsComponentListener(this.titleBar);
-		this.newPatientComp.addPmsComponentListener(this.patientTable);
-		this.newPatientComp.addPmsComponentListener(this.patInfo);
-		this.newPatientComp.addPmsComponentListener(this.caseInfo);
-		this.newPatientComp.addPmsComponentListener(this.progressComp);
-		this.newPatientComp.addPmsComponentListener(this.diagnosisComp);
-		this.newPatientComp.addPmsComponentListener(this.medComp);
-		this.newPatientComp.addUIActivationListener(this.menuBar);
-		this.newPatientComp.addUIActivationListener(this.titleBar);
-		this.newPatientComp.addComponentChangeListener(this);
-
-		// Case info section
-		this.caseInfo.addUIActivationListener(this.menuBar);
-		this.caseInfo.addUIActivationListener(this.titleBar);
-		this.caseInfo.addComponentChangeListener(this);
-		this.caseInfo.addNewCaseListener(this.editCaseInfoComp);
-
-		// Edit Case section
-		this.editCaseInfoComp.addPmsComponentListener(this.titleBar);
-		this.editCaseInfoComp.addPmsComponentListener(this.patientTable);
-		this.editCaseInfoComp.addPmsComponentListener(this.patInfo);
-		this.editCaseInfoComp.addPmsComponentListener(this.caseInfo);
-		this.editCaseInfoComp.addPmsComponentListener(this.progressComp);
-		this.editCaseInfoComp.addPmsComponentListener(this.diagnosisComp);
-		this.editCaseInfoComp.addPmsComponentListener(this.medComp);
-		this.editCaseInfoComp.addUIActivationListener(this.menuBar);
-		this.editCaseInfoComp.addUIActivationListener(this.titleBar);
-		this.editCaseInfoComp.addUIActivationListener(this.menuBar);
-		this.editCaseInfoComp.addUIActivationListener(this.titleBar);
-		this.editCaseInfoComp.addComponentChangeListener(this);
-
-		// TODO Add missing Component Listener
-		// setComponentAlignment(button, Alignment.MIDDLE_CENTER);
-		// Notification.show("Welcome to the Animal Farm");
 	}
 
 	@Override
 	public void componentChange(NavigationEvent event) {
 		switch (event) {
 		case PATIENT:
-			this.navigator.addView(
-					MenuBarComponent.ButtonEnum.PATIENT_INFO.toString(),
-					this.newPatientComp);
-			this.navigator.navigateTo(MenuBarComponent.ButtonEnum.PATIENT_INFO
-					.toString());
+			this.navigate(MenuBarComponent.ButtonEnum.PATIENT_INFO, this.newPatientComp);
 			break;
 		case PCASE:
-			this.navigator.addView(
-					MenuBarComponent.ButtonEnum.CASE_INFO.toString(),
-					this.editCaseInfoComp);
-			this.navigator.navigateTo(MenuBarComponent.ButtonEnum.CASE_INFO
-					.toString());
+			this.navigate(MenuBarComponent.ButtonEnum.CASE_INFO, this.editCaseInfoComp);
 			break;
 		case PATIENT_BACK:
-			this.navigator.addView(
-					MenuBarComponent.ButtonEnum.PATIENT_INFO.toString(),
-					this.patInfo);
-			this.navigator.navigateTo(MenuBarComponent.ButtonEnum.CASE_INFO
-					.toString());
+			this.navigate(MenuBarComponent.ButtonEnum.PATIENT_INFO, this.patInfo);
 			break;
 		case PCASE_BACK:
-			this.navigator.addView(
-					MenuBarComponent.ButtonEnum.CASE_INFO.toString(),
-					this.caseInfo);
-			this.navigator.navigateTo(MenuBarComponent.ButtonEnum.CASE_INFO
-					.toString());
+			this.navigate(MenuBarComponent.ButtonEnum.CASE_INFO, this.caseInfo);
 			break;
 		}
+	}
+
+	private void navigate(ButtonEnum btnEnum, View view) {
+		this.navigator.addView(btnEnum.toString(), view);
+		this.navigator.navigateTo(btnEnum.toString());
 	}
 }

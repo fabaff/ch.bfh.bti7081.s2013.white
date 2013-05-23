@@ -2,7 +2,7 @@ package ch.bfh.ti.soed.white.mhc_pms.ui;
 
 import ch.bfh.ti.soed.white.mhc_pms.controller.PmsComponentController;
 import ch.bfh.ti.soed.white.mhc_pms.controller.PmsComponentListener;
-import ch.bfh.ti.soed.white.mhc_pms.data.PmsContainers;
+import ch.bfh.ti.soed.white.mhc_pms.data.ContainerCollection;
 import ch.bfh.ti.soed.white.mhc_pms.data.PmsDataAccess;
 import ch.bfh.ti.soed.white.mhc_pms.security.PmsPermission;
 import ch.bfh.ti.soed.white.mhc_pms.security.PmsPermission.Element;
@@ -32,7 +32,7 @@ class PatientProgressComponent extends PmsComponentController implements PmsComp
 	private Button btnNewPatientProgressEntry;
 	private static final long serialVersionUID = 1022303185979278516L;
 	
-	private PmsContainers pmsContainers;
+	private ContainerCollection pmsContainers;
 	
 	/**
 	 * The constructor should first build the main layout, set the

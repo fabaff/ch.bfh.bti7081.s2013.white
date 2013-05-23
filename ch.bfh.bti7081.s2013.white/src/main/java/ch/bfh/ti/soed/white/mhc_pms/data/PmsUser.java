@@ -56,6 +56,20 @@ public class PmsUser implements Serializable {
 	public PmsUser() {}
 
 	/**
+	 * @return the pCases
+	 */
+	public Set<PCase> getpCases() {
+		return pCases;
+	}
+
+	/**
+	 * @param pCases the pCases to set
+	 */
+	public void setpCases(Set<PCase> pCases) {
+		this.pCases = pCases;
+	}
+
+	/**
 	 * @return the uid
 	 */
 	public int getUid() {
