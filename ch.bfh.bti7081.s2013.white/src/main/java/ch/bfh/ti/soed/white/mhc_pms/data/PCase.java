@@ -51,7 +51,6 @@ public class PCase implements Serializable {
 
 	// TODO Use predefined list of languages to support the user
 	private String motherLanguage = "";
-	// TODO Use predefined list of languages to support the user
 	private String communcationLanguage = "";
 	// TODO Enum is available.
 	private String civilStatus = "";

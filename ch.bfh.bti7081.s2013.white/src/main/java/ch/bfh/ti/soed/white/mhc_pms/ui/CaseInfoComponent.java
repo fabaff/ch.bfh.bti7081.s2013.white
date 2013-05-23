@@ -76,10 +76,7 @@ class CaseInfoComponent extends PmsComponentController implements PmsComponentLi
 		this.pmsContainers = PmsDataAccess.getContainers();
 		this.pmsContainers.getPCaseContainer().refresh();
 		Object itemId = this.pmsContainers.getPCaseContainer().getCurrentPCaseId();
-		
 		this.permission = new PmsPermission(this.pmsContainers.getCurrentUser().getUserGroup());
-		this.btnNewCase.setEnabled(permission.hasPermission(Element.NEW_CASE) && itemId != null);
-		this.btnEditCaseData.setEnabled(permission.hasPermission(Element.EDIT_CASE) && itemId != null);
 
 		this.addNewCaseListener();
 		this.addEditCaseListener();

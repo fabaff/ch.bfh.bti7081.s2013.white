@@ -36,7 +36,6 @@ public class PmsUser implements Serializable {
 	@NotNull
 	@Enumerated(EnumType.STRING)
 	private UserGroup userGroup = UserGroup.PSYCHOLOGIST;
-	// TODO read user group from db (authentication)
 	
 	@NotNull
 	@Size(min = 2, max = 64)
@@ -180,6 +179,17 @@ public class PmsUser implements Serializable {
 	 */
 	public void setDepartment(String department) {
 		this.department = department;
+	}
+
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "PmsUser [uid=" + uid + ", userName=" + userName + ", password="
+				+ password + ", userGroup=" + userGroup + ", firstName="
+				+ firstName + ", lastName=" + lastName + ", clinic=" + clinic
+				+ ", department=" + department + ", pCases.size()=" + pCases.size() + "]";
 	}
 
 }

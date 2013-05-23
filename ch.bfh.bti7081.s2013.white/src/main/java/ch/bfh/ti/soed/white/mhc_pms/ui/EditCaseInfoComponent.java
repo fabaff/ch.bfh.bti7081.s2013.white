@@ -117,8 +117,13 @@ public class EditCaseInfoComponent extends PmsComponentController implements New
 
 		this.initComboBoxes();
 		this.bindFields();
+		this.setComboBoxDefaultValues();
 		this.btnSave.addClickListener(new SaveButtonListener());
 		this.addBtnCancelListener();
+		
+		// TODO ComboBoxes not editable
+		// TODO Neuer Fall: WErte aus bestehendem Fall übernehmen
+		// TODO wenn neuer Pat hinzugefügt -> DEfault Werte für Fallinfo automatisch hinzufügen
 	}
 
 	private void setComboBoxDefaultValues() {
@@ -143,7 +148,6 @@ public class EditCaseInfoComponent extends PmsComponentController implements New
 	}
 
 	private void initComboBoxes() {
-		// TODO ComboBoxes not editable
 		this.cmbKindOfTreatment.addItem(KindOfTreatment.stationär);
 		this.cmbKindOfTreatment.addItem(KindOfTreatment.teilstationär);
 		this.cmbKindOfTreatment.addItem(KindOfTreatment.ambulant);
@@ -191,7 +195,7 @@ public class EditCaseInfoComponent extends PmsComponentController implements New
 		
 		if (this.isNewCase) {
 			this.setComboBoxDefaultValues();
-		}
+		} 
 	}
 
 	@Override

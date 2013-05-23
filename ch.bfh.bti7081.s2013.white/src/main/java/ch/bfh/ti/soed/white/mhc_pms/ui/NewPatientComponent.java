@@ -127,6 +127,7 @@ public class NewPatientComponent extends PmsComponentController {
 		this.cmbGender.addItem(Gender.männlich);
 
 		this.bindFields();
+		this.setComboBoxDefaultValues();
 		this.addNewPatientButtonListener();
 		this.addCancelPatientButtonListener();
 		// TODO activation order
@@ -179,7 +180,7 @@ public class NewPatientComponent extends PmsComponentController {
 					NewPatientComponent.this.bindFields();
 					NewPatientComponent.this.fireUIActivationEvent(true);
 					NewPatientComponent.this
-							.fireComponentChangeEvent(NavigationEvent.PATIENT_BACK);
+							.fireComponentChangeEvent(NavigationEvent.PCASE_BACK);
 					NewPatientComponent.this.firePCaseItemChangeEvent(id);
 				} catch (CommitException e) {
 					// TODO Exception Handling

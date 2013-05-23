@@ -11,10 +11,23 @@ public class PmsUserContainer extends PmsContainer<PmsUser> {
 	}
 
 	public PmsUser getCurrentUser(String userName) {
-		//this.addContainerFilter(Filters.eq("userName", userName));
-		// TODO current user from db
+		Filter filter = Filters.eq("userName", userName);
+		this.addContainerFilter(filter);
 		
-		return new PmsUser();
+		if (this.size() != 0) {
+			PmsUser user = this.getItem(this.firstItemId()).getEntity();
+			this.removeContainerFilters(filter);
+			return user;
+		} else {
+			try {
+				// TODO Exception Handling -> show error message
+				throw new RuntimeException("User not found in database!");
+			} catch (Exception e) {
+				throw e;
+			} finally {
+				this.removeContainerFilters(filter);
+			}
+		}
 	}
 
 }

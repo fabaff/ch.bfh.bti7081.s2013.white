@@ -10,6 +10,9 @@ import org.junit.Test;
 
 import com.vaadin.addon.jpacontainer.JPAContainer;
 import com.vaadin.addon.jpacontainer.JPAContainerFactory;
+import com.vaadin.addon.jpacontainer.filter.Filters;
+import com.vaadin.addon.jpacontainer.provider.CachingBatchableLocalEntityProvider;
+import com.vaadin.data.Container.Filter;
 import com.vaadin.data.fieldgroup.FieldGroup;
 import com.vaadin.data.fieldgroup.FieldGroup.CommitException;
 import com.vaadin.data.util.BeanItem;
@@ -42,30 +45,47 @@ public class PCaseTest {
 	public void testPCaseUser() throws CommitException {
 		// TODO vollständiger Test
 		
-		TextField txtFirstName = new TextField();
-		txtFirstName.setValue("Hans");
-		TextField txtLastName = new TextField();
-		txtLastName.setValue("Muster");
-		TextField txtCivilStatus = new TextField();
-		txtCivilStatus.setValue("ledig");
+		JPAContainer<PmsUser> jpaContainer = new JPAContainer<>(PmsUser.class);
+		jpaContainer.setEntityProvider(new CachingBatchableLocalEntityProvider<PmsUser>(PmsUser.class,
+				JPAContainerFactory.createEntityManagerForPersistenceUnit(PmsDataAccess.PERSISTENCE_UNIT)));
 		
-		System.out.println("Value1: " + txtFirstName.getValue());
+		System.out.println("size before filter: " + jpaContainer.size());
+		Filter filter = Filters.eq("userName", "user");
+		jpaContainer.addContainerFilter(filter);
+		System.out.println("size with filter: " + jpaContainer.size());
+		PmsUser user = jpaContainer.getItem(jpaContainer.firstItemId()).getEntity();
+		System.out.println(user);
+		jpaContainer.removeContainerFilter(filter);
+		System.out.println("size after filter: " + jpaContainer.size());
 		
-		PCase pat = new PCase();
-		pat.setFirstName("Peter");
-		BeanItem<PCase> newPatientItem = new BeanItem<PCase>(pat);
-		FieldGroup fieldGroup = new FieldGroup(newPatientItem);
-		fieldGroup.bind(txtFirstName, "firstName");
-		fieldGroup.bind(txtLastName, "lastName");
-		fieldGroup.bind(txtCivilStatus, "civilStatus");
 		
-		System.out.println("Value2: " + txtFirstName.getValue());
-		System.out.println("Bind1: " + newPatientItem.getBean().getFirstName());
 		
-		txtFirstName.setValue("Flipsi");
-		fieldGroup.commit();
+//		TextField txtFirstName = new TextField();
+//		txtFirstName.setValue("Hans");
+//		TextField txtLastName = new TextField();
+//		txtLastName.setValue("Muster");
+//		TextField txtCivilStatus = new TextField();
+//		txtCivilStatus.setValue("ledig");
+//		
+//		System.out.println("Value1: " + txtFirstName.getValue());
+//		
+//		PCase pat = new PCase();
+//		pat.setFirstName("Peter");
+//		BeanItem<PCase> newPatientItem = new BeanItem<PCase>(pat);
+//		FieldGroup fieldGroup = new FieldGroup(newPatientItem);
+//		fieldGroup.bind(txtFirstName, "firstName");
+//		fieldGroup.bind(txtLastName, "lastName");
+//		fieldGroup.bind(txtCivilStatus, "civilStatus");
+//		
+//		System.out.println("Value2: " + txtFirstName.getValue());
+//		System.out.println("Bind1: " + newPatientItem.getBean().getFirstName());
+//		
+//		txtFirstName.setValue("Flipsi");
+//		fieldGroup.commit();
+//		
+//		System.out.println("Bind2: " + newPatientItem.getBean().getFirstName());
+//		
 		
-		System.out.println("Bind2: " + newPatientItem.getBean().getFirstName());
 		
 //		JPAContainer<PCase> pCases = JPAContainerFactory.make(PCase.class, "ch.bfh.bti7081.s2013.white");
 //		JPAContainer<PmsUser> users = JPAContainerFactory.make(PmsUser.class, "ch.bfh.bti7081.s2013.white");
