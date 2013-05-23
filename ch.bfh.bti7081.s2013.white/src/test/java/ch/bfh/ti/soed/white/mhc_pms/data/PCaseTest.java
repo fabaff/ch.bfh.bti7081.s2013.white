@@ -40,6 +40,8 @@ public class PCaseTest {
 
 	@Test
 	public void testPCaseUser() throws CommitException {
+		// TODO vollständiger Test
+		
 		TextField txtFirstName = new TextField();
 		txtFirstName.setValue("Hans");
 		TextField txtLastName = new TextField();
@@ -77,7 +79,6 @@ public class PCaseTest {
 //		assertNotNull(therapistPermission);
 //		assertTrue(therapistPermission.isNewDiagnosisAllowed);
 //		assertFalse(therapistPermission.isNewMedicationAllowed);
-//		// TODO vollständiger Test
 //		
 //		MhcPmsUserDeprecated user = new Therapist();
 //		therapistPermission = user.getUIPermission();
