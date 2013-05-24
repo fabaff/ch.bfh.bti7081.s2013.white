@@ -6,7 +6,8 @@
 
 The used version is **JRE 1.7**.
 
-Check if you are used this version: *Project* -> *Properties* -> *Java Build Path* -> *Libraries* set JRE System Library to **JavaSE-1.7 (jre7)**
+Check if you are used this version: *Project* -> *Properties* -> *Java Build Path* -> *Libraries* set JRE System Library to **JavaSE-1.7 (jre7)** and *Project* -> *Properties* -> *Project Facets* -> *Java* to **1.7**
+
 
 ### Data Source Explorer 
 
