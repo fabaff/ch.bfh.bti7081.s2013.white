@@ -45,18 +45,18 @@ public class PCaseTest {
 	public void testPCaseUser() throws CommitException {
 		// TODO vollständiger Test
 		
-		JPAContainer<PmsUser> jpaContainer = new JPAContainer<>(PmsUser.class);
-		jpaContainer.setEntityProvider(new CachingBatchableLocalEntityProvider<PmsUser>(PmsUser.class,
-				JPAContainerFactory.createEntityManagerForPersistenceUnit(PmsDataAccess.PERSISTENCE_UNIT)));
-		
-		System.out.println("size before filter: " + jpaContainer.size());
-		Filter filter = Filters.eq("userName", "user");
-		jpaContainer.addContainerFilter(filter);
-		System.out.println("size with filter: " + jpaContainer.size());
-		PmsUser user = jpaContainer.getItem(jpaContainer.firstItemId()).getEntity();
-		System.out.println(user);
-		jpaContainer.removeContainerFilter(filter);
-		System.out.println("size after filter: " + jpaContainer.size());
+//		JPAContainer<PmsUser> jpaContainer = new JPAContainer<>(PmsUser.class);
+//		jpaContainer.setEntityProvider(new CachingBatchableLocalEntityProvider<PmsUser>(PmsUser.class,
+//				JPAContainerFactory.createEntityManagerForPersistenceUnit(PmsDataAccess.PERSISTENCE_UNIT)));
+//		
+//		System.out.println("size before filter: " + jpaContainer.size());
+//		Filter filter = Filters.eq("userName", "user");
+//		jpaContainer.addContainerFilter(filter);
+//		System.out.println("size with filter: " + jpaContainer.size());
+//		PmsUser user = jpaContainer.getItem(jpaContainer.firstItemId()).getEntity();
+//		System.out.println(user);
+//		jpaContainer.removeContainerFilter(filter);
+//		System.out.println("size after filter: " + jpaContainer.size());
 		
 		
 		
