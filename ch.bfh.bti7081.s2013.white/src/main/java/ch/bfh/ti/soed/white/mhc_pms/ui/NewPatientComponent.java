@@ -22,9 +22,7 @@ import com.vaadin.ui.TextField;
 import com.vaadin.ui.Window;
 
 /**
- * @author Gruppe White, I2p, BFH Bern, <a
- *         href="https://github.com/fabaff/ch.bfh.bti7081.s2013.white"
- *         >Contact</a>
+ * @author Gruppe White, I2p, BFH Bern, <a href="https://github.com/fabaff/ch.bfh.bti7081.s2013.white">Contact</a>
  * @version 0.0.2
  * @since 0.0.1
  * 
