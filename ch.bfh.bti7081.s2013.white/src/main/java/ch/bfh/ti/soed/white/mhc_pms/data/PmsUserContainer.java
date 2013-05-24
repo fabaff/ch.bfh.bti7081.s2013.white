@@ -19,14 +19,16 @@ public class PmsUserContainer extends PmsContainer<PmsUser> {
 			this.removeContainerFilters(filter);
 			return user;
 		} else {
-			try {
-				// TODO Exception Handling -> show error message
-				throw new RuntimeException("User not found in database!");
-			} catch (Exception e) {
-				throw e;
-			} finally {
-				this.removeContainerFilters(filter);
-			}
+			// TODO remove default init
+			return new PmsUser();
+//			try {
+//				// TODO Exception Handling -> show error message
+//				throw new RuntimeException("User not found in database!");
+//			} catch (Exception e) {
+//				throw e;
+//			} finally {
+//				this.removeContainerFilters(filter);
+//			}
 		}
 	}
 
