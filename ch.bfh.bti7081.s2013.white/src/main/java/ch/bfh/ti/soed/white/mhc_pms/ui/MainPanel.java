@@ -27,8 +27,13 @@ class MainPanel extends HorizontalSplitPanel implements ComponentChangeListener 
 	private static final float HORIZONTAL_SPLIT_POS = 10.0f;
 
 	/*
-	 * Screen layout of the GUI +------------------------------+ | 10% |
-	 * +----+-------------------------+ | | | | | | | | | | 20%| |
+	 * Screen layout of the GUI 
+	 * +----+-------------------------+ 
+	 * |    |                     10% |
+	 * |    +-------------------------+ 
+	 * |    |                         |
+	 * |    |                         |
+	 * | 20%|                         |
 	 * +----+-------------------------+
 	 */
 
