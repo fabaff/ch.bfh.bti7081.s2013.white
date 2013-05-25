@@ -80,8 +80,7 @@ class MenuBarComponent extends PmsComponentController implements
 		this.lblTitle.setContentMode(ContentMode.HTML);
 		this.lblTitle.setValue("<h2><b>MHC PMS</b></h2>");
 		this.lblDate.setContentMode(ContentMode.HTML);
-		this.lblDate.setValue("<h2><b>"
-				+ DateFormat.getDateInstance(DateFormat.LONG)
+		this.lblDate.setValue("<h2><b>"+ DateFormat.getDateInstance(DateFormat.LONG)
 						.format(new Date()) + "</b></h2>");
 
 		this.addHomeButtonClickListener(navigator);
