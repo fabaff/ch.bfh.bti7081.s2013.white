@@ -22,7 +22,7 @@ import com.vaadin.ui.Window;
  * @version		0.0.2 
  * @since		0.0.1
  * 
- * 
+ * UI Class for layout header
  */
 class TitleBarComponent extends PmsComponentController implements PmsComponentListener,
 		UIActivationListener {

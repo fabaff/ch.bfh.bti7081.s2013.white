@@ -11,9 +11,9 @@ import javax.validation.constraints.Size;
 import ch.bfh.ti.soed.white.mhc_pms.data.enums.UserGroup;
 
 /**
- * @author Gruppe White, I2p, BFH Bern, <a href="https://github.com/fabaff/ch.bfh.bti7081.s2013.white">Contact</a>
- * @version 0.0.2 
- * @since 0.0.1
+ * @author		Gruppe White, I2p, BFH Bern, <a href="https://github.com/fabaff/ch.bfh.bti7081.s2013.white">Contact</a>
+ * @version		0.0.2 
+ * @since		0.0.1
  * 
  * Entity implementation class for Entity: PmsUser
  */
@@ -70,14 +70,14 @@ public class PmsUser implements Serializable {
 	}
 
 	/**
-	 * @return the uid
+	 * @return the UID
 	 */
 	public int getUid() {
 		return uid;
 	}
 
 	/**
-	 * @param uid the uid to set
+	 * @param uid the UID to set
 	 */
 	public void setUid(int uid) {
 		this.uid = uid;

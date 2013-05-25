@@ -9,7 +9,7 @@ import com.vaadin.addon.jpacontainer.provider.CachingBatchableLocalEntityProvide
  * @version	0.0.2 
  * @since	0.0.1
  * 
- * 
+ * Entity implementation class for Entity: PmsContainer
  */
 public class PmsContainer<E> extends JPAContainer<E> {
 
