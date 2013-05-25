@@ -23,7 +23,7 @@ class MainPanel extends HorizontalSplitPanel implements ComponentChangeListener 
 	// Static vars for positioning
 	private static final long serialVersionUID = 6726671929546867989L;
 	private static final float VERTICAL_SPLIT_POS = 100.0f;
-	private static final float HORIZONTAL_SPLIT_POS = 180.0f;
+	private static final float HORIZONTAL_SPLIT_POS = 140.0f;
 
 	/*
 	 * Screen layout of the GUI 
@@ -32,7 +32,7 @@ class MainPanel extends HorizontalSplitPanel implements ComponentChangeListener 
 	 * |    +-------------------------+ 
 	 * |    |                         |
 	 * |    |                         |
-	 * | 150|                         |
+	 * | 140|                         |
 	 * +----+-------------------------+
 	 */
 
