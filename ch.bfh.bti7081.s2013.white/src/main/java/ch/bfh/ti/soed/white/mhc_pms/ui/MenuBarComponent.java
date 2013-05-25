@@ -218,7 +218,7 @@ class MenuBarComponent extends PmsComponentController implements
 		btnHome.setImmediate(true);
 		btnHome.setWidth("100px");
 		btnHome.setHeight("-1px");
-		mainLayout.addComponent(btnHome, "top:100.0px;left:20.0px;");
+		mainLayout.addComponent(btnHome, "top:120.0px;left:20.0px;");
 		
 		// btnPatientInfo
 		btnPatientInfo = new Button();
@@ -226,7 +226,7 @@ class MenuBarComponent extends PmsComponentController implements
 		btnPatientInfo.setImmediate(true);
 		btnPatientInfo.setWidth("100px");
 		btnPatientInfo.setHeight("-1px");
-		mainLayout.addComponent(btnPatientInfo, "top:140.0px;left:20.0px;");
+		mainLayout.addComponent(btnPatientInfo, "top:160.0px;left:20.0px;");
 		
 		// btnCaseInfo
 		btnCaseInfo = new Button();
@@ -234,7 +234,7 @@ class MenuBarComponent extends PmsComponentController implements
 		btnCaseInfo.setImmediate(true);
 		btnCaseInfo.setWidth("100px");
 		btnCaseInfo.setHeight("-1px");
-		mainLayout.addComponent(btnCaseInfo, "top:180.0px;left:20.0px;");
+		mainLayout.addComponent(btnCaseInfo, "top:200.0px;left:20.0px;");
 		
 		// btnPatientProgress
 		btnPatientProgress = new Button();
@@ -242,7 +242,7 @@ class MenuBarComponent extends PmsComponentController implements
 		btnPatientProgress.setImmediate(true);
 		btnPatientProgress.setWidth("100px");
 		btnPatientProgress.setHeight("-1px");
-		mainLayout.addComponent(btnPatientProgress, "top:220.0px;left:20.0px;");
+		mainLayout.addComponent(btnPatientProgress, "top:240.0px;left:20.0px;");
 		
 		// btnDiagnosis
 		btnDiagnosis = new Button();
@@ -250,7 +250,7 @@ class MenuBarComponent extends PmsComponentController implements
 		btnDiagnosis.setImmediate(true);
 		btnDiagnosis.setWidth("100px");
 		btnDiagnosis.setHeight("-1px");
-		mainLayout.addComponent(btnDiagnosis, "top:260.0px;left:20.0px;");
+		mainLayout.addComponent(btnDiagnosis, "top:280.0px;left:20.0px;");
 		
 		// btnMedication
 		btnMedication = new Button();
@@ -258,7 +258,7 @@ class MenuBarComponent extends PmsComponentController implements
 		btnMedication.setImmediate(true);
 		btnMedication.setWidth("100px");
 		btnMedication.setHeight("-1px");
-		mainLayout.addComponent(btnMedication, "top:300.0px;left:20.0px;");
+		mainLayout.addComponent(btnMedication, "top:320.0px;left:20.0px;");
 		
 		// btnBack
 		btnBack = new Button();
