@@ -11,11 +11,11 @@ import com.vaadin.ui.Panel;
 import com.vaadin.ui.VerticalSplitPanel;
 
 /**
- * @author	Gruppe White, I2p, BFH Bern, <a href="https://github.com/fabaff/ch.bfh.bti7081.s2013.white">Contact</a>
- * @version 0.0.2
- * @since	0.0.1
+ * @author		Gruppe White, I2p, BFH Bern, <a href="https://github.com/fabaff/ch.bfh.bti7081.s2013.white">Contact</a>
+ * @version		0.0.2
+ * @since		0.0.1
  * 
- *  The main panel of the GUI.
+ * The main panel of the GUI.
  */
 class MainPanel extends HorizontalSplitPanel implements ComponentChangeListener {
 

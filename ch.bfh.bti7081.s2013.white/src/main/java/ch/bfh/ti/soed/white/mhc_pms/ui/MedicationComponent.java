@@ -16,7 +16,7 @@ import com.vaadin.ui.Button;
  * @version		0.0.2 
  * @since		0.0.1
  * 
- * 
+ * UI Class for medication
  */
 class MedicationComponent extends PmsComponentController implements PmsComponentListener {
 

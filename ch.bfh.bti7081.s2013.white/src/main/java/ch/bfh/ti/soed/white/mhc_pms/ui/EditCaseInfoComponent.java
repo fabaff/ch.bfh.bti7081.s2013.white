@@ -29,7 +29,7 @@ import com.vaadin.ui.Window;
  * @version	0.0.2 
  * @since	0.0.1
  * 
- * 
+ * UI Class for a editing case details
  */
 public class EditCaseInfoComponent extends PmsComponentController implements NewCaseListener {
 

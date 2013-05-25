@@ -22,11 +22,11 @@ import com.vaadin.ui.TextField;
 import com.vaadin.ui.Window;
 
 /**
- * @author Gruppe White, I2p, BFH Bern, <a href="https://github.com/fabaff/ch.bfh.bti7081.s2013.white">Contact</a>
- * @version 0.0.2
- * @since 0.0.1
+ * @author		Gruppe White, I2p, BFH Bern, <a href="https://github.com/fabaff/ch.bfh.bti7081.s2013.white">Contact</a>
+ * @version		0.0.2
+ * @since		0.0.1
  * 
- * 
+ * UI Class for a new patient
  */
 public class NewPatientComponent extends PmsComponentController {
 
@@ -250,11 +250,11 @@ public class NewPatientComponent extends PmsComponentController {
 		mainLayout.setImmediate(false);
 		mainLayout.setWidth("100%");
 		mainLayout.setHeight("100%");
-
+		
 		// top-level component properties
 		setWidth("100.0%");
 		setHeight("100.0%");
-
+		
 		// btnAddPatient
 		btnAddPatient = new Button();
 		btnAddPatient.setCaption("Patient hinzufügen");
@@ -262,7 +262,7 @@ public class NewPatientComponent extends PmsComponentController {
 		btnAddPatient.setWidth("140px");
 		btnAddPatient.setHeight("-1px");
 		mainLayout.addComponent(btnAddPatient, "top:580.0px;left:20.0px;");
-
+		
 		// btnCancel
 		btnCancel = new Button();
 		btnCancel.setCaption("Abbrechen");
@@ -270,7 +270,7 @@ public class NewPatientComponent extends PmsComponentController {
 		btnCancel.setWidth("-1px");
 		btnCancel.setHeight("-1px");
 		mainLayout.addComponent(btnCancel, "top:580.0px;left:200.0px;");
-
+		
 		// txtMotherLanguage
 		txtMotherLanguage = new TextField();
 		txtMotherLanguage.setCaption("Muttersprache: ");
@@ -278,7 +278,7 @@ public class NewPatientComponent extends PmsComponentController {
 		txtMotherLanguage.setWidth("160px");
 		txtMotherLanguage.setHeight("-1px");
 		mainLayout.addComponent(txtMotherLanguage, "top:100.0px;left:20.0px;");
-
+		
 		// txtLastName
 		txtLastName = new TextField();
 		txtLastName.setCaption("Nachname: ");
@@ -286,7 +286,7 @@ public class NewPatientComponent extends PmsComponentController {
 		txtLastName.setWidth("160px");
 		txtLastName.setHeight("-1px");
 		mainLayout.addComponent(txtLastName, "top:40.0px;left:220.0px;");
-
+		
 		// dateFieldDateOfBirth
 		dateFieldDateOfBirth = new PopupDateField();
 		dateFieldDateOfBirth.setCaption("Geburtsdatum: ");
@@ -295,7 +295,7 @@ public class NewPatientComponent extends PmsComponentController {
 		dateFieldDateOfBirth.setHeight("-1px");
 		mainLayout.addComponent(dateFieldDateOfBirth,
 				"top:40.0px;left:620.0px;");
-
+		
 		// cmbGender
 		cmbGender = new ComboBox();
 		cmbGender.setCaption("Geschlecht: ");
@@ -303,7 +303,7 @@ public class NewPatientComponent extends PmsComponentController {
 		cmbGender.setWidth("160px");
 		cmbGender.setHeight("-1px");
 		mainLayout.addComponent(cmbGender, "top:40.0px;left:420.0px;");
-
+		
 		// txtFirstName
 		txtFirstName = new TextField();
 		txtFirstName.setCaption("Vorname: ");
@@ -311,7 +311,7 @@ public class NewPatientComponent extends PmsComponentController {
 		txtFirstName.setWidth("160px");
 		txtFirstName.setHeight("-1px");
 		mainLayout.addComponent(txtFirstName, "top:40.0px;left:20.0px;");
-
+		
 		// txtCivilStatus
 		txtCivilStatus = new TextField();
 		txtCivilStatus.setCaption("Zivilstand: ");
@@ -319,7 +319,7 @@ public class NewPatientComponent extends PmsComponentController {
 		txtCivilStatus.setWidth("160px");
 		txtCivilStatus.setHeight("-1px");
 		mainLayout.addComponent(txtCivilStatus, "top:100.0px;left:420.0px;");
-
+		
 		// txtNationality
 		txtNationality = new TextField();
 		txtNationality.setCaption("Nationalität: ");
@@ -327,7 +327,7 @@ public class NewPatientComponent extends PmsComponentController {
 		txtNationality.setWidth("160px");
 		txtNationality.setHeight("-1px");
 		mainLayout.addComponent(txtNationality, "top:100.0px;left:620.0px;");
-
+		
 		// txtCommuncationLanguage
 		txtCommuncationLanguage = new TextField();
 		txtCommuncationLanguage.setCaption("Verständigung: ");
@@ -336,7 +336,7 @@ public class NewPatientComponent extends PmsComponentController {
 		txtCommuncationLanguage.setHeight("-1px");
 		mainLayout.addComponent(txtCommuncationLanguage,
 				"top:100.0px;left:220.0px;");
-
+		
 		// txtReligion
 		txtReligion = new TextField();
 		txtReligion.setCaption("Religion: ");
@@ -344,7 +344,7 @@ public class NewPatientComponent extends PmsComponentController {
 		txtReligion.setWidth("160px");
 		txtReligion.setHeight("-1px");
 		mainLayout.addComponent(txtReligion, "top:160.0px;left:20.0px;");
-
+		
 		// txtAddress
 		txtAddress = new TextField();
 		txtAddress.setCaption("Adresse: ");
@@ -352,7 +352,7 @@ public class NewPatientComponent extends PmsComponentController {
 		txtAddress.setWidth("160px");
 		txtAddress.setHeight("-1px");
 		mainLayout.addComponent(txtAddress, "top:160.0px;left:220.0px;");
-
+		
 		// txtPhonePrivate
 		txtPhonePrivate = new TextField();
 		txtPhonePrivate.setCaption("Telefon Privat: ");
@@ -360,7 +360,7 @@ public class NewPatientComponent extends PmsComponentController {
 		txtPhonePrivate.setWidth("160px");
 		txtPhonePrivate.setHeight("-1px");
 		mainLayout.addComponent(txtPhonePrivate, "top:220.0px;left:220.0px;");
-
+		
 		// txtNextOfKin
 		txtNextOfKin = new TextField();
 		txtNextOfKin.setCaption("Angehöriger: ");
@@ -368,7 +368,7 @@ public class NewPatientComponent extends PmsComponentController {
 		txtNextOfKin.setWidth("160px");
 		txtNextOfKin.setHeight("-1px");
 		mainLayout.addComponent(txtNextOfKin, "top:340.0px;left:20.0px;");
-
+		
 		// txtEmail
 		txtEmail = new TextField();
 		txtEmail.setCaption("E-Mail: ");
@@ -376,7 +376,7 @@ public class NewPatientComponent extends PmsComponentController {
 		txtEmail.setWidth("160px");
 		txtEmail.setHeight("-1px");
 		mainLayout.addComponent(txtEmail, "top:280.0px;left:20.0px;");
-
+		
 		// txtPhoneBusiness
 		txtPhoneBusiness = new TextField();
 		txtPhoneBusiness.setCaption("Telefon Geschäft: ");
@@ -384,7 +384,7 @@ public class NewPatientComponent extends PmsComponentController {
 		txtPhoneBusiness.setWidth("160px");
 		txtPhoneBusiness.setHeight("-1px");
 		mainLayout.addComponent(txtPhoneBusiness, "top:220.0px;left:420.0px;");
-
+		
 		// txtMobilePhone
 		txtMobilePhone = new TextField();
 		txtMobilePhone.setCaption("Handy: ");
@@ -392,7 +392,7 @@ public class NewPatientComponent extends PmsComponentController {
 		txtMobilePhone.setWidth("160px");
 		txtMobilePhone.setHeight("-1px");
 		mainLayout.addComponent(txtMobilePhone, "top:220.0px;left:620.0px;");
-
+		
 		// txtCountry
 		txtCountry = new TextField();
 		txtCountry.setCaption("Land: ");
@@ -400,7 +400,7 @@ public class NewPatientComponent extends PmsComponentController {
 		txtCountry.setWidth("160px");
 		txtCountry.setHeight("-1px");
 		mainLayout.addComponent(txtCountry, "top:220.0px;left:20.0px;");
-
+		
 		// txtHomeLocation
 		txtHomeLocation = new TextField();
 		txtHomeLocation.setCaption("Ort: ");
@@ -408,7 +408,7 @@ public class NewPatientComponent extends PmsComponentController {
 		txtHomeLocation.setWidth("160px");
 		txtHomeLocation.setHeight("-1px");
 		mainLayout.addComponent(txtHomeLocation, "top:160.0px;left:620.0px;");
-
+		
 		// txtPostalCode
 		txtPostalCode = new TextField();
 		txtPostalCode.setCaption("Postleitzahl: ");
@@ -416,7 +416,7 @@ public class NewPatientComponent extends PmsComponentController {
 		txtPostalCode.setWidth("160px");
 		txtPostalCode.setHeight("-1px");
 		mainLayout.addComponent(txtPostalCode, "top:160.0px;left:420.0px;");
-
+		
 		// txtNextOfKinPostalCode
 		txtNextOfKinPostalCode = new TextField();
 		txtNextOfKinPostalCode.setCaption("Postleitzahl: ");
@@ -425,7 +425,7 @@ public class NewPatientComponent extends PmsComponentController {
 		txtNextOfKinPostalCode.setHeight("-1px");
 		mainLayout.addComponent(txtNextOfKinPostalCode,
 				"top:400.0px;left:20.0px;");
-
+		
 		// txtNextOfKinHomeLocation
 		txtNextOfKinHomeLocation = new TextField();
 		txtNextOfKinHomeLocation.setCaption("Ort: ");
@@ -434,7 +434,7 @@ public class NewPatientComponent extends PmsComponentController {
 		txtNextOfKinHomeLocation.setHeight("-1px");
 		mainLayout.addComponent(txtNextOfKinHomeLocation,
 				"top:400.0px;left:220.0px;");
-
+		
 		// txtNextOfKinPhone
 		txtNextOfKinPhone = new TextField();
 		txtNextOfKinPhone.setCaption("Telefon: ");
@@ -442,7 +442,7 @@ public class NewPatientComponent extends PmsComponentController {
 		txtNextOfKinPhone.setWidth("160px");
 		txtNextOfKinPhone.setHeight("-1px");
 		mainLayout.addComponent(txtNextOfKinPhone, "top:400.0px;left:420.0px;");
-
+		
 		// txtNextOfKinAddress
 		txtNextOfKinAddress = new TextField();
 		txtNextOfKinAddress.setCaption("Adresse: ");
@@ -451,7 +451,7 @@ public class NewPatientComponent extends PmsComponentController {
 		txtNextOfKinAddress.setHeight("-1px");
 		mainLayout.addComponent(txtNextOfKinAddress,
 				"top:340.0px;left:620.0px;");
-
+		
 		// txtNextOfKinLastName
 		txtNextOfKinLastName = new TextField();
 		txtNextOfKinLastName.setCaption("Nachname: ");
@@ -460,7 +460,7 @@ public class NewPatientComponent extends PmsComponentController {
 		txtNextOfKinLastName.setHeight("-1px");
 		mainLayout.addComponent(txtNextOfKinLastName,
 				"top:340.0px;left:420.0px;");
-
+		
 		// txtNextOfKinFirstName
 		txtNextOfKinFirstName = new TextField();
 		txtNextOfKinFirstName.setCaption("Vorname: ");
@@ -469,7 +469,7 @@ public class NewPatientComponent extends PmsComponentController {
 		txtNextOfKinFirstName.setHeight("-1px");
 		mainLayout.addComponent(txtNextOfKinFirstName,
 				"top:340.0px;left:220.0px;");
-
+		
 		// txtFamilyDoctorAddress
 		txtFamilyDoctorAddress = new TextField();
 		txtFamilyDoctorAddress.setCaption("Adresse Hausarzt: ");
@@ -478,7 +478,7 @@ public class NewPatientComponent extends PmsComponentController {
 		txtFamilyDoctorAddress.setHeight("-1px");
 		mainLayout.addComponent(txtFamilyDoctorAddress,
 				"top:460.0px;left:420.0px;");
-
+		
 		// txtFamilyDoctorLastName
 		txtFamilyDoctorLastName = new TextField();
 		txtFamilyDoctorLastName.setCaption("Nachname Hausarzt: ");
@@ -487,7 +487,7 @@ public class NewPatientComponent extends PmsComponentController {
 		txtFamilyDoctorLastName.setHeight("-1px");
 		mainLayout.addComponent(txtFamilyDoctorLastName,
 				"top:460.0px;left:220.0px;");
-
+		
 		// txtFamilyDoctorFirstName
 		txtFamilyDoctorFirstName = new TextField();
 		txtFamilyDoctorFirstName.setCaption("Vorname Hausarzt:");
@@ -496,7 +496,7 @@ public class NewPatientComponent extends PmsComponentController {
 		txtFamilyDoctorFirstName.setHeight("-1px");
 		mainLayout.addComponent(txtFamilyDoctorFirstName,
 				"top:460.0px;left:20.0px;");
-
+		
 		// txtFamilyDoctorLocation
 		txtFamilyDoctorLocation = new TextField();
 		txtFamilyDoctorLocation.setCaption("Ort Hausarzt: ");
@@ -505,7 +505,7 @@ public class NewPatientComponent extends PmsComponentController {
 		txtFamilyDoctorLocation.setHeight("-1px");
 		mainLayout.addComponent(txtFamilyDoctorLocation,
 				"top:520.0px;left:20.0px;");
-
+		
 		// txtFamilyDoctorFax
 		txtFamilyDoctorFax = new TextField();
 		txtFamilyDoctorFax.setCaption("Fax Hausarzt: ");
@@ -514,7 +514,7 @@ public class NewPatientComponent extends PmsComponentController {
 		txtFamilyDoctorFax.setHeight("-1px");
 		mainLayout
 				.addComponent(txtFamilyDoctorFax, "top:520.0px;left:220.0px;");
-
+		
 		// txtFamilyDoctorPostalCode
 		txtFamilyDoctorPostalCode = new TextField();
 		txtFamilyDoctorPostalCode.setCaption("Postleitzahl Hausarzt: ");
@@ -523,7 +523,7 @@ public class NewPatientComponent extends PmsComponentController {
 		txtFamilyDoctorPostalCode.setHeight("-1px");
 		mainLayout.addComponent(txtFamilyDoctorPostalCode,
 				"top:460.0px;left:620.0px;");
-
+		
 		return mainLayout;
 	}
 

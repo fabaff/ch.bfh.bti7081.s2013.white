@@ -17,13 +17,11 @@ import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.ui.Label;
 
 /**
- * @author Gruppe White, I2p, BFH Bern, <a
- *         href="https://github.com/fabaff/ch.bfh.bti7081.s2013.white"
- *         >Contact</a>
- * @version 0.0.2
- * @since 0.0.1
+ * @author		Gruppe White, I2p, BFH Bern, <a href="https://github.com/fabaff/ch.bfh.bti7081.s2013.white">Contact</a>
+ * @version		0.0.2
+ * @since		0.0.1
  * 
- * 
+ * UI Class for sidebar
  */
 class MenuBarComponent extends PmsComponentController implements
 		UIActivationListener {

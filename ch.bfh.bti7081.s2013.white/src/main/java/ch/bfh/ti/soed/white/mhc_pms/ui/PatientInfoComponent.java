@@ -21,7 +21,7 @@ import com.vaadin.ui.Label;
  * @version		0.0.2 
  * @since		0.0.1
  * 
- * 
+ * UI Class for patient information 
  */
 class PatientInfoComponent extends PmsComponentController implements PmsComponentListener {
 
