@@ -18,6 +18,7 @@ import com.vaadin.ui.AbsoluteLayout;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.ui.ComboBox;
+import com.vaadin.ui.Notification;
 import com.vaadin.ui.PopupDateField;
 import com.vaadin.ui.TextField;
 import com.vaadin.ui.Window;
@@ -131,7 +132,7 @@ public class NewPatientComponent extends PmsComponentController {
 		// TODO dateOfBirth: lock edit
 	}
 
-	// Default values for comboboxes are needed
+	// Default values for combo boxes are needed
 	private void setComboBoxDefaultValues() {
 		this.cmbGender.setValue(Gender.weiblich);
 		this.cmbCivilStatus.setValue(CivilStatus.ledig);
@@ -164,8 +165,7 @@ public class NewPatientComponent extends PmsComponentController {
 			public void buttonClick(ClickEvent event) {
 				NewPatientComponent.this.fieldGroup.discard();
 				NewPatientComponent.this.fireUIActivationEvent(true);
-				NewPatientComponent.this
-						.fireComponentChangeEvent(NavigationEvent.PATIENT_BACK);
+				NewPatientComponent.this.fireComponentChangeEvent(NavigationEvent.PATIENT_BACK);
 			}
 		});
 	}
@@ -178,17 +178,15 @@ public class NewPatientComponent extends PmsComponentController {
 			public void buttonClick(ClickEvent event) {
 				try {
 					NewPatientComponent.this.fieldGroup.commit();
-					PCase pCaseItem = NewPatientComponent.this.newPatientItem
-							.getBean();
+					PCase pCaseItem = NewPatientComponent.this.newPatientItem.getBean();
 					pCaseItem.openCase();
 
-					Object id = NewPatientComponent.this.pmsContainers
-							.getPCaseContainer().addEntity(pCaseItem);
+					Object id = NewPatientComponent.this.pmsContainers.getPCaseContainer().addEntity(pCaseItem);
 
+	                Notification.show("Patient gespeichert", Notification.Type.HUMANIZED_MESSAGE);
 					NewPatientComponent.this.bindFields();
 					NewPatientComponent.this.fireUIActivationEvent(true);
-					NewPatientComponent.this
-							.fireComponentChangeEvent(NavigationEvent.PCASE_BACK);
+					NewPatientComponent.this.fireComponentChangeEvent(NavigationEvent.PCASE_BACK);
 					NewPatientComponent.this.firePCaseItemChangeEvent(id);
 				} catch (CommitException e) {
 					// TODO Exception Handling
