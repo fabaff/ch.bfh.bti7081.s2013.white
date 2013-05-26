@@ -101,9 +101,10 @@ class DiagnosisComponent extends PmsComponentController implements PmsComponentL
 		tblDiagnosis = new Table();
 		tblDiagnosis.setCaption("Übersicht Diagnosen");
 		tblDiagnosis.setImmediate(false);
-		tblDiagnosis.setWidth("960px");
-		tblDiagnosis.setHeight("460px");
-		mainLayout.addComponent(tblDiagnosis, "top:100.0px;left:20.0px;");
+		tblDiagnosis.setWidth("100.0%");
+		tblDiagnosis.setHeight("100.0%");
+		mainLayout.addComponent(tblDiagnosis,
+				"top:100.0px;right:20.0px;bottom:40.0px;left:20.0px;");
 		
 		return mainLayout;
 	}
