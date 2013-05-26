@@ -6,8 +6,20 @@
 
 The used version is **JRE 1.7**.
 
-Check if you are used this version: *Project* -> *Properties* -> *Java Build Path* -> *Libraries* set JRE System Library to **JavaSE-1.7 (jre7)** and *Project* -> *Properties* -> *Project Facets* -> *Java* to **1.7**
+Check if you are used this version: *Project* -> *Properties* -> 
+*Java Build Path* -> *Libraries* set JRE System Library to **JavaSE-1.7 (jre7)**
+and *Project* -> *Properties* -> *Project Facets* -> *Java* to **1.7**
 
+### Git
+
+Eclipse doesn't play nice with git. Fast switching between branches, re-compiling,
+and switching back is critical because Eclipse doesn't detect the changes fast
+enough, update its files, or clean its own cache. If Eclipse doesn't handles it
+properly, the following can help:   
+
+*Project* -> *Clean...*
+
+If not, try *Run as* -> *Maven clean*.
 
 ### Data Source Explorer 
 
