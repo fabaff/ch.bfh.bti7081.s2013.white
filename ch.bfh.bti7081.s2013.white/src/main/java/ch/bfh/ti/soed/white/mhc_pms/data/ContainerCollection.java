@@ -27,21 +27,21 @@ public class ContainerCollection {
 	 * @return the pmsUserContainer
 	 */
 	public PmsUserContainer getPmsUserContainer() {
-		return  this.pmsUserContainer;
+		return this.pmsUserContainer;
 	}
 
 	/**
 	 * @return the pCaseContainer
 	 */
 	public PmsContainer<PCase> getPCaseContainer() {
-		return  this.pCaseContainer;
+		return this.pCaseContainer;
 	}
 
 	/**
 	 * @return the diagnosisContainer
 	 */
 	public PmsContainer<Diagnosis> getDiagnosisContainer() {
-		return  this.diagnosisContainer;
+		return this.diagnosisContainer;
 	}
 
 }
