@@ -129,8 +129,8 @@ public class EditCaseInfoComponent extends PmsComponentController implements New
 		this.addBtnCancelListener();
 		
 		// TODO ComboBoxes not editable
-		// TODO Neuer Fall: WErte aus bestehendem Fall übernehmen
-		// TODO wenn neuer Pat hinzugefügt -> DEfault Werte für Fallinfo automatisch hinzufügen
+		// TODO Neuer Fall: Werte aus bestehendem Fall übernehmen
+		// TODO wenn neuer Patient hinzugefügt -> Default Werte für Fallinfo automatisch hinzufügen
 	}
 
 	private void setComboBoxDefaultValues() {
@@ -147,8 +147,7 @@ public class EditCaseInfoComponent extends PmsComponentController implements New
 			public void buttonClick(ClickEvent event) {
 				EditCaseInfoComponent.this.fieldGroup.discard();
 				EditCaseInfoComponent.this.fireUIActivationEvent(true);
-				EditCaseInfoComponent.this
-						.fireComponentChangeEvent(NavigationEvent.PCASE_BACK);
+				EditCaseInfoComponent.this.fireComponentChangeEvent(NavigationEvent.PCASE_BACK);
 				EditCaseInfoComponent.this.setNewCase(false);
 			}
 		});
@@ -175,8 +174,7 @@ public class EditCaseInfoComponent extends PmsComponentController implements New
 			this.newCaseItem = new BeanItem<PCase>(entityItem.getEntity());
 			
 			this.fieldGroup.setItemDataSource(this.newCaseItem);
-			this.fieldGroup
-					.bind(this.cmbReanimationStatus, "reanimationStatus");
+			this.fieldGroup.bind(this.cmbReanimationStatus, "reanimationStatus");
 			this.fieldGroup.bind(this.cmbKindOfTreatment, "kindOfTreatment");
 			this.fieldGroup.bind(this.cmbOrderOfPatient, "orderOfPatient");
 			this.fieldGroup.bind(this.txtAssignment, "assignment");
@@ -244,8 +242,7 @@ public class EditCaseInfoComponent extends PmsComponentController implements New
 		cmbReanimationStatus.setImmediate(false);
 		cmbReanimationStatus.setWidth("-1px");
 		cmbReanimationStatus.setHeight("-1px");
-		mainLayout
-				.addComponent(cmbReanimationStatus, "top:40.0px;left:20.0px;");
+		mainLayout.addComponent(cmbReanimationStatus, "top:40.0px;left:20.0px;");
 		
 		// txtAssignment
 		txtAssignment = new TextField();
@@ -309,8 +306,7 @@ public class EditCaseInfoComponent extends PmsComponentController implements New
 		txtSuicidalTendency.setImmediate(false);
 		txtSuicidalTendency.setWidth("-1px");
 		txtSuicidalTendency.setHeight("-1px");
-		mainLayout
-				.addComponent(txtSuicidalTendency, "top:40.0px;left:399.0px;");
+		mainLayout.addComponent(txtSuicidalTendency, "top:40.0px;left:399.0px;");
 		
 		// cmbKindOfTreatment
 		cmbKindOfTreatment = new ComboBox();
@@ -318,8 +314,7 @@ public class EditCaseInfoComponent extends PmsComponentController implements New
 		cmbKindOfTreatment.setImmediate(false);
 		cmbKindOfTreatment.setWidth("-1px");
 		cmbKindOfTreatment.setHeight("-1px");
-		mainLayout
-				.addComponent(cmbKindOfTreatment, "top:160.0px;left:220.0px;");
+		mainLayout.addComponent(cmbKindOfTreatment, "top:160.0px;left:220.0px;");
 		
 		return mainLayout;
 	}
