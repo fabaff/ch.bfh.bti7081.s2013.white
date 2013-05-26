@@ -189,6 +189,8 @@ class MainPanel extends HorizontalSplitPanel implements ComponentChangeListener 
 	}
 
 	private void navigate(ButtonEnum btnEnum, View view) {
+		this.navigator.addView(MenuBarComponent.ButtonEnum.PATIENT_INFO.toString(), this.patInfo);
+		this.navigator.addView(MenuBarComponent.ButtonEnum.CASE_INFO.toString(), this.caseInfo);
 		this.navigator.addView(btnEnum.toString(), view);
 		this.navigator.navigateTo(btnEnum.toString());
 	}
