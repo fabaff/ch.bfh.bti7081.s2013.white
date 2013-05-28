@@ -9,6 +9,7 @@ import com.vaadin.navigator.View;
 import com.vaadin.ui.HorizontalSplitPanel;
 import com.vaadin.ui.Panel;
 import com.vaadin.ui.VerticalSplitPanel;
+import com.vaadin.ui.themes.Reindeer;
 
 /**
  * @author		Gruppe White, I2p, BFH Bern, <a href="https://github.com/fabaff/ch.bfh.bti7081.s2013.white">Contact</a>
@@ -21,17 +22,17 @@ class MainPanel extends HorizontalSplitPanel implements ComponentChangeListener 
 
 	// Static vars for positioning
 	private static final long serialVersionUID = 6726671929546867989L;
-	private static final float VERTICAL_SPLIT_POS = 20.0f;
-	private static final float HORIZONTAL_SPLIT_POS = 10.0f;
+	private static final float VERTICAL_SPLIT_POS = 100.0f;
+	private static final float HORIZONTAL_SPLIT_POS = 140.0f;
 
 	/*
 	 * Screen layout of the GUI 
 	 * +----+-------------------------+ 
-	 * |    |                     10% |
+	 * |    |                   120px |
 	 * |    +-------------------------+ 
 	 * |    |                         |
 	 * |    |                         |
-	 * | 20%|                         |
+	 * | 140|                         |
 	 * +----+-------------------------+
 	 */
 
@@ -60,12 +61,24 @@ class MainPanel extends HorizontalSplitPanel implements ComponentChangeListener 
 		this.setFirstComponent(this.menuBar);
 		this.setSecondComponent(this.verticalPanel);
 		
-		// Unit of the values is % (percent)
-		this.setSplitPosition(HORIZONTAL_SPLIT_POS, Unit.PERCENTAGE);
-		this.verticalPanel
-				.setSplitPosition(VERTICAL_SPLIT_POS, Unit.PERCENTAGE);
+		
+		// Panel splitting static size or dynamic
+		//
+		// Horizontal panel
+		//this.setSplitPosition(HORIZONTAL_SPLIT_POS, Unit.PERCENTAGE);
+		this.setSplitPosition(HORIZONTAL_SPLIT_POS, Unit.PIXELS);
+		// Lock panel size, only needed when size in %
+		this.setLocked(true);
+		// Panel divider formating with theme
+		this.addStyleName(Reindeer.SPLITPANEL_SMALL);
+		
+		// Vertical panel
+		//this.verticalPanel.setSplitPosition(VERTICAL_SPLIT_POS, Unit.PERCENTAGE);
+		this.verticalPanel.setSplitPosition(VERTICAL_SPLIT_POS, Unit.PIXELS);
 		this.verticalPanel.setFirstComponent(this.titleBar);
 		this.verticalPanel.setSecondComponent(detailPanel);
+		this.verticalPanel.setLocked(true);
+		this.verticalPanel.addStyleName(Reindeer.SPLITPANEL_SMALL);
 
 		this.addNavigatorViews();
 		this.addMenuBarListeners();
