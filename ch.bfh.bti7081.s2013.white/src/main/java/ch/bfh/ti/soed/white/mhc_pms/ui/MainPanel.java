@@ -58,28 +58,8 @@ class MainPanel extends HorizontalSplitPanel implements ComponentChangeListener 
 		this.editCaseInfoComp = new EditCaseInfoComponent();
 
 		detailPanel.setSizeFull();
-		this.setFirstComponent(this.menuBar);
-		this.setSecondComponent(this.verticalPanel);
-		
-		
-		// Panel splitting static size or dynamic
-		//
-		// Horizontal panel
-		//this.setSplitPosition(HORIZONTAL_SPLIT_POS, Unit.PERCENTAGE);
-		this.setSplitPosition(HORIZONTAL_SPLIT_POS, Unit.PIXELS);
-		// Lock panel size, only needed when size in %
-		this.setLocked(true);
-		// Panel divider formating with theme
-		this.addStyleName(Reindeer.SPLITPANEL_SMALL);
-		
-		// Vertical panel
-		//this.verticalPanel.setSplitPosition(VERTICAL_SPLIT_POS, Unit.PERCENTAGE);
-		this.verticalPanel.setSplitPosition(VERTICAL_SPLIT_POS, Unit.PIXELS);
-		this.verticalPanel.setFirstComponent(this.titleBar);
-		this.verticalPanel.setSecondComponent(detailPanel);
-		this.verticalPanel.setLocked(true);
-		this.verticalPanel.addStyleName(Reindeer.SPLITPANEL_SMALL);
-
+		this.setUpHorizontalPanel();
+		this.setUpVerticalPanel(detailPanel);
 		this.addNavigatorViews();
 		this.addMenuBarListeners();
 		this.addPatientTableListeners();
@@ -91,6 +71,31 @@ class MainPanel extends HorizontalSplitPanel implements ComponentChangeListener 
 		// TODO Add missing Component Listener
 		// setComponentAlignment(button, Alignment.MIDDLE_CENTER);
 		// Notification.show("Welcome to the Animal Farm");
+	}
+
+	private void setUpHorizontalPanel() {
+		this.setFirstComponent(this.menuBar);
+		this.setSecondComponent(this.verticalPanel);
+		
+		// Panel splitting static size or dynamic
+		//
+		// Horizontal panel
+		//this.setSplitPosition(HORIZONTAL_SPLIT_POS, Unit.PERCENTAGE);
+		this.setSplitPosition(HORIZONTAL_SPLIT_POS, Unit.PIXELS);
+		// Lock panel size, only needed when size in %
+		this.setLocked(true);
+		// Panel divider formating with theme
+		this.addStyleName(Reindeer.SPLITPANEL_SMALL);
+	}
+
+	private void setUpVerticalPanel(Panel detailPanel) {
+		// Vertical panel
+		//this.verticalPanel.setSplitPosition(VERTICAL_SPLIT_POS, Unit.PERCENTAGE);
+		this.verticalPanel.setSplitPosition(VERTICAL_SPLIT_POS, Unit.PIXELS);
+		this.verticalPanel.setFirstComponent(this.titleBar);
+		this.verticalPanel.setSecondComponent(detailPanel);
+		this.verticalPanel.setLocked(true);
+		this.verticalPanel.addStyleName(Reindeer.SPLITPANEL_SMALL);
 	}
 
 	private void addEditCaseListeners() {
