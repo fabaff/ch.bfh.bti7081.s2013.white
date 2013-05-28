@@ -33,6 +33,7 @@ public class PCase implements Serializable {
 	private int pcid = 0;
 
 	// Patient data fields
+	
 	@NotNull
 	@Size(min = 2, max = 64)
 	private String firstName = "";
@@ -128,12 +129,17 @@ public class PCase implements Serializable {
 	@OneToMany(mappedBy = "pCase")
 	private Set<Diagnosis> diagnosisRelation = new HashSet<>();
 	
+	@OneToMany(mappedBy = "pCase")
+	private Set<PatientProgress> patientProgressRelation = new HashSet<>();
+	
+	@OneToMany(mappedBy = "pCase")
+	private Set<Medication> medicationRelation = new HashSet<>();
+	
 	public PCase() {
-		// TODO one to many relationships: medication, patient process
+		this(null);
 	}
 	
 	public PCase(PmsUser therapist) {
-		this();
 		this.therapist = therapist;
 	}
 
