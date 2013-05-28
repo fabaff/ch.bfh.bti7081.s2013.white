@@ -1,11 +1,14 @@
 package ch.bfh.ti.soed.white.mhc_pms.data;
 
 import java.io.Serializable;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+
+import ch.bfh.ti.soed.white.mhc_pms.data.enums.MedicationStatus;
 
 /**
  * Entity implementation class for Entity: MedicationDate
@@ -16,8 +19,18 @@ import javax.validation.constraints.NotNull;
 public class MedicationDate implements Serializable {
 
 	private static final long serialVersionUID = -186608011820256716L;
+	
 	@Id
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private int mdid;
+	
+	@NotNull
+	@Temporal(value = TemporalType.DATE)
+	private Date applicationDate;
+	
+	@NotNull
+	@Enumerated(EnumType.STRING)
+	private MedicationStatus medicationStatus;
 
 	@OneToMany(mappedBy = "medDate")
 	private Set<MedicationTime> medTimeRelation = new HashSet<>();
@@ -68,6 +81,34 @@ public class MedicationDate implements Serializable {
 	 */
 	public void setMedication(Medication medication) {
 		this.medication = medication;
+	}
+
+	/**
+	 * @return the medicationStatus
+	 */
+	public MedicationStatus getMedicationStatus() {
+		return medicationStatus;
+	}
+
+	/**
+	 * @param medicationStatus the medicationStatus to set
+	 */
+	public void setMedicationStatus(MedicationStatus medicationStatus) {
+		this.medicationStatus = medicationStatus;
+	}
+
+	/**
+	 * @return the applicationDate
+	 */
+	public Date getApplicationDate() {
+		return applicationDate;
+	}
+
+	/**
+	 * @param applicationDate the applicationDate to set
+	 */
+	public void setApplicationDate(Date applicationDate) {
+		this.applicationDate = applicationDate;
 	}
    
 }

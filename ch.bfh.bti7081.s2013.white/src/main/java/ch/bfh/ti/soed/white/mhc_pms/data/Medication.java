@@ -9,6 +9,8 @@ import java.util.Set;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
+import ch.bfh.ti.soed.white.mhc_pms.data.enums.MedApplicationMode;
+
 /**
  * @author Gruppe White, I2p, BFH Bern, <a
  *         href="https://github.com/fabaff/ch.bfh.bti7081.s2013.white"
@@ -37,7 +39,8 @@ public class Medication implements Serializable {
 	
 	// applicationMode = Verabreichungsform
 	@NotNull
-	private String applicationMode = "";
+	@Enumerated(EnumType.STRING)
+	private  MedApplicationMode applicationMode;
 
 	@NotNull
 	@Temporal(value = TemporalType.DATE)
@@ -52,14 +55,6 @@ public class Medication implements Serializable {
 	@NotNull
 	private boolean isDeleted = false;
 
-	// Transient fields
-	
-	@Transient
-	private Date medicationStart;
-
-	@Transient
-	private Date medicationEnd;
-	
 	@NotNull
 	@ManyToOne
 	private PCase pCase;
@@ -104,20 +99,6 @@ public class Medication implements Serializable {
 	 */
 	public void setDope(String dope) {
 		this.dope = dope;
-	}
-
-	/**
-	 * @return the applicationMode
-	 */
-	public String getApplicationMode() {
-		return applicationMode;
-	}
-
-	/**
-	 * @param applicationMode the applicationMode to set
-	 */
-	public void setApplicationMode(String applicationMode) {
-		this.applicationMode = applicationMode;
 	}
 
 	/**
@@ -202,6 +183,20 @@ public class Medication implements Serializable {
 	 */
 	public void setMedDateRelation(Set<MedicationDate> medDateRelation) {
 		this.medDateRelation = medDateRelation;
+	}
+
+	/**
+	 * @return the applicationMode
+	 */
+	public MedApplicationMode getApplicationMode() {
+		return applicationMode;
+	}
+
+	/**
+	 * @param applicationMode the applicationMode to set
+	 */
+	public void setApplicationMode(MedApplicationMode applicationMode) {
+		this.applicationMode = applicationMode;
 	}
 
 }

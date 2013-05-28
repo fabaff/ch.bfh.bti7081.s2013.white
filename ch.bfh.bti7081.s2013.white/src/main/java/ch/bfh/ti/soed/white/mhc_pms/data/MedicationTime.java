@@ -1,8 +1,12 @@
 package ch.bfh.ti.soed.white.mhc_pms.data;
 
 import java.io.Serializable;
+import java.util.Date;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+
+import ch.bfh.ti.soed.white.mhc_pms.data.enums.MedicationUnit;
 
 /**
  * Entity implementation class for Entity: MedicationTime
@@ -15,11 +19,19 @@ public class MedicationTime implements Serializable {
 	private static final long serialVersionUID = -6172089759431144441L;
 	
 	@Id
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private int mtid;
 	
-	private String medicationDosis;
+	@NotNull
+	@Temporal(value = TemporalType.TIME)
+	private Date applicationTime;
 	
-	private String medicationUnit;
+	@NotNull
+	private double medicationDosis;
+	
+	@NotNull
+	@Enumerated(EnumType.STRING)
+	private MedicationUnit medicationUnit;
 	
 	@NotNull
 	@ManyToOne
@@ -42,34 +54,6 @@ public class MedicationTime implements Serializable {
 	}
 
 	/**
-	 * @return the medicationDosis
-	 */
-	public String getMedicationDosis() {
-		return medicationDosis;
-	}
-
-	/**
-	 * @param medicationDosis the medicationDosis to set
-	 */
-	public void setMedicationDosis(String medicationDosis) {
-		this.medicationDosis = medicationDosis;
-	}
-
-	/**
-	 * @return the medicationUnit
-	 */
-	public String getMedicationUnit() {
-		return medicationUnit;
-	}
-
-	/**
-	 * @param medicationUnit the medicationUnit to set
-	 */
-	public void setMedicationUnit(String medicationUnit) {
-		this.medicationUnit = medicationUnit;
-	}
-
-	/**
 	 * @return the medDate
 	 */
 	public MedicationDate getMedDate() {
@@ -81,6 +65,48 @@ public class MedicationTime implements Serializable {
 	 */
 	public void setMedDate(MedicationDate medDate) {
 		this.medDate = medDate;
+	}
+
+	/**
+	 * @return the medicationDosis
+	 */
+	public double getMedicationDosis() {
+		return medicationDosis;
+	}
+
+	/**
+	 * @param medicationDosis the medicationDosis to set
+	 */
+	public void setMedicationDosis(double medicationDosis) {
+		this.medicationDosis = medicationDosis;
+	}
+
+	/**
+	 * @return the medicationUnit
+	 */
+	public MedicationUnit getMedicationUnit() {
+		return medicationUnit;
+	}
+
+	/**
+	 * @param medicationUnit the medicationUnit to set
+	 */
+	public void setMedicationUnit(MedicationUnit medicationUnit) {
+		this.medicationUnit = medicationUnit;
+	}
+
+	/**
+	 * @return the applicationTime
+	 */
+	public Date getApplicationTime() {
+		return applicationTime;
+	}
+
+	/**
+	 * @param applicationTime the applicationTime to set
+	 */
+	public void setApplicationTime(Date applicationTime) {
+		this.applicationTime = applicationTime;
 	}
    
 	
