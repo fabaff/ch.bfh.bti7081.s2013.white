@@ -53,6 +53,8 @@ The project uses the `Microsoft JDBC Driver 4.0 for SQL Server` as connector.
 
 Make sure that maven is setup correctly and able to run from a given directory.
 
+Download: [maven](http://maven.apache.org/download.cgi)
+
 ```bash
 mvn install:install-file -Dfile=c:\path\to\sqljdbc4.jar -DgroupId=com.microsoft.sqlserver -DartifactId=sqljdbc4 -Dversion=3.0 -Dpackaging=jar
 ```
