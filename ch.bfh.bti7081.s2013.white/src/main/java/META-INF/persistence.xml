@@ -14,8 +14,6 @@
 		<class>ch.bfh.ti.soed.white.mhc_pms.data.MedicationDate</class>
 		<class>ch.bfh.ti.soed.white.mhc_pms.data.MedicationTime</class>
 
-<!-- Test Comment -->
-
 		<properties>
 			<property name="eclipselink.jdbc.platform"
 				value="org.eclipse.persistence.platform.database.SQLServerPlatform" />
