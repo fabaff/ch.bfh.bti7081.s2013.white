@@ -15,32 +15,32 @@ import javax.validation.constraints.NotNull;
  */
 @Entity
 @Table(name="Diagnosis")
-
 public class Diagnosis implements Serializable {
 	
 	private static final long serialVersionUID = 2229944891333269290L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
-	private int did;
+	private int did = 0;
 	
 	@NotNull
-	private String diagnosisName;  
+	private String diagnosisName = "";  
 	
 	@NotNull
-	private String icdCode;
+	private String icdCode = "";
 	
-	private String diagnosisComment;
+	// TODO allow longer text in DB
+	private String diagnosisComment = "";
 	
 	@NotNull
 	@Temporal(value = TemporalType.DATE)
 	private Date dateOfCreation;
 	
 	@NotNull
-	private String diagnosisCreator;
+	private String diagnosisCreator ="";
 	
 	@NotNull
-	private String clinicName;
+	private String clinicName = "";
 	
 	@NotNull
 	private boolean isDeleted = false;
@@ -49,10 +49,11 @@ public class Diagnosis implements Serializable {
 	@ManyToOne
 	private PCase pCase;
 	
-	public Diagnosis() {}   
+	public Diagnosis() {
+		this(null);
+	}   
 	
 	public Diagnosis(PCase pCase) {
-		this();
 		this.pCase = pCase;
 	}   
 	
