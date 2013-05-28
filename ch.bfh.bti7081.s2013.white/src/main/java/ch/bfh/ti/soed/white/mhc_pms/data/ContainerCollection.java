@@ -13,27 +13,20 @@ public class ContainerCollection {
 	
 	private PmsContainer<PCase> pCaseContainer;
 	
-	private PmsContainer<Diagnosis> diagnosisContainer;
+	private DiagnosisContainer diagnosisContainer;
 	
 	private PmsUser currentUser;
 	
 	public ContainerCollection(String userName) {
 		this.pmsUserContainer = new PmsUserContainer(PmsUser.class);
 		this.pCaseContainer = new PmsContainer<>(PCase.class);
-		this.diagnosisContainer = new PmsContainer<>(Diagnosis.class);
+		this.diagnosisContainer = new DiagnosisContainer(Diagnosis.class);
 		
 		this.currentUser = this.pmsUserContainer.getCurrentUser(userName);
 	}
 	
 	public PmsUser getCurrentUser() {
 		return this.currentUser;
-	}
-
-	/**
-	 * @return the pmsUserContainer
-	 */
-	public PmsUserContainer getPmsUserContainer() {
-		return this.pmsUserContainer;
 	}
 
 	/**
@@ -46,7 +39,7 @@ public class ContainerCollection {
 	/**
 	 * @return the diagnosisContainer
 	 */
-	public PmsContainer<Diagnosis> getDiagnosisContainer() {
+	public DiagnosisContainer getDiagnosisContainer() {
 		return this.diagnosisContainer;
 	}
 
