@@ -9,10 +9,6 @@
 		<class>ch.bfh.ti.soed.white.mhc_pms.data.PmsUser</class>
 		<class>ch.bfh.ti.soed.white.mhc_pms.data.PCase</class>
 		<class>ch.bfh.ti.soed.white.mhc_pms.data.Diagnosis</class>
-		<class>ch.bfh.ti.soed.white.mhc_pms.data.PatientProgress</class>
-		<class>ch.bfh.ti.soed.white.mhc_pms.data.Medication</class>
-		<class>ch.bfh.ti.soed.white.mhc_pms.data.MedicationDate</class>
-		<class>ch.bfh.ti.soed.white.mhc_pms.data.MedicationTime</class>
 
 		<properties>
 			<property name="eclipselink.jdbc.platform"
@@ -23,7 +19,7 @@
 			<property name="javax.persistence.jdbc.password" value="soed2013" />
 			<property name="javax.persistence.jdbc.driver"
 				value="com.microsoft.sqlserver.jdbc.SQLServerDriver" />
-			<property name="eclipselink.ddl-generation" value="drop-and-create-tables"/>
+ 			<property name="eclipselink.ddl-generation" value="drop-and-create-tables"/>
 <!-- 			 <property name="eclipselink.ddl-generation" value="create-tables" 	/>  -->
 			<property name="eclipselink.ddl-generation.output-mode"
 				value="database" />

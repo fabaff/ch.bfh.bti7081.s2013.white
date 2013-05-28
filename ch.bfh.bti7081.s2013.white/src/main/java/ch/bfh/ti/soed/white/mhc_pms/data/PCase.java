@@ -14,6 +14,7 @@ import ch.bfh.ti.soed.white.mhc_pms.data.enums.KindOfTreatment;
 import ch.bfh.ti.soed.white.mhc_pms.data.enums.OrderOfPatient;
 import ch.bfh.ti.soed.white.mhc_pms.data.enums.ReanimationStatus;
 import ch.bfh.ti.soed.white.mhc_pms.data.enums.CaseStatus;
+import ch.bfh.ti.soed.white.mhc_pms.data.enums.CivilStatus;
 
 /**
  * @author		Gruppe White, I2p, BFH Bern, <a href="https://github.com/fabaff/ch.bfh.bti7081.s2013.white">Contact</a>
@@ -50,11 +51,12 @@ public class PCase implements Serializable {
 	@Enumerated(EnumType.STRING)
 	private Gender gender;
 
+	@NotNull
+	@Enumerated(EnumType.STRING)
+	private CivilStatus civilStatus;
+	
 	// TODO Use predefined list of languages to support the user
 	private String motherLanguage = "";
-	private String communcationLanguage = "";
-	// TODO Enum is available.
-	private String civilStatus = "";
 	// TODO Use Country Codes from external sources instead of typing
 	// https://github.com/TakahikoKawasaki/nv-i18n
 	private String nationality = "";
@@ -254,6 +256,20 @@ public class PCase implements Serializable {
 	}
 
 	/**
+	 * @return The civil status of the patient.
+	 */
+	public CivilStatus getCivilStatus() {
+		return civilStatus;
+	}
+
+	/**
+	 * @param civilStatus The patient's civil status to set.
+	 */
+	public void setCivilStatus(CivilStatus civilStatus) {
+		this.civilStatus = civilStatus;
+	}
+	
+	/**
 	 * @return The patient's mother tongue.
 	 */
 	public String getMotherLanguage() {
@@ -265,34 +281,6 @@ public class PCase implements Serializable {
 	 */
 	public void setMotherLanguage(String motherLanguage) {
 		this.motherLanguage = motherLanguage;
-	}
-
-	/**
-	 * @return The patient's communcation language.
-	 */
-	public String getCommuncationLanguage() {
-		return communcationLanguage;
-	}
-
-	/**
-	 * @param communcationLanguage The patients's communcation language to set.
-	 */
-	public void setCommuncationLanguage(String communcationLanguage) {
-		this.communcationLanguage = communcationLanguage;
-	}
-
-	/**
-	 * @return The civil status of the patient.
-	 */
-	public String getCivilStatus() {
-		return civilStatus;
-	}
-
-	/**
-	 * @param civilStatus The patient's civil status to set.
-	 */
-	public void setCivilStatus(String civilStatus) {
-		this.civilStatus = civilStatus;
 	}
 
 	/**
