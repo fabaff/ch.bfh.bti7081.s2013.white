@@ -8,5 +8,19 @@ package ch.bfh.ti.soed.white.mhc_pms.data.enums;
  * Civil status of the patient
  */
 public enum CivilStatus {
-	ledig, verheiratet, verwitwet, geschieden
+	UNMARRIED("ledig"), MARRIED("verheiratet"), WIDOWED("verwitwet"), DIVORCED("geschieden");
+ 	
+	private String stringValue;
+
+	private CivilStatus(String stringValue) {
+		this.stringValue = stringValue;
+	}
+
+	/* (non-Javadoc)
+	 * @see java.lang.Enum#toString()
+	 */
+	@Override
+	public String toString() {
+		return this.stringValue;
+	}
 }

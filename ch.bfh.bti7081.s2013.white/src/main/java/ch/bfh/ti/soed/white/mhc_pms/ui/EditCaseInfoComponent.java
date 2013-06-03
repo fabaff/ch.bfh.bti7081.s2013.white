@@ -145,9 +145,9 @@ public class EditCaseInfoComponent extends PmsComponentController implements New
 	}
 
 	private void setComboBoxDefaultValues() {
-		this.cmbKindOfTreatment.setValue(KindOfTreatment.stationär);
-		this.cmbOrderOfPatient.setValue(OrderOfPatient.nein);
-		this.cmbReanimationStatus.setValue(ReanimationStatus.ja);
+		this.cmbKindOfTreatment.setValue(KindOfTreatment.INPATIENT);
+		this.cmbOrderOfPatient.setValue(OrderOfPatient.NO);
+		this.cmbReanimationStatus.setValue(ReanimationStatus.YES);
 	}
 
 	private void addBtnCancelListener() {
@@ -165,16 +165,16 @@ public class EditCaseInfoComponent extends PmsComponentController implements New
 	}
 
 	private void initComboBoxes() {
-		this.cmbKindOfTreatment.addItem(KindOfTreatment.stationär);
-		this.cmbKindOfTreatment.addItem(KindOfTreatment.teilstationär);
-		this.cmbKindOfTreatment.addItem(KindOfTreatment.ambulant);
+		this.cmbKindOfTreatment.addItem(KindOfTreatment.INPATIENT);
+		this.cmbKindOfTreatment.addItem(KindOfTreatment.PART_INPATIENT);
+		this.cmbKindOfTreatment.addItem(KindOfTreatment.AMBULANT);
 		
-		this.cmbOrderOfPatient.addItem(OrderOfPatient.nein);
-		this.cmbOrderOfPatient.addItem(OrderOfPatient.ja);
+		this.cmbOrderOfPatient.addItem(OrderOfPatient.NO);
+		this.cmbOrderOfPatient.addItem(OrderOfPatient.YES);
 		
-		this.cmbReanimationStatus.addItem(ReanimationStatus.ja);
-		this.cmbReanimationStatus.addItem(ReanimationStatus.eingeschränkt);
-		this.cmbReanimationStatus.addItem(ReanimationStatus.nein);
+		this.cmbReanimationStatus.addItem(ReanimationStatus.YES);
+		this.cmbReanimationStatus.addItem(ReanimationStatus.LIMITED);
+		this.cmbReanimationStatus.addItem(ReanimationStatus.NO);
 	}
 
 	private void bindFields() {

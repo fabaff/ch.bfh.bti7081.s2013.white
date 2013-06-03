@@ -8,5 +8,20 @@ package ch.bfh.ti.soed.white.mhc_pms.data.enums;
  * Status of reanimation
  */
 public enum ReanimationStatus {
-	ja, eingeschränkt, nein
+	
+	YES("ja"), LIMITED("eingeschränkt"), NO("nein");
+	
+	private String stringValue;
+
+	private ReanimationStatus(String stringValue) {
+		this.stringValue = stringValue;
+	}
+
+	/* (non-Javadoc)
+	 * @see java.lang.Enum#toString()
+	 */
+	@Override
+	public String toString() {
+		return this.stringValue;
+	}
 }

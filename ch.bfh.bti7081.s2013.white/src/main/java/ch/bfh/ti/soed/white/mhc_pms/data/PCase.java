@@ -146,14 +146,14 @@ public class PCase implements Serializable {
 	}
 
 	public void closeCase() {
-		this.setCaseStatus(CaseStatus.abgeschlossen);
+		this.setCaseStatus(CaseStatus.CLOSED);
 		this.setDateCaseClosed(new Date());
 	}
 	
 	public void openCase() {
 		this.setDateCaseOpened(new Date());
 		this.setDateCaseClosed(null);
-		this.setCaseStatus(CaseStatus.aktiv);
+		this.setCaseStatus(CaseStatus.ACTIVE);
 		this.setPcid(0);
 	}
 	

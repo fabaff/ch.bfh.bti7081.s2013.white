@@ -8,5 +8,19 @@ package ch.bfh.ti.soed.white.mhc_pms.data.enums;
  * Status of cases
  */
 public enum CaseStatus {
-	aktiv, abgeschlossen
+	ACTIVE("Active"), CLOSED("abgeschlossen");
+	
+	private String stringValue;
+
+	private CaseStatus(String stringValue) {
+		this.stringValue = stringValue;
+	}
+
+	/* (non-Javadoc)
+	 * @see java.lang.Enum#toString()
+	 */
+	@Override
+	public String toString() {
+		return this.stringValue;
+	}
 }

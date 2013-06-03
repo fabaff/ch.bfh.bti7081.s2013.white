@@ -73,7 +73,7 @@ public class PCaseTest {
 //		TextField txtLastName = new TextField();
 //		txtLastName.setValue("Muster");
 //		TextField txtCivilStatus = new TextField();
-//		txtCivilStatus.setValue("ledig");
+//		txtCivilStatus.setValue("UNMARRIED");
 //		
 //		System.out.println("Value1: " + txtFirstName.getValue());
 //		

@@ -1,25 +1,20 @@
 package ch.bfh.ti.soed.white.mhc_pms.data.enums;
 
 public enum MedApplicationMode {
-	OS, IV, SC, IM, topisch;
+	OS("per OS"), IV("I.V."), SC("S.C."), IM("I.M."), TOPICAL("topisch");
+
+	private String stringValue;
+
+	private MedApplicationMode(String stringValue) {
+		this.stringValue = stringValue;
+	}
 
 	/* (non-Javadoc)
 	 * @see java.lang.Enum#toString()
 	 */
 	@Override
 	public String toString() {
-		switch (this) {
-		case OS:
-			return "per OS";
-		case IV:
-			return "I.V.";
-		case SC:
-			return "S.C.";
-		case IM:
-			return "I.M.";
-		default:
-			return super.toString();
-		}
+		return this.stringValue;
 	}
 	
 }

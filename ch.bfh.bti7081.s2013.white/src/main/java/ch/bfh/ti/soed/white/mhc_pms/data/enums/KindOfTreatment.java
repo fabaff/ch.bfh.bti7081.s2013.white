@@ -8,5 +8,19 @@ package ch.bfh.ti.soed.white.mhc_pms.data.enums;
  * Kind of threatment
  */
 public enum KindOfTreatment {
-	ambulant, teilstationär, stationär
+	AMBULANT("ambulant"), PART_INPATIENT("teilstationär"), INPATIENT("stationär");
+	
+	private String stringValue;
+
+	private KindOfTreatment(String stringValue) {
+		this.stringValue = stringValue;
+	}
+
+	/* (non-Javadoc)
+	 * @see java.lang.Enum#toString()
+	 */
+	@Override
+	public String toString() {
+		return this.stringValue;
+	}
 }

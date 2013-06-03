@@ -156,18 +156,18 @@ public class NewPatientComponent extends PmsComponentController {
 
 	// Default values for combo boxes are needed
 	private void setComboBoxDefaultValues() {
-		this.cmbGender.setValue(Gender.weiblich);
-		this.cmbCivilStatus.setValue(CivilStatus.ledig);
+		this.cmbGender.setValue(Gender.FEMALE);
+		this.cmbCivilStatus.setValue(CivilStatus.UNMARRIED);
 	}
 	
 	private void initComboBoxes() {
-		this.cmbGender.addItem(Gender.weiblich);
-		this.cmbGender.addItem(Gender.männlich);
+		this.cmbGender.addItem(Gender.FEMALE);
+		this.cmbGender.addItem(Gender.MALE);
 		
-		this.cmbCivilStatus.addItem(CivilStatus.ledig);
-		this.cmbCivilStatus.addItem(CivilStatus.verheiratet);
-		this.cmbCivilStatus.addItem(CivilStatus.verwitwet);
-		this.cmbCivilStatus.addItem(CivilStatus.geschieden);
+		this.cmbCivilStatus.addItem(CivilStatus.UNMARRIED);
+		this.cmbCivilStatus.addItem(CivilStatus.MARRIED);
+		this.cmbCivilStatus.addItem(CivilStatus.DIVORCED);
+		this.cmbCivilStatus.addItem(CivilStatus.WIDOWED);
 	}
 
 	private void bindFields() {
