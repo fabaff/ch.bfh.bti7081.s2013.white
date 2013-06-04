@@ -4,7 +4,7 @@ package ch.bfh.ti.soed.white.mhc_pms.ui;
 import ch.bfh.ti.soed.white.mhc_pms.controller.NavigationEvent;
 import ch.bfh.ti.soed.white.mhc_pms.controller.NewCaseListener;
 import ch.bfh.ti.soed.white.mhc_pms.controller.PmsComponentController;
-import ch.bfh.ti.soed.white.mhc_pms.data.ContainerCollection;
+import ch.bfh.ti.soed.white.mhc_pms.data.PmsDataAccess;
 import ch.bfh.ti.soed.white.mhc_pms.data.PCase;
 import ch.bfh.ti.soed.white.mhc_pms.data.PmsDataAccessCreator;
 import ch.bfh.ti.soed.white.mhc_pms.data.enums.KindOfTreatment;
@@ -109,7 +109,7 @@ public class EditCaseInfoComponent extends PmsComponentController implements New
 
 	private static final long serialVersionUID = 7804702033977054145L;
 
-	private ContainerCollection pmsContainers;
+	private PmsDataAccess pmsContainers;
 
 	private BeanFieldGroup<PCase> fieldGroup;
 

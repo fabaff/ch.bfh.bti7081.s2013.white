@@ -5,9 +5,9 @@ package ch.bfh.ti.soed.white.mhc_pms.data;
  * @version		0.0.2 
  * @since		0.0.1
  * 
- * Entity implementation class for Entity: ContainerCollection
+ * Entity implementation class for Entity: PmsDataAccess
  */
-public class ContainerCollection {
+public class PmsDataAccess {
 
 	private PmsUserContainer pmsUserContainer;
 	
@@ -17,7 +17,7 @@ public class ContainerCollection {
 	
 	private PmsUser currentUser;
 	
-	public ContainerCollection(String userName) {
+	public PmsDataAccess(String userName) {
 		this.pmsUserContainer = new PmsUserContainer(PmsUser.class);
 		this.pCaseContainer = new PmsContainer<>(PCase.class);
 		this.diagnosisContainer = new DiagnosisContainer(Diagnosis.class);

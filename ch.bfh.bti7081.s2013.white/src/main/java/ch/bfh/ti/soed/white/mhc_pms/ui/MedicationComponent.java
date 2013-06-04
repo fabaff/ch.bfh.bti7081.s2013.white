@@ -2,7 +2,7 @@ package ch.bfh.ti.soed.white.mhc_pms.ui;
 
 import ch.bfh.ti.soed.white.mhc_pms.controller.PmsComponentController;
 import ch.bfh.ti.soed.white.mhc_pms.controller.PmsComponentListener;
-import ch.bfh.ti.soed.white.mhc_pms.data.ContainerCollection;
+import ch.bfh.ti.soed.white.mhc_pms.data.PmsDataAccess;
 import ch.bfh.ti.soed.white.mhc_pms.data.PmsDataAccessCreator;
 import ch.bfh.ti.soed.white.mhc_pms.security.PmsPermission;
 import ch.bfh.ti.soed.white.mhc_pms.security.PmsPermission.Element;
@@ -32,7 +32,7 @@ class MedicationComponent extends PmsComponentController implements PmsComponent
 	private Button btnNewMedication;
 	private static final long serialVersionUID = -4426948260684454466L;
 	
-	private ContainerCollection pmsContainers;
+	private PmsDataAccess pmsContainers;
 	
 	/**
 	 * The constructor should first build the main layout, set the

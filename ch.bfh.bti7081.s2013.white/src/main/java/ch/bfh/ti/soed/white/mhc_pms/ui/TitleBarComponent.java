@@ -3,7 +3,7 @@ package ch.bfh.ti.soed.white.mhc_pms.ui;
 import ch.bfh.ti.soed.white.mhc_pms.controller.PmsComponentController;
 import ch.bfh.ti.soed.white.mhc_pms.controller.PmsComponentListener;
 import ch.bfh.ti.soed.white.mhc_pms.controller.UIActivationListener;
-import ch.bfh.ti.soed.white.mhc_pms.data.ContainerCollection;
+import ch.bfh.ti.soed.white.mhc_pms.data.PmsDataAccess;
 import ch.bfh.ti.soed.white.mhc_pms.data.PCase;
 import ch.bfh.ti.soed.white.mhc_pms.data.PmsDataAccessCreator;
 import ch.bfh.ti.soed.white.mhc_pms.util.ValueConverter;
@@ -49,7 +49,7 @@ class TitleBarComponent extends PmsComponentController implements PmsComponentLi
 	private Label lblFullName;
 	private static final long serialVersionUID = 1148948780923578333L;
 
-	private ContainerCollection pmsContainers;
+	private PmsDataAccess pmsContainers;
 
 	/**
 	 * The constructor should first build the main layout, set the composition

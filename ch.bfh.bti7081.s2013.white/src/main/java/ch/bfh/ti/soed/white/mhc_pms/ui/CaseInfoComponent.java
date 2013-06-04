@@ -4,7 +4,7 @@ import ch.bfh.ti.soed.white.mhc_pms.controller.NavigationEvent;
 import ch.bfh.ti.soed.white.mhc_pms.controller.PmsComponentController;
 import ch.bfh.ti.soed.white.mhc_pms.controller.PmsComponentListener;
 import ch.bfh.ti.soed.white.mhc_pms.data.PCase;
-import ch.bfh.ti.soed.white.mhc_pms.data.ContainerCollection;
+import ch.bfh.ti.soed.white.mhc_pms.data.PmsDataAccess;
 import ch.bfh.ti.soed.white.mhc_pms.data.PmsDataAccessCreator;
 import ch.bfh.ti.soed.white.mhc_pms.security.PmsPermission;
 import ch.bfh.ti.soed.white.mhc_pms.security.PmsPermission.Element;
@@ -58,7 +58,7 @@ class CaseInfoComponent extends PmsComponentController implements PmsComponentLi
 	private Button btnEditCaseData;
 	private static final long serialVersionUID = -1488922640521851182L;
 
-	private ContainerCollection pmsContainers;
+	private PmsDataAccess pmsContainers;
 	
 	private PmsPermission permission;
 	

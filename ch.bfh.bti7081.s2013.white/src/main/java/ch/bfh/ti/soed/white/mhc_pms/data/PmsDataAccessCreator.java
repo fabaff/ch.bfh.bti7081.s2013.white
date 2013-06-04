@@ -13,13 +13,13 @@ public final class PmsDataAccessCreator {
 	public static final String PERSISTENCE_UNIT = "ch.bfh.bti7081.s2013.white";
 
 	// create dummy user
-	private static ContainerCollection pmsContainers = new ContainerCollection("user");
+	private static PmsDataAccess pmsContainers = new PmsDataAccess("user");
 	
-	public static ContainerCollection getContainers() {
+	public static PmsDataAccess getContainers() {
 		return pmsContainers;
 	}
 	
-	public static void setContainers(ContainerCollection pmsCont) {
+	public static void setContainers(PmsDataAccess pmsCont) {
 		if (pmsCont != null) {
 			pmsContainers = pmsCont;
 		}
