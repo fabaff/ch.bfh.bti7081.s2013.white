@@ -19,7 +19,8 @@ The ***doc***-folder in the git repository is grouped by case studies and shows 
 │   ├── task10          -- Task 10 - Scrum Backlog Planning
 │   ├── task11          -- Task 11 - Scrum Sprints
 │   ├── task12          -- Task 12 - State pattern
-│   └── task13          -- Task 13 - Strategy pattern
+│   ├── task13          -- Task 13 - Strategy pattern
+│   └── task14          -- Task 14 - Final presentation
 ├── cs02                -- Case study 2 (PIP)
 │   └── task01.md       -- Task 1
 ├── diary.md            -- Journal
