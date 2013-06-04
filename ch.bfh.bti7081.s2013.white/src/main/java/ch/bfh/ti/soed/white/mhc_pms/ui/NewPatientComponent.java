@@ -149,7 +149,6 @@ public class NewPatientComponent extends PmsComponentController {
 		this.setComboBoxDefaultValues();
 		this.addNewPatientButtonListener();
 		this.addCancelPatientButtonListener();
-		// TODO Fix activation order
 		// TODO Sanitization of input values
 		// TODO dateOfBirth: lock edit
 	}
