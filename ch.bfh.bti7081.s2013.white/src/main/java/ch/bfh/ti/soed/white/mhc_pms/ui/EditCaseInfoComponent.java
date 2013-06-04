@@ -6,7 +6,7 @@ import ch.bfh.ti.soed.white.mhc_pms.controller.NewCaseListener;
 import ch.bfh.ti.soed.white.mhc_pms.controller.PmsComponentController;
 import ch.bfh.ti.soed.white.mhc_pms.data.ContainerCollection;
 import ch.bfh.ti.soed.white.mhc_pms.data.PCase;
-import ch.bfh.ti.soed.white.mhc_pms.data.PmsDataAccess;
+import ch.bfh.ti.soed.white.mhc_pms.data.PmsDataAccessCreator;
 import ch.bfh.ti.soed.white.mhc_pms.data.enums.KindOfTreatment;
 import ch.bfh.ti.soed.white.mhc_pms.data.enums.OrderOfPatient;
 import ch.bfh.ti.soed.white.mhc_pms.data.enums.ReanimationStatus;
@@ -128,7 +128,7 @@ public class EditCaseInfoComponent extends PmsComponentController implements New
 		buildMainLayout();
 		setCompositionRoot(mainLayout);
 
-		this.pmsContainers = PmsDataAccess.getContainers();
+		this.pmsContainers = PmsDataAccessCreator.getContainers();
 		this.pmsContainers.getPCaseContainer().refresh();
 		this.fieldGroup = new BeanFieldGroup<PCase>(PCase.class);
 		this.isNewCase = false;

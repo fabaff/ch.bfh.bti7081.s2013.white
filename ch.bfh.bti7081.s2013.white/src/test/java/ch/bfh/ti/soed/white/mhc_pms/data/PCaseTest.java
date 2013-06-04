@@ -2,6 +2,8 @@ package ch.bfh.ti.soed.white.mhc_pms.data;
 
 import static org.junit.Assert.*;
 
+import java.util.Collection;
+
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -45,28 +47,66 @@ public class PCaseTest {
 	public void testPCaseUser() throws CommitException {
 		// TODO vollständiger Test
 		
-		JPAContainer<PmsUser> jpaContainer = new JPAContainer<>(PmsUser.class);
-		jpaContainer.setEntityProvider(new CachingBatchableLocalEntityProvider<PmsUser>(PmsUser.class,
-				JPAContainerFactory.createEntityManagerForPersistenceUnit(PmsDataAccess.PERSISTENCE_UNIT)));
+//		JPAContainer<PmsUser> jpaContainer = new JPAContainer<>(PmsUser.class);
+//		jpaContainer.setEntityProvider(new CachingBatchableLocalEntityProvider<PmsUser>(PmsUser.class,
+//				JPAContainerFactory.createEntityManagerForPersistenceUnit(PmsDataAccessCreator.PERSISTENCE_UNIT)));
+//		
+//		System.out.println("size before filter: " + jpaContainer.size());
+//		Filter filter = Filters.eq("userName", "user");
+//		jpaContainer.addContainerFilter(filter);
+//		System.out.println("size with filter: " + jpaContainer.size());
+//		PmsUser user;
+//		if (jpaContainer.size() != 0) {
+//			user = jpaContainer.getItem(jpaContainer.firstItemId()).getEntity();
+//			System.out.println(user);
+//		}
+//		
+//		jpaContainer.removeContainerFilter(filter);
+//		System.out.println("size after filter: " + jpaContainer.size());
+//		
+//		JPAContainer<PCase> jpaContainer2 = new JPAContainer<>(PCase.class);
+//		jpaContainer2.setEntityProvider(new CachingBatchableLocalEntityProvider<PCase>(PCase.class,
+//				JPAContainerFactory.createEntityManagerForPersistenceUnit(PmsDataAccessCreator.PERSISTENCE_UNIT)));
+//		
+//		System.out.println("First id: " + jpaContainer2.firstItemId());
+//		
+//		JPAContainer<Diagnosis> jpaContainerDiag = new JPAContainer<>(Diagnosis.class);
+//		jpaContainerDiag.setEntityProvider(new CachingBatchableLocalEntityProvider<Diagnosis>(Diagnosis.class,
+//				JPAContainerFactory.createEntityManagerForPersistenceUnit(PmsDataAccessCreator.PERSISTENCE_UNIT)));
+//		
+//		PmsUser pmsUser = new PmsUser();
+//		PCase pCase = new PCase(pmsUser);
+//		Diagnosis diag = new Diagnosis(pCase);
+//		
+//		jpaContainer.addEntity(pmsUser);
+//		jpaContainer2.addEntity(pCase);
+//		jpaContainerDiag.addEntity(diag);
+//		jpaContainer.commit();
+//		jpaContainer2.commit();
+//		jpaContainerDiag.commit();
+//		
+//		System.out.println("jpaContainerDiag: " + jpaContainerDiag.size());
+//		Collection<?> collIds = jpaContainerDiag.getItemIds();
+//		System.out.println("collIds.size(): " + collIds.size());
+//		Collection<?> coll = jpaContainerDiag.getItem(collIds.toArray()[2]).getItemPropertyIds();
+//		System.out.println("Diag container size: " + coll.size());
+//		for (Object object : coll) {
+//			System.out.println(object);
+//		}
+//		Diagnosis diagResult = jpaContainerDiag.getItem(collIds.toArray()[2]).getEntity();
+//		System.out.println(diagResult.getpCase().getPcid());
+//	
+//		filter = Filters.eq("pCase.pcid", 2);
+//		jpaContainerDiag.addContainerFilter(filter);
+//		System.out.println("size with filter: " + jpaContainerDiag.size());
+//		if (jpaContainerDiag.size() != 0) {
+//			diagResult = jpaContainerDiag.getItem(jpaContainerDiag.firstItemId()).getEntity();
+//			System.out.println(diagResult.getDid());
+//		}
+//		jpaContainerDiag.removeContainerFilter(filter);
+//		System.out.println("size after filter: " + jpaContainer.size());
 		
-		System.out.println("size before filter: " + jpaContainer.size());
-		Filter filter = Filters.eq("userName", "user");
-		jpaContainer.addContainerFilter(filter);
-		System.out.println("size with filter: " + jpaContainer.size());
-		PmsUser user;
-		if (jpaContainer.size() != 0) {
-			user = jpaContainer.getItem(jpaContainer.firstItemId()).getEntity();
-			System.out.println(user);
-		}
 		
-		jpaContainer.removeContainerFilter(filter);
-		System.out.println("size after filter: " + jpaContainer.size());
-		
-		JPAContainer<PCase> jpaContainer2 = new JPAContainer<>(PCase.class);
-		jpaContainer2.setEntityProvider(new CachingBatchableLocalEntityProvider<PCase>(PCase.class,
-				JPAContainerFactory.createEntityManagerForPersistenceUnit(PmsDataAccess.PERSISTENCE_UNIT)));
-		
-		System.out.println("First id: " + jpaContainer2.firstItemId());
 		
 //		TextField txtFirstName = new TextField();
 //		txtFirstName.setValue("Hans");

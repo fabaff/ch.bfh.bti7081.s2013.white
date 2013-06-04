@@ -20,7 +20,7 @@ public class PmsContainer<E> extends JPAContainer<E> {
 	public PmsContainer(Class<E> clazz) {
 		super(clazz);
 		this.setEntityProvider(new CachingBatchableLocalEntityProvider<E>(clazz,
-						JPAContainerFactory.createEntityManagerForPersistenceUnit(PmsDataAccess.PERSISTENCE_UNIT)));
+						JPAContainerFactory.createEntityManagerForPersistenceUnit(PmsDataAccessCreator.PERSISTENCE_UNIT)));
 		this.setAutoCommit(true);
 		this.currentPCaseId = this.firstItemId();
 	}

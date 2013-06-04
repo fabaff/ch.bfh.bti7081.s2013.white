@@ -5,10 +5,10 @@ package ch.bfh.ti.soed.white.mhc_pms.data;
  * @version		0.0.2 
  * @since		0.0.1
  * 
- * Entity implementation class for Entity: PmsDataAccess
+ * Entity implementation class for Entity: PmsDataAccessCreator
 
  */
-public final class PmsDataAccess {
+public final class PmsDataAccessCreator {
 
 	public static final String PERSISTENCE_UNIT = "ch.bfh.bti7081.s2013.white";
 
@@ -25,5 +25,5 @@ public final class PmsDataAccess {
 		}
 	}
 	
-	private PmsDataAccess() {}
+	private PmsDataAccessCreator() {}
 }

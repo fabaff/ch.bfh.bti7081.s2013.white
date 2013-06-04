@@ -5,7 +5,7 @@ import ch.bfh.ti.soed.white.mhc_pms.controller.PmsComponentListener;
 import ch.bfh.ti.soed.white.mhc_pms.controller.UIActivationListener;
 import ch.bfh.ti.soed.white.mhc_pms.data.ContainerCollection;
 import ch.bfh.ti.soed.white.mhc_pms.data.PCase;
-import ch.bfh.ti.soed.white.mhc_pms.data.PmsDataAccess;
+import ch.bfh.ti.soed.white.mhc_pms.data.PmsDataAccessCreator;
 import ch.bfh.ti.soed.white.mhc_pms.util.ValueConverter;
 
 import com.vaadin.addon.jpacontainer.EntityItem;
@@ -62,7 +62,7 @@ class TitleBarComponent extends PmsComponentController implements PmsComponentLi
 		buildMainLayout();
 		setCompositionRoot(mainLayout);
 		
-		this.pmsContainers = PmsDataAccess.getContainers();
+		this.pmsContainers = PmsDataAccessCreator.getContainers();
 
 		// TODO Use theme
 

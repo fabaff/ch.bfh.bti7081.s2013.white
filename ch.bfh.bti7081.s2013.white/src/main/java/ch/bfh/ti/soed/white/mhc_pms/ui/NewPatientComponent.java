@@ -5,7 +5,7 @@ import ch.bfh.ti.soed.white.mhc_pms.controller.NavigationEvent;
 import ch.bfh.ti.soed.white.mhc_pms.controller.PmsComponentController;
 import ch.bfh.ti.soed.white.mhc_pms.data.ContainerCollection;
 import ch.bfh.ti.soed.white.mhc_pms.data.PCase;
-import ch.bfh.ti.soed.white.mhc_pms.data.PmsDataAccess;
+import ch.bfh.ti.soed.white.mhc_pms.data.PmsDataAccessCreator;
 import ch.bfh.ti.soed.white.mhc_pms.data.enums.CivilStatus;
 import ch.bfh.ti.soed.white.mhc_pms.data.enums.Gender;
 
@@ -140,7 +140,7 @@ public class NewPatientComponent extends PmsComponentController {
 		buildMainLayout();
 		setCompositionRoot(mainLayout);
 
-		this.pmsContainers = PmsDataAccess.getContainers();
+		this.pmsContainers = PmsDataAccessCreator.getContainers();
 		this.fieldGroup = new BeanFieldGroup<PCase>(PCase.class);
 		this.pmsContainers.getPCaseContainer().refresh();
 

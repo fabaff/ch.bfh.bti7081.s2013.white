@@ -13,10 +13,9 @@ public class DiagnosisContainer extends PmsContainer<Diagnosis> {
 	}
 
 	public void setPCaseFilter(Object pCaseItemId) {
-		// TODO korrekte propertyId  verwenden
 		this.resetPCaseFilter();
-//		this.currentFilter = Filters.eq("propertyId", pCaseItemId);
-//		this.addContainerFilter(this.currentFilter);
+		this.currentFilter = Filters.eq("pCase.pcid", pCaseItemId);
+		this.addContainerFilter(this.currentFilter);
 	}
 
 	public void resetPCaseFilter() {

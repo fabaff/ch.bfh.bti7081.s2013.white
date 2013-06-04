@@ -3,7 +3,7 @@ package ch.bfh.ti.soed.white.mhc_pms.ui;
 import ch.bfh.ti.soed.white.mhc_pms.controller.PmsComponentController;
 import ch.bfh.ti.soed.white.mhc_pms.controller.PmsComponentListener;
 import ch.bfh.ti.soed.white.mhc_pms.data.ContainerCollection;
-import ch.bfh.ti.soed.white.mhc_pms.data.PmsDataAccess;
+import ch.bfh.ti.soed.white.mhc_pms.data.PmsDataAccessCreator;
 import ch.bfh.ti.soed.white.mhc_pms.security.PmsPermission;
 import ch.bfh.ti.soed.white.mhc_pms.security.PmsPermission.Element;
 
@@ -45,7 +45,7 @@ class MedicationComponent extends PmsComponentController implements PmsComponent
 		buildMainLayout();
 		setCompositionRoot(mainLayout);
 
-		this.pmsContainers = PmsDataAccess.getContainers();
+		this.pmsContainers = PmsDataAccessCreator.getContainers();
 		
 		PmsPermission permission = new PmsPermission(this.pmsContainers.getCurrentUser().getUserGroup());
 		this.btnNewMedication.setEnabled(permission.hasPermission(Element.NEW_MEDICATION));
