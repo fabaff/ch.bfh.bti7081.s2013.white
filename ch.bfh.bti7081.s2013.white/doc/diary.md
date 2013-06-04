@@ -2,6 +2,18 @@
 
 (all entries in backwards chronological order)
 
+## 2013-06-04
+- Task 14 added
+
+## 2013-05-28
+- Progress on prototype Medication
+
+## 2013-05-21
+- Basics on prototype
+
+## 2013-05-17
+- Finishing presentations
+
 ## 2013-05-14
 - daily scrum meeting
 - Progress on tasks for 17.05.2013
