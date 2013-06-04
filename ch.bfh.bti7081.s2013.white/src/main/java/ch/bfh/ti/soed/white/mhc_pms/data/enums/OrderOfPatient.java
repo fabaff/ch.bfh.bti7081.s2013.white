@@ -8,7 +8,7 @@ package ch.bfh.ti.soed.white.mhc_pms.data.enums;
  * Order of patient
  */
 public enum OrderOfPatient {
-	YES("ja"), NO("nein");
+	UNSET(" "), YES("ja"), NO("nein");
 	
 	private String stringValue;
 

@@ -8,7 +8,7 @@ package ch.bfh.ti.soed.white.mhc_pms.data.enums;
  * Gender of the patient
  */
 public enum Gender {
-	FEMALE("weiblich"), MALE("männlich");
+	UNSET("unbekannt"), FEMALE("weiblich"), MALE("männlich");
 	
 	private String stringValue;
 

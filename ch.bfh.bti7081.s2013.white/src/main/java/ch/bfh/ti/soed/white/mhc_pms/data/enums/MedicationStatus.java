@@ -1,8 +1,14 @@
 package ch.bfh.ti.soed.white.mhc_pms.data.enums;
 
+/**
+ * @author		Gruppe White, I2p, BFH Bern, <a href="https://github.com/fabaff/ch.bfh.bti7081.s2013.white">Contact</a>
+ * @version		0.0.2 
+ * @since		0.0.2
+ * 
+ * Medication status
+ */
 public enum MedicationStatus {
-	
-	PRESCRIBED("verordnet"), PAUSED("pausiert"), OPEN("offen"), STOPPED("gestoppt"), REFUSED("verweigert");
+	UNSET(" "), PRESCRIBED("verordnet"), PAUSED("pausiert"), OPEN("offen"), STOPPED("gestoppt"), REFUSED("verweigert");
 	
 	private String stringValue;
 
