@@ -8,7 +8,7 @@ package ch.bfh.ti.soed.white.mhc_pms.data.enums;
  * Status of cases
  */
 public enum CaseStatus {
-	ACTIVE("Active"), CLOSED("abgeschlossen");
+	UNSET("unbekannt"), ACTIVE("aktiv"), CLOSED("abgeschlossen");
 	
 	private String stringValue;
 

@@ -8,7 +8,7 @@ package ch.bfh.ti.soed.white.mhc_pms.data.enums;
  * Kind of threatment
  */
 public enum KindOfTreatment {
-	AMBULANT("ambulant"), PART_INPATIENT("teilstationär"), INPATIENT("stationär");
+	UNSET(" "), AMBULANT("ambulant"), PART_INPATIENT("teilstationär"), INPATIENT("stationär");
 	
 	private String stringValue;
 

@@ -8,7 +8,7 @@ package ch.bfh.ti.soed.white.mhc_pms.data.enums;
  * Civil status of the patient
  */
 public enum CivilStatus {
-	UNMARRIED("ledig"), MARRIED("verheiratet"), WIDOWED("verwitwet"), DIVORCED("geschieden");
+	UNSET("unbekannt"), UNMARRIED("ledig"), MARRIED("verheiratet"), WIDOWED("verwitwet"), DIVORCED("geschieden");
  	
 	private String stringValue;
 
