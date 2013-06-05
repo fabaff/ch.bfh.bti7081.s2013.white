@@ -28,7 +28,7 @@ class MainPanel extends HorizontalSplitPanel implements ComponentChangeListener 
 	/*
 	 * Screen layout of the GUI 
 	 * +----+-------------------------+ 
-	 * |    |                   120px |
+	 * |    |                    90px |
 	 * |    +-------------------------+ 
 	 * |    |                         |
 	 * |    |                         |
