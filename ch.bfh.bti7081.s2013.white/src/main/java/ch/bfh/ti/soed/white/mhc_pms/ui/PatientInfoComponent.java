@@ -347,7 +347,7 @@ class PatientInfoComponent extends PmsComponentController implements PmsComponen
 		formLayout_5.setImmediate(false);
 		formLayout_5.setWidth("320px");
 		formLayout_5.setHeight("-1px");
-		formLayout_5.setMargin(true);
+		formLayout_5.setMargin(false);
 		formLayout_5.setSpacing(true);
 		
 		// lblFirstName
@@ -439,7 +439,7 @@ class PatientInfoComponent extends PmsComponentController implements PmsComponen
 		formLayout_3.setImmediate(false);
 		formLayout_3.setWidth("320px");
 		formLayout_3.setHeight("-1px");
-		formLayout_3.setMargin(true);
+		formLayout_3.setMargin(false);
 		formLayout_3.setSpacing(true);
 		
 		// lblAddress
@@ -504,7 +504,7 @@ class PatientInfoComponent extends PmsComponentController implements PmsComponen
 		formLayout_4.setImmediate(false);
 		formLayout_4.setWidth("320px");
 		formLayout_4.setHeight("-1px");
-		formLayout_4.setMargin(true);
+		formLayout_4.setMargin(false);
 		formLayout_4.setSpacing(true);
 		
 		// lblMotherLanguage
@@ -587,7 +587,7 @@ class PatientInfoComponent extends PmsComponentController implements PmsComponen
 		formLayout_2.setImmediate(false);
 		formLayout_2.setWidth("320px");
 		formLayout_2.setHeight("-1px");
-		formLayout_2.setMargin(true);
+		formLayout_2.setMargin(false);
 		formLayout_2.setSpacing(true);
 		
 		// lblNextOfKin
@@ -660,7 +660,7 @@ class PatientInfoComponent extends PmsComponentController implements PmsComponen
 	private Panel buildPanFamDoc() {
 		// common part: create layout
 		panFamDoc = new Panel();
-		panFamDoc.setCaption("Hausartzt");
+		panFamDoc.setCaption("Hausarzt");
 		panFamDoc.setImmediate(false);
 		panFamDoc.setWidth("-1px");
 		panFamDoc.setHeight("-1px");
@@ -679,7 +679,7 @@ class PatientInfoComponent extends PmsComponentController implements PmsComponen
 		formLayout_1.setImmediate(false);
 		formLayout_1.setWidth("320px");
 		formLayout_1.setHeight("-1px");
-		formLayout_1.setMargin(true);
+		formLayout_1.setMargin(false);
 		formLayout_1.setSpacing(true);
 		
 		// lblFamilyDoctorFirstName
