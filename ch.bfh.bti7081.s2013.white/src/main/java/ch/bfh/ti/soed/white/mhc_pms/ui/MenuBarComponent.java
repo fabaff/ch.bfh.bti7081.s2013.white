@@ -71,7 +71,7 @@ class MenuBarComponent extends PmsComponentController implements
 		buildMainLayout();
 		setCompositionRoot(mainLayout);
 
-		this.pmsContainers = PmsDataAccessCreator.getContainers();
+		this.pmsContainers = PmsDataAccessCreator.getDataAccess();
 		this.pmsContainers.getPCaseContainer().refresh();
 		
 		// TODO Add full theme support

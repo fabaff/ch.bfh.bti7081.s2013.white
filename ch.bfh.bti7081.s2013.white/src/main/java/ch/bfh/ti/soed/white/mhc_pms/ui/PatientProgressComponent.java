@@ -45,7 +45,7 @@ class PatientProgressComponent extends PmsComponentController implements PmsComp
 		buildMainLayout();
 		setCompositionRoot(mainLayout);
 
-		this.pmsContainers = PmsDataAccessCreator.getContainers();
+		this.pmsContainers = PmsDataAccessCreator.getDataAccess();
 		
 		PmsPermission permission = new PmsPermission(this.pmsContainers.getCurrentUser().getUserGroup());
 		this.btnNewPatientProgressEntry.setEnabled(permission.hasPermission(Element.NEW_PATIENT_PROGRESS_ENTRY));

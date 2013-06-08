@@ -62,7 +62,7 @@ class TitleBarComponent extends PmsComponentController implements PmsComponentLi
 		buildMainLayout();
 		setCompositionRoot(mainLayout);
 		
-		this.pmsContainers = PmsDataAccessCreator.getContainers();
+		this.pmsContainers = PmsDataAccessCreator.getDataAccess();
 
 		// TODO Use theme
 

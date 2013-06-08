@@ -49,7 +49,7 @@ class MedicationComponent extends PmsComponentController implements PmsComponent
 		buildMainLayout();
 		setCompositionRoot(mainLayout);
 
-		this.pmsContainers = PmsDataAccessCreator.getContainers();
+		this.pmsContainers = PmsDataAccessCreator.getDataAccess();
 		
 		PmsPermission permission = new PmsPermission(this.pmsContainers.getCurrentUser().getUserGroup());
 		this.btnNewMedication.setEnabled(permission.hasPermission(Element.NEW_MEDICATION));

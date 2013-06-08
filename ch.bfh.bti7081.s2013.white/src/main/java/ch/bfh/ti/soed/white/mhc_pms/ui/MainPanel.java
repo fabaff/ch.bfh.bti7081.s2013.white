@@ -43,7 +43,7 @@ class MainPanel extends HorizontalSplitPanel implements ComponentChangeListener 
 	private PatientInfoComponent patInfo = new PatientInfoComponent();
 	private CaseInfoComponent caseInfo = new CaseInfoComponent();
 	private PatientProgressComponent progressComp = new PatientProgressComponent();
-	private DiagnosisComponent diagnosisComp = new DiagnosisComponent();
+	private DiagnosisTableComponent diagnosisComp = new DiagnosisTableComponent();
 	private MedicationComponent medComp = new MedicationComponent();
 	private NewPatientComponent newPatientComp = new NewPatientComponent();
 	private EditCaseInfoComponent editCaseInfoComp = new EditCaseInfoComponent();

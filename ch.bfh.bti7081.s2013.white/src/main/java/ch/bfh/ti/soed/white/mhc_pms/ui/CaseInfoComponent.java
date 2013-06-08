@@ -100,7 +100,7 @@ class CaseInfoComponent extends PmsComponentController implements PmsComponentLi
 		buildMainLayout();
 		setCompositionRoot(mainLayout);
 		
-		this.pmsContainers = PmsDataAccessCreator.getContainers();
+		this.pmsContainers = PmsDataAccessCreator.getDataAccess();
 		this.pmsContainers.getPCaseContainer().refresh();
 		Object itemId = this.pmsContainers.getPCaseContainer().getCurrentPCaseId();
 		this.permission = new PmsPermission(this.pmsContainers.getCurrentUser().getUserGroup());

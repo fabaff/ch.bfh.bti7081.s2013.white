@@ -151,7 +151,7 @@ public class NewPatientComponent extends PmsComponentController {
 		buildMainLayout();
 		setCompositionRoot(mainLayout);
 
-		this.pmsContainers = PmsDataAccessCreator.getContainers();
+		this.pmsContainers = PmsDataAccessCreator.getDataAccess();
 		this.fieldGroup = new BeanFieldGroup<PCase>(PCase.class);
 		this.pmsContainers.getPCaseContainer().refresh();
 

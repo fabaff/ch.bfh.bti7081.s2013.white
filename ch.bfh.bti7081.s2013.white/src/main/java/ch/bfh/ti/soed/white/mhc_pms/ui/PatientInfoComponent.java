@@ -143,7 +143,7 @@ class PatientInfoComponent extends PmsComponentController implements PmsComponen
 		buildMainLayout();
 		setCompositionRoot(mainLayout);
 		
-		this.pmsContainers = PmsDataAccessCreator.getContainers();
+		this.pmsContainers = PmsDataAccessCreator.getDataAccess();
 		this.pmsContainers.getPCaseContainer().refresh();
 		
 		PmsPermission permission = new PmsPermission(this.pmsContainers.getCurrentUser().getUserGroup());

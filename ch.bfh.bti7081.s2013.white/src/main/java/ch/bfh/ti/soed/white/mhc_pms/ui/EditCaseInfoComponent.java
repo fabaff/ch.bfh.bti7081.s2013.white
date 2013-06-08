@@ -137,7 +137,7 @@ public class EditCaseInfoComponent extends PmsComponentController implements New
 		buildMainLayout();
 		setCompositionRoot(mainLayout);
 
-		this.pmsContainers = PmsDataAccessCreator.getContainers();
+		this.pmsContainers = PmsDataAccessCreator.getDataAccess();
 		this.pmsContainers.getPCaseContainer().refresh();
 		this.fieldGroup = new BeanFieldGroup<PCase>(PCase.class);
 		this.isNewCase = false;
