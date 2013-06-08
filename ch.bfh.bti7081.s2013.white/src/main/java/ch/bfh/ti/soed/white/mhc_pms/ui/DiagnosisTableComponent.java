@@ -1,5 +1,6 @@
 package ch.bfh.ti.soed.white.mhc_pms.ui;
 
+import ch.bfh.ti.soed.white.mhc_pms.controller.NavigationEvent;
 import ch.bfh.ti.soed.white.mhc_pms.controller.PmsComponentController;
 import ch.bfh.ti.soed.white.mhc_pms.controller.PmsComponentListener;
 import ch.bfh.ti.soed.white.mhc_pms.data.PmsDataAccess;
@@ -69,7 +70,7 @@ class DiagnosisTableComponent extends PmsComponentController implements
 		Object pCaseItemId = this.pmsDataAccess.getPCaseContainer().getCurrentPCaseId();
 		
 		this.setPermissions();
-		this.initPatientTable();
+		this.initDiagnosisTable();
 		this.addToggleDiagnosisViewButtonListener();
 		this.pCaseItemChange(pCaseItemId);
 		
@@ -84,13 +85,12 @@ class DiagnosisTableComponent extends PmsComponentController implements
 
 			@Override
 			public void buttonClick(ClickEvent event) {
-				// TODO to implement
-				
+				DiagnosisTableComponent.this.fireComponentChangeEvent(NavigationEvent.DIAGNOSIS_DETAIL);
 			}
 		});
 	}
 
-	private void initPatientTable() {
+	private void initDiagnosisTable() {
 		this.tblDiagnosis.setContainerDataSource(this.pmsDataAccess.getDiagnosisContainer());
 		this.tblDiagnosis.setSelectable(true);
 		this.tblDiagnosis.setImmediate(true);
@@ -164,7 +164,7 @@ class DiagnosisTableComponent extends PmsComponentController implements
 		tblDiagnosis.setWidth("100.0%");
 		tblDiagnosis.setHeight("100.0%");
 		mainLayout.addComponent(tblDiagnosis,
-				"top:80.0px;right:20.0px;bottom:60.0px;left:20.0px;");
+				"top:80.0px;right:11.0px;bottom:60.0px;left:20.0px;");
 		
 		// btnToggleDiagnosisView
 		btnToggleDiagnosisView = new Button();

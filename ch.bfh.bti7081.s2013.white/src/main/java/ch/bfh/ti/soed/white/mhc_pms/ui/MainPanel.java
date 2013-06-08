@@ -43,7 +43,8 @@ class MainPanel extends HorizontalSplitPanel implements ComponentChangeListener 
 	private PatientInfoComponent patInfo = new PatientInfoComponent();
 	private CaseInfoComponent caseInfo = new CaseInfoComponent();
 	private PatientProgressComponent progressComp = new PatientProgressComponent();
-	private DiagnosisTableComponent diagnosisComp = new DiagnosisTableComponent();
+	private DiagnosisTableComponent diagnosisTableComp = new DiagnosisTableComponent();
+	private DiagnosisDetailComponent diagnosisDetailComp = new DiagnosisDetailComponent();
 	private MedicationComponent medComp = new MedicationComponent();
 	private NewPatientComponent newPatientComp = new NewPatientComponent();
 	private EditCaseInfoComponent editCaseInfoComp = new EditCaseInfoComponent();
@@ -67,10 +68,24 @@ class MainPanel extends HorizontalSplitPanel implements ComponentChangeListener 
 		this.addNewPatientListeners();
 		this.addCaseInfoListeners();
 		this.addEditCaseListeners();
+		this.addDiagnosisTableListeners();
+		this.addDiagnosisDetailListeners();
 
 		// TODO Add missing Component Listener
 		// setComponentAlignment(button, Alignment.MIDDLE_CENTER);
 		// Notification.show("Welcome to the Animal Farm");
+	}
+
+	private void addDiagnosisDetailListeners() {
+		// TODO Auto-generated method stub
+		
+		this.diagnosisDetailComp.addComponentChangeListener(this);
+	}
+
+	private void addDiagnosisTableListeners() {
+		// TODO Auto-generated method stub
+		
+		this.diagnosisTableComp.addComponentChangeListener(this);
 	}
 
 	private void setUpHorizontalPanel() {
@@ -78,7 +93,6 @@ class MainPanel extends HorizontalSplitPanel implements ComponentChangeListener 
 		this.setSecondComponent(this.verticalPanel);
 		
 		// Panel splitting static size or dynamic
-		//
 		// Horizontal panel
 		//this.setSplitPosition(HORIZONTAL_SPLIT_POS, Unit.PERCENTAGE);
 		this.setSplitPosition(HORIZONTAL_SPLIT_POS, Unit.PIXELS);
@@ -105,7 +119,7 @@ class MainPanel extends HorizontalSplitPanel implements ComponentChangeListener 
 		this.editCaseInfoComp.addPmsComponentListener(this.patInfo);
 		this.editCaseInfoComp.addPmsComponentListener(this.caseInfo);
 		this.editCaseInfoComp.addPmsComponentListener(this.progressComp);
-		this.editCaseInfoComp.addPmsComponentListener(this.diagnosisComp);
+		this.editCaseInfoComp.addPmsComponentListener(this.diagnosisTableComp);
 		this.editCaseInfoComp.addPmsComponentListener(this.medComp);
 		this.editCaseInfoComp.addUIActivationListener(this.menuBar);
 		this.editCaseInfoComp.addUIActivationListener(this.titleBar);
@@ -129,7 +143,7 @@ class MainPanel extends HorizontalSplitPanel implements ComponentChangeListener 
 		this.newPatientComp.addPmsComponentListener(this.patInfo);
 		this.newPatientComp.addPmsComponentListener(this.caseInfo);
 		this.newPatientComp.addPmsComponentListener(this.progressComp);
-		this.newPatientComp.addPmsComponentListener(this.diagnosisComp);
+		this.newPatientComp.addPmsComponentListener(this.diagnosisTableComp);
 		this.newPatientComp.addPmsComponentListener(this.medComp);
 		this.newPatientComp.addUIActivationListener(this.menuBar);
 		this.newPatientComp.addUIActivationListener(this.titleBar);
@@ -149,7 +163,7 @@ class MainPanel extends HorizontalSplitPanel implements ComponentChangeListener 
 		this.patientTable.addPmsComponentListener(this.patInfo);
 		this.patientTable.addPmsComponentListener(this.caseInfo);
 		this.patientTable.addPmsComponentListener(this.progressComp);
-		this.patientTable.addPmsComponentListener(this.diagnosisComp);
+		this.patientTable.addPmsComponentListener(this.diagnosisTableComp);
 		this.patientTable.addPmsComponentListener(this.medComp);
 		this.patientTable.addUIActivationListener(this.menuBar);
 		this.patientTable.addUIActivationListener(this.titleBar);
@@ -163,7 +177,7 @@ class MainPanel extends HorizontalSplitPanel implements ComponentChangeListener 
 		this.menuBar.addPmsComponentListener(this.patInfo);
 		this.menuBar.addPmsComponentListener(this.caseInfo);
 		this.menuBar.addPmsComponentListener(this.progressComp);
-		this.menuBar.addPmsComponentListener(this.diagnosisComp);
+		this.menuBar.addPmsComponentListener(this.diagnosisTableComp);
 		this.menuBar.addPmsComponentListener(this.medComp);
 	}
 
@@ -181,7 +195,7 @@ class MainPanel extends HorizontalSplitPanel implements ComponentChangeListener 
 				this.progressComp);
 		this.navigator.addView(
 				MenuBarComponent.ButtonEnum.DIAGNOSIS.toString(),
-				this.diagnosisComp);
+				this.diagnosisTableComp);
 		this.navigator
 				.addView(MenuBarComponent.ButtonEnum.MEDICATION.toString(),
 						this.medComp);
@@ -202,6 +216,12 @@ class MainPanel extends HorizontalSplitPanel implements ComponentChangeListener 
 			break;
 		case PCASE_BACK:
 			this.navigate(MenuBarComponent.ButtonEnum.CASE_INFO, this.caseInfo);
+			break;
+		case DIAGNOSIS_TABLE:
+			this.navigate(MenuBarComponent.ButtonEnum.DIAGNOSIS, this.diagnosisTableComp);
+			break;
+		case DIAGNOSIS_DETAIL:
+			this.navigate(MenuBarComponent.ButtonEnum.DIAGNOSIS, this.diagnosisDetailComp);
 			break;
 		}
 	}

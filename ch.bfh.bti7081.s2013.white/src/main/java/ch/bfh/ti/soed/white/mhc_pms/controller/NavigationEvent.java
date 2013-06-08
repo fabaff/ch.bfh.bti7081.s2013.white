@@ -8,5 +8,5 @@ package ch.bfh.ti.soed.white.mhc_pms.controller;
  * 
  */
 public enum NavigationEvent {
-	PATIENT, PCASE, PATIENT_BACK, PCASE_BACK
+	PATIENT, PCASE, PATIENT_BACK, PCASE_BACK, DIAGNOSIS_TABLE, DIAGNOSIS_DETAIL;
 }

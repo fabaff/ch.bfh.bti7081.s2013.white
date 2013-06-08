@@ -201,6 +201,9 @@ class PatientInfoComponent extends PmsComponentController implements PmsComponen
 	}
 
 	private void setBasicPatientInfoValues(PCase item) {
+		this.lblFirstName.setValue(item.getFirstName());
+		this.lblLastName.setValue(item.getLastName());
+		this.lblDateOfBirth.setValue(ValueConverter.convertDate(item.getDateOfBirth()));
 		this.lblMotherLanguage.setValue(item.getMotherLanguage());
 		this.lblCivilStatus.setValue(ValueConverter.convertString(item.getCivilStatus()));
 		this.lblNationality.setValue(item.getNationality());
