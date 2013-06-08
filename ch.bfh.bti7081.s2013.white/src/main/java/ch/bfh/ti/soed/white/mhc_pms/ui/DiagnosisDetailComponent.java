@@ -58,10 +58,25 @@ public class DiagnosisDetailComponent extends PmsComponentController implements
 		
 		this.setPermissions();
 		this.addToggleDiagnosisViewButtonListener();
+		this.addNewDiagnosisButtonListener();
 		this.pCaseItemChange(pCaseItemId);
 		
 		// Static elements
 		this.lblTitle.addStyleName(Reindeer.LABEL_H2);
+	}
+
+	private void addNewDiagnosisButtonListener() {
+		this.btnNewDiagnosis.addClickListener(new Button.ClickListener() {
+			
+			private static final long serialVersionUID = -7261845370145460948L;
+
+			@Override
+			public void buttonClick(ClickEvent event) {
+				DiagnosisDetailComponent.this.fireUIActivationEvent(false);
+				DiagnosisDetailComponent.this.fireComponentChangeEvent(NavigationEvent.EDIT_DIAGNOSIS);
+				DiagnosisDetailComponent.this.fireNewCaseEvent(true);
+			}
+		});
 	}
 
 	private void addToggleDiagnosisViewButtonListener() {

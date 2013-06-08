@@ -87,13 +87,29 @@ class DiagnosisTableComponent extends PmsComponentController implements
 	}
 
 	private void addEditDiagnosisButtonListener() {
-		// TODO Auto-generated method stub
-		
+		this.btnEditDiagnosis.addClickListener(new Button.ClickListener() {
+			private static final long serialVersionUID = -545073047192643759L;
+
+			@Override
+			public void buttonClick(ClickEvent event) {
+				DiagnosisTableComponent.this.fireUIActivationEvent(false);
+				DiagnosisTableComponent.this.fireComponentChangeEvent(NavigationEvent.EDIT_DIAGNOSIS);				
+			}
+		});
 	}
 
 	private void addNewDiagnosisButtonListener() {
-		// TODO Auto-generated method stub
-		
+		this.btnNewDiagnosis.addClickListener(new Button.ClickListener() {
+			
+			private static final long serialVersionUID = -7261845370145460948L;
+
+			@Override
+			public void buttonClick(ClickEvent event) {
+				DiagnosisTableComponent.this.fireUIActivationEvent(false);
+				DiagnosisTableComponent.this.fireComponentChangeEvent(NavigationEvent.EDIT_DIAGNOSIS);
+				DiagnosisTableComponent.this.fireNewCaseEvent(true);
+			}
+		});
 	}
 
 	private void addToggleDiagnosisViewButtonListener() {

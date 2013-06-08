@@ -222,6 +222,7 @@ public class NewPatientComponent extends PmsComponentController {
 	                Notification.show("Patient gespeichert", Notification.Type.HUMANIZED_MESSAGE);
 					NewPatientComponent.this.bindFields();
 					NewPatientComponent.this.fireUIActivationEvent(true);
+					NewPatientComponent.this.fireComponentChangeEvent(NavigationEvent.PATIENT_BACK);
 					NewPatientComponent.this.fireComponentChangeEvent(NavigationEvent.PCASE_BACK);
 					NewPatientComponent.this.firePCaseItemChangeEvent(id);
 				} catch (CommitException e) {
