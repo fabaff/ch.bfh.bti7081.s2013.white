@@ -7,7 +7,7 @@ package ch.bfh.ti.soed.white.mhc_pms.controller;
  * 
  * 
  */
-public interface NewCaseListener {
+public interface NewItemListener {
 	
-	void setNewCase(boolean value);
+	void setNewItem(boolean value);
 }

@@ -25,7 +25,7 @@ public abstract class PmsComponentController extends CustomComponent implements 
 	
 	private List<UIActivationListener> uiActivationListeners;
 	
-	private List<NewCaseListener> newCaseListeners;
+	private List<NewItemListener> newCaseListeners;
 	
 	protected PmsComponentController() {
 		this.pmsComponentListeners = new ArrayList<>();
@@ -46,7 +46,7 @@ public abstract class PmsComponentController extends CustomComponent implements 
 		this.uiActivationListeners.add(listener);
 	}
 	
-	public void addNewCaseListener(NewCaseListener listener) {
+	public void addNewCaseListener(NewItemListener listener) {
 		this.newCaseListeners.add(listener);
 	}
 	
@@ -72,8 +72,8 @@ public abstract class PmsComponentController extends CustomComponent implements 
 	}
 	
 	protected void fireNewCaseEvent(boolean value) {
-		for (NewCaseListener listener : this.newCaseListeners) {
-			listener.setNewCase(value);
+		for (NewItemListener listener : this.newCaseListeners) {
+			listener.setNewItem(value);
 		}
 	}
 	

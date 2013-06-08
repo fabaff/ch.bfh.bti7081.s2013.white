@@ -72,10 +72,28 @@ class DiagnosisTableComponent extends PmsComponentController implements
 		this.setPermissions();
 		this.initDiagnosisTable();
 		this.addToggleDiagnosisViewButtonListener();
+		this.addNewDiagnosisButtonListener();
+		this.addEditDiagnosisButtonListener();
+		this.addDeleteDiagnosisButtonListener();
 		this.pCaseItemChange(pCaseItemId);
 		
 		// Static elements
 		this.lblView.addStyleName(Reindeer.LABEL_H2);
+	}
+
+	private void addDeleteDiagnosisButtonListener() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private void addEditDiagnosisButtonListener() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private void addNewDiagnosisButtonListener() {
+		// TODO Auto-generated method stub
+		
 	}
 
 	private void addToggleDiagnosisViewButtonListener() {
