@@ -47,6 +47,18 @@ public class PCaseTest {
 	public void testPCaseUser() throws CommitException {
 		// TODO vollständiger Test
 		
+//		private void addTestClickListener() {
+//		this.btnTest.addClickListener(new Button.ClickListener() {
+//			private static final long serialVersionUID = 1L;
+//
+//			@Override
+//			public void buttonClick(ClickEvent event) {
+//                Notification.show("Test notification", Notification.Type.HUMANIZED_MESSAGE);
+//
+//			}
+//		});
+//	}
+		
 //		JPAContainer<PmsUser> jpaContainer = new JPAContainer<>(PmsUser.class);
 //		jpaContainer.setEntityProvider(new CachingBatchableLocalEntityProvider<PmsUser>(PmsUser.class,
 //				JPAContainerFactory.createEntityManagerForPersistenceUnit(PmsDataAccessCreator.PERSISTENCE_UNIT)));
