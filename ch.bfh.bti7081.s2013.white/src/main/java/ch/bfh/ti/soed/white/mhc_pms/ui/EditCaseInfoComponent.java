@@ -85,40 +85,48 @@ public class EditCaseInfoComponent extends PmsComponentController implements
 
 		@Override
 		public void buttonClick(ClickEvent event) {
-			try {
-				EditCaseInfoComponent.this.fieldGroup.commit();
-				PCase pCaseItem = EditCaseInfoComponent.this.newCaseItem
-						.getBean();
-				
-				if (EditCaseInfoComponent.this.isNewCase) {
-					pCaseItem.closeCase();
-					EditCaseInfoComponent.this.pmsContainers
-							.getPCaseContainer().addEntity(pCaseItem);
-
-					pCaseItem = EditCaseInfoComponent.this.newCaseItem
-							.getBean();
-					pCaseItem.openCase();
-				}
-
-				EditCaseInfoComponent.this.pmsContainers.getPCaseContainer()
-						.addEntity(pCaseItem);
-				EditCaseInfoComponent.this.fireUIActivationEvent(true);
-				EditCaseInfoComponent.this
-						.fireComponentChangeEvent(NavigationEvent.PCASE_BACK);
-				EditCaseInfoComponent.this.firePCaseItemChangeEvent();
-				EditCaseInfoComponent.this.setNewItem(false);
-
-				// TODO adjusted text: new /edit
-				Notification.show("Geänderter Fall gespeichert",
-						Notification.Type.HUMANIZED_MESSAGE);
-			} catch (CommitException e) {
-				// TODO Exception Handling
-				EditCaseInfoComponent.this
-						.getUI()
-						.addWindow(
-								new Window(
-										"Beim Speichern des Falls ist ein Fehler aufgetreten!"));
-			}
+//			try {
+//				BeanItem<PCase> beanItem = EditCaseInfoComponent.this.fieldGroup.getItemDataSource();
+//				
+//				if (beanItem != null) {
+//					PCase item = beanItem.getBean();
+//					
+//					EditCaseInfoComponent.this.fieldGroup.commit();
+//					
+//					if (EditCaseInfoComponent.this.isNewCase) {
+//
+//					}
+//					
+//					PCase pCaseItem = EditCaseInfoComponent.this.newCaseItem
+//							.getBean();
+//					if (EditCaseInfoComponent.this.isNewCase) {
+//						pCaseItem.closeCase();
+//						EditCaseInfoComponent.this.pmsContainers
+//								.getPCaseContainer().addEntity(pCaseItem);
+//
+//						pCaseItem = EditCaseInfoComponent.this.newCaseItem
+//								.getBean();
+//						pCaseItem.setNewCase();
+//					}
+//					EditCaseInfoComponent.this.pmsContainers
+//							.getPCaseContainer().addEntity(pCaseItem);
+//					EditCaseInfoComponent.this.fireUIActivationEvent(true);
+//					EditCaseInfoComponent.this
+//							.fireComponentChangeEvent(NavigationEvent.PCASE_BACK);
+//					EditCaseInfoComponent.this.firePCaseItemChangeEvent();
+//					EditCaseInfoComponent.this.setNewItem(false);
+//					// TODO adjusted text: new /edit
+//					Notification.show("Geänderter Fall gespeichert",
+//							Notification.Type.HUMANIZED_MESSAGE);
+//				}
+//			} catch (CommitException e) {
+//				// TODO Exception Handling
+//				EditCaseInfoComponent.this
+//						.getUI()
+//						.addWindow(
+//								new Window(
+//										"Beim Speichern des Falls ist ein Fehler aufgetreten!"));
+//			}
 		}
 
 	}
@@ -127,12 +135,12 @@ public class EditCaseInfoComponent extends PmsComponentController implements
 
 	private static final long serialVersionUID = 7804702033977054145L;
 
-	private PmsDataAccess pmsContainers;
+	private PmsDataAccess pmsDataAccess;
 
 	private BeanFieldGroup<PCase> fieldGroup;
 
-	private BeanItem<PCase> newCaseItem;
-
+	private BeanItem<PCase> newPCaseItem;
+	
 	private boolean isNewCase;
 
 	/**
@@ -146,13 +154,12 @@ public class EditCaseInfoComponent extends PmsComponentController implements
 		buildMainLayout();
 		setCompositionRoot(mainLayout);
 
-		this.pmsContainers = PmsDataAccessCreator.getDataAccess();
-		this.pmsContainers.getPCaseContainer().refresh();
+		this.pmsDataAccess = PmsDataAccessCreator.getDataAccess();
+		this.pmsDataAccess.getPCaseContainer().refresh();
 		this.fieldGroup = new BeanFieldGroup<PCase>(PCase.class);
 		this.isNewCase = false;
 
 		this.initComboBoxes();
-		this.bindFields();
 		this.setComboBoxDefaultValues();
 		
 		this.btnSave.addClickListener(new SaveButtonListener());
@@ -198,29 +205,20 @@ public class EditCaseInfoComponent extends PmsComponentController implements
 		this.cmbReanimationStatus.addItem(ReanimationStatus.NO);
 	}
 
-	private void bindFields() {
-		PCase entityItem = this.pmsContainers.getPCaseContainer()
-				.getCurrentItem();
-
-		if (entityItem != null) {
-			this.newCaseItem = new BeanItem<PCase>(entityItem);
-		} else {
-			this.newCaseItem = new BeanItem<PCase>(new PCase(
-					this.pmsContainers.getCurrentUser()));
+	private void bindFields(PCase item) {
+		if (item != null) {
+			this.fieldGroup.setItemDataSource(item);
+			this.fieldGroup.bind(this.cmbReanimationStatus, "reanimationStatus");
+			this.fieldGroup.bind(this.cmbKindOfTreatment, "kindOfTreatment");
+			this.fieldGroup.bind(this.cmbOrderOfPatient, "orderOfPatient");
+			this.fieldGroup.bind(this.txtAssignment, "assignment");
+			this.fieldGroup.bind(this.txtDegreeOfDanger, "degreeOfDanger");
+			this.fieldGroup.bind(this.txtGoOutStatus, "goOutStatus");
+			this.fieldGroup.bind(this.txtJudicialStatus, "judicialStatus");
+			this.fieldGroup.bind(this.txtSanction, "sanction");
+			this.fieldGroup.bind(this.txtSuicidalTendency, "suicidalTendency");
+			this.fieldGroup.bind(this.txtVacation, "vacation");
 		}
-		
-		this.fieldGroup.setItemDataSource(this.newCaseItem);
-		this.fieldGroup
-				.bind(this.cmbReanimationStatus, "reanimationStatus");
-		this.fieldGroup.bind(this.cmbKindOfTreatment, "kindOfTreatment");
-		this.fieldGroup.bind(this.cmbOrderOfPatient, "orderOfPatient");
-		this.fieldGroup.bind(this.txtAssignment, "assignment");
-		this.fieldGroup.bind(this.txtDegreeOfDanger, "degreeOfDanger");
-		this.fieldGroup.bind(this.txtGoOutStatus, "goOutStatus");
-		this.fieldGroup.bind(this.txtJudicialStatus, "judicialStatus");
-		this.fieldGroup.bind(this.txtSanction, "sanction");
-		this.fieldGroup.bind(this.txtSuicidalTendency, "suicidalTendency");
-		this.fieldGroup.bind(this.txtVacation, "vacation");
 	}
 
 	/*
@@ -232,10 +230,16 @@ public class EditCaseInfoComponent extends PmsComponentController implements
 	 */
 	@Override
 	public void enter(ViewChangeEvent event) {
-		this.bindFields();
-
-		if (this.isNewCase) {
-			this.setComboBoxDefaultValues();
+		PCase item = this.pmsDataAccess.getPCaseContainer().getCurrentItem();
+		
+		if (item != null) {
+			if (this.isNewCase) {
+				this.newPCaseItem = new BeanItem<PCase>((PCase) item.clone());
+				this.bindFields(this.newPCaseItem.getBean());
+				this.setComboBoxDefaultValues();
+			} else {
+				this.bindFields(item);
+			}
 		}
 	}
 

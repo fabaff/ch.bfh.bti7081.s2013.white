@@ -145,12 +145,21 @@ public class PCase implements Serializable {
 		this.therapist = therapist;
 	}
 
+	/* (non-Javadoc)
+	 * @see java.lang.Object#clone()
+	 */
+	@Override
+	public Object clone() {
+		// TODO implement clone
+		return null;
+	}
+
 	public void closeCase() {
 		this.setCaseStatus(CaseStatus.CLOSED);
 		this.setDateCaseClosed(new Date());
 	}
 	
-	public void openCase() {
+	public void setNewCase() {
 		this.setDateCaseOpened(new Date());
 		this.setDateCaseClosed(null);
 		this.setCaseStatus(CaseStatus.ACTIVE);

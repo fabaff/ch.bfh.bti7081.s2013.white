@@ -57,6 +57,13 @@ public class Diagnosis implements Serializable {
 		this.pCase = pCase;
 	}   
 	
+	public void setNewDiagnosis() {
+		this.setDid(0);
+		this.setDateOfCreation(new Date());
+		this.setClinicName(this.getpCase().getTherapist().getClinic());
+		this.setClinicName(this.getpCase().getTherapist().getFirstName() + " " + this.getpCase().getTherapist().getLastName());
+	}
+	
 	/**
 	 * @return the pCase
 	 */

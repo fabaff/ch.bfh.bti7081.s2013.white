@@ -215,7 +215,7 @@ public class NewPatientComponent extends PmsComponentController {
 				try {
 					NewPatientComponent.this.fieldGroup.commit();
 					PCase pCaseItem = NewPatientComponent.this.newPatientItem.getBean();
-					pCaseItem.openCase();
+					pCaseItem.setNewCase();
 
 					NewPatientComponent.this.pmsContainers.getPCaseContainer().addEntity(pCaseItem);
 
