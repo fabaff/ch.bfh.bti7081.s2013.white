@@ -119,16 +119,15 @@ public class EditDiagnosisComponent extends PmsComponentController implements
 
 		if (item != null) {
 			this.diagnosisItem = new BeanItem<Diagnosis>(item);
-
-			this.fieldGroup.setItemDataSource(this.diagnosisItem);
-			this.fieldGroup.bind(this.txtDiagnosisName, "diagnosisName");
-			this.fieldGroup.bind(this.txtIcdCode, "icdCode");
-			this.fieldGroup.bind(this.tarDiagnosisComment, "diagnosisComment");
 		} else {
 			this.diagnosisItem = new BeanItem<Diagnosis>(new Diagnosis(
 					this.pmsDataAccess.getPCaseContainer().getCurrentItem()));
-			this.fieldGroup.setItemDataSource(this.diagnosisItem);
 		}
+		
+		this.fieldGroup.setItemDataSource(this.diagnosisItem);
+		this.fieldGroup.bind(this.txtDiagnosisName, "diagnosisName");
+		this.fieldGroup.bind(this.txtIcdCode, "icdCode");
+		this.fieldGroup.bind(this.tarDiagnosisComment, "diagnosisComment");
 	}
 
 	private void addBtnCancelListener() {

@@ -154,6 +154,7 @@ public class EditCaseInfoComponent extends PmsComponentController implements
 		this.initComboBoxes();
 		this.bindFields();
 		this.setComboBoxDefaultValues();
+		
 		this.btnSave.addClickListener(new SaveButtonListener());
 		this.addBtnCancelListener();
 
@@ -203,24 +204,23 @@ public class EditCaseInfoComponent extends PmsComponentController implements
 
 		if (entityItem != null) {
 			this.newCaseItem = new BeanItem<PCase>(entityItem);
-
-			this.fieldGroup.setItemDataSource(this.newCaseItem);
-			this.fieldGroup
-					.bind(this.cmbReanimationStatus, "reanimationStatus");
-			this.fieldGroup.bind(this.cmbKindOfTreatment, "kindOfTreatment");
-			this.fieldGroup.bind(this.cmbOrderOfPatient, "orderOfPatient");
-			this.fieldGroup.bind(this.txtAssignment, "assignment");
-			this.fieldGroup.bind(this.txtDegreeOfDanger, "degreeOfDanger");
-			this.fieldGroup.bind(this.txtGoOutStatus, "goOutStatus");
-			this.fieldGroup.bind(this.txtJudicialStatus, "judicialStatus");
-			this.fieldGroup.bind(this.txtSanction, "sanction");
-			this.fieldGroup.bind(this.txtSuicidalTendency, "suicidalTendency");
-			this.fieldGroup.bind(this.txtVacation, "vacation");
 		} else {
 			this.newCaseItem = new BeanItem<PCase>(new PCase(
 					this.pmsContainers.getCurrentUser()));
-			this.fieldGroup.setItemDataSource(this.newCaseItem);
 		}
+		
+		this.fieldGroup.setItemDataSource(this.newCaseItem);
+		this.fieldGroup
+				.bind(this.cmbReanimationStatus, "reanimationStatus");
+		this.fieldGroup.bind(this.cmbKindOfTreatment, "kindOfTreatment");
+		this.fieldGroup.bind(this.cmbOrderOfPatient, "orderOfPatient");
+		this.fieldGroup.bind(this.txtAssignment, "assignment");
+		this.fieldGroup.bind(this.txtDegreeOfDanger, "degreeOfDanger");
+		this.fieldGroup.bind(this.txtGoOutStatus, "goOutStatus");
+		this.fieldGroup.bind(this.txtJudicialStatus, "judicialStatus");
+		this.fieldGroup.bind(this.txtSanction, "sanction");
+		this.fieldGroup.bind(this.txtSuicidalTendency, "suicidalTendency");
+		this.fieldGroup.bind(this.txtVacation, "vacation");
 	}
 
 	/*

@@ -158,14 +158,14 @@ public class NewPatientComponent extends PmsComponentController {
 		this.bindFields();
 		this.initComboBoxes();
 		this.setComboBoxDefaultValues();
+		this.lblView.addStyleName(Reindeer.LABEL_H2);
+		this.lblView.setValue("Neuer Patient");
+		
 		this.addNewPatientButtonListener();
 		this.addCancelPatientButtonListener();
+		
 		// TODO Sanitization of input values
 		// TODO dateOfBirth: lock edit
-		
-		// Static elements
-		this.lblView.addStyleName(Reindeer.LABEL_H2);
-		this.lblView.setValue("Patienten anlegen");
 	}
 
 	// Default values for combo boxes are needed
