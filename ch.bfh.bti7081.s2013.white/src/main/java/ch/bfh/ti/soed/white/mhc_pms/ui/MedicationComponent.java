@@ -62,7 +62,7 @@ class MedicationComponent extends PmsComponentController implements PmsComponent
 	}
 
 	@Override
-	public void pCaseItemChange(Object itemId) {
+	public void pCaseItemChange() {
 		// TODO implement
 	}
 	

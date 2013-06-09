@@ -82,7 +82,6 @@ class PatientTableComponent extends PmsComponentController implements
 
 		this.pmsContainers = PmsDataAccessCreator.getDataAccess();
 		this.pmsContainers.getPCaseContainer().refresh();
-		Object itemId = this.pmsContainers.getPCaseContainer().getCurrentPCaseId();
 		this.permission = new PmsPermission(this.pmsContainers.getCurrentUser().getUserGroup());
 		
 		this.initPatientTable();
@@ -90,7 +89,8 @@ class PatientTableComponent extends PmsComponentController implements
 		this.addNewPatientClickListener();
 		this.addNewCaseClickListener();
 		this.addTestClickListener();
-		this.pCaseItemChange(itemId);
+		this.pCaseItemChange();
+		
 		// TODO abgeschlossene Fälle: Buttons sperren
 		// TODO format dateOfBirth in Tab
 		
@@ -156,15 +156,17 @@ class PatientTableComponent extends PmsComponentController implements
 					public void valueChange(ValueChangeEvent event) {
 						if (event.getProperty().getValue() != null) {
 							Object id = PatientTableComponent.this.tblPatients.getValue();
-							PatientTableComponent.this.pmsContainers.getPCaseContainer().setCurrentPCaseId(id);
-							PatientTableComponent.this.firePCaseItemChangeEvent(id);
+							PatientTableComponent.this.pmsContainers.getPCaseContainer().setCurrentItemId(id);
+							PatientTableComponent.this.firePCaseItemChangeEvent();
 						}
 					}
 				});
 	}
 
 	@Override
-	public void pCaseItemChange(Object itemId) {
+	public void pCaseItemChange() {
+		Object itemId = this.pmsContainers.getPCaseContainer().getCurrentItemId();
+		
 		if (itemId != null) {
 			this.tblPatients.select(itemId);
 		}

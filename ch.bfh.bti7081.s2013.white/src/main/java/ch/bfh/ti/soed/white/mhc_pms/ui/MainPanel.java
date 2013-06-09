@@ -52,6 +52,10 @@ class MainPanel extends HorizontalSplitPanel implements ComponentChangeListener 
 	private MenuBarComponent menuBar;
 	private Navigator navigator;
 
+	/**
+	 * 
+	 * @param pmsUI
+	 */
 	public MainPanel(PmsUI pmsUI) {
 		Panel detailPanel = new Panel();
 		this.navigator = new Navigator(pmsUI, detailPanel);

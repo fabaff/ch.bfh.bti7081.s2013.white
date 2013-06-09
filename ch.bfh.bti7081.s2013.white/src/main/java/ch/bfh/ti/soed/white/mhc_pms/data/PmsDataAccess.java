@@ -13,14 +13,14 @@ public class PmsDataAccess {
 	
 	private PmsContainer<PCase> pCaseContainer;
 	
-	private DiagnosisContainer diagnosisContainer;
+	private PmsEntityContainer<Diagnosis> diagnosisContainer;
 	
 	private PmsUser currentUser;
 	
 	public PmsDataAccess(String userName) {
 		this.pmsUserContainer = new PmsUserContainer(PmsUser.class);
 		this.pCaseContainer = new PmsContainer<>(PCase.class);
-		this.diagnosisContainer = new DiagnosisContainer(Diagnosis.class);
+		this.diagnosisContainer = new PmsEntityContainer<>(Diagnosis.class);
 		
 		this.currentUser = this.pmsUserContainer.getCurrentUser(userName);
 	}
@@ -39,7 +39,7 @@ public class PmsDataAccess {
 	/**
 	 * @return the diagnosisContainer
 	 */
-	public DiagnosisContainer getDiagnosisContainer() {
+	public PmsEntityContainer<Diagnosis> getDiagnosisContainer() {
 		return this.diagnosisContainer;
 	}
 

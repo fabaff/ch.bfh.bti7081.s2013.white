@@ -54,12 +54,11 @@ public class DiagnosisDetailComponent extends PmsComponentController implements
 		this.pmsDataAccess = PmsDataAccessCreator.getDataAccess();
 		this.pmsDataAccess.getDiagnosisContainer().refresh();
 		this.permission = new PmsPermission(this.pmsDataAccess.getCurrentUser().getUserGroup());
-		Object pCaseItemId = this.pmsDataAccess.getPCaseContainer().getCurrentPCaseId();
 		
 		this.setPermissions();
 		this.addToggleDiagnosisViewButtonListener();
 		this.addNewDiagnosisButtonListener();
-		this.pCaseItemChange(pCaseItemId);
+		this.pCaseItemChange();
 		
 		// Static elements
 		this.lblTitle.addStyleName(Reindeer.LABEL_H2);
@@ -103,7 +102,7 @@ public class DiagnosisDetailComponent extends PmsComponentController implements
 	}
 
 	@Override
-	public void pCaseItemChange(Object itemId) {
+	public void pCaseItemChange() {
 		// TODO Auto-generated method stub
 		
 	}

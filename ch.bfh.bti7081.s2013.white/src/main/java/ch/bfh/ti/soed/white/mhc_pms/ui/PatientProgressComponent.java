@@ -96,7 +96,7 @@ class PatientProgressComponent extends PmsComponentController implements PmsComp
 	}
 
 	@Override
-	public void pCaseItemChange(Object itemId) {
+	public void pCaseItemChange() {
 		// TODO implement
 	}
 

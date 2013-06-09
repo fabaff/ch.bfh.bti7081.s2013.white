@@ -1,5 +1,6 @@
 package ch.bfh.ti.soed.white.mhc_pms.data;
 
+import com.vaadin.addon.jpacontainer.EntityItem;
 import com.vaadin.addon.jpacontainer.JPAContainer;
 import com.vaadin.addon.jpacontainer.JPAContainerFactory;
 import com.vaadin.addon.jpacontainer.provider.CachingBatchableLocalEntityProvider;
@@ -9,71 +10,76 @@ import com.vaadin.addon.jpacontainer.provider.CachingBatchableLocalEntityProvide
  * @version		0.0.2 
  * @since		0.0.1
  * 
- * Entity implementation class for Entity: PmsContainer
  */
 public class PmsContainer<E> extends JPAContainer<E> {
 
 	private static final long serialVersionUID = -287883752877854160L;
-
-	private Object currentPCaseId;
-
+	
+	private Object currentItemId;
+	
 	public PmsContainer(Class<E> clazz) {
 		super(clazz);
 		this.setEntityProvider(new CachingBatchableLocalEntityProvider<E>(clazz,
 						JPAContainerFactory.createEntityManagerForPersistenceUnit(PmsDataAccessCreator.PERSISTENCE_UNIT)));
 		this.setAutoCommit(true);
-		this.currentPCaseId = this.firstItemId();
+		
+		this.currentItemId = this.firstItemId();
 	}
 
 	/**
-	 * @return the currentPCaseId
+	 * @return the currentItemId
 	 */
-	public Object getCurrentPCaseId() {
-		return this.currentPCaseId;
+	public Object getCurrentItemId() {
+		return this.currentItemId;
 	}
 
 	/**
-	 * @param currentPCaseId
-	 *            the currentPCaseId to set
+	 * @param currentItemId
+	 *            the currentItemId to set
 	 */
-	public void setCurrentPCaseId(Object currentPCaseId) {
-		this.currentPCaseId = currentPCaseId;
+	public void setCurrentItemId(Object currentItemId) {
+		this.currentItemId = currentItemId;
 	}
 
-	public Object decrementCurrentPCaseItemId() {
+	public Object decrementCurrentItemId() {
 		if (this.size() > 1) {
 			Object id = null;
-			if (this.isFirstId(this.getCurrentPCaseId())) {
+			if (this.isFirstId(this.getCurrentItemId())) {
 				id = this.lastItemId();
 			} else {
-				id = this.prevItemId(this.getCurrentPCaseId());
+				id = this.prevItemId(this.getCurrentItemId());
 			}
-			this.setCurrentPCaseId(id);
+			this.setCurrentItemId(id);
 			return id;
 		} else {
-			return this.getCurrentPCaseId();
+			return this.getCurrentItemId();
 		}
 	}
 
-	public Object incrementCurrentPCaseItemId() {
+	public Object incrementCurrentItemId() {
 		if (this.size() > 1) {
 			Object id = null;
-			if (this.isLastId(this.getCurrentPCaseId())) {
+			if (this.isLastId(this.getCurrentItemId())) {
 				id = this.firstItemId();
 			} else {
-				id = this.nextItemId(this.getCurrentPCaseId());
+				id = this.nextItemId(this.getCurrentItemId());
 			}
-			this.setCurrentPCaseId(id);
+			this.setCurrentItemId(id);
 			return id;
 		} else {
-			return this.getCurrentPCaseId();
+			return this.getCurrentItemId();
 		}
 	}
 
 	public Object addEntity(E item) {
-		this.currentPCaseId = super.addEntity(item);
+		this.currentItemId = super.addEntity(item);
 		this.refresh();
-		return this.currentPCaseId;
+		return this.currentItemId;
+	}
+
+	public E getCurrentItem() {
+		EntityItem<E> entityItem = this.getItem(this.getCurrentItemId());
+		return entityItem != null ? entityItem.getEntity() : null;
 	}
 
 }

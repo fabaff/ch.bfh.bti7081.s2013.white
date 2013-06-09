@@ -13,12 +13,14 @@ public class PmsUserContainer extends PmsContainer<PmsUser> {
 
 	private static final long serialVersionUID = -6061413589999422421L;
 
+	private static Object USER_FILTER_PROPERTY_ID = "userName";
+	
 	public PmsUserContainer(Class<PmsUser> clazz) {
 		super(clazz);
 	}
 
 	public PmsUser getCurrentUser(String userName) {
-		Filter filter = Filters.eq("userName", userName);
+		Filter filter = Filters.eq(USER_FILTER_PROPERTY_ID, userName);
 		this.addContainerFilter(filter);
 		
 		if (this.size() != 0) {

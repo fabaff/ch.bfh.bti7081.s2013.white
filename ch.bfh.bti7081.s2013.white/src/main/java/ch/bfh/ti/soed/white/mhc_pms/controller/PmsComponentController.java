@@ -53,9 +53,9 @@ public abstract class PmsComponentController extends CustomComponent implements 
 	@Override
 	public void enter(ViewChangeEvent event) {}
 	
-	protected void firePCaseItemChangeEvent(Object itemId) {
+	protected void firePCaseItemChangeEvent() {
 		for (PmsComponentListener listener : this.pmsComponentListeners) {
-			listener.pCaseItemChange(itemId);
+			listener.pCaseItemChange();
 		}
 	}
 	

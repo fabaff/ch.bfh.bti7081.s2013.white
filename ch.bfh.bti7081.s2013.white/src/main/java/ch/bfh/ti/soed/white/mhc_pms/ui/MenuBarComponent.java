@@ -98,9 +98,9 @@ class MenuBarComponent extends PmsComponentController implements
 
 			@Override
 			public void buttonClick(ClickEvent event) {
-				Object id = MenuBarComponent.this.pmsContainers.getPCaseContainer().incrementCurrentPCaseItemId();
+				Object id = MenuBarComponent.this.pmsContainers.getPCaseContainer().incrementCurrentItemId();
 				if (id != null) {
-					MenuBarComponent.this.firePCaseItemChangeEvent(id);
+					MenuBarComponent.this.firePCaseItemChangeEvent();
 				}
 			}
 		});
@@ -112,9 +112,9 @@ class MenuBarComponent extends PmsComponentController implements
 
 			@Override
 			public void buttonClick(ClickEvent event) {
-				Object id = MenuBarComponent.this.pmsContainers.getPCaseContainer().decrementCurrentPCaseItemId();
+				Object id = MenuBarComponent.this.pmsContainers.getPCaseContainer().decrementCurrentItemId();
 				if (id != null) {
-					MenuBarComponent.this.firePCaseItemChangeEvent(id);
+					MenuBarComponent.this.firePCaseItemChangeEvent();
 				}
 			}
 		});

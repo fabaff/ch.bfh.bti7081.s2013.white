@@ -217,14 +217,15 @@ public class NewPatientComponent extends PmsComponentController {
 					PCase pCaseItem = NewPatientComponent.this.newPatientItem.getBean();
 					pCaseItem.openCase();
 
-					Object id = NewPatientComponent.this.pmsContainers.getPCaseContainer().addEntity(pCaseItem);
+					NewPatientComponent.this.pmsContainers.getPCaseContainer().addEntity(pCaseItem);
 
+					// TODO String constant
 	                Notification.show("Patient gespeichert", Notification.Type.HUMANIZED_MESSAGE);
 					NewPatientComponent.this.bindFields();
 					NewPatientComponent.this.fireUIActivationEvent(true);
 					NewPatientComponent.this.fireComponentChangeEvent(NavigationEvent.PATIENT_BACK);
 					NewPatientComponent.this.fireComponentChangeEvent(NavigationEvent.PCASE_BACK);
-					NewPatientComponent.this.firePCaseItemChangeEvent(id);
+					NewPatientComponent.this.firePCaseItemChangeEvent();
 				} catch (CommitException e) {
 					// TODO Exception Handling
 					NewPatientComponent.this.getUI().addWindow(new Window("Beim Speichern des Patienten ist ein Fehler aufgetreten!"));
