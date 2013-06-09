@@ -82,17 +82,17 @@ class PatientTableComponent extends PmsComponentController implements
 		this.permission = new PmsPermission(this.pmsContainers.getCurrentUser().getUserGroup());
 		
 		this.initPatientTable();
+		this.pCaseItemChange();
+		this.lblView.addStyleName(Reindeer.LABEL_H2);
+		this.lblView.setValue("Übersicht Patienten und Fälle");
+		
 		this.addValueChangeListener();
 		this.addNewPatientClickListener();
 		this.addNewCaseClickListener();
-		this.pCaseItemChange();
 		
 		// TODO abgeschlossene Fälle: Buttons sperren
 		// TODO format dateOfBirth in Tab
-		
-		// Static elements
-		this.lblView.addStyleName(Reindeer.LABEL_H2);
-		this.lblView.setValue("Übersicht Patienten und Fälle");
+		// TODO zusätzliches Feld in Tabelle: Datum Falleröffnung
 	}
 
 	// Initialization of the table element
