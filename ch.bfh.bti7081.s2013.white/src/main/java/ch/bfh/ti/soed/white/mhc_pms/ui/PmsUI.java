@@ -17,6 +17,7 @@ public class PmsUI extends UI {
 	protected void init(VaadinRequest request) {
 		// TODO generate user dummy data
 		// TODO user authentication
+		
 		this.setContent(new MainPanel(this));
 	}
 }

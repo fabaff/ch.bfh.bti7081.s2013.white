@@ -67,6 +67,7 @@ class MainPanel extends HorizontalSplitPanel implements ComponentChangeListener 
 		this.setUpHorizontalPanel();
 		this.setUpVerticalPanel(detailPanel);
 		this.addNavigatorViews();
+		
 		this.addMenuBarListeners();
 		this.addPatientTableListeners();
 		this.addPatientInfoListeners();
