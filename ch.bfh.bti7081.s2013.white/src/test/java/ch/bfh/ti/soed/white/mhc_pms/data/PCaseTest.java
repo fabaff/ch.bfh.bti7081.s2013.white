@@ -125,11 +125,11 @@ public class PCaseTest {
 //				JPAContainerFactory.createEntityManagerForPersistenceUnit(PmsDataAccessCreator.PERSISTENCE_UNIT)));
 //
 
-		PmsContainer<PCase> pCaseContainer =  PmsDataAccessCreator.getDataAccess().getPCaseContainer();
-		
-		System.out.println(pCaseContainer.getItem(pCaseContainer.firstItemId()).getEntity().getFirstName());
-		pCaseContainer.getItem(pCaseContainer.firstItemId()).getEntity().setFirstName("Mike");
-		System.out.println(pCaseContainer.getItem(pCaseContainer.firstItemId()).getEntity().getFirstName());
+//		PmsContainer<PCase> pCaseContainer =  PmsDataAccessCreator.getDataAccess().getPCaseContainer();
+//		
+//		System.out.println(pCaseContainer.getItem(pCaseContainer.firstItemId()).getEntity().getFirstName());
+//		pCaseContainer.getItem(pCaseContainer.firstItemId()).getEntity().setFirstName("Mike");
+//		System.out.println(pCaseContainer.getItem(pCaseContainer.firstItemId()).getEntity().getFirstName());
 		
 		
 //		System.out.println("First id: " + jpaContainer2.firstItemId());
