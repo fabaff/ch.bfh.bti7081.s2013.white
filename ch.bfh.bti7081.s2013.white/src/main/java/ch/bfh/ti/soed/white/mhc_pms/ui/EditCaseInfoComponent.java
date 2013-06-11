@@ -104,7 +104,6 @@ public class EditCaseInfoComponent extends PmsComponentController implements
 								.getPCaseContainer().addEntity(
 										beanItem.getBean());
 					}
-
 				} else {
 					EditCaseInfoComponent.this.fieldGroup.commit();
 				}

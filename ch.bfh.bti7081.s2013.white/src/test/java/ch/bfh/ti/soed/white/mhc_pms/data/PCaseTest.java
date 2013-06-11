@@ -77,13 +77,13 @@ public class PCaseTest {
 //		System.out.println("size after filter: " + jpaContainer.size());
 //		
 		
-//		JPAContainer<PCase> jpaContainer2 = new JPAContainer<>(PCase.class);
-//		jpaContainer2.setEntityProvider(new CachingBatchableLocalEntityProvider<PCase>(PCase.class,
-//				JPAContainerFactory.createEntityManagerForPersistenceUnit(PmsDataAccessCreator.PERSISTENCE_UNIT)));
-//
-//		System.out.println(jpaContainer2.getItem(jpaContainer2.firstItemId()).getEntity().getFirstName());
-//		jpaContainer2.getItem(jpaContainer2.firstItemId()).getEntity().setFirstName("Peter");
-//		System.out.println(jpaContainer2.getItem(jpaContainer2.firstItemId()).getEntity().getFirstName());
+		JPAContainer<PCase> jpaContainer2 = new JPAContainer<>(PCase.class);
+		jpaContainer2.setEntityProvider(new CachingBatchableLocalEntityProvider<PCase>(PCase.class,
+				JPAContainerFactory.createEntityManagerForPersistenceUnit(PmsDataAccessCreator.PERSISTENCE_UNIT)));
+
+		System.out.println(jpaContainer2.getItem(jpaContainer2.firstItemId()).getEntity().getFirstName());
+		jpaContainer2.getItem(jpaContainer2.firstItemId()).getEntity().setFirstName("Peter");
+		System.out.println(jpaContainer2.getItem(jpaContainer2.firstItemId()).getEntity().getFirstName());
 		
 		
 //		System.out.println("First id: " + jpaContainer2.firstItemId());
