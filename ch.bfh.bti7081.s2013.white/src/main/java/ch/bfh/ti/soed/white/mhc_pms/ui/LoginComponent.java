@@ -65,7 +65,7 @@ public class LoginComponent extends PmsComponentController {
 
 	private String login() {
 		// TODO Login 
-		String userName = "";
+		String userName = "user";
 		String password = "";
 		
 		boolean loginOK = PmsDataAccessCreator.getDataAccess().getPmsUserContainer().checkLogin(userName, password);
