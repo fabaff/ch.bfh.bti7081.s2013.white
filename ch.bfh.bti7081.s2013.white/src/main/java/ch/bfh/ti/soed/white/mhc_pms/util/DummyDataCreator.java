@@ -31,7 +31,7 @@ public final class DummyDataCreator {
 		} 
 		PmsUser dummyUser = new PmsUser();
 		dummyUser.setUserName("user");
-		dummyUser.setPassword("password");
+		dummyUser.setPassword(Hash.MD5("password"));
 		dummyUser.setUserGroup(UserGroup.PSYCHOLOGIST);
 		jpaContainer.addEntity(dummyUser);
 	}

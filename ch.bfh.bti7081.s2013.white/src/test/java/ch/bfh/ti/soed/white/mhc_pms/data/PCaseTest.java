@@ -124,9 +124,12 @@ public class PCaseTest {
 //		jpaContainer2.setEntityProvider(new CachingBatchableLocalEntityProvider<PCase>(PCase.class,
 //				JPAContainerFactory.createEntityManagerForPersistenceUnit(PmsDataAccessCreator.PERSISTENCE_UNIT)));
 //
-//		System.out.println(jpaContainer2.getItem(jpaContainer2.firstItemId()).getEntity().getFirstName());
-//		jpaContainer2.getItem(jpaContainer2.firstItemId()).getEntity().setFirstName("Peter");
-//		System.out.println(jpaContainer2.getItem(jpaContainer2.firstItemId()).getEntity().getFirstName());
+
+		PmsContainer<PCase> pCaseContainer =  PmsDataAccessCreator.getDataAccess().getPCaseContainer();
+		
+		System.out.println(pCaseContainer.getItem(pCaseContainer.firstItemId()).getEntity().getFirstName());
+		pCaseContainer.getItem(pCaseContainer.firstItemId()).getEntity().setFirstName("Mike");
+		System.out.println(pCaseContainer.getItem(pCaseContainer.firstItemId()).getEntity().getFirstName());
 		
 		
 //		System.out.println("First id: " + jpaContainer2.firstItemId());
