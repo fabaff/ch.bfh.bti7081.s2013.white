@@ -43,4 +43,12 @@ public class PmsDataAccess {
 		return this.diagnosisContainer;
 	}
 
+	/**
+	 * @return the pmsUserContainer
+	 */
+	public PmsUserContainer getPmsUserContainer() {
+		return pmsUserContainer;
+	}
+
+	
 }
