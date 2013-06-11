@@ -19,17 +19,21 @@ public final class DummyDataCreator {
 		jpaContainer.setAutoCommit(true);
 		
 		Filter userFilter = Filters.eq("userName", "user");
+		Filter passwordFilter = Filters.eq("userName", "password");
 		jpaContainer.addContainerFilter(userFilter);
+		jpaContainer.addContainerFilter(passwordFilter);
 		Object id = jpaContainer.firstItemId();
 		jpaContainer.removeContainerFilters(userFilter);
+		jpaContainer.removeContainerFilters(userFilter);
 		
-		if (id == null) {
-			PmsUser dummyUser = new PmsUser();
-			dummyUser.setUserName("user");
-			dummyUser.setPassword("");
-			dummyUser.setUserGroup(UserGroup.PSYCHOLOGIST);
-			jpaContainer.addEntity(dummyUser);
-		}
+		if (id != null) {
+			jpaContainer.removeItem(id);
+		} 
+		PmsUser dummyUser = new PmsUser();
+		dummyUser.setUserName("user");
+		dummyUser.setPassword("password");
+		dummyUser.setUserGroup(UserGroup.PSYCHOLOGIST);
+		jpaContainer.addEntity(dummyUser);
 	}
 
 }

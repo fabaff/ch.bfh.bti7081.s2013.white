@@ -92,7 +92,7 @@ public class PCaseTest {
 //		System.out.println(userContainer.size());
 //		
 //		Filter filter1 = Filters.eq("userName", "user");
-//		Filter filter2 = Filters.eq("password", "");
+//		Filter filter2 = Filters.eq("password", "password");
 //		
 //		userContainer.addContainerFilter(filter1);
 //		userContainer.addContainerFilter(filter2);
