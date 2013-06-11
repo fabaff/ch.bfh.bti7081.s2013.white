@@ -42,14 +42,14 @@ public class PmsUserContainer extends PmsContainer<PmsUser> {
 	}
 
 	public boolean checkLogin(String userName, String password) {
-		Filter filter1 = Filters.eq("userName", userName);
-		Filter filter2 = Filters.eq("password", password);
+		Filter userFilter = Filters.eq("userName", userName);
+		Filter passWordFilter = Filters.eq("password", password);
 		
-		this.addContainerFilter(filter1);
-		this.addContainerFilter(filter2);
+		this.addContainerFilter(userFilter);
+		this.addContainerFilter(passWordFilter);
 		Object id = this.firstItemId();
-		this.removeContainerFilters(filter1);
-		this.removeContainerFilters(filter2);
+		this.removeContainerFilters(userFilter);
+		this.removeContainerFilters(passWordFilter);
 		
 		return id != null;
 	}

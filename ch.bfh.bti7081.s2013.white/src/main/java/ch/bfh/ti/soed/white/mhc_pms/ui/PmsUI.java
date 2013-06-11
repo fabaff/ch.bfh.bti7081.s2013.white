@@ -1,5 +1,7 @@
 package ch.bfh.ti.soed.white.mhc_pms.ui;
 
+import ch.bfh.ti.soed.white.mhc_pms.util.DummyDataCreator;
+
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.ui.UI;
 
@@ -15,9 +17,7 @@ public class PmsUI extends UI {
 
 	@Override
 	protected void init(VaadinRequest request) {
-		// TODO generate user dummy data
-		// TODO user authentication
-		
+		DummyDataCreator.createDummyUsers();
 		this.setContent(new MainPanel(this));
 	}
 }
