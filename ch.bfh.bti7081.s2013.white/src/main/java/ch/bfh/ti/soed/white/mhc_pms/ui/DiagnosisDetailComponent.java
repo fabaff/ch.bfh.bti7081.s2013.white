@@ -62,6 +62,8 @@ public class DiagnosisDetailComponent extends PmsComponentController implements
 		
 		// Static elements
 		this.lblTitle.addStyleName(Reindeer.LABEL_H2);
+		
+		// TODO closed cases: lock diag edit
 	}
 
 	private void addNewDiagnosisButtonListener() {

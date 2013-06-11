@@ -104,7 +104,7 @@ public class EditDiagnosisComponent extends PmsComponentController implements
 		this.pmsDataAccess = PmsDataAccessCreator.getDataAccess();
 		this.pmsDataAccess.getPCaseContainer().refresh();
 		this.fieldGroup = new BeanFieldGroup<Diagnosis>(Diagnosis.class);
-		this.isNewDiagnosis = false;
+		this.setNewItem(false);
 
 		this.btnSave.addClickListener(new SaveDiagnosisButtonListener());
 		this.addBtnCancelListener();

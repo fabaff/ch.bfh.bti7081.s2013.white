@@ -33,7 +33,7 @@ public class PCase implements Serializable {
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private int pcid = 0;
 
-	// Patient data fields
+	// Patient data fields: basic data
 	
 	@NotNull
 	@Size(min = 2, max = 64)
@@ -51,28 +51,24 @@ public class PCase implements Serializable {
 	@Enumerated(EnumType.STRING)
 	private Gender gender;
 
-	@NotNull
 	@Enumerated(EnumType.STRING)
 	private CivilStatus civilStatus;
 	
-	// TODO Use predefined list of languages to support the user
+	private String communicationLanguage = "";
 	private String motherLanguage = "";
-	// TODO Use Country Codes from external sources instead of typing
-	// https://github.com/TakahikoKawasaki/nv-i18n
 	private String nationality = "";
 	private String religion = "";
 	private String address = "";
 	private String homeLocation = "";
 	private String postalCode = "";
-	// TODO Use Country Codes from external sources instead of typing
-	// https://github.com/TakahikoKawasaki/nv-i18n
 	private String country = "";
 	private String phonePrivate = "";
 	private String phoneBusiness = "";
 	private String phoneMobile = "";
 	private String eMail = "";
 	
-	// Additional address
+	// Patient data fields: next of kin data
+	
 	private String nextOfKin = "";
 	private String nextOfKinFirstName = "";
 	private String nextOfKinLastName = "";
@@ -81,7 +77,8 @@ public class PCase implements Serializable {
 	private String nextOfKinPostalCode = "";
 	private String nextOfKinPhone = "";
 
-	// Family Doctor details
+	// Patient data fields: family Doctor details
+	
 	private String familyDoctorFirstName = "";
 	private String familyDoctorLastName = "";
 	private String familyDoctorAddress = "";
@@ -150,8 +147,62 @@ public class PCase implements Serializable {
 	 */
 	@Override
 	public Object clone() {
-		// TODO implement clone
-		return null;
+		PCase pCaseclone = new PCase(this.getTherapist());
+		
+		this.setPcid(0);
+		pCaseclone.firstName = this.firstName;
+		pCaseclone.lastName = this.lastName;
+		pCaseclone.dateOfBirth = this.dateOfBirth;
+		pCaseclone.gender = this.gender;
+		pCaseclone.civilStatus = this.civilStatus;
+		pCaseclone.communicationLanguage = this.communicationLanguage;
+		pCaseclone.motherLanguage = this.motherLanguage;
+		pCaseclone.nationality = this.nationality;
+		pCaseclone.religion = this.religion;
+		pCaseclone.address = this.address;
+		pCaseclone.homeLocation = this.homeLocation;
+		pCaseclone.postalCode = this.postalCode;
+		pCaseclone.country = this.country;
+		pCaseclone.phonePrivate = this.phonePrivate;
+		pCaseclone.phoneBusiness = this.phoneBusiness;
+		pCaseclone.phoneMobile = this.phoneMobile;
+		pCaseclone.eMail = this.eMail;
+		
+		pCaseclone.nextOfKin = this.nextOfKin;
+		pCaseclone.nextOfKinFirstName = this.nextOfKinFirstName;
+		pCaseclone.nextOfKinLastName = this.nextOfKinLastName;
+		pCaseclone.nextOfKinAddress = this.nextOfKinAddress;
+		pCaseclone.nextOfKinHomeLocation = this.nextOfKinHomeLocation;
+		pCaseclone.nextOfKinPostalCode = this.nextOfKinPostalCode;
+		pCaseclone.nextOfKinPhone = this.nextOfKinPhone;
+		
+		pCaseclone.familyDoctorFirstName = this.familyDoctorFirstName;
+		pCaseclone.familyDoctorLastName = this.familyDoctorLastName;
+		pCaseclone.familyDoctorAddress = this.familyDoctorAddress;
+		pCaseclone.familyDoctorLocation = this.familyDoctorLocation;
+		pCaseclone.familyDoctorPostalCode = this.familyDoctorPostalCode;
+		pCaseclone.familyDoctorFax = this.familyDoctorFax;
+		
+		pCaseclone.caseStatus = this.caseStatus;
+		pCaseclone.kindOfTreatment = this.kindOfTreatment;
+		pCaseclone.dateCaseOpened = this.dateCaseOpened;
+		pCaseclone.dateCaseClosed = this.dateCaseClosed;
+		pCaseclone.reanimationStatus = this.reanimationStatus;
+		pCaseclone.assignment = this.assignment;
+		pCaseclone.suicidalTendency = this.suicidalTendency;
+		pCaseclone.degreeOfDanger = this.degreeOfDanger;
+		pCaseclone.goOutStatus = this.goOutStatus;
+		pCaseclone.vacation = this.vacation;
+		pCaseclone.judicialStatus = this.judicialStatus;
+		pCaseclone.sanction = this.sanction;
+		pCaseclone.orderOfPatient = this.orderOfPatient;
+		
+		pCaseclone.therapist = this.therapist;
+		pCaseclone.diagnosisRelation = this.diagnosisRelation;
+		pCaseclone.patientProgressRelation = this.patientProgressRelation;
+		pCaseclone.medicationRelation = this.medicationRelation;
+		
+		return pCaseclone;
 	}
 
 	public void closeCase() {
@@ -163,9 +214,55 @@ public class PCase implements Serializable {
 		this.setDateCaseOpened(new Date());
 		this.setDateCaseClosed(null);
 		this.setCaseStatus(CaseStatus.ACTIVE);
+		this.setReanimationStatus(ReanimationStatus.YES);
+		this.setKindOfTreatment(KindOfTreatment.INPATIENT);
+		this.setOrderOfPatient(OrderOfPatient.NO);
 		this.setPcid(0);
 	}
 	
+	/**
+	 * @return the communicationLanguage
+	 */
+	public String getCommunicationLanguage() {
+		return communicationLanguage;
+	}
+
+	/**
+	 * @param communicationLanguage the communicationLanguage to set
+	 */
+	public void setCommunicationLanguage(String communicationLanguage) {
+		this.communicationLanguage = communicationLanguage;
+	}
+
+	/**
+	 * @return the patientProgressRelation
+	 */
+	public Set<PatientProgress> getPatientProgressRelation() {
+		return patientProgressRelation;
+	}
+
+	/**
+	 * @param patientProgressRelation the patientProgressRelation to set
+	 */
+	public void setPatientProgressRelation(
+			Set<PatientProgress> patientProgressRelation) {
+		this.patientProgressRelation = patientProgressRelation;
+	}
+
+	/**
+	 * @return the medicationRelation
+	 */
+	public Set<Medication> getMedicationRelation() {
+		return medicationRelation;
+	}
+
+	/**
+	 * @param medicationRelation the medicationRelation to set
+	 */
+	public void setMedicationRelation(Set<Medication> medicationRelation) {
+		this.medicationRelation = medicationRelation;
+	}
+
 	/**
 	 * @return the therapist
 	 */

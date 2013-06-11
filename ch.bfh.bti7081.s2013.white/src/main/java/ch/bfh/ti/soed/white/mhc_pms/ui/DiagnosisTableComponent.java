@@ -83,6 +83,8 @@ class DiagnosisTableComponent extends PmsComponentController implements
 		this.addEditDiagnosisButtonListener();
 		this.addDeleteDiagnosisButtonListener();
 		this.addValueChangeListener();
+		
+		// TODO closed cases: lock diag edit
 	}
 
 	private void addValueChangeListener() {

@@ -48,7 +48,8 @@ class PatientTableComponent extends PmsComponentController implements
 														"lastName",
 														"dateOfBirth",
 														"gender",
-														"kindOfTreatment"
+														"kindOfTreatment",
+														"dateCaseOpened"
 														};
 
 	private static final String[] VISIBLE_COLUMN_NAMES = {  "Fallnummer", 
@@ -57,11 +58,11 @@ class PatientTableComponent extends PmsComponentController implements
 															"Nachname", 
 															"Geburtsdatum", 
 															"Geschlecht",
-															"Behandlungsart"
+															"Behandlungsart",
+															"Datum Falleröffnung"
 															};
 
-
-	private PmsDataAccess pmsContainers;
+	private PmsDataAccess pmsDataAccess;
 	private PmsPermission permission;
 
 	/**
@@ -77,9 +78,9 @@ class PatientTableComponent extends PmsComponentController implements
 		buildMainLayout();
 		setCompositionRoot(mainLayout);
 
-		this.pmsContainers = PmsDataAccessCreator.getDataAccess();
-		this.pmsContainers.getPCaseContainer().refresh();
-		this.permission = new PmsPermission(this.pmsContainers.getCurrentUser().getUserGroup());
+		this.pmsDataAccess = PmsDataAccessCreator.getDataAccess();
+		this.pmsDataAccess.getPCaseContainer().refresh();
+		this.permission = new PmsPermission(this.pmsDataAccess.getCurrentUser().getUserGroup());
 		
 		this.initPatientTable();
 		this.pCaseItemChange();
@@ -90,17 +91,14 @@ class PatientTableComponent extends PmsComponentController implements
 		this.addNewPatientClickListener();
 		this.addNewCaseClickListener();
 		
-		// TODO abgeschlossene Fälle: Buttons sperren
 		// TODO format dateOfBirth in Tab
-		// TODO zusätzliches Feld in Tabelle: Datum Falleröffnung
 	}
 
 	// Initialization of the table element
 	private void initPatientTable() {
-		this.tblPatients.setContainerDataSource(this.pmsContainers.getPCaseContainer());
+		this.tblPatients.setContainerDataSource(this.pmsDataAccess.getPCaseContainer());
 		this.tblPatients.setSelectable(true);
 		this.tblPatients.setImmediate(true);
-		//this.tblPatients.setEditable(true);
 		this.tblPatients.setVisibleColumns(VISIBLE_COLUMNS);
 		for (int i = 0; i < VISIBLE_COLUMNS.length; i++) {
 			this.tblPatients.setColumnHeader(VISIBLE_COLUMNS[i], VISIBLE_COLUMN_NAMES[i]);
@@ -140,7 +138,7 @@ class PatientTableComponent extends PmsComponentController implements
 					public void valueChange(ValueChangeEvent event) {
 						if (event.getProperty().getValue() != null) {
 							Object id = PatientTableComponent.this.tblPatients.getValue();
-							PatientTableComponent.this.pmsContainers.getPCaseContainer().setCurrentItemId(id);
+							PatientTableComponent.this.pmsDataAccess.getPCaseContainer().setCurrentItemId(id);
 							PatientTableComponent.this.firePCaseItemChangeEvent();
 						}
 					}
@@ -149,7 +147,8 @@ class PatientTableComponent extends PmsComponentController implements
 
 	@Override
 	public void pCaseItemChange() {
-		Object itemId = this.pmsContainers.getPCaseContainer().getCurrentItemId();
+		this.pmsDataAccess.getPCaseContainer().refresh();
+		Object itemId = this.pmsDataAccess.getPCaseContainer().getCurrentItemId();
 		
 		if (itemId != null) {
 			this.tblPatients.select(itemId);
