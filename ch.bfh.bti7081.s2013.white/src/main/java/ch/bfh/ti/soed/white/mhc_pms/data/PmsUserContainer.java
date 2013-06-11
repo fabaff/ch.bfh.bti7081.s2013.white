@@ -19,7 +19,7 @@ public class PmsUserContainer extends PmsContainer<PmsUser> {
 		super(clazz);
 	}
 
-	public PmsUser getCurrentUser(String userName) {
+	public PmsUser getUser(String userName) {
 		Filter filter = Filters.eq(USER_FILTER_PROPERTY_ID, userName);
 		this.addContainerFilter(filter);
 		
@@ -28,16 +28,8 @@ public class PmsUserContainer extends PmsContainer<PmsUser> {
 			this.removeContainerFilters(filter);
 			return user;
 		} else {
-			// TODO remove default init
-			return new PmsUser();
-//			try {
-//				// TODO Exception Handling -> show error message
-//				throw new RuntimeException("User not found in database!");
-//			} catch (Exception e) {
-//				throw e;
-//			} finally {
-//				this.removeContainerFilters(filter);
-//			}
+			this.removeContainerFilters(filter);
+			return null;
 		}
 	}
 

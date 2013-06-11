@@ -22,7 +22,7 @@ public class PmsDataAccess {
 		this.pCaseContainer = new PmsContainer<>(PCase.class);
 		this.diagnosisContainer = new PmsEntityContainer<>(Diagnosis.class);
 		
-		this.currentUser = this.pmsUserContainer.getCurrentUser(userName);
+		this.currentUser = this.pmsUserContainer.getUser(userName);
 	}
 	
 	public PmsUser getCurrentUser() {

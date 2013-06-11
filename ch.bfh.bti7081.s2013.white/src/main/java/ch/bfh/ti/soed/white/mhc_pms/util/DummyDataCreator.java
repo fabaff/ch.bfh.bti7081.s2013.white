@@ -14,26 +14,28 @@ public final class DummyDataCreator {
 
 	public static void createDummyUsers() {
 		JPAContainer<PmsUser> jpaContainer = new JPAContainer<>(PmsUser.class);
-		jpaContainer.setEntityProvider(new CachingBatchableLocalEntityProvider<PmsUser>(PmsUser.class,
-				JPAContainerFactory.createEntityManagerForPersistenceUnit(PmsDataAccessCreator.PERSISTENCE_UNIT)));
+		jpaContainer
+				.setEntityProvider(new CachingBatchableLocalEntityProvider<PmsUser>(
+						PmsUser.class,
+						JPAContainerFactory
+								.createEntityManagerForPersistenceUnit(PmsDataAccessCreator.PERSISTENCE_UNIT)));
 		jpaContainer.setAutoCommit(true);
-		
+
 		Filter userFilter = Filters.eq("userName", "user");
-		Filter passwordFilter = Filters.eq("userName", "password");
+		Filter passwordFilter = Filters.eq("password", Hash.MD5("password"));
 		jpaContainer.addContainerFilter(userFilter);
 		jpaContainer.addContainerFilter(passwordFilter);
 		Object id = jpaContainer.firstItemId();
 		jpaContainer.removeContainerFilters(userFilter);
-		jpaContainer.removeContainerFilters(userFilter);
-		
-		if (id != null) {
-			jpaContainer.removeItem(id);
-		} 
-		PmsUser dummyUser = new PmsUser();
-		dummyUser.setUserName("user");
-		dummyUser.setPassword(Hash.MD5("password"));
-		dummyUser.setUserGroup(UserGroup.PSYCHOLOGIST);
-		jpaContainer.addEntity(dummyUser);
+		jpaContainer.removeContainerFilters(passwordFilter);
+
+		if (id == null) {
+			PmsUser dummyUser = new PmsUser();
+			dummyUser.setUserName("user");
+			dummyUser.setPassword(Hash.MD5("password"));
+			dummyUser.setUserGroup(UserGroup.PSYCHOLOGIST);
+			jpaContainer.addEntity(dummyUser);
+		}
 	}
 
 }
