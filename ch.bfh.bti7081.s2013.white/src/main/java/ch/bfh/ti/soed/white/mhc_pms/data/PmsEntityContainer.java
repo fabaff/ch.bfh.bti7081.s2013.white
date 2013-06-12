@@ -3,6 +3,15 @@ package ch.bfh.ti.soed.white.mhc_pms.data;
 
 import com.vaadin.addon.jpacontainer.filter.Filters;
 
+/**
+ * 
+  * @author Group White, I2p, BFH Berne, <a
+ *         href="https://github.com/fabaff/ch.bfh.bti7081.s2013.white"
+ *         >Contact</a>
+ * @version 1.0.0
+ *
+ * @param <E>
+ */
 public class PmsEntityContainer<E> extends PmsContainer<E> {
 
 	private static final long serialVersionUID = 1027872825311274323L;

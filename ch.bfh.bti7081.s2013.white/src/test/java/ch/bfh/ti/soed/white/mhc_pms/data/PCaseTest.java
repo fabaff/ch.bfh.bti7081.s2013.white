@@ -23,6 +23,14 @@ import com.vaadin.data.fieldgroup.FieldGroup.CommitException;
 import com.vaadin.data.util.BeanItem;
 import com.vaadin.ui.TextField;
 
+/**
+ * 
+ * @author Group White, I2p, BFH Berne, <a
+ *         href="https://github.com/fabaff/ch.bfh.bti7081.s2013.white"
+ *         >Contact</a>
+ * @version 1.0.0
+ *
+ */
 public class PCaseTest {
 
 	@BeforeClass

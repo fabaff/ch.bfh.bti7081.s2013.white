@@ -12,13 +12,14 @@ import javax.validation.constraints.NotNull;
 import ch.bfh.ti.soed.white.mhc_pms.data.enums.MedApplicationMode;
 
 /**
- * @author Gruppe White, I2p, BFH Bern, <a
+ * Entity implementation class for Entity: Medication
+ * 
+ * @author Group White, I2p, BFH Berne, <a
  *         href="https://github.com/fabaff/ch.bfh.bti7081.s2013.white"
  *         >Contact</a>
- * @version 0.0.2
- * @since 0.0.2
+ * @version 1.0.0
  * 
- *        Entity implementation class for Entity: Medication
+ *        
  */
 @Entity
 @Table(name = "Medication")

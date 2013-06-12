@@ -12,11 +12,14 @@ import com.vaadin.ui.VerticalSplitPanel;
 import com.vaadin.ui.themes.Reindeer;
 
 /**
- * @author		Gruppe White, I2p, BFH Bern, <a href="https://github.com/fabaff/ch.bfh.bti7081.s2013.white">Contact</a>
- * @version		0.0.2
- * @since		0.0.1
- * 
  * The main panel of the GUI.
+ * 
+ * @author Group White, I2p, BFH Berne, <a
+ *         href="https://github.com/fabaff/ch.bfh.bti7081.s2013.white"
+ *         >Contact</a>
+ * @version 1.0.0
+ * 
+ * 
  */
 class MainPanel extends Panel implements ComponentChangeListener {
 

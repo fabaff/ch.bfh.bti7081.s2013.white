@@ -10,6 +10,14 @@ import ch.bfh.ti.soed.white.mhc_pms.data.PmsDataAccessCreator;
 import ch.bfh.ti.soed.white.mhc_pms.data.PmsUser;
 import ch.bfh.ti.soed.white.mhc_pms.data.enums.UserGroup;
 
+/**
+ * 
+ * @author Group White, I2p, BFH Berne, <a
+ *         href="https://github.com/fabaff/ch.bfh.bti7081.s2013.white"
+ *         >Contact</a>
+ * @version 1.0.0
+ *
+ */
 public final class DummyDataCreator {
 
 	public static void createDummyUsers() {

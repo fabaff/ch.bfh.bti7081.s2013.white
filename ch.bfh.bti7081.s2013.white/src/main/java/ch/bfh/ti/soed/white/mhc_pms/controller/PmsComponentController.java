@@ -3,78 +3,112 @@ package ch.bfh.ti.soed.white.mhc_pms.controller;
 import java.util.ArrayList;
 import java.util.List;
 
-
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
 import com.vaadin.ui.CustomComponent;
 
 /**
- * @author		Gruppe White, I2p, BFH Bern, <a href="https://github.com/fabaff/ch.bfh.bti7081.s2013.white">Contact</a>
- * @version		0.0.2 
- * @since		0.0.1
+ * This is the controller base class for all UI components. Listeners could be
+ * added and instances of this class could fire events. This abstract class also
+ * implements the interface View with an empty method stub. All subclasses can
+ * be used as the destination of a navigator.
  * 
- * Entity implementation class for Entity: PmsComponentController
+ * @author Group White, I2p, BFH Berne, <a
+ *         href="https://github.com/fabaff/ch.bfh.bti7081.s2013.white"
+ *         >Contact</a>
+ * @version 1.0.0
+ * 
  */
-public abstract class PmsComponentController extends CustomComponent implements View {
+public abstract class PmsComponentController extends CustomComponent implements
+		View {
 
 	private static final long serialVersionUID = -4631009926765712866L;
 
-	private List<PmsComponentListener> pmsComponentListeners;
-	
 	private List<ComponentChangeListener> componentChangeListeners;
-	
-	private List<UIActivationListener> uiActivationListeners;
-	
+
 	private List<NewItemListener> newCaseListeners;
-	
+
+	private List<PmsComponentListener> pmsComponentListeners;
+
+	private List<UIActivationListener> uiActivationListeners;
+
 	protected PmsComponentController() {
 		this.pmsComponentListeners = new ArrayList<>();
 		this.componentChangeListeners = new ArrayList<>();
 		this.uiActivationListeners = new ArrayList<>();
 		this.newCaseListeners = new ArrayList<>();
 	}
-	
-	public void addPmsComponentListener(PmsComponentListener listener) {
-		this.pmsComponentListeners.add(listener);
-	}
-	
+
+	/**
+	 * 
+	 * @param listener
+	 */
 	public void addComponentChangeListener(ComponentChangeListener listener) {
 		this.componentChangeListeners.add(listener);
 	}
-	
-	public void addUIActivationListener(UIActivationListener listener) {
-		this.uiActivationListeners.add(listener);
-	}
-	
+
+	/**
+	 * 
+	 * @param listener
+	 */
 	public void addNewCaseListener(NewItemListener listener) {
 		this.newCaseListeners.add(listener);
 	}
-	
-	@Override
-	public void enter(ViewChangeEvent event) {}
-	
-	protected void firePCaseItemChangeEvent() {
-		for (PmsComponentListener listener : this.pmsComponentListeners) {
-			listener.pCaseItemChange();
-		}
+
+	/**
+	 * 
+	 * @param listener
+	 */
+	public void addPmsComponentListener(PmsComponentListener listener) {
+		this.pmsComponentListeners.add(listener);
 	}
-	
+
+	/**
+	 * 
+	 * @param listener
+	 */
+	public void addUIActivationListener(UIActivationListener listener) {
+		this.uiActivationListeners.add(listener);
+	}
+
+	@Override
+	public void enter(ViewChangeEvent event) {
+	}
+
+	/**
+	 * 
+	 * @param event
+	 */
 	protected void fireComponentChangeEvent(NavigationEvent event) {
 		for (ComponentChangeListener listener : this.componentChangeListeners) {
 			listener.componentChange(event);
 		}
 	}
-	
-	protected void fireUIActivationEvent(boolean value) {
-		for (UIActivationListener listener : this.uiActivationListeners) {
-			listener.enableUIComponents(value);
-		}
-	}
-	
+
+	/**
+	 * 
+	 * @param value
+	 */
 	protected void fireNewCaseEvent(boolean value) {
 		for (NewItemListener listener : this.newCaseListeners) {
 			listener.setNewItem(value);
 		}
 	}
-	
+
+	protected void firePCaseItemChangeEvent() {
+		for (PmsComponentListener listener : this.pmsComponentListeners) {
+			listener.pCaseItemChange();
+		}
+	}
+
+	/**
+	 * 
+	 * @param value
+	 */
+	protected void fireUIActivationEvent(boolean value) {
+		for (UIActivationListener listener : this.uiActivationListeners) {
+			listener.enableUIComponents(value);
+		}
+	}
+
 }

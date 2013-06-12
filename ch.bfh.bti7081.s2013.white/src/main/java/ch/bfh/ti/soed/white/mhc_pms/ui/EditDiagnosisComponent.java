@@ -21,6 +21,14 @@ import com.vaadin.ui.TextArea;
 import com.vaadin.ui.TextField;
 import com.vaadin.ui.Window;
 
+/**
+ * 
+ * @author Group White, I2p, BFH Berne, <a
+ *         href="https://github.com/fabaff/ch.bfh.bti7081.s2013.white"
+ *         >Contact</a>
+ * @version 1.0.0
+ *
+ */
 public class EditDiagnosisComponent extends PmsComponentController implements
 		NewItemListener {
 

@@ -4,13 +4,13 @@ import java.text.DateFormat;
 import java.util.Date;
 
 /**
- * @author		Gruppe White, I2p, BFH Bern, <a href="https://github.com/fabaff/ch.bfh.bti7081.s2013.white">Contact</a>
- * @version		0.0.2 
- * @since		0.0.1
+ * @author Group White, I2p, BFH Berne, <a
+ *         href="https://github.com/fabaff/ch.bfh.bti7081.s2013.white"
+ *         >Contact</a>
+ * @version 1.0.0
  * 
  * Converter and formatting helper for various elements.
  */
-
 public final class ValueConverter {
 
 	/**

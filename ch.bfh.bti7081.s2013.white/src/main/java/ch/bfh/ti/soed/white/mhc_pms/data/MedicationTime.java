@@ -10,6 +10,11 @@ import ch.bfh.ti.soed.white.mhc_pms.data.enums.MedicationUnit;
 
 /**
  * Entity implementation class for Entity: MedicationTime
+ * 
+  * @author Group White, I2p, BFH Berne, <a
+ *         href="https://github.com/fabaff/ch.bfh.bti7081.s2013.white"
+ *         >Contact</a>
+ * @version 1.0.0
  *
  */
 @Entity
