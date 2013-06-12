@@ -34,6 +34,7 @@ public class PmsContainer<E> extends JPAContainer<E> {
 				JPAContainerFactory
 						.createEntityManagerForPersistenceUnit(PmsDataAccessCreator.getPersistenceUnit())));
 		this.setAutoCommit(true);
+		this.refresh();
 
 		this.currentItemId = this.firstItemId();
 

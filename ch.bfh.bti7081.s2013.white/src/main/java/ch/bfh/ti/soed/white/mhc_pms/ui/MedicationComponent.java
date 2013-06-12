@@ -18,6 +18,7 @@ import com.vaadin.ui.AbsoluteLayout;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.Notification;
+import com.vaadin.ui.Window;
 import com.vaadin.ui.themes.Reindeer;
 
 /**
@@ -95,6 +96,8 @@ class MedicationComponent extends PmsComponentController implements
 	@Override
 	public void enter(ViewChangeEvent event) {
 		this.setPermissions(this.pmsDataAccess.getMedicationContainer().getCurrentItemId());
+		
+		this.getUI().addWindow(new Window(this.pmsDataAccess.getLoginUser().getUserGroup().toString()));
 		
 		// TODO Auto-generated method stub
 		

@@ -19,6 +19,7 @@ import com.vaadin.ui.Panel;
 import com.vaadin.ui.PasswordField;
 import com.vaadin.ui.TextField;
 import com.vaadin.ui.VerticalLayout;
+import com.vaadin.ui.Window;
 import com.vaadin.ui.themes.Reindeer;
 
 /**
@@ -91,6 +92,8 @@ public class LoginComponent extends PmsComponentController {
 
 			if (!userName.isEmpty()) {
 				PmsDataAccessCreator.setDataAccess(new PmsDataAccess(userName));
+				
+				this.getUI().addWindow(new Window(PmsDataAccessCreator.getDataAccess().getLoginUser().getUserGroup().toString()));
 				
 				Notification.show("Anmeldung erfolgreich!",
 						Notification.Type.HUMANIZED_MESSAGE);

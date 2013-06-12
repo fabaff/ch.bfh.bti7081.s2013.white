@@ -17,24 +17,43 @@ import ch.bfh.ti.soed.white.mhc_pms.data.enums.UserGroup;
  *         href="https://github.com/fabaff/ch.bfh.bti7081.s2013.white"
  *         >Contact</a>
  * @version 1.0.0
- *
+ * 
  */
 public final class DummyDataCreator {
 
 	/**
-	 * This static method creates a dummy user with user name "user" and password "password".
+	 * This static method creates dummy users with user name "user" and password
+	 * "password".
 	 */
-	public static void createDummyUser() {
+	public static void createDummyUsers() {
 		JPAContainer<PmsUser> jpaContainer = new JPAContainer<>(PmsUser.class);
 		jpaContainer
 				.setEntityProvider(new CachingBatchableLocalEntityProvider<PmsUser>(
 						PmsUser.class,
 						JPAContainerFactory
-								.createEntityManagerForPersistenceUnit(PmsDataAccessCreator.getPersistenceUnit())));
+								.createEntityManagerForPersistenceUnit(PmsDataAccessCreator
+										.getPersistenceUnit())));
 		jpaContainer.setAutoCommit(true);
 
-		Filter userFilter = Filters.eq("userName", PmsDataAccessCreator.DUMMY_USER);
-		Filter passwordFilter = Filters.eq("password", Hash.MD5(PmsDataAccessCreator.DUMMY_PASSWORD));
+		createDummyUser(jpaContainer, PmsDataAccessCreator.DUMMY_USER,
+				PmsDataAccessCreator.DUMMY_PASSWORD, UserGroup.PSYCHIATRIST);
+		createDummyUser(jpaContainer, UserGroup.PSYCHIATRIST.toString(),
+				UserGroup.PSYCHIATRIST.toString(), UserGroup.PSYCHIATRIST);
+		createDummyUser(jpaContainer, UserGroup.PSYCHOLOGIST.toString(),
+				UserGroup.PSYCHOLOGIST.toString(), UserGroup.PSYCHOLOGIST);
+		createDummyUser(jpaContainer, UserGroup.MEDICAL_STAFF.toString(),
+				UserGroup.MEDICAL_STAFF.toString(), UserGroup.MEDICAL_STAFF);
+		createDummyUser(jpaContainer, UserGroup.NURSE.toString(),
+				UserGroup.NURSE.toString(), UserGroup.NURSE);
+		createDummyUser(jpaContainer, UserGroup.ADMIN_STAFF.toString(),
+				UserGroup.ADMIN_STAFF.toString(), UserGroup.ADMIN_STAFF);
+	}
+
+	private static void createDummyUser(JPAContainer<PmsUser> jpaContainer,
+			String user, String password, UserGroup userGroup) {
+
+		Filter userFilter = Filters.eq("userName", user);
+		Filter passwordFilter = Filters.eq("password", Hash.MD5(password));
 		jpaContainer.addContainerFilter(userFilter);
 		jpaContainer.addContainerFilter(passwordFilter);
 		Object id = jpaContainer.firstItemId();
@@ -43,9 +62,9 @@ public final class DummyDataCreator {
 
 		if (id == null) {
 			PmsUser dummyUser = new PmsUser();
-			dummyUser.setUserName(PmsDataAccessCreator.DUMMY_USER);
-			dummyUser.setPassword(Hash.MD5(PmsDataAccessCreator.DUMMY_PASSWORD));
-			dummyUser.setUserGroup(UserGroup.PSYCHIATRIST);
+			dummyUser.setUserName(user);
+			dummyUser.setPassword(Hash.MD5(password));
+			dummyUser.setUserGroup(userGroup);
 			jpaContainer.addEntity(dummyUser);
 		}
 	}

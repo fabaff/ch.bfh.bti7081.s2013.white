@@ -2,6 +2,8 @@ package ch.bfh.ti.soed.white.mhc_pms.data;
 
 import static org.junit.Assert.*;
 
+import java.util.Collection;
+
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -11,6 +13,7 @@ import org.junit.Test;
 
 import ch.bfh.ti.soed.white.mhc_pms.data.enums.UserGroup;
 import ch.bfh.ti.soed.white.mhc_pms.util.DummyDataCreator;
+import ch.bfh.ti.soed.white.mhc_pms.util.Hash;
 
 /**
  * 
@@ -22,7 +25,7 @@ import ch.bfh.ti.soed.white.mhc_pms.util.DummyDataCreator;
  */
 public class PmsContainerTest {
 
-	private static PmsContainer<PCase> pCaseContainer;
+	private static  PmsDataAccess dataAccess;
 	
 	private static PmsUser user;
 	
@@ -30,15 +33,6 @@ public class PmsContainerTest {
 	
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
-		PmsDataAccessCreator.setPersistenceUnit(PmsDataAccessCreator.PERSISTENCE_UNIT_TEST);
-		DummyDataCreator.createDummyUser();
-		pCaseContainer = PmsDataAccessCreator.getDataAccess().getPCaseContainer();
-		PmsUser user = new PmsUser();
-		PCase pCaseItem1 = new PCase(user);
-		
-		user.setFirstName("Hans");
-		user.setLastName("Meier");
-		user.setUserGroup(UserGroup.PSYCHIATRIST);
 	}
 
 	@AfterClass
@@ -47,31 +41,45 @@ public class PmsContainerTest {
 
 	@Before
 	public void setUp() throws Exception {
+		PmsDataAccessCreator.setPersistenceUnit(PmsDataAccessCreator.PERSISTENCE_UNIT_TEST);
+		DummyDataCreator.createDummyUsers();
+		dataAccess = PmsDataAccessCreator.getDataAccess();
+		
+		PmsUser user = new PmsUser();
+		user.setFirstName("Hans");
+		user.setLastName("Meier");
+		user.setUserGroup(UserGroup.PSYCHIATRIST);
+		user.setUserName("drMeier");
+		user.setPassword(Hash.MD5("meier10"));
+		
+		PCase pCaseItem1 = new PCase(user);
 	}
 
 	@After
 	public void tearDown() throws Exception {
+		PmsDataAccessCreator.setDataAccess(new PmsDataAccess(PmsDataAccessCreator.DUMMY_USER));
+		dataAccess = PmsDataAccessCreator.getDataAccess();
+		
+		Collection<Object> ids = dataAccess.getPmsUserContainer().getItemIds();
+		for (Object id : ids) {
+			dataAccess.getPmsUserContainer().removeItem(id);
+		}
 	}
 
 	@Test
 	public final void testPmsContainer() {
-		assertEquals(0, pCaseContainer.size());
-		assertNull(pCaseContainer.getCurrentItem());
-		assertNull(pCaseContainer.getCurrentItemId());
+		assertEquals(0, dataAccess.getPCaseContainer().size());
+		assertNull(dataAccess.getPCaseContainer().getCurrentItem());
+		assertNull(dataAccess.getPCaseContainer().getCurrentItemId());
 	}
 
 	@Test
-	public final void testGetCurrentPCaseId() {
+	public final void testGetSetCurrentPCaseId() {
 //		fail("Not yet implemented"); // TODO
 	}
 
 	@Test
-	public final void testSetCurrentPCaseId() {
-//		fail("Not yet implemented"); // TODO
-	}
-
-	@Test
-	public final void testDecrementCurrentPCaseItemId() {
+	public final void testGetCurrentPCase() {
 //		fail("Not yet implemented"); // TODO
 	}
 

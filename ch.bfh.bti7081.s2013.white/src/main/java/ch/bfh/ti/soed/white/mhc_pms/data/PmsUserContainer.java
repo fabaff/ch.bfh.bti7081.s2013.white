@@ -54,7 +54,7 @@ public class PmsUserContainer extends PmsContainer<PmsUser> {
 	 * Checks if the given user name and password belongs to a valid user.
 	 * 
 	 * @param userName
-	 * @param password
+	 * @param password an MD5 encrypted string
 	 * @return true, if the user name and password belongs to a valid User, false otherwise.
 	 */
 	public boolean checkLogin(String userName, String password) {

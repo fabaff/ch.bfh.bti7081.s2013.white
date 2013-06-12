@@ -24,6 +24,8 @@ import ch.bfh.ti.soed.white.mhc_pms.util.Hash;
  */
 public class PmsUserContainerTest {
 
+	private static final int USER_CONTAINER_SIZE = 6;
+	
 	private static PmsDataAccess dataAccess;
 	
 	private static PmsUser user;
@@ -39,7 +41,7 @@ public class PmsUserContainerTest {
 	@Before
 	public void setUp() throws Exception {
 		PmsDataAccessCreator.setPersistenceUnit(PmsDataAccessCreator.PERSISTENCE_UNIT_TEST);
-		DummyDataCreator.createDummyUser();
+		DummyDataCreator.createDummyUsers();
 		dataAccess = PmsDataAccessCreator.getDataAccess();
 		user = new PmsUser();
 		
@@ -85,7 +87,9 @@ public class PmsUserContainerTest {
 	
 	@Test
 	public final void testGetLoginUser() throws UnknownUserException {
+		assertEquals(USER_CONTAINER_SIZE, dataAccess.getPmsUserContainer().size());
 		Object userItemId = dataAccess.getPmsUserContainer().addEntity(user);
+		assertEquals(USER_CONTAINER_SIZE + 1, dataAccess.getPmsUserContainer().size());
 		PmsDataAccessCreator.setDataAccess(new PmsDataAccess("drMeier"));
 		dataAccess = PmsDataAccessCreator.getDataAccess();
 		PmsUser loginUser = dataAccess.getLoginUser();
@@ -97,18 +101,48 @@ public class PmsUserContainerTest {
 		assertEquals(Hash.MD5("meier10"), loginUser.getPassword());
 		
 		assertTrue(dataAccess.getPmsUserContainer().removeItem(userItemId));
-		assertEquals(1, dataAccess.getPmsUserContainer().size());
+		assertEquals(USER_CONTAINER_SIZE, dataAccess.getPmsUserContainer().size());
 	}
-	
 
 	@Test
 	public final void testGetUser() {
-		// fail("Not yet implemented"); // TODO
+		PmsUser dbUser = dataAccess.getPmsUserContainer().getUser(PmsDataAccessCreator.DUMMY_USER);
+		
+		assertNull(dataAccess.getPmsUserContainer().getUser("drMeier"));
+		assertEquals("", dbUser.getFirstName());
+		assertEquals("", dbUser.getLastName());
+		assertEquals(UserGroup.PSYCHIATRIST, dbUser.getUserGroup());
+		assertEquals(PmsDataAccessCreator.DUMMY_USER, dbUser.getUserName());
+		assertEquals(Hash.MD5(PmsDataAccessCreator.DUMMY_PASSWORD), dbUser.getPassword());
+		
+		assertEquals(USER_CONTAINER_SIZE, dataAccess.getPmsUserContainer().size());
+		Object userItemId = dataAccess.getPmsUserContainer().addEntity(user);
+		assertEquals(USER_CONTAINER_SIZE + 1, dataAccess.getPmsUserContainer().size());
+		
+		dbUser = dataAccess.getPmsUserContainer().getUser("drMeier");
+		
+		assertNotNull(dbUser);
+		assertEquals("Hans", dbUser.getFirstName());
+		assertEquals("Meier", dbUser.getLastName());
+		assertEquals(UserGroup.PSYCHIATRIST, dbUser.getUserGroup());
+		assertEquals("drMeier", dbUser.getUserName());
+		assertEquals(Hash.MD5("meier10"), dbUser.getPassword());
+		
+		assertTrue(dataAccess.getPmsUserContainer().removeItem(userItemId));
+		assertEquals(USER_CONTAINER_SIZE, dataAccess.getPmsUserContainer().size());
 	}
 
 	@Test
 	public final void testCheckLogin() {
-		// fail("Not yet implemented"); // TODO
+		assertTrue(dataAccess.getPmsUserContainer().checkLogin(PmsDataAccessCreator.DUMMY_USER, Hash.MD5((PmsDataAccessCreator.DUMMY_PASSWORD))));
+		assertFalse(dataAccess.getPmsUserContainer().checkLogin("drMeier", Hash.MD5(("meier10"))));
+		
+		assertEquals(USER_CONTAINER_SIZE, dataAccess.getPmsUserContainer().size());
+		dataAccess.getPmsUserContainer().addEntity(user);
+		assertEquals(USER_CONTAINER_SIZE + 1, dataAccess.getPmsUserContainer().size());
+		
+		assertTrue(dataAccess.getPmsUserContainer().checkLogin(PmsDataAccessCreator.DUMMY_USER, Hash.MD5((PmsDataAccessCreator.DUMMY_PASSWORD))));
+		assertTrue(dataAccess.getPmsUserContainer().checkLogin("drMeier", Hash.MD5(("meier10"))));
 	}
 
 }
