@@ -22,8 +22,7 @@ import ch.bfh.ti.soed.white.mhc_pms.data.enums.UserGroup;
 public final class DummyDataCreator {
 
 	/**
-	 * This static method creates dummy users with user name "user" and password
-	 * "password".
+	 * This static method creates dummy users.
 	 */
 	public static void createDummyUsers() {
 		JPAContainer<PmsUser> jpaContainer = new JPAContainer<>(PmsUser.class);
@@ -49,6 +48,14 @@ public final class DummyDataCreator {
 				UserGroup.ADMIN_STAFF.toString(), UserGroup.ADMIN_STAFF);
 	}
 
+	/**
+	 * Creates a dummy user
+	 * 
+	 * @param jpaContainer
+	 * @param user
+	 * @param password
+	 * @param userGroup
+	 */
 	private static void createDummyUser(JPAContainer<PmsUser> jpaContainer,
 			String user, String password, UserGroup userGroup) {
 

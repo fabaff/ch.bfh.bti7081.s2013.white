@@ -49,8 +49,6 @@ class MedicationComponent extends PmsComponentController implements
 	private static final long serialVersionUID = -4426948260684454466L;
 
 	private PmsDataAccess pmsDataAccess;
-	
-	private PmsPermission permission;
 
 	/**
 	 * The constructor should first build the main layout, set the composition
@@ -65,8 +63,7 @@ class MedicationComponent extends PmsComponentController implements
 
 		try {
 			this.pmsDataAccess = PmsDataAccessCreator.getDataAccess();
-			this.permission = new PmsPermission(this.pmsDataAccess.getLoginUser().getUserGroup());
-			
+
 			// Static elements
 			this.lblView.addStyleName(Reindeer.LABEL_H2);
 			this.lblView.setValue("Medikamente");
@@ -76,35 +73,52 @@ class MedicationComponent extends PmsComponentController implements
 		}
 	}
 
-	private void setPermissions(Object itemId) {
-		Medication currentMed = this.pmsDataAccess.getMedicationContainer().getCurrentItem();
+	private void setPermissions(Object itemId) throws UnknownUserException {
+		Object pCaseItemId = PmsDataAccessCreator.getDataAccess().getPCaseContainer().getCurrentItemId();
+		Medication currentMed = this.pmsDataAccess.getMedicationContainer()
+				.getCurrentItem();
 		PCase currentPCase = null;
-		
+
 		if (currentMed != null) {
-			currentPCase =currentMed.getpCase();
+			currentPCase = currentMed.getpCase();
 		}
 		boolean isOpen = (currentPCase == null || currentPCase.getCaseStatus() != CaseStatus.CLOSED);
-		
-		this.btnNewMedication.setEnabled(this.permission
-				.hasPermission(Operation.NEW_MEDICATION));
-		this.btnEditMedication.setEnabled(this.permission
-				.hasPermission(Operation.EDIT_MEDICATION)  && itemId != null && isOpen);
-		this.btnDeleteMedication.setEnabled(this.permission
-				.hasPermission(Operation.DELETE_MEDICATION)  && itemId != null && isOpen);
+
+		this.btnNewMedication.setEnabled(this.pmsDataAccess.getPermission()
+				.hasPermission(Operation.NEW_MEDICATION) && pCaseItemId != null);
+		this.btnEditMedication.setEnabled(this.pmsDataAccess.getPermission()
+				.hasPermission(Operation.EDIT_MEDICATION)
+				&& itemId != null
+				&& isOpen);
+		this.btnDeleteMedication.setEnabled(this.pmsDataAccess.getPermission()
+				.hasPermission(Operation.DELETE_MEDICATION)
+				&& itemId != null
+				&& isOpen);
 	}
 
 	@Override
 	public void enter(ViewChangeEvent event) {
-		this.setPermissions(this.pmsDataAccess.getMedicationContainer().getCurrentItemId());
-		
-		this.getUI().addWindow(new Window(this.pmsDataAccess.getLoginUser().getUserGroup().toString()));
-		
+		try {
+			this.pmsDataAccess = PmsDataAccessCreator.getDataAccess();
+			this.setPermissions(this.pmsDataAccess.getMedicationContainer()
+					.getCurrentItemId());
+		} catch (UnknownUserException e) {
+			Notification.show(e.getInvalidUserMessage(),
+					Notification.Type.HUMANIZED_MESSAGE);
+		}
+
 		// TODO Auto-generated method stub
-		
+
 	}
-	
+
 	@Override
 	public void pCaseItemChange() {
+		try {
+			this.pmsDataAccess = PmsDataAccessCreator.getDataAccess();
+		} catch (UnknownUserException e) {
+			Notification.show(e.getInvalidUserMessage(),
+					Notification.Type.HUMANIZED_MESSAGE);
+		}
 		// TODO implement
 	}
 
@@ -155,6 +169,5 @@ class MedicationComponent extends PmsComponentController implements
 
 		return mainLayout;
 	}
-
 
 }

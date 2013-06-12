@@ -42,7 +42,7 @@ public class PmsContainer<E> extends JPAContainer<E> {
 	}
 
 	/**
-	 * @return the currentItemId
+	 * @return the currentItemId or null if the container is empty
 	 */
 	public Object getCurrentItemId() {
 		return this.currentItemId;

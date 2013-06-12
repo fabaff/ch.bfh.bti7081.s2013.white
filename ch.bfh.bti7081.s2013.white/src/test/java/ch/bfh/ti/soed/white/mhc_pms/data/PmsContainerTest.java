@@ -74,17 +74,17 @@ public class PmsContainerTest {
 	}
 
 	@Test
-	public final void testGetSetCurrentPCaseId() {
+	public final void testGetSetCurrentItemId() {
 //		fail("Not yet implemented"); // TODO
 	}
 
 	@Test
-	public final void testGetCurrentPCase() {
+	public final void testDecrementCurrenItemId() {
 //		fail("Not yet implemented"); // TODO
 	}
 
 	@Test
-	public final void testIncrementCurrentPCaseItemId() {
+	public final void testIncrementCurrenItemId() {
 //		fail("Not yet implemented"); // TODO
 	}
 

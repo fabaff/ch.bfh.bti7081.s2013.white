@@ -28,7 +28,9 @@ class MainPanel extends Panel implements ComponentChangeListener {
 		private static final long serialVersionUID = 2341663541014297015L;
 
 		@Override
-		public void enter(ViewChangeEvent event) {}
+		public void enter(ViewChangeEvent event) {
+			MainPanel.this.applicationNavigator.navigateTo(MenuBarComponent.ButtonEnum.HOME.toString());
+		}
 		
 	}
 	

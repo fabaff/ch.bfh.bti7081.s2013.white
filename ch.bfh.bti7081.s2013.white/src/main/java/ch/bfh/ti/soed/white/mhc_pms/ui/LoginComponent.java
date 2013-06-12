@@ -93,8 +93,6 @@ public class LoginComponent extends PmsComponentController {
 			if (!userName.isEmpty()) {
 				PmsDataAccessCreator.setDataAccess(new PmsDataAccess(userName));
 				
-				this.getUI().addWindow(new Window(PmsDataAccessCreator.getDataAccess().getLoginUser().getUserGroup().toString()));
-				
 				Notification.show("Anmeldung erfolgreich!",
 						Notification.Type.HUMANIZED_MESSAGE);
 				this.fireComponentChangeEvent(NavigationEvent.LOGIN);

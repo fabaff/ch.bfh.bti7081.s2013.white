@@ -1,5 +1,7 @@
 package ch.bfh.ti.soed.white.mhc_pms.data;
 
+import ch.bfh.ti.soed.white.mhc_pms.security.PmsPermission;
+
 /**
  * This class gives access to the diffrent entity containers and the current user.
  * 
@@ -21,7 +23,9 @@ public class PmsDataAccess {
 	private PmsEntityContainer<MedicationDate> medicationDateContainer;
 	private PmsEntityContainer<MedicationTime> medicationTimeContainer;
 	
-	private PmsUser currentUser;
+	private PmsUser loginUser;
+	
+	private PmsPermission permission;
 	
 	/**
 	 * Creates a new PmsDataAccess object with the given user name.
@@ -39,10 +43,12 @@ public class PmsDataAccess {
 		this.medicationTimeContainer = new PmsEntityContainer<>(MedicationTime.class);
 		
 		// if the user name is invalid, throw an exception
-		this.currentUser = this.pmsUserContainer.getUser(userName);
-		if (this.currentUser == null) {
+		this.loginUser = this.pmsUserContainer.getUser(userName);
+		if (this.loginUser == null) {
 			throw new UnknownUserException("Invalid user name: " + userName + "!", userName);
 		}
+		
+		this.permission = new PmsPermission(this.loginUser.getUserGroup());
 	}
 	
 	/**
@@ -50,7 +56,7 @@ public class PmsDataAccess {
 	 * @return current user object
 	 */
 	public PmsUser getLoginUser() {
-		return this.currentUser;
+		return this.loginUser;
 	}
 
 	/**
@@ -102,5 +108,11 @@ public class PmsDataAccess {
 		return medicationTimeContainer;
 	}
 
+	/**
+	 * @return the permission
+	 */
+	public PmsPermission getPermission() {
+		return permission;
+	}
 	
 }

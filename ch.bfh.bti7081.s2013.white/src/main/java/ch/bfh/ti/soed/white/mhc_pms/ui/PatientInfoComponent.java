@@ -136,8 +136,6 @@ class PatientInfoComponent extends PmsComponentController implements
 	private static final long serialVersionUID = -6090834279643277087L;
 
 	private PmsDataAccess pmsDataAccess;
-	
-	private PmsPermission permission;
 
 	/**
 	 * The constructor should first build the main layout, set the composition
@@ -152,8 +150,7 @@ class PatientInfoComponent extends PmsComponentController implements
 
 		try {
 			this.pmsDataAccess = PmsDataAccessCreator.getDataAccess();
-			this.permission = new PmsPermission(this.pmsDataAccess.getLoginUser().getUserGroup());
-			
+
 			this.pCaseItemChange();
 			this.lblView.addStyleName(Reindeer.LABEL_H2);
 			this.lblView.setValue("Patient Details");
@@ -164,10 +161,10 @@ class PatientInfoComponent extends PmsComponentController implements
 		}
 	}
 
-//	private void setPermissions() {
-//		this.btnNewPatient.setEnabled(permission
-//				.hasPermission(Operation.NEW_PATIENT));
-//	}
+	// private void setPermissions() {
+	// this.btnNewPatient.setEnabled(permission
+	// .hasPermission(Operation.NEW_PATIENT));
+	// }
 
 	private void addListeners() {
 		this.btnNewPatient.addClickListener(new Button.ClickListener() {
@@ -184,24 +181,40 @@ class PatientInfoComponent extends PmsComponentController implements
 
 	@Override
 	public void enter(ViewChangeEvent event) {
-		this.setPermissions();
+		try {
+			this.pmsDataAccess = PmsDataAccessCreator.getDataAccess();
+			this.pmsDataAccess.getPCaseContainer().refresh();
+			this.setPermissions();
+		} catch (UnknownUserException e) {
+			Notification.show(e.getInvalidUserMessage(),
+					Notification.Type.HUMANIZED_MESSAGE);
+		}
 	}
-	
-	private void setPermissions() {
-		this.btnNewPatient.setEnabled(this.permission.hasPermission(Operation.NEW_PATIENT));
+
+	private void setPermissions() throws UnknownUserException {
+		Object pCaseItemId = PmsDataAccessCreator.getDataAccess().getPCaseContainer().getCurrentItemId();
+		this.btnNewPatient.setEnabled(this.pmsDataAccess.getPermission()
+				.hasPermission(Operation.NEW_PATIENT) && pCaseItemId != null);
 	}
 
 	@Override
 	public void pCaseItemChange() {
-		this.pmsDataAccess.getPCaseContainer().refresh();
-		PCase item = this.pmsDataAccess.getPCaseContainer().getCurrentItem();
+		try {
+			this.pmsDataAccess = PmsDataAccessCreator.getDataAccess();
+			this.pmsDataAccess.getPCaseContainer().refresh();
+			PCase item = this.pmsDataAccess.getPCaseContainer()
+					.getCurrentItem();
 
-		if (item == null) {
-			item = new PCase(this.pmsDataAccess.getLoginUser());
+			if (item == null) {
+				item = new PCase(this.pmsDataAccess.getLoginUser());
+			}
+			this.setBasicPatientInfoValues(item);
+			this.setNextOfKinValues(item);
+			this.setFamilyDoctorValues(item);
+		} catch (UnknownUserException e) {
+			Notification.show(e.getInvalidUserMessage(),
+					Notification.Type.HUMANIZED_MESSAGE);
 		}
-		this.setBasicPatientInfoValues(item);
-		this.setNextOfKinValues(item);
-		this.setFamilyDoctorValues(item);
 	}
 
 	private void setFamilyDoctorValues(PCase item) {
@@ -766,6 +779,5 @@ class PatientInfoComponent extends PmsComponentController implements
 
 		return formLayout_1;
 	}
-
 
 }

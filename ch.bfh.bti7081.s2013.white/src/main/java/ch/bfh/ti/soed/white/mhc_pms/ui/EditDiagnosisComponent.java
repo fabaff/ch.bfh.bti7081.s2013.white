@@ -28,7 +28,7 @@ import com.vaadin.ui.Window;
  *         href="https://github.com/fabaff/ch.bfh.bti7081.s2013.white"
  *         >Contact</a>
  * @version 1.0.0
- *
+ * 
  */
 public class EditDiagnosisComponent extends PmsComponentController implements
 		NewItemListener {
@@ -53,35 +53,36 @@ public class EditDiagnosisComponent extends PmsComponentController implements
 
 		@Override
 		public void buttonClick(ClickEvent event) {
-//			try {
-//				EditDiagnosisComponent.this.fieldGroup.commit();
-//				Diagnosis diagItem = EditDiagnosisComponent.this.diagnosisItem
-//						.getBean();
-//				EditDiagnosisComponent.this.pmsDataAccess
-//						.getDiagnosisContainer().addEntity(diagItem);
-//
-//				// TODO define helper methods
-//				if (EditDiagnosisComponent.this.isNewDiagnosis) {
-//					EditDiagnosisComponent.this.diagnosisItem = new BeanItem<Diagnosis>(new Diagnosis(
-//							EditDiagnosisComponent.this.pmsDataAccess.getPCaseContainer().getCurrentItem()));
-//				}
-//
-//				EditDiagnosisComponent.this.fireUIActivationEvent(true);
-//				EditDiagnosisComponent.this
-//						.fireComponentChangeEvent(NavigationEvent.DIAGNOSIS_BACK);
-//				EditDiagnosisComponent.this.setNewItem(false);
-//
-//				// TODO adjusted text: new /edit
-//				Notification.show("Neue Diagnose gespeichert",
-//						Notification.Type.HUMANIZED_MESSAGE);
-//			} catch (CommitException e) {
-//				// TODO Exception Handling
-//				EditDiagnosisComponent.this
-//						.getUI()
-//						.addWindow(
-//								new Window(
-//										"Beim Speichern der Diagnose ist ein Fehler aufgetreten!"));
-//			}
+			// try {
+			// EditDiagnosisComponent.this.fieldGroup.commit();
+			// Diagnosis diagItem = EditDiagnosisComponent.this.diagnosisItem
+			// .getBean();
+			// EditDiagnosisComponent.this.pmsDataAccess
+			// .getDiagnosisContainer().addEntity(diagItem);
+			//
+			// // TODO define helper methods
+			// if (EditDiagnosisComponent.this.isNewDiagnosis) {
+			// EditDiagnosisComponent.this.diagnosisItem = new
+			// BeanItem<Diagnosis>(new Diagnosis(
+			// EditDiagnosisComponent.this.pmsDataAccess.getPCaseContainer().getCurrentItem()));
+			// }
+			//
+			// EditDiagnosisComponent.this.fireUIActivationEvent(true);
+			// EditDiagnosisComponent.this
+			// .fireComponentChangeEvent(NavigationEvent.DIAGNOSIS_BACK);
+			// EditDiagnosisComponent.this.setNewItem(false);
+			//
+			// // TODO adjusted text: new /edit
+			// Notification.show("Neue Diagnose gespeichert",
+			// Notification.Type.HUMANIZED_MESSAGE);
+			// } catch (CommitException e) {
+			// // TODO Exception Handling
+			// EditDiagnosisComponent.this
+			// .getUI()
+			// .addWindow(
+			// new Window(
+			// "Beim Speichern der Diagnose ist ein Fehler aufgetreten!"));
+			// }
 		}
 
 	}
@@ -111,33 +112,33 @@ public class EditDiagnosisComponent extends PmsComponentController implements
 		setCompositionRoot(mainLayout);
 
 		try {
-		this.pmsDataAccess = PmsDataAccessCreator.getDataAccess();
-		this.pmsDataAccess.getPCaseContainer().refresh();
-		this.fieldGroup = new BeanFieldGroup<Diagnosis>(Diagnosis.class);
-		this.setNewItem(false);
+			this.pmsDataAccess = PmsDataAccessCreator.getDataAccess();
+			this.fieldGroup = new BeanFieldGroup<Diagnosis>(Diagnosis.class);
+			this.setNewItem(false);
 
-		this.btnSave.addClickListener(new SaveDiagnosisButtonListener());
-		this.addBtnCancelListener();
+			this.btnSave.addClickListener(new SaveDiagnosisButtonListener());
+			this.addBtnCancelListener();
 		} catch (UnknownUserException e) {
-			Notification.show(e.getInvalidUserMessage(), Notification.Type.HUMANIZED_MESSAGE);
+			Notification.show(e.getInvalidUserMessage(),
+					Notification.Type.HUMANIZED_MESSAGE);
 		}
 	}
 
 	private void bindFields() {
-//		Diagnosis item = this.pmsDataAccess.getDiagnosisContainer()
-//				.getCurrentItem();
-//
-//		if (item != null) {
-//			this.diagnosisItem = new BeanItem<Diagnosis>(item);
-//		} else {
-//			this.diagnosisItem = new BeanItem<Diagnosis>(new Diagnosis(
-//					this.pmsDataAccess.getPCaseContainer().getCurrentItem()));
-//		}
-//		
-//		this.fieldGroup.setItemDataSource(this.diagnosisItem);
-//		this.fieldGroup.bind(this.txtDiagnosisName, "diagnosisName");
-//		this.fieldGroup.bind(this.txtIcdCode, "icdCode");
-//		this.fieldGroup.bind(this.tarDiagnosisComment, "diagnosisComment");
+		// Diagnosis item = this.pmsDataAccess.getDiagnosisContainer()
+		// .getCurrentItem();
+		//
+		// if (item != null) {
+		// this.diagnosisItem = new BeanItem<Diagnosis>(item);
+		// } else {
+		// this.diagnosisItem = new BeanItem<Diagnosis>(new Diagnosis(
+		// this.pmsDataAccess.getPCaseContainer().getCurrentItem()));
+		// }
+		//
+		// this.fieldGroup.setItemDataSource(this.diagnosisItem);
+		// this.fieldGroup.bind(this.txtDiagnosisName, "diagnosisName");
+		// this.fieldGroup.bind(this.txtIcdCode, "icdCode");
+		// this.fieldGroup.bind(this.tarDiagnosisComment, "diagnosisComment");
 	}
 
 	private void addBtnCancelListener() {
@@ -172,10 +173,18 @@ public class EditDiagnosisComponent extends PmsComponentController implements
 	 */
 	@Override
 	public void enter(ViewChangeEvent event) {
+		try {
+			this.pmsDataAccess = PmsDataAccessCreator.getDataAccess();
+			this.pmsDataAccess.getDiagnosisContainer().refresh();
+		} catch (UnknownUserException e) {
+			Notification.show(e.getInvalidUserMessage(),
+					Notification.Type.HUMANIZED_MESSAGE);
+		}
+
 		// TODO implement
-//		this.fieldGroup.setItemDataSource(EditDiagnosisComponent.this.diagnosisItem);
+		// this.fieldGroup.setItemDataSource(EditDiagnosisComponent.this.diagnosisItem);
 	}
-	
+
 	@AutoGenerated
 	private AbsoluteLayout buildMainLayout() {
 		// common part: create layout

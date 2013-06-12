@@ -8,6 +8,8 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import ch.bfh.ti.soed.white.mhc_pms.data.PmsDataAccess;
+import ch.bfh.ti.soed.white.mhc_pms.data.PmsDataAccessCreator;
 import ch.bfh.ti.soed.white.mhc_pms.data.enums.UserGroup;
 import ch.bfh.ti.soed.white.mhc_pms.security.PmsPermission.Operation;
 
@@ -21,8 +23,11 @@ import ch.bfh.ti.soed.white.mhc_pms.security.PmsPermission.Operation;
  */
 public class PmsPermissionTest {
 
+	private static PmsDataAccess dataAccess;
+	
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
+		dataAccess = PmsDataAccessCreator.getDataAccess();
 	}
 
 	@AfterClass
@@ -127,4 +132,21 @@ public class PmsPermissionTest {
 		assertFalse(permission.hasPermission(Operation.NEW_PATIENT_PROGRESS_ENTRY));
 	}
 
+	@Test
+	public final void testDataAccessPermission() {
+		PmsPermission permission = dataAccess.getPermission();
+		
+		assertTrue(permission.hasPermission(Operation.DELETE_DIAGNOSIS));
+		assertTrue(permission.hasPermission(Operation.DELETE_MEDICATION));
+		assertTrue(permission.hasPermission(Operation.DELETE_PATIENT_PROGRESS_ENTRY));
+		assertTrue(permission.hasPermission(Operation.EDIT_CASE));
+		assertTrue(permission.hasPermission(Operation.EDIT_DIAGNOSIS));
+		assertTrue(permission.hasPermission(Operation.EDIT_MEDICATION));
+		assertTrue(permission.hasPermission(Operation.EDIT_PATIENT_PROGRESS_ENTRY));
+		assertTrue(permission.hasPermission(Operation.NEW_CASE));
+		assertTrue(permission.hasPermission(Operation.NEW_DIAGNOSIS));
+		assertTrue(permission.hasPermission(Operation.NEW_MEDICATION));
+		assertTrue(permission.hasPermission(Operation.NEW_PATIENT));
+		assertTrue(permission.hasPermission(Operation.NEW_PATIENT_PROGRESS_ENTRY));
+	}
 }

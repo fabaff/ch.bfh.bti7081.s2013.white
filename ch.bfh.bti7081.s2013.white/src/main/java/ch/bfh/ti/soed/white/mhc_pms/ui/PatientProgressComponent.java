@@ -43,8 +43,6 @@ class PatientProgressComponent extends PmsComponentController implements
 	private static final long serialVersionUID = 1022303185979278516L;
 
 	private PmsDataAccess pmsDataAccess;
-	
-	private PmsPermission permission;
 
 	/**
 	 * The constructor should first build the main layout, set the composition
@@ -59,8 +57,6 @@ class PatientProgressComponent extends PmsComponentController implements
 
 		try {
 			this.pmsDataAccess = PmsDataAccessCreator.getDataAccess();
-			this.permission = new PmsPermission(this.pmsDataAccess.getLoginUser().getUserGroup());
-			
 		} catch (UnknownUserException e) {
 			Notification.show(e.getInvalidUserMessage(),
 					Notification.Type.HUMANIZED_MESSAGE);
@@ -111,37 +107,58 @@ class PatientProgressComponent extends PmsComponentController implements
 
 	@Override
 	public void pCaseItemChange() {
-//		Object itemId = this.pmsDataAccess.getPCaseContainer()
-//				.getCurrentItemId();
-		
+		try {
+			this.pmsDataAccess = PmsDataAccessCreator.getDataAccess();
+			this.pmsDataAccess.getPatientProgressContainer().refresh();
+		} catch (UnknownUserException e) {
+			Notification.show(e.getInvalidUserMessage(),
+					Notification.Type.HUMANIZED_MESSAGE);
+		}
+
+		// Object itemId = this.pmsDataAccess.getPCaseContainer()
+		// .getCurrentItemId();
+
 		// TODO implement
 	}
 
-	private void setPermissions(Object itemId) {
-		PatientProgress progressItem = this.pmsDataAccess.getPatientProgressContainer().getCurrentItem();
+	private void setPermissions(Object itemId) throws UnknownUserException {
+		Object pCaseItemId = PmsDataAccessCreator.getDataAccess().getPCaseContainer().getCurrentItemId();
+		PatientProgress progressItem = this.pmsDataAccess
+				.getPatientProgressContainer().getCurrentItem();
 		PCase currentPCase = null;
-		
+
 		if (progressItem != null) {
-			currentPCase =progressItem.getpCase();
+			currentPCase = progressItem.getpCase();
 		}
 		boolean isOpen = (currentPCase == null || currentPCase.getCaseStatus() != CaseStatus.CLOSED);
-		
-		this.btnNewPatientProgressEntry.setEnabled(this.permission
-				.hasPermission(Operation.NEW_PATIENT_PROGRESS_ENTRY));
-		this.btnEditPatientProgressEntry.setEnabled(this.permission
-				.hasPermission(Operation.EDIT_PATIENT_PROGRESS_ENTRY)  && itemId != null && isOpen);
-		this.btnDeletePatientProgressEntry.setEnabled(this.permission
-				.hasPermission(Operation.DELETE_PATIENT_PROGRESS_ENTRY)  && itemId != null && isOpen);
+
+		this.btnNewPatientProgressEntry.setEnabled(this.pmsDataAccess
+				.getPermission().hasPermission(
+						Operation.NEW_PATIENT_PROGRESS_ENTRY) && pCaseItemId != null);
+		this.btnEditPatientProgressEntry.setEnabled(this.pmsDataAccess
+				.getPermission().hasPermission(
+						Operation.EDIT_PATIENT_PROGRESS_ENTRY)
+				&& itemId != null && isOpen);
+		this.btnDeletePatientProgressEntry.setEnabled(this.pmsDataAccess
+				.getPermission().hasPermission(
+						Operation.DELETE_PATIENT_PROGRESS_ENTRY)
+				&& itemId != null && isOpen);
 	}
 
 	@Override
 	public void enter(ViewChangeEvent event) {
-		this.setPermissions(this.pmsDataAccess.getPatientProgressContainer()
-				.getCurrentItemId());
-		
+		try {
+			this.pmsDataAccess = PmsDataAccessCreator.getDataAccess();
+			this.pmsDataAccess.getPatientProgressContainer().refresh();
+			this.setPermissions(this.pmsDataAccess
+					.getPatientProgressContainer().getCurrentItemId());
+		} catch (UnknownUserException e) {
+			Notification.show(e.getInvalidUserMessage(),
+					Notification.Type.HUMANIZED_MESSAGE);
+		}
+
 		// TODO Auto-generated method stub
-		
+
 	}
-	
 
 }

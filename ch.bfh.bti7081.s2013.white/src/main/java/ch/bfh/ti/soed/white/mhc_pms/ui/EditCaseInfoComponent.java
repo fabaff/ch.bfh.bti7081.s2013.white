@@ -92,8 +92,9 @@ public class EditCaseInfoComponent extends PmsComponentController implements
 		public void buttonClick(ClickEvent event) {
 			try {
 				if (EditCaseInfoComponent.this.isNewCase) {
-					PCase currentPCaseItem = EditCaseInfoComponent.this.pmsDataAccess
-							.getPCaseContainer().getCurrentItem();
+					PCase currentPCaseItem = PmsDataAccessCreator
+							.getDataAccess().getPCaseContainer()
+							.getCurrentItem();
 					if (currentPCaseItem != null) {
 						currentPCaseItem.closeCase();
 					}
@@ -102,9 +103,9 @@ public class EditCaseInfoComponent extends PmsComponentController implements
 					BeanItem<PCase> beanItem = EditCaseInfoComponent.this.fieldGroup
 							.getItemDataSource();
 					if (beanItem != null) {
-						EditCaseInfoComponent.this.pmsDataAccess
-								.getPCaseContainer().addEntity(
-										beanItem.getBean());
+						PmsDataAccessCreator.getDataAccess()
+								.getPCaseContainer()
+								.addEntity(beanItem.getBean());
 					}
 				} else {
 					EditCaseInfoComponent.this.fieldGroup.commit();
@@ -120,8 +121,11 @@ public class EditCaseInfoComponent extends PmsComponentController implements
 								: EDIT_CASE_MESSAGE,
 						Notification.Type.HUMANIZED_MESSAGE);
 			} catch (CommitException e) {
-				Notification.show(
-						"Bitte alle mit * markierten Felder korrekt ausfüllen!",
+				Notification
+						.show("Bitte alle mit * markierten Felder korrekt ausfüllen!",
+								Notification.Type.HUMANIZED_MESSAGE);
+			} catch (UnknownUserException e) {
+				Notification.show(e.getInvalidUserMessage(),
 						Notification.Type.HUMANIZED_MESSAGE);
 			}
 		}
@@ -138,8 +142,6 @@ public class EditCaseInfoComponent extends PmsComponentController implements
 	private String NEW_CASE_MESSAGE = "Neuer Fall hinzugefügt";
 	private String EDIT_CASE_MESSAGE = "Fall gespeichert";
 
-	private PmsDataAccess pmsDataAccess;
-
 	private BeanFieldGroup<PCase> fieldGroup;
 
 	private boolean isNewCase;
@@ -155,21 +157,14 @@ public class EditCaseInfoComponent extends PmsComponentController implements
 		buildMainLayout();
 		setCompositionRoot(mainLayout);
 
-		try {
-			this.pmsDataAccess = PmsDataAccessCreator.getDataAccess();
-			this.pmsDataAccess.getPCaseContainer().refresh();
-			this.fieldGroup = new BeanFieldGroup<PCase>(PCase.class);
+		this.fieldGroup = new BeanFieldGroup<PCase>(PCase.class);
 
-			this.setNewItem(false);
-			this.initComboBoxes();
-			this.lblView.addStyleName(Reindeer.LABEL_H2);
+		this.setNewItem(false);
+		this.initComboBoxes();
+		this.lblView.addStyleName(Reindeer.LABEL_H2);
 
-			this.btnSave.addClickListener(new SaveButtonListener());
-			this.addBtnCancelListener();
-		} catch (UnknownUserException e) {
-			Notification.show(e.getInvalidUserMessage(),
-					Notification.Type.HUMANIZED_MESSAGE);
-		}
+		this.btnSave.addClickListener(new SaveButtonListener());
+		this.addBtnCancelListener();
 
 		// TODO ComboBoxes not editable
 		// TODO input validation
@@ -229,15 +224,21 @@ public class EditCaseInfoComponent extends PmsComponentController implements
 	 */
 	@Override
 	public void enter(ViewChangeEvent event) {
-		this.pmsDataAccess.getPCaseContainer().refresh();
-		PCase item = this.pmsDataAccess.getPCaseContainer().getCurrentItem();
+		try {
+			PmsDataAccessCreator.getDataAccess().getPCaseContainer().refresh();
+			PCase item = PmsDataAccessCreator.getDataAccess()
+					.getPCaseContainer().getCurrentItem();
 
-		if (item != null) {
-			if (this.isNewCase) {
-				this.bindFields((PCase) item.clone());
-			} else {
-				this.bindFields(item);
+			if (item != null) {
+				if (this.isNewCase) {
+					this.bindFields((PCase) item.clone());
+				} else {
+					this.bindFields(item);
+				}
 			}
+		} catch (UnknownUserException e) {
+			Notification.show(e.getInvalidUserMessage(),
+					Notification.Type.HUMANIZED_MESSAGE);
 		}
 	}
 

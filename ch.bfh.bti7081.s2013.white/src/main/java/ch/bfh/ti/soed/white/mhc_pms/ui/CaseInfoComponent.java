@@ -4,12 +4,10 @@ import ch.bfh.ti.soed.white.mhc_pms.controller.NavigationEvent;
 import ch.bfh.ti.soed.white.mhc_pms.controller.PmsComponentController;
 import ch.bfh.ti.soed.white.mhc_pms.controller.PmsComponentListener;
 import ch.bfh.ti.soed.white.mhc_pms.data.PCase;
-import ch.bfh.ti.soed.white.mhc_pms.data.PatientProgress;
 import ch.bfh.ti.soed.white.mhc_pms.data.PmsDataAccess;
 import ch.bfh.ti.soed.white.mhc_pms.data.PmsDataAccessCreator;
 import ch.bfh.ti.soed.white.mhc_pms.data.UnknownUserException;
 import ch.bfh.ti.soed.white.mhc_pms.data.enums.CaseStatus;
-import ch.bfh.ti.soed.white.mhc_pms.security.PmsPermission;
 import ch.bfh.ti.soed.white.mhc_pms.security.PmsPermission.Operation;
 import ch.bfh.ti.soed.white.mhc_pms.util.ValueConverter;
 
@@ -32,9 +30,10 @@ import com.vaadin.ui.themes.Reindeer;
  *         >Contact</a>
  * @version 1.0.0
  * 
- * UI Class for case information
+ *          UI Class for case information
  */
-class CaseInfoComponent extends PmsComponentController implements PmsComponentListener {
+class CaseInfoComponent extends PmsComponentController implements
+		PmsComponentListener {
 
 	/*- VaadinEditorProperties={"grid":"RegularGrid,20","showGrid":true,"snapToGrid":true,"snapToObject":true,"movingGuides":false,"snappingDistance":10} */
 
@@ -90,10 +89,6 @@ class CaseInfoComponent extends PmsComponentController implements PmsComponentLi
 	private Button btnEditCaseData;
 	private static final long serialVersionUID = -1488922640521851182L;
 
-	private PmsDataAccess pmsDataAccess;
-	
-	private PmsPermission permission;
-	
 	/**
 	 * The constructor should first build the main layout, set the composition
 	 * root and then do any custom initialization.
@@ -104,30 +99,24 @@ class CaseInfoComponent extends PmsComponentController implements PmsComponentLi
 	public CaseInfoComponent() {
 		buildMainLayout();
 		setCompositionRoot(mainLayout);
-		
-		try {
-			this.pmsDataAccess = PmsDataAccessCreator.getDataAccess();
-			this.permission = new PmsPermission(this.pmsDataAccess.getLoginUser().getUserGroup());
-			
-			this.pCaseItemChange();
-			this.lblView.addStyleName(Reindeer.LABEL_H2);
-			this.lblView.setValue("Fallinformation");
-			
-			this.addNewCaseListener();
-			this.addEditCaseListener();
-		} catch (UnknownUserException e) {
-			Notification.show(e.getInvalidUserMessage(), Notification.Type.HUMANIZED_MESSAGE);
-		}
+
+		this.pCaseItemChange();
+		this.lblView.addStyleName(Reindeer.LABEL_H2);
+		this.lblView.setValue("Fallinformation");
+
+		this.addNewCaseListener();
+		this.addEditCaseListener();
 	}
 
 	private void addEditCaseListener() {
 		this.btnEditCaseData.addClickListener(new Button.ClickListener() {
 			private static final long serialVersionUID = 8636612818445844248L;
-			
+
 			@Override
 			public void buttonClick(ClickEvent event) {
 				CaseInfoComponent.this.fireUIActivationEvent(false);
-				CaseInfoComponent.this.fireComponentChangeEvent(NavigationEvent.PCASE);
+				CaseInfoComponent.this
+						.fireComponentChangeEvent(NavigationEvent.PCASE);
 			}
 		});
 	}
@@ -135,11 +124,12 @@ class CaseInfoComponent extends PmsComponentController implements PmsComponentLi
 	private void addNewCaseListener() {
 		this.btnNewCase.addClickListener(new Button.ClickListener() {
 			private static final long serialVersionUID = 8636612818445844248L;
-			
+
 			@Override
 			public void buttonClick(ClickEvent event) {
 				CaseInfoComponent.this.fireUIActivationEvent(false);
-				CaseInfoComponent.this.fireComponentChangeEvent(NavigationEvent.PCASE);
+				CaseInfoComponent.this
+						.fireComponentChangeEvent(NavigationEvent.PCASE);
 				CaseInfoComponent.this.fireNewCaseEvent(true);
 			}
 		});
@@ -147,42 +137,62 @@ class CaseInfoComponent extends PmsComponentController implements PmsComponentLi
 
 	@Override
 	public void pCaseItemChange() {
-		this.pmsDataAccess.getPCaseContainer().refresh();
-		PCase item = this.pmsDataAccess.getPCaseContainer().getCurrentItem();
-		
-		if (item == null) {
-			item = new PCase(this.pmsDataAccess.getLoginUser());
-		} 
-		
-		this.lblAssignment.setValue(item.getAssignment());
-		this.lblDateCaseClosed.setValue(ValueConverter.convertDate(item.getDateCaseClosed()));
-		this.lblDateCaseOpended.setValue(ValueConverter.convertDate(item.getDateCaseOpened()));
-		this.lblDegreeOfDanger.setValue(item.getDegreeOfDanger());
-		this.lblGoOutStatus.setValue(item.getGoOutStatus());
-		this.lblJudicialStatus.setValue(item.getJudicialStatus());
-		this.lblOrderOfPatient.setValue(ValueConverter.convertString(item.getOrderOfPatient()));
-		this.lblReanimationStatus.setValue(ValueConverter.convertString(item.getReanimationStatus()));
-		this.lblSanction.setValue(item.getSanction());
-		this.lblSuicidalTendency.setValue(item.getSuicidalTendency());
-		this.lblVacation.setValue(item.getVacation());
-		this.lblKindOfTreatment.setValue(ValueConverter.convertString(item.getKindOfTreatment()));
+		try {
+			PmsDataAccessCreator.getDataAccess().getPCaseContainer().refresh();
+			PCase item = PmsDataAccessCreator.getDataAccess().getPCaseContainer()
+					.getCurrentItem();
+
+			if (item == null) {
+				item = new PCase(PmsDataAccessCreator.getDataAccess().getLoginUser());
+			}
+
+			this.lblAssignment.setValue(item.getAssignment());
+			this.lblDateCaseClosed.setValue(ValueConverter.convertDate(item
+					.getDateCaseClosed()));
+			this.lblDateCaseOpended.setValue(ValueConverter.convertDate(item
+					.getDateCaseOpened()));
+			this.lblDegreeOfDanger.setValue(item.getDegreeOfDanger());
+			this.lblGoOutStatus.setValue(item.getGoOutStatus());
+			this.lblJudicialStatus.setValue(item.getJudicialStatus());
+			this.lblOrderOfPatient.setValue(ValueConverter.convertString(item
+					.getOrderOfPatient()));
+			this.lblReanimationStatus.setValue(ValueConverter
+					.convertString(item.getReanimationStatus()));
+			this.lblSanction.setValue(item.getSanction());
+			this.lblSuicidalTendency.setValue(item.getSuicidalTendency());
+			this.lblVacation.setValue(item.getVacation());
+			this.lblKindOfTreatment.setValue(ValueConverter.convertString(item
+					.getKindOfTreatment()));
+		} catch (UnknownUserException e) {
+			Notification.show(e.getInvalidUserMessage(),
+					Notification.Type.HUMANIZED_MESSAGE);
+		}
 	}
 
 	@Override
 	public void enter(ViewChangeEvent event) {
-		Object itemId = this.pmsDataAccess.getPCaseContainer().getCurrentItemId();
-		
-		this.setPermissions(itemId);
+		try {
+			this.setPermissions(PmsDataAccessCreator.getDataAccess().getPCaseContainer()
+					.getCurrentItemId());
+		} catch (UnknownUserException e) {
+			Notification.show(e.getInvalidUserMessage(),
+					Notification.Type.HUMANIZED_MESSAGE);
+		}
 	}
-	
-	private void setPermissions(Object itemId) {
-		PCase pCaseItem = this.pmsDataAccess.getPCaseContainer().getCurrentItem();
-		
-		this.btnNewCase.setEnabled(permission.hasPermission(Operation.NEW_CASE) && itemId != null);
-		this.btnEditCaseData.setEnabled(permission.hasPermission(Operation.EDIT_CASE) && itemId != null && 
-				(pCaseItem == null || pCaseItem.getCaseStatus() != CaseStatus.CLOSED));
+
+	private void setPermissions(Object itemId) throws UnknownUserException {
+		PCase pCaseItem = PmsDataAccessCreator.getDataAccess().getPCaseContainer()
+				.getCurrentItem();
+
+		this.btnNewCase.setEnabled(PmsDataAccessCreator.getDataAccess().getPermission()
+				.hasPermission(Operation.NEW_CASE) && itemId != null);
+		this.btnEditCaseData
+				.setEnabled(PmsDataAccessCreator.getDataAccess().getPermission().hasPermission(
+						Operation.EDIT_CASE)
+						&& itemId != null
+						&& (pCaseItem == null || pCaseItem.getCaseStatus() != CaseStatus.CLOSED));
 	}
-	
+
 	@AutoGenerated
 	private AbsoluteLayout buildMainLayout() {
 		// common part: create layout
@@ -190,11 +200,11 @@ class CaseInfoComponent extends PmsComponentController implements PmsComponentLi
 		mainLayout.setImmediate(false);
 		mainLayout.setWidth("100%");
 		mainLayout.setHeight("100%");
-		
+
 		// top-level component properties
 		setWidth("100.0%");
 		setHeight("100.0%");
-		
+
 		// btnEditCaseData
 		btnEditCaseData = new Button();
 		btnEditCaseData.setCaption("Fallinfo bearbeiten");
@@ -202,7 +212,7 @@ class CaseInfoComponent extends PmsComponentController implements PmsComponentLi
 		btnEditCaseData.setWidth("140px");
 		btnEditCaseData.setHeight("-1px");
 		mainLayout.addComponent(btnEditCaseData, "top:20.0px;left:250.0px;");
-		
+
 		// btnNewCase
 		btnNewCase = new Button();
 		btnNewCase.setCaption("Neuer Fall");
@@ -210,11 +220,11 @@ class CaseInfoComponent extends PmsComponentController implements PmsComponentLi
 		btnNewCase.setWidth("-1px");
 		btnNewCase.setHeight("-1px");
 		mainLayout.addComponent(btnNewCase, "top:20.0px;left:400.0px;");
-		
+
 		// panMaster
 		panMaster = buildPanMaster();
 		mainLayout.addComponent(panMaster, "top:60.0px;left:20.0px;");
-		
+
 		// lblView
 		lblView = new Label();
 		lblView.setImmediate(false);
@@ -222,7 +232,7 @@ class CaseInfoComponent extends PmsComponentController implements PmsComponentLi
 		lblView.setHeight("-1px");
 		lblView.setValue("Label");
 		mainLayout.addComponent(lblView, "top:20.0px;left:20.0px;");
-		
+
 		return mainLayout;
 	}
 
@@ -233,11 +243,11 @@ class CaseInfoComponent extends PmsComponentController implements PmsComponentLi
 		panMaster.setImmediate(false);
 		panMaster.setWidth("-1px");
 		panMaster.setHeight("-1px");
-		
+
 		// verticalLayout_4
 		verticalLayout_4 = buildVerticalLayout_4();
 		panMaster.setContent(verticalLayout_4);
-		
+
 		return panMaster;
 	}
 
@@ -249,11 +259,11 @@ class CaseInfoComponent extends PmsComponentController implements PmsComponentLi
 		verticalLayout_4.setWidth("100.0%");
 		verticalLayout_4.setHeight("100.0%");
 		verticalLayout_4.setMargin(false);
-		
+
 		// gridLayout_1
 		gridLayout_1 = buildGridLayout_1();
 		verticalLayout_4.addComponent(gridLayout_1);
-		
+
 		return verticalLayout_4;
 	}
 
@@ -268,19 +278,19 @@ class CaseInfoComponent extends PmsComponentController implements PmsComponentLi
 		gridLayout_1.setSpacing(true);
 		gridLayout_1.setColumns(2);
 		gridLayout_1.setRows(2);
-		
+
 		// panDetails
 		panDetails = buildPanDetails();
 		gridLayout_1.addComponent(panDetails, 0, 0);
-		
+
 		// panStatus
 		panStatus = buildPanStatus();
 		gridLayout_1.addComponent(panStatus, 1, 0);
-		
+
 		// panCase
 		panCase = buildPanCase();
 		gridLayout_1.addComponent(panCase, 0, 1);
-		
+
 		return gridLayout_1;
 	}
 
@@ -292,11 +302,11 @@ class CaseInfoComponent extends PmsComponentController implements PmsComponentLi
 		panDetails.setImmediate(false);
 		panDetails.setWidth("-1px");
 		panDetails.setHeight("-1px");
-		
+
 		// formLayout_1
 		formLayout_1 = buildFormLayout_1();
 		panDetails.setContent(formLayout_1);
-		
+
 		return panDetails;
 	}
 
@@ -309,7 +319,7 @@ class CaseInfoComponent extends PmsComponentController implements PmsComponentLi
 		formLayout_1.setHeight("100.0%");
 		formLayout_1.setMargin(true);
 		formLayout_1.setSpacing(true);
-		
+
 		// lblReanimationStatus
 		lblReanimationStatus = new Label();
 		lblReanimationStatus.setCaption("Reanimationsstatus: ");
@@ -318,7 +328,7 @@ class CaseInfoComponent extends PmsComponentController implements PmsComponentLi
 		lblReanimationStatus.setHeight("18px");
 		lblReanimationStatus.setValue("Label");
 		formLayout_1.addComponent(lblReanimationStatus);
-		
+
 		// lblKindOfTreatment
 		lblKindOfTreatment = new Label();
 		lblKindOfTreatment.setCaption("Behandlungsart:");
@@ -327,7 +337,7 @@ class CaseInfoComponent extends PmsComponentController implements PmsComponentLi
 		lblKindOfTreatment.setHeight("-1px");
 		lblKindOfTreatment.setValue("Label");
 		formLayout_1.addComponent(lblKindOfTreatment);
-		
+
 		// lblSuicidalTendency
 		lblSuicidalTendency = new Label();
 		lblSuicidalTendency.setCaption("Suizidalität: ");
@@ -336,7 +346,7 @@ class CaseInfoComponent extends PmsComponentController implements PmsComponentLi
 		lblSuicidalTendency.setHeight("18px");
 		lblSuicidalTendency.setValue("Label");
 		formLayout_1.addComponent(lblSuicidalTendency);
-		
+
 		// lblGoOutStatus
 		lblGoOutStatus = new Label();
 		lblGoOutStatus.setCaption("Ausgang: ");
@@ -345,7 +355,7 @@ class CaseInfoComponent extends PmsComponentController implements PmsComponentLi
 		lblGoOutStatus.setHeight("18px");
 		lblGoOutStatus.setValue("Label");
 		formLayout_1.addComponent(lblGoOutStatus);
-		
+
 		// lblOrderOfPatient
 		lblOrderOfPatient = new Label();
 		lblOrderOfPatient.setCaption("Patientenverfügung:");
@@ -354,7 +364,7 @@ class CaseInfoComponent extends PmsComponentController implements PmsComponentLi
 		lblOrderOfPatient.setHeight("18px");
 		lblOrderOfPatient.setValue("Label");
 		formLayout_1.addComponent(lblOrderOfPatient);
-		
+
 		return formLayout_1;
 	}
 
@@ -366,11 +376,11 @@ class CaseInfoComponent extends PmsComponentController implements PmsComponentLi
 		panStatus.setImmediate(false);
 		panStatus.setWidth("-1px");
 		panStatus.setHeight("-1px");
-		
+
 		// formLayout_2
 		formLayout_2 = buildFormLayout_2();
 		panStatus.setContent(formLayout_2);
-		
+
 		return panStatus;
 	}
 
@@ -383,7 +393,7 @@ class CaseInfoComponent extends PmsComponentController implements PmsComponentLi
 		formLayout_2.setHeight("100.0%");
 		formLayout_2.setMargin(true);
 		formLayout_2.setSpacing(true);
-		
+
 		// lblAssignment
 		lblAssignment = new Label();
 		lblAssignment.setCaption("Zuweiser: ");
@@ -392,7 +402,7 @@ class CaseInfoComponent extends PmsComponentController implements PmsComponentLi
 		lblAssignment.setHeight("18px");
 		lblAssignment.setValue("Label");
 		formLayout_2.addComponent(lblAssignment);
-		
+
 		// lblSanction
 		lblSanction = new Label();
 		lblSanction.setCaption("Zwangsmassnahmen: ");
@@ -401,7 +411,7 @@ class CaseInfoComponent extends PmsComponentController implements PmsComponentLi
 		lblSanction.setHeight("18px");
 		lblSanction.setValue("Label");
 		formLayout_2.addComponent(lblSanction);
-		
+
 		// lblDegreeOfDanger
 		lblDegreeOfDanger = new Label();
 		lblDegreeOfDanger.setCaption("Fremdgefährtung: ");
@@ -410,7 +420,7 @@ class CaseInfoComponent extends PmsComponentController implements PmsComponentLi
 		lblDegreeOfDanger.setHeight("18px");
 		lblDegreeOfDanger.setValue("Label");
 		formLayout_2.addComponent(lblDegreeOfDanger);
-		
+
 		// lblVacation
 		lblVacation = new Label();
 		lblVacation.setCaption("Urlaub: ");
@@ -419,7 +429,7 @@ class CaseInfoComponent extends PmsComponentController implements PmsComponentLi
 		lblVacation.setHeight("18px");
 		lblVacation.setValue("Label");
 		formLayout_2.addComponent(lblVacation);
-		
+
 		// lblJudicialStatus
 		lblJudicialStatus = new Label();
 		lblJudicialStatus.setCaption("Juristischer Status: ");
@@ -428,7 +438,7 @@ class CaseInfoComponent extends PmsComponentController implements PmsComponentLi
 		lblJudicialStatus.setHeight("18px");
 		lblJudicialStatus.setValue("Label");
 		formLayout_2.addComponent(lblJudicialStatus);
-		
+
 		return formLayout_2;
 	}
 
@@ -440,11 +450,11 @@ class CaseInfoComponent extends PmsComponentController implements PmsComponentLi
 		panCase.setImmediate(false);
 		panCase.setWidth("-1px");
 		panCase.setHeight("-1px");
-		
+
 		// formLayout_3
 		formLayout_3 = buildFormLayout_3();
 		panCase.setContent(formLayout_3);
-		
+
 		return panCase;
 	}
 
@@ -457,7 +467,7 @@ class CaseInfoComponent extends PmsComponentController implements PmsComponentLi
 		formLayout_3.setHeight("100.0%");
 		formLayout_3.setMargin(true);
 		formLayout_3.setSpacing(true);
-		
+
 		// lblDateCaseOpended
 		lblDateCaseOpended = new Label();
 		lblDateCaseOpended.setCaption("Datum Falleröffung: ");
@@ -466,7 +476,7 @@ class CaseInfoComponent extends PmsComponentController implements PmsComponentLi
 		lblDateCaseOpended.setHeight("18px");
 		lblDateCaseOpended.setValue("Label");
 		formLayout_3.addComponent(lblDateCaseOpended);
-		
+
 		// lblDateCaseClosed
 		lblDateCaseClosed = new Label();
 		lblDateCaseClosed.setCaption("Datum Fallabschluss: ");
@@ -475,7 +485,7 @@ class CaseInfoComponent extends PmsComponentController implements PmsComponentLi
 		lblDateCaseClosed.setHeight("18px");
 		lblDateCaseClosed.setValue("Label");
 		formLayout_3.addComponent(lblDateCaseClosed);
-		
+
 		return formLayout_3;
 	}
 
