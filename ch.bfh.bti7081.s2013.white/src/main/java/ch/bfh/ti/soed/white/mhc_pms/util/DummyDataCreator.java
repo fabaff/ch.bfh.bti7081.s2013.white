@@ -33,8 +33,8 @@ public final class DummyDataCreator {
 								.createEntityManagerForPersistenceUnit(PmsDataAccessCreator.PERSISTENCE_UNIT)));
 		jpaContainer.setAutoCommit(true);
 
-		Filter userFilter = Filters.eq("userName", "user");
-		Filter passwordFilter = Filters.eq("password", Hash.MD5("password"));
+		Filter userFilter = Filters.eq("userName", PmsDataAccessCreator.DUMMY_USER);
+		Filter passwordFilter = Filters.eq("password", Hash.MD5(PmsDataAccessCreator.DUMMY_PASSWORD));
 		jpaContainer.addContainerFilter(userFilter);
 		jpaContainer.addContainerFilter(passwordFilter);
 		Object id = jpaContainer.firstItemId();
@@ -43,8 +43,8 @@ public final class DummyDataCreator {
 
 		if (id == null) {
 			PmsUser dummyUser = new PmsUser();
-			dummyUser.setUserName("user");
-			dummyUser.setPassword(Hash.MD5("password"));
+			dummyUser.setUserName(PmsDataAccessCreator.DUMMY_USER);
+			dummyUser.setPassword(Hash.MD5(PmsDataAccessCreator.DUMMY_PASSWORD));
 			dummyUser.setUserGroup(UserGroup.PSYCHOLOGIST);
 			jpaContainer.addEntity(dummyUser);
 		}

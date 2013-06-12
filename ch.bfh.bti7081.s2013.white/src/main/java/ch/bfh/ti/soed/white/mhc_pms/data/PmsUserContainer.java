@@ -14,6 +14,7 @@ public class PmsUserContainer extends PmsContainer<PmsUser> {
 	private static final long serialVersionUID = -6061413589999422421L;
 
 	private static Object USER_FILTER_PROPERTY_ID = "userName";
+	private static Object PASSWORD_FILTER_PROPERTY_ID = "password";
 	
 	public PmsUserContainer(Class<PmsUser> clazz) {
 		super(clazz);
@@ -34,8 +35,8 @@ public class PmsUserContainer extends PmsContainer<PmsUser> {
 	}
 
 	public boolean checkLogin(String userName, String password) {
-		Filter userFilter = Filters.eq("userName", userName);
-		Filter passWordFilter = Filters.eq("password", password);
+		Filter userFilter = Filters.eq(USER_FILTER_PROPERTY_ID, userName);
+		Filter passWordFilter = Filters.eq(PASSWORD_FILTER_PROPERTY_ID, password);
 		
 		this.addContainerFilter(userFilter);
 		this.addContainerFilter(passWordFilter);

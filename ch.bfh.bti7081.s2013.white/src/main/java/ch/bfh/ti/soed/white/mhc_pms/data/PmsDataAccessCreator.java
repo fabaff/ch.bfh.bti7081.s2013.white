@@ -16,6 +16,8 @@ public final class PmsDataAccessCreator {
 	private static PmsDataAccess dataAccess;
 	
 	public static final String DUMMY_USER = "user";
+	
+	public static final String DUMMY_PASSWORD = "password";
 
 	public static final String PERSISTENCE_UNIT = "ch.bfh.bti7081.s2013.white";
 
