@@ -11,6 +11,7 @@ import ch.bfh.ti.soed.white.mhc_pms.data.PmsUser;
 import ch.bfh.ti.soed.white.mhc_pms.data.enums.UserGroup;
 
 /**
+ * This utility class creates dummy data for simpler database handling.
  * 
  * @author Group White, I2p, BFH Berne, <a
  *         href="https://github.com/fabaff/ch.bfh.bti7081.s2013.white"
@@ -20,6 +21,9 @@ import ch.bfh.ti.soed.white.mhc_pms.data.enums.UserGroup;
  */
 public final class DummyDataCreator {
 
+	/**
+	 * This static method creates a dummy user with user name "user" and password "password".
+	 */
 	public static void createDummyUsers() {
 		JPAContainer<PmsUser> jpaContainer = new JPAContainer<>(PmsUser.class);
 		jpaContainer

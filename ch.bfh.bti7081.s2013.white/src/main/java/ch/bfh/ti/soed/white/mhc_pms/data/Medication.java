@@ -12,13 +12,14 @@ import javax.validation.constraints.NotNull;
 import ch.bfh.ti.soed.white.mhc_pms.data.enums.MedApplicationMode;
 
 /**
- * Entity implementation class for Entity: Medication
+ * Entity implementation class for Entity: Medication.
+ * Each medication has exactly one associated patient case entity.
+ * Each medication can have zero to n associated medication dates.
  * 
  * @author Group White, I2p, BFH Berne, <a
  *         href="https://github.com/fabaff/ch.bfh.bti7081.s2013.white"
  *         >Contact</a>
  * @version 1.0.0
- * 
  *        
  */
 @Entity
@@ -67,23 +68,53 @@ public class Medication implements Serializable {
 		this(null);
 	}
 
+	public void setNewMedication() {
+		this.setMid(0);
+		this.setDateOfPriscribing(new Date());
+		if (this.pCase != null) {
+			this.setClinicName(this.getpCase().getTherapist().getClinic());
+			this.setPriscribingDoctor(this.getpCase().getTherapist().getFirstName()
+					+ " " + this.getpCase().getTherapist().getLastName());
+		}
+	}
+	
+	/**
+	 * 
+	 * @param pCase
+	 */
 	public Medication(PCase pCase) {
 		this.pCase = pCase;
 	}
 
 	
+	/**
+	 * 
+	 * @return int
+	 */
 	public int getMid() {
 		return mid;
 	}
 
+	/**
+	 * 
+	 * @param mid
+	 */
 	public void setMid(int mid) {
 		this.mid = mid;
 	}
 
+	/**
+	 * 
+	 * @return String
+	 */
 	public String getMedicationName() {
 		return medicationName;
 	}
 
+	/**
+	 * 
+	 * @param medicationName
+	 */
 	public void setMedicationName(String medicationName) {
 		this.medicationName = medicationName;
 	}

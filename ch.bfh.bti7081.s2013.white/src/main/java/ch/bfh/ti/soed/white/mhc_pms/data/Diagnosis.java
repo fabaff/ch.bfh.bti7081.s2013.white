@@ -8,6 +8,7 @@ import javax.validation.constraints.NotNull;
 
 /**
  * Entity implementation class for Entity: Diagnosis
+ * Each diagnosis has exactly one associated patient case entity.
  * 
  * @author Group White, I2p, BFH Berne, <a
  *         href="https://github.com/fabaff/ch.bfh.bti7081.s2013.white"
@@ -63,8 +64,11 @@ public class Diagnosis implements Serializable {
 	public void setNewDiagnosis() {
 		this.setDid(0);
 		this.setDateOfCreation(new Date());
-		this.setClinicName(this.getpCase().getTherapist().getClinic());
-		this.setClinicName(this.getpCase().getTherapist().getFirstName() + " " + this.getpCase().getTherapist().getLastName());
+		if (this.pCase != null) {
+			this.setClinicName(this.getpCase().getTherapist().getClinic());
+			this.setDiagnosisCreator(this.getpCase().getTherapist().getFirstName()
+					+ " " + this.getpCase().getTherapist().getLastName());
+		}
 	}
 	
 	/**

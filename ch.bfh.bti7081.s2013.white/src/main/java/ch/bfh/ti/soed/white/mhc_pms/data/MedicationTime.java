@@ -9,9 +9,10 @@ import javax.validation.constraints.NotNull;
 import ch.bfh.ti.soed.white.mhc_pms.data.enums.MedicationUnit;
 
 /**
- * Entity implementation class for Entity: MedicationTime
+ * Entity implementation class for Entity: MedicationTime.
+ * Each medication time has exactly one associated medication date entity.
  * 
-  * @author Group White, I2p, BFH Berne, <a
+ * @author Group White, I2p, BFH Berne, <a
  *         href="https://github.com/fabaff/ch.bfh.bti7081.s2013.white"
  *         >Contact</a>
  * @version 1.0.0

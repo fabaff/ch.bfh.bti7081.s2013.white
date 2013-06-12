@@ -17,7 +17,10 @@ import ch.bfh.ti.soed.white.mhc_pms.data.enums.CaseStatus;
 import ch.bfh.ti.soed.white.mhc_pms.data.enums.CivilStatus;
 
 /**
- * Entity implementation class for Entity: PCase
+ * Entity implementation class for Entity: PCase.
+ * As a simplification, the two entities Patient and Case are "denormalized" and merged together into a single entity PCase.
+ * Each patient case has exactly one associated user entity.
+ * Each patient case can have zero to n associated diagnosis or medications or patient progress entities.
  * 
  * @author Group White, I2p, BFH Berne, <a
  *         href="https://github.com/fabaff/ch.bfh.bti7081.s2013.white"
@@ -141,6 +144,10 @@ public class PCase implements Serializable {
 		this(null);
 	}
 	
+	/**
+	 * 
+	 * @param therapist
+	 */
 	public PCase(PmsUser therapist) {
 		this.therapist = therapist;
 	}

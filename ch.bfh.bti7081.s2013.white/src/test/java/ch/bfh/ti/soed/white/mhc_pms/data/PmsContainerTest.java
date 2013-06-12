@@ -65,7 +65,7 @@ public class PmsContainerTest {
 	}
 
 	@Test
-	public final void testAddEntityE() {
+	public final void testAddEntity() {
 //		fail("Not yet implemented"); // TODO
 	}
 

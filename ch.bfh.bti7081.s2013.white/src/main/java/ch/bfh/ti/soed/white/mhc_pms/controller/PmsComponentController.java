@@ -4,14 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.vaadin.navigator.View;
-import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
 import com.vaadin.ui.CustomComponent;
 
 /**
  * This is the controller base class for all UI components. Listeners could be
- * added and instances of this class could fire events. This abstract class also
- * implements the interface View with an empty method stub. All subclasses can
- * be used as the destination of a navigator.
+ * added and instances of this class could fire events. Subclasses must
+ * implement the View interface. All subclasses can be used as the destination
+ * of a navigator.
  * 
  * @author Group White, I2p, BFH Berne, <a
  *         href="https://github.com/fabaff/ch.bfh.bti7081.s2013.white"
@@ -69,10 +68,6 @@ public abstract class PmsComponentController extends CustomComponent implements
 	 */
 	public void addUIActivationListener(UIActivationListener listener) {
 		this.uiActivationListeners.add(listener);
-	}
-
-	@Override
-	public void enter(ViewChangeEvent event) {
 	}
 
 	/**

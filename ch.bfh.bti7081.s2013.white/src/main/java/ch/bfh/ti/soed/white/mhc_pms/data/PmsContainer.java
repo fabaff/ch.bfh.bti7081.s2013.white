@@ -25,6 +25,8 @@ public class PmsContainer<E> extends JPAContainer<E> {
 		this.setAutoCommit(true);
 		
 		this.currentItemId = this.firstItemId();
+		
+		// TODO Filter für isDEleted
 	}
 
 	/**

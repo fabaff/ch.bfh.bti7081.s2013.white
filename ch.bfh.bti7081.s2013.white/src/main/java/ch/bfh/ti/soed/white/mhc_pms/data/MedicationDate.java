@@ -11,9 +11,11 @@ import javax.validation.constraints.NotNull;
 import ch.bfh.ti.soed.white.mhc_pms.data.enums.MedicationStatus;
 
 /**
- * Entity implementation class for Entity: MedicationDate
+ * Entity implementation class for Entity: MedicationDate.
+ * Each medication date has exactly one associated medication entity.
+ * Each medication date can have zero to n associated medication time entities.
  * 
-  * @author Group White, I2p, BFH Berne, <a
+ * @author Group White, I2p, BFH Berne, <a
  *         href="https://github.com/fabaff/ch.bfh.bti7081.s2013.white"
  *         >Contact</a>
  * @version 1.0.0
@@ -48,14 +50,26 @@ public class MedicationDate implements Serializable {
 		this(null);
 	}   
 	
+	/**
+	 * 
+	 * @param medication
+	 */
 	public MedicationDate(Medication medication) {
 		this.medication = medication;
 	}
 
+	/**
+	 * 
+	 * @return int
+	 */
 	public int getMdid() {
 		return this.mdid;
 	}
 
+	/**
+	 * 
+	 * @param mdid
+	 */
 	public void setMdid(int mdid) {
 		this.mdid = mdid;
 	}

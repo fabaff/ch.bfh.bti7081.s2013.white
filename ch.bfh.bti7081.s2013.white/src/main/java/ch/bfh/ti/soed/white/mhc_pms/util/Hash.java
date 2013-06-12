@@ -9,6 +9,7 @@ package ch.bfh.ti.soed.white.mhc_pms.util;
  * 
  */
 public class Hash {
+	
 	/**
 	 * Hash function for strings
 	 * 
