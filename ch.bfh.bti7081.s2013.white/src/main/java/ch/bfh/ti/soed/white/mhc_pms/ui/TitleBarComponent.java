@@ -126,7 +126,7 @@ class TitleBarComponent extends PmsComponentController implements
 		PCase item = this.pmsDataAccess.getPCaseContainer().getCurrentItem();
 
 		if (item == null) {
-			item = new PCase(this.pmsDataAccess.getCurrentUser());
+			item = new PCase(this.pmsDataAccess.getLoginUser());
 		}
 
 		this.lblFullName.setValue(item.getFirstName() + " "
@@ -138,9 +138,9 @@ class TitleBarComponent extends PmsComponentController implements
 				.getCaseStatus()));
 		this.lblKindOfTreatment.setValue(ValueConverter.convertString(item
 				.getKindOfTreatment()));
-		this.lblUser.setValue(this.pmsDataAccess.getCurrentUser().getLastName()
+		this.lblUser.setValue(this.pmsDataAccess.getLoginUser().getLastName()
 				+ " "
-				+ this.pmsDataAccess.getCurrentUser()
+				+ this.pmsDataAccess.getLoginUser()
 						.getLastName());
 	}
 

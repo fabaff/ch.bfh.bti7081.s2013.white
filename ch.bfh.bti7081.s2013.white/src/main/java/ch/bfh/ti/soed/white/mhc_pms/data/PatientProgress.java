@@ -27,7 +27,7 @@ public class PatientProgress implements Serializable {
 	private int ppid = 0;
 
 	@NotNull
-	// TODO allow longer text in DB
+	@Column(length=5000)   
 	private String patientProgressComment = "";
 	
 	@NotNull
@@ -65,10 +65,18 @@ public class PatientProgress implements Serializable {
 		}
 	}
 	
+	/**
+	 * 
+	 * @return ppid
+	 */
 	public int getPpid() {
 		return this.ppid;
 	}
 
+	/**
+	 * 
+	 * @param ppid
+	 */
 	public void setPpid(int ppid) {
 		this.ppid = ppid;
 	}

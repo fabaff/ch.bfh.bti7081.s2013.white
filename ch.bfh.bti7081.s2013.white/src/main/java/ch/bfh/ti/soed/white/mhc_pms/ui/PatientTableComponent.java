@@ -75,7 +75,7 @@ class PatientTableComponent extends PmsComponentController implements
 		try {
 			this.pmsDataAccess = PmsDataAccessCreator.getDataAccess();
 			this.permission = new PmsPermission(this.pmsDataAccess
-					.getCurrentUser().getUserGroup());
+					.getLoginUser().getUserGroup());
 
 			this.initPatientTable();
 			this.pCaseItemChange();

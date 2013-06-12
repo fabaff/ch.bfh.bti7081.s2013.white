@@ -33,7 +33,7 @@ public class Diagnosis implements Serializable {
 	@NotNull
 	private String icdCode = "";
 	
-	// TODO allow longer text in DB
+	@Column(length=5000)   
 	private String diagnosisComment = "";
 	
 	@NotNull
@@ -85,52 +85,114 @@ public class Diagnosis implements Serializable {
 		this.pCase = pCase;
 	}
 
+	/**
+	 * 
+	 * @return diagnosisName
+	 */
 	public String getDiagnosisName() {
 		return this.diagnosisName;
 	}
 
+	/**
+	 * 
+	 * @param diagnosisName
+	 */
 	public void setDiagnosisName(String diagnosisName) {
 		this.diagnosisName = diagnosisName;
 	}   
+	
+	/**
+	 * 
+	 * @return did
+	 */
 	public int getDid() {
 		return this.did;
 	}
 
+	/**
+	 * 
+	 * @param did
+	 */
 	public void setDid(int did) {
 		this.did = did;
 	}   
+	
+	/**
+	 * 
+	 * @return icdCode
+	 */
 	public String getIcdCode() {
 		return this.icdCode;
 	}
 
+	/**
+	 * 
+	 * @param icdCode
+	 */
 	public void setIcdCode(String icdCode) {
 		this.icdCode = icdCode;
 	}   
+
+	/**
+	 * 
+	 * @return diagnosisComment
+	 */
 	public String getDiagnosisComment() {
 		return this.diagnosisComment;
 	}
 
+	/**
+	 * 
+	 * @param diagnosisComment
+	 */
 	public void setDiagnosisComment(String diagnosisComment) {
 		this.diagnosisComment = diagnosisComment;
-	}   
+	}  
+	
+	/**
+	 * 
+	 * @return dateOfCreation
+	 */
 	public Date getDateOfCreation() {
 		return this.dateOfCreation;
 	}
 
+	/**
+	 * 
+	 * @param dateOfCreation
+	 */
 	public void setDateOfCreation(Date dateOfCreation) {
 		this.dateOfCreation = dateOfCreation;
-	}   
+	}  
+	
+	/**
+	 * 
+	 * @return diagnosisCreator
+	 */
 	public String getDiagnosisCreator() {
 		return this.diagnosisCreator;
 	}
 
+	/**
+	 * 
+	 * @param diagnosisCreator
+	 */
 	public void setDiagnosisCreator(String diagnosisCreator) {
 		this.diagnosisCreator = diagnosisCreator;
 	}   
+	
+	/**
+	 * 
+	 * @return clinicName
+	 */
 	public String getClinicName() {
 		return this.clinicName;
 	}
 
+	/**
+	 * 
+	 * @param clinicName
+	 */
 	public void setClinicName(String clinicName) {
 		this.clinicName = clinicName;
 	}

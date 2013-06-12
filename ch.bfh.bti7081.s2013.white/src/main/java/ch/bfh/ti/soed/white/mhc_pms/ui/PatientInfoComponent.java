@@ -152,7 +152,7 @@ class PatientInfoComponent extends PmsComponentController implements
 
 		try {
 			this.pmsDataAccess = PmsDataAccessCreator.getDataAccess();
-			this.permission = new PmsPermission(this.pmsDataAccess.getCurrentUser().getUserGroup());
+			this.permission = new PmsPermission(this.pmsDataAccess.getLoginUser().getUserGroup());
 			
 			this.pCaseItemChange();
 			this.lblView.addStyleName(Reindeer.LABEL_H2);
@@ -197,7 +197,7 @@ class PatientInfoComponent extends PmsComponentController implements
 		PCase item = this.pmsDataAccess.getPCaseContainer().getCurrentItem();
 
 		if (item == null) {
-			item = new PCase(this.pmsDataAccess.getCurrentUser());
+			item = new PCase(this.pmsDataAccess.getLoginUser());
 		}
 		this.setBasicPatientInfoValues(item);
 		this.setNextOfKinValues(item);

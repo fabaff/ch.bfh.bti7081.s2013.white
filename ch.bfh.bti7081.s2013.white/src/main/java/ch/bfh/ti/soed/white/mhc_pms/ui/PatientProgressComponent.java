@@ -59,7 +59,7 @@ class PatientProgressComponent extends PmsComponentController implements
 
 		try {
 			this.pmsDataAccess = PmsDataAccessCreator.getDataAccess();
-			this.permission = new PmsPermission(this.pmsDataAccess.getCurrentUser().getUserGroup());
+			this.permission = new PmsPermission(this.pmsDataAccess.getLoginUser().getUserGroup());
 			
 		} catch (UnknownUserException e) {
 			Notification.show(e.getInvalidUserMessage(),

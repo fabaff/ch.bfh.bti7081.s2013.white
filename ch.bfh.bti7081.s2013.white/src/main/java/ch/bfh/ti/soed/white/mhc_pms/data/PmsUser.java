@@ -40,8 +40,13 @@ public class PmsUser implements Serializable {
 	private String lastName = "";
 	
 	@NotNull
+	@Column(unique = true)
 	private String password = "";
 
+	@NotNull
+	@Column(unique = true)
+	private String userName = "";
+	
 	@OneToMany(mappedBy = "therapist")
 	private Set<PCase> pCases = new HashSet<>();
 	
@@ -52,9 +57,6 @@ public class PmsUser implements Serializable {
 	@NotNull
 	@Enumerated(EnumType.STRING)
 	private UserGroup userGroup = UserGroup.PSYCHOLOGIST;
-	
-	@NotNull
-	private String userName = "";
 	
 	public PmsUser() {}
 

@@ -49,7 +49,7 @@ public class PmsDataAccess {
 	 * 
 	 * @return current user object
 	 */
-	public PmsUser getCurrentUser() {
+	public PmsUser getLoginUser() {
 		return this.currentUser;
 	}
 

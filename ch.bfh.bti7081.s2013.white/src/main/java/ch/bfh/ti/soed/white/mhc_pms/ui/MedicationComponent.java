@@ -64,7 +64,7 @@ class MedicationComponent extends PmsComponentController implements
 
 		try {
 			this.pmsDataAccess = PmsDataAccessCreator.getDataAccess();
-			this.permission = new PmsPermission(this.pmsDataAccess.getCurrentUser().getUserGroup());
+			this.permission = new PmsPermission(this.pmsDataAccess.getLoginUser().getUserGroup());
 			
 			// Static elements
 			this.lblView.addStyleName(Reindeer.LABEL_H2);

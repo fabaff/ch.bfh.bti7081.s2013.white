@@ -65,7 +65,7 @@ public class DiagnosisDetailComponent extends PmsComponentController implements
 		try {
 			this.pmsDataAccess = PmsDataAccessCreator.getDataAccess();
 			this.permission = new PmsPermission(this.pmsDataAccess
-					.getCurrentUser().getUserGroup());
+					.getLoginUser().getUserGroup());
 
 			this.addToggleDiagnosisViewButtonListener();
 			this.addNewDiagnosisButtonListener();

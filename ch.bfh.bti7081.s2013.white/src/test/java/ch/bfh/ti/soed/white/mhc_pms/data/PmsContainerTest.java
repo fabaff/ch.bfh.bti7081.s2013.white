@@ -9,6 +9,9 @@ import org.junit.BeforeClass;
 import org.junit.Ignore;
 import org.junit.Test;
 
+import ch.bfh.ti.soed.white.mhc_pms.data.enums.UserGroup;
+import ch.bfh.ti.soed.white.mhc_pms.util.DummyDataCreator;
+
 /**
  * 
  * @author Group White, I2p, BFH Berne, <a
@@ -19,8 +22,23 @@ import org.junit.Test;
  */
 public class PmsContainerTest {
 
+	private static PmsContainer<PCase> pCaseContainer;
+	
+	private static PmsUser user;
+	
+	private static PCase pCaseItem1;
+	
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
+		PmsDataAccessCreator.setPersistenceUnit(PmsDataAccessCreator.PERSISTENCE_UNIT_TEST);
+		DummyDataCreator.createDummyUser();
+		pCaseContainer = PmsDataAccessCreator.getDataAccess().getPCaseContainer();
+		PmsUser user = new PmsUser();
+		PCase pCaseItem1 = new PCase(user);
+		
+		user.setFirstName("Hans");
+		user.setLastName("Meier");
+		user.setUserGroup(UserGroup.PSYCHIATRIST);
 	}
 
 	@AfterClass
@@ -37,11 +55,9 @@ public class PmsContainerTest {
 
 	@Test
 	public final void testPmsContainer() {
-//		PmsContainer container = new PmsContainer<>(PCase.class);
-//		
-//		assertTrue(true);
-//		fail("Not yet implemented"); // TODO
-		
+		assertEquals(0, pCaseContainer.size());
+		assertNull(pCaseContainer.getCurrentItem());
+		assertNull(pCaseContainer.getCurrentItemId());
 	}
 
 	@Test

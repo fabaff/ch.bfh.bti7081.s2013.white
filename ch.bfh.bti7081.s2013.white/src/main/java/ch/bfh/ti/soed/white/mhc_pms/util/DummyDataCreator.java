@@ -24,13 +24,13 @@ public final class DummyDataCreator {
 	/**
 	 * This static method creates a dummy user with user name "user" and password "password".
 	 */
-	public static void createDummyUsers() {
+	public static void createDummyUser() {
 		JPAContainer<PmsUser> jpaContainer = new JPAContainer<>(PmsUser.class);
 		jpaContainer
 				.setEntityProvider(new CachingBatchableLocalEntityProvider<PmsUser>(
 						PmsUser.class,
 						JPAContainerFactory
-								.createEntityManagerForPersistenceUnit(PmsDataAccessCreator.PERSISTENCE_UNIT)));
+								.createEntityManagerForPersistenceUnit(PmsDataAccessCreator.getPersistenceUnit())));
 		jpaContainer.setAutoCommit(true);
 
 		Filter userFilter = Filters.eq("userName", PmsDataAccessCreator.DUMMY_USER);
@@ -45,7 +45,7 @@ public final class DummyDataCreator {
 			PmsUser dummyUser = new PmsUser();
 			dummyUser.setUserName(PmsDataAccessCreator.DUMMY_USER);
 			dummyUser.setPassword(Hash.MD5(PmsDataAccessCreator.DUMMY_PASSWORD));
-			dummyUser.setUserGroup(UserGroup.PSYCHOLOGIST);
+			dummyUser.setUserGroup(UserGroup.PSYCHIATRIST);
 			jpaContainer.addEntity(dummyUser);
 		}
 	}

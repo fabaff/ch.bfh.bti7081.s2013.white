@@ -31,7 +31,6 @@ import com.vaadin.ui.themes.Reindeer;
  * 
  * 
  */
-
 public class LoginComponent extends PmsComponentController {
 
 	/*- VaadinEditorProperties={"grid":"RegularGrid,20","showGrid":true,"snapToGrid":true,"snapToObject":true,"movingGuides":false,"snappingDistance":10} */
@@ -92,7 +91,8 @@ public class LoginComponent extends PmsComponentController {
 
 			if (!userName.isEmpty()) {
 				PmsDataAccessCreator.setDataAccess(new PmsDataAccess(userName));
-				Notification.show("Anmeldung erfolgt ...",
+				
+				Notification.show("Anmeldung erfolgreich!",
 						Notification.Type.HUMANIZED_MESSAGE);
 				this.fireComponentChangeEvent(NavigationEvent.LOGIN);
 			} else {
@@ -127,7 +127,7 @@ public class LoginComponent extends PmsComponentController {
 		if (event.getOldView() != null) {
 			try {
 				Notification.show(PmsDataAccessCreator.getDataAccess()
-						.getCurrentUser().getUserName()
+						.getLoginUser().getUserName()
 						+ " wurde abgemeldet!",
 						Notification.Type.HUMANIZED_MESSAGE);
 			} catch (UnknownUserException e) {

@@ -79,7 +79,7 @@ class DiagnosisTableComponent extends PmsComponentController implements
 		try {
 			this.pmsDataAccess = PmsDataAccessCreator.getDataAccess();
 			this.permission = new PmsPermission(this.pmsDataAccess
-					.getCurrentUser().getUserGroup());
+					.getLoginUser().getUserGroup());
 
 			this.initDiagnosisTable();
 			this.pCaseItemChange();
@@ -208,7 +208,7 @@ class DiagnosisTableComponent extends PmsComponentController implements
 	
 	@Override
 	public void pCaseItemChange() {
-		this.pmsDataAccess.getDiagnosisContainer().setCurrentItemFilter(
+		this.pmsDataAccess.getDiagnosisContainer().setCurrentPCaseFilter(
 				this.pmsDataAccess.getPCaseContainer().getCurrentItemId());
 		Object diagnosisItemId = this.pmsDataAccess.getDiagnosisContainer()
 				.getCurrentItemId();

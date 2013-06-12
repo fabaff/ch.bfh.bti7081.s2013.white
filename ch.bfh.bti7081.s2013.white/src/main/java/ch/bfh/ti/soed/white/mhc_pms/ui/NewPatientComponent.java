@@ -185,7 +185,7 @@ public class NewPatientComponent extends PmsComponentController {
 
 	private void bindFields() {
 		this.fieldGroup.setItemDataSource(new BeanItem<PCase>(new PCase(
-				this.pmsDataAccess.getCurrentUser())));
+				this.pmsDataAccess.getLoginUser())));
 
 		this.bindBasicPatientFields();
 		this.bindNextOfKinFields();

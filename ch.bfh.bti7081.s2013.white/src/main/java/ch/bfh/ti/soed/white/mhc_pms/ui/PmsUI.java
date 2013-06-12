@@ -20,7 +20,7 @@ public class PmsUI extends UI {
 
 	@Override
 	protected void init(VaadinRequest request) {
-		DummyDataCreator.createDummyUsers();
+		DummyDataCreator.createDummyUser();
 		this.setContent(new MainPanel(this));
 	}
 }

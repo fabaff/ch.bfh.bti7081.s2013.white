@@ -12,20 +12,24 @@ package ch.bfh.ti.soed.white.mhc_pms.data;
  */
 public final class PmsDataAccessCreator {
 
-	// create data access for dummy user
-	private static PmsDataAccess dataAccess;
-	
 	public static final String DUMMY_USER = "user";
-	
+
 	public static final String DUMMY_PASSWORD = "password";
 
-	public static final String PERSISTENCE_UNIT = "ch.bfh.bti7081.s2013.white";
+	public static final String DEFAULT_PERSISTENCE_UNIT = "ch.bfh.bti7081.s2013.white";
+
+	public static final String PERSISTENCE_UNIT_TEST = "ch.bfh.bti7081.s2013.white.test";
+
+	// create data access for dummy user
+	private static PmsDataAccess dataAccess;
+
+	private static String persistenceUnit = DEFAULT_PERSISTENCE_UNIT;
 
 	/**
 	 * Gets the current data access object.
 	 * 
 	 * @return the current set data access objet
-	 * @throws UnknownUserException 
+	 * @throws UnknownUserException
 	 */
 	public static PmsDataAccess getDataAccess() throws UnknownUserException {
 		if (dataAccess == null) {
@@ -46,6 +50,24 @@ public final class PmsDataAccessCreator {
 		}
 	}
 
+	/**
+	 * 
+	 * @return the current persistence unit
+	 */
+	public static String getPersistenceUnit() {
+		return persistenceUnit;
+	}
+	
+	/**
+	 * Sets the current persistence unit
+	 * 
+	 * @param persistUnit
+	 */
+	public static void setPersistenceUnit(String persistUnit) {
+		persistenceUnit = persistUnit;
+	}
+	
 	private PmsDataAccessCreator() {
 	}
+
 }
