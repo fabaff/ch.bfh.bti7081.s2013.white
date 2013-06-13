@@ -1,5 +1,8 @@
 # Development
 
+## General
+
+
 ## Eclipse
 
 ### Java
@@ -19,7 +22,7 @@ properly, the following can help:
 
 *Project* -> *Clean...*
 
-If not, try *Run as* -> *Maven clean*.
+If not, try *Run as* -> *Maven clean*. Or restart Eclipse.
 
 ### Data Source Explorer 
 
@@ -64,17 +67,29 @@ More details are available in the `persistence.xml` file.
 - Connector URI: jdbc:sqlserver://localhost:55978;databaseName=mhcPms
 - Driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
 
+Check the state (commented/uncommented) of the line mentioned below 
+
+```xml
+<property name="eclipselink.ddl-generation" value="drop-and-create-tables"/>
+```
+
+if you want to re-use your database entries for a new run. 
+
 ## SQL Server
 
-Default installation of a Microsoft SQL Server 2012 (2008 should work too). Please adjust the defaults to the values mentioned below: 
+Default installation of a Microsoft SQL Server 2012 (2008 should work too).
+Please adjust the defaults to the values mentioned below: 
 
 - Port: 55978
 - User: pkuser (Additional Server role: dbcreator, User Mapping: mhcPms)
 - Password: soed2013
 - Database name: mhcPms (must exist)
 
-Check if `SQL Server and Windows Authentication mode` is set for your SQL Server. 
+Check if `SQL Server and Windows Authentication mode` is set for your SQL
+Server. 
 
 ## Documentation
 
-The documentation is placed in the **javadoc** folder. Please make sure that you exclude this folder in your `.gitignore`.
+The documentation is placed in the **javadoc** folder. Please make sure that
+this folder is exclude in your `.gitignore` during the development phase. The
+docs are commit close to the end.
