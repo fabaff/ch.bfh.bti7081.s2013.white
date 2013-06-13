@@ -94,8 +94,6 @@ public class EditDiagnosisComponent extends PmsComponentController implements
 	private String TITLE_NEW_DIAGNOSIS = "Neue Diagnose";
 	private String TITLE_EDIT_DIAGNOSIS = "Diagnose bearbeiten";
 
-	private PmsDataAccess pmsDataAccess;
-
 	private BeanFieldGroup<Diagnosis> fieldGroup;
 
 	private boolean isNewDiagnosis;
@@ -111,17 +109,11 @@ public class EditDiagnosisComponent extends PmsComponentController implements
 		buildMainLayout();
 		setCompositionRoot(mainLayout);
 
-		try {
-			this.pmsDataAccess = PmsDataAccessCreator.getDataAccess();
-			this.fieldGroup = new BeanFieldGroup<Diagnosis>(Diagnosis.class);
-			this.setNewItem(false);
+		this.fieldGroup = new BeanFieldGroup<Diagnosis>(Diagnosis.class);
+		this.setNewItem(false);
 
-			this.btnSave.addClickListener(new SaveDiagnosisButtonListener());
-			this.addBtnCancelListener();
-		} catch (UnknownUserException e) {
-			Notification.show(e.getInvalidUserMessage(),
-					Notification.Type.HUMANIZED_MESSAGE);
-		}
+		this.btnSave.addClickListener(new SaveDiagnosisButtonListener());
+		this.addBtnCancelListener();
 	}
 
 	private void bindFields() {
@@ -174,8 +166,8 @@ public class EditDiagnosisComponent extends PmsComponentController implements
 	@Override
 	public void enter(ViewChangeEvent event) {
 		try {
-			this.pmsDataAccess = PmsDataAccessCreator.getDataAccess();
-			this.pmsDataAccess.getDiagnosisContainer().refresh();
+			PmsDataAccessCreator.getDataAccess().getDiagnosisContainer()
+					.refresh();
 		} catch (UnknownUserException e) {
 			Notification.show(e.getInvalidUserMessage(),
 					Notification.Type.HUMANIZED_MESSAGE);

@@ -1,11 +1,14 @@
 package ch.bfh.ti.soed.white.mhc_pms.ui;
 
+import ch.bfh.ti.soed.white.mhc_pms.controller.InitListener;
 import ch.bfh.ti.soed.white.mhc_pms.controller.NavigationEvent;
 import ch.bfh.ti.soed.white.mhc_pms.controller.PmsComponentController;
 import ch.bfh.ti.soed.white.mhc_pms.controller.PmsComponentListener;
+import ch.bfh.ti.soed.white.mhc_pms.data.PCase;
 import ch.bfh.ti.soed.white.mhc_pms.data.PmsDataAccess;
 import ch.bfh.ti.soed.white.mhc_pms.data.PmsDataAccessCreator;
 import ch.bfh.ti.soed.white.mhc_pms.data.UnknownUserException;
+import ch.bfh.ti.soed.white.mhc_pms.data.enums.CaseStatus;
 import ch.bfh.ti.soed.white.mhc_pms.security.PmsPermission;
 import ch.bfh.ti.soed.white.mhc_pms.security.PmsPermission.Operation;
 
@@ -32,7 +35,7 @@ import com.vaadin.ui.themes.Reindeer;
  * 
  */
 class PatientTableComponent extends PmsComponentController implements
-		PmsComponentListener {
+		PmsComponentListener, InitListener {
 
 	/*- VaadinEditorProperties={"grid":"RegularGrid,20","showGrid":true,"snapToGrid":true,"snapToObject":true,"movingGuides":false,"snappingDistance":10} */
 
@@ -56,8 +59,6 @@ class PatientTableComponent extends PmsComponentController implements
 			"Status", "Vorname", "Nachname", "Geburtsdatum", "Geschlecht",
 			"Behandlungsart", "Datum Falleröffnung" };
 
-	private PmsDataAccess pmsDataAccess;
-
 	/**
 	 * The constructor should first build the main layout, set the composition
 	 * root and then do any custom initialization.
@@ -72,8 +73,6 @@ class PatientTableComponent extends PmsComponentController implements
 		setCompositionRoot(mainLayout);
 
 		try {
-			this.pmsDataAccess = PmsDataAccessCreator.getDataAccess();
-
 			this.initPatientTable();
 			this.pCaseItemChange();
 			this.lblView.addStyleName(Reindeer.LABEL_H2);
@@ -92,9 +91,10 @@ class PatientTableComponent extends PmsComponentController implements
 
 	/**
 	 * Initialization of the table element
+	 * @throws UnknownUserException 
 	 */
-	private void initPatientTable() {
-		this.tblPatients.setContainerDataSource(this.pmsDataAccess
+	private void initPatientTable() throws UnknownUserException {
+		this.tblPatients.setContainerDataSource(PmsDataAccessCreator.getDataAccess()
 				.getPCaseContainer());
 		this.tblPatients.setSelectable(true);
 		this.tblPatients.setImmediate(true);
@@ -140,12 +140,20 @@ class PatientTableComponent extends PmsComponentController implements
 					@Override
 					public void valueChange(ValueChangeEvent event) {
 						if (event.getProperty().getValue() != null) {
-							Object id = PatientTableComponent.this.tblPatients
-									.getValue();
-							PatientTableComponent.this.pmsDataAccess
-									.getPCaseContainer().setCurrentItemId(id);
-							PatientTableComponent.this
-									.firePCaseItemChangeEvent();
+							try {
+								Object id = PatientTableComponent.this.tblPatients
+										.getValue();
+								PmsDataAccessCreator.getDataAccess()
+										.getPCaseContainer().setCurrentItemId(
+												id);
+
+								PatientTableComponent.this.setPermissions();
+								PatientTableComponent.this
+										.firePCaseItemChangeEvent();
+							} catch (UnknownUserException e) {
+								Notification.show(e.getInvalidUserMessage(),
+										Notification.Type.HUMANIZED_MESSAGE);
+							}
 						}
 					}
 				});
@@ -154,10 +162,10 @@ class PatientTableComponent extends PmsComponentController implements
 	@Override
 	public void pCaseItemChange() {
 		try {
-			this.pmsDataAccess = PmsDataAccessCreator.getDataAccess();
-			this.pmsDataAccess.getPCaseContainer().refresh();
-			Object itemId = this.pmsDataAccess.getPCaseContainer()
+			PmsDataAccessCreator.getDataAccess().getPCaseContainer().refresh();
+			Object itemId = PmsDataAccessCreator.getDataAccess().getPCaseContainer()
 					.getCurrentItemId();
+			this.setPermissions();
 
 			if (itemId != null) {
 				this.tblPatients.select(itemId);
@@ -168,25 +176,37 @@ class PatientTableComponent extends PmsComponentController implements
 		}
 	}
 
-	private void setPermissions(Object itemId) {
-		this.btnNewPatient.setEnabled(this.pmsDataAccess.getPermission()
+	private void setPermissions() throws UnknownUserException {
+		Object itemId = PmsDataAccessCreator.getDataAccess().getPCaseContainer()
+				.getCurrentItemId();
+		PCase pCaseItem = PmsDataAccessCreator.getDataAccess()
+				.getPCaseContainer().getCurrentItem();
+		
+		boolean isOpen = pCaseItem != null
+				&& pCaseItem.getCaseStatus() != CaseStatus.CLOSED;
+
+		this.btnNewPatient.setEnabled(PmsDataAccessCreator.getDataAccess().getPermission()
 				.hasPermission(Operation.NEW_PATIENT));
-		this.btnNewCase.setEnabled(this.pmsDataAccess.getPermission()
-				.hasPermission(Operation.NEW_CASE) && itemId != null);
+		this.btnNewCase.setEnabled(PmsDataAccessCreator.getDataAccess().getPermission()
+				.hasPermission(Operation.NEW_CASE) && itemId != null && isOpen);
 	}
 
 	@Override
 	public void enter(ViewChangeEvent event) {
+	}
+
+	@Override
+	public void initialize() {
 		try {
-		this.pmsDataAccess = PmsDataAccessCreator.getDataAccess();
-		this.setPermissions(this.pmsDataAccess.getPCaseContainer()
-				.getCurrentItemId());
+			this.initPatientTable();
+			this.pCaseItemChange();
+			this.firePCaseItemChangeEvent();
 		} catch (UnknownUserException e) {
 			Notification.show(e.getInvalidUserMessage(),
 					Notification.Type.HUMANIZED_MESSAGE);
 		}
 	}
-
+	
 	@AutoGenerated
 	private AbsoluteLayout buildMainLayout() {
 		// common part: create layout
@@ -233,5 +253,6 @@ class PatientTableComponent extends PmsComponentController implements
 
 		return mainLayout;
 	}
+
 
 }

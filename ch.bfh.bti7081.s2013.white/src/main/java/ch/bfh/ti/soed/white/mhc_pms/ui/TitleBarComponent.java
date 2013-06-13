@@ -58,8 +58,6 @@ class TitleBarComponent extends PmsComponentController implements
 	private Label lblFullName;
 	private static final long serialVersionUID = 1148948780923578333L;
 
-	private PmsDataAccess pmsDataAccess;
-
 	/**
 	 * The constructor should first build the main layout, set the composition
 	 * root and then do any custom initialization.
@@ -71,21 +69,14 @@ class TitleBarComponent extends PmsComponentController implements
 		buildMainLayout();
 		setCompositionRoot(mainLayout);
 
-		try {
-			this.pmsDataAccess = PmsDataAccessCreator.getDataAccess();
+		this.initFilterCombo();
+		this.pCaseItemChange();
 
-			this.initFilterCombo();
-			this.pCaseItemChange();
+		this.lblUser.addStyleName(Reindeer.LABEL_SMALL);
+		this.lblFullName.addStyleName(Reindeer.LABEL_H1);
 
-			this.lblUser.addStyleName(Reindeer.LABEL_SMALL);
-			this.lblFullName.addStyleName(Reindeer.LABEL_H1);
-
-			this.addLogoutButtonClickListener();
-			this.addComboValueChangeListener();
-		} catch (UnknownUserException e) {
-			Notification.show(e.getInvalidUserMessage(),
-					Notification.Type.HUMANIZED_MESSAGE);
-		}
+		this.addLogoutButtonClickListener();
+		this.addComboValueChangeListener();
 	}
 
 	private void addComboValueChangeListener() {
@@ -123,13 +114,12 @@ class TitleBarComponent extends PmsComponentController implements
 	@Override
 	public void pCaseItemChange() {
 		try {
-			this.pmsDataAccess = PmsDataAccessCreator.getDataAccess();
-			this.pmsDataAccess.getPCaseContainer().refresh();
-			PCase item = this.pmsDataAccess.getPCaseContainer()
-					.getCurrentItem();
+			PCase item = PmsDataAccessCreator.getDataAccess()
+					.getPCaseContainer().getCurrentItem();
 
 			if (item == null) {
-				item = new PCase(this.pmsDataAccess.getLoginUser());
+				item = new PCase(PmsDataAccessCreator.getDataAccess()
+						.getLoginUser());
 			}
 
 			this.lblFullName.setValue(item.getFirstName() + " "
@@ -142,10 +132,11 @@ class TitleBarComponent extends PmsComponentController implements
 					.getCaseStatus()));
 			this.lblKindOfTreatment.setValue(ValueConverter.convertString(item
 					.getKindOfTreatment()));
-			this.lblUser.setValue(this.pmsDataAccess.getLoginUser()
-					.getLastName()
+			this.lblUser.setValue(PmsDataAccessCreator.getDataAccess()
+					.getLoginUser().getLastName()
 					+ " "
-					+ this.pmsDataAccess.getLoginUser().getLastName());
+					+ PmsDataAccessCreator.getDataAccess().getLoginUser()
+							.getLastName());
 		} catch (UnknownUserException e) {
 			Notification.show(e.getInvalidUserMessage(),
 					Notification.Type.HUMANIZED_MESSAGE);
@@ -154,12 +145,6 @@ class TitleBarComponent extends PmsComponentController implements
 
 	@Override
 	public void enter(ViewChangeEvent event) {
-		try {
-			this.pmsDataAccess = PmsDataAccessCreator.getDataAccess();
-		} catch (UnknownUserException e) {
-			Notification.show(e.getInvalidUserMessage(),
-					Notification.Type.HUMANIZED_MESSAGE);
-		}
 	}
 
 	@Override

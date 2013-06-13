@@ -30,12 +30,15 @@ public abstract class PmsComponentController extends CustomComponent implements
 	private List<PmsComponentListener> pmsComponentListeners;
 
 	private List<UIActivationListener> uiActivationListeners;
+	
+	private List<InitListener> initListeners;
 
 	protected PmsComponentController() {
 		this.pmsComponentListeners = new ArrayList<>();
 		this.componentChangeListeners = new ArrayList<>();
 		this.uiActivationListeners = new ArrayList<>();
 		this.newCaseListeners = new ArrayList<>();
+		this.initListeners = new ArrayList<>();
 	}
 
 	/**
@@ -69,7 +72,15 @@ public abstract class PmsComponentController extends CustomComponent implements
 	public void addUIActivationListener(UIActivationListener listener) {
 		this.uiActivationListeners.add(listener);
 	}
-
+	
+	/**
+	 * 
+	 * @param listener
+	 */
+	public void addInitListener(InitListener listener) {
+		this.initListeners.add(listener);
+	}
+	
 	/**
 	 * 
 	 * @param event
@@ -106,4 +117,9 @@ public abstract class PmsComponentController extends CustomComponent implements
 		}
 	}
 
+	protected void fireInitEvent() {
+		for (InitListener listener : this.initListeners) {
+			listener.initialize();
+		}
+	}
 }

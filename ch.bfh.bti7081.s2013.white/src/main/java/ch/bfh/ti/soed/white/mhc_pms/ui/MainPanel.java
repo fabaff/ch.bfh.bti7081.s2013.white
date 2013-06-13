@@ -102,7 +102,6 @@ class MainPanel extends Panel implements ComponentChangeListener {
 		this.addEditDiagnosisListeners();
 
 		// TODO Add missing Component Listener
-		// setComponentAlignment(button, Alignment.MIDDLE_CENTER);
 	}
 
 	private void addTitleBarListeners() {
@@ -115,6 +114,8 @@ class MainPanel extends Panel implements ComponentChangeListener {
 		// TODO Auto-generated method stub
 		
 		this.loginComponent.addComponentChangeListener(this);
+		this.loginComponent.addInitListener(this.patientTable);
+		this.loginComponent.addInitListener(this.diagnosisTableComp);
 	}
 
 	private void addEditDiagnosisListeners() {
@@ -220,6 +221,7 @@ class MainPanel extends Panel implements ComponentChangeListener {
 		this.patientTable.addPmsComponentListener(this.caseInfo);
 		this.patientTable.addPmsComponentListener(this.progressComp);
 		this.patientTable.addPmsComponentListener(this.diagnosisTableComp);
+		this.patientTable.addPmsComponentListener(this.diagnosisDetailComp);
 		this.patientTable.addPmsComponentListener(this.medComp);
 		this.patientTable.addUIActivationListener(this.menuBar);
 		this.patientTable.addUIActivationListener(this.titleBar);

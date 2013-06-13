@@ -139,8 +139,6 @@ public class NewPatientComponent extends PmsComponentController {
 
 	private BeanFieldGroup<PCase> fieldGroup;
 
-	private PmsDataAccess pmsDataAccess;
-
 	/**
 	 * The constructor should first build the main layout, set the composition
 	 * root and then do any custom initialization.
@@ -152,24 +150,19 @@ public class NewPatientComponent extends PmsComponentController {
 		buildMainLayout();
 		setCompositionRoot(mainLayout);
 
-		try {
-			this.pmsDataAccess = PmsDataAccessCreator.getDataAccess();
-			this.fieldGroup = new BeanFieldGroup<PCase>(PCase.class);
+		this.fieldGroup = new BeanFieldGroup<PCase>(PCase.class);
 
-			this.initComboBoxes();
-			this.lblView.addStyleName(Reindeer.LABEL_H2);
-			this.lblView.setValue("Neuer Patient");
+		this.initComboBoxes();
+		this.lblView.addStyleName(Reindeer.LABEL_H2);
+		this.lblView.setValue("Neuer Patient");
 
-			this.addNewPatientButtonListener();
-			this.addCancelPatientButtonListener();
+		this.addNewPatientButtonListener();
+		this.addCancelPatientButtonListener();
 
-			// TODO validation of input values
-			this.dateFieldDateOfBirth.setRequiredError("Kein gültiges Datum!");
-			// this.txtFirstName.setRequiredError("Kein gültiger Vorname!");
-		} catch (UnknownUserException e) {
-			Notification.show(e.getInvalidUserMessage(),
-					Notification.Type.HUMANIZED_MESSAGE);
-		}
+		// TODO validation of input values
+		this.dateFieldDateOfBirth.setRequiredError("Kein gültiges Datum!");
+		// this.txtFirstName.setRequiredError("Kein gültiger Vorname!");
+
 	}
 
 	private void initComboBoxes() {
@@ -183,12 +176,17 @@ public class NewPatientComponent extends PmsComponentController {
 	}
 
 	private void bindFields() {
-		this.fieldGroup.setItemDataSource(new BeanItem<PCase>(new PCase(
-				this.pmsDataAccess.getLoginUser())));
+		try {
+			this.fieldGroup.setItemDataSource(new BeanItem<PCase>(new PCase(
+					PmsDataAccessCreator.getDataAccess().getLoginUser())));
 
-		this.bindBasicPatientFields();
-		this.bindNextOfKinFields();
-		this.bindFamilyDoctorFields();
+			this.bindBasicPatientFields();
+			this.bindNextOfKinFields();
+			this.bindFamilyDoctorFields();
+		} catch (UnknownUserException e) {
+			Notification.show(e.getInvalidUserMessage(),
+					Notification.Type.HUMANIZED_MESSAGE);
+		}
 	}
 
 	private void addCancelPatientButtonListener() {
@@ -224,7 +222,8 @@ public class NewPatientComponent extends PmsComponentController {
 			if (beanItem != null) {
 				PCase pCaseItem = beanItem.getBean();
 				pCaseItem.setNewCase();
-				this.pmsDataAccess.getPCaseContainer().addEntity(pCaseItem);
+				PmsDataAccessCreator.getDataAccess().getPCaseContainer()
+						.addEntity(pCaseItem);
 
 				Notification.show("Patient gespeichert",
 						Notification.Type.HUMANIZED_MESSAGE);
@@ -301,8 +300,7 @@ public class NewPatientComponent extends PmsComponentController {
 	@Override
 	public void enter(ViewChangeEvent event) {
 		try {
-			this.pmsDataAccess = PmsDataAccessCreator.getDataAccess();
-			this.pmsDataAccess.getPCaseContainer().refresh();
+			PmsDataAccessCreator.getDataAccess().getPCaseContainer().refresh();
 			this.bindFields();
 		} catch (UnknownUserException e) {
 			Notification.show(e.getInvalidUserMessage(),

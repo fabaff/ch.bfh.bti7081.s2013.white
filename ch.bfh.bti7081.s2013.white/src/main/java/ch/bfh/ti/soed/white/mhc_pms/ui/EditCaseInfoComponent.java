@@ -27,6 +27,7 @@ import com.vaadin.ui.Notification;
 import com.vaadin.ui.Panel;
 import com.vaadin.ui.TextField;
 import com.vaadin.ui.VerticalLayout;
+import com.vaadin.ui.Window;
 import com.vaadin.ui.themes.Reindeer;
 
 /**
@@ -91,35 +92,7 @@ public class EditCaseInfoComponent extends PmsComponentController implements
 		@Override
 		public void buttonClick(ClickEvent event) {
 			try {
-				if (EditCaseInfoComponent.this.isNewCase) {
-					PCase currentPCaseItem = PmsDataAccessCreator
-							.getDataAccess().getPCaseContainer()
-							.getCurrentItem();
-					if (currentPCaseItem != null) {
-						currentPCaseItem.closeCase();
-					}
-
-					EditCaseInfoComponent.this.fieldGroup.commit();
-					BeanItem<PCase> beanItem = EditCaseInfoComponent.this.fieldGroup
-							.getItemDataSource();
-					if (beanItem != null) {
-						PmsDataAccessCreator.getDataAccess()
-								.getPCaseContainer()
-								.addEntity(beanItem.getBean());
-					}
-				} else {
-					EditCaseInfoComponent.this.fieldGroup.commit();
-				}
-
-				EditCaseInfoComponent.this.fireUIActivationEvent(true);
-				EditCaseInfoComponent.this
-						.fireComponentChangeEvent(NavigationEvent.PCASE_BACK);
-				EditCaseInfoComponent.this.firePCaseItemChangeEvent();
-				EditCaseInfoComponent.this.setNewItem(false);
-				Notification.show(
-						EditCaseInfoComponent.this.isNewCase ? NEW_CASE_MESSAGE
-								: EDIT_CASE_MESSAGE,
-						Notification.Type.HUMANIZED_MESSAGE);
+				this.updatePCase();
 			} catch (CommitException e) {
 				Notification
 						.show("Bitte alle mit * markierten Felder korrekt ausfüllen!",
@@ -127,7 +100,41 @@ public class EditCaseInfoComponent extends PmsComponentController implements
 			} catch (UnknownUserException e) {
 				Notification.show(e.getInvalidUserMessage(),
 						Notification.Type.HUMANIZED_MESSAGE);
+			} catch (Exception e) {
+				Notification.show("Beim Speichern ist ein Fehler aufgetreten!",
+						Notification.Type.HUMANIZED_MESSAGE);
 			}
+		}
+
+		private void updatePCase() throws UnknownUserException, CommitException, CloneNotSupportedException {
+			if (EditCaseInfoComponent.this.isNewCase) {
+				EditCaseInfoComponent.this.fieldGroup.commit();
+
+				PCase newItem = (PCase) EditCaseInfoComponent.this.fieldGroup
+						.getItemDataSource().getBean().clone();
+				PCase currentPCaseItem = PmsDataAccessCreator.getDataAccess()
+						.getPCaseContainer().getCurrentItem();
+				if (currentPCaseItem != null) {
+					currentPCaseItem.closeCase();
+					PmsDataAccessCreator.getDataAccess().getPCaseContainer().addEntity(currentPCaseItem);
+				}
+
+				PmsDataAccessCreator.getDataAccess().getPCaseContainer().addEntity(newItem);
+			} else {
+				EditCaseInfoComponent.this.fieldGroup.commit();
+				PmsDataAccessCreator.getDataAccess().getPCaseContainer().addEntity(EditCaseInfoComponent.
+						this.fieldGroup.getItemDataSource().getBean());
+			}
+
+			EditCaseInfoComponent.this.fireUIActivationEvent(true);
+			EditCaseInfoComponent.this
+					.fireComponentChangeEvent(NavigationEvent.PCASE_BACK);
+			EditCaseInfoComponent.this.firePCaseItemChangeEvent();
+			EditCaseInfoComponent.this.setNewItem(false);
+			Notification.show(
+					EditCaseInfoComponent.this.isNewCase ? NEW_CASE_MESSAGE
+							: EDIT_CASE_MESSAGE,
+					Notification.Type.HUMANIZED_MESSAGE);
 		}
 
 	}
@@ -166,7 +173,6 @@ public class EditCaseInfoComponent extends PmsComponentController implements
 		this.btnSave.addClickListener(new SaveButtonListener());
 		this.addBtnCancelListener();
 
-		// TODO ComboBoxes not editable
 		// TODO input validation
 	}
 
@@ -176,8 +182,8 @@ public class EditCaseInfoComponent extends PmsComponentController implements
 
 			@Override
 			public void buttonClick(ClickEvent event) {
-				EditCaseInfoComponent.this.setNewItem(false);
 				EditCaseInfoComponent.this.fieldGroup.discard();
+				EditCaseInfoComponent.this.setNewItem(false);
 				EditCaseInfoComponent.this.fireUIActivationEvent(true);
 				EditCaseInfoComponent.this
 						.fireComponentChangeEvent(NavigationEvent.PCASE_BACK);
@@ -199,20 +205,17 @@ public class EditCaseInfoComponent extends PmsComponentController implements
 	}
 
 	private void bindFields(PCase item) {
-		if (item != null) {
-			this.fieldGroup.setItemDataSource(item);
-			this.fieldGroup
-					.bind(this.cmbReanimationStatus, "reanimationStatus");
-			this.fieldGroup.bind(this.cmbKindOfTreatment, "kindOfTreatment");
-			this.fieldGroup.bind(this.cmbOrderOfPatient, "orderOfPatient");
-			this.fieldGroup.bind(this.txtAssignment, "assignment");
-			this.fieldGroup.bind(this.txtDegreeOfDanger, "degreeOfDanger");
-			this.fieldGroup.bind(this.txtGoOutStatus, "goOutStatus");
-			this.fieldGroup.bind(this.txtJudicialStatus, "judicialStatus");
-			this.fieldGroup.bind(this.txtSanction, "sanction");
-			this.fieldGroup.bind(this.txtSuicidalTendency, "suicidalTendency");
-			this.fieldGroup.bind(this.txtVacation, "vacation");
-		}
+		this.fieldGroup.setItemDataSource(item);
+		this.fieldGroup.bind(this.cmbReanimationStatus, "reanimationStatus");
+		this.fieldGroup.bind(this.cmbKindOfTreatment, "kindOfTreatment");
+		this.fieldGroup.bind(this.cmbOrderOfPatient, "orderOfPatient");
+		this.fieldGroup.bind(this.txtAssignment, "assignment");
+		this.fieldGroup.bind(this.txtDegreeOfDanger, "degreeOfDanger");
+		this.fieldGroup.bind(this.txtGoOutStatus, "goOutStatus");
+		this.fieldGroup.bind(this.txtJudicialStatus, "judicialStatus");
+		this.fieldGroup.bind(this.txtSanction, "sanction");
+		this.fieldGroup.bind(this.txtSuicidalTendency, "suicidalTendency");
+		this.fieldGroup.bind(this.txtVacation, "vacation");
 	}
 
 	/*
@@ -225,7 +228,6 @@ public class EditCaseInfoComponent extends PmsComponentController implements
 	@Override
 	public void enter(ViewChangeEvent event) {
 		try {
-			PmsDataAccessCreator.getDataAccess().getPCaseContainer().refresh();
 			PCase item = PmsDataAccessCreator.getDataAccess()
 					.getPCaseContainer().getCurrentItem();
 

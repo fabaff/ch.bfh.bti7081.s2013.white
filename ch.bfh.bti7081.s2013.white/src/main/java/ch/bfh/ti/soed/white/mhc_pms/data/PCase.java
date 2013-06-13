@@ -159,7 +159,7 @@ public class PCase implements Serializable {
 	public Object clone() {
 		PCase pCaseclone = new PCase(this.getTherapist());
 		
-		this.setPcid(0);
+		pCaseclone.pcid = 0;
 		pCaseclone.firstName = this.firstName;
 		pCaseclone.lastName = this.lastName;
 		pCaseclone.dateOfBirth = this.dateOfBirth;

@@ -12,6 +12,8 @@ import ch.bfh.ti.soed.white.mhc_pms.data.enums.CaseStatus;
 import ch.bfh.ti.soed.white.mhc_pms.data.enums.KindOfTreatment;
 import ch.bfh.ti.soed.white.mhc_pms.data.enums.OrderOfPatient;
 import ch.bfh.ti.soed.white.mhc_pms.data.enums.ReanimationStatus;
+import ch.bfh.ti.soed.white.mhc_pms.data.enums.UserGroup;
+import ch.bfh.ti.soed.white.mhc_pms.util.Hash;
 
 /**
  * 
@@ -41,7 +43,9 @@ public class PCaseTest {
 
 	@Test
 	public void testPCase() {
-		PCase pCase = new PCase(new PmsUser());
+		PmsUser user = new PmsUser();
+		user.setUserName("drMeier");
+		PCase pCase = new PCase(user);
 		
 		assertEquals(0, pCase.getPcid());
 		assertNull(pCase.getDateCaseClosed());
@@ -50,6 +54,8 @@ public class PCaseTest {
 		assertNull(pCase.getKindOfTreatment());
 		assertNull(pCase.getKindOfTreatment());
 		assertNull(pCase.getDateCaseOpened());
+		
+		assertEquals("drMeier", pCase.getTherapist().getUserName());
 	}
 
 	@Test
@@ -80,4 +86,20 @@ public class PCaseTest {
 		assertEquals(OrderOfPatient.NO, pCase.getOrderOfPatient());
 	}
 	
+	@Test
+	public void testClone() {
+		PmsUser user = new PmsUser();
+		user.setUserName("drMeier");
+		PCase pCase = new PCase(user);
+		pCase.setPcid(10);
+		pCase.setFirstName("Hans");
+		
+		PCase pCaseClone = (PCase) pCase.clone();
+		
+		assertNotNull(pCaseClone);
+		assertNotSame(pCase, pCaseClone);
+		assertSame(pCase.getTherapist(), pCaseClone.getTherapist());
+		assertEquals(pCase.getFirstName(), pCaseClone.getFirstName());
+		assertFalse(pCase.getPcid() == pCaseClone.getPcid());
+	}
 }

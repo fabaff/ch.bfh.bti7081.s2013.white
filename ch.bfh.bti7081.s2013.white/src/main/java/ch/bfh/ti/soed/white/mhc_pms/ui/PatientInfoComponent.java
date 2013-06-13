@@ -135,8 +135,6 @@ class PatientInfoComponent extends PmsComponentController implements
 	private Button btnNewPatient;
 	private static final long serialVersionUID = -6090834279643277087L;
 
-	private PmsDataAccess pmsDataAccess;
-
 	/**
 	 * The constructor should first build the main layout, set the composition
 	 * root and then do any custom initialization.
@@ -148,17 +146,10 @@ class PatientInfoComponent extends PmsComponentController implements
 		buildMainLayout();
 		setCompositionRoot(mainLayout);
 
-		try {
-			this.pmsDataAccess = PmsDataAccessCreator.getDataAccess();
-
-			this.pCaseItemChange();
-			this.lblView.addStyleName(Reindeer.LABEL_H2);
-			this.lblView.setValue("Patient Details");
-			this.addListeners();
-		} catch (UnknownUserException e) {
-			Notification.show(e.getInvalidUserMessage(),
-					Notification.Type.HUMANIZED_MESSAGE);
-		}
+		this.pCaseItemChange();
+		this.lblView.addStyleName(Reindeer.LABEL_H2);
+		this.lblView.setValue("Patient Details");
+		this.addListeners();
 	}
 
 	// private void setPermissions() {
@@ -181,32 +172,28 @@ class PatientInfoComponent extends PmsComponentController implements
 
 	@Override
 	public void enter(ViewChangeEvent event) {
-		try {
-			this.pmsDataAccess = PmsDataAccessCreator.getDataAccess();
-			this.pmsDataAccess.getPCaseContainer().refresh();
-			this.setPermissions();
-		} catch (UnknownUserException e) {
-			Notification.show(e.getInvalidUserMessage(),
-					Notification.Type.HUMANIZED_MESSAGE);
-		}
 	}
 
 	private void setPermissions() throws UnknownUserException {
-		Object pCaseItemId = PmsDataAccessCreator.getDataAccess().getPCaseContainer().getCurrentItemId();
-		this.btnNewPatient.setEnabled(this.pmsDataAccess.getPermission()
-				.hasPermission(Operation.NEW_PATIENT) && pCaseItemId != null);
+		Object pCaseItemId = PmsDataAccessCreator.getDataAccess()
+				.getPCaseContainer().getCurrentItemId();
+		
+		this.btnNewPatient.setEnabled(PmsDataAccessCreator.getDataAccess()
+				.getPermission().hasPermission(Operation.NEW_PATIENT)
+				&& pCaseItemId != null);
 	}
 
 	@Override
 	public void pCaseItemChange() {
 		try {
-			this.pmsDataAccess = PmsDataAccessCreator.getDataAccess();
-			this.pmsDataAccess.getPCaseContainer().refresh();
-			PCase item = this.pmsDataAccess.getPCaseContainer()
-					.getCurrentItem();
-
+			PmsDataAccessCreator.getDataAccess().getPCaseContainer().refresh();
+			PCase item = PmsDataAccessCreator.getDataAccess()
+					.getPCaseContainer().getCurrentItem();
+			this.setPermissions();
+			
 			if (item == null) {
-				item = new PCase(this.pmsDataAccess.getLoginUser());
+				item = new PCase(PmsDataAccessCreator.getDataAccess()
+						.getLoginUser());
 			}
 			this.setBasicPatientInfoValues(item);
 			this.setNextOfKinValues(item);

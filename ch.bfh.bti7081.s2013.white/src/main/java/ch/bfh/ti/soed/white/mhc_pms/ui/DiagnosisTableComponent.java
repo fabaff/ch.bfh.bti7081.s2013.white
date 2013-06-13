@@ -1,5 +1,6 @@
 package ch.bfh.ti.soed.white.mhc_pms.ui;
 
+import ch.bfh.ti.soed.white.mhc_pms.controller.InitListener;
 import ch.bfh.ti.soed.white.mhc_pms.controller.NavigationEvent;
 import ch.bfh.ti.soed.white.mhc_pms.controller.PmsComponentController;
 import ch.bfh.ti.soed.white.mhc_pms.controller.PmsComponentListener;
@@ -35,7 +36,7 @@ import com.vaadin.ui.themes.Reindeer;
  * 
  */
 class DiagnosisTableComponent extends PmsComponentController implements
-		PmsComponentListener {
+		PmsComponentListener, InitListener {
 
 	/*- VaadinEditorProperties={"grid":"RegularGrid,20","showGrid":true,"snapToGrid":true,"snapToObject":true,"movingGuides":false,"snappingDistance":10} */
 
@@ -106,8 +107,7 @@ class DiagnosisTableComponent extends PmsComponentController implements
 						}
 
 						try {
-							DiagnosisTableComponent.this.setPermissions(event
-									.getProperty().getValue());
+							DiagnosisTableComponent.this.setPermissions();
 						} catch (UnknownUserException e) {
 							Notification.show(e.getInvalidUserMessage(),
 									Notification.Type.HUMANIZED_MESSAGE);
@@ -164,8 +164,8 @@ class DiagnosisTableComponent extends PmsComponentController implements
 	}
 
 	private void initDiagnosisTable() throws UnknownUserException {
-		this.tblDiagnosis.setContainerDataSource(PmsDataAccessCreator.getDataAccess()
-				.getDiagnosisContainer());
+		this.tblDiagnosis.setContainerDataSource(PmsDataAccessCreator
+				.getDataAccess().getDiagnosisContainer());
 		this.tblDiagnosis.setSelectable(true);
 		this.tblDiagnosis.setImmediate(true);
 		this.tblDiagnosis.setEditable(false);
@@ -177,53 +177,58 @@ class DiagnosisTableComponent extends PmsComponentController implements
 		}
 	}
 
-	private void setPermissions(Object itemId) throws UnknownUserException {
-		Object pCaseItemId = PmsDataAccessCreator.getDataAccess().getPCaseContainer().getCurrentItemId();
-		Diagnosis currentDiag = PmsDataAccessCreator.getDataAccess().getDiagnosisContainer()
-				.getCurrentItem();
-		PCase currentPCase = null;
+	private void setPermissions() throws UnknownUserException {
+		Object pCaseItemId = PmsDataAccessCreator.getDataAccess()
+				.getPCaseContainer().getCurrentItemId();
+		PCase pCaseItem = PmsDataAccessCreator.getDataAccess()
+				.getPCaseContainer().getCurrentItem();
+		Object itemId = PmsDataAccessCreator.getDataAccess()
+				.getDiagnosisContainer().getCurrentItemId();
 
-		if (currentDiag != null) {
-			currentPCase = currentDiag.getpCase();
-		}
-		boolean isOpen = (currentPCase == null || currentPCase.getCaseStatus() != CaseStatus.CLOSED);
+		boolean isOpen = pCaseItem == null
+				|| pCaseItem.getCaseStatus() != CaseStatus.CLOSED;
 
-		this.btnNewDiagnosis.setEnabled(PmsDataAccessCreator.getDataAccess().getPermission()
-				.hasPermission(Operation.NEW_DIAGNOSIS) && pCaseItemId != null);
-		this.btnEditDiagnosis.setEnabled(PmsDataAccessCreator.getDataAccess().getPermission()
-				.hasPermission(Operation.EDIT_DIAGNOSIS)
-				&& itemId != null
-				&& isOpen);
-		this.btnDeleteDiagnosis.setEnabled(PmsDataAccessCreator.getDataAccess().getPermission()
-				.hasPermission(Operation.DELETE_DIAGNOSIS)
-				&& itemId != null
-				&& isOpen);
+		this.btnNewDiagnosis.setEnabled(PmsDataAccessCreator.getDataAccess()
+				.getPermission().hasPermission(Operation.NEW_DIAGNOSIS)
+				&& pCaseItemId != null && isOpen);
+		this.btnEditDiagnosis.setEnabled(PmsDataAccessCreator.getDataAccess()
+				.getPermission().hasPermission(Operation.EDIT_DIAGNOSIS)
+				&& itemId != null && isOpen);
+		this.btnDeleteDiagnosis.setEnabled(PmsDataAccessCreator.getDataAccess()
+				.getPermission().hasPermission(Operation.DELETE_DIAGNOSIS)
+				&& itemId != null && isOpen);
 	}
 
 	@Override
 	public void enter(ViewChangeEvent event) {
-		try {
-			this.setPermissions(PmsDataAccessCreator.getDataAccess().getDiagnosisContainer()
-					.getCurrentItemId());
-		} catch (UnknownUserException e) {
-			Notification.show(e.getInvalidUserMessage(),
-					Notification.Type.HUMANIZED_MESSAGE);
-		}
-		// TODO Auto-generated method stub
-
 	}
 
 	@Override
 	public void pCaseItemChange() {
 		try {
-			PmsDataAccessCreator.getDataAccess().getDiagnosisContainer().setCurrentPCaseFilter(
-					PmsDataAccessCreator.getDataAccess().getPCaseContainer().getCurrentItemId());
-			Object diagnosisItemId = PmsDataAccessCreator.getDataAccess().getDiagnosisContainer()
-					.getCurrentItemId();
+			PmsDataAccessCreator
+					.getDataAccess()
+					.getDiagnosisContainer()
+					.setCurrentPCaseFilter(
+							PmsDataAccessCreator.getDataAccess()
+									.getPCaseContainer().getCurrentItemId());
+			Object diagnosisItemId = PmsDataAccessCreator.getDataAccess()
+					.getDiagnosisContainer().getCurrentItemId();
 
+			this.setPermissions();
 			if (diagnosisItemId != null) {
 				this.tblDiagnosis.select(diagnosisItemId);
 			}
+		} catch (UnknownUserException e) {
+			Notification.show(e.getInvalidUserMessage(),
+					Notification.Type.HUMANIZED_MESSAGE);
+		}
+	}
+
+	@Override
+	public void initialize() {
+		try {
+			this.initDiagnosisTable();
 		} catch (UnknownUserException e) {
 			Notification.show(e.getInvalidUserMessage(),
 					Notification.Type.HUMANIZED_MESSAGE);

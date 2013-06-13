@@ -3,9 +3,11 @@ package ch.bfh.ti.soed.white.mhc_pms.ui;
 import ch.bfh.ti.soed.white.mhc_pms.controller.NavigationEvent;
 import ch.bfh.ti.soed.white.mhc_pms.controller.PmsComponentController;
 import ch.bfh.ti.soed.white.mhc_pms.controller.PmsComponentListener;
+import ch.bfh.ti.soed.white.mhc_pms.data.PCase;
 import ch.bfh.ti.soed.white.mhc_pms.data.PmsDataAccess;
 import ch.bfh.ti.soed.white.mhc_pms.data.PmsDataAccessCreator;
 import ch.bfh.ti.soed.white.mhc_pms.data.UnknownUserException;
+import ch.bfh.ti.soed.white.mhc_pms.data.enums.CaseStatus;
 import ch.bfh.ti.soed.white.mhc_pms.security.PmsPermission;
 import ch.bfh.ti.soed.white.mhc_pms.security.PmsPermission.Operation;
 
@@ -58,13 +60,12 @@ public class DiagnosisDetailComponent extends PmsComponentController implements
 		buildMainLayout();
 		setCompositionRoot(mainLayout);
 
-		this.addToggleDiagnosisViewButtonListener();
-		this.addNewDiagnosisButtonListener();
 		this.pCaseItemChange();
-
-		// Static elements
 		this.lblTitle.addStyleName(Reindeer.LABEL_H2);
 
+		this.addToggleDiagnosisViewButtonListener();
+		this.addNewDiagnosisButtonListener();
+		
 		// TODO closed cases: lock diag edit
 	}
 
@@ -99,21 +100,16 @@ public class DiagnosisDetailComponent extends PmsComponentController implements
 
 	@Override
 	public void enter(ViewChangeEvent event) {
-		try {
-			this.setPermissions();
-		} catch (UnknownUserException e) {
-			Notification.show(e.getInvalidUserMessage(),
-					Notification.Type.HUMANIZED_MESSAGE);
-		}
-
-		// TODO Auto-generated method stub
 	}
 
 	private void setPermissions() throws UnknownUserException {
 		Object itemId = PmsDataAccessCreator.getDataAccess().getPCaseContainer().getCurrentItemId();
+		PCase pCaseItem = PmsDataAccessCreator.getDataAccess().getPCaseContainer().getCurrentItem();
+		
+		boolean isOpen = pCaseItem == null || pCaseItem.getCaseStatus() != CaseStatus.CLOSED;
 		
 		this.btnNewDiagnosis.setEnabled(PmsDataAccessCreator.getDataAccess().getPermission()
-				.hasPermission(Operation.NEW_DIAGNOSIS) && itemId != null);
+				.hasPermission(Operation.NEW_DIAGNOSIS) && itemId != null && isOpen);
 
 		// TODO set Permissions in detail panel
 		// this.btnEditDiagnosis.setEnabled(permission
@@ -125,12 +121,12 @@ public class DiagnosisDetailComponent extends PmsComponentController implements
 	@Override
 	public void pCaseItemChange() {
 		try {
-			PmsDataAccessCreator.getDataAccess().getDiagnosisContainer().refresh();
+			this.setPermissions();
 		} catch (UnknownUserException e) {
 			Notification.show(e.getInvalidUserMessage(),
 					Notification.Type.HUMANIZED_MESSAGE);
 		}
-
+		
 		// TODO Auto-generated method stub
 	}
 

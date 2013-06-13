@@ -48,8 +48,6 @@ class MedicationComponent extends PmsComponentController implements
 	private Button btnNewMedication;
 	private static final long serialVersionUID = -4426948260684454466L;
 
-	private PmsDataAccess pmsDataAccess;
-
 	/**
 	 * The constructor should first build the main layout, set the composition
 	 * root and then do any custom initialization.
@@ -61,64 +59,45 @@ class MedicationComponent extends PmsComponentController implements
 		buildMainLayout();
 		setCompositionRoot(mainLayout);
 
-		try {
-			this.pmsDataAccess = PmsDataAccessCreator.getDataAccess();
-
-			// Static elements
-			this.lblView.addStyleName(Reindeer.LABEL_H2);
-			this.lblView.setValue("Medikamente");
-		} catch (UnknownUserException e) {
-			Notification.show(e.getInvalidUserMessage(),
-					Notification.Type.HUMANIZED_MESSAGE);
-		}
+		// Static elements
+		this.lblView.addStyleName(Reindeer.LABEL_H2);
+		this.lblView.setValue("Medikamente");
 	}
 
-	private void setPermissions(Object itemId) throws UnknownUserException {
-		Object pCaseItemId = PmsDataAccessCreator.getDataAccess().getPCaseContainer().getCurrentItemId();
-		Medication currentMed = this.pmsDataAccess.getMedicationContainer()
-				.getCurrentItem();
-		PCase currentPCase = null;
-
-		if (currentMed != null) {
-			currentPCase = currentMed.getpCase();
-		}
+	private void setPermissions() throws UnknownUserException {
+		Object pCaseItemId = PmsDataAccessCreator.getDataAccess()
+				.getPCaseContainer().getCurrentItemId();
+		PCase currentPCase = PmsDataAccessCreator.getDataAccess()
+				.getPCaseContainer().getCurrentItem();
+		Object itemId = PmsDataAccessCreator.getDataAccess().getMedicationContainer().getCurrentItemId();
+		
 		boolean isOpen = (currentPCase == null || currentPCase.getCaseStatus() != CaseStatus.CLOSED);
 
-		this.btnNewMedication.setEnabled(this.pmsDataAccess.getPermission()
-				.hasPermission(Operation.NEW_MEDICATION) && pCaseItemId != null);
-		this.btnEditMedication.setEnabled(this.pmsDataAccess.getPermission()
-				.hasPermission(Operation.EDIT_MEDICATION)
-				&& itemId != null
-				&& isOpen);
-		this.btnDeleteMedication.setEnabled(this.pmsDataAccess.getPermission()
+		this.btnNewMedication.setEnabled(PmsDataAccessCreator.getDataAccess()
+				.getPermission().hasPermission(Operation.NEW_MEDICATION)
+				&& pCaseItemId != null && isOpen);
+		this.btnEditMedication.setEnabled(PmsDataAccessCreator.getDataAccess()
+				.getPermission().hasPermission(Operation.EDIT_MEDICATION)
+				&& itemId != null && isOpen);
+		this.btnDeleteMedication.setEnabled(PmsDataAccessCreator
+				.getDataAccess().getPermission()
 				.hasPermission(Operation.DELETE_MEDICATION)
-				&& itemId != null
-				&& isOpen);
+				&& itemId != null && isOpen);
 	}
 
 	@Override
 	public void enter(ViewChangeEvent event) {
-		try {
-			this.pmsDataAccess = PmsDataAccessCreator.getDataAccess();
-			this.setPermissions(this.pmsDataAccess.getMedicationContainer()
-					.getCurrentItemId());
-		} catch (UnknownUserException e) {
-			Notification.show(e.getInvalidUserMessage(),
-					Notification.Type.HUMANIZED_MESSAGE);
-		}
-
-		// TODO Auto-generated method stub
-
 	}
 
 	@Override
 	public void pCaseItemChange() {
 		try {
-			this.pmsDataAccess = PmsDataAccessCreator.getDataAccess();
+			this.setPermissions();
 		} catch (UnknownUserException e) {
 			Notification.show(e.getInvalidUserMessage(),
 					Notification.Type.HUMANIZED_MESSAGE);
 		}
+
 		// TODO implement
 	}
 
