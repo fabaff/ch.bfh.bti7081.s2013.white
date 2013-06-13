@@ -107,9 +107,9 @@ public class EditCaseInfoComponent extends PmsComponentController implements
 		}
 
 		private void updatePCase() throws UnknownUserException, CommitException, CloneNotSupportedException {
+			EditCaseInfoComponent.this.fieldGroup.commit();
+			
 			if (EditCaseInfoComponent.this.isNewCase) {
-				EditCaseInfoComponent.this.fieldGroup.commit();
-
 				PCase newItem = (PCase) EditCaseInfoComponent.this.fieldGroup
 						.getItemDataSource().getBean().clone();
 				PCase currentPCaseItem = PmsDataAccessCreator.getDataAccess()
@@ -121,7 +121,6 @@ public class EditCaseInfoComponent extends PmsComponentController implements
 
 				PmsDataAccessCreator.getDataAccess().getPCaseContainer().addEntity(newItem);
 			} else {
-				EditCaseInfoComponent.this.fieldGroup.commit();
 				PmsDataAccessCreator.getDataAccess().getPCaseContainer().addEntity(EditCaseInfoComponent.
 						this.fieldGroup.getItemDataSource().getBean());
 			}

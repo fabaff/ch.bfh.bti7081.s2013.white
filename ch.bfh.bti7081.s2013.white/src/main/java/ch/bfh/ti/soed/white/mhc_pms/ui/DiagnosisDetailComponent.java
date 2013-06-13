@@ -65,8 +65,6 @@ public class DiagnosisDetailComponent extends PmsComponentController implements
 
 		this.addToggleDiagnosisViewButtonListener();
 		this.addNewDiagnosisButtonListener();
-		
-		// TODO closed cases: lock diag edit
 	}
 
 	private void addNewDiagnosisButtonListener() {
@@ -77,9 +75,9 @@ public class DiagnosisDetailComponent extends PmsComponentController implements
 			@Override
 			public void buttonClick(ClickEvent event) {
 				DiagnosisDetailComponent.this.fireUIActivationEvent(false);
+				DiagnosisDetailComponent.this.fireNewCaseEvent(true);
 				DiagnosisDetailComponent.this
 						.fireComponentChangeEvent(NavigationEvent.EDIT_DIAGNOSIS);
-				DiagnosisDetailComponent.this.fireNewCaseEvent(true);
 			}
 		});
 	}

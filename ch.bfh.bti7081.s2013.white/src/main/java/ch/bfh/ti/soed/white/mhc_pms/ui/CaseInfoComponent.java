@@ -128,9 +128,9 @@ class CaseInfoComponent extends PmsComponentController implements
 			@Override
 			public void buttonClick(ClickEvent event) {
 				CaseInfoComponent.this.fireUIActivationEvent(false);
+				CaseInfoComponent.this.fireNewCaseEvent(true);
 				CaseInfoComponent.this
 						.fireComponentChangeEvent(NavigationEvent.PCASE);
-				CaseInfoComponent.this.fireNewCaseEvent(true);
 			}
 		});
 	}

@@ -73,22 +73,13 @@ class DiagnosisTableComponent extends PmsComponentController implements
 		buildMainLayout();
 		setCompositionRoot(mainLayout);
 
-		try {
-			this.initDiagnosisTable();
-			this.pCaseItemChange();
-			this.lblView.addStyleName(Reindeer.LABEL_H2);
+		this.initialize();
 
-			this.addToggleDiagnosisViewButtonListener();
-			this.addNewDiagnosisButtonListener();
-			this.addEditDiagnosisButtonListener();
-			this.addDeleteDiagnosisButtonListener();
-			this.addValueChangeListener();
-		} catch (UnknownUserException e) {
-			Notification.show(e.getInvalidUserMessage(),
-					Notification.Type.HUMANIZED_MESSAGE);
-		}
-
-		// TODO closed cases: lock diag edit
+		this.addToggleDiagnosisViewButtonListener();
+		this.addNewDiagnosisButtonListener();
+		this.addEditDiagnosisButtonListener();
+		this.addDeleteDiagnosisButtonListener();
+		this.addValueChangeListener();
 	}
 
 	private void addValueChangeListener() {
@@ -99,18 +90,23 @@ class DiagnosisTableComponent extends PmsComponentController implements
 					@Override
 					public void valueChange(ValueChangeEvent event) {
 						if (event.getProperty().getValue() != null) {
-							// TODO update details view
-							// Object id =
-							// DiagnosisTableComponent.this.tblDiagnosis.getValue();
-							// PatientTableComponent.this.pmsContainers.getPCaseContainer().setCurrentItemId(id);
-							// PatientTableComponent.this.firePCaseItemChangeEvent();
-						}
-
-						try {
-							DiagnosisTableComponent.this.setPermissions();
-						} catch (UnknownUserException e) {
-							Notification.show(e.getInvalidUserMessage(),
-									Notification.Type.HUMANIZED_MESSAGE);
+							
+							try {
+								PmsDataAccessCreator
+										.getDataAccess()
+										.getDiagnosisContainer()
+										.setCurrentItemId(
+												event.getProperty().getValue());
+								
+								// TODO update details view
+								// Object id =
+								// DiagnosisTableComponent.this.tblDiagnosis.getValue();
+								// PatientTableComponent.this.pmsContainers.getPCaseContainer().setCurrentItemId(id);
+								// PatientTableComponent.this.firePCaseItemChangeEvent();
+							} catch (UnknownUserException e) {
+								Notification.show(e.getInvalidUserMessage(),
+										Notification.Type.HUMANIZED_MESSAGE);
+							}
 						}
 					}
 				});
@@ -142,9 +138,9 @@ class DiagnosisTableComponent extends PmsComponentController implements
 			@Override
 			public void buttonClick(ClickEvent event) {
 				DiagnosisTableComponent.this.fireUIActivationEvent(false);
+				DiagnosisTableComponent.this.fireNewCaseEvent(true);
 				DiagnosisTableComponent.this
 						.fireComponentChangeEvent(NavigationEvent.EDIT_DIAGNOSIS);
-				DiagnosisTableComponent.this.fireNewCaseEvent(true);
 			}
 		});
 	}
@@ -229,6 +225,8 @@ class DiagnosisTableComponent extends PmsComponentController implements
 	public void initialize() {
 		try {
 			this.initDiagnosisTable();
+			this.pCaseItemChange();
+			this.lblView.addStyleName(Reindeer.LABEL_H2);
 		} catch (UnknownUserException e) {
 			Notification.show(e.getInvalidUserMessage(),
 					Notification.Type.HUMANIZED_MESSAGE);

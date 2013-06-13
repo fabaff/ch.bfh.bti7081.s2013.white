@@ -122,6 +122,8 @@ class MainPanel extends Panel implements ComponentChangeListener {
 	private void addEditDiagnosisListeners() {
 		// TODO Auto-generated method stub
 		
+		this.editDiagnosisComp.addPmsComponentListener(this.diagnosisDetailComp);
+		this.editDiagnosisComp.addPmsComponentListener(this.diagnosisTableComp);
 		this.editDiagnosisComp.addUIActivationListener(this.menuBar);
 		this.editDiagnosisComp.addUIActivationListener(this.titleBar);
 		this.editDiagnosisComp.addComponentChangeListener(this);
@@ -237,6 +239,7 @@ class MainPanel extends Panel implements ComponentChangeListener {
 		this.menuBar.addPmsComponentListener(this.caseInfo);
 		this.menuBar.addPmsComponentListener(this.progressComp);
 		this.menuBar.addPmsComponentListener(this.diagnosisTableComp);
+		this.menuBar.addPmsComponentListener(this.diagnosisDetailComp);
 		this.menuBar.addPmsComponentListener(this.medComp);
 	}
 

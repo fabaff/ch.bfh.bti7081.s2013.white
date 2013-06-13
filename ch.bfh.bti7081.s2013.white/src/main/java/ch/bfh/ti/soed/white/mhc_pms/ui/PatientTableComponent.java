@@ -111,9 +111,9 @@ class PatientTableComponent extends PmsComponentController implements
 			@Override
 			public void buttonClick(ClickEvent event) {
 				PatientTableComponent.this.fireUIActivationEvent(false);
+				PatientTableComponent.this.fireNewCaseEvent(true);
 				PatientTableComponent.this
 						.fireComponentChangeEvent(NavigationEvent.PCASE);
-				PatientTableComponent.this.fireNewCaseEvent(true);
 			}
 		});
 	}
