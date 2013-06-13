@@ -129,11 +129,11 @@ public class DiagnosisDetailComponent extends PmsComponentController implements
 		mainLayout.setImmediate(false);
 		mainLayout.setWidth("100%");
 		mainLayout.setHeight("100%");
-
+		
 		// top-level component properties
 		setWidth("100.0%");
 		setHeight("100.0%");
-
+		
 		// lblTitle
 		lblTitle = new Label();
 		lblTitle.setImmediate(false);
@@ -141,7 +141,7 @@ public class DiagnosisDetailComponent extends PmsComponentController implements
 		lblTitle.setHeight("-1px");
 		lblTitle.setValue("Details Diagnosen");
 		mainLayout.addComponent(lblTitle, "top:20.0px;left:20.0px;");
-
+		
 		// btnToggleDiagnosisView
 		btnToggleDiagnosisView = new Button();
 		btnToggleDiagnosisView.setCaption("Tabellenansicht");
@@ -150,7 +150,7 @@ public class DiagnosisDetailComponent extends PmsComponentController implements
 		btnToggleDiagnosisView.setHeight("-1px");
 		mainLayout.addComponent(btnToggleDiagnosisView,
 				"top:20.0px;left:240.0px;");
-
+		
 		// btnNewDiagnosis
 		btnNewDiagnosis = new Button();
 		btnNewDiagnosis.setCaption("Neue Diagnose");
@@ -158,12 +158,12 @@ public class DiagnosisDetailComponent extends PmsComponentController implements
 		btnNewDiagnosis.setWidth("120px");
 		btnNewDiagnosis.setHeight("-1px");
 		mainLayout.addComponent(btnNewDiagnosis, "top:20.0px;left:380.0px;");
-
+		
 		// panel_3
 		panel_3 = buildPanel_3();
 		mainLayout.addComponent(panel_3,
-				"top:80.0px;right:24.0px;bottom:90.0px;left:20.0px;");
-
+				"top:80.0px;right:778.0px;bottom:90.0px;left:20.0px;");
+		
 		return mainLayout;
 	}
 
@@ -174,7 +174,7 @@ public class DiagnosisDetailComponent extends PmsComponentController implements
 		panel_3.setImmediate(false);
 		panel_3.setWidth("100.0%");
 		panel_3.setHeight("100.0%");
-
+		
 		// verticalLayout_3
 		verticalLayout_3 = new VerticalLayout();
 		verticalLayout_3.setImmediate(false);
@@ -182,7 +182,7 @@ public class DiagnosisDetailComponent extends PmsComponentController implements
 		verticalLayout_3.setHeight("-1px");
 		verticalLayout_3.setMargin(false);
 		panel_3.setContent(verticalLayout_3);
-
+		
 		return panel_3;
 	}
 }
