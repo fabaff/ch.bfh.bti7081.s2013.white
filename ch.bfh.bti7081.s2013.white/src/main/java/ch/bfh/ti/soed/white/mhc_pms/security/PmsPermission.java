@@ -88,7 +88,7 @@ public class PmsPermission {
 
 	private static Set<PermissionKey> permissionsSet = new HashSet<PermissionKey>();
 
-	// Initialisation of all allowed operations for a specific user group
+	// Initialization of all allowed operations for a specific user group
 	static {
 		permissionsSet.add(new PermissionKey(UserGroup.PSYCHIATRIST,
 				Operation.NEW_MEDICATION));
