@@ -113,12 +113,8 @@ class MainPanel extends Panel implements ComponentChangeListener {
 	}
 
 	private void addEditDiagnosisListeners() {
-<<<<<<< HEAD
 		this.editDiagnosisComp.addPmsComponentListener(this.diagnosisDetailComp);
 		this.editDiagnosisComp.addPmsComponentListener(this.diagnosisTableComp);
-
-=======
->>>>>>> refs/remotes/origin/master
 		this.editDiagnosisComp.addUIActivationListener(this.menuBar);
 		this.editDiagnosisComp.addUIActivationListener(this.titleBar);
 		this.editDiagnosisComp.addComponentChangeListener(this);

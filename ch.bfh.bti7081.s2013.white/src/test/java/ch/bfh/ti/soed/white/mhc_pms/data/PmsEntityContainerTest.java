@@ -2,6 +2,8 @@ package ch.bfh.ti.soed.white.mhc_pms.data;
 
 //import static org.junit.Assert.*;
 
+import static org.junit.Assert.*;
+
 import java.util.Collection;
 
 import org.junit.After;
@@ -10,20 +12,18 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-<<<<<<< HEAD
 import ch.bfh.ti.soed.white.mhc_pms.data.enums.CaseStatus;
 import ch.bfh.ti.soed.white.mhc_pms.data.enums.Gender;
 import ch.bfh.ti.soed.white.mhc_pms.data.enums.UserGroup;
 import ch.bfh.ti.soed.white.mhc_pms.util.DummyDataCreator;
 import ch.bfh.ti.soed.white.mhc_pms.util.Hash;
-=======
+
 /**
  * This class tests the entity container.
  * 
  * @author Group White, I2p, BFH Berne, <a href="https://github.com/fabaff/ch.bfh.bti7081.s2013.white">Contact</a>
  * @version 1.0.0
  */
->>>>>>> refs/remotes/origin/master
 
 public class PmsEntityContainerTest {
 
@@ -180,5 +180,4 @@ public class PmsEntityContainerTest {
 		dataAccess.getDiagnosisContainer().resetCurrentPCaseFilter();
 		assertEquals(2, dataAccess.getDiagnosisContainer().size());
 	}
-
 }
