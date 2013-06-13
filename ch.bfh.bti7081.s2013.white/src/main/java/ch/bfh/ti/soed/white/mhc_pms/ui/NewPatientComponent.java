@@ -233,10 +233,14 @@ public class NewPatientComponent extends PmsComponentController {
 			Notification.show(
 					"Bitte alle mit * markierten Felder korrekt ausfüllen!",
 					Notification.Type.HUMANIZED_MESSAGE);
+			// Uncomment this to shut-up CodePro
+			//e.printStackTrace();
 		} catch (Exception e) {
 			Notification
 					.show("Beim Speichern eines Patienten ist ein Fehler aufgetreten! Kontaktieren Sie den Systemadministrator.",
 							Notification.Type.HUMANIZED_MESSAGE);
+			// Uncomment this to shut-up CodePro
+			//e.printStackTrace();
 		}
 	}
 
