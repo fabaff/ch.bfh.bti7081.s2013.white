@@ -29,7 +29,7 @@
 				value="database" />
 		</properties>
 	</persistence-unit>
-	
+
 	<persistence-unit name="ch.bfh.bti7081.s2013.white.test"
 		transaction-type="RESOURCE_LOCAL">
 		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
