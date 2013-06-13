@@ -13,14 +13,10 @@ import ch.bfh.ti.soed.white.mhc_pms.data.enums.UserGroup;
 /**
  * This utility class creates dummy data for simpler database handling.
  * 
- * @author Group White, I2p, BFH Berne, <a
- *         href="https://github.com/fabaff/ch.bfh.bti7081.s2013.white"
- *         >Contact</a>
- * @version 1.0.0
- * 
+ * @author Group White, I2p, BFH Berne, <a href="https://github.com/fabaff/ch.bfh.bti7081.s2013.white">Contact</a>
+ * @version 1.0.0 
  */
 public final class DummyDataCreator {
-
 	/**
 	 * This static method creates dummy users.
 	 */

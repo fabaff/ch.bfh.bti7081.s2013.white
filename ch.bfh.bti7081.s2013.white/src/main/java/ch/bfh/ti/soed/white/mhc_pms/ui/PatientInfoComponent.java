@@ -27,12 +27,8 @@ import com.vaadin.ui.themes.Reindeer;
 /**
  * UI Class for patient information
  * 
- * @author Group White, I2p, BFH Berne, <a
- *         href="https://github.com/fabaff/ch.bfh.bti7081.s2013.white"
- *         >Contact</a>
+ * @author Group White, I2p, BFH Berne, <a ref="https://github.com/fabaff/ch.bfh.bti7081.s2013.white">Contact</a>
  * @version 1.0.0
- * 
- * 
  */
 class PatientInfoComponent extends PmsComponentController implements
 		PmsComponentListener {

@@ -23,12 +23,10 @@ import com.vaadin.ui.TextField;
 import com.vaadin.ui.Window;
 
 /**
+ * UI class for editing diagnosis
  * 
- * @author Group White, I2p, BFH Berne, <a
- *         href="https://github.com/fabaff/ch.bfh.bti7081.s2013.white"
- *         >Contact</a>
+ * @author Group White, I2p, BFH Berne, <a href="https://github.com/fabaff/ch.bfh.bti7081.s2013.white">Contact</a>
  * @version 1.0.0
- * 
  */
 public class EditDiagnosisComponent extends PmsComponentController implements
 		NewItemListener {
@@ -91,6 +89,7 @@ public class EditDiagnosisComponent extends PmsComponentController implements
 
 	private static final long serialVersionUID = 1756507024961174367L;
 
+	// Static UI elements
 	private String TITLE_NEW_DIAGNOSIS = "Neue Diagnose";
 	private String TITLE_EDIT_DIAGNOSIS = "Diagnose bearbeiten";
 

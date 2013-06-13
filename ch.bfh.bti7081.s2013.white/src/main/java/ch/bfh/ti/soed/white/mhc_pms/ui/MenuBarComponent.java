@@ -22,12 +22,8 @@ import com.vaadin.ui.themes.Reindeer;
 /**
  * UI Class for sidebar
  * 
- * @author Group White, I2p, BFH Berne, <a
- *         href="https://github.com/fabaff/ch.bfh.bti7081.s2013.white"
- *         >Contact</a>
+ * @author Group White, I2p, BFH Berne, <a href="https://github.com/fabaff/ch.bfh.bti7081.s2013.white">Contact</a>
  * @version 1.0.0
- * 
- * 
  */
 class MenuBarComponent extends PmsComponentController implements
 		UIActivationListener {
@@ -58,7 +54,12 @@ class MenuBarComponent extends PmsComponentController implements
 
 	// Sidebar buttons
 	enum ButtonEnum {
-		HOME, PATIENT_INFO, CASE_INFO, PATIENT_PROGRESS, DIAGNOSIS, MEDICATION
+		HOME,
+		PATIENT_INFO,
+		CASE_INFO,
+		PATIENT_PROGRESS,
+		DIAGNOSIS,
+		MEDICATION
 	}
 
 	private static final long serialVersionUID = 2747224025250099607L;
@@ -75,10 +76,7 @@ class MenuBarComponent extends PmsComponentController implements
 	public MenuBarComponent(final Navigator navigator) {
 		buildMainLayout();
 		setCompositionRoot(mainLayout);
-
-		// TODO Add full theme support
-		// https://vaadin.com/book/-/page/themes.html
-		// https://vaadin.com/wiki/-/wiki/Main/Vaadin+Theme+Tips+and+Tricks
+		
 		this.lblTitle.addStyleName(Reindeer.LABEL_H1);
 		this.lblTitle.setValue("MHC PMS");
 		this.lblDate.addStyleName(Reindeer.LABEL_H2);

@@ -30,12 +30,8 @@ import com.vaadin.ui.themes.Reindeer;
 /**
  * UI Class for a new patient
  * 
- * @author Group White, I2p, BFH Berne, <a
- *         href="https://github.com/fabaff/ch.bfh.bti7081.s2013.white"
- *         >Contact</a>
+ * @author Group White, I2p, BFH Berne, <a href="https://github.com/fabaff/ch.bfh.bti7081.s2013.white">Contact</a>
  * @version 1.0.0
- * 
- * 
  */
 public class NewPatientComponent extends PmsComponentController {
 
@@ -153,13 +149,15 @@ public class NewPatientComponent extends PmsComponentController {
 		this.fieldGroup = new BeanFieldGroup<PCase>(PCase.class);
 
 		this.initComboBoxes();
+		
+		// Static UI elements
 		this.lblView.addStyleName(Reindeer.LABEL_H2);
 		this.lblView.setValue("Neuer Patient");
 
 		this.addNewPatientButtonListener();
 		this.addCancelPatientButtonListener();
 
-		// TODO validation of input values
+		// TODO validation of input values, SQL injections!
 		this.dateFieldDateOfBirth.setRequiredError("Kein gültiges Datum!");
 		// this.txtFirstName.setRequiredError("Kein gültiger Vorname!");
 

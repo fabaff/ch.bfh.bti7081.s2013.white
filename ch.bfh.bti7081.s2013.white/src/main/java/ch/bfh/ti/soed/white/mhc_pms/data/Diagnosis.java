@@ -10,12 +10,8 @@ import javax.validation.constraints.NotNull;
  * Entity implementation class for Entity: Diagnosis
  * Each diagnosis has exactly one associated patient case entity.
  * 
- * @author Group White, I2p, BFH Berne, <a
- *         href="https://github.com/fabaff/ch.bfh.bti7081.s2013.white"
- *         >Contact</a>
+ * @author Group White, I2p, BFH Berne, <a href="https://github.com/fabaff/ch.bfh.bti7081.s2013.white">Contact</a>
  * @version 1.0.0
- * 
- * 
  */
 @Entity
 @Table(name="Diagnosis")
@@ -86,7 +82,6 @@ public class Diagnosis implements Serializable {
 	}
 
 	/**
-	 * 
 	 * @return diagnosisName
 	 */
 	public String getDiagnosisName() {
@@ -94,7 +89,6 @@ public class Diagnosis implements Serializable {
 	}
 
 	/**
-	 * 
 	 * @param diagnosisName
 	 */
 	public void setDiagnosisName(String diagnosisName) {
@@ -102,7 +96,6 @@ public class Diagnosis implements Serializable {
 	}   
 	
 	/**
-	 * 
 	 * @return did
 	 */
 	public int getDid() {
@@ -110,7 +103,6 @@ public class Diagnosis implements Serializable {
 	}
 
 	/**
-	 * 
 	 * @param did
 	 */
 	public void setDid(int did) {
@@ -118,7 +110,6 @@ public class Diagnosis implements Serializable {
 	}   
 	
 	/**
-	 * 
 	 * @return icdCode
 	 */
 	public String getIcdCode() {
@@ -126,7 +117,6 @@ public class Diagnosis implements Serializable {
 	}
 
 	/**
-	 * 
 	 * @param icdCode
 	 */
 	public void setIcdCode(String icdCode) {
@@ -134,7 +124,6 @@ public class Diagnosis implements Serializable {
 	}   
 
 	/**
-	 * 
 	 * @return diagnosisComment
 	 */
 	public String getDiagnosisComment() {
@@ -142,7 +131,6 @@ public class Diagnosis implements Serializable {
 	}
 
 	/**
-	 * 
 	 * @param diagnosisComment
 	 */
 	public void setDiagnosisComment(String diagnosisComment) {
@@ -150,7 +138,6 @@ public class Diagnosis implements Serializable {
 	}  
 	
 	/**
-	 * 
 	 * @return dateOfCreation
 	 */
 	public Date getDateOfCreation() {
@@ -158,7 +145,6 @@ public class Diagnosis implements Serializable {
 	}
 
 	/**
-	 * 
 	 * @param dateOfCreation
 	 */
 	public void setDateOfCreation(Date dateOfCreation) {
@@ -166,7 +152,6 @@ public class Diagnosis implements Serializable {
 	}  
 	
 	/**
-	 * 
 	 * @return diagnosisCreator
 	 */
 	public String getDiagnosisCreator() {
@@ -174,7 +159,6 @@ public class Diagnosis implements Serializable {
 	}
 
 	/**
-	 * 
 	 * @param diagnosisCreator
 	 */
 	public void setDiagnosisCreator(String diagnosisCreator) {
@@ -182,7 +166,6 @@ public class Diagnosis implements Serializable {
 	}   
 	
 	/**
-	 * 
 	 * @return clinicName
 	 */
 	public String getClinicName() {
@@ -190,7 +173,6 @@ public class Diagnosis implements Serializable {
 	}
 
 	/**
-	 * 
 	 * @param clinicName
 	 */
 	public void setClinicName(String clinicName) {
@@ -210,5 +192,4 @@ public class Diagnosis implements Serializable {
 	public void setDeleted(boolean isDeleted) {
 		this.isDeleted = isDeleted;
 	}
-   
 }

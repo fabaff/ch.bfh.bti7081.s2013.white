@@ -3,14 +3,11 @@ package ch.bfh.ti.soed.white.mhc_pms.util;
 import java.text.DateFormat;
 import java.util.Date;
 
-/**
+/** 
  * Utility class: Converting and formatting helper for various elements.
  * 
- * @author Group White, I2p, BFH Berne, <a
- *         href="https://github.com/fabaff/ch.bfh.bti7081.s2013.white"
- *         >Contact</a>
- * @version 1.0.0
- * 
+ * @author Group White, I2p, BFH Berne, <a href="https://github.com/fabaff/ch.bfh.bti7081.s2013.white">Contact</a>
+ * @version 1.0.0 
  */
 public final class ValueConverter {
 

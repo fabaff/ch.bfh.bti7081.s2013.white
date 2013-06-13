@@ -13,26 +13,20 @@ import com.vaadin.addon.jpacontainer.provider.CachingBatchableLocalEntityProvide
  * can be manipulated and fetched through this container. It is a subclass of
  * the vaadin JPA container class.
  * 
- * @author Group White, I2p, BFH Berne, <a
- *         href="https://github.com/fabaff/ch.bfh.bti7081.s2013.white"
- *         >Contact</a>
+ * @author Group White, I2p, BFH Berne, <a href="https://github.com/fabaff/ch.bfh.bti7081.s2013.white">Contact</a>
  * @version 1.0.0
- * 
  */
 public class PmsContainer<E> extends JPAContainer<E> {
 
 	private static final long serialVersionUID = -287883752877854160L;
-	
 	private static Object CASE_FILTER_PROPERTY_ID = "caseStatus";
-
 	private Object currentItemId;
-	
 	private Filter caseFilter;
 
 	/**
+	 * PmsContainer
 	 * 
-	 * @param clazz
-	 *            entity class object
+	 * @param clazz entity class object
 	 */
 	public PmsContainer(Class<E> clazz) {
 		super(clazz);
@@ -116,7 +110,6 @@ public class PmsContainer<E> extends JPAContainer<E> {
 	 * Adds a new item to this container. The current item id is set to the added item id.
 	 * 
 	 * @param item the item that will be added to this container
-	 * 
 	 * @return the item id of the added item
 	 */
 	@Override
@@ -127,7 +120,6 @@ public class PmsContainer<E> extends JPAContainer<E> {
 	}
 
 	/**
-	 * 
 	 * Returns the current item of this container or null if this container is empty.
 	 * 
 	 * @return the current item of this container or null if this container is empty
@@ -148,5 +140,4 @@ public class PmsContainer<E> extends JPAContainer<E> {
 			this.addContainerFilter(this.caseFilter);
 		}
 	}
-	
 }

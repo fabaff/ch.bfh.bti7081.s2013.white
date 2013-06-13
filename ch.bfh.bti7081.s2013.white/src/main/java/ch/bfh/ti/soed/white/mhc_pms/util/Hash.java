@@ -1,20 +1,16 @@
 package ch.bfh.ti.soed.white.mhc_pms.util;
 
 /**
+ * Class for hashing the user's password into MD5.
  * 
- * @author Group White, I2p, BFH Berne, <a
- *         href="https://github.com/fabaff/ch.bfh.bti7081.s2013.white"
- *         >Contact</a>
- * @version 1.0.0
- * 
+ * @author Group White, I2p, BFH Berne, <a href="https://github.com/fabaff/ch.bfh.bti7081.s2013.white">Contact</a>
+ * @version 1.0.0 
  */
 public class Hash {
-	
 	/**
 	 * Hash function for strings
 	 * 
-	 * @param String
-	 *            A string which has to be hashed.
+	 * @param String A string which has to be hashed.
 	 * @return The hashed string.
 	 */
 	public static String MD5(String md5) {

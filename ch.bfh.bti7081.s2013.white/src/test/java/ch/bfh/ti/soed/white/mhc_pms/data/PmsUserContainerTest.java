@@ -15,19 +15,15 @@ import ch.bfh.ti.soed.white.mhc_pms.util.DummyDataCreator;
 import ch.bfh.ti.soed.white.mhc_pms.util.Hash;
 
 /**
+ * This class tests the user container
  * 
- * @author Group White, I2p, BFH Berne, <a
- *         href="https://github.com/fabaff/ch.bfh.bti7081.s2013.white"
- *         >Contact</a>
+ * @author Group White, I2p, BFH Berne, <a href="https://github.com/fabaff/ch.bfh.bti7081.s2013.white">Contact</a>
  * @version 1.0.0
- *
  */
 public class PmsUserContainerTest {
 
 	private static final int USER_CONTAINER_SIZE = 6;
-	
 	private static PmsDataAccess dataAccess;
-	
 	private static PmsUser user;
 
 	@BeforeClass
@@ -144,5 +140,4 @@ public class PmsUserContainerTest {
 		assertTrue(dataAccess.getPmsUserContainer().checkLogin(PmsDataAccessCreator.DUMMY_USER, Hash.MD5((PmsDataAccessCreator.DUMMY_PASSWORD))));
 		assertTrue(dataAccess.getPmsUserContainer().checkLogin("drMeier", Hash.MD5(("meier10"))));
 	}
-
 }

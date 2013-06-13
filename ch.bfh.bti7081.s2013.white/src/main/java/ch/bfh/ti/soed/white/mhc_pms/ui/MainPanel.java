@@ -14,12 +14,8 @@ import com.vaadin.ui.themes.Reindeer;
 /**
  * The main panel of the GUI.
  * 
- * @author Group White, I2p, BFH Berne, <a
- *         href="https://github.com/fabaff/ch.bfh.bti7081.s2013.white"
- *         >Contact</a>
+ * @author Group White, I2p, BFH Berne, <a href="https://github.com/fabaff/ch.bfh.bti7081.s2013.white">Contact</a>
  * @version 1.0.0
- * 
- * 
  */
 class MainPanel extends Panel implements ComponentChangeListener {
 
@@ -50,6 +46,7 @@ class MainPanel extends Panel implements ComponentChangeListener {
 	 * +----+-------------------------+
 	 */
 
+	// UI elements
 	private LoginComponent loginComponent = new LoginComponent();
 	private HorizontalSplitPanel horizontalPanel = new HorizontalSplitPanel();
 	private VerticalSplitPanel verticalPanel = new VerticalSplitPanel();
@@ -105,31 +102,23 @@ class MainPanel extends Panel implements ComponentChangeListener {
 	}
 
 	private void addTitleBarListeners() {
-		// TODO Auto-generated method stub
-		
 		this.titleBar.addComponentChangeListener(this);
 		this.titleBar.addPmsComponentListener(this.patientTable);
 	}
 
 	private void addLoginComponentListeners() {
-		// TODO Auto-generated method stub
-		
 		this.loginComponent.addComponentChangeListener(this);
 		this.loginComponent.addInitListener(this.patientTable);
 		this.loginComponent.addInitListener(this.diagnosisTableComp);
 	}
 
 	private void addEditDiagnosisListeners() {
-		// TODO Auto-generated method stub
-		
 		this.editDiagnosisComp.addUIActivationListener(this.menuBar);
 		this.editDiagnosisComp.addUIActivationListener(this.titleBar);
 		this.editDiagnosisComp.addComponentChangeListener(this);
 	}
 
 	private void addDiagnosisDetailListeners() {
-		// TODO Auto-generated method stub
-		
 		this.diagnosisDetailComp.addUIActivationListener(this.menuBar);
 		this.diagnosisDetailComp.addUIActivationListener(this.titleBar);
 		this.diagnosisDetailComp.addComponentChangeListener(this);
@@ -137,8 +126,6 @@ class MainPanel extends Panel implements ComponentChangeListener {
 	}
 
 	private void addDiagnosisTableListeners() {
-		// TODO Auto-generated method stub
-		
 		this.diagnosisTableComp.addUIActivationListener(this.menuBar);
 		this.diagnosisTableComp.addUIActivationListener(this.titleBar);
 		this.diagnosisTableComp.addComponentChangeListener(this);

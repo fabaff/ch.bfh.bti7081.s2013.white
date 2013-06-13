@@ -6,9 +6,7 @@ import com.vaadin.addon.jpacontainer.filter.Filters;
  * A container class for direct sub entities of the PCase entity. This class
  * provides a filter for a given PCase item id.
  * 
- * @author Group White, I2p, BFH Berne, <a
- *         href="https://github.com/fabaff/ch.bfh.bti7081.s2013.white"
- *         >Contact</a>
+ * @author Group White, I2p, BFH Berne, <a href="https://github.com/fabaff/ch.bfh.bti7081.s2013.white">Contact</a>
  * @version 1.0.0
  * 
  * @param <E>
@@ -22,7 +20,6 @@ public class PmsEntityContainer<E> extends PmsContainer<E> {
 	private Filter currentFilter;
 
 	/**
-	 * 
 	 * @param clazz entity class object
 	 */
 	public PmsEntityContainer(Class<E> clazz) {
@@ -53,5 +50,4 @@ public class PmsEntityContainer<E> extends PmsContainer<E> {
 			this.addContainerFilter(this.currentFilter);
 		}
 	}
-
 }

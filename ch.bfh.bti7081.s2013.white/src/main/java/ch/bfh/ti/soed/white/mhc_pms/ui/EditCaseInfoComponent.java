@@ -33,12 +33,8 @@ import com.vaadin.ui.themes.Reindeer;
 /**
  * UI Class for a editing case details
  * 
- * @author Group White, I2p, BFH Berne, <a
- *         href="https://github.com/fabaff/ch.bfh.bti7081.s2013.white"
- *         >Contact</a>
+ * @author Group White, I2p, BFH Berne, <a href="https://github.com/fabaff/ch.bfh.bti7081.s2013.white">Contact</a>
  * @version 1.0.0
- * 
- * 
  */
 public class EditCaseInfoComponent extends PmsComponentController implements
 		NewItemListener {
@@ -143,9 +139,9 @@ public class EditCaseInfoComponent extends PmsComponentController implements
 
 	private static final long serialVersionUID = 7804702033977054145L;
 
+	// Static UI elements
 	private String TITLE_NEW_CASE = "Neuer Fall eröffnen";
 	private String TITLE_EDIT_CASE = "Fall bearbeiten";
-
 	private String NEW_CASE_MESSAGE = "Neuer Fall hinzugefügt";
 	private String EDIT_CASE_MESSAGE = "Fall gespeichert";
 
@@ -173,7 +169,7 @@ public class EditCaseInfoComponent extends PmsComponentController implements
 		this.btnSave.addClickListener(new SaveButtonListener());
 		this.addBtnCancelListener();
 
-		// TODO input validation
+		// TODO input validation, SQL injections!
 	}
 
 	private void addBtnCancelListener() {

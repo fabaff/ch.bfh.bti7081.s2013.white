@@ -26,13 +26,9 @@ import com.vaadin.ui.themes.Reindeer;
 
 /**
  * UI Class for layout header
- * 
- * @author Group White, I2p, BFH Berne, <a
- *         href="https://github.com/fabaff/ch.bfh.bti7081.s2013.white"
- *         >Contact</a>
+ *  
+ * @author Group White, I2p, BFH Berne, <a href="https://github.com/fabaff/ch.bfh.bti7081.s2013.white">Contact</a>
  * @version 1.0.0
- * 
- * 
  */
 class TitleBarComponent extends PmsComponentController implements
 		PmsComponentListener, UIActivationListener {
@@ -73,6 +69,8 @@ class TitleBarComponent extends PmsComponentController implements
 		this.initFilterCombo();
 		this.pCaseItemChange();
 		this.cmbFilter.setImmediate(true);
+		
+		// Add style to UI elements
 		this.lblUser.addStyleName(Reindeer.LABEL_SMALL);
 		this.lblFullName.addStyleName(Reindeer.LABEL_H1);
 
@@ -144,6 +142,9 @@ class TitleBarComponent extends PmsComponentController implements
 						.getLoginUser());
 			}
 
+			// Those are fields besides the name are in the lower area
+			// of the title bar, check the layout before adding a new one.
+			// The space is limited!
 			this.lblFullName.setValue(item.getFirstName() + " "
 					+ item.getLastName());
 			this.lblDateOfBirth.setValue(ValueConverter.convertDate(item

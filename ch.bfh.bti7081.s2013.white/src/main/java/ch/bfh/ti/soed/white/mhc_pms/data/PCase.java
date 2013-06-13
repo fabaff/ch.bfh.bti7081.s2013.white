@@ -22,12 +22,8 @@ import ch.bfh.ti.soed.white.mhc_pms.data.enums.CivilStatus;
  * Each patient case has exactly one associated user entity.
  * Each patient case can have zero to n associated diagnosis or medications or patient progress entities.
  * 
- * @author Group White, I2p, BFH Berne, <a
- *         href="https://github.com/fabaff/ch.bfh.bti7081.s2013.white"
- *         >Contact</a>
+ * @author Group White, I2p, BFH Berne, <a href="https://github.com/fabaff/ch.bfh.bti7081.s2013.white">Contact</a>
  * @version 1.0.0
- * 
- * 
  */
 @Entity
 @Table(name = "PCase")
@@ -902,5 +898,4 @@ public class PCase implements Serializable {
 	public void setNextOfKinHomeLocation(String nextOfKinHomeLocation) {
 		this.nextOfKinHomeLocation = nextOfKinHomeLocation;
 	}
-
 }

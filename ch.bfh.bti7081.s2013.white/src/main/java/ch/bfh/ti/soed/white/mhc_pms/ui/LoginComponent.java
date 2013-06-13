@@ -22,10 +22,10 @@ import com.vaadin.ui.VerticalLayout;
 import com.vaadin.ui.themes.Reindeer;
 
 /**
+ * UI Class for login process.
+ * 
  * @author Group White, I2p, BFH Berne, <a href="https://github.com/fabaff/ch.bfh.bti7081.s2013.white">Contact</a>
  * @version 1.0.0
- * 
- * UI Class for login process.
  */
 public class LoginComponent extends PmsComponentController {
 
