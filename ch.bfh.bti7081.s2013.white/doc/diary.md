@@ -9,6 +9,7 @@
 - Code clean-up
 - Docs update
 - Bug fixing
+- Removed all remote branches from github
 
 ## 2013-06-11
 - Login reworked
