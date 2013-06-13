@@ -99,7 +99,7 @@ class CaseInfoComponent extends PmsComponentController implements
 
 		this.pCaseItemChange();
 		this.lblView.addStyleName(Reindeer.LABEL_H2);
-		this.lblView.setValue("Fallinformation");
+		this.lblView.setValue("Fall-Information");
 
 		this.addNewCaseListener();
 		this.addEditCaseListener();
