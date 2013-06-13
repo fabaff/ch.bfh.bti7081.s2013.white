@@ -19,18 +19,13 @@ import com.vaadin.ui.Panel;
 import com.vaadin.ui.PasswordField;
 import com.vaadin.ui.TextField;
 import com.vaadin.ui.VerticalLayout;
-import com.vaadin.ui.Window;
 import com.vaadin.ui.themes.Reindeer;
 
 /**
- * UI Class for login process.
- * 
- * @author Group White, I2p, BFH Berne, <a
- *         href="https://github.com/fabaff/ch.bfh.bti7081.s2013.white"
- *         >Contact</a>
+ * @author Group White, I2p, BFH Berne, <a href="https://github.com/fabaff/ch.bfh.bti7081.s2013.white">Contact</a>
  * @version 1.0.0
  * 
- * 
+ * UI Class for login process.
  */
 public class LoginComponent extends PmsComponentController {
 
@@ -86,6 +81,11 @@ public class LoginComponent extends PmsComponentController {
 		});
 	}
 
+	
+	/**
+	 * Move to the main panel if login is OK and gives feedback to
+	 * the user with notifications.
+	 */
 	private void startLogin() {
 		try {
 			String userName = this.login();
@@ -107,12 +107,21 @@ public class LoginComponent extends PmsComponentController {
 		}
 	}
 
+	/**
+	 * GUI and database interaction. Get values from the input field, 
+	 * hash the password, check the database entries for valid information, 
+	 * and 
+	 * 
+	 * @return the loginOK boolean
+	 */
 	private String login() throws UnknownUserException {
 		String userName = txtUser.getValue().toUpperCase();
 		String password = Hash.MD5(txtPassword.getValue());
 		boolean loginOK = PmsDataAccessCreator.getDataAccess()
 				.getPmsUserContainer().checkLogin(userName, password);
-
+		// For DEBUG purposes only
+		//boolean loginOK = PmsDataAccessCreator.getDataAccess()
+		//		.getPmsUserContainer().checkLogin("hans.muster", "MD5 hash of the password");	
 		// Return user name (login OK) or an empty string (login failed)
 		return loginOK ? userName : "";
 	}
