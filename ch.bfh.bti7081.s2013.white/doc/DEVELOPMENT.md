@@ -93,3 +93,5 @@ Server.
 The documentation is placed in the **javadoc** folder. Please make sure that
 this folder is exclude in your `.gitignore` during the development phase. The
 docs are commit close to the end.
+
+All vaadin elements stay in the source without any comment or javadoc entry.
