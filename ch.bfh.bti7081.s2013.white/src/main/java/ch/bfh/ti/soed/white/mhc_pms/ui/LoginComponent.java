@@ -137,6 +137,7 @@ public class LoginComponent extends PmsComponentController {
 	public void enter(ViewChangeEvent event) {
 		if (event.getOldView() != null) {
 			try {
+				this.getUI().getSession().close();
 				Notification.show(PmsDataAccessCreator.getDataAccess()
 						.getLoginUser().getUserName()
 						+ " wurde abgemeldet!",
