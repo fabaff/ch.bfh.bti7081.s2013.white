@@ -2,6 +2,18 @@
 
 (all entries in backwards chronological order)
 
+## 2013-06-14
+- Final presentation
+
+## 2013-06-13
+- Code clean-up
+- Docs update
+- Bug fixing
+
+## 2013-06-11
+- Login reworked
+- Prep for final presentation
+
 ## 2013-06-04
 - Task 14 added
 
