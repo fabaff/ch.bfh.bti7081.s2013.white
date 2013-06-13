@@ -216,7 +216,7 @@ public class DiagnosisDetailComponent extends PmsComponentController implements
 		// common part: create layout
 		verticalLayout_3 = new VerticalLayout();
 		verticalLayout_3.setImmediate(false);
-		verticalLayout_3.setWidth("-1px");
+		verticalLayout_3.setWidth("100.0%");
 		verticalLayout_3.setHeight("-1px");
 		verticalLayout_3.setMargin(false);
 		
@@ -232,7 +232,7 @@ public class DiagnosisDetailComponent extends PmsComponentController implements
 		// common part: create layout
 		gridLayout_1 = new GridLayout();
 		gridLayout_1.setImmediate(false);
-		gridLayout_1.setWidth("-1px");
+		gridLayout_1.setWidth("100.0%");
 		gridLayout_1.setHeight("-1px");
 		gridLayout_1.setMargin(false);
 		gridLayout_1.setSpacing(true);
@@ -249,7 +249,7 @@ public class DiagnosisDetailComponent extends PmsComponentController implements
 		// common part: create layout
 		panDetails = new Panel();
 		panDetails.setImmediate(false);
-		panDetails.setWidth("-1px");
+		panDetails.setWidth("100.0%");
 		panDetails.setHeight("-1px");
 		
 		// formLayout_1
@@ -264,8 +264,8 @@ public class DiagnosisDetailComponent extends PmsComponentController implements
 		// common part: create layout
 		formLayout_1 = new FormLayout();
 		formLayout_1.setImmediate(false);
-		formLayout_1.setWidth("-1px");
-		formLayout_1.setHeight("-1px");
+		formLayout_1.setWidth("100.0%");
+		formLayout_1.setHeight("100.0%");
 		formLayout_1.setMargin(false);
 		formLayout_1.setSpacing(true);
 		
