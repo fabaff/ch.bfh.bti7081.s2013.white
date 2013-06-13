@@ -181,11 +181,11 @@ class TitleBarComponent extends PmsComponentController implements
 		mainLayout.setImmediate(false);
 		mainLayout.setWidth("100%");
 		mainLayout.setHeight("100%");
-
+		
 		// top-level component properties
 		setWidth("100.0%");
 		setHeight("100.0%");
-
+		
 		// lblFullName
 		lblFullName = new Label();
 		lblFullName.setImmediate(false);
@@ -193,7 +193,7 @@ class TitleBarComponent extends PmsComponentController implements
 		lblFullName.setHeight("-1px");
 		lblFullName.setValue("fullname");
 		mainLayout.addComponent(lblFullName, "top:15.0px;left:20.0px;");
-
+		
 		// lblDateOfBirth
 		lblDateOfBirth = new Label();
 		lblDateOfBirth.setCaption("Geburtsdatum:");
@@ -202,7 +202,7 @@ class TitleBarComponent extends PmsComponentController implements
 		lblDateOfBirth.setHeight("-1px");
 		lblDateOfBirth.setValue("XYZ");
 		mainLayout.addComponent(lblDateOfBirth, "top:60.0px;left:20.0px;");
-
+		
 		// lblGender
 		lblGender = new Label();
 		lblGender.setCaption("Geschlecht:");
@@ -211,7 +211,7 @@ class TitleBarComponent extends PmsComponentController implements
 		lblGender.setHeight("-1px");
 		lblGender.setValue("XYZ");
 		mainLayout.addComponent(lblGender, "top:60.0px;left:120.0px;");
-
+		
 		// lblKindOfTreatment
 		lblKindOfTreatment = new Label();
 		lblKindOfTreatment.setCaption("Behandlungsart:");
@@ -220,7 +220,7 @@ class TitleBarComponent extends PmsComponentController implements
 		lblKindOfTreatment.setHeight("-1px");
 		lblKindOfTreatment.setValue("XYZ");
 		mainLayout.addComponent(lblKindOfTreatment, "top:60.0px;left:200.0px;");
-
+		
 		// btnLogout
 		btnLogout = new Button();
 		btnLogout.setCaption("Logout");
@@ -228,7 +228,7 @@ class TitleBarComponent extends PmsComponentController implements
 		btnLogout.setWidth("-1px");
 		btnLogout.setHeight("-1px");
 		mainLayout.addComponent(btnLogout, "top:40.0px;right:24.0px;");
-
+		
 		// lblStatus
 		lblStatus = new Label();
 		lblStatus.setCaption("Status:");
@@ -237,15 +237,15 @@ class TitleBarComponent extends PmsComponentController implements
 		lblStatus.setHeight("18px");
 		lblStatus.setValue("XYZ");
 		mainLayout.addComponent(lblStatus, "top:60.0px;left:320.0px;");
-
+		
 		// cmbFilter
 		cmbFilter = new ComboBox();
 		cmbFilter.setCaption("Fälle filtern");
 		cmbFilter.setImmediate(false);
 		cmbFilter.setWidth("-1px");
 		cmbFilter.setHeight("-1px");
-		mainLayout.addComponent(cmbFilter, "top:40.0px;left:740.0px;");
-
+		mainLayout.addComponent(cmbFilter, "top:40.0px;right:100.0px;");
+				
 		// lblUser
 		lblUser = new Label();
 		lblUser.setCaption("Benutzer:");
@@ -256,7 +256,7 @@ class TitleBarComponent extends PmsComponentController implements
 		lblUser.setHeight("-1px");
 		lblUser.setValue("Label");
 		mainLayout.addComponent(lblUser, "top:15.0px;right:100.0px;");
-
+		
 		return mainLayout;
 	}
 
