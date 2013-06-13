@@ -128,7 +128,5 @@ class PatientProgressComponent extends PmsComponentController implements
 	@Override
 	public void enter(ViewChangeEvent event) {
 
-		// TODO Auto-generated method stub
 	}
-
 }

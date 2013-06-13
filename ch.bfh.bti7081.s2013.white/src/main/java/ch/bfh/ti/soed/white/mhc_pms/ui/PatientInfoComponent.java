@@ -141,8 +141,17 @@ class PatientInfoComponent extends PmsComponentController implements
 		setCompositionRoot(mainLayout);
 
 		this.pCaseItemChange();
+		
+		// Static UI elements
 		this.lblView.addStyleName(Reindeer.LABEL_H2);
 		this.lblView.setValue("Patient Details");
+		this.panMaster.addStyleName(Reindeer.PANEL_LIGHT);
+		this.panGeneral.addStyleName(Reindeer.PANEL_LIGHT);
+		this.panComm.addStyleName(Reindeer.PANEL_LIGHT);
+		this.panFamily.addStyleName(Reindeer.PANEL_LIGHT);
+		this.panFamDoc.addStyleName(Reindeer.PANEL_LIGHT);
+		this.panAddress.addStyleName(Reindeer.PANEL_LIGHT);
+		
 		this.addListeners();
 	}
 
@@ -247,11 +256,11 @@ class PatientInfoComponent extends PmsComponentController implements
 		mainLayout.setImmediate(false);
 		mainLayout.setWidth("100%");
 		mainLayout.setHeight("100%");
-
+		
 		// top-level component properties
 		setWidth("100.0%");
 		setHeight("100.0%");
-
+		
 		// btnNewPatient
 		btnNewPatient = new Button();
 		btnNewPatient.setCaption("Neuer Patient");
@@ -259,11 +268,11 @@ class PatientInfoComponent extends PmsComponentController implements
 		btnNewPatient.setWidth("-1px");
 		btnNewPatient.setHeight("-1px");
 		mainLayout.addComponent(btnNewPatient, "top:20.0px;left:250.0px;");
-
+		
 		// panMaster
 		panMaster = buildPanMaster();
 		mainLayout.addComponent(panMaster, "top:60.0px;left:20.0px;");
-
+		
 		// lblView
 		lblView = new Label();
 		lblView.setImmediate(false);
@@ -271,7 +280,7 @@ class PatientInfoComponent extends PmsComponentController implements
 		lblView.setHeight("-1px");
 		lblView.setValue("Patient");
 		mainLayout.addComponent(lblView, "top:20.0px;left:20.0px;");
-
+		
 		return mainLayout;
 	}
 
@@ -282,11 +291,11 @@ class PatientInfoComponent extends PmsComponentController implements
 		panMaster.setImmediate(false);
 		panMaster.setWidth("-1px");
 		panMaster.setHeight("-1px");
-
+		
 		// verticalLayout_5
 		verticalLayout_5 = buildVerticalLayout_5();
 		panMaster.setContent(verticalLayout_5);
-
+		
 		return panMaster;
 	}
 
@@ -298,11 +307,11 @@ class PatientInfoComponent extends PmsComponentController implements
 		verticalLayout_5.setWidth("100.0%");
 		verticalLayout_5.setHeight("100.0%");
 		verticalLayout_5.setMargin(false);
-
+		
 		// gridLayout_1
 		gridLayout_1 = buildGridLayout_1();
 		verticalLayout_5.addComponent(gridLayout_1);
-
+		
 		return verticalLayout_5;
 	}
 
@@ -317,27 +326,27 @@ class PatientInfoComponent extends PmsComponentController implements
 		gridLayout_1.setSpacing(true);
 		gridLayout_1.setColumns(3);
 		gridLayout_1.setRows(2);
-
+		
 		// panGeneral
 		panGeneral = buildPanGeneral();
 		gridLayout_1.addComponent(panGeneral, 0, 0);
-
+		
 		// panAddress
 		panAddress = buildPanAddress();
 		gridLayout_1.addComponent(panAddress, 1, 0);
-
+		
 		// panComm
 		panComm = buildPanComm();
 		gridLayout_1.addComponent(panComm, 2, 0);
-
+		
 		// panFamily
 		panFamily = buildPanFamily();
 		gridLayout_1.addComponent(panFamily, 0, 1);
-
+		
 		// panFamDoc
 		panFamDoc = buildPanFamDoc();
 		gridLayout_1.addComponent(panFamDoc, 1, 1);
-
+		
 		return gridLayout_1;
 	}
 
@@ -349,11 +358,11 @@ class PatientInfoComponent extends PmsComponentController implements
 		panGeneral.setImmediate(false);
 		panGeneral.setWidth("-1px");
 		panGeneral.setHeight("-1px");
-
+		
 		// formLayout_5
 		formLayout_5 = buildFormLayout_5();
 		panGeneral.setContent(formLayout_5);
-
+		
 		return panGeneral;
 	}
 
@@ -366,7 +375,7 @@ class PatientInfoComponent extends PmsComponentController implements
 		formLayout_5.setHeight("-1px");
 		formLayout_5.setMargin(true);
 		formLayout_5.setSpacing(true);
-
+		
 		// lblFirstName
 		lblFirstName = new Label();
 		lblFirstName.setCaption("Vorname:");
@@ -375,7 +384,7 @@ class PatientInfoComponent extends PmsComponentController implements
 		lblFirstName.setHeight("-1px");
 		lblFirstName.setValue("Label");
 		formLayout_5.addComponent(lblFirstName);
-
+		
 		// lblLastName
 		lblLastName = new Label();
 		lblLastName.setCaption("Nachname:");
@@ -384,7 +393,7 @@ class PatientInfoComponent extends PmsComponentController implements
 		lblLastName.setHeight("-1px");
 		lblLastName.setValue("Label");
 		formLayout_5.addComponent(lblLastName);
-
+		
 		// lblDateOfBirth
 		lblDateOfBirth = new Label();
 		lblDateOfBirth.setCaption("Geburtstag:");
@@ -393,7 +402,7 @@ class PatientInfoComponent extends PmsComponentController implements
 		lblDateOfBirth.setHeight("-1px");
 		lblDateOfBirth.setValue("Label");
 		formLayout_5.addComponent(lblDateOfBirth);
-
+		
 		// lblCivilStatus
 		lblCivilStatus = new Label();
 		lblCivilStatus.setCaption("Zivilstand: ");
@@ -402,7 +411,7 @@ class PatientInfoComponent extends PmsComponentController implements
 		lblCivilStatus.setHeight("-1px");
 		lblCivilStatus.setValue("Label");
 		formLayout_5.addComponent(lblCivilStatus);
-
+		
 		// lblGender
 		lblGender = new Label();
 		lblGender.setCaption("Geschlecht:");
@@ -411,7 +420,7 @@ class PatientInfoComponent extends PmsComponentController implements
 		lblGender.setHeight("-1px");
 		lblGender.setValue("Label");
 		formLayout_5.addComponent(lblGender);
-
+		
 		// lblReligion
 		lblReligion = new Label();
 		lblReligion.setCaption("Religion: ");
@@ -420,7 +429,7 @@ class PatientInfoComponent extends PmsComponentController implements
 		lblReligion.setHeight("-1px");
 		lblReligion.setValue("Label");
 		formLayout_5.addComponent(lblReligion);
-
+		
 		// lblNationality
 		lblNationality = new Label();
 		lblNationality.setCaption("Nationalität: ");
@@ -429,7 +438,7 @@ class PatientInfoComponent extends PmsComponentController implements
 		lblNationality.setHeight("-1px");
 		lblNationality.setValue("Label");
 		formLayout_5.addComponent(lblNationality);
-
+		
 		// lblMotherLanguage
 		lblMotherLanguage = new Label();
 		lblMotherLanguage.setCaption("Muttersprache: ");
@@ -438,7 +447,7 @@ class PatientInfoComponent extends PmsComponentController implements
 		lblMotherLanguage.setHeight("-1px");
 		lblMotherLanguage.setValue("Label");
 		formLayout_5.addComponent(lblMotherLanguage);
-
+		
 		// lblCommuncationLanguage
 		lblCommuncationLanguage = new Label();
 		lblCommuncationLanguage.setCaption("Verständigung: ");
@@ -447,7 +456,7 @@ class PatientInfoComponent extends PmsComponentController implements
 		lblCommuncationLanguage.setHeight("18px");
 		lblCommuncationLanguage.setValue("Label");
 		formLayout_5.addComponent(lblCommuncationLanguage);
-
+		
 		return formLayout_5;
 	}
 
@@ -459,11 +468,11 @@ class PatientInfoComponent extends PmsComponentController implements
 		panAddress.setImmediate(false);
 		panAddress.setWidth("-1px");
 		panAddress.setHeight("-1px");
-
+		
 		// formLayout_3
 		formLayout_3 = buildFormLayout_3();
 		panAddress.setContent(formLayout_3);
-
+		
 		return panAddress;
 	}
 
@@ -476,7 +485,7 @@ class PatientInfoComponent extends PmsComponentController implements
 		formLayout_3.setHeight("-1px");
 		formLayout_3.setMargin(true);
 		formLayout_3.setSpacing(true);
-
+		
 		// lblAddress
 		lblAddress = new Label();
 		lblAddress.setCaption("Adresse: ");
@@ -485,7 +494,7 @@ class PatientInfoComponent extends PmsComponentController implements
 		lblAddress.setHeight("-1px");
 		lblAddress.setValue("Label");
 		formLayout_3.addComponent(lblAddress);
-
+		
 		// lblPostalCode
 		lblPostalCode = new Label();
 		lblPostalCode.setCaption("Postleitzahl: ");
@@ -494,7 +503,7 @@ class PatientInfoComponent extends PmsComponentController implements
 		lblPostalCode.setHeight("-1px");
 		lblPostalCode.setValue("Label");
 		formLayout_3.addComponent(lblPostalCode);
-
+		
 		// lblHomeLocation
 		lblHomeLocation = new Label();
 		lblHomeLocation.setCaption("Ort: ");
@@ -503,7 +512,7 @@ class PatientInfoComponent extends PmsComponentController implements
 		lblHomeLocation.setHeight("-1px");
 		lblHomeLocation.setValue("Label");
 		formLayout_3.addComponent(lblHomeLocation);
-
+		
 		// lblCountry
 		lblCountry = new Label();
 		lblCountry.setCaption("Land: ");
@@ -512,7 +521,7 @@ class PatientInfoComponent extends PmsComponentController implements
 		lblCountry.setHeight("-1px");
 		lblCountry.setValue("Label");
 		formLayout_3.addComponent(lblCountry);
-
+		
 		// lblSpacer
 		lblSpacer = new Label();
 		lblSpacer.setCaption("  ");
@@ -521,7 +530,7 @@ class PatientInfoComponent extends PmsComponentController implements
 		lblSpacer.setHeight("-1px");
 		lblSpacer.setValue("  ");
 		formLayout_3.addComponent(lblSpacer);
-
+		
 		// lblPhonePrivate
 		lblPhonePrivate = new Label();
 		lblPhonePrivate.setCaption("Telefon p: ");
@@ -530,7 +539,7 @@ class PatientInfoComponent extends PmsComponentController implements
 		lblPhonePrivate.setHeight("-1px");
 		lblPhonePrivate.setValue("Label");
 		formLayout_3.addComponent(lblPhonePrivate);
-
+		
 		// lblPhoneBusiness
 		lblPhoneBusiness = new Label();
 		lblPhoneBusiness.setCaption("Telefon g: ");
@@ -539,7 +548,7 @@ class PatientInfoComponent extends PmsComponentController implements
 		lblPhoneBusiness.setHeight("-1px");
 		lblPhoneBusiness.setValue("Label");
 		formLayout_3.addComponent(lblPhoneBusiness);
-
+		
 		// lblMobilePhone
 		lblMobilePhone = new Label();
 		lblMobilePhone.setCaption("Mobil: ");
@@ -548,7 +557,7 @@ class PatientInfoComponent extends PmsComponentController implements
 		lblMobilePhone.setHeight("-1px");
 		lblMobilePhone.setValue("Label");
 		formLayout_3.addComponent(lblMobilePhone);
-
+		
 		// lblEmail
 		lblEmail = new Label();
 		lblEmail.setCaption("E-Mail:");
@@ -557,7 +566,7 @@ class PatientInfoComponent extends PmsComponentController implements
 		lblEmail.setHeight("-1px");
 		lblEmail.setValue("Label");
 		formLayout_3.addComponent(lblEmail);
-
+		
 		return formLayout_3;
 	}
 
@@ -571,7 +580,7 @@ class PatientInfoComponent extends PmsComponentController implements
 		panComm.setVisible(false);
 		panComm.setWidth("-1px");
 		panComm.setHeight("-1px");
-
+		
 		// formLayout_4
 		formLayout_4 = new FormLayout();
 		formLayout_4.setEnabled(false);
@@ -582,7 +591,7 @@ class PatientInfoComponent extends PmsComponentController implements
 		formLayout_4.setMargin(false);
 		formLayout_4.setSpacing(true);
 		panComm.setContent(formLayout_4);
-
+		
 		return panComm;
 	}
 
@@ -594,11 +603,11 @@ class PatientInfoComponent extends PmsComponentController implements
 		panFamily.setImmediate(false);
 		panFamily.setWidth("-1px");
 		panFamily.setHeight("-1px");
-
+		
 		// formLayout_2
 		formLayout_2 = buildFormLayout_2();
 		panFamily.setContent(formLayout_2);
-
+		
 		return panFamily;
 	}
 
@@ -611,7 +620,7 @@ class PatientInfoComponent extends PmsComponentController implements
 		formLayout_2.setHeight("-1px");
 		formLayout_2.setMargin(true);
 		formLayout_2.setSpacing(true);
-
+		
 		// lblNextOfKin
 		lblNextOfKin = new Label();
 		lblNextOfKin.setCaption("Angehöriger: ");
@@ -620,7 +629,7 @@ class PatientInfoComponent extends PmsComponentController implements
 		lblNextOfKin.setHeight("-1px");
 		lblNextOfKin.setValue("Label");
 		formLayout_2.addComponent(lblNextOfKin);
-
+		
 		// lblNextOfKinFirstName
 		lblNextOfKinFirstName = new Label();
 		lblNextOfKinFirstName.setCaption("Vorname: ");
@@ -629,7 +638,7 @@ class PatientInfoComponent extends PmsComponentController implements
 		lblNextOfKinFirstName.setHeight("-1px");
 		lblNextOfKinFirstName.setValue("Label");
 		formLayout_2.addComponent(lblNextOfKinFirstName);
-
+		
 		// lblNextOfKinLastName
 		lblNextOfKinLastName = new Label();
 		lblNextOfKinLastName.setCaption("Nachname:");
@@ -638,7 +647,7 @@ class PatientInfoComponent extends PmsComponentController implements
 		lblNextOfKinLastName.setHeight("-1px");
 		lblNextOfKinLastName.setValue("Label");
 		formLayout_2.addComponent(lblNextOfKinLastName);
-
+		
 		// lblNextOfKinAddress
 		lblNextOfKinAddress = new Label();
 		lblNextOfKinAddress.setCaption("Adresse: ");
@@ -647,7 +656,7 @@ class PatientInfoComponent extends PmsComponentController implements
 		lblNextOfKinAddress.setHeight("-1px");
 		lblNextOfKinAddress.setValue("Label");
 		formLayout_2.addComponent(lblNextOfKinAddress);
-
+		
 		// lblNextOfKinPostalCode
 		lblNextOfKinPostalCode = new Label();
 		lblNextOfKinPostalCode.setCaption("Postleitzahl: ");
@@ -656,7 +665,7 @@ class PatientInfoComponent extends PmsComponentController implements
 		lblNextOfKinPostalCode.setHeight("-1px");
 		lblNextOfKinPostalCode.setValue("Label");
 		formLayout_2.addComponent(lblNextOfKinPostalCode);
-
+		
 		// lblNextOfKinHomeLocation
 		lblNextOfKinHomeLocation = new Label();
 		lblNextOfKinHomeLocation.setCaption("Ort: ");
@@ -665,7 +674,7 @@ class PatientInfoComponent extends PmsComponentController implements
 		lblNextOfKinHomeLocation.setHeight("-1px");
 		lblNextOfKinHomeLocation.setValue("Label");
 		formLayout_2.addComponent(lblNextOfKinHomeLocation);
-
+		
 		// lblNextOfKinPhone
 		lblNextOfKinPhone = new Label();
 		lblNextOfKinPhone.setCaption("Telefon: ");
@@ -674,7 +683,7 @@ class PatientInfoComponent extends PmsComponentController implements
 		lblNextOfKinPhone.setHeight("-1px");
 		lblNextOfKinPhone.setValue("Label");
 		formLayout_2.addComponent(lblNextOfKinPhone);
-
+		
 		return formLayout_2;
 	}
 
@@ -686,11 +695,11 @@ class PatientInfoComponent extends PmsComponentController implements
 		panFamDoc.setImmediate(false);
 		panFamDoc.setWidth("-1px");
 		panFamDoc.setHeight("-1px");
-
+		
 		// formLayout_1
 		formLayout_1 = buildFormLayout_1();
 		panFamDoc.setContent(formLayout_1);
-
+		
 		return panFamDoc;
 	}
 
@@ -703,7 +712,7 @@ class PatientInfoComponent extends PmsComponentController implements
 		formLayout_1.setHeight("-1px");
 		formLayout_1.setMargin(true);
 		formLayout_1.setSpacing(true);
-
+		
 		// lblFamilyDoctorFirstName
 		lblFamilyDoctorFirstName = new Label();
 		lblFamilyDoctorFirstName.setCaption("Vorname:");
@@ -712,7 +721,7 @@ class PatientInfoComponent extends PmsComponentController implements
 		lblFamilyDoctorFirstName.setHeight("-1px");
 		lblFamilyDoctorFirstName.setValue("Label");
 		formLayout_1.addComponent(lblFamilyDoctorFirstName);
-
+		
 		// lblFamilyDoctorLastName
 		lblFamilyDoctorLastName = new Label();
 		lblFamilyDoctorLastName.setCaption("Nachname: ");
@@ -721,7 +730,7 @@ class PatientInfoComponent extends PmsComponentController implements
 		lblFamilyDoctorLastName.setHeight("-1px");
 		lblFamilyDoctorLastName.setValue("Label");
 		formLayout_1.addComponent(lblFamilyDoctorLastName);
-
+		
 		// lblFamilyDoctorAddress
 		lblFamilyDoctorAddress = new Label();
 		lblFamilyDoctorAddress.setCaption("Adresse: ");
@@ -730,7 +739,7 @@ class PatientInfoComponent extends PmsComponentController implements
 		lblFamilyDoctorAddress.setHeight("-1px");
 		lblFamilyDoctorAddress.setValue("Label");
 		formLayout_1.addComponent(lblFamilyDoctorAddress);
-
+		
 		// lblFamilyDoctorPostalCode
 		lblFamilyDoctorPostalCode = new Label();
 		lblFamilyDoctorPostalCode.setCaption("Postleitzahl: ");
@@ -739,7 +748,7 @@ class PatientInfoComponent extends PmsComponentController implements
 		lblFamilyDoctorPostalCode.setHeight("-1px");
 		lblFamilyDoctorPostalCode.setValue("Label");
 		formLayout_1.addComponent(lblFamilyDoctorPostalCode);
-
+		
 		// lblFamilyDoctorLocation
 		lblFamilyDoctorLocation = new Label();
 		lblFamilyDoctorLocation.setCaption("Ort: ");
@@ -748,7 +757,7 @@ class PatientInfoComponent extends PmsComponentController implements
 		lblFamilyDoctorLocation.setHeight("-1px");
 		lblFamilyDoctorLocation.setValue("Label");
 		formLayout_1.addComponent(lblFamilyDoctorLocation);
-
+		
 		// lblFamilyDoctorFax
 		lblFamilyDoctorFax = new Label();
 		lblFamilyDoctorFax.setCaption("Telefon: ");
@@ -757,7 +766,7 @@ class PatientInfoComponent extends PmsComponentController implements
 		lblFamilyDoctorFax.setHeight("-1px");
 		lblFamilyDoctorFax.setValue("Label");
 		formLayout_1.addComponent(lblFamilyDoctorFax);
-
+		
 		return formLayout_1;
 	}
 

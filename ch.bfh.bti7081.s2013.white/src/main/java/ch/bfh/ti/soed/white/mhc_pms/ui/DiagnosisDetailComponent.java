@@ -81,6 +81,8 @@ public class DiagnosisDetailComponent extends PmsComponentController implements
 		// Static UI elements
 		this.lblView.addStyleName(Reindeer.LABEL_H2);
 		this.lblView.setValue("Diagnose-Details");
+		this.panMaster.addStyleName(Reindeer.PANEL_LIGHT);
+		this.panDetails.addStyleName(Reindeer.PANEL_LIGHT);
 
 		this.addToggleDiagnosisViewButtonListener();
 		this.addNewDiagnosisButtonListener();

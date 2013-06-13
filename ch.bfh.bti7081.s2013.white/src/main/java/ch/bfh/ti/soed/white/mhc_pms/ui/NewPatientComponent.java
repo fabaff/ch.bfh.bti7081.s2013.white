@@ -152,6 +152,12 @@ public class NewPatientComponent extends PmsComponentController {
 		// Static UI elements
 		this.lblView.addStyleName(Reindeer.LABEL_H2);
 		this.lblView.setValue("Neuer Patient");
+		this.panMaster.addStyleName(Reindeer.PANEL_LIGHT);
+		this.panGeneral.addStyleName(Reindeer.PANEL_LIGHT);
+		this.panComm.addStyleName(Reindeer.PANEL_LIGHT);
+		this.panFamily.addStyleName(Reindeer.PANEL_LIGHT);
+		this.panFamDoc.addStyleName(Reindeer.PANEL_LIGHT);
+		this.panAddress.addStyleName(Reindeer.PANEL_LIGHT);
 
 		this.addNewPatientButtonListener();
 		this.addCancelPatientButtonListener();
