@@ -54,12 +54,16 @@ public class EditDiagnosisComponent extends PmsComponentController implements
 				Notification
 						.show("Bitte alle mit * markierten Felder korrekt ausfüllen!",
 								Notification.Type.HUMANIZED_MESSAGE);
+				// Uncomment this to shut-up CodePro
+				//e.printStackTrace();
 			} catch (UnknownUserException e) {
 				Notification.show(e.getInvalidUserMessage(),
 						Notification.Type.HUMANIZED_MESSAGE);
 			} catch (Exception e) {
 				Notification.show("Beim Speichern ist ein Fehler aufgetreten!",
 						Notification.Type.HUMANIZED_MESSAGE);
+				// Uncomment this to shut-up CodePro
+				//e.printStackTrace();
 			}
 		}
 
