@@ -1,7 +1,6 @@
 package ch.bfh.ti.soed.white.mhc_pms.data;
 
 import java.io.Serializable;
-import java.lang.String;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;

@@ -4,7 +4,6 @@ import ch.bfh.ti.soed.white.mhc_pms.controller.NavigationEvent;
 import ch.bfh.ti.soed.white.mhc_pms.controller.PmsComponentController;
 import ch.bfh.ti.soed.white.mhc_pms.controller.PmsComponentListener;
 import ch.bfh.ti.soed.white.mhc_pms.data.PCase;
-import ch.bfh.ti.soed.white.mhc_pms.data.PmsDataAccess;
 import ch.bfh.ti.soed.white.mhc_pms.data.PmsDataAccessCreator;
 import ch.bfh.ti.soed.white.mhc_pms.data.UnknownUserException;
 import ch.bfh.ti.soed.white.mhc_pms.data.enums.CaseStatus;

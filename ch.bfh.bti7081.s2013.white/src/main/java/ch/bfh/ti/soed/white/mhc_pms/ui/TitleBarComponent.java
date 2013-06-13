@@ -7,7 +7,6 @@ import ch.bfh.ti.soed.white.mhc_pms.controller.UIActivationListener;
 import ch.bfh.ti.soed.white.mhc_pms.data.PCase;
 import ch.bfh.ti.soed.white.mhc_pms.data.PmsDataAccessCreator;
 import ch.bfh.ti.soed.white.mhc_pms.data.UnknownUserException;
-import ch.bfh.ti.soed.white.mhc_pms.data.enums.CaseStatus;
 import ch.bfh.ti.soed.white.mhc_pms.data.enums.FilterEnum;
 import ch.bfh.ti.soed.white.mhc_pms.util.ValueConverter;
 
@@ -21,7 +20,6 @@ import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.ui.ComboBox;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.Notification;
-import com.vaadin.ui.Window;
 import com.vaadin.ui.themes.Reindeer;
 
 /**

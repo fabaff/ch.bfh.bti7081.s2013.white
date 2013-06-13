@@ -25,7 +25,7 @@ public class Hash {
 			}
 			return sb.toString();
 		} catch (java.security.NoSuchAlgorithmException e) {
-
+			System.out.println(e);
 		}
 		return null;
 	}
