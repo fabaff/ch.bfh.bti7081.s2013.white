@@ -12,8 +12,8 @@ import ch.bfh.ti.soed.white.mhc_pms.data.enums.CaseStatus;
 import ch.bfh.ti.soed.white.mhc_pms.data.enums.KindOfTreatment;
 import ch.bfh.ti.soed.white.mhc_pms.data.enums.OrderOfPatient;
 import ch.bfh.ti.soed.white.mhc_pms.data.enums.ReanimationStatus;
-import ch.bfh.ti.soed.white.mhc_pms.data.enums.UserGroup;
-import ch.bfh.ti.soed.white.mhc_pms.util.Hash;
+//import ch.bfh.ti.soed.white.mhc_pms.data.enums.UserGroup;
+//import ch.bfh.ti.soed.white.mhc_pms.util.Hash;
 
 /**
  * Test class for patient case
