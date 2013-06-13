@@ -8,13 +8,13 @@ import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
-import org.junit.Ignore;
 import org.junit.Test;
 
 import com.vaadin.data.fieldgroup.BeanFieldGroup;
 import com.vaadin.data.fieldgroup.FieldGroup.CommitException;
 import com.vaadin.ui.TextField;
 
+import ch.bfh.ti.soed.white.mhc_pms.data.enums.CaseStatus;
 import ch.bfh.ti.soed.white.mhc_pms.data.enums.Gender;
 import ch.bfh.ti.soed.white.mhc_pms.data.enums.UserGroup;
 import ch.bfh.ti.soed.white.mhc_pms.util.DummyDataCreator;
@@ -64,14 +64,17 @@ public class PmsContainerTest {
 		pCaseItem1.setFirstName("Peter");
 		pCaseItem1.setLastName("Muster");
 		pCaseItem1.setGender(Gender.MALE);
+		pCaseItem1.setCaseStatus(CaseStatus.ACTIVE);
 		pCaseItem2 = new PCase();
 		pCaseItem2.setFirstName("Peter2");
 		pCaseItem2.setLastName("Muster2");
 		pCaseItem2.setGender(Gender.FEMALE);
+		pCaseItem2.setCaseStatus(CaseStatus.CLOSED);
 		pCaseItem3 = new PCase();
 		pCaseItem3.setFirstName("Peter3");
 		pCaseItem3.setLastName("Muster3");
 		pCaseItem3.setGender(Gender.UNSET);
+		pCaseItem3.setCaseStatus(CaseStatus.ACTIVE);
 	}
 
 	@After
@@ -257,6 +260,29 @@ public class PmsContainerTest {
 		
 		itemId = dataAccess.getPCaseContainer().addEntity(fieldGroup.getItemDataSource().getBean());
 		assertEquals(1,  dataAccess.getPCaseContainer().size());
+	}
+	
+	@Test
+	public final void enableCaseFilterTest() {
+		Object itemId = dataAccess.getPmsUserContainer().addEntity(user);
+		pCaseItem1.setTherapist(dataAccess.getPmsUserContainer()
+				.getItem(itemId).getEntity());
+		pCaseItem2.setTherapist(dataAccess.getPmsUserContainer()
+				.getItem(itemId).getEntity());
+		pCaseItem3.setTherapist(dataAccess.getPmsUserContainer()
+				.getItem(itemId).getEntity());
+		
+		dataAccess.getPCaseContainer().addEntity(pCaseItem1);
+		dataAccess.getPCaseContainer().addEntity(pCaseItem2);
+		dataAccess.getPCaseContainer().addEntity(pCaseItem3);
+		
+		assertEquals(3, dataAccess.getPCaseContainer().size());
+		dataAccess.getPCaseContainer().enableCaseFilter(true);
+		assertEquals(2, dataAccess.getPCaseContainer().size());
+		assertEquals(CaseStatus.ACTIVE, dataAccess.getPCaseContainer().getItem(dataAccess.getPCaseContainer().firstItemId()).getEntity().getCaseStatus());
+		assertEquals(CaseStatus.ACTIVE, dataAccess.getPCaseContainer().getItem(dataAccess.getPCaseContainer().lastItemId()).getEntity().getCaseStatus());
+		dataAccess.getPCaseContainer().enableCaseFilter(false);
+		assertEquals(3, dataAccess.getPCaseContainer().size());
 	}
 	
 }

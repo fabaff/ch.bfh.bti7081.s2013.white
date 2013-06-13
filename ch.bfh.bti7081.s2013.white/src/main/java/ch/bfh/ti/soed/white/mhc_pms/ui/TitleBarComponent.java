@@ -5,9 +5,9 @@ import ch.bfh.ti.soed.white.mhc_pms.controller.PmsComponentController;
 import ch.bfh.ti.soed.white.mhc_pms.controller.PmsComponentListener;
 import ch.bfh.ti.soed.white.mhc_pms.controller.UIActivationListener;
 import ch.bfh.ti.soed.white.mhc_pms.data.PCase;
-import ch.bfh.ti.soed.white.mhc_pms.data.PmsDataAccess;
 import ch.bfh.ti.soed.white.mhc_pms.data.PmsDataAccessCreator;
 import ch.bfh.ti.soed.white.mhc_pms.data.UnknownUserException;
+import ch.bfh.ti.soed.white.mhc_pms.data.enums.CaseStatus;
 import ch.bfh.ti.soed.white.mhc_pms.data.enums.FilterEnum;
 import ch.bfh.ti.soed.white.mhc_pms.util.ValueConverter;
 
@@ -21,6 +21,7 @@ import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.ui.ComboBox;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.Notification;
+import com.vaadin.ui.Window;
 import com.vaadin.ui.themes.Reindeer;
 
 /**
@@ -71,7 +72,7 @@ class TitleBarComponent extends PmsComponentController implements
 
 		this.initFilterCombo();
 		this.pCaseItemChange();
-
+		this.cmbFilter.setImmediate(true);
 		this.lblUser.addStyleName(Reindeer.LABEL_SMALL);
 		this.lblFullName.addStyleName(Reindeer.LABEL_H1);
 
@@ -82,13 +83,34 @@ class TitleBarComponent extends PmsComponentController implements
 	private void addComboValueChangeListener() {
 		this.cmbFilter
 				.addValueChangeListener(new Property.ValueChangeListener() {
-
 					private static final long serialVersionUID = -7229281357206546755L;
 
 					@Override
 					public void valueChange(ValueChangeEvent event) {
-						// TODO Implement filter
-
+						if (event.getProperty().getValue() != null) {
+							try {
+								String value = event.getProperty().getValue()
+										.toString();
+								
+								if (value.equals(FilterEnum.CURRENT.toString())) {
+									PmsDataAccessCreator.getDataAccess()
+											.getPCaseContainer()
+											.enableCaseFilter(true);
+								}
+								if (value.equals(FilterEnum.ALL.toString())) {
+									PmsDataAccessCreator.getDataAccess()
+									.getPCaseContainer()
+									.enableCaseFilter(false);
+								}
+								
+								TitleBarComponent.this.firePCaseItemChangeEvent();
+							} catch (UnknownUserException e) {
+								Notification.show(e.getInvalidUserMessage(),
+										Notification.Type.HUMANIZED_MESSAGE);Notification.show(e.getInvalidUserMessage(),
+												Notification.Type.HUMANIZED_MESSAGE);
+							}
+						}
+						
 					}
 				});
 	}

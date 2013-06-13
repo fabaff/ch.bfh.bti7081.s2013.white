@@ -9,7 +9,7 @@ package ch.bfh.ti.soed.white.mhc_pms.data.enums;
  */
 public enum FilterEnum {
 	
-	CURRENT("aktueller Fall"), ALL("alle Fälle");
+	CURRENT("aktuelle Fälle"), ALL("alle Fälle");
 	
 	private String stringValue;
 

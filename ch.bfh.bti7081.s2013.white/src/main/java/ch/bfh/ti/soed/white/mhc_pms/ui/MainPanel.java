@@ -108,6 +108,7 @@ class MainPanel extends Panel implements ComponentChangeListener {
 		// TODO Auto-generated method stub
 		
 		this.titleBar.addComponentChangeListener(this);
+		this.titleBar.addPmsComponentListener(this.patientTable);
 	}
 
 	private void addLoginComponentListeners() {

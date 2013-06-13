@@ -1,8 +1,11 @@
 package ch.bfh.ti.soed.white.mhc_pms.data;
 
+import ch.bfh.ti.soed.white.mhc_pms.data.enums.CaseStatus;
+
 import com.vaadin.addon.jpacontainer.EntityItem;
 import com.vaadin.addon.jpacontainer.JPAContainer;
 import com.vaadin.addon.jpacontainer.JPAContainerFactory;
+import com.vaadin.addon.jpacontainer.filter.Filters;
 import com.vaadin.addon.jpacontainer.provider.CachingBatchableLocalEntityProvider;
 
 /**
@@ -19,8 +22,12 @@ import com.vaadin.addon.jpacontainer.provider.CachingBatchableLocalEntityProvide
 public class PmsContainer<E> extends JPAContainer<E> {
 
 	private static final long serialVersionUID = -287883752877854160L;
+	
+	private static Object CASE_FILTER_PROPERTY_ID = "caseStatus";
 
 	private Object currentItemId;
+	
+	private Filter caseFilter;
 
 	/**
 	 * 
@@ -37,8 +44,8 @@ public class PmsContainer<E> extends JPAContainer<E> {
 		this.refresh();
 
 		this.currentItemId = this.firstItemId();
-
-		// TODO Filter für isDEleted
+		this.caseFilter = Filters.eq(CASE_FILTER_PROPERTY_ID, CaseStatus.ACTIVE);
+		
 	}
 
 	/**
@@ -130,4 +137,16 @@ public class PmsContainer<E> extends JPAContainer<E> {
 		return entityItem != null ? entityItem.getEntity() : null;
 	}
 
+	/**
+	 * Enables or disables the current case filter.
+	 * 
+	 * @param isCaseFilter
+	 */
+	public void enableCaseFilter(boolean isCaseFilter) {
+		this.removeContainerFilter(this.caseFilter);
+		if (isCaseFilter) {
+			this.addContainerFilter(this.caseFilter);
+		}
+	}
+	
 }

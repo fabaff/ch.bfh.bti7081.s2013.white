@@ -27,6 +27,8 @@ public class PmsEntityContainer<E> extends PmsContainer<E> {
 	 */
 	public PmsEntityContainer(Class<E> clazz) {
 		super(clazz);
+		
+		// TODO Filter für isDEleted
 	}
 
 	/**
