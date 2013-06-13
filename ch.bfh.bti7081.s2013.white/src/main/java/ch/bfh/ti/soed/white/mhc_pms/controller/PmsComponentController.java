@@ -12,25 +12,17 @@ import com.vaadin.ui.CustomComponent;
  * implement the View interface. All subclasses can be used as the destination
  * of a navigator.
  * 
- * @author Group White, I2p, BFH Berne, <a
- *         href="https://github.com/fabaff/ch.bfh.bti7081.s2013.white"
- *         >Contact</a>
+ * @author Group White, I2p, BFH Berne, <a href="https://github.com/fabaff/ch.bfh.bti7081.s2013.white">Contact</a>
  * @version 1.0.0
- * 
  */
 public abstract class PmsComponentController extends CustomComponent implements
 		View {
 
 	private static final long serialVersionUID = -4631009926765712866L;
-
 	private List<ComponentChangeListener> componentChangeListeners;
-
 	private List<NewItemListener> newCaseListeners;
-
 	private List<PmsComponentListener> pmsComponentListeners;
-
 	private List<UIActivationListener> uiActivationListeners;
-	
 	private List<InitListener> initListeners;
 
 	protected PmsComponentController() {
@@ -42,6 +34,7 @@ public abstract class PmsComponentController extends CustomComponent implements
 	}
 
 	/**
+	 * Listener for Component changes
 	 * 
 	 * @param listener
 	 */
@@ -50,6 +43,7 @@ public abstract class PmsComponentController extends CustomComponent implements
 	}
 
 	/**
+	 * Listener for New Case
 	 * 
 	 * @param listener
 	 */
@@ -58,6 +52,7 @@ public abstract class PmsComponentController extends CustomComponent implements
 	}
 
 	/**
+	 * Listener for PmsComponent
 	 * 
 	 * @param listener
 	 */
@@ -66,6 +61,7 @@ public abstract class PmsComponentController extends CustomComponent implements
 	}
 
 	/**
+	 * Listener for UI actions
 	 * 
 	 * @param listener
 	 */
@@ -74,6 +70,7 @@ public abstract class PmsComponentController extends CustomComponent implements
 	}
 	
 	/**
+	 * Listener for Init action
 	 * 
 	 * @param listener
 	 */
@@ -82,6 +79,7 @@ public abstract class PmsComponentController extends CustomComponent implements
 	}
 	
 	/**
+	 * Listener for Change event
 	 * 
 	 * @param event
 	 */
@@ -92,6 +90,7 @@ public abstract class PmsComponentController extends CustomComponent implements
 	}
 
 	/**
+	 * Listener for Case event
 	 * 
 	 * @param value
 	 */
@@ -101,6 +100,9 @@ public abstract class PmsComponentController extends CustomComponent implements
 		}
 	}
 
+	/**
+	 * Listener for PCase event
+	 */
 	protected void firePCaseItemChangeEvent() {
 		for (PmsComponentListener listener : this.pmsComponentListeners) {
 			listener.pCaseItemChange();
@@ -108,6 +110,7 @@ public abstract class PmsComponentController extends CustomComponent implements
 	}
 
 	/**
+	 * Listener for UI actions
 	 * 
 	 * @param value
 	 */
@@ -117,6 +120,9 @@ public abstract class PmsComponentController extends CustomComponent implements
 		}
 	}
 
+	/**
+	 * Listener for Init actions
+	 */
 	protected void fireInitEvent() {
 		for (InitListener listener : this.initListeners) {
 			listener.initialize();

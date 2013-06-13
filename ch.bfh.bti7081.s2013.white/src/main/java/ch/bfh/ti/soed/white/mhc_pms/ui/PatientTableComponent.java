@@ -20,18 +20,13 @@ import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.Notification;
 import com.vaadin.ui.Table;
-import com.vaadin.ui.Window;
 import com.vaadin.ui.themes.Reindeer;
 
 /**
  * UI Class for patient overview
  * 
- * @author Group White, I2p, BFH Berne, <a
- *         href="https://github.com/fabaff/ch.bfh.bti7081.s2013.white"
- *         >Contact</a>
+ * @author Group White, I2p, BFH Berne, <a href="https://github.com/fabaff/ch.bfh.bti7081.s2013.white">Contact</a>
  * @version 1.0.0
- * 
- * 
  */
 class PatientTableComponent extends PmsComponentController implements
 		PmsComponentListener, InitListener {
@@ -74,6 +69,8 @@ class PatientTableComponent extends PmsComponentController implements
 		try {
 			this.initPatientTable();
 			this.pCaseItemChange();
+			
+			// Static UI elements
 			this.lblView.addStyleName(Reindeer.LABEL_H2);
 			this.lblView.setValue("Übersicht Patienten und Fälle");
 
@@ -90,6 +87,7 @@ class PatientTableComponent extends PmsComponentController implements
 
 	/**
 	 * Initialization of the table element
+	 * 
 	 * @throws UnknownUserException 
 	 */
 	private void initPatientTable() throws UnknownUserException {

@@ -10,11 +10,8 @@ import javax.validation.constraints.NotNull;
  * Entity implementation class for Entity: PatientProgress
  * Each patient progress entity has exactly one associated patient case entity.
  * 
- * @author Group White, I2p, BFH Berne, <a
- *         href="https://github.com/fabaff/ch.bfh.bti7081.s2013.white"
- *         >Contact</a>
+ * @author Group White, I2p, BFH Berne, <a href="https://github.com/fabaff/ch.bfh.bti7081.s2013.white">Contact</a>
  * @version 1.0.0
- *
  */
 @Entity
 @Table(name="PatientProgress")
@@ -66,7 +63,6 @@ public class PatientProgress implements Serializable {
 	}
 	
 	/**
-	 * 
 	 * @return ppid
 	 */
 	public int getPpid() {
@@ -74,7 +70,6 @@ public class PatientProgress implements Serializable {
 	}
 
 	/**
-	 * 
 	 * @param ppid
 	 */
 	public void setPpid(int ppid) {
@@ -164,5 +159,4 @@ public class PatientProgress implements Serializable {
 	public void setpCase(PCase pCase) {
 		this.pCase = pCase;
 	}
-   
 }

@@ -3,20 +3,15 @@ package ch.bfh.ti.soed.white.mhc_pms.data;
 import ch.bfh.ti.soed.white.mhc_pms.security.PmsPermission;
 
 /**
- * This class gives access to the diffrent entity containers and the current user.
+ * This class gives access to the different entity containers and the current user.
  * 
- * @author Group White, I2p, BFH Berne, <a
- *         href="https://github.com/fabaff/ch.bfh.bti7081.s2013.white"
- *         >Contact</a>
+ * @author Group White, I2p, BFH Berne, <a href="https://github.com/fabaff/ch.bfh.bti7081.s2013.white">Contact</a>
  * @version 1.0.0
- * 
  */
 public class PmsDataAccess {
 
 	private PmsUserContainer pmsUserContainer;
-	
 	private PmsContainer<PCase> pCaseContainer;
-	
 	private PmsEntityContainer<Diagnosis> diagnosisContainer;
 	private PmsEntityContainer<PatientProgress> patientProgressContainer;
 	private PmsEntityContainer<Medication> medicationContainer;
@@ -24,7 +19,6 @@ public class PmsDataAccess {
 	private PmsEntityContainer<MedicationTime> medicationTimeContainer;
 	
 	private PmsUser loginUser;
-	
 	private PmsPermission permission;
 	
 	/**
@@ -52,7 +46,6 @@ public class PmsDataAccess {
 	}
 	
 	/**
-	 * 
 	 * @return current user object
 	 */
 	public PmsUser getLoginUser() {
@@ -114,5 +107,4 @@ public class PmsDataAccess {
 	public PmsPermission getPermission() {
 		return permission;
 	}
-	
 }

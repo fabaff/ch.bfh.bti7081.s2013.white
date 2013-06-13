@@ -7,7 +7,6 @@ import ch.bfh.ti.soed.white.mhc_pms.controller.UIActivationListener;
 import ch.bfh.ti.soed.white.mhc_pms.data.PCase;
 import ch.bfh.ti.soed.white.mhc_pms.data.PmsDataAccessCreator;
 import ch.bfh.ti.soed.white.mhc_pms.data.UnknownUserException;
-import ch.bfh.ti.soed.white.mhc_pms.data.enums.CaseStatus;
 import ch.bfh.ti.soed.white.mhc_pms.data.enums.FilterEnum;
 import ch.bfh.ti.soed.white.mhc_pms.util.ValueConverter;
 
@@ -21,18 +20,13 @@ import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.ui.ComboBox;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.Notification;
-import com.vaadin.ui.Window;
 import com.vaadin.ui.themes.Reindeer;
 
 /**
  * UI Class for layout header
- * 
- * @author Group White, I2p, BFH Berne, <a
- *         href="https://github.com/fabaff/ch.bfh.bti7081.s2013.white"
- *         >Contact</a>
+ *  
+ * @author Group White, I2p, BFH Berne, <a href="https://github.com/fabaff/ch.bfh.bti7081.s2013.white">Contact</a>
  * @version 1.0.0
- * 
- * 
  */
 class TitleBarComponent extends PmsComponentController implements
 		PmsComponentListener, UIActivationListener {
@@ -73,6 +67,8 @@ class TitleBarComponent extends PmsComponentController implements
 		this.initFilterCombo();
 		this.pCaseItemChange();
 		this.cmbFilter.setImmediate(true);
+		
+		// Add style to UI elements
 		this.lblUser.addStyleName(Reindeer.LABEL_SMALL);
 		this.lblFullName.addStyleName(Reindeer.LABEL_H1);
 
@@ -144,6 +140,9 @@ class TitleBarComponent extends PmsComponentController implements
 						.getLoginUser());
 			}
 
+			// Those are fields besides the name are in the lower area
+			// of the title bar, check the layout before adding a new one.
+			// The space is limited!
 			this.lblFullName.setValue(item.getFirstName() + " "
 					+ item.getLastName());
 			this.lblDateOfBirth.setValue(ValueConverter.convertDate(item

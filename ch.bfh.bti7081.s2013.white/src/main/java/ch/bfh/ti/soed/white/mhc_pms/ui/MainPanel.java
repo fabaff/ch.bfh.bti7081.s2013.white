@@ -113,8 +113,6 @@ class MainPanel extends Panel implements ComponentChangeListener {
 	}
 
 	private void addEditDiagnosisListeners() {
-		// TODO Auto-generated method stub
-		
 		this.editDiagnosisComp.addPmsComponentListener(this.diagnosisDetailComp);
 		this.editDiagnosisComp.addPmsComponentListener(this.diagnosisTableComp);
 

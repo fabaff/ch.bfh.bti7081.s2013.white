@@ -4,25 +4,18 @@ package ch.bfh.ti.soed.white.mhc_pms.data;
  * This class provides global access to a DataAccess object. This class cannot
  * be instanced.
  * 
- * @author Group White, I2p, BFH Berne, <a
- *         href="https://github.com/fabaff/ch.bfh.bti7081.s2013.white"
- *         >Contact</a>
+ * @author Group White, I2p, BFH Berne, <a href="https://github.com/fabaff/ch.bfh.bti7081.s2013.white">Contact</a>
  * @version 1.0.0
- * 
  */
 public final class PmsDataAccessCreator {
 
 	public static final String DUMMY_USER = "user";
-
 	public static final String DUMMY_PASSWORD = "password";
-
 	public static final String DEFAULT_PERSISTENCE_UNIT = "ch.bfh.bti7081.s2013.white";
-
 	public static final String PERSISTENCE_UNIT_TEST = "ch.bfh.bti7081.s2013.white.test";
 
-	// create data access for dummy user
+	// Create data access for dummy user
 	private static PmsDataAccess dataAccess;
-
 	private static String persistenceUnit = DEFAULT_PERSISTENCE_UNIT;
 
 	/**
@@ -41,8 +34,7 @@ public final class PmsDataAccessCreator {
 	/**
 	 * Sets a new data access object.
 	 * 
-	 * @param dataAc
-	 *            the new data access object
+	 * @param dataAc the new data access object
 	 */
 	public static void setDataAccess(PmsDataAccess dataAc) {
 		if (dataAc != null) {
@@ -51,7 +43,6 @@ public final class PmsDataAccessCreator {
 	}
 
 	/**
-	 * 
 	 * @return the current persistence unit
 	 */
 	public static String getPersistenceUnit() {
@@ -69,5 +60,4 @@ public final class PmsDataAccessCreator {
 	
 	private PmsDataAccessCreator() {
 	}
-
 }

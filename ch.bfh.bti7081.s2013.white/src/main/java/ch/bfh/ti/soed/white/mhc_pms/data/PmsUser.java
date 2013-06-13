@@ -14,11 +14,8 @@ import ch.bfh.ti.soed.white.mhc_pms.data.enums.UserGroup;
  * Entity implementation class for Entity: PmsUser.
  * Each user can have zero to n associated patient cases.
  * 
- * @author Group White, I2p, BFH Berne, <a
- *         href="https://github.com/fabaff/ch.bfh.bti7081.s2013.white"
- *         >Contact</a>
+ * @author Group White, I2p, BFH Berne, <a href="https://github.com/fabaff/ch.bfh.bti7081.s2013.white">Contact</a>
  * @version 1.0.0
- * 
  */
 @Entity
 @Table(name = "PmsUser")
@@ -196,5 +193,4 @@ public class PmsUser implements Serializable {
 				+ firstName + ", lastName=" + lastName + ", clinic=" + clinic
 				+ ", department=" + department + ", pCases.size()=" + pCases.size() + "]";
 	}
-
 }

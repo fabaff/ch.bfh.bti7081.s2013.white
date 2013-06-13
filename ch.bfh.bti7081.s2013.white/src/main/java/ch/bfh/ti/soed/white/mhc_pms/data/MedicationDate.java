@@ -15,11 +15,8 @@ import ch.bfh.ti.soed.white.mhc_pms.data.enums.MedicationStatus;
  * Each medication date has exactly one associated medication entity.
  * Each medication date can have zero to n associated medication time entities.
  * 
- * @author Group White, I2p, BFH Berne, <a
- *         href="https://github.com/fabaff/ch.bfh.bti7081.s2013.white"
- *         >Contact</a>
+ * @author Group White, I2p, BFH Berne, <a href="https://github.com/fabaff/ch.bfh.bti7081.s2013.white">Contact</a>
  * @version 1.0.0
- * 
  */
 @Entity
 @Table(name = "MedicationDate")
@@ -51,7 +48,6 @@ public class MedicationDate implements Serializable {
 	}   
 	
 	/**
-	 * 
 	 * @param medication
 	 */
 	public MedicationDate(Medication medication) {
@@ -59,7 +55,6 @@ public class MedicationDate implements Serializable {
 	}
 
 	/**
-	 * 
 	 * @return int
 	 */
 	public int getMdid() {
@@ -67,7 +62,6 @@ public class MedicationDate implements Serializable {
 	}
 
 	/**
-	 * 
 	 * @param mdid
 	 */
 	public void setMdid(int mdid) {
@@ -129,5 +123,4 @@ public class MedicationDate implements Serializable {
 	public void setApplicationDate(Date applicationDate) {
 		this.applicationDate = applicationDate;
 	}
-   
 }

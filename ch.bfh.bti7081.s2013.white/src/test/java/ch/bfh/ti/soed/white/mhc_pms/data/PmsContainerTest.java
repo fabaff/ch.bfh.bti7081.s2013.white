@@ -21,12 +21,10 @@ import ch.bfh.ti.soed.white.mhc_pms.util.DummyDataCreator;
 import ch.bfh.ti.soed.white.mhc_pms.util.Hash;
 
 /**
+ * Class for PmsContainer test
  * 
- * @author Group White, I2p, BFH Berne, <a
- *         href="https://github.com/fabaff/ch.bfh.bti7081.s2013.white"
- *         >Contact</a>
+ * @author Group White, I2p, BFH Berne, <a href="https://github.com/fabaff/ch.bfh.bti7081.s2013.white">Contact</a>
  * @version 1.0.0
- * 
  */
 public class PmsContainerTest {
 

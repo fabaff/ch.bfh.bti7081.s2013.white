@@ -9,22 +9,13 @@ import ch.bfh.ti.soed.white.mhc_pms.data.enums.UserGroup;
  * This class sets the permissions about the allowed operations for a specific
  * user group in the MHC PMS application.
  * 
- * @author Group White, I2p, BFH Berne, <a
- *         href="https://github.com/fabaff/ch.bfh.bti7081.s2013.white"
- *         >Contact</a>
+ * @author Group White, I2p, BFH Berne, <a href="https://github.com/fabaff/ch.bfh.bti7081.s2013.white">Contact</a>
  * @version 1.0.0
- * 
  */
 public class PmsPermission {
 
 	/**
 	 * This enum defines all possible operations in the MHC PMS application which needs explicit permissions.
-	 * 
-	 * @author Group White, I2p, BFH Berne, <a
-	 *         href="https://github.com/fabaff/ch.bfh.bti7081.s2013.white"
-	 *         >Contact</a>
-	 * @version 1.0.0
-	 * 
 	 */
 	public static enum Operation {
 		DELETE_DIAGNOSIS, DELETE_MEDICATION, DELETE_PATIENT_PROGRESS_ENTRY, EDIT_CASE, EDIT_DIAGNOSIS, 
@@ -34,20 +25,14 @@ public class PmsPermission {
 
 	/**
 	 * This inner helper class defines which user group has a permission for an specific operation.
-	 * 
-	 * @author Group White, I2p, BFH Berne, <a
-	 *         href="https://github.com/fabaff/ch.bfh.bti7081.s2013.white"
-	 *         >Contact</a>
-	 * @version 1.0.0
-	 * 
 	 */
 	private static class PermissionKey {
 
 		private Operation elementName;
-
 		private UserGroup userGroup;
 
 		/**
+		 * Element for handling the permission
 		 * 
 		 * @param userGroup
 		 * @param elementName
@@ -103,7 +88,7 @@ public class PmsPermission {
 
 	private static Set<PermissionKey> permissionsSet = new HashSet<PermissionKey>();
 
-	// Initialisation of all allowed operations for a specific user group
+	// Initialization of all allowed operations for a specific user group
 	static {
 		permissionsSet.add(new PermissionKey(UserGroup.PSYCHIATRIST,
 				Operation.NEW_MEDICATION));
@@ -159,6 +144,7 @@ public class PmsPermission {
 
 	/**
 	 * A permission object for the given user group will be created.
+	 * 
 	 * @param userGroup
 	 */
 	public PmsPermission(UserGroup userGroup) {
@@ -166,6 +152,7 @@ public class PmsPermission {
 	}
 
 	/**
+	 * Switch for the permission
 	 * 
 	 * @param elementName
 	 * @return true, if the user group has the permission for this operation

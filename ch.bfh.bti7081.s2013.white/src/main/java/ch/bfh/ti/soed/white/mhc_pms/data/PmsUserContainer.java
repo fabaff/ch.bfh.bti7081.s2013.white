@@ -6,11 +6,8 @@ import com.vaadin.addon.jpacontainer.filter.Filters;
  * A container class for PmsUser entity objects. This class extends the
  * PmsContainer class.
  * 
- * @author Group White, I2p, BFH Berne, <a
- *         href="https://github.com/fabaff/ch.bfh.bti7081.s2013.white"
- *         >Contact</a>
+ * @author Group White, I2p, BFH Berne, <a href="https://github.com/fabaff/ch.bfh.bti7081.s2013.white">Contact</a>
  * @version 1.0.0
- * 
  */
 public class PmsUserContainer extends PmsContainer<PmsUser> {
 
@@ -21,8 +18,7 @@ public class PmsUserContainer extends PmsContainer<PmsUser> {
 
 	/**
 	 * 
-	 * @param clazz
-	 *            PmsUser entity class object
+	 * @param clazz PmsUser entity class object
 	 */
 	public PmsUserContainer(Class<PmsUser> clazz) {
 		super(clazz);
@@ -70,5 +66,4 @@ public class PmsUserContainer extends PmsContainer<PmsUser> {
 
 		return id != null;
 	}
-
 }
