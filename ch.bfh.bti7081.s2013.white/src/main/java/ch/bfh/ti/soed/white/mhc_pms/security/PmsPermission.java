@@ -48,6 +48,7 @@ public class PmsPermission {
 		 * @see java.lang.Object#equals(java.lang.Object)
 		 */
 		@Override
+		// CodePro complains about auto-gen code 
 		public boolean equals(Object obj) {
 			if (this == obj) {
 				return true;
