@@ -6,13 +6,14 @@ covers the setup for testing.
 
 ## Database
 
-Create two databases:
+Create two databases before you compile the application (do if your skip that task before): 
 
 - mhcPms
 - mhcPmsTest
 
-Fill your database with some sample data from `sql-sample-data.sql`. Setup the 
-databases before you compile the application.
+Fill your database with some sample data from `sql-sample-data.sql`. This file is for 
+Microsoft SQL Server 2012 and is not tested with Microsoft SQL Server 2008 or other
+old releases.
 
 ## Web server
 Start your tomcat instance.
