@@ -162,7 +162,6 @@ public class NewPatientComponent extends PmsComponentController {
 		this.addNewPatientButtonListener();
 		this.addCancelPatientButtonListener();
 
-		// TODO validation of input values, SQL injections!
 		this.dateFieldDateOfBirth.setRequiredError("Kein gültiges Datum!");
 		// this.txtFirstName.setRequiredError("Kein gültiger Vorname!");
 

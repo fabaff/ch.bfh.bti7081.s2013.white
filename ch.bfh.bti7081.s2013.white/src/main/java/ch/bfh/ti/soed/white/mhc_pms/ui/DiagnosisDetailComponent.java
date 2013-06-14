@@ -167,6 +167,7 @@ public class DiagnosisDetailComponent extends PmsComponentController implements
 			PmsDataAccessCreator.getDataAccess().getDiagnosisContainer()
 					.refresh();
 
+			// set filter for the new current patient case
 			PmsDataAccessCreator
 					.getDataAccess()
 					.getDiagnosisContainer()
@@ -191,6 +192,7 @@ public class DiagnosisDetailComponent extends PmsComponentController implements
 			currentDiag = new Diagnosis();
 		}
 
+		// set label values to the current diagnosis values
 		this.lblClinic.setValue(currentDiag.getClinicName());
 		this.lblDateOfCreation.setValue(ValueConverter.convertDate(currentDiag
 				.getDateOfCreation()));

@@ -174,8 +174,6 @@ public class EditCaseInfoComponent extends PmsComponentController implements
 
 		this.btnSave.addClickListener(new SaveButtonListener());
 		this.addBtnCancelListener();
-
-		// TODO input validation, SQL injections!
 	}
 
 	private void addBtnCancelListener() {

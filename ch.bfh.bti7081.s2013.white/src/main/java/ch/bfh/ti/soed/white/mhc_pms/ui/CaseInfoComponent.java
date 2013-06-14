@@ -150,6 +150,7 @@ class CaseInfoComponent extends PmsComponentController implements
 						.getLoginUser());
 			}
 
+			// set label values to the current patient case values
 			this.lblAssignment.setValue(item.getAssignment());
 			this.lblDateCaseClosed.setValue(ValueConverter.convertDate(item
 					.getDateCaseClosed()));
@@ -177,6 +178,10 @@ class CaseInfoComponent extends PmsComponentController implements
 	public void enter(ViewChangeEvent event) {
 	}
 
+	/**
+	 * 
+	 * @throws UnknownUserException
+	 */
 	private void setPermissions() throws UnknownUserException {
 		PCase pCaseItem = PmsDataAccessCreator.getDataAccess()
 				.getPCaseContainer().getCurrentItem();
