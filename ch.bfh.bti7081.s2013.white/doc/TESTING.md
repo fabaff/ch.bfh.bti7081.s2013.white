@@ -13,7 +13,8 @@ Create two databases before you compile the application (do if your skip that ta
 
 Fill your database with some sample data from `sql-sample-data.sql`. This file is for 
 Microsoft SQL Server 2012 and is not tested with Microsoft SQL Server 2008 or other
-old releases.
+old releases. Be aware that those data can break the application and only manual 
+removal from the databases can fix it. 
 
 ## Web server
 Start your tomcat instance.
