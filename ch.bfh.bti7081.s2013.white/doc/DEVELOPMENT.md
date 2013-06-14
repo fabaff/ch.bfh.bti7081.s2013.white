@@ -83,7 +83,7 @@ Please adjust the defaults to the values mentioned below:
 - Port: 55978
 - User: pkuser (Additional Server role: dbcreator, User Mapping: mhcPms)
 - Password: soed2013
-- Database name: mhcPms (must exist)
+- Database name: mhcPms and mhcPmsTest (must exist)
 
 Check if `SQL Server and Windows Authentication mode` is set for your SQL
 Server. 

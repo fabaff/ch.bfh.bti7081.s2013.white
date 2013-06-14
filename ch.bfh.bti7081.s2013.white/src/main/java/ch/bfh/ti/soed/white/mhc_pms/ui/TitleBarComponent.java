@@ -153,11 +153,11 @@ class TitleBarComponent extends PmsComponentController implements
 					.getCaseStatus()));
 			this.lblKindOfTreatment.setValue(ValueConverter.convertString(item
 					.getKindOfTreatment()));
-			this.lblUser.setValue(PmsDataAccessCreator.getDataAccess()
+			/*this.lblUser.setValue(PmsDataAccessCreator.getDataAccess()
 					.getLoginUser().getLastName()
 					+ " "
 					+ PmsDataAccessCreator.getDataAccess().getLoginUser()
-							.getLastName());
+							.getLastName());*/
 		} catch (UnknownUserException e) {
 			Notification.show(e.getInvalidUserMessage(),
 					Notification.Type.HUMANIZED_MESSAGE);
@@ -245,7 +245,7 @@ class TitleBarComponent extends PmsComponentController implements
 		cmbFilter.setWidth("-1px");
 		cmbFilter.setHeight("-1px");
 		mainLayout.addComponent(cmbFilter, "top:40.0px;right:100.0px;");
-				
+		
 		// lblUser
 		lblUser = new Label();
 		lblUser.setCaption("Benutzer:");
