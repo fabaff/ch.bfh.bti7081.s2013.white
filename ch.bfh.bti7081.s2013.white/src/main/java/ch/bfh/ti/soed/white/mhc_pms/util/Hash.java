@@ -10,7 +10,7 @@ public class Hash {
 	/**
 	 * Hash function for strings
 	 * 
-	 * @param String A string which has to be hashed.
+	 * @param md5 A string which has to be hashed.
 	 * @return The hashed string.
 	 */
 	public static String MD5(String md5) {

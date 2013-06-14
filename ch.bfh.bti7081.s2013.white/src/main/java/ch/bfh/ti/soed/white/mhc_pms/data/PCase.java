@@ -515,7 +515,7 @@ public class PCase implements Serializable {
 	}
 
 	/**
-	 * @param mobilePhone The patien's mobile phoneMobile number to set.
+	 * @param phoneMobile The patien's mobile phoneMobile number to set.
 	 */
 	public void setPhoneMobile(String phoneMobile) {
 		this.phoneMobile = phoneMobile;
@@ -697,7 +697,7 @@ public class PCase implements Serializable {
 	}
 
 	/**
-	 * @param status The case status to set.
+	 * @param caseStatus The case status to set.
 	 */
 	public void setCaseStatus(CaseStatus caseStatus) {
 		this.caseStatus = caseStatus;
