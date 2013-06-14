@@ -180,4 +180,44 @@ public class PmsEntityContainerTest {
 		dataAccess.getDiagnosisContainer().resetCurrentPCaseFilter();
 		assertEquals(2, dataAccess.getDiagnosisContainer().size());
 	}
+	
+	@Test
+	public final void testDeleteFilterFilter() {
+		assertEquals(0, dataAccess.getDiagnosisContainer().size());
+		assertNull(dataAccess.getDiagnosisContainer().getCurrentItem());
+		assertNull(dataAccess.getDiagnosisContainer().getCurrentItemId());
+
+		dataAccess.getPmsUserContainer().addEntity(user);
+		pCaseItem1.setTherapist(dataAccess.getPmsUserContainer()
+				.getCurrentItem());
+		pCaseItem2.setTherapist(dataAccess.getPmsUserContainer()
+				.getCurrentItem());
+
+		Object id = dataAccess.getPCaseContainer().addEntity(
+				pCaseItem1);
+		diagItem1.setpCase(dataAccess.getPCaseContainer().getCurrentItem());
+		dataAccess.getPCaseContainer().addEntity(
+				pCaseItem2);
+		diagItem2.setpCase(dataAccess.getPCaseContainer().getCurrentItem());
+		dataAccess.getDiagnosisContainer().addEntity(diagItem1);
+		dataAccess.getDiagnosisContainer().addEntity(diagItem2);
+
+		assertEquals(2, dataAccess.getDiagnosisContainer().size());
+		assertEquals(false, dataAccess.getDiagnosisContainer().getCurrentItem().isDeleted());
+		dataAccess.getDiagnosisContainer().enableDeleteFilter(true);
+		assertEquals(2, dataAccess.getDiagnosisContainer().size());
+		dataAccess.getDiagnosisContainer().enableDeleteFilter(false);
+		assertEquals(2, dataAccess.getDiagnosisContainer().size());
+		
+		Diagnosis diag = dataAccess.getDiagnosisContainer().getCurrentItem();
+		diag.setDeleted(true);
+		dataAccess.getDiagnosisContainer().addEntity(diag);
+		assertEquals(2, dataAccess.getDiagnosisContainer().size());
+		dataAccess.getDiagnosisContainer().enableDeleteFilter(true);
+		assertEquals(1, dataAccess.getDiagnosisContainer().size());
+		dataAccess.getDiagnosisContainer().setCurrentPCaseFilter(id);
+		assertEquals(1, dataAccess.getDiagnosisContainer().size());
+		dataAccess.getDiagnosisContainer().enableDeleteFilter(false);
+		assertEquals(2, dataAccess.getDiagnosisContainer().size());
+	}
 }

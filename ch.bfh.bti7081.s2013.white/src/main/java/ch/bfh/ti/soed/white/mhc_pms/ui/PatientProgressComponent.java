@@ -98,11 +98,6 @@ class PatientProgressComponent extends PmsComponentController implements
 			Notification.show(e.getInvalidUserMessage(),
 					Notification.Type.HUMANIZED_MESSAGE);
 		}
-
-		// Object itemId = this.pmsDataAccess.getPCaseContainer()
-		// .getCurrentItemId();
-
-		// TODO implement
 	}
 
 	private void setPermissions() throws UnknownUserException {
@@ -127,8 +122,6 @@ class PatientProgressComponent extends PmsComponentController implements
 
 	@Override
 	public void enter(ViewChangeEvent event) {
-
-		// TODO Auto-generated method stub
 	}
 
 }

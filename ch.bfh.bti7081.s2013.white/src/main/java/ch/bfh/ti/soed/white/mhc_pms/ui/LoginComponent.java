@@ -92,6 +92,7 @@ public class LoginComponent extends PmsComponentController {
 
 			if (!userName.isEmpty()) {
 				PmsDataAccessCreator.setDataAccess(new PmsDataAccess(userName));
+				PmsDataAccessCreator.getDataAccess().enableDeleteFilters(true);
 				this.fireInitEvent();
 				
 				Notification.show("Anmeldung erfolgreich!",

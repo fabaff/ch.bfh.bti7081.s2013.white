@@ -22,6 +22,7 @@ public abstract class PmsComponentController extends CustomComponent implements
 	private List<ComponentChangeListener> componentChangeListeners;
 	private List<NewItemListener> newCaseListeners;
 	private List<PmsComponentListener> pmsComponentListeners;
+	private List<PmsDiagnosisListener> pmsDiagnosisListeners;
 	private List<UIActivationListener> uiActivationListeners;
 	private List<InitListener> initListeners;
 
@@ -31,6 +32,7 @@ public abstract class PmsComponentController extends CustomComponent implements
 		this.uiActivationListeners = new ArrayList<>();
 		this.newCaseListeners = new ArrayList<>();
 		this.initListeners = new ArrayList<>();
+		this.pmsDiagnosisListeners = new ArrayList<>();
 	}
 
 	/**
@@ -79,6 +81,14 @@ public abstract class PmsComponentController extends CustomComponent implements
 	}
 	
 	/**
+	 * 
+	 * @param listener
+	 */
+	public void addPmsDiagnosisListener(PmsDiagnosisListener listener) {
+		this.pmsDiagnosisListeners.add(listener);
+	}
+	
+	/**
 	 * Listener for Change event
 	 * 
 	 * @param event
@@ -89,6 +99,12 @@ public abstract class PmsComponentController extends CustomComponent implements
 		}
 	}
 
+	protected void firePmsDiagnosisEvent() {
+		for (PmsDiagnosisListener listener : this.pmsDiagnosisListeners) {
+			listener.diagnosisItemChange();
+		}
+	}
+	
 	/**
 	 * Listener for Case event
 	 * 

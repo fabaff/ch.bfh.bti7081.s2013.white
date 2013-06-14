@@ -74,8 +74,8 @@ public class PmsUserContainerTest {
 	public final void testDummyUser() {
 		PmsUser dummy = dataAccess.getLoginUser();
 		
-		assertEquals("", dummy.getFirstName());
-		assertEquals("", dummy.getLastName());
+		assertEquals("Peter", dummy.getFirstName());
+		assertEquals("Müller", dummy.getLastName());
 		assertEquals(UserGroup.PSYCHIATRIST, dummy.getUserGroup());
 		assertEquals(PmsDataAccessCreator.DUMMY_USER, dummy.getUserName());
 		assertEquals(Hash.MD5(PmsDataAccessCreator.DUMMY_PASSWORD), dummy.getPassword());
@@ -105,8 +105,8 @@ public class PmsUserContainerTest {
 		PmsUser dbUser = dataAccess.getPmsUserContainer().getUser(PmsDataAccessCreator.DUMMY_USER);
 		
 		assertNull(dataAccess.getPmsUserContainer().getUser("drMeier"));
-		assertEquals("", dbUser.getFirstName());
-		assertEquals("", dbUser.getLastName());
+		assertEquals("Peter", dbUser.getFirstName());
+		assertEquals("Müller", dbUser.getLastName());
 		assertEquals(UserGroup.PSYCHIATRIST, dbUser.getUserGroup());
 		assertEquals(PmsDataAccessCreator.DUMMY_USER, dbUser.getUserName());
 		assertEquals(Hash.MD5(PmsDataAccessCreator.DUMMY_PASSWORD), dbUser.getPassword());

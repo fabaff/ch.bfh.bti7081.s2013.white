@@ -107,4 +107,17 @@ public class PmsDataAccess {
 	public PmsPermission getPermission() {
 		return permission;
 	}
+
+	/**
+	 * 
+	 * @param b
+	 */
+	public void enableDeleteFilters(boolean b) {
+		this.diagnosisContainer.enableDeleteFilter(true);
+		this.medicationContainer.enableDeleteFilter(true);
+		this.medicationDateContainer.enableDeleteFilter(true);
+		this.medicationTimeContainer.enableDeleteFilter(true);
+		this.patientProgressContainer.enableDeleteFilter(true);
+		
+	}
 }

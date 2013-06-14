@@ -19,6 +19,7 @@ import com.vaadin.ui.Label;
 import com.vaadin.ui.Notification;
 import com.vaadin.ui.TextArea;
 import com.vaadin.ui.TextField;
+import com.vaadin.ui.Window;
 
 /**
  * UI class for editing diagnosis
@@ -84,9 +85,10 @@ public class EditDiagnosisComponent extends PmsComponentController implements
 			}
 
 			EditDiagnosisComponent.this.fireUIActivationEvent(true);
+			EditDiagnosisComponent.this.setNewItem(false);
+			EditDiagnosisComponent.this.firePmsDiagnosisEvent();
 			EditDiagnosisComponent.this
 					.fireComponentChangeEvent(NavigationEvent.DIAGNOSIS_BACK);
-			EditDiagnosisComponent.this.setNewItem(false);
 
 			Notification.show("Diagnose gespeichert",
 					Notification.Type.HUMANIZED_MESSAGE);

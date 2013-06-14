@@ -13,8 +13,10 @@ import ch.bfh.ti.soed.white.mhc_pms.data.enums.UserGroup;
 /**
  * This utility class creates dummy data for simpler database handling.
  * 
- * @author Group White, I2p, BFH Berne, <a href="https://github.com/fabaff/ch.bfh.bti7081.s2013.white">Contact</a>
- * @version 1.0.0 
+ * @author Group White, I2p, BFH Berne, <a
+ *         href="https://github.com/fabaff/ch.bfh.bti7081.s2013.white"
+ *         >Contact</a>
+ * @version 1.0.0
  */
 public final class DummyDataCreator {
 	/**
@@ -31,17 +33,17 @@ public final class DummyDataCreator {
 		jpaContainer.setAutoCommit(true);
 
 		createDummyUser(jpaContainer, PmsDataAccessCreator.DUMMY_USER,
-				PmsDataAccessCreator.DUMMY_PASSWORD, UserGroup.PSYCHIATRIST);
+				PmsDataAccessCreator.DUMMY_PASSWORD, UserGroup.PSYCHIATRIST, "Peter", "Müller", "Abteilung", "Waldau");
 		createDummyUser(jpaContainer, UserGroup.PSYCHIATRIST.toString(),
-				UserGroup.PSYCHIATRIST.toString(), UserGroup.PSYCHIATRIST);
+				UserGroup.PSYCHIATRIST.toString(), UserGroup.PSYCHIATRIST, "", "", "", "");
 		createDummyUser(jpaContainer, UserGroup.PSYCHOLOGIST.toString(),
-				UserGroup.PSYCHOLOGIST.toString(), UserGroup.PSYCHOLOGIST);
+				UserGroup.PSYCHOLOGIST.toString(), UserGroup.PSYCHOLOGIST, "", "", "", "");
 		createDummyUser(jpaContainer, UserGroup.MEDICAL_STAFF.toString(),
-				UserGroup.MEDICAL_STAFF.toString(), UserGroup.MEDICAL_STAFF);
+				UserGroup.MEDICAL_STAFF.toString(), UserGroup.MEDICAL_STAFF, "", "", "", "");
 		createDummyUser(jpaContainer, UserGroup.NURSE.toString(),
-				UserGroup.NURSE.toString(), UserGroup.NURSE);
+				UserGroup.NURSE.toString(), UserGroup.NURSE, "", "", "", "");
 		createDummyUser(jpaContainer, UserGroup.ADMIN_STAFF.toString(),
-				UserGroup.ADMIN_STAFF.toString(), UserGroup.ADMIN_STAFF);
+				UserGroup.ADMIN_STAFF.toString(), UserGroup.ADMIN_STAFF, "", "", "", "");
 	}
 
 	/**
@@ -51,9 +53,14 @@ public final class DummyDataCreator {
 	 * @param user
 	 * @param password
 	 * @param userGroup
+	 * @param firstName
+	 * @param lastName
+	 * @param department
+	 * @param clinic
 	 */
 	private static void createDummyUser(JPAContainer<PmsUser> jpaContainer,
-			String user, String password, UserGroup userGroup) {
+			String user, String password, UserGroup userGroup,
+			String firstName, String lastName, String department, String clinic) {
 
 		Filter userFilter = Filters.eq("userName", user);
 		Filter passwordFilter = Filters.eq("password", Hash.MD5(password));
@@ -68,6 +75,10 @@ public final class DummyDataCreator {
 			dummyUser.setUserName(user);
 			dummyUser.setPassword(Hash.MD5(password));
 			dummyUser.setUserGroup(userGroup);
+			dummyUser.setFirstName(firstName);
+			dummyUser.setLastName(lastName);
+			dummyUser.setDepartment(department);
+			dummyUser.setClinic(clinic);
 			jpaContainer.addEntity(dummyUser);
 		}
 	}

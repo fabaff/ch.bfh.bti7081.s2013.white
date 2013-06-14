@@ -97,8 +97,6 @@ class MainPanel extends Panel implements ComponentChangeListener {
 		this.addDiagnosisTableListeners();
 		this.addDiagnosisDetailListeners();
 		this.addEditDiagnosisListeners();
-
-		// TODO Add missing Component Listener
 	}
 
 	private void addTitleBarListeners() {
@@ -115,6 +113,8 @@ class MainPanel extends Panel implements ComponentChangeListener {
 	private void addEditDiagnosisListeners() {
 		this.editDiagnosisComp.addPmsComponentListener(this.diagnosisDetailComp);
 		this.editDiagnosisComp.addPmsComponentListener(this.diagnosisTableComp);
+		this.editDiagnosisComp.addPmsDiagnosisListener(this.diagnosisDetailComp);
+		this.editDiagnosisComp.addPmsDiagnosisListener(this.diagnosisTableComp);
 		this.editDiagnosisComp.addUIActivationListener(this.menuBar);
 		this.editDiagnosisComp.addUIActivationListener(this.titleBar);
 		this.editDiagnosisComp.addComponentChangeListener(this);
@@ -128,6 +128,7 @@ class MainPanel extends Panel implements ComponentChangeListener {
 	}
 
 	private void addDiagnosisTableListeners() {
+		this.diagnosisTableComp.addPmsDiagnosisListener(this.diagnosisDetailComp);
 		this.diagnosisTableComp.addUIActivationListener(this.menuBar);
 		this.diagnosisTableComp.addUIActivationListener(this.titleBar);
 		this.diagnosisTableComp.addComponentChangeListener(this);
