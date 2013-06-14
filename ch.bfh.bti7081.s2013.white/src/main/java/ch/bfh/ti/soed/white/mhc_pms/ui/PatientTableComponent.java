@@ -211,11 +211,11 @@ class PatientTableComponent extends PmsComponentController implements
 		mainLayout.setImmediate(false);
 		mainLayout.setWidth("100%");
 		mainLayout.setHeight("100%");
-
+		
 		// top-level component properties
 		setWidth("100.0%");
 		setHeight("100.0%");
-
+		
 		// tblPatients
 		tblPatients = new Table();
 		tblPatients.setImmediate(false);
@@ -223,23 +223,23 @@ class PatientTableComponent extends PmsComponentController implements
 		tblPatients.setHeight("100.0%");
 		mainLayout.addComponent(tblPatients,
 				"top:80.0px;right:20.0px;bottom:40.0px;left:20.0px;");
-
+		
 		// btnNewPatient
 		btnNewPatient = new Button();
 		btnNewPatient.setCaption("Neuer Patient");
 		btnNewPatient.setImmediate(true);
 		btnNewPatient.setWidth("120px");
 		btnNewPatient.setHeight("-1px");
-		mainLayout.addComponent(btnNewPatient, "top:20.0px;left:280.0px;");
-
+		mainLayout.addComponent(btnNewPatient, "top:20.0px;left:250.0px;");
+		
 		// btnNewCase
 		btnNewCase = new Button();
 		btnNewCase.setCaption("Neuer Fall");
 		btnNewCase.setImmediate(true);
 		btnNewCase.setWidth("-1px");
 		btnNewCase.setHeight("-1px");
-		mainLayout.addComponent(btnNewCase, "top:20.0px;left:417.0px;");
-
+		mainLayout.addComponent(btnNewCase, "top:20.0px;left:380.0px;");
+		
 		// lblView
 		lblView = new Label();
 		lblView.setImmediate(false);
@@ -247,7 +247,7 @@ class PatientTableComponent extends PmsComponentController implements
 		lblView.setHeight("-1px");
 		lblView.setValue("View title");
 		mainLayout.addComponent(lblView, "top:20.0px;left:20.0px;");
-
+		
 		return mainLayout;
 	}
 

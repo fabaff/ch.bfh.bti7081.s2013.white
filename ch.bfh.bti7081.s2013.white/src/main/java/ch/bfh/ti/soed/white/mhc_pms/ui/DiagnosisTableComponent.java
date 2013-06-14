@@ -288,11 +288,11 @@ class DiagnosisTableComponent extends PmsComponentController implements
 		mainLayout.setImmediate(false);
 		mainLayout.setWidth("100%");
 		mainLayout.setHeight("100%");
-
+		
 		// top-level component properties
 		setWidth("100.0%");
 		setHeight("100.0%");
-
+		
 		// btnNewDiagnosis
 		btnNewDiagnosis = new Button();
 		btnNewDiagnosis.setCaption("Neue Diagnose");
@@ -300,15 +300,15 @@ class DiagnosisTableComponent extends PmsComponentController implements
 		btnNewDiagnosis.setWidth("120px");
 		btnNewDiagnosis.setHeight("-1px");
 		mainLayout.addComponent(btnNewDiagnosis, "top:20.0px;left:380.0px;");
-
+		
 		// btnEditDiagnosis
 		btnEditDiagnosis = new Button();
 		btnEditDiagnosis.setCaption("Diagnose bearbeiten");
 		btnEditDiagnosis.setImmediate(true);
 		btnEditDiagnosis.setWidth("140px");
 		btnEditDiagnosis.setHeight("-1px");
-		mainLayout.addComponent(btnEditDiagnosis, "top:20.0px;left:520.0px;");
-
+		mainLayout.addComponent(btnEditDiagnosis, "top:20.0px;left:510.0px;");
+		
 		// btnDeleteDiagnosis
 		btnDeleteDiagnosis = new Button();
 		btnDeleteDiagnosis.setCaption("Diagnose löschen");
@@ -316,7 +316,7 @@ class DiagnosisTableComponent extends PmsComponentController implements
 		btnDeleteDiagnosis.setWidth("-1px");
 		btnDeleteDiagnosis.setHeight("-1px");
 		mainLayout.addComponent(btnDeleteDiagnosis, "top:20.0px;left:680.0px;");
-
+		
 		// tblDiagnosis
 		tblDiagnosis = new Table();
 		tblDiagnosis.setImmediate(false);
@@ -324,7 +324,7 @@ class DiagnosisTableComponent extends PmsComponentController implements
 		tblDiagnosis.setHeight("100.0%");
 		mainLayout.addComponent(tblDiagnosis,
 				"top:80.0px;right:11.0px;bottom:60.0px;left:20.0px;");
-
+		
 		// btnToggleDiagnosisView
 		btnToggleDiagnosisView = new Button();
 		btnToggleDiagnosisView.setCaption("Detailansicht");
@@ -332,8 +332,8 @@ class DiagnosisTableComponent extends PmsComponentController implements
 		btnToggleDiagnosisView.setWidth("120px");
 		btnToggleDiagnosisView.setHeight("-1px");
 		mainLayout.addComponent(btnToggleDiagnosisView,
-				"top:20.0px;left:240.0px;");
-
+				"top:20.0px;left:250.0px;");
+		
 		// lblView
 		lblView = new Label();
 		lblView.setImmediate(false);
@@ -341,7 +341,7 @@ class DiagnosisTableComponent extends PmsComponentController implements
 		lblView.setHeight("-1px");
 		lblView.setValue("Übersicht Diagnosen");
 		mainLayout.addComponent(lblView, "top:20.0px;left:20.0px;");
-
+		
 		return mainLayout;
 	}
 
