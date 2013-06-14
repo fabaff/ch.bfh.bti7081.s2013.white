@@ -78,7 +78,6 @@ class PatientTableComponent extends PmsComponentController implements
 			this.addNewPatientClickListener();
 			this.addNewCaseClickListener();
 
-			// TODO format dateOfBirth in Tab
 		} catch (UnknownUserException e) {
 			Notification.show(e.getInvalidUserMessage(),
 					Notification.Type.HUMANIZED_MESSAGE);
