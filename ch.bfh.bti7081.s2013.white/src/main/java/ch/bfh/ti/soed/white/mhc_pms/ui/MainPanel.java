@@ -29,10 +29,10 @@ class MainPanel extends Panel implements ComponentChangeListener {
 		}
 	}
 	
+	private static final float HORIZONTAL_SPLIT_POS = 140.0f;
 	// Static vars for positioning
 	private static final long serialVersionUID = 6726671929546867989L;
 	private static final float VERTICAL_SPLIT_POS = 90.0f;
-	private static final float HORIZONTAL_SPLIT_POS = 140.0f;
 
 	/*
 	 * Screen layout of the GUI 
@@ -45,26 +45,26 @@ class MainPanel extends Panel implements ComponentChangeListener {
 	 * +----+-------------------------+
 	 */
 
-	// UI elements
-	private LoginComponent loginComponent = new LoginComponent();
-	private HorizontalSplitPanel horizontalPanel = new HorizontalSplitPanel();
-	private VerticalSplitPanel verticalPanel = new VerticalSplitPanel();
-	private Panel detailPanel = new Panel();
+	private Navigator applicationNavigator;
 	private ApplicationPanel applicationPanel = new ApplicationPanel();
-	private TitleBarComponent titleBar = new TitleBarComponent();
-	private PatientTableComponent patientTable = new PatientTableComponent();
-	private PatientInfoComponent patInfo = new PatientInfoComponent();
 	private CaseInfoComponent caseInfo = new CaseInfoComponent();
-	private PatientProgressComponent progressComp = new PatientProgressComponent();
-	private DiagnosisTableComponent diagnosisTableComp = new DiagnosisTableComponent();
+	private Panel detailPanel = new Panel();
 	private DiagnosisDetailComponent diagnosisDetailComp = new DiagnosisDetailComponent();
-	private MedicationComponent medComp = new MedicationComponent();
-	private NewPatientComponent newPatientComp = new NewPatientComponent();
+	private DiagnosisTableComponent diagnosisTableComp = new DiagnosisTableComponent();
 	private EditCaseInfoComponent editCaseInfoComp = new EditCaseInfoComponent();
 	private EditDiagnosisComponent editDiagnosisComp = new EditDiagnosisComponent();
-	private MenuBarComponent menuBar;
-	private Navigator applicationNavigator;
+	private HorizontalSplitPanel horizontalPanel = new HorizontalSplitPanel();
+	// UI elements
+	private LoginComponent loginComponent = new LoginComponent();
 	private Navigator loginNavigator;
+	private MedicationComponent medComp = new MedicationComponent();
+	private MenuBarComponent menuBar;
+	private NewPatientComponent newPatientComp = new NewPatientComponent();
+	private PatientTableComponent patientTable = new PatientTableComponent();
+	private PatientInfoComponent patInfo = new PatientInfoComponent();
+	private PatientProgressComponent progressComp = new PatientProgressComponent();
+	private TitleBarComponent titleBar = new TitleBarComponent();
+	private VerticalSplitPanel verticalPanel = new VerticalSplitPanel();
 
 	/**
 	 * The Main panel
@@ -99,25 +99,12 @@ class MainPanel extends Panel implements ComponentChangeListener {
 		this.addEditDiagnosisListeners();
 	}
 
-	private void addTitleBarListeners() {
-		this.titleBar.addComponentChangeListener(this);
-		this.titleBar.addPmsComponentListener(this.patientTable);
-	}
-
-	private void addLoginComponentListeners() {
-		this.loginComponent.addComponentChangeListener(this);
-		this.loginComponent.addInitListener(this.patientTable);
-		this.loginComponent.addInitListener(this.diagnosisTableComp);
-	}
-
-	private void addEditDiagnosisListeners() {
-		this.editDiagnosisComp.addPmsComponentListener(this.diagnosisDetailComp);
-		this.editDiagnosisComp.addPmsComponentListener(this.diagnosisTableComp);
-		this.editDiagnosisComp.addPmsDiagnosisListener(this.diagnosisDetailComp);
-		this.editDiagnosisComp.addPmsDiagnosisListener(this.diagnosisTableComp);
-		this.editDiagnosisComp.addUIActivationListener(this.menuBar);
-		this.editDiagnosisComp.addUIActivationListener(this.titleBar);
-		this.editDiagnosisComp.addComponentChangeListener(this);
+	private void addCaseInfoListeners() {
+		// Case info section
+		this.caseInfo.addUIActivationListener(this.menuBar);
+		this.caseInfo.addUIActivationListener(this.titleBar);
+		this.caseInfo.addComponentChangeListener(this);
+		this.caseInfo.addNewCaseListener(this.editCaseInfoComp);
 	}
 
 	private void addDiagnosisDetailListeners() {
@@ -135,31 +122,6 @@ class MainPanel extends Panel implements ComponentChangeListener {
 		this.diagnosisTableComp.addNewCaseListener(this.editDiagnosisComp);
 	}
 
-	private void setUpHorizontalPanel() {
-		this.applicationPanel.setContent(this.horizontalPanel);
-		this.horizontalPanel.setFirstComponent(this.menuBar);
-		this.horizontalPanel.setSecondComponent(this.verticalPanel);
-		
-		// Panel splitting static size or dynamic
-		// Horizontal panel
-		//this.setSplitPosition(HORIZONTAL_SPLIT_POS, Unit.PERCENTAGE);
-		this.horizontalPanel.setSplitPosition(HORIZONTAL_SPLIT_POS, Unit.PIXELS);
-		// Lock panel size, only needed when size in %
-		this.horizontalPanel.setLocked(true);
-		// Panel divider formating with theme
-		this.horizontalPanel.addStyleName(Reindeer.SPLITPANEL_SMALL);
-	}
-
-	private void setUpVerticalPanel() {
-		// Vertical panel
-		//this.verticalPanel.setSplitPosition(VERTICAL_SPLIT_POS, Unit.PERCENTAGE);
-		this.verticalPanel.setSplitPosition(VERTICAL_SPLIT_POS, Unit.PIXELS);
-		this.verticalPanel.setFirstComponent(this.titleBar);
-		this.verticalPanel.setSecondComponent(this.detailPanel);
-		this.verticalPanel.setLocked(true);
-		this.verticalPanel.addStyleName(Reindeer.SPLITPANEL_SMALL);
-	}
-
 	private void addEditCaseListeners() {
 		// Edit Case section
 		this.editCaseInfoComp.addPmsComponentListener(this.titleBar);
@@ -175,12 +137,56 @@ class MainPanel extends Panel implements ComponentChangeListener {
 		this.editCaseInfoComp.addComponentChangeListener(this);
 	}
 
-	private void addCaseInfoListeners() {
-		// Case info section
-		this.caseInfo.addUIActivationListener(this.menuBar);
-		this.caseInfo.addUIActivationListener(this.titleBar);
-		this.caseInfo.addComponentChangeListener(this);
-		this.caseInfo.addNewCaseListener(this.editCaseInfoComp);
+	private void addEditDiagnosisListeners() {
+		this.editDiagnosisComp.addPmsComponentListener(this.diagnosisDetailComp);
+		this.editDiagnosisComp.addPmsComponentListener(this.diagnosisTableComp);
+		this.editDiagnosisComp.addPmsDiagnosisListener(this.diagnosisDetailComp);
+		this.editDiagnosisComp.addPmsDiagnosisListener(this.diagnosisTableComp);
+		this.editDiagnosisComp.addUIActivationListener(this.menuBar);
+		this.editDiagnosisComp.addUIActivationListener(this.titleBar);
+		this.editDiagnosisComp.addComponentChangeListener(this);
+	}
+
+	private void addLoginComponentListeners() {
+		this.loginComponent.addComponentChangeListener(this);
+		this.loginComponent.addInitListener(this.patientTable);
+		this.loginComponent.addInitListener(this.diagnosisTableComp);
+	}
+
+	private void addMenuBarListeners() {
+		this.menuBar.addPmsComponentListener(this.titleBar);
+		this.menuBar.addPmsComponentListener(this.patientTable);
+		this.menuBar.addPmsComponentListener(this.patInfo);
+		this.menuBar.addPmsComponentListener(this.caseInfo);
+		this.menuBar.addPmsComponentListener(this.progressComp);
+		this.menuBar.addPmsComponentListener(this.diagnosisTableComp);
+		this.menuBar.addPmsComponentListener(this.diagnosisDetailComp);
+		this.menuBar.addPmsComponentListener(this.medComp);
+	}
+
+	private void addNavigatorViews() {
+		this.loginNavigator.addView(NavigationEvent.LOGIN.toString(), this.applicationPanel);
+		this.loginNavigator.addView(NavigationEvent.LOGOUT.toString(), this.loginComponent);
+		this.loginNavigator.navigateTo(NavigationEvent.LOGOUT.toString());
+		
+		this.applicationNavigator.addView(MenuBarComponent.ButtonEnum.HOME.toString(),
+				this.patientTable);
+		this.applicationNavigator.addView(
+				MenuBarComponent.ButtonEnum.PATIENT_INFO.toString(),
+				this.patInfo);
+		this.applicationNavigator
+				.addView(MenuBarComponent.ButtonEnum.CASE_INFO.toString(),
+						this.caseInfo);
+		this.applicationNavigator.addView(
+				MenuBarComponent.ButtonEnum.PATIENT_PROGRESS.toString(),
+				this.progressComp);
+		this.applicationNavigator.addView(
+				MenuBarComponent.ButtonEnum.DIAGNOSIS.toString(),
+				this.diagnosisTableComp);
+		this.applicationNavigator
+				.addView(MenuBarComponent.ButtonEnum.MEDICATION.toString(),
+						this.medComp);		
+		this.applicationNavigator.navigateTo(MenuBarComponent.ButtonEnum.HOME.toString());
 	}
 
 	private void addNewPatientListeners() {
@@ -220,40 +226,14 @@ class MainPanel extends Panel implements ComponentChangeListener {
 		this.patientTable.addNewCaseListener(this.editCaseInfoComp);
 	}
 
-	private void addMenuBarListeners() {
-		this.menuBar.addPmsComponentListener(this.titleBar);
-		this.menuBar.addPmsComponentListener(this.patientTable);
-		this.menuBar.addPmsComponentListener(this.patInfo);
-		this.menuBar.addPmsComponentListener(this.caseInfo);
-		this.menuBar.addPmsComponentListener(this.progressComp);
-		this.menuBar.addPmsComponentListener(this.diagnosisTableComp);
-		this.menuBar.addPmsComponentListener(this.diagnosisDetailComp);
-		this.menuBar.addPmsComponentListener(this.medComp);
+	private void addTitleBarListeners() {
+		this.titleBar.addComponentChangeListener(this);
+		this.titleBar.addPmsComponentListener(this.patientTable);
 	}
 
-	private void addNavigatorViews() {
-		this.loginNavigator.addView(NavigationEvent.LOGIN.toString(), this.applicationPanel);
-		this.loginNavigator.addView(NavigationEvent.LOGOUT.toString(), this.loginComponent);
-		this.loginNavigator.navigateTo(NavigationEvent.LOGOUT.toString());
-		
-		this.applicationNavigator.addView(MenuBarComponent.ButtonEnum.HOME.toString(),
-				this.patientTable);
-		this.applicationNavigator.addView(
-				MenuBarComponent.ButtonEnum.PATIENT_INFO.toString(),
-				this.patInfo);
-		this.applicationNavigator
-				.addView(MenuBarComponent.ButtonEnum.CASE_INFO.toString(),
-						this.caseInfo);
-		this.applicationNavigator.addView(
-				MenuBarComponent.ButtonEnum.PATIENT_PROGRESS.toString(),
-				this.progressComp);
-		this.applicationNavigator.addView(
-				MenuBarComponent.ButtonEnum.DIAGNOSIS.toString(),
-				this.diagnosisTableComp);
-		this.applicationNavigator
-				.addView(MenuBarComponent.ButtonEnum.MEDICATION.toString(),
-						this.medComp);		
-		this.applicationNavigator.navigateTo(MenuBarComponent.ButtonEnum.HOME.toString());
+	private void applicationNavigate(String viewName, View view) {
+		this.applicationNavigator.addView(viewName, view);
+		this.applicationNavigator.navigateTo(viewName);
 	}
 
 	@Override
@@ -292,8 +272,28 @@ class MainPanel extends Panel implements ComponentChangeListener {
 		}
 	}
 
-	private void applicationNavigate(String viewName, View view) {
-		this.applicationNavigator.addView(viewName, view);
-		this.applicationNavigator.navigateTo(viewName);
+	private void setUpHorizontalPanel() {
+		this.applicationPanel.setContent(this.horizontalPanel);
+		this.horizontalPanel.setFirstComponent(this.menuBar);
+		this.horizontalPanel.setSecondComponent(this.verticalPanel);
+		
+		// Panel splitting static size or dynamic
+		// Horizontal panel
+		//this.setSplitPosition(HORIZONTAL_SPLIT_POS, Unit.PERCENTAGE);
+		this.horizontalPanel.setSplitPosition(HORIZONTAL_SPLIT_POS, Unit.PIXELS);
+		// Lock panel size, only needed when size in %
+		this.horizontalPanel.setLocked(true);
+		// Panel divider formating with theme
+		this.horizontalPanel.addStyleName(Reindeer.SPLITPANEL_SMALL);
+	}
+
+	private void setUpVerticalPanel() {
+		// Vertical panel
+		//this.verticalPanel.setSplitPosition(VERTICAL_SPLIT_POS, Unit.PERCENTAGE);
+		this.verticalPanel.setSplitPosition(VERTICAL_SPLIT_POS, Unit.PIXELS);
+		this.verticalPanel.setFirstComponent(this.titleBar);
+		this.verticalPanel.setSecondComponent(this.detailPanel);
+		this.verticalPanel.setLocked(true);
+		this.verticalPanel.addStyleName(Reindeer.SPLITPANEL_SMALL);
 	}
 }
