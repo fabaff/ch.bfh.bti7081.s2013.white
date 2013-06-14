@@ -1,6 +1,7 @@
 package ch.bfh.ti.soed.white.mhc_pms.data;
 
 import com.vaadin.addon.jpacontainer.filter.Filters;
+import com.vaadin.data.util.filter.And;
 
 /**
  * A container class for direct sub entities of the PCase entity. This class
@@ -24,6 +25,8 @@ public class PmsEntityContainer<E> extends PmsContainer<E> {
 	private Filter currentPCaseFilter;
 
 	private Filter deleteFilter;
+	
+	private And mainFilter;
 
 	/**
 	 * @param clazz
@@ -31,15 +34,20 @@ public class PmsEntityContainer<E> extends PmsContainer<E> {
 	 */
 	public PmsEntityContainer(Class<E> clazz) {
 		super(clazz);
-
 	}
 
 	/**
 	 * Removes the PCase filter form this container.
 	 */
 	public void resetCurrentPCaseFilter() {
-		if (this.currentPCaseFilter != null) {
-			this.removeContainerFilters(this.currentPCaseFilter);
+		if (this.mainFilter != null) {
+			this.removeContainerFilters(this.mainFilter);
+		}
+		
+		this.currentPCaseFilter = null;
+		if (this.deleteFilter != null) {
+			this.mainFilter = Filters.and(this.deleteFilter);
+			this.addContainerFilter(this.mainFilter);
 		}
 	}
 
@@ -51,10 +59,19 @@ public class PmsEntityContainer<E> extends PmsContainer<E> {
 	 */
 	public void setCurrentPCaseFilter(Object pCaseItemId) {
 		if (pCaseItemId != null) {
-			this.resetCurrentPCaseFilter();
+			if (this.mainFilter != null) {
+				this.removeContainerFilters(this.mainFilter);
+			}
+			
 			this.currentPCaseFilter = Filters.eq(PCASE_ITEM_FILTER_PROPERTY_ID,
 					pCaseItemId);
-			this.addContainerFilter(this.currentPCaseFilter);
+			if (this.deleteFilter != null) {
+				this.mainFilter = Filters.and(this.currentPCaseFilter, this.deleteFilter);
+			} else {
+				this.mainFilter = Filters.and(this.currentPCaseFilter);
+			}
+			
+			this.addContainerFilter(this.mainFilter);
 			this.setCurrentItemId(this.firstItemId());
 		}
 	}
@@ -67,13 +84,26 @@ public class PmsEntityContainer<E> extends PmsContainer<E> {
 	 */
 	public void enableDeleteFilter(boolean value) {
 		if (value) {
-			if (this.deleteFilter != null) {
-				this.removeContainerFilters(this.deleteFilter);
+			if (this.mainFilter != null) {
+				this.removeContainerFilters(this.mainFilter);
 			}
+			
 			this.deleteFilter = Filters.eq(DELETE_FILTER_PROPERTY_ID, false);
-			this.addContainerFilter(this.deleteFilter);
+			if (this.currentPCaseFilter != null) {
+				this.mainFilter = Filters.and(this.currentPCaseFilter, this.deleteFilter);
+			} else {
+				this.mainFilter = Filters.and(this.deleteFilter);
+			}
+			
+			this.addContainerFilter(this.mainFilter);
 		} else {
-			this.removeContainerFilters(this.deleteFilter);
+			this.removeContainerFilters(this.mainFilter);
+			
+			this.deleteFilter = null;
+			if (this.currentPCaseFilter != null) {
+				this.mainFilter = Filters.and(this.currentPCaseFilter);
+				this.addContainerFilter(this.mainFilter);
+			}
 		}
 	}
 

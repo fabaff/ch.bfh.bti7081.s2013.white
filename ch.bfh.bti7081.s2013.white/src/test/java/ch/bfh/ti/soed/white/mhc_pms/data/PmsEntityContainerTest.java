@@ -218,6 +218,6 @@ public class PmsEntityContainerTest {
 		dataAccess.getDiagnosisContainer().setCurrentPCaseFilter(id);
 		assertEquals(1, dataAccess.getDiagnosisContainer().size());
 		dataAccess.getDiagnosisContainer().enableDeleteFilter(false);
-		assertEquals(2, dataAccess.getDiagnosisContainer().size());
+		assertEquals(1, dataAccess.getDiagnosisContainer().size());
 	}
 }
